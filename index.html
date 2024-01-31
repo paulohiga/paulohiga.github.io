@@ -1,28 +1,32 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+//if(substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 ) != 'pt' ) {
+//     header( 'Location:  https://higa.me/en/' );
+//}
+?><!DOCTYPE HTML>
+<html lang="pt-BR">
 <head>
 <!-- Não tem nenhum easter egg aqui -->
 	<title>Paulo Higa</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Paulo Higa tem 27 anos, é jornalista e mora na capital paulista. É editor-executivo do Tecnoblog, maior blog de inovação do Brasil." />
+	<meta name="description" content="Paulo Higa é jornalista, maratonista, entusiasta de tecnologia e curioso." />
 	<meta name="keywords" content="paulo higa, higa, tecnoblog, tecnologia, jornalista" />
-	<link rel="alternate" href="https://higa.me/" hreflang="pt-br" />
+  	<link rel="canonical" href="https://higa.me/" />
+	<link rel="alternate" href="https://higa.me/" hreflang="pt-BR" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Código para começar a mágica -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	<style type="text/css">
 		html {height: 100%;}
 		body {font-family:Helvetica,Arial,sans-serif; color:#fff; background:#272d39 url("img/bg.png") repeat; height:100%;}
 		header {display:none;}
-		section {width:620px; margin: -80px auto 0;}
+		section {width:620px; margin: 80px auto;}
 		h2 {font-size:41px; line-height:43px; margin:0; font-weight:400;}
 		strong {font-weight:700;}
-		acronym {cursor: help;} /* Pequena gracinha */
-		p {font-size:16px; line-height:21px;}
+		p {font-size:16px; line-height:22px;}
 		a {color:#fff; text-decoration:none; transition: color 200ms ease;}
 		a:hover {color:dodgerblue;}
-		p.links a {background-color:#2a2c30; color:white; padding:5px 10px; transition: background-color 200ms ease; font-size:300%;}
+		p.links a {background-color:#2a2c30; color:white; padding:5px 10px; transition: background-color 200ms ease; font-size:230%;}
 		p.links a:hover {background-color:dodgerblue;}
-		#foto {float:right; margin:6px; width:300px; height:300px; border-radius:50%; border:4px solid #fff; padding:5px;}
+		#foto {float:right; margin:6px; width:250px; height:250px; border-radius:50%; border:4px solid #fff; padding:5px;}
 
 		/* Onde a mágica acontece */
 		@media screen and (max-width:720px) {
@@ -35,19 +39,72 @@
 			#foto {margin:10px auto; float:none; max-width:100%;}
 		}
 	</style>
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "Person",
-			"name": "Paulo Higa",
-			"url": "https://higa.me/",
-			"sameAs": [
-				"http://twitter.com/paulohiga",
-				"http://www.facebook.com/paulohiga",
-				"http://www.linkedin.com/in/paulohiga",
-			]
-		}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Paulo Higa",
+  "url": "https://higa.me/",
+  "image": "https://higa.me/img/foto-paulo-higa.jpg",
+  "birthDate": "1993-04-15",
+  "birthPlace": {
+    "@type": "Place",
+    "name": "Chiba, Japão"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Faculdade Cásper Líbero",
+      "degree": "Jornalismo",
+      "startDate": "2014",
+      "endDate": "2017"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Fundação Getulio Vargas",
+      "degree": "MBA em Gestão com Ênfase em Liderança e Inovação",
+      "startDate": "2021",
+      "endDate": "2022"
+    }
+  ],
+  "award": [
+    {
+      "@type": "Award",
+      "name": "Prêmio Especialistas",
+      "category": "Eletroeletrônico",
+      "year": ["2020", "2021", "2022"]
+    },
+    {
+      "@type": "Award",
+      "name": "Prêmio Comunique-se",
+      "category": "Tecnologia",
+      "year": "2021"
+    }
+  ],
+  "jobTitle": "Jornalista",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Tecnoblog"
+  },
+  "knowsAbout": [
+    "Tecnologia",
+    "Jornalismo",
+    "Gestão",
+    "Liderança",
+    "Inovação"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/paulohiga",
+    "https://twitter.com/paulohiga",
+    "https://instagram.com/paulohiga",
+    "https://www.youtube.com/@PauloHiga",
+    "https://www.linkedin.com/in/paulohiga",
+    "https://tecnoblog.net/author/paulo-higa/",
+    "https://mastodon.social/@paulohiga"
+  ]
+}
 </script>
+
 </head>
 <body id="higa">
 <table style="width:100%; height:100%;"> <!-- DESCULPA, SOCIEDADE! EU JURO QUE TENTEI DE OUTRAS FORMAS!!! -->
@@ -60,18 +117,22 @@
 	<section>
 		<article> <!-- HTML5 é legal, menos para o Internet Explorer 8 -->
 			<img src="img/foto-paulo-higa.jpg" id="foto" alt="Paulo Higa">
-			<h2>Oi, tudo bem?</h2>
+			<h2>Paulo Higa</h2>
 			<div class="h-card vcard"> <!-- Microformats -->
-				<p>Meu nome é <strong><span class="p-name fn">Paulo Higa</span></strong>, nasci há 27 anos na província japonesa de Chiba, moro na capital paulista e sou jornalista.</p>
-				<p>Sou <span class="p-job-title title">editor-executivo</span> do <a href="https://tecnoblog.net/author/paulohiga/" target="_blank"><span class="p-org org">Tecnoblog</span></a>, o maior blog de tecnologia e inovação do Brasil, com mais de 25 milhões de acessos mensais.</p>
-                                <p>Se quiser conversar ou fazer uma proposta de emprego milionária, envie um e-mail para <a href='mailto:"paulo@higa.me"'><span class='fa fa-envelope' style='font-size:70%;'></span> paulo@higa.me</a>.</p>
+              
+              <p><strong><span class="p-name fn">Paulo Higa</span></strong> nasceu em Chiba, Japão, em 15 de abril de 1993. Desde jovem, sempre foi curioso e interessado em tecnologia. Ele desmontava relógios para entender como eles funcionavam e participava de fóruns na internet para trocar conhecimentos sobre hardware e sistemas operacionais. Com o tempo, ele descobriu que sua verdadeira paixão era a escrita, e abandonou o curso de Ciência da Computação que havia começado em 2011.</p>
+              <p>Em 2012, Higa começou a trabalhar como editor no <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>, escrevendo notícias e análises de tecnologia. Lá, ele descobriu sua paixão pelo jornalismo e decidiu estudar a área. Em 2014, ingressou no curso de Jornalismo na Faculdade Cásper Líbero, formando-se em 2017. Em 2018, tornou-se editor-executivo e sócio do Tecnoblog, liderando uma equipe de mais de 30 pessoas e ajudando a transformar o veículo no maior site de tecnologia independente do Brasil, com mais de 30 milhões de acessos mensais.</p>
+              <p>Até 2023, Higa atuou como <span class="p-job-title title">head de operações</span> no <a href="https://tecnoblog.net/author/paulohiga/"><span class="p-org org">Tecnoblog</span></a> e coapresentador do <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de tecnologia, inovação e negócios no Brasil. Ele já visitou mais de 10 países e cobriu as principais feiras de tecnologia e eventos de fabricantes de eletrônicos do mundo. Além do Tecnoblog, Higa já trabalhou como redator na <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> e como colunista de tecnologia na <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. Ele é vencedor de vários prêmios, incluindo o <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> na categoria Eletroeletrônico em 2020, 2021 e 2022, e finalista do <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> na categoria Tecnologia em 2019 e 2021.</p>
+              <p>Atualmente, está em um período sabático. Além de sua carreira profissional, Higa é apaixonado por cozinhar, correr e estudar sobre negócios. Ele já participou de maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a>, <a href="https://www.strava.com/activities/9549924330">São Paulo</a> e <a href="https://www.strava.com/activities/10167569831">Nova York</a>, além de ter corrido uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a>.</p>
+              <p><em>Este texto foi escrito por uma IA com dados fornecidos pelo autor.</em></p>
+              
 
 			<p class="links">
-				<a rel="me" title="Twitter" href="http://twitter.com/paulohiga"><span class="fa fa-twitter"><span></a> 
-				<a rel="me" title="Facebook" href="http://www.facebook.com/paulohiga"><span class="fa fa-facebook-square"></span></a> 
-				<a rel="me" title="Instagram" href="http://instagram.com/paulohiga"><span class="fa fa-instagram"></span></a> 
-				<a rel="me" title="LinkedIn" href="http://www.linkedin.com/in/paulohiga"><span class="fa fa-linkedin"></span></a>
-			</p>
+				<a rel="me" title="Twitter" href="https://twitter.com/paulohiga"><span class="fab fa-twitter"></span></a> 
+				<a rel="me" title="LinkedIn" href="https://www.linkedin.com/in/paulohiga"><span class="fab fa-linkedin"></span></a>
+				<a rel="me" title="Strava" href="https://www.strava.com/athletes/paulohiga"><span class="fab fa-strava"></span></a>
+				<a rel="me" title="Instagram" href="https://instagram.com/paulohiga"><span class="fab fa-instagram"></span></a> 
+              </p>
 			</div>
 		</article>
 	</section>
