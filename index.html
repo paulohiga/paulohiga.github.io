@@ -1,44 +1,168 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
 <head>
-<!-- Não tem nenhum easter egg aqui -->
-	<title>Paulo Higa</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Paulo Higa é jornalista, maratonista, entusiasta de tecnologia e curioso." />
-	<meta name="keywords" content="paulo higa, higa, paulo seikishi higa" />
-  	<link rel="canonical" href="https://higa.me/" />
-	<link rel="alternate" href="https://higa.me/" hreflang="pt-BR" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Código para começar a mágica -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<style type="text/css">
-		html {height: 100%;}
-		body {font-family:Helvetica,Arial,sans-serif; color:#fff; background:#272d39 url("img/bg.png") repeat; height:100%;}
-		header {display:none;}
-		section {width:620px; margin: 80px auto;}
-		h2 {font-size:41px; line-height:43px; margin:0; font-weight:400;}
-		strong {font-weight:700;}
-		p {font-size:16px; line-height:22px;}
-		a {color:#fff; text-decoration:none; transition: color 200ms ease;}
-		a:hover {color:dodgerblue;}
-		p.links a {background-color:#2a2c30; color:white; padding:5px 10px; transition: background-color 200ms ease; font-size:230%;}
-		p.links a:hover {background-color:dodgerblue;}
-		#foto {float:right; margin:6px; width:250px; height:250px; border-radius:50%; border:4px solid #fff; padding:5px;}
+    <title>Paulo Higa</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Paulo Higa é Analista de Políticas Públicas e Gestão Governamental, jornalista, maratonista e entusiasta de tecnologia." />
+    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa" />
+    <link rel="canonical" href="https://higa.me/" />
+    <link rel="alternate" href="https://higa.me/" hreflang="pt-BR" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-		/* Onde a mágica acontece */
-		@media screen and (max-width:720px) {
-			section {width:100%; margin:0;}
-			h2 {font-size:250%; margin:0;}
-			p {font-size:110%; line-height:130%;}
-		}
-		/* Higa aparece lindo e gigante com o dispositivo no modo retrato */
-		@media screen and (max-width:720px) and (orientation:portrait) {
-			#foto {margin:10px auto; float:none; max-width:100%;}
-		}
-	</style>
+    <style type="text/css">
+        /* Estilos Globais e Reset Básico */
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
+            color: #e0e0e0; /* Cor de texto clara para tema escuro */
+            background-color: #121212; /* Fundo da página escuro */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: none;
+        }
+
+        /* Seção principal do conteúdo */
+        section {
+            width: 620px;
+            max-width: 100%;
+            background-color: #1e1e1e; /* Fundo do cartão um pouco mais claro que o body */
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra ajustada para tema escuro */
+            text-align: left;
+        }
+
+        /* Título principal da seção */
+        h2 {
+            font-size: 38px;
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #ffffff; /* Cor do título branca */
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Parágrafos */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        p:last-child {
+             margin-bottom: 0;
+        }
+        .h-card > p:nth-last-child(2) { /* Garante margem para o penúltimo parágrafo antes dos links */
+            margin-bottom: 18px;
+        }
+
+        /* Links */
+        a {
+            color: #79c6ff; /* Cor de link azul clara para tema escuro */
+            text-decoration: none;
+            transition: color 200ms ease;
+        }
+
+        a:hover {
+            color: #4da6ff; /* Tom de azul claro mais escuro no hover */
+            text-decoration: underline;
+        }
+
+        /* Foto de perfil */
+        #foto {
+            float: right;
+            margin: 0 0 15px 25px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #333333; /* Borda da foto mais escura */
+            padding: 0;
+            object-fit: cover;
+        }
+
+        /* Links de redes sociais */
+        p.links {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        p.links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333333; /* Fundo dos ícones sociais escuro */
+            color: #79c6ff; /* Cor dos ícones sociais azul clara */
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            transition: background-color 200ms ease, color 200ms ease;
+            font-size: 1.5rem;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        p.links a .fab {
+            line-height: 1;
+        }
+
+        p.links a:hover {
+            background-color: #79c6ff; /* Fundo azul claro no hover */
+            color: #121212; /* Ícone na cor do fundo do body no hover */
+        }
+
+        /* Media Queries para Responsividade */
+        @media screen and (max-width: 720px) {
+            body {
+                padding: 15px;
+            }
+            section {
+                padding: 25px 20px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            #foto {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 180px;
+                height: 180px;
+            }
+            p.links a {
+                font-size: 1.4rem;
+                width: 42px;
+                height: 42px;
+                margin: 0 5px;
+            }
+        }
+    </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -81,17 +205,22 @@
       "year": "2021"
     }
   ],
-  "jobTitle": "Jornalista",
+  "jobTitle": "Analista de Políticas Públicas e Gestão Governamental",
   "worksFor": {
     "@type": "Organization",
-    "name": "Tecnoblog"
+    "name": "Prefeitura de São Paulo",
+    "department": "Secretaria Municipal de Educação"
   },
   "knowsAbout": [
     "Tecnologia",
     "Jornalismo",
     "Gestão",
     "Liderança",
-    "Inovação"
+    "Inovação",
+    "Políticas Públicas",
+    "Gestão Governamental",
+    "Análise de Dados",
+    "Comunicação"
   ],
   "sameAs": [
     "https://www.facebook.com/paulohiga",
@@ -107,37 +236,25 @@
 
 </head>
 <body id="higa">
-<table style="width:100%; height:100%;"> <!-- DESCULPA, SOCIEDADE! EU JURO QUE TENTEI DE OUTRAS FORMAS!!! -->
-  <tr>
-     <td style="vertical-align:middle;">
+    <section>
+        <article>
+            <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa">
+            <h2>Paulo Higa</h2>
+            <div class="h-card vcard">
+                <p><strong><span class="p-name fn">Paulo Higa</span></strong> nasceu em Chiba, Japão, em 15 de abril de 1993. Desde jovem, sempre foi curioso e interessado em tecnologia. Ele desmontava relógios para entender como eles funcionavam e participava de fóruns na internet para trocar conhecimentos sobre hardware e sistemas operacionais. Essa paixão inicial pela tecnologia evoluiu para um forte interesse pela escrita, levando-o a redirecionar sua trajetória acadêmica do curso de Ciência da Computação, iniciado em 2011, para o Jornalismo.</p>
+                <p>Formou-se em Jornalismo pela Faculdade Cásper Líbero em 2017. À medida que avançava como líder no setor privado, buscou aprimorar suas competências em gestão, concluindo em 2022 um MBA em Gestão com Ênfase em Liderança e Inovação na Fundação Getulio Vargas (FGV).</p>
+                <p>Desde 2024, Paulo é servidor público da carreira de <span class="p-job-title title">Analista de Políticas Públicas e Gestão Governamental</span> (APPGG) na <span class="p-org org">Prefeitura de São Paulo</span>. Ele atua na unidade de planejamento estratégico da <span class="p-organization-unit">Secretaria Municipal de Educação</span>, onde trabalha com governança, análise de dados, normativos de gestão de pessoas e projetos de comunicação.</p>
+                <p>Sua trajetória no setor privado iniciou em 2012, como editor no <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. Em 2018, tornou-se editor-executivo e sócio do veículo, liderando uma equipe de mais de 30 pessoas e ajudando a transformá-lo no maior site de tecnologia independente do Brasil, com mais de 30 milhões de acessos mensais. Até 2023, Higa atuou como <span class="p-job-title title">head de operações</span> no <span class="p-org org">Tecnoblog</span> e coapresentador do <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de tecnologia, inovação e negócios no Brasil. Durante esse período, visitou dezenas de países cobrindo as principais feiras de tecnologia e eventos de fabricantes de eletrônicos, analisou centenas de eletrônicos e publicou milhares de artigos. Higa também trabalhou como redator na <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> e como colunista de tecnologia na <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. É vencedor de vários prêmios, incluindo o <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> na categoria Eletroeletrônico em 2020, 2021 e 2022, e foi finalista do <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> na categoria Tecnologia em 2019 e 2021.</p>
+                <p>Além de sua carreira profissional, Higa é apaixonado por cozinhar e correr. Ele já participou de maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a>, <a href="https://www.strava.com/activities/9549924330">São Paulo</a> e <a href="https://www.strava.com/activities/10167569831">Nova York</a>, além de ter corrido uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a>.</p>
 
-	<header>
-		<h1><a rel="me" href="https://higa.me/">Paulo Higa</a></h1>
-	</header>
-	<section>
-		<article> <!-- HTML5 é legal, menos para o Internet Explorer 8 -->
-			<img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa">
-			<h2>Paulo Higa</h2>
-			<div class="h-card vcard"> <!-- Microformats -->
-              
-              <p><strong><span class="p-name fn">Paulo Higa</span></strong> nasceu em Chiba, Japão, em 15 de abril de 1993. Desde jovem, sempre foi curioso e interessado em tecnologia. Ele desmontava relógios para entender como eles funcionavam e participava de fóruns na internet para trocar conhecimentos sobre hardware e sistemas operacionais. Com o tempo, ele descobriu que sua verdadeira paixão era a escrita, e abandonou o curso de Ciência da Computação que havia começado em 2011.</p>
-              <p>Em 2012, Higa começou a trabalhar como editor no <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>, escrevendo notícias e análises de tecnologia. Lá, ele descobriu sua paixão pelo jornalismo e decidiu estudar a área. Em 2014, ingressou no curso de Jornalismo na Faculdade Cásper Líbero, formando-se em 2017. Em 2018, tornou-se editor-executivo e sócio do Tecnoblog, liderando uma equipe de mais de 30 pessoas e ajudando a transformar o veículo no maior site de tecnologia independente do Brasil, com mais de 30 milhões de acessos mensais.</p>
-              <p>Até 2023, Higa atuou como <span class="p-job-title title">head de operações</span> no <a href="https://tecnoblog.net/author/paulohiga/"><span class="p-org org">Tecnoblog</span></a> e coapresentador do <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de tecnologia, inovação e negócios no Brasil. Ele já visitou mais de 10 países e cobriu as principais feiras de tecnologia e eventos de fabricantes de eletrônicos do mundo. Além do Tecnoblog, Higa já trabalhou como redator na <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> e como colunista de tecnologia na <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. Ele é vencedor de vários prêmios, incluindo o <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> na categoria Eletroeletrônico em 2020, 2021 e 2022, e finalista do <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> na categoria Tecnologia em 2019 e 2021.</p>
-              <p>Além de sua carreira profissional, Higa é apaixonado por cozinhar, correr e estudar sobre negócios. Ele já participou de maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a>, <a href="https://www.strava.com/activities/9549924330">São Paulo</a> e <a href="https://www.strava.com/activities/10167569831">Nova York</a>, além de ter corrido uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a>.</p>              
-
-			<p class="links">
-				<a rel="me" title="Twitter" href="https://twitter.com/paulohiga"><span class="fab fa-twitter"></span></a> 
-				<a rel="me" title="LinkedIn" href="https://www.linkedin.com/in/paulohiga"><span class="fab fa-linkedin"></span></a>
-				<a rel="me" title="Strava" href="https://www.strava.com/athletes/paulohiga"><span class="fab fa-strava"></span></a>
-				<a rel="me" title="Instagram" href="https://instagram.com/paulohiga"><span class="fab fa-instagram"></span></a> 
-              </p>
-			</div>
-		</article>
-	</section>
-
-
-     </td>
-  </tr>
-</table>
+                <p class="links">
+                    <a rel="me" title="Twitter" href="https://twitter.com/paulohiga"><span class="fab fa-twitter"></span></a>
+                    <a rel="me" title="LinkedIn" href="https://www.linkedin.com/in/paulohiga"><span class="fab fa-linkedin"></span></a>
+                    <a rel="me" title="Strava" href="https://www.strava.com/athletes/paulohiga"><span class="fab fa-strava"></span></a>
+                    <a rel="me" title="Instagram" href="https://instagram.com/paulohiga"><span class="fab fa-instagram"></span></a>
+                </p>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
