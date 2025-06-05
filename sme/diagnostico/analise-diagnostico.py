@@ -278,6 +278,11 @@ for col_letter in question_col_letters:
     items = items[items != '']
     items = items.dropna() # Remover NaNs que possam ter surgido após explode/filtragem
 
+    # Correção manual de item específico
+    items = items.replace(
+        "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas família",
+        "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas famílias"
+    )
     if items.empty:
         print(f"Nenhum item válido encontrado na coluna '{col_letter}' ('{question_title}') após processamento. Pulando contagem global.")
         continue
@@ -391,6 +396,12 @@ for col_letter_global_calc in question_col_letters:
     global_items_processed_calc = global_items_series_calc.str.split(';').explode()
     global_items_processed_calc = global_items_processed_calc[global_items_processed_calc != ''].str.strip().dropna()
     
+    # Correção manual de item específico para dados globais de referência
+    global_items_processed_calc = global_items_processed_calc.replace(
+        "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas família",
+        "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas famílias"
+    )
+
     if global_items_processed_calc.empty:
         global_data_for_questions[question_title_global_calc] = {'percentages': pd.Series(dtype=float), 'total_respondents': total_global_respondents_calc}
         continue
@@ -441,6 +452,12 @@ for col_letter in question_col_letters: # Defined as 'I' to 'V'
         local_items_processed = local_items_series.str.split(';').explode()
         local_items_processed = local_items_processed[local_items_processed != ''].str.strip() # Remove empty strings and strip
         local_items_processed = local_items_processed.dropna()
+
+        # Correção manual de item específico para dados locais
+        local_items_processed = local_items_processed.replace(
+            "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas família",
+            "Ampliação de matrículas em unidades mais próximas dos endereços de referência fornecidos pelas famílias"
+        )
 
         if local_items_processed.empty:
             print(f"Nenhum item válido na coluna '{question_title}' para o local '{location_label}' após processamento. Pulando.")
