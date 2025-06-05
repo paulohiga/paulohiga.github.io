@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico do Planejamento Estratégico 2025-2028 da SME</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background-color: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding-top: 20px; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 90%; max-width: 1000px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        select { width: 100%; padding: 12px; margin-bottom: 25px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; background-color: #fff; font-size: 16px; }
+        select:focus { border-color: #007bff; outline: none; box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); }
+        #chartContainer { text-align: center; margin-top: 20px; min-height: 400px; display: flex; justify-content: center; align-items: center; border: 1px dashed #ccc; border-radius: 6px; background-color: #f8f9fa; }
+        img { max-width: 100%; height: auto; border-radius: 4px; }
+        .controls { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+        .control-group { flex: 1; min-width: 250px; }
+        h1 { text-align: center; color: #1a2b4d; margin-bottom: 30px; }
+        .placeholder-text { color: #777; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnóstico do Planejamento Estratégico 2025-2028 da SME</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="perguntaSelect">Selecione o Eixo:</label>
+                <select id="perguntaSelect"></select>
+            </div>
+            <div class="control-group">
+                <label for="localSelect">Selecione a Unidade:</label>                
+                <select id="localSelect"></select>
+            </div>
+        </div>
+            <img id="chartImage" src="" alt="Selecione uma pergunta e um local para visualizar o gráfico.">
+            <p id="chartPlaceholderText" class="placeholder-text">Selecione uma pergunta e um local para visualizar o gráfico.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const perguntaSelect = document.getElementById('perguntaSelect');
+            const localSelect = document.getElementById('localSelect');
+            const chartImage = document.getElementById('chartImage');
+            const chartPlaceholderText = document.getElementById('chartPlaceholderText');
+
+            const perguntaTitulos = {
+                'I': 'Melhorias relacionadas ao acesso à educação infantil',
+                'J': 'Melhorias relacionadas à qualidade da educação infantil',
+                'K': 'Melhorias relacionadas à alfabetização',
+                'L': 'Melhorias relacionadas ao acesso, trajetória e conclusão no ensino fundamental e médio',
+                'M': 'Melhorias relacionadas à aprendizagem no ensino fundamental e médio',
+                'N': 'Melhorias relacionadas à educação integral em tempo integral',
+                'O': 'Melhorias relacionadas à conectividade, à educação para as tecnologias e à cidadania digital',
+                'P': 'Melhorias relacionadas à educação especial na perspectiva da educação inclusiva e da educação bilíngue para surdos',
+                'Q': 'Melhorias relacionadas à educação de jovens e adultos',
+                'R': 'Melhorias relacionadas aos profissionais da educação básica',
+                'S': 'Melhorias relacionadas à participação social e à gestão democrática',
+                'T': 'Melhorias relacionadas ao financiamento e à infraestrutura da educação básica',
+                'U': 'Melhorias relacionadas às agendas transversais',
+                'V': 'Melhorias relacionadas à gestão do Sistema Municipal de Educação'
+            };
+            const perguntas = Object.keys(perguntaTitulos);
+
+            const locaisTrabalho = [
+                "SME", "DRE-BT", "DRE-CL", "DRE-CS", "DRE-FB", "DRE-G", 
+                "DRE-IP", "DRE-IQ", "DRE-JT", "DRE-PE", "DRE-PJ", 
+                "DRE-SA", "DRE-SM", "DRE-MP"
+            ].sort();
+
+            const todosLocais = ["Rede", ...locaisTrabalho];
+
+            // Populate Pergunta dropdown
+            perguntas.forEach(perguntaKey => {
+                const option = document.createElement('option');
+                option.value = perguntaKey; // Keep the letter as the value for file path construction
+                option.textContent = perguntaTitulos[perguntaKey]; // Display only the full title
+                perguntaSelect.appendChild(option);
+            });
+
+            // Populate Local de Trabalho dropdown
+            todosLocais.forEach(local => { // This loop populates the 'localSelect' dropdown
+                const option = document.createElement('option');
+                option.value = local;
+                option.textContent = local;
+                localSelect.appendChild(option);
+            });
+
+            function updateChart() {
+                const selectedPergunta = perguntaSelect.value;
+                const selectedLocal = localSelect.value;
+
+                chartPlaceholderText.style.display = 'none'; // Hide placeholder text
+                chartImage.style.display = 'block'; // Ensure image is visible
+
+                let imagePath = "";
+                if (selectedLocal === "Rede") { // Check if "Rede" is selected
+                    imagePath = `Gráficos/grafico_pergunta_${selectedPergunta}_contagem_global.png`;
+                } else {
+                    imagePath = `Gráficos/Por_Local/grafico_pergunta_${selectedPergunta}_local_${selectedLocal}.png`;
+                }
+                
+                chartImage.src = imagePath;
+                chartImage.alt = `Gráfico para Eixo ${selectedPergunta} - Unidade ${selectedLocal}`;
+
+                chartImage.onerror = () => {
+                    chartImage.style.display = 'none'; // Hide broken image icon
+                    chartPlaceholderText.textContent = `Gráfico não encontrado para Pergunta ${selectedPergunta} - Local ${selectedLocal}. Verifique se o arquivo existe.`;
+                    chartPlaceholderText.style.display = 'block';
+                };
+            }
+
+            perguntaSelect.addEventListener('change', updateChart);
+            localSelect.addEventListener('change', updateChart);
+
+            // Initial state: hide image, show placeholder
+            chartImage.style.display = 'none'; // Hide the image initially
+            chartPlaceholderText.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
