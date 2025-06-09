@@ -36,6 +36,24 @@ label_mapping = {
  "Secretaria Municipal de Educação (órgão central)": "SME"
 }
 
+# Dicionário de cores fixas para cada local de trabalho (rótulos curtos)
+# Cores escolhidas para serem vivas e terem contraste razoável com texto branco.
+fixed_location_color_map = {
+    "SME": "#D32F2F",    # Vermelho Escuro (Material Design Red 700)
+    "DRE-BT": "#1976D2", # Azul Escuro (Material Design Blue 700)
+    "DRE-CL": "#388E3C", # Verde Escuro (Material Design Green 700)
+    "DRE-CS": "#F57C00", # Laranja Escuro (Material Design Orange 700)
+    "DRE-FB": "#7B1FA2", # Roxo (Material Design Purple 700)
+    "DRE-G": "#00796B",  # Teal Escuro (Material Design Teal 700)
+    "DRE-IP": "#E64A19", # Laranja Avermelhado Profundo (Material Design Deep Orange 700)
+    "DRE-IQ": "#5D4037", # Marrom Escuro (Material Design Brown 700)
+    "DRE-JT": "#C2185B", # Rosa Escuro (Material Design Pink 700)
+    "DRE-PE": "#0288D1", # Azul Claro Escuro (Material Design Light Blue 700)
+    "DRE-PJ": "#AFB42B", # Lima Escuro (Material Design Lime 700)
+    "DRE-SA": "#FFA000", # Âmbar Escuro (Material Design Amber 700)
+    "DRE-SM": "#616161", # Cinza Escuro (Material Design Grey 700)
+    "DRE-MP": "#455A64"  # Azul Acinzentado Escuro (Material Design Blue Grey 700)
+}
 
 # Coluna de Local de Trabalho (G) e colunas das perguntas (I a W)
 location_col_letter = 'G'
@@ -182,7 +200,7 @@ else:
                                        gridspec_kw={'width_ratios': width_ratios, 'wspace': 0.05})
 
         # Plot on ax1 (left part)
-        sns.barplot(ax=ax1, y=location_counts.index, x=location_counts.values, hue=location_counts.index, palette='viridis', orient='h', legend=False)
+        sns.barplot(ax=ax1, y=location_counts.index, x=location_counts.values, hue=location_counts.index, palette=fixed_location_color_map, orient='h', legend=False)
         ax1.set_xlim(0, xlim1_end)
         ax1.spines['right'].set_visible(False)
         ax1.grid(axis='x', linestyle='--', alpha=0.7)
@@ -190,7 +208,7 @@ else:
         ax1.tick_params(axis='y', labelsize=10) # Tamanho da fonte alterado para 10
 
         # Plot on ax2 (right part, for outliers)
-        sns.barplot(ax=ax2, y=location_counts.index, x=location_counts.values, hue=location_counts.index, palette='viridis', orient='h', legend=False)
+        sns.barplot(ax=ax2, y=location_counts.index, x=location_counts.values, hue=location_counts.index, palette=fixed_location_color_map, orient='h', legend=False)
         ax2.set_xlim(xlim2_start, location_counts.max() * 1.05) # Add padding to max
         ax2.spines['left'].set_visible(False)
         ax2.tick_params(axis='y', which='both', left=False, labelleft=False)
@@ -228,7 +246,7 @@ else:
             y=location_counts.index,
             x=location_counts.values,
             hue=location_counts.index, 
-            palette='viridis',
+            palette=fixed_location_color_map, # Usar cores fixas
             orient='h',
             legend=False) 
         plt.suptitle('Quantidade de Respostas por Local de Trabalho', fontsize=14) 
@@ -415,18 +433,8 @@ for col_letter_global_calc in question_col_letters:
     global_item_percentages_calc = (aggregated_global_item_counts_for_ref / total_global_respondents_calc) * 100 if total_global_respondents_calc > 0 else pd.Series(dtype=float)
     global_data_for_questions[question_title_global_calc] = {'percentages': global_item_percentages_calc, 'total_respondents': total_global_respondents_calc}
 
-# Generate a color palette for unique locations to be used in Section 4 charts
-# Sort unique_locations alphabetically to ensure consistent color assignment
-sorted_locations_for_palette = sorted(list(unique_locations))
-num_distinct_locations = len(sorted_locations_for_palette)
-
-# Use a vibrant palette. 'bright' or 'deep' are good choices.
-if num_distinct_locations <= 10: # 'bright' and 'deep' have 10 distinct colors by default
-    location_palette = sns.color_palette("bright", n_colors=num_distinct_locations)
-else:
-    # Fallback to 'husl' if more than 10 locations, which handles more categories well for vibrancy
-    location_palette = sns.color_palette("husl", n_colors=num_distinct_locations) 
-location_color_map = {loc: color for loc, color in zip(sorted_locations_for_palette, location_palette)}
+# Usar o mapa de cores fixas definido no início do script para os gráficos por local
+location_color_map = fixed_location_color_map
 
 for col_letter in question_col_letters: # Defined as 'I' to 'V'
     question_title = column_titles.get(ord(col_letter) - ord('A'), f"Pergunta {col_letter}")
@@ -499,14 +507,14 @@ for col_letter in question_col_letters: # Defined as 'I' to 'V'
 
         # Define colors
         color_local = location_color_map.get(location_label, 'grey') # Get unique color for the location
-        color_global_avg = plt.cm.viridis(0.3)
+        color_global_avg = 'silver' # Cor para a barra "Rede", para destacar as cores dos locais
 
         # Plot local bars (main - top bar for each item)
         bars_local = ax_local.barh(y_positions + bar_height_comparison/2 + gap_between_bars, local_percentages_values, 
                                    height=bar_height_main, color=color_local, label=location_label) # Changed color and label
         # Plot global comparison bars (comparison - bottom bar for each item)
         bars_global_avg = ax_local.barh(y_positions - bar_height_main/2 - gap_between_bars, global_percentages_values_for_plot, 
-                                        height=bar_height_comparison, color=color_global_avg, label='Rede') # Changed color and label
+                                        height=bar_height_comparison, color=color_global_avg, label='Rede')
 
         ax_local.set_yticks(y_positions)
         wrap_width_local = 85
