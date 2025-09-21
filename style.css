@@ -91,6 +91,15 @@ body.dark-theme {
     animation: fadeIn 1s ease-in-out;
 }
 
+.profile-sidebar {
+    order: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 body.dark-theme .card {
     background: var(--card-bg-dark);
     box-shadow: var(--shadow-dark);
@@ -106,8 +115,6 @@ body.dark-theme a {
 }
 
 #foto {
-    order: 1;
-    flex-shrink: 0;
     margin: 0;
     width: 200px;
     height: 200px;
@@ -119,6 +126,12 @@ body.dark-theme a {
 
 #foto:hover {
     transform: scale(1.1);
+}
+
+.contact-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
 }
 
 h1 {
@@ -159,6 +172,10 @@ body.light-theme h2 {
 
 body.dark-theme h2 {
     background-image: linear-gradient(180deg, #ffffff 0%, #008ac9 100%);
+}
+
+h2 i {
+    font-size: 0.9em;
 }
 
 p {
@@ -293,11 +310,10 @@ body.dark-theme .form-content textarea {
     color: var(--text-color-dark);
 }
 
-.form-content button[type="submit"] {
+.form-content button[type="submit"], .contact-button {
     display: block;
     width: 100%;
     padding: 12px;
-    margin-top: 20px;
     border: none;
     border-radius: 8px;
     background-color: var(--primary-color);
@@ -306,10 +322,16 @@ body.dark-theme .form-content textarea {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
 }
 
-.form-content button[type="submit"]:hover {
+.form-content button[type="submit"]:hover, .contact-button:hover {
     background-color: var(--primary-color-hover);
+}
+
+.form-content button[type="submit"] {
+    margin-top: 20px;
 }
 
 @keyframes slideIn {
@@ -322,11 +344,9 @@ body.dark-theme .form-content textarea {
         flex-direction: column;
     }
 
-    #foto {
+    .profile-sidebar {
         order: 0;
-        margin: 0 auto 20px;
-        width: 200px;
-        height: 200px;
+        margin-bottom: 20px;
     }
 
     h1 { font-size: 3rem; }

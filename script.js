@@ -68,14 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
             formName: 'Nome:',
             formEmail: 'E-mail:',
             formMessage: 'Mensagem:',
-            formSubmit: 'Enviar'
+            formSubmit: 'Enviar',
+            contactButton: 'Entrar em contato'
         },
         en: {
             formTitle: 'Contact',
             formName: 'Name:',
             formEmail: 'Email:',
             formMessage: 'Message:',
-            formSubmit: 'Send'
+            formSubmit: 'Send',
+            contactButton: 'Get in touch'
         }
     };
 
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const translations = formTranslations[lang];
         if (!translations) return;
 
-        document.querySelectorAll('#contact-form [data-lang-key]').forEach(el => {
+        document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
             if (translations[key]) {
                 el.textContent = translations[key];
