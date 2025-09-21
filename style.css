@@ -78,6 +78,8 @@ body.dark-theme {
 }
 
 .card {
+    display: flex;
+    gap: 30px;
     background: var(--card-bg-light);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -104,8 +106,9 @@ body.dark-theme a {
 }
 
 #foto {
-    float: right;
-    margin: 0 0 10px 10px;
+    order: 1;
+    flex-shrink: 0;
+    margin: 0;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -185,6 +188,12 @@ a:hover {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 5px;
 }
 
 #en-version {
@@ -309,15 +318,18 @@ body.dark-theme .form-content textarea {
 }
 
 @media (max-width: 768px) {
-    #foto {
-        float: none;
-        display: block;
-        margin: 10px auto 0;
-        width: 250px;
-        height: 250px;
+    .card {
+        flex-direction: column;
     }
 
-    h1 { font-size: 4rem; }
-    h2 { font-size: 2.8rem; }
+    #foto {
+        order: 0;
+        margin: 0 auto 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
     .card { padding: 20px; }
 }
