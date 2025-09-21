@@ -176,31 +176,6 @@ a:hover {
     text-decoration: none;
 }
 
-.links {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: inherit;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.links a:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-5px);
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -210,6 +185,118 @@ a:hover {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* --- Estilos do Formulário de Contato --- */
+#form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#form-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#form-overlay.visible #contact-form {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+#contact-form {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    transform: scale(0.95) translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body.light-theme #contact-form {
+    background: var(--card-bg-light);
+    box-shadow: var(--shadow-light);
+}
+
+body.dark-theme #contact-form {
+    background: var(--card-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+#close-form {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#close-form:hover {
+    opacity: 1;
+}
+
+.form-content label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-content input,
+.form-content textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color-light);
+    box-sizing: border-box;
+}
+
+body.dark-theme .form-content input,
+body.dark-theme .form-content textarea {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color-dark);
+}
+
+.form-content button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-content button[type="submit"]:hover {
+    background-color: var(--primary-color-hover);
 }
 
 @keyframes slideIn {
