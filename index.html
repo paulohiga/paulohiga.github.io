@@ -14,6 +14,43 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Paulo Higa",
+      "givenName": "Paulo",
+      "familyName": "Higa",
+      "birthDate": "1993-04-15",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Chiba, Japan"
+      },
+      "url": "https://higa.me/",
+      "image": "https://higa.me/img/foto-paulo-higa-2.jpg",
+      "jobTitle": "Analista de Políticas Públicas e Gestão Governamental",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Prefeitura de São Paulo"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Faculdade Cásper Líbero",
+          "sameAs": "https://casperlibero.edu.br/"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Fundação Getulio Vargas (FGV)",
+          "sameAs": "https://portal.fgv.br/"
+        }
+      ],
+      "description": "Paulo Higa é Analista de Políticas Públicas e Gestão Governamental, jornalista, maratonista e entusiasta de tecnologia.",
+      "sameAs": [
+        "https://tecnoblog.net/author/paulohiga/"
+      ]
+    }
+    </script>
 </head>
 <body class="light-theme">
 
@@ -43,7 +80,7 @@
                         <p>Além de sua carreira profissional, é apaixonado por cozinhar e correr. Gosta de experimentar vinhos de regiões diferentes e de vez em quando se aventura em variedades com nomes difíceis de pronunciar, como a Gewürztraminer e a Zweigelt, mas sua uva preferida continua sendo a Zinfandel. Entre seus 12.000 km de corridas, estão as maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a> (onde voltou para fazer os 63 km do <a href="https://www.strava.com/activities/14881030456">Desafio Cidade Maravilhosa</a>), <a href="https://www.strava.com/activities/9549924330">São Paulo</a>, <a href="https://www.strava.com/activities/10167569831">Nova York</a> e <a href="https://www.strava.com/activities/12921519708">Curitiba</a>, além de uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a> com 55 km de distância e 2.682 metros de ganho altimétrico. Também tem um curioso fascínio por números.</p>
                         <p>Ele não usa redes sociais, mas pode ser contatado por <a href="#" class="contact-link">e-mail</a>.</p>
                     </div>
-                    <div id="en-version" style="display: none;">
+                    <div id="en-version">
                         <p><strong>Paulo Higa</strong> was born in Chiba, Japan, on April 15, 1993. He has always been curious and interested in technology. He would dismantle watches to understand how they worked and participated in internet forums to exchange knowledge about hardware and operating systems. This passion evolved into a strong interest in writing, which led him to switch from a Computer Science course, started in 2011, to Journalism, graduating from Faculdade Cásper Líbero in 2017. Years later, seeking to improve his management skills, he completed an MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV) in 2022.</p>
                         <h2>Public</h2>
                         <p>Since 2024, he has been a public servant in the career of <span class="p-job-title title">Public Policy & Government Management Analyst</span> (APPGG) at the <span class="p-org org">São Paulo City Hall</span>. Assigned to the strategic planning unit of the <span class="p-organization-unit">Municipal Secretariat of Education</span>, he works with governance, data analysis, and people management. He worked on modeling the criteria for the new <a href="https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil">Prêmio de Desempenho Educacional</a>, which for the first time was paid with a focus on learning and reducing inequalities. The communication involved a <a href="https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/">new tool</a> that allowed the 80,000 education employees to simulate the amount to be received. He also collaborated with the 2025-2028 Strategic Planning in the creation of <a href="https://sme-upge.github.io/diagnostico/">data dashboards</a> and <a href="https://sme-upge.github.io/diagnostico/one-pages.pdf">communication materials</a> for the listening processes of the municipal network professionals.</p>
@@ -75,66 +112,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const formOverlay = document.getElementById('form-overlay');
-            const contactLinks = document.querySelectorAll('.contact-link');
-            const closeFormBtn = document.getElementById('close-form');
-
-            const formTranslations = {
-                pt: {
-                    formTitle: 'Contato',
-                    formName: 'Nome:',
-                    formEmail: 'E-mail:',
-                    formMessage: 'Mensagem:',
-                    formSubmit: 'Enviar'
-                },
-                en: {
-                    formTitle: 'Contact',
-                    formName: 'Name:',
-                    formEmail: 'Email:',
-                    formMessage: 'Message:',
-                    formSubmit: 'Send'
-                }
-            };
-
-            function updateFormLanguage(lang) {
-                const translations = formTranslations[lang];
-                if (!translations) return;
-
-                document.querySelectorAll('#contact-form [data-lang-key]').forEach(el => {
-                    const key = el.getAttribute('data-lang-key');
-                    if (translations[key]) {
-                        el.textContent = translations[key];
-                    }
-                });
-            }
-
-            contactLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
-                    updateFormLanguage(currentLang);
-                    formOverlay.classList.add('visible');
-                });
-            });
-
-            function closeForm() {
-                formOverlay.classList.remove('visible');
-            }
-
-            closeFormBtn.addEventListener('click', closeForm);
-
-            formOverlay.addEventListener('click', (e) => {
-                if (e.target === formOverlay) {
-                    closeForm();
-                }
-            });
-
-            // Hook into existing language switcher
-            document.getElementById('lang-pt').addEventListener('click', () => updateFormLanguage('pt'));
-            document.getElementById('lang-en').addEventListener('click', () => updateFormLanguage('en'));
-        });
-    </script>
 </body>
 </html>

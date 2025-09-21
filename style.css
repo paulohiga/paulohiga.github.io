@@ -187,6 +187,10 @@ a:hover {
     border: 0;
 }
 
+#en-version {
+    display: none;
+}
+
 /* --- Estilos do Formulário de Contato --- */
 #form-overlay {
     position: fixed;
@@ -313,7 +317,7 @@ body.dark-theme .form-content textarea {
         height: 250px;
     }
 
-    h1 { font-size: 4.5rem; }
+    h1 { font-size: 4rem; }
     h2 { font-size: 2.8rem; }
     .card { padding: 20px; }
 }

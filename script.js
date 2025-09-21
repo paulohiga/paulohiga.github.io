@@ -57,4 +57,62 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.lang = 'en-US';
         }
     }
+
+    const formOverlay = document.getElementById('form-overlay');
+    const contactLinks = document.querySelectorAll('.contact-link');
+    const closeFormBtn = document.getElementById('close-form');
+
+    const formTranslations = {
+        pt: {
+            formTitle: 'Contato',
+            formName: 'Nome:',
+            formEmail: 'E-mail:',
+            formMessage: 'Mensagem:',
+            formSubmit: 'Enviar'
+        },
+        en: {
+            formTitle: 'Contact',
+            formName: 'Name:',
+            formEmail: 'Email:',
+            formMessage: 'Message:',
+            formSubmit: 'Send'
+        }
+    };
+
+    function updateFormLanguage(lang) {
+        const translations = formTranslations[lang];
+        if (!translations) return;
+
+        document.querySelectorAll('#contact-form [data-lang-key]').forEach(el => {
+            const key = el.getAttribute('data-lang-key');
+            if (translations[key]) {
+                el.textContent = translations[key];
+            }
+        });
+    }
+
+    contactLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
+            updateFormLanguage(currentLang);
+            formOverlay.classList.add('visible');
+        });
+    });
+
+    function closeForm() {
+        formOverlay.classList.remove('visible');
+    }
+
+    closeFormBtn.addEventListener('click', closeForm);
+
+    formOverlay.addEventListener('click', (e) => {
+        if (e.target === formOverlay) {
+            closeForm();
+        }
+    });
+
+    // Hook into existing language switcher
+    langPt.addEventListener('click', () => updateFormLanguage('pt'));
+    langEn.addEventListener('click', () => updateFormLanguage('en'));
 });
