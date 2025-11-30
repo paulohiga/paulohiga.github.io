@@ -12,6 +12,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Modern Font Stack: Inter for UI/Text, Merriweather for Headings (Professional pairing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
@@ -54,51 +60,79 @@
 </head>
 <body class="light-theme">
 
-    <div class="toolbar">
+    <nav class="toolbar" aria-label="Opções de visualização">
         <div class="language-selector">
-            <button id="lang-pt">pt</button>
-            <button id="lang-en">en</button>
+            <button id="lang-pt" aria-label="Mudar para Português">PT</button>
+            <button id="lang-en" aria-label="Switch to English">EN</button>
         </div>
         <div class="theme-selector">
             <button id="theme-toggle" aria-label="Alternar tema claro/escuro"><i class="fas fa-sun"></i></button>
         </div>
-    </div>
+    </nav>
 
     <main class="container">
-        <section class="card">
-            <div class="profile-sidebar">
-                <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa">
-                <button type="button" class="contact-button contact-link" data-lang-key="contactButton">Entrar em contato</button>
-            </div>
-            <article class="content">
+        <div class="profile-grid">
+            <!-- Sidebar / Identity -->
+            <aside class="profile-sidebar">
+                <div class="profile-image-wrapper">
+                    <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa" width="200" height="200">
+                </div>
                 <h1 class="p-name fn">Paulo Higa</h1>
+                <div class="profile-actions">
+                    <button type="button" class="contact-button contact-link" data-lang-key="contactButton">Entrar em contato</button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <article class="content-area">
                 <div class="h-card vcard">
-                    <div id="pt-version">
-                        <p><strong>Paulo Higa</strong> nasceu em Chiba, Japão, em 15 de abril de 1993. Sempre foi curioso e interessado em tecnologia. Ele desmontava relógios para entender como funcionavam e participava de fóruns na internet para trocar conhecimentos sobre hardware e sistemas operacionais. Essa paixão evoluiu para um forte interesse pela escrita, o que o levou a trocar o curso de Ciência da Computação, iniciado em 2011, pelo Jornalismo, graduando-se pela Faculdade Cásper Líbero em 2017. Anos depois, buscando aprimorar suas competências em gestão, concluiu em 2022 um MBA em Gestão com Ênfase em Liderança e Inovação na Fundação Getulio Vargas (FGV).</p>
-                        <h2><i class="fas fa-landmark-flag"></i> Público</h2>
-                        <p>Desde 2024, é servidor público da carreira de <span class="p-job-title title">Analista de Políticas Públicas e Gestão Governamental</span> (APPGG) na <span class="p-org org">Prefeitura de São Paulo</span>. Alocado na unidade de planejamento estratégico da <span class="p-organization-unit">Secretaria Municipal de Educação</span>, atua com governança, análise de dados e gestão de pessoas. Trabalhou na modelagem de critérios do novo <a href="https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil">Prêmio de Desempenho Educacional</a>, que pela primeira vez foi pago com foco em aprendizagem e redução das desigualdades. A comunicação envolveu uma <a href="https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/">ferramenta inédita</a> que permitiu aos 80 mil servidores da educação simularem o valor a ser recebido. Também colaborou com o Planejamento Estratégico 2025-2028 na criação de <a href="https://sme-upge.github.io/diagnostico/">painéis de dados</a> e <a href="https://sme-upge.github.io/diagnostico/one-pages.pdf">materiais de comunicação</a> para os processos de escuta dos profissionais da rede municipal.</p>
-                        <h2><i class="fas fa-newspaper"></i> Privado</h2>
-                        <p>No setor privado, sua carreira teve início em 2012, como editor no <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. Em 2018, tornou-se editor-executivo e sócio do veículo, liderando uma equipe de mais de 30 pessoas e ajudando a transformá-lo no maior site de tecnologia independente do Brasil, com mais de 30 milhões de acessos mensais. Até 2023, atuou como <span class="p-job-title title">head de operações</span> no <span class="p-org org">Tecnoblog</span> e coapresentador do <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de tecnologia, inovação e negócios no Brasil. Durante o período, visitou dezenas de países cobrindo as principais feiras de tecnologia e eventos de fabricantes de eletrônicos, analisou centenas de gadgets e publicou milhares de artigos. Também trabalhou como redator na <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> e como colunista de tecnologia na <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. Foi vencedor do <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> na categoria Eletroeletrônico em três anos consecutivos (2020, 2021 e 2022) e finalista do <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> na categoria Tecnologia em 2019 e 2021.</p>
-                        <h2><i class="fas fa-person-running"></i> Pessoal</h2>
-                        <p>Além de sua carreira profissional, é apaixonado por cozinhar e correr. Gosta de experimentar vinhos de regiões diferentes e de vez em quando se aventura em variedades com nomes difíceis de pronunciar, como a Gewürztraminer e a Zweigelt, mas sua uva preferida continua sendo a Zinfandel. Entre seus 12.000 km de corridas, estão as maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a> (onde voltou para fazer os 63 km do <a href="https://www.strava.com/activities/14881030456">Desafio Cidade Maravilhosa</a>), <a href="https://www.strava.com/activities/9549924330">São Paulo</a>, <a href="https://www.strava.com/activities/10167569831">Nova York</a> e <a href="https://www.strava.com/activities/12921519708">Curitiba</a>, além de uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a> com 55 km de distância e 2.682 metros de ganho altimétrico. Também tem um curioso fascínio por números.</p>
-                        <p>Ele não usa redes sociais, mas pode ser contatado por <a href="#" class="contact-link">e-mail<span class="visually-hidden"> (abre formulário de contato para Paulo Higa)</span></a>.</p>
+                    <!-- Portuguese Content -->
+                    <div id="pt-version" class="fade-in">
+                        <p class="intro-text"><strong>Paulo Higa</strong> nasceu em Chiba, Japão, em 15 de abril de 1993. Sempre foi curioso e interessado em tecnologia. Ele desmontava relógios para entender como funcionavam e participava de fóruns na internet para trocar conhecimentos sobre hardware e sistemas operacionais. Essa paixão evoluiu para um forte interesse pela escrita, o que o levou a trocar o curso de Ciência da Computação, iniciado em 2011, pelo Jornalismo, graduando-se pela Faculdade Cásper Líbero em 2017. Anos depois, buscando aprimorar suas competências em gestão, concluiu em 2022 um MBA em Gestão com Ênfase em Liderança e Inovação na Fundação Getulio Vargas (FGV).</p>
+                        
+                        <section>
+                            <h2><i class="fas fa-landmark-flag"></i> Público</h2>
+                            <p>Desde 2024, é servidor público da carreira de <span class="p-job-title title">Analista de Políticas Públicas e Gestão Governamental</span> (APPGG) na <span class="p-org org">Prefeitura de São Paulo</span>. Alocado na unidade de planejamento estratégico da <span class="p-organization-unit">Secretaria Municipal de Educação</span>, atua com governança, análise de dados e gestão de pessoas. Trabalhou na modelagem de critérios do novo <a href="https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil">Prêmio de Desempenho Educacional</a>, que pela primeira vez foi pago com foco em aprendizagem e redução das desigualdades. A comunicação envolveu uma <a href="https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/">ferramenta inédita</a> que permitiu aos 80 mil servidores da educação simularem o valor a ser recebido. Também colaborou com o Planejamento Estratégico 2025-2028 na criação de <a href="https://sme-upge.github.io/diagnostico/">painéis de dados</a> e <a href="https://sme-upge.github.io/diagnostico/one-pages.pdf">materiais de comunicação</a> para os processos de escuta dos profissionais da rede municipal.</p>
+                        </section>
+
+                        <section>
+                            <h2><i class="fas fa-newspaper"></i> Privado</h2>
+                            <p>No setor privado, sua carreira teve início em 2012, como editor no <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. Em 2018, tornou-se editor-executivo e sócio do veículo, liderando uma equipe de mais de 30 pessoas e ajudando a transformá-lo no maior site de tecnologia independente do Brasil, com mais de 30 milhões de acessos mensais. Até 2023, atuou como <span class="p-job-title title">head de operações</span> no <span class="p-org org">Tecnoblog</span> e coapresentador do <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de tecnologia, inovação e negócios no Brasil. Durante o período, visitou dezenas de países cobrindo as principais feiras de tecnologia e eventos de fabricantes de eletrônicos, analisou centenas de gadgets e publicou milhares de artigos. Também trabalhou como redator na <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> e como colunista de tecnologia na <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. Foi vencedor do <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> na categoria Eletroeletrônico em três anos consecutivos (2020, 2021 e 2022) e finalista do <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> na categoria Tecnologia em 2019 e 2021.</p>
+                        </section>
+
+                        <section>
+                            <h2><i class="fas fa-person-running"></i> Pessoal</h2>
+                            <p>Além de sua carreira profissional, é apaixonado por cozinhar e correr. Gosta de experimentar vinhos de regiões diferentes e de vez em quando se aventura em variedades com nomes difíceis de pronunciar, como a Gewürztraminer e a Zweigelt, mas sua uva preferida continua sendo a Zinfandel. Entre seus 12.000 km de corridas, estão as maratonas de <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a> (onde voltou para fazer os 63 km do <a href="https://www.strava.com/activities/14881030456">Desafio Cidade Maravilhosa</a>), <a href="https://www.strava.com/activities/9549924330">São Paulo</a>, <a href="https://www.strava.com/activities/10167569831">Nova York</a> e <a href="https://www.strava.com/activities/12921519708">Curitiba</a>, além de uma <a href="https://www.strava.com/activities/9907987928">ultramaratona de montanha</a> com 55 km de distância e 2.682 metros de ganho altimétrico. Também tem um curioso fascínio por números.</p>
+                            <p class="contact-hint">Ele não usa redes sociais, mas pode ser contatado por <a href="#" class="contact-link">e-mail<span class="visually-hidden"> (abre formulário de contato para Paulo Higa)</span></a>.</p>
+                        </section>
                     </div>
-                    <div id="en-version">
-                        <p><strong>Paulo Higa</strong> was born in Chiba, Japan, on April 15, 1993. He has always been curious and interested in technology. He would dismantle watches to understand how they worked and participated in internet forums to exchange knowledge about hardware and operating systems. This passion evolved into a strong interest in writing, which led him to switch from a Computer Science course, started in 2011, to Journalism, graduating from Faculdade Cásper Líbero in 2017. Years later, seeking to improve his management skills, he completed an MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV) in 2022.</p>
-                        <h2><i class="fas fa-landmark-flag"></i> Public</h2>
-                        <p>Since 2024, he has been a public servant in the career of <span class="p-job-title title">Public Policy & Government Management Analyst</span> (APPGG) at the <span class="p-org org">São Paulo City Hall</span>. Assigned to the strategic planning unit of the <span class="p-organization-unit">Municipal Secretariat of Education</span>, he works with governance, data analysis, and people management. He worked on modeling the criteria for the new <a href="https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil">Prêmio de Desempenho Educacional</a>, which for the first time was paid with a focus on learning and reducing inequalities. The communication involved a <a href="https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/">new tool</a> that allowed the 80,000 education employees to simulate the amount to be received. He also collaborated with the 2025-2028 Strategic Planning in the creation of <a href="https://sme-upge.github.io/diagnostico/">data dashboards</a> and <a href="https://sme-upge.github.io/diagnostico/one-pages.pdf">communication materials</a> for the listening processes of the municipal network professionals.</p>
-                        <h2><i class="fas fa-newspaper"></i> Private</h2>
-                        <p>In the private sector, his career began in 2012, as an editor at <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. In 2018, he became executive editor and partner of the media outlet, leading a team of more than 30 people and helping to transform it into the largest independent technology site in Brazil, with more than 30 million monthly accesses. Until 2023, he served as <span class="p-job-title title">head of operations</span> at <span class="p-org org">Tecnoblog</span> and co-host of <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, the leading podcast in the technology, innovation, and business segment in Brazil. During the period, he visited dozens of countries covering the main technology fairs and events of electronics manufacturers, analyzed hundreds of gadgets, and published thousands of articles. He also worked as a writer at <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> and as a technology columnist at <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. He was the winner of the <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> in the Electro-electronic category for three consecutive years (2020, 2021, and 2022) and a finalist for the <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> in the Technology category in 2019 and 2021.</p>
-                        <h2><i class="fas fa-person-running"></i> Personal</h2>
-                        <p>Besides his professional career, he is passionate about cooking and running. He enjoys trying wines from different regions and occasionally ventures into varieties with hard-to-pronounce names, such as Gewürztraminer and Zweigelt, but his favorite grape remains Zinfandel. Among his 12,000 km of runs are the marathons of <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a> (where he returned to do the 63 km of the <a href="https://www.strava.com/activities/14881030456">Desafio Cidade Maravilhosa</a>), <a href="https://www.strava.com/activities/9549924330">São Paulo</a>, <a href="https://www.strava.com/activities/10167569831">New York</a>, and <a href="https://www.strava.com/activities/12921519708">Curitiba</a>, as well as a <a href="https://www.strava.com/activities/9907987928">mountain ultramarathon</a> with a distance of 55 km and an altimetric gain of 2,682 meters. He also has a curious fascination for numbers.</p>
-                        <p>He does not use social media, but can be contacted by <a href="#" class="contact-link">e-mail<span class="visually-hidden"> (opens contact form for Paulo Higa)</span></a>.</p>
+
+                    <!-- English Content -->
+                    <div id="en-version" class="fade-in" style="display: none;">
+                        <p class="intro-text"><strong>Paulo Higa</strong> was born in Chiba, Japan, on April 15, 1993. He has always been curious and interested in technology. He would dismantle watches to understand how they worked and participated in internet forums to exchange knowledge about hardware and operating systems. This passion evolved into a strong interest in writing, which led him to switch from a Computer Science course, started in 2011, to Journalism, graduating from Faculdade Cásper Líbero in 2017. Years later, seeking to improve his management skills, he completed an MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV) in 2022.</p>
+                        
+                        <section>
+                            <h2><i class="fas fa-landmark-flag"></i> Public</h2>
+                            <p>Since 2024, he has been a public servant in the career of <span class="p-job-title title">Public Policy & Government Management Analyst</span> (APPGG) at the <span class="p-org org">São Paulo City Hall</span>. Assigned to the strategic planning unit of the <span class="p-organization-unit">Municipal Secretariat of Education</span>, he works with governance, data analysis, and people management. He worked on modeling the criteria for the new <a href="https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil">Prêmio de Desempenho Educacional</a>, which for the first time was paid with a focus on learning and reducing inequalities. The communication involved a <a href="https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/">new tool</a> that allowed the 80,000 education employees to simulate the amount to be received. He also collaborated with the 2025-2028 Strategic Planning in the creation of <a href="https://sme-upge.github.io/diagnostico/">data dashboards</a> and <a href="https://sme-upge.github.io/diagnostico/one-pages.pdf">communication materials</a> for the listening processes of the municipal network professionals.</p>
+                        </section>
+
+                        <section>
+                            <h2><i class="fas fa-newspaper"></i> Private</h2>
+                            <p>In the private sector, his career began in 2012, as an editor at <a href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. In 2018, he became executive editor and partner of the media outlet, leading a team of more than 30 people and helping to transform it into the largest independent technology site in Brazil, with more than 30 million monthly accesses. Until 2023, he served as <span class="p-job-title title">head of operations</span> at <span class="p-org org">Tecnoblog</span> and co-host of <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, the leading podcast in the technology, innovation, and business segment in Brazil. During the period, he visited dozens of countries covering the main technology fairs and events of electronics manufacturers, analyzed hundreds of gadgets, and published thousands of articles. He also worked as a writer at <a href="https://www.techtudo.com.br/colaborador/paulo-higa.html">Globo.com</a> and as a technology columnist at <a href="https://radioglobo.globo.com/quadros/quadro/304/clube-do-cafe.htm">Rádio Globo</a>. He was the winner of the <a href="https://portaldacomunicacao.com.br/premios/premio-especialistas/">Prêmio Especialistas da Revista Negócios da Comunicação</a> in the Electro-electronic category for three consecutive years (2020, 2021, and 2022) and a finalist for the <a href="https://premio.comunique-se.com.br/">Prêmio Comunique-se</a> in the Technology category in 2019 and 2021.</p>
+                        </section>
+
+                        <section>
+                            <h2><i class="fas fa-person-running"></i> Personal</h2>
+                            <p>Besides his professional career, he is passionate about cooking and running. He enjoys trying wines from different regions and occasionally ventures into varieties with hard-to-pronounce names, such as Gewürztraminer and Zweigelt, but his favorite grape remains Zinfandel. Among his 12,000 km of runs are the marathons of <a href="https://www.strava.com/activities/6092532552">Brasília</a>, <a href="https://www.strava.com/activities/7334316763">Rio de Janeiro</a> (where he returned to do the 63 km of the <a href="https://www.strava.com/activities/14881030456">Desafio Cidade Maravilhosa</a>), <a href="https://www.strava.com/activities/9549924330">São Paulo</a>, <a href="https://www.strava.com/activities/10167569831">New York</a>, and <a href="https://www.strava.com/activities/12921519708">Curitiba</a>, as well as a <a href="https://www.strava.com/activities/9907987928">mountain ultramarathon</a> with a distance of 55 km and an altimetric gain of 2,682 meters. He also has a curious fascination for numbers.</p>
+                            <p class="contact-hint">He does not use social media, but can be contacted by <a href="#" class="contact-link">e-mail<span class="visually-hidden"> (opens contact form for Paulo Higa)</span></a>.</p>
+                        </section>
                     </div>
                 </div>
             </article>
-        </section>
+        </div>
     </main>
 
-    <div id="form-overlay">
+    <div id="form-overlay" aria-hidden="true">
         <form id="contact-form" action="https://formspree.io/f/xdklqqqg" method="POST">
             <button type="button" id="close-form" aria-label="Close form">&times;</button>
             <div class="form-content">
