@@ -166,6 +166,9 @@ body.dark-theme h1 {
 
 .profile-actions {
     margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .contact-button {
@@ -181,15 +184,35 @@ body.dark-theme h1 {
     transition: background-color 0.2s, transform 0.1s;
     width: 100%;
     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .contact-button:hover {
     background-color: var(--color-primary-hover);
     transform: translateY(-1px);
+    border-bottom-color: transparent; /* Override default link hover */
+}
+
+.linkedin-button {
+    background-color: #0077b5; /* LinkedIn Blue */
+    color: white !important; /* Force white text */
+    box-shadow: 0 2px 4px rgba(0, 119, 181, 0.2);
+}
+
+.linkedin-button:hover {
+    background-color: #006097;
 }
 
 body.dark-theme .contact-button {
     background-color: var(--color-primary); /* Keep blue or adjust */
+}
+
+body.dark-theme .linkedin-button {
+    background-color: #0077b5;
 }
 
 /* --- Main Content --- */
