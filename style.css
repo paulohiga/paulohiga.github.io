@@ -164,6 +164,38 @@ body.dark-theme h1 {
     color: var(--color-text-main-dark);
 }
 
+.profile-details {
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.profile-detail {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-text-muted-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+body.dark-theme .profile-detail {
+    color: var(--color-text-muted-dark);
+}
+
+.profile-detail i {
+    font-size: 0.85rem;
+    color: var(--color-text-muted-light);
+    opacity: 0.8;
+}
+
+body.dark-theme .profile-detail i {
+    color: var(--color-text-muted-dark);
+}
+
 .profile-actions {
     margin-top: 1.5rem;
     display: flex;

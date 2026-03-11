@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formEmail: 'E-mail:',
             formMessage: 'Mensagem:',
             formSubmit: 'Enviar',
-            contactButton: 'Entrar em contato'
+            contactButton: 'Entrar em contato',
+            profession: 'Gestor Público'
         },
         en: {
             formTitle: 'Contact',
@@ -77,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formEmail: 'Email:',
             formMessage: 'Message:',
             formSubmit: 'Send',
-            contactButton: 'Get in touch'
+            contactButton: 'Get in touch',
+            profession: 'Public Manager'
         }
     };
 
