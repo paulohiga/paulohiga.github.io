@@ -120,8 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     langPt.addEventListener('click', () => updateFormLanguage('pt'));
     langEn.addEventListener('click', () => updateFormLanguage('en'));
 
-    // --- Analysis ChatGPT Animation ---
+    // --- Analysis Modal (easter egg: click "Paulo Higa" in the intro) ---
+    const analysisModal = document.getElementById('analysis-modal');
+    const analysisModalInner = analysisModal.querySelector('.analysis-modal-inner');
+    const closeAnalysisBtn = document.getElementById('close-analysis');
     const analysisAnimated = { pt: false, en: false };
+    let analysisLastFocused = null;
 
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -131,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const processingEl = document.getElementById(`ai-processing-${lang}`);
         const typingEl = document.getElementById(`ai-typing-${lang}`);
-        const chunks = document.querySelectorAll(`#analysis-content-${lang} .analysis-chunk`);
+        const chunks = document.querySelectorAll(`#analysis-modal-${lang} .analysis-chunk`);
 
         if (prefersReduced) {
             chunks.forEach(chunk => {
@@ -150,40 +154,79 @@ document.addEventListener('DOMContentLoaded', () => {
         typingEl.hidden = false;
         await delay(300);
 
-        // Phase 3: Reveal chunks sequentially
+        // Phase 3: Reveal chunks sequentially — slow start, then accelerate
         for (let i = 0; i < chunks.length; i++) {
-            const chunk = chunks[i];
-            chunk.classList.add('visible');
-            chunk.removeAttribute('aria-hidden');
-            // Slow start, then accelerate — mimics real LLM streaming
-            const ms = i < 3 ? 380 : 130;
-            await delay(ms);
+            chunks[i].classList.add('visible');
+            chunks[i].removeAttribute('aria-hidden');
+            await delay(i < 3 ? 380 : 130);
         }
 
         typingEl.hidden = true;
     }
 
-    document.querySelectorAll('.analysis-toggle').forEach(btn => {
-        btn.addEventListener('click', async function () {
-            const lang = this.id === 'analysis-toggle-pt' ? 'pt' : 'en';
-            const contentEl = document.getElementById(`analysis-content-${lang}`);
-            const expanded = this.getAttribute('aria-expanded') === 'true';
+    function openAnalysisModal() {
+        const lang = langPt.classList.contains('active') ? 'pt' : 'en';
 
-            if (!expanded) {
-                contentEl.hidden = false;
-                this.setAttribute('aria-expanded', 'true');
-                const closeText = lang === 'pt' ? 'Fechar análise' : 'Close analysis';
-                this.innerHTML = `<i class="fas fa-robot" aria-hidden="true"></i> ${closeText}`;
-                if (!analysisAnimated[lang]) {
-                    analysisAnimated[lang] = true;
-                    await runAnalysisAnimation(lang);
-                }
-            } else {
-                contentEl.hidden = true;
-                this.setAttribute('aria-expanded', 'false');
-                const openText = lang === 'pt' ? 'Ver análise completa' : 'Read full analysis';
-                this.innerHTML = `<i class="fas fa-robot" aria-hidden="true"></i> ${openText}`;
-            }
+        // Show correct language pane
+        document.getElementById('analysis-modal-pt').hidden = lang !== 'pt';
+        document.getElementById('analysis-modal-en').hidden = lang !== 'en';
+        document.getElementById('analysis-modal-title-pt').hidden = lang !== 'pt';
+        document.getElementById('analysis-modal-title-en').hidden = lang !== 'en';
+        analysisModalInner.setAttribute('aria-labelledby', `analysis-modal-title-${lang}`);
+
+        analysisLastFocused = document.activeElement;
+        analysisModal.setAttribute('aria-hidden', 'false');
+        analysisModal.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+        closeAnalysisBtn.focus();
+
+        if (!analysisAnimated[lang]) {
+            analysisAnimated[lang] = true;
+            runAnalysisAnimation(lang);
+        }
+    }
+
+    function closeAnalysisModal() {
+        analysisModal.classList.remove('visible');
+        analysisModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (analysisLastFocused) analysisLastFocused.focus();
+    }
+
+    // Easter egg: clicking "Paulo Higa" link opens modal instead of PDF
+    document.querySelectorAll('.analysis-modal-link').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            openAnalysisModal();
         });
+    });
+
+    closeAnalysisBtn.addEventListener('click', closeAnalysisModal);
+
+    analysisModal.addEventListener('click', e => {
+        if (e.target === analysisModal) closeAnalysisModal();
+    });
+
+    // Focus trap inside modal
+    analysisModalInner.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const focusable = analysisModalInner.querySelectorAll(
+            'button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && analysisModal.classList.contains('visible')) {
+            closeAnalysisModal();
+        }
     });
 });
