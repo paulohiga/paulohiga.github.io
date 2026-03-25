@@ -119,4 +119,68 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hook into existing language switcher
     langPt.addEventListener('click', () => updateFormLanguage('pt'));
     langEn.addEventListener('click', () => updateFormLanguage('en'));
+
+    // --- Analysis Modal (easter egg: click "Paulo Higa" in the intro) ---
+    const analysisModal = document.getElementById('analysis-modal');
+    const analysisModalInner = analysisModal.querySelector('.analysis-modal-inner');
+    const closeAnalysisBtn = document.getElementById('close-analysis');
+    let analysisLastFocused = null;
+
+    function openAnalysisModal() {
+        const lang = langPt.classList.contains('active') ? 'pt' : 'en';
+
+        // Show correct language pane
+        document.getElementById('analysis-modal-pt').hidden = lang !== 'pt';
+        document.getElementById('analysis-modal-en').hidden = lang !== 'en';
+
+        analysisLastFocused = document.activeElement;
+        analysisModal.setAttribute('aria-hidden', 'false');
+        analysisModal.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+        closeAnalysisBtn.focus();
+    }
+
+    function closeAnalysisModal() {
+        analysisModal.classList.remove('visible');
+        analysisModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (analysisLastFocused) analysisLastFocused.focus();
+    }
+
+    // Easter egg: clicking "Paulo Higa" link opens modal instead of PDF
+    document.querySelectorAll('.analysis-modal-link').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            openAnalysisModal();
+        });
+    });
+
+    closeAnalysisBtn.addEventListener('click', closeAnalysisModal);
+
+    analysisModal.addEventListener('click', e => {
+        if (e.target === analysisModal) closeAnalysisModal();
+    });
+
+    // Focus trap inside modal
+    analysisModalInner.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const focusable = analysisModalInner.querySelectorAll(
+            'button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && analysisModal.classList.contains('visible')) {
+            closeAnalysisModal();
+        }
+    });
 });
