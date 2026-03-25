@@ -541,6 +541,10 @@ body.dark-theme .analysis-modal-header {
     gap: 0.5rem;
 }
 
+.analysis-modal-title[hidden] {
+    display: none;
+}
+
 body.dark-theme .analysis-modal-title {
     color: var(--color-text-main-dark);
 }
