@@ -119,4 +119,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hook into existing language switcher
     langPt.addEventListener('click', () => updateFormLanguage('pt'));
     langEn.addEventListener('click', () => updateFormLanguage('en'));
+
+    // --- Analysis ChatGPT Animation ---
+    const analysisAnimated = { pt: false, en: false };
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function runAnalysisAnimation(lang) {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const processingEl = document.getElementById(`ai-processing-${lang}`);
+        const typingEl = document.getElementById(`ai-typing-${lang}`);
+        const chunks = document.querySelectorAll(`#analysis-content-${lang} .analysis-chunk`);
+
+        if (prefersReduced) {
+            chunks.forEach(chunk => {
+                chunk.classList.add('visible');
+                chunk.removeAttribute('aria-hidden');
+            });
+            return;
+        }
+
+        // Phase 1: Processing indicator
+        processingEl.hidden = false;
+        await delay(1600);
+
+        // Phase 2: Typing indicator
+        processingEl.hidden = true;
+        typingEl.hidden = false;
+        await delay(300);
+
+        // Phase 3: Reveal chunks sequentially
+        for (let i = 0; i < chunks.length; i++) {
+            const chunk = chunks[i];
+            chunk.classList.add('visible');
+            chunk.removeAttribute('aria-hidden');
+            // Slow start, then accelerate — mimics real LLM streaming
+            const ms = i < 3 ? 380 : 130;
+            await delay(ms);
+        }
+
+        typingEl.hidden = true;
+    }
+
+    document.querySelectorAll('.analysis-toggle').forEach(btn => {
+        btn.addEventListener('click', async function () {
+            const lang = this.id === 'analysis-toggle-pt' ? 'pt' : 'en';
+            const contentEl = document.getElementById(`analysis-content-${lang}`);
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+
+            if (!expanded) {
+                contentEl.hidden = false;
+                this.setAttribute('aria-expanded', 'true');
+                const closeText = lang === 'pt' ? 'Fechar análise' : 'Close analysis';
+                this.innerHTML = `<i class="fas fa-robot" aria-hidden="true"></i> ${closeText}`;
+                if (!analysisAnimated[lang]) {
+                    analysisAnimated[lang] = true;
+                    await runAnalysisAnimation(lang);
+                }
+            } else {
+                contentEl.hidden = true;
+                this.setAttribute('aria-expanded', 'false');
+                const openText = lang === 'pt' ? 'Ver análise completa' : 'Read full analysis';
+                this.innerHTML = `<i class="fas fa-robot" aria-hidden="true"></i> ${openText}`;
+            }
+        });
+    });
 });
