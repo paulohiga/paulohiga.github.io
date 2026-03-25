@@ -124,45 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const analysisModal = document.getElementById('analysis-modal');
     const analysisModalInner = analysisModal.querySelector('.analysis-modal-inner');
     const closeAnalysisBtn = document.getElementById('close-analysis');
-    const analysisAnimated = { pt: false, en: false };
     let analysisLastFocused = null;
-
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async function runAnalysisAnimation(lang) {
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const processingEl = document.getElementById(`ai-processing-${lang}`);
-        const typingEl = document.getElementById(`ai-typing-${lang}`);
-        const chunks = document.querySelectorAll(`#analysis-modal-${lang} .analysis-chunk`);
-
-        if (prefersReduced) {
-            chunks.forEach(chunk => {
-                chunk.classList.add('visible');
-                chunk.removeAttribute('aria-hidden');
-            });
-            return;
-        }
-
-        // Phase 1: Processing indicator
-        processingEl.hidden = false;
-        await delay(1600);
-
-        // Phase 2: Typing indicator
-        processingEl.hidden = true;
-        typingEl.hidden = false;
-        await delay(300);
-
-        // Phase 3: Reveal chunks sequentially — slow start, then accelerate
-        for (let i = 0; i < chunks.length; i++) {
-            chunks[i].classList.add('visible');
-            chunks[i].removeAttribute('aria-hidden');
-            await delay(i < 3 ? 380 : 130);
-        }
-
-        typingEl.hidden = true;
-    }
 
     function openAnalysisModal() {
         const lang = langPt.classList.contains('active') ? 'pt' : 'en';
@@ -170,20 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show correct language pane
         document.getElementById('analysis-modal-pt').hidden = lang !== 'pt';
         document.getElementById('analysis-modal-en').hidden = lang !== 'en';
-        document.getElementById('analysis-modal-title-pt').hidden = lang !== 'pt';
-        document.getElementById('analysis-modal-title-en').hidden = lang !== 'en';
-        analysisModalInner.setAttribute('aria-labelledby', `analysis-modal-title-${lang}`);
 
         analysisLastFocused = document.activeElement;
         analysisModal.setAttribute('aria-hidden', 'false');
         analysisModal.classList.add('visible');
         document.body.style.overflow = 'hidden';
         closeAnalysisBtn.focus();
-
-        if (!analysisAnimated[lang]) {
-            analysisAnimated[lang] = true;
-            runAnalysisAnimation(lang);
-        }
     }
 
     function closeAnalysisModal() {

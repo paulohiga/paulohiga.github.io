@@ -485,6 +485,7 @@ body.dark-theme .form-content textarea {
 }
 
 .analysis-modal-inner {
+    position: relative;
     background: var(--card-bg-light);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -510,117 +511,35 @@ body.dark-theme .analysis-modal-inner {
     opacity: 1;
 }
 
-.analysis-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 1.75rem 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    background: var(--card-bg-light);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 1.5rem 1.5rem 0 0;
-    z-index: 1;
-}
-
-body.dark-theme .analysis-modal-header {
-    background: var(--card-bg-dark);
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-}
-
-.analysis-modal-title {
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--color-text-main-light);
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.analysis-modal-title[hidden] {
-    display: none;
-}
-
-body.dark-theme .analysis-modal-title {
-    color: var(--color-text-main-dark);
-}
-
-.analysis-modal-title i {
-    color: var(--color-primary);
-    font-size: 0.95rem;
-}
-
 #close-analysis {
-    background: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background-color: var(--color-primary);
+    color: white;
     border: none;
-    font-size: 1.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
     line-height: 1;
     cursor: pointer;
-    color: var(--color-text-muted-light);
-    padding: 0.25rem 0.4rem;
-    border-radius: 0.375rem;
-    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
     flex-shrink: 0;
 }
 
 #close-analysis:hover {
-    color: var(--color-text-main-light);
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-body.dark-theme #close-analysis {
-    color: var(--color-text-muted-dark);
-}
-
-body.dark-theme #close-analysis:hover {
-    color: var(--color-text-main-dark);
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--color-primary-hover);
+    transform: scale(1.1);
 }
 
 .analysis-modal-body {
-    padding: 1.5rem 1.75rem 2rem;
-}
-
-/* AI Status Indicators */
-.ai-processing,
-.ai-typing {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.25rem;
-    color: var(--color-text-muted-light);
-    font-size: 0.95rem;
-}
-
-body.dark-theme .ai-processing,
-body.dark-theme .ai-typing {
-    color: var(--color-text-muted-dark);
-}
-
-.ai-status-text {
-    font-style: italic;
-}
-
-.ai-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-    animation: typingDot 1.4s infinite;
-    flex-shrink: 0;
-}
-
-.ai-dot:nth-child(3) { animation-delay: 0.2s; }
-.ai-dot:nth-child(4) { animation-delay: 0.4s; }
-
-@keyframes typingDot {
-    0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
-    40% { opacity: 1; transform: scale(1); }
+    padding: 2rem 1.75rem 2rem;
 }
 
 /* AI Disclaimer */
@@ -655,18 +574,6 @@ body.dark-theme .ai-disclaimer {
 
 body.dark-theme .ai-disclaimer p {
     color: var(--color-text-muted-dark);
-}
-
-/* Analysis Content Chunks */
-.analysis-chunk {
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.analysis-chunk.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Analysis Sub-headings */
@@ -845,11 +752,6 @@ body.dark-theme .references-note {
     #analysis-modal {
         padding: 1rem 0.5rem;
         align-items: flex-start;
-    }
-
-    .analysis-modal-header {
-        padding: 1rem 1.25rem 0.75rem;
-        border-radius: 1.25rem 1.25rem 0 0;
     }
 
     .analysis-modal-body {
