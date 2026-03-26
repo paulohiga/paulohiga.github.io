@@ -98,10 +98,19 @@ body.dark-theme .theme-selector {
     transition: background-color 0.2s, color 0.2s;
 }
 
+.toolbar button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
 .toolbar button.active,
 .toolbar button:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--color-primary);
+}
+
+body.dark-theme .toolbar button:focus-visible {
+    outline: 2px solid #60a5fa;
 }
 
 body.dark-theme .toolbar button.active,
@@ -316,8 +325,18 @@ a {
     transition: border-color 0.2s, color 0.2s; /* Add color to transition */
 }
 
+a:focus-visible {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
 body.dark-theme a {
     color: var(--color-accent); /* Use a brighter blue for links in dark mode */
+}
+
+body.dark-theme a:focus-visible {
+    outline-color: var(--color-accent);
 }
 
 a:hover {
@@ -388,6 +407,16 @@ body.dark-theme #close-form {
     color: var(--color-text-main-light);
 }
 
+#close-form:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+body.dark-theme #close-form:focus-visible {
+    outline-color: #60a5fa;
+}
+
 .form-content h2 {
     margin-top: 0;
     border-bottom: none;
@@ -432,6 +461,40 @@ body.dark-theme .form-content textarea {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-status {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.form-status.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.form-status.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+body.dark-theme .form-status.success {
+    background-color: rgba(22, 101, 52, 0.3);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+body.dark-theme .form-status.error {
+    background-color: rgba(153, 27, 27, 0.3);
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.3);
 }
 
 .visually-hidden {
@@ -511,11 +574,23 @@ body.dark-theme .analysis-modal-inner {
     opacity: 1;
 }
 
-#close-analysis {
+.sticky-wrapper {
+    position: sticky;
+    top: 1.5rem;
+    height: 0;
+    z-index: 20;
+}
+
+.modal-floating-actions {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
+    right: 1.5rem;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#close-analysis, #back-to-top-analysis {
     background-color: var(--color-primary);
     color: white;
     border: none;
@@ -528,14 +603,35 @@ body.dark-theme .analysis-modal-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s, transform 0.15s;
+    transition: background-color 0.2s, transform 0.15s, opacity 0.3s, visibility 0.3s;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
     flex-shrink: 0;
 }
 
-#close-analysis:hover {
+#back-to-top-analysis {
+    font-size: 1rem;
+}
+
+#back-to-top-analysis.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+#close-analysis:hover, #back-to-top-analysis:hover {
     background-color: var(--color-primary-hover);
     transform: scale(1.1);
+}
+
+#back-to-top-analysis.hidden:hover {
+    transform: translateY(10px);
+}
+
+@media (max-width: 768px) {
+    .modal-floating-actions {
+        right: 1.25rem;
+    }
 }
 
 .analysis-modal-body {
@@ -576,7 +672,20 @@ body.dark-theme .ai-disclaimer p {
     color: var(--color-text-muted-dark);
 }
 
-/* Analysis Sub-headings */
+/* Analysis Sub-headings & Title */
+.analysis-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-text-main-light);
+}
+
+body.dark-theme .analysis-title {
+    color: var(--color-text-main-dark);
+}
+
 h3.analysis-chunk,
 h4.analysis-chunk {
     color: var(--color-text-main-light);
@@ -735,6 +844,58 @@ body.dark-theme .references-list li {
 
 body.dark-theme .references-note {
     color: var(--color-text-muted-dark);
+}
+
+/* Citations & TOC */
+sup.citation a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0 0.1rem;
+    border-bottom: none;
+}
+sup.citation a:hover {
+    text-decoration: underline;
+}
+
+.toc {
+    background: rgba(37, 99, 235, 0.04);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+body.dark-theme .toc {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(96, 165, 250, 0.1);
+}
+.toc h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    color: var(--color-text-main-light);
+}
+body.dark-theme .toc h3 { color: var(--color-text-main-dark); }
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.toc li a {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    line-height: 1.4;
+    border-bottom: none;
+    display: inline-block;
+}
+body.dark-theme .toc li a { color: var(--color-accent); }
+.toc li a:hover {
+    text-decoration: underline;
 }
 
 /* Reduced motion override */

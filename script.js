@@ -59,8 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const formOverlay = document.getElementById('form-overlay');
+    const contactForm = document.getElementById('contact-form');
     const contactLinks = document.querySelectorAll('.contact-link');
     const closeFormBtn = document.getElementById('close-form');
+    const nameInput = document.getElementById('name');
+    const formStatus = document.getElementById('form-status');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    let formLastFocused = null;
 
     const formTranslations = {
         pt: {
@@ -100,12 +106,25 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
             updateFormLanguage(currentLang);
+            
+            formLastFocused = document.activeElement;
             formOverlay.classList.add('visible');
+            formOverlay.setAttribute('aria-hidden', 'false');
+            
+            if (formStatus) {
+                formStatus.style.display = 'none';
+                formStatus.className = 'form-status';
+                formStatus.textContent = '';
+            }
+            
+            setTimeout(() => nameInput.focus(), 50);
         });
     });
 
     function closeForm() {
         formOverlay.classList.remove('visible');
+        formOverlay.setAttribute('aria-hidden', 'true');
+        if (formLastFocused) formLastFocused.focus();
     }
 
     closeFormBtn.addEventListener('click', closeForm);
@@ -113,6 +132,58 @@ document.addEventListener('DOMContentLoaded', () => {
     formOverlay.addEventListener('click', (e) => {
         if (e.target === formOverlay) {
             closeForm();
+        }
+    });
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
+        
+        submitButton.disabled = true;
+        const originalBtnText = submitButton.textContent;
+        submitButton.textContent = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
+        
+        const formData = new FormData(contactForm);
+        
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                formStatus.textContent = currentLang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!';
+                formStatus.className = 'form-status success';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => { closeForm(); }, 3000);
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            formStatus.textContent = currentLang === 'pt' ? 'Ocorreu um erro. Tente novamente.' : 'An error occurred. Please try again.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalBtnText;
+        }
+    });
+
+    // Focus trap inside Form Modal
+    contactForm.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const elements = [closeFormBtn, ...contactForm.querySelectorAll('input, document, textarea, button[type="submit"]')];
+        const focusable = elements.filter(el => !el.disabled);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
         }
     });
 
@@ -124,7 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const analysisModal = document.getElementById('analysis-modal');
     const analysisModalInner = analysisModal.querySelector('.analysis-modal-inner');
     const closeAnalysisBtn = document.getElementById('close-analysis');
+    const backToTopBtn = document.getElementById('back-to-top-analysis');
     let analysisLastFocused = null;
+
+    analysisModal.addEventListener('scroll', () => {
+        if (analysisModal.scrollTop > 300) {
+            backToTopBtn.classList.remove('hidden');
+        } else {
+            backToTopBtn.classList.add('hidden');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        analysisModal.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     function openAnalysisModal() {
         const lang = langPt.classList.contains('active') ? 'pt' : 'en';
@@ -179,8 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && analysisModal.classList.contains('visible')) {
-            closeAnalysisModal();
+        if (e.key === 'Escape') {
+            if (analysisModal.classList.contains('visible')) {
+                closeAnalysisModal();
+            } else if (formOverlay.classList.contains('visible')) {
+                closeForm();
+            }
         }
     });
 });
