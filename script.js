@@ -76,7 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage: 'Mensagem:',
             formSubmit: 'Enviar',
             contactButton: 'Entrar em contato',
-            profession: 'Gestor Público'
+            profession: 'Gestor Público',
+            errorNameRequired: 'Nome é obrigatório',
+            errorEmailInvalid: 'Insira um e-mail válido',
+            errorMessageRequired: 'Mensagem é obrigatória'
         },
         en: {
             formTitle: 'Contact',
@@ -85,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage: 'Message:',
             formSubmit: 'Send',
             contactButton: 'Get in touch',
-            profession: 'Public Manager'
+            profession: 'Public Manager',
+            errorNameRequired: 'Name is required',
+            errorEmailInvalid: 'Please enter a valid email',
+            errorMessageRequired: 'Message is required'
         }
     };
 
@@ -110,13 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
             formLastFocused = document.activeElement;
             formOverlay.classList.add('visible');
             formOverlay.setAttribute('aria-hidden', 'false');
-            
+
+            // Clear previous errors when opening form
+            clearFormErrors();
+
             if (formStatus) {
                 formStatus.style.display = 'none';
                 formStatus.className = 'form-status';
                 formStatus.textContent = '';
             }
-            
+
             setTimeout(() => nameInput.focus(), 50);
         });
     });
@@ -135,14 +144,77 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Clear field errors when opening form
+    function clearFormErrors() {
+        ['name', 'email', 'message'].forEach(fieldId => {
+            const errorEl = document.getElementById(`${fieldId}-error`);
+            const input = document.getElementById(fieldId);
+            errorEl.style.display = 'none';
+            errorEl.textContent = '';
+            input.setAttribute('aria-invalid', 'false');
+        });
+    }
+
+    // Validate form fields (WCAG 3.3.1, 3.3.4)
+    function validateForm(lang = 'pt') {
+        let isValid = true;
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        const translations = formTranslations[lang];
+
+        // Clear previous errors
+        clearFormErrors();
+
+        // Validate name
+        if (!name.value.trim()) {
+            setFieldError('name', translations.errorNameRequired);
+            isValid = false;
+        }
+
+        // Validate email
+        if (!email.value.trim()) {
+            setFieldError('email', translations.errorEmailInvalid);
+            isValid = false;
+        } else if (!email.value.includes('@') || !email.value.includes('.')) {
+            setFieldError('email', translations.errorEmailInvalid);
+            isValid = false;
+        }
+
+        // Validate message
+        if (!message.value.trim()) {
+            setFieldError('message', translations.errorMessageRequired);
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // Set field error (WCAG 3.3.1)
+    function setFieldError(fieldId, errorText) {
+        const errorEl = document.getElementById(`${fieldId}-error`);
+        const input = document.getElementById(fieldId);
+        errorEl.textContent = errorText;
+        errorEl.style.display = 'block';
+        input.setAttribute('aria-invalid', 'true');
+    }
+
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
-        
+
+        // Validate form before submission (WCAG 3.3.1, 3.3.4)
+        if (!validateForm(currentLang)) {
+            formStatus.textContent = currentLang === 'pt' ? 'Por favor, corrija os erros no formulário.' : 'Please correct the errors in the form.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
+            return;
+        }
+
         submitButton.disabled = true;
         const originalBtnText = submitButton.textContent;
         submitButton.textContent = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
-        
+
         const formData = new FormData(contactForm);
         
         try {
@@ -171,10 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Focus trap inside Form Modal
+    // Focus trap inside Form Modal (WCAG 2.1.1, 2.1.2)
     contactForm.addEventListener('keydown', e => {
         if (e.key !== 'Tab') return;
-        const elements = [closeFormBtn, ...contactForm.querySelectorAll('input, document, textarea, button[type="submit"]')];
+        const elements = [closeFormBtn, ...contactForm.querySelectorAll('input, textarea, button[type="submit"]')];
         const focusable = elements.filter(el => !el.disabled);
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
