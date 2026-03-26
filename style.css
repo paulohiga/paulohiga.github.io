@@ -945,14 +945,54 @@ body.dark-theme .toc li a { color: var(--color-accent); }
     text-decoration: underline;
 }
 
-/* Reduced motion override */
+/* Reduced motion override (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    body {
+        transition: none;
+    }
+
+    .toolbar button {
+        transition: none;
+    }
+
+    .profile-image-wrapper img {
+        transition: none;
+    }
+
+    .fade-in {
+        animation: none;
+        opacity: 1;
+    }
+
     .analysis-chunk {
         transition: none;
     }
+
     .ai-dot {
         animation: none;
         opacity: 1;
+    }
+
+    #form-overlay {
+        transition: none;
+    }
+
+    #contact-form {
+        transition: none;
+    }
+
+    #analysis-modal {
+        transition: none;
     }
 }
 
