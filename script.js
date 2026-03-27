@@ -312,6 +312,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Make profile photo clickable to open biography modal
+    const fotoPrincipal = document.getElementById('foto');
+    fotoPrincipal.addEventListener('click', openAnalysisModal);
+    fotoPrincipal.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openAnalysisModal();
+        }
+    });
+
     closeAnalysisBtn.addEventListener('click', closeAnalysisModal);
 
     analysisModal.addEventListener('click', e => {
