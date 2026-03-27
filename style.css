@@ -2,7 +2,7 @@
     /* Base Colors */
     --color-bg-light: #f8f9fa;
     --color-bg-dark: #0f172a;
-    
+
     --color-text-main-light: #1f2937;
     --color-text-muted-light: #4b5563;
     --color-text-main-dark: #f3f4f6;
@@ -11,6 +11,7 @@
     --color-primary: #2563eb; /* Royal Blue */
     --color-primary-hover: #1d4ed8;
     --color-accent: #3b82f6;
+    --color-primary-dark: #93c5fd; /* Light blue — passes 4.5:1 on dark backgrounds */
 
     /* Card & UI */
     --card-bg-light: rgba(255, 255, 255, 0.85);
@@ -23,6 +24,15 @@
     /* Fonts */
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Merriweather', serif;
+
+    /* Animation durations */
+    --duration-fast: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.6s;
+
+    /* Spacing */
+    --spacing-toolbar: 1.5rem;
+    --padding-top-container: 6rem;
 }
 
 body {
@@ -33,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--duration-normal) ease, color var(--duration-normal) ease;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -77,8 +87,8 @@ body.dark-theme {
 /* --- Toolbar --- */
 .toolbar {
     position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: var(--spacing-toolbar);
+    right: var(--spacing-toolbar);
     display: flex;
     gap: 0.75rem;
     z-index: 100;
@@ -113,7 +123,7 @@ body.dark-theme .theme-selector {
     font-size: 0.85rem;
     font-weight: 600;
     color: inherit;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color var(--duration-fast), color var(--duration-fast);
 }
 
 .toolbar button:focus-visible {
@@ -128,20 +138,20 @@ body.dark-theme .theme-selector {
 }
 
 body.dark-theme .toolbar button:focus-visible {
-    outline: 2px solid #60a5fa;
+    outline: 2px solid var(--color-primary-dark);
 }
 
 body.dark-theme .toolbar button.active,
 body.dark-theme .toolbar button:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #60a5fa;
+    color: var(--color-primary-dark);
 }
 
 /* --- Layout --- */
 .container {
     width: 100%;
     max-width: 1000px;
-    padding: 6rem 1.5rem 3rem; /* Top padding for toolbar */
+    padding: var(--padding-top-container) 1.5rem 3rem; /* Top padding for toolbar */
     box-sizing: border-box;
 }
 
@@ -155,9 +165,9 @@ body.dark-theme .toolbar button:hover {
 /* --- Sidebar --- */
 .profile-sidebar {
     position: sticky;
-    top: 6rem;
+    top: var(--padding-top-container);
     text-align: center;
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn var(--duration-slow) ease-out;
 }
 
 .profile-image-wrapper img {
@@ -167,7 +177,7 @@ body.dark-theme .toolbar button:hover {
     object-fit: cover;
     box-shadow: var(--shadow-light);
     border: 4px solid white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--duration-normal) ease, box-shadow var(--duration-normal) ease;
 }
 
 body.dark-theme .profile-image-wrapper img {
@@ -175,28 +185,30 @@ body.dark-theme .profile-image-wrapper img {
     box-shadow: var(--shadow-dark);
 }
 
-.profile-image-wrapper img:hover {
-    transform: scale(1.05);
-}
-
-/* Make profile photo clickable to open biography modal */
-#foto {
+/* Profile photo button (opens biography modal) */
+.profile-image-button {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 0;
 }
 
-#foto:hover {
-    opacity: 0.8;
+.profile-image-button:hover img {
+    transform: scale(1.05);
+    opacity: 0.85;
 }
 
-#foto:focus {
+.profile-image-button:focus-visible {
     outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline-offset: 4px;
     border-radius: 50%;
 }
 
-body.dark-theme #foto:focus {
-    outline-color: #60a5fa;
+body.dark-theme .profile-image-button:focus-visible {
+    outline-color: var(--color-primary-dark);
 }
 
 h1 {
@@ -260,7 +272,7 @@ body.dark-theme .profile-detail i {
     font-weight: 500;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color var(--duration-fast), transform 0.1s;
     width: 100%;
     box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
     display: flex;
@@ -273,7 +285,6 @@ body.dark-theme .profile-detail i {
 .contact-button:hover {
     background-color: var(--color-primary-hover);
     transform: translateY(-1px);
-    border-bottom-color: transparent; /* Override default link hover */
 }
 
 .linkedin-button {
@@ -303,7 +314,7 @@ body.dark-theme .linkedin-button {
     border-radius: 1.5rem;
     border: 1px solid var(--card-border-light);
     box-shadow: var(--shadow-light);
-    animation: slideUp 0.7s ease-out;
+    animation: slideUp 0.7s ease-out; /* intentionally slightly slower than fadeIn for layered entry */
 }
 
 body.dark-theme .content-area {
@@ -357,10 +368,9 @@ h2 i {
 
 a {
     color: var(--color-primary);
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 500;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s, color 0.2s; /* Add color to transition */
+    transition: color var(--duration-fast), opacity var(--duration-fast);
 }
 
 a:focus-visible {
@@ -378,7 +388,17 @@ body.dark-theme a:focus-visible {
 }
 
 a:hover {
-    border-bottom-color: var(--color-primary);
+    opacity: 0.8;
+}
+
+/* Suppress underline in navigation/button contexts */
+.toolbar a,
+.contact-button,
+.skip-link,
+.toc li a,
+sup.citation a,
+.analysis-modal-link {
+    text-decoration: none;
 }
 
 /* --- Form Overlay --- */
@@ -394,7 +414,7 @@ a:hover {
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity var(--duration-normal) ease, visibility var(--duration-normal) ease;
 }
 
 #form-overlay.visible {
@@ -411,7 +431,7 @@ a:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     transform: translateY(20px);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform var(--duration-normal) ease, opacity var(--duration-normal) ease;
     position: relative;
 }
 
@@ -434,7 +454,7 @@ body.dark-theme #contact-form {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--color-text-muted-light);
-    transition: color 0.2s;
+    transition: color var(--duration-fast);
 }
 
 body.dark-theme #close-form {
@@ -452,7 +472,7 @@ body.dark-theme #close-form {
 }
 
 body.dark-theme #close-form:focus-visible {
-    outline-color: #60a5fa;
+    outline-color: var(--color-primary-dark);
 }
 
 .form-content h2 {
@@ -484,7 +504,7 @@ body.dark-theme .form-content label {
     font-size: 1rem;
     box-sizing: border-box;
     background-color: #f9fafb;
-    transition: border-color 0.2s, ring 0.2s;
+    transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
 }
 
 body.dark-theme .form-content input,
@@ -508,7 +528,7 @@ body.dark-theme .form-content textarea {
     font-size: 0.95rem;
     text-align: center;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: opacity var(--duration-normal);
 }
 
 .form-status.success {
@@ -528,10 +548,22 @@ body.dark-theme .form-content textarea {
     color: #991b1b;
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.75rem;
     background-color: #fee2e2;
     border-left: 3px solid #dc2626;
     border-radius: 0.25rem;
+    position: relative;
+}
+
+/* Non-color error indicator (WCAG 1.4.1) */
+.error-message::before {
+    content: "⚠";
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    line-height: 1;
 }
 
 body.dark-theme .error-message {
@@ -583,7 +615,7 @@ body.dark-theme .form-status.error {
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn var(--duration-slow) ease-out;
 }
 
 @keyframes slideUp {
@@ -601,7 +633,7 @@ body.dark-theme .form-status.error {
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity var(--duration-normal) ease, visibility var(--duration-normal) ease;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -627,7 +659,7 @@ body.dark-theme .form-status.error {
     margin: auto;
     transform: translateY(16px);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform var(--duration-normal) ease, opacity var(--duration-normal) ease;
 }
 
 body.dark-theme .analysis-modal-inner {
@@ -670,7 +702,7 @@ body.dark-theme .analysis-modal-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s, transform 0.15s, opacity 0.3s, visibility 0.3s;
+    transition: background-color var(--duration-fast), transform 0.15s, opacity var(--duration-normal), visibility var(--duration-normal);
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
     flex-shrink: 0;
 }
@@ -783,7 +815,7 @@ h4.analysis-chunk {
 }
 
 body.dark-theme h4.analysis-chunk {
-    color: #60a5fa;
+    color: var(--color-primary-dark);
 }
 
 /* Analysis Tables */
@@ -1047,5 +1079,58 @@ body.dark-theme .toc li a { color: var(--color-accent); }
     
     h1 {
         font-size: 1.75rem;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    .toolbar,
+    #form-overlay,
+    #analysis-modal,
+    .profile-actions,
+    .skip-link {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        padding-top: 1rem;
+        max-width: 100%;
+    }
+
+    .profile-grid {
+        grid-template-columns: 200px 1fr;
+        gap: 1.5rem;
+    }
+
+    .profile-sidebar {
+        position: static;
+    }
+
+    .content-area {
+        background: white;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    a[href^="#"]::after,
+    .contact-link::after {
+        content: "";
     }
 }
