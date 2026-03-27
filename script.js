@@ -1,32 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Cache media query result once at startup
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Delay (ms) to allow modal reflow before moving focus
+    const FOCUS_DELAY_MS = 50;
+
     const themeToggle = document.getElementById('theme-toggle');
     const langPt = document.getElementById('lang-pt');
     const langEn = document.getElementById('lang-en');
+
+    // Returns current active language ('pt' or 'en')
+    function getCurrentLanguage() {
+        return langPt.classList.contains('active') ? 'pt' : 'en';
+    }
     const ptVersion = document.getElementById('pt-version');
     const enVersion = document.getElementById('en-version');
 
     // Theme Selector
+    const themeIcon = themeToggle.querySelector('i');
+
+    function setThemeIcon(isDark) {
+        themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+    }
+
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (localStorage.getItem('theme') === 'dark' || (localStorage.getItem('theme') === null && prefersDark)) {
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        setThemeIcon(true);
     } else {
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        setThemeIcon(false);
     }
 
     themeToggle.addEventListener('click', () => {
         if (document.body.classList.contains('dark-theme')) {
             document.body.classList.remove('dark-theme');
             document.body.classList.add('light-theme');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            setThemeIcon(false);
             localStorage.setItem('theme', 'light');
         } else {
             document.body.classList.add('dark-theme');
             document.body.classList.remove('light-theme');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            setThemeIcon(true);
             localStorage.setItem('theme', 'dark');
         }
     });
@@ -77,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: 'Enviar',
             contactButton: 'Entrar em contato',
             profession: 'Gestor Público',
+            closeForm: 'Fechar formulário',
             errorNameRequired: 'Nome é obrigatório',
             errorEmailInvalid: 'Insira um e-mail válido',
             errorMessageRequired: 'Mensagem é obrigatória'
@@ -89,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmit: 'Send',
             contactButton: 'Get in touch',
             profession: 'Public Manager',
+            closeForm: 'Close form',
             errorNameRequired: 'Name is required',
             errorEmailInvalid: 'Please enter a valid email',
             errorMessageRequired: 'Message is required'
@@ -110,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
+            const currentLang = getCurrentLanguage();
             updateFormLanguage(currentLang);
             
             formLastFocused = document.activeElement;
@@ -126,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formStatus.textContent = '';
             }
 
-            setTimeout(() => nameInput.focus(), 50);
+            setTimeout(() => nameInput.focus(), FOCUS_DELAY_MS);
         });
     });
 
@@ -146,11 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clear field errors when opening form
     function clearFormErrors() {
-        ['name', 'email', 'message'].forEach(fieldId => {
-            const errorEl = document.getElementById(`${fieldId}-error`);
-            const input = document.getElementById(fieldId);
-            errorEl.style.display = 'none';
-            errorEl.textContent = '';
+        contactForm.querySelectorAll('[aria-invalid]').forEach(input => {
+            const errorEl = document.getElementById(`${input.id}-error`);
+            if (errorEl) {
+                errorEl.style.display = 'none';
+                errorEl.textContent = '';
+            }
             input.setAttribute('aria-invalid', 'false');
         });
     }
@@ -201,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const currentLang = document.getElementById('lang-pt').classList.contains('active') ? 'pt' : 'en';
+        const currentLang = getCurrentLanguage();
 
         // Validate form before submission (WCAG 3.3.1, 3.3.4)
         if (!validateForm(currentLang)) {
@@ -279,12 +299,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backToTopBtn.addEventListener('click', () => {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         analysisModal.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
 
     function openAnalysisModal() {
-        const lang = langPt.classList.contains('active') ? 'pt' : 'en';
+        const lang = getCurrentLanguage();
 
         // Show correct language pane
         document.getElementById('analysis-modal-pt').hidden = lang !== 'pt';
@@ -312,15 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Make profile photo clickable to open biography modal
-    const fotoPrincipal = document.getElementById('foto');
-    fotoPrincipal.addEventListener('click', openAnalysisModal);
-    fotoPrincipal.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openAnalysisModal();
-        }
-    });
+    // Make profile photo button open biography modal (<button> handles Enter/Space natively)
+    document.getElementById('foto-btn').addEventListener('click', openAnalysisModal);
 
     closeAnalysisBtn.addEventListener('click', closeAnalysisModal);
 

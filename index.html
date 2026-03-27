@@ -19,7 +19,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -91,9 +92,11 @@
             <!-- Sidebar / Identity -->
             <aside class="profile-sidebar">
                 <div class="profile-image-wrapper">
-                    <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa" width="200" height="200" role="button" tabindex="0">
+                    <button type="button" id="foto-btn" class="profile-image-button" aria-label="Ver biografia de Paulo Higa">
+                        <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa" width="200" height="200">
+                    </button>
                 </div>
-                <h1 class="p-name fn">Paulo Higa</h1>
+                <h1>Paulo Higa</h1>
                 <div class="profile-details">
                     <p class="profile-detail"><i class="fas fa-location-dot" aria-hidden="true"></i> Brasília, DF</p>
                     <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span data-lang-key="profession">Gestor
@@ -111,7 +114,7 @@
 
             <!-- Main Content -->
             <article class="content-area">
-                <div class="h-card vcard">
+                <div>
                     <!-- Portuguese Content -->
                     <div id="pt-version" class="fade-in">
                         <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button">Paulo
@@ -127,10 +130,10 @@
 
                         <section>
                             <h2><i class="fas fa-landmark-flag" aria-hidden="true"></i> Público</h2>
-                            <p>É servidor público da carreira de <span class="p-job-title title">Analista de
+                            <p>É servidor público da carreira de <span class="job-title">Analista de
                                     Políticas Públicas e Gestão Governamental</span> (APPGG) na <span
-                                    class="p-org org">Prefeitura de São Paulo</span>. Alocado na unidade de planejamento
-                                estratégico da <span class="p-organization-unit">Secretaria Municipal de
+                                    class="org-name">Prefeitura de São Paulo</span>. Alocado na unidade de planejamento
+                                estratégico da <span class="org-unit">Secretaria Municipal de
                                     Educação</span> desde 2024, atua com governança, análise de dados e normativos de
                                 gestão de pessoas.
                                 Trabalhou na modelagem de critérios do novo <a
@@ -154,8 +157,8 @@
                                     href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. Em 2018, tornou-se
                                 editor-executivo e sócio do veículo, liderando uma equipe de mais de 30 pessoas e
                                 ajudando a transformá-lo no maior site de tecnologia independente do Brasil, com mais de
-                                30 milhões de acessos mensais. Até 2023, atuou como <span class="p-job-title title">head
-                                    de operações</span> no <span class="p-org org">Tecnoblog</span> e coapresentador do
+                                30 milhões de acessos mensais. Até 2023, atuou como <span class="job-title">head
+                                    de operações</span> no <span class="org-name">Tecnoblog</span> e coapresentador do
                                 <a href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, podcast líder no segmento de
                                 tecnologia, inovação e negócios no Brasil. Durante o período, visitou dezenas de países
                                 cobrindo as principais feiras de tecnologia e eventos de fabricantes de eletrônicos,
@@ -174,7 +177,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-person-running"></i> Pessoal</h2>
+                            <h2><i class="fas fa-person-running" aria-hidden="true"></i> Pessoal</h2>
                             <p>Além de sua carreira profissional, é apaixonado por cozinhar e correr. Gosta de
                                 experimentar vinhos de regiões diferentes e de vez em quando se aventura em variedades
                                 com nomes difíceis de pronunciar, como a Gewürztraminer e a Zweigelt, mas sua uva
@@ -207,10 +210,10 @@
                             Public Policy and Government Management (EPPGG), of the Brazilian Federal Government.</p>
                         <section>
                             <h2><i class="fas fa-landmark-flag" aria-hidden="true"></i> Public</h2>
-                            <p>He is a public servant in the career of <span class="p-job-title title">Public Policy &
+                            <p>He is a public servant in the career of <span class="job-title">Public Policy &
                                     Government Management Analyst</span>
-                                (APPGG) at <span class="p-org org">São Paulo City Hall</span>. Assigned to the
-                                strategic planning unit of the <span class="p-organization-unit">Municipal Secretariat
+                                (APPGG) at <span class="org-name">São Paulo City Hall</span>. Assigned to the
+                                strategic planning unit of the <span class="org-unit">Municipal Secretariat
                                     of Education</span> since 2024, he works with governance, data analysis, and people
                                 management regulations.
                                 He worked on modeling the criteria for the new <a
@@ -236,8 +239,8 @@
                                 executive editor and partner of the media outlet, leading a team of more than 30 people
                                 and helping to transform it into the largest independent technology site in Brazil, with
                                 more than 30 million monthly pageviews. Until 2023, he served as <span
-                                    class="p-job-title title">head of operations</span> at <span
-                                    class="p-org org">Tecnoblog</span> and co-host of <a
+                                    class="job-title">head of operations</span> at <span
+                                    class="org-name">Tecnoblog</span> and co-host of <a
                                     href="https://tecnoblog.net/tecnocast/">Tecnocast</a>, the leading podcast in the
                                 technology, innovation, and business segment in Brazil. During this time, he visited
                                 dozens of countries covering the main technology fairs and events of electronics
@@ -255,7 +258,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-person-running"></i> Personal</h2>
+                            <h2><i class="fas fa-person-running" aria-hidden="true"></i> Personal</h2>
                             <p>Outside of work, he is passionate about cooking and running. He enjoys
                                 trying wines from different regions and occasionally ventures into varieties with
                                 hard-to-pronounce names, such as Gewürztraminer and Zweigelt, but his favorite grape
@@ -284,7 +287,7 @@
     <!-- Contact Form Overlay -->
     <div id="form-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="form-title">
         <form id="contact-form" action="https://formspree.io/f/xdklqqqg" method="POST">
-            <button type="button" id="close-form" aria-label="Close form">&times;</button>
+            <button type="button" id="close-form">&times;<span class="visually-hidden" data-lang-key="closeForm">Fechar formulário</span></button>
             <div class="form-content">
                 <h2 id="form-title" data-lang-key="formTitle">Contato</h2>
                 <div id="form-status" class="form-status" aria-live="polite" style="display: none;"></div>
