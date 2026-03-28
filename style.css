@@ -8,10 +8,12 @@
     --color-text-main-dark: #f3f4f6;
     --color-text-muted-dark: #9ca3af;
 
-    --color-primary: #2563eb; /* Royal Blue */
+    --color-primary: #2563eb;
+    /* Royal Blue */
     --color-primary-hover: #1d4ed8;
     --color-accent: #3b82f6;
-    --color-primary-dark: #93c5fd; /* Light blue — passes 4.5:1 on dark backgrounds */
+    --color-primary-dark: #93c5fd;
+    /* Light blue — passes 4.5:1 on dark backgrounds */
 
     /* Card & UI */
     --card-bg-light: rgba(255, 255, 255, 0.85);
@@ -53,17 +55,17 @@ body.light-theme {
     background-color: var(--color-bg-light);
     color: var(--color-text-main-light);
     /* Subtle mesh gradient for modern feel */
-    background-image: radial-gradient(at 0% 0%, hsla(217,91%,90%,1) 0, transparent 50%), 
-                      radial-gradient(at 50% 0%, hsla(203,89%,93%,1) 0, transparent 50%), 
-                      radial-gradient(at 100% 0%, hsla(210,92%,90%,1) 0, transparent 50%);
+    background-image: radial-gradient(at 0% 0%, hsla(217, 91%, 90%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(203, 89%, 93%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(210, 92%, 90%, 1) 0, transparent 50%);
 }
 
 body.dark-theme {
     background-color: var(--color-bg-dark);
     color: var(--color-text-main-dark);
-    background-image: radial-gradient(at 0% 0%, hsla(222,47%,11%,1) 0, transparent 50%),
-                      radial-gradient(at 50% 0%, hsla(222,47%,15%,1) 0, transparent 50%),
-                      radial-gradient(at 100% 0%, hsla(222,47%,11%,1) 0, transparent 50%);
+    background-image: radial-gradient(at 0% 0%, hsla(222, 47%, 11%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(222, 47%, 15%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(222, 47%, 11%, 1) 0, transparent 50%);
 }
 
 /* --- Skip Link (WCAG 2.4.1) --- */
@@ -94,19 +96,21 @@ body.dark-theme {
     z-index: 100;
 }
 
-.language-selector, .theme-selector {
+.language-selector,
+.theme-selector {
     background: var(--card-bg-light);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--card-border-light);
     padding: 0.3rem;
-    border-radius: 9999px; /* Pill shape */
+    border-radius: 9999px;
+    /* Pill shape */
     box-shadow: var(--shadow-light);
     display: flex;
     align-items: center;
 }
 
-body.dark-theme .language-selector, 
+body.dark-theme .language-selector,
 body.dark-theme .theme-selector {
     background: var(--card-bg-dark);
     border-color: var(--card-border-dark);
@@ -151,7 +155,8 @@ body.dark-theme .toolbar button:hover {
 .container {
     width: 100%;
     max-width: 1000px;
-    padding: var(--padding-top-container) 1.5rem 3rem; /* Top padding for toolbar */
+    padding: var(--padding-top-container) 1.5rem 3rem;
+    /* Top padding for toolbar */
     box-sizing: border-box;
 }
 
@@ -279,7 +284,8 @@ body.dark-theme .profile-detail i {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
 }
 
 .contact-button:hover {
@@ -288,8 +294,10 @@ body.dark-theme .profile-detail i {
 }
 
 .linkedin-button {
-    background-color: #0077b5; /* LinkedIn Blue */
-    color: white !important; /* Force white text */
+    background-color: #0077b5;
+    /* LinkedIn Blue */
+    color: white !important;
+    /* Force white text */
     box-shadow: 0 2px 4px rgba(0, 119, 181, 0.2);
 }
 
@@ -298,7 +306,8 @@ body.dark-theme .profile-detail i {
 }
 
 body.dark-theme .contact-button {
-    background-color: var(--color-primary); /* Keep blue or adjust */
+    background-color: var(--color-primary);
+    /* Keep blue or adjust */
 }
 
 body.dark-theme .linkedin-button {
@@ -314,7 +323,8 @@ body.dark-theme .linkedin-button {
     border-radius: 1.5rem;
     border: 1px solid var(--card-border-light);
     box-shadow: var(--shadow-light);
-    animation: slideUp 0.7s ease-out; /* intentionally slightly slower than fadeIn for layered entry */
+    animation: slideUp 0.7s ease-out;
+    /* intentionally slightly slower than fadeIn for layered entry */
 }
 
 body.dark-theme .content-area {
@@ -352,13 +362,13 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 0.5rem;
 }
 
 body.dark-theme h2 {
     color: var(--color-text-main-dark);
-    border-bottom-color: rgba(255,255,255,0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 h2 i {
@@ -380,7 +390,8 @@ a:focus-visible {
 }
 
 body.dark-theme a {
-    color: var(--color-accent); /* Use a brighter blue for links in dark mode */
+    color: var(--color-accent);
+    /* Use a brighter blue for links in dark mode */
 }
 
 body.dark-theme a:focus-visible {
@@ -401,10 +412,23 @@ sup.citation a,
     text-decoration: none;
 }
 
+/* Info icon inside biography name link */
+.bio-info-icon {
+    font-size: 0.85em;
+    opacity: 0.55;
+    vertical-align: middle;
+    transition: opacity var(--duration-fast);
+}
+
+.analysis-modal-link:hover .bio-info-icon {
+    opacity: 0.9;
+}
+
 /* --- Form Overlay --- */
 #form-overlay {
     position: fixed;
-    inset: 0; /* Top/Left/Right/Bottom: 0 */
+    inset: 0;
+    /* Top/Left/Right/Bottom: 0 */
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -436,8 +460,9 @@ sup.citation a,
 }
 
 body.dark-theme #contact-form {
-    background: #1e293b; /* Slate 800 */
-    border: 1px solid rgba(255,255,255,0.1);
+    background: #1e293b;
+    /* Slate 800 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #form-overlay.visible #contact-form {
@@ -610,8 +635,13 @@ body.dark-theme .form-status.error {
 
 /* --- Animations --- */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .fade-in {
@@ -619,8 +649,15 @@ body.dark-theme .form-status.error {
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- Analysis Modal --- */
@@ -689,7 +726,8 @@ body.dark-theme .analysis-modal-inner {
     gap: 0.75rem;
 }
 
-#close-analysis, #back-to-top-analysis {
+#close-analysis,
+#back-to-top-analysis {
     background-color: var(--color-primary);
     color: white;
     border: none;
@@ -718,7 +756,8 @@ body.dark-theme .analysis-modal-inner {
     pointer-events: none;
 }
 
-#close-analysis:hover, #back-to-top-analysis:hover {
+#close-analysis:hover,
+#back-to-top-analysis:hover {
     background-color: var(--color-primary-hover);
     transform: scale(1.1);
 }
@@ -753,7 +792,7 @@ body.dark-theme .ai-disclaimer {
     background: rgba(37, 99, 235, 0.12);
 }
 
-.ai-disclaimer > i {
+.ai-disclaimer>i {
     color: var(--color-primary);
     font-size: 1rem;
     flex-shrink: 0;
@@ -952,6 +991,7 @@ sup.citation a {
     padding: 0 0.1rem;
     border-bottom: none;
 }
+
 sup.citation a:hover {
     text-decoration: underline;
 }
@@ -963,10 +1003,12 @@ sup.citation a:hover {
     margin-bottom: 2rem;
     border: 1px solid rgba(37, 99, 235, 0.1);
 }
+
 body.dark-theme .toc {
     background: rgba(37, 99, 235, 0.08);
     border-color: rgba(96, 165, 250, 0.1);
 }
+
 .toc h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -974,7 +1016,10 @@ body.dark-theme .toc {
     font-family: var(--font-serif);
     color: var(--color-text-main-light);
 }
-body.dark-theme .toc h3 { color: var(--color-text-main-dark); }
+
+body.dark-theme .toc h3 {
+    color: var(--color-text-main-dark);
+}
 
 .toc ul {
     list-style: none;
@@ -984,6 +1029,7 @@ body.dark-theme .toc h3 { color: var(--color-text-main-dark); }
     flex-direction: column;
     gap: 0.6rem;
 }
+
 .toc li a {
     font-size: 0.95rem;
     color: var(--color-primary);
@@ -992,7 +1038,11 @@ body.dark-theme .toc h3 { color: var(--color-text-main-dark); }
     border-bottom: none;
     display: inline-block;
 }
-body.dark-theme .toc li a { color: var(--color-accent); }
+
+body.dark-theme .toc li a {
+    color: var(--color-accent);
+}
+
 .toc li a:hover {
     text-decoration: underline;
 }
@@ -1065,7 +1115,7 @@ body.dark-theme .toc li a { color: var(--color-accent); }
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .profile-sidebar {
         position: static;
         display: flex;
@@ -1076,7 +1126,7 @@ body.dark-theme .toc li a { color: var(--color-accent); }
     .container {
         padding-top: 5rem;
     }
-    
+
     h1 {
         font-size: 1.75rem;
     }
@@ -1084,6 +1134,7 @@ body.dark-theme .toc li a { color: var(--color-accent); }
 
 /* --- Print Styles --- */
 @media print {
+
     .toolbar,
     #form-overlay,
     #analysis-modal,

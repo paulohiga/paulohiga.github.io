@@ -19,8 +19,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -92,14 +95,17 @@
             <!-- Sidebar / Identity -->
             <aside class="profile-sidebar">
                 <div class="profile-image-wrapper">
-                    <button type="button" id="foto-btn" class="profile-image-button" aria-label="Ver biografia de Paulo Higa">
-                        <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa" width="200" height="200">
+                    <button type="button" id="foto-btn" class="profile-image-button"
+                        aria-label="Ver biografia de Paulo Higa">
+                        <img src="img/foto-paulo-higa-2.jpg" id="foto" alt="Paulo Seikishi Higa" width="200"
+                            height="200">
                     </button>
                 </div>
                 <h1>Paulo Higa</h1>
                 <div class="profile-details">
                     <p class="profile-detail"><i class="fas fa-location-dot" aria-hidden="true"></i> Brasília, DF</p>
-                    <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span data-lang-key="profession">Gestor
+                    <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span
+                            data-lang-key="profession">Gestor
                             público</span></p>
                 </div>
                 <div class="profile-actions">
@@ -118,7 +124,8 @@
                     <!-- Portuguese Content -->
                     <div id="pt-version" class="fade-in">
                         <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button">Paulo
-                                    Higa</a></strong> nasceu
+                                    Higa <i class="fas fa-circle-plus bio-info-icon"
+                                        aria-hidden="true"></i></a></strong> nasceu
                             em Chiba, Japão, em 15 de abril de 1993. Movido pelo interesse em tecnologia, ingressou no
                             curso de Ciência da Computação em 2011. Sua paixão pela escrita o levou ao
                             Jornalismo, graduando-se pela Faculdade Cásper Líbero em 2017. Para aprimorar suas
@@ -201,7 +208,9 @@
                     <!-- English Content -->
                     <div id="en-version" class="fade-in" style="display: none;">
                         <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button">Paulo
-                                    Higa</a></strong> was born in Chiba, Japan, on April 15, 1993.
+                                    Higa <i class="fas fa-circle-plus bio-info-icon"
+                                        aria-hidden="true"></i></a></strong> was born in Chiba, Japan, on April 15,
+                            1993.
                             Driven by his interest in technology, he enrolled in a Computer Science program in 2011. His
                             passion for writing led him to Journalism, graduating from Faculdade Cásper Líbero
                             in 2017. To improve his management skills, he completed an MBA in Management with an
@@ -287,7 +296,8 @@
     <!-- Contact Form Overlay -->
     <div id="form-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="form-title">
         <form id="contact-form" action="https://formspree.io/f/xdklqqqg" method="POST">
-            <button type="button" id="close-form">&times;<span class="visually-hidden" data-lang-key="closeForm">Fechar formulário</span></button>
+            <button type="button" id="close-form">&times;<span class="visually-hidden" data-lang-key="closeForm">Fechar
+                    formulário</span></button>
             <div class="form-content">
                 <h2 id="form-title" data-lang-key="formTitle">Contato</h2>
                 <div id="form-status" class="form-status" aria-live="polite" style="display: none;"></div>
@@ -295,10 +305,12 @@
                 <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error">
                 <div id="name-error" class="error-message" role="alert" style="display: none;"></div>
                 <label for="email" data-lang-key="formEmail">E-mail:</label>
-                <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error">
+                <input type="email" id="email" name="email" required aria-required="true"
+                    aria-describedby="email-error">
                 <div id="email-error" class="error-message" role="alert" style="display: none;"></div>
                 <label for="message" data-lang-key="formMessage">Mensagem:</label>
-                <textarea id="message" name="message" required aria-required="true" aria-describedby="message-error"></textarea>
+                <textarea id="message" name="message" required aria-required="true"
+                    aria-describedby="message-error"></textarea>
                 <div id="message-error" class="error-message" role="alert" style="display: none;"></div>
                 <button type="submit" data-lang-key="formSubmit">Enviar</button>
             </div>
@@ -325,32 +337,51 @@
                     <aside class="ai-disclaimer analysis-chunk" role="note">
                         <i class="fas fa-robot" aria-hidden="true"></i>
                         <p>Este conteúdo foi gerado por inteligência artificial (IA) com base em fontes públicas
-                            disponíveis até janeiro de 2026. Pode conter imprecisões ou interpretações subjetivas. As
+                            disponíveis até janeiro de 2026. As
                             referências estão listadas ao final.</p>
                     </aside>
 
-                    <p class="analysis-chunk"><strong>Paulo Seikishi Higa</strong> (Chiba, Japão, 15 de abril de 1993) é um jornalista, gestor e servidor público brasileiro. Atualmente, está em formação para integrar a carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG)<sup class="citation"><a href="#pt-ref-41">[41]</a></sup> do Governo do Brasil. Anteriormente, atuou como Analista de Políticas Públicas e Gestão Governamental (APPGG) na Prefeitura de São Paulo e como Assessor de Gabinete<sup class="citation"><a href="#pt-ref-12">[12]</a></sup> na Secretaria Municipal de Educação (SME). Na SME, participou de iniciativas de planejamento estratégico e comunicação pública<sup class="citation"><a href="#pt-ref-32">[32]</a></sup>, além de projetos de governança e análise de dados, destacando-se a modelagem de critérios de aprendizagem e equidade para o novo Prêmio de Desempenho Educacional (PDE)<sup class="citation"><a href="#pt-ref-31">[31]</a></sup>.</p>
-                    <p class="analysis-chunk">Antes de ingressar na administração pública, Higa consolidou sua carreira na mídia digital como editor-executivo, head de operações e sócio do Tecnoblog, maior site de tecnologia independente do Brasil<sup class="citation"><a href="#pt-ref-16">[16]</a></sup>. Durante sua atuação no veículo entre 2012 e 2023, ajudou a expandir a audiência para mais de 30 milhões de acessos mensais. Reconhecido por suas análises de produtos eletrônicos e como coapresentador do podcast Tecnocast<sup class="citation"><a href="#pt-ref-8">[8]</a></sup>, venceu o Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)<sup class="citation"><a href="#pt-ref-29">[29]</a></sup> e foi finalista do Prêmio Comunique-se<sup class="citation"><a href="#pt-ref-30">[30]</a></sup>. É graduado em Jornalismo pela Faculdade Cásper Líbero e possui MBA em Gestão com Ênfase em Liderança e Inovação pela Fundação Getulio Vargas (FGV).</p>
+                    <p class="analysis-chunk"><strong>Paulo Seikishi Higa</strong> (Chiba, Japão, 15 de abril de 1993) é
+                        um jornalista, gestor e servidor público brasileiro. Atualmente, está em formação para integrar
+                        a carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG)<sup
+                            class="citation"><a href="#pt-ref-41">[41]</a></sup> do Governo do Brasil. Anteriormente,
+                        atuou como Analista de Políticas Públicas e Gestão Governamental (APPGG) na Prefeitura de São
+                        Paulo e como Assessor de Gabinete<sup class="citation"><a href="#pt-ref-12">[12]</a></sup> na
+                        Secretaria Municipal de Educação (SME). Na SME, participou de iniciativas de planejamento
+                        estratégico e comunicação pública<sup class="citation"><a href="#pt-ref-32">[32]</a></sup>, além
+                        de projetos de governança e análise de dados, destacando-se a modelagem de critérios de
+                        aprendizagem e equidade para o novo Prêmio de Desempenho Educacional (PDE)<sup
+                            class="citation"><a href="#pt-ref-31">[31]</a></sup>.</p>
+                    <p class="analysis-chunk">Antes de ingressar na administração pública, Higa consolidou sua carreira
+                        na mídia digital como editor-executivo, head de operações e sócio do Tecnoblog, maior site de
+                        tecnologia independente do Brasil<sup class="citation"><a href="#pt-ref-16">[16]</a></sup>.
+                        Durante sua atuação no veículo entre 2012 e 2023, ajudou a expandir a audiência para mais de 30
+                        milhões de acessos mensais. Reconhecido por suas análises de produtos eletrônicos e como
+                        coapresentador do podcast Tecnocast<sup class="citation"><a href="#pt-ref-8">[8]</a></sup>,
+                        venceu o Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)<sup
+                            class="citation"><a href="#pt-ref-29">[29]</a></sup> e foi finalista do Prêmio
+                        Comunique-se<sup class="citation"><a href="#pt-ref-30">[30]</a></sup>. É graduado em Jornalismo
+                        pela Faculdade Cásper Líbero e possui MBA em Gestão com Ênfase em Liderança e Inovação pela
+                        Fundação Getulio Vargas (FGV).</p>
 
                     <nav class="toc" aria-label="Índice">
                         <h3>Índice</h3>
                         <ul>
-                            <li><a href="#pt-sec-1">1. Fundações Biográficas e a Gênese do Pensamento Técnico</a></li>
-                            <li><a href="#pt-sec-2">2. A Era Tecnoblog (2012–2023): A Institucionalização da Mídia
-                                    Independente</a></li>
-                            <li><a href="#pt-sec-3">3. O Sabático e a Filosofia da Desconexão (2023–2024)</a></li>
+                            <li><a href="#pt-sec-1">1. Origem e Formação</a></li>
+                            <li><a href="#pt-sec-2">2. Tecnoblog (2012–2023): Jornalismo de Tecnologia e Gestão
+                                    Editorial</a></li>
+                            <li><a href="#pt-sec-3">3. O Período Sabático (2023–2024)</a></li>
                             <li><a href="#pt-sec-4">4. A Transição para o Setor Público: A Prefeitura de São Paulo
                                     (2024–2025)</a></li>
                             <li><a href="#pt-sec-5">5. A Carreira Federal: O Concurso Nacional Unificado (2026)</a></li>
-                            <li><a href="#pt-sec-6">6. Análise Sintética: O Legado e o Futuro</a></li>
+                            <li><a href="#pt-sec-6">6. Síntese Biográfica</a></li>
                             <li><a href="#pt-sec-7">7. Referências</a></li>
                         </ul>
                     </nav>
 
                     <section>
-                        <h3 class="analysis-chunk" id="pt-sec-1">1. Fundações Biográficas e a Gênese do Pensamento
-                            Técnico</h3>
-                        <h4 class="analysis-chunk">1.1 As Origens Multiculturais e a Curiosidade Mecânica</h4>
+                        <h3 class="analysis-chunk" id="pt-sec-1">1. Origem e Formação</h3>
+                        <h4 class="analysis-chunk">1.1 Origem e Trajetória Inicial</h4>
                         <p class="analysis-chunk">Nascido em 15 de abril de 1993, na província de Chiba, Japão,<sup
                                 class="citation"><a href="#pt-ref-2">[2]</a><a href="#pt-ref-17">[17]</a></sup> Paulo
                             Higa cresceu no Brasil com exposição à tecnologia desde cedo. Em entrevistas, relatou ter
@@ -359,10 +390,11 @@
                                     href="#pt-ref-18">[18]</a></sup></p>
                         <p class="analysis-chunk">A sua inserção no mundo digital ocorreu através da participação ativa
                             em fóruns de discussão na internet. Antes de ingressar no Tecnoblog, Higa administrava o
-                            blog "Guia do PC"<sup class="citation"><a href="#pt-ref-36">[36]</a></sup> e colaborava com o TechTudo, onde era descrito como estudante de Ciência
+                            blog "Guia do PC"<sup class="citation"><a href="#pt-ref-36">[36]</a></sup> e colaborava com
+                            o TechTudo, onde era descrito como estudante de Ciência
                             da Computação e entusiasta de tecnologia.<sup class="citation"><a
                                     href="#pt-ref-20">[20]</a></sup></p>
-                        <h4 class="analysis-chunk">1.2 A Convergência Acadêmica: Da Computação ao Jornalismo</h4>
+                        <h4 class="analysis-chunk">1.2 Formação Acadêmica</h4>
                         <p class="analysis-chunk">Inicialmente matriculado no curso de Ciência da Computação em
                             2011,<sup class="citation"><a href="#pt-ref-17">[17]</a><a href="#pt-ref-20">[20]</a></sup>
                             Higa redirecionou a sua formação para o Jornalismo, graduando-se pela Faculdade Cásper
@@ -372,9 +404,9 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="pt-sec-2">2. A Era Tecnoblog (2012–2023): A Institucionalização
-                            da Mídia Independente</h3>
-                        <h4 class="analysis-chunk">2.1 A Ascensão Editorial e a Construção de Autoridade</h4>
+                        <h3 class="analysis-chunk" id="pt-sec-2">2. Tecnoblog (2012–2023): Jornalismo de Tecnologia e
+                            Gestão Editorial</h3>
+                        <h4 class="analysis-chunk">2.1 Trajetória Editorial</h4>
                         <p class="analysis-chunk">Paulo Higa ingressou no Tecnoblog em 2012 como editor. Ao longo de uma
                             década, publicou milhares de artigos e conduziu mais de 400 análises (<em>reviews</em>)
                             detalhadas de dispositivos, abrangendo desde smartphones e computadores até televisores e
@@ -384,32 +416,36 @@
                             liderança editorial, a equipe se expandiu para mais de 30 profissionais,<sup
                                 class="citation"><a href="#pt-ref-16">[16]</a></sup> e Higa desempenhou papel central na
                             definição da voz editorial do veículo. Sua gestão editorial privilegiava a independência
-                            crítica em relação a fabricantes e anunciantes.<sup class="citation"><a href="#pt-ref-39">[39]</a></sup></p>
-                        <h4 class="analysis-chunk">2.2 O Papel como Head de Operações e Estrategista de Negócios</h4>
+                            crítica em relação a fabricantes e anunciantes.<sup class="citation"><a
+                                    href="#pt-ref-39">[39]</a></sup></p>
+                        <h4 class="analysis-chunk">2.2 Head de Operações</h4>
                         <p class="analysis-chunk">Entre 2018 e 2023, acumulando a função de Head de Operações, Higa foi
                             responsável pela viabilidade técnica e comercial do Tecnoblog. O portal atingiu mais de 30
                             milhões de acessos mensais,<sup class="citation"><a href="#pt-ref-16">[16]</a><a
                                     href="#pt-ref-19">[19]</a></sup> o que o tornava um dos maiores sites independentes
                             de tecnologia do Brasil. A função abrangia gestão de tráfego e SEO, liderança de equipes
                             distribuídas e operação do ecossistema de publicidade programática e projetos de marca.</p>
-                        <h4 class="analysis-chunk">2.3 Tecnocast: A Voz da Análise Profunda</h4>
+                        <h4 class="analysis-chunk">2.3 Tecnocast</h4>
                         <p class="analysis-chunk">Como coapresentador do Tecnocast,<sup class="citation"><a
                                     href="#pt-ref-28">[28]</a></sup> Higa contribuiu para aprofundar o debate
                             tecnológico do veículo. Enquanto o site cobria lançamentos de produtos, o podcast abordava
-                            temas como implicações geopolíticas da cadeia de suprimentos<sup class="citation"><a href="#pt-ref-37">[37]</a></sup> ou questões de privacidade em
+                            temas como implicações geopolíticas da cadeia de suprimentos<sup class="citation"><a
+                                    href="#pt-ref-37">[37]</a></sup> ou questões de privacidade em
                             tecnologias emergentes.<sup class="citation"><a href="#pt-ref-38">[38]</a></sup></p>
                         <p class="analysis-chunk">Após sua saída, alguns ouvintes registraram, em avaliações na Apple
                             Podcasts, percepção de mudanças no programa, citando a falta de análises técnicas
                             aprofundadas.<sup class="citation"><a href="#pt-ref-8">[8]</a></sup> Esses registros
                             refletem a visão de parte da audiência e não representam necessariamente uma avaliação
                             objetiva da qualidade editorial do programa.</p>
-                        <h4 class="analysis-chunk">2.4 Metodologia de Análise e Pedagogia Técnica</h4>
+                        <h4 class="analysis-chunk">2.4 Metodologia de Análise</h4>
                         <p class="analysis-chunk">A produção textual de Higa no Tecnoblog abrangia artigos explicativos
                             de padrões industriais amplamente citados em língua portuguesa. Uma característica de seus
                             <em>reviews</em> era a integração com uso real: ao correr 42 km com um relógio inteligente,
-                            a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso prolongado.<sup class="citation"><a href="#pt-ref-40">[40]</a></sup>
+                            a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso
+                            prolongado.<sup class="citation"><a href="#pt-ref-40">[40]</a></sup>
                             Ele também cobriu eventos em mais de 10 países, incluindo lançamentos de produtos e feiras
-                            de tecnologia.</p>
+                            de tecnologia.
+                        </p>
                         <div class="analysis-chunk analysis-table-wrapper" role="region"
                             aria-label="Tabela 1: Análise temática da produção editorial">
                             <table class="analysis-table">
@@ -460,16 +496,15 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="pt-sec-3">3. O Sabático e a Filosofia da Desconexão (2023–2024)
-                        </h3>
-                        <h4 class="analysis-chunk">3.1 A Saída Silenciosa</h4>
+                        <h3 class="analysis-chunk" id="pt-sec-3">3. O Período Sabático (2023–2024)</h3>
+                        <h4 class="analysis-chunk">3.1 Saída do Tecnoblog</h4>
                         <p class="analysis-chunk">Em 2023, Paulo Higa encerrou o seu ciclo no Tecnoblog, deixando os
                             cargos de Editor-Executivo e Head de Operações. A sua saída foi discreta. Leitores reagiram
                             com especulação, criando tópicos em fóruns questionando "O que houve com o Paulo Higa?".<sup
                                 class="citation"><a href="#pt-ref-4">[4]</a></sup> Ex-colegas confirmaram que se tratava
                             de um "ano sabático". A decisão de se retirar completamente contrasta com a norma de
                             visibilidade constante do ecossistema digital.</p>
-                        <h4 class="analysis-chunk">3.2 O "Anti-Influenciador"</h4>
+                        <h4 class="analysis-chunk">3.2 Postura Digital e Interesses Pessoais</h4>
                         <p class="analysis-chunk">A postura de Higa durante e após o sabático pode ser descrita como a
                             de um "anti-influenciador". O seu site pessoal, higa.me, manteve-se minimalista, servindo
                             como um currículo estático em vez de um blog ativo. Ele declarou explicitamente não usar
@@ -517,13 +552,15 @@
                         <p class="analysis-chunk">Em 2026, Higa foi aprovado no Concurso Nacional Unificado (CNU)<sup
                                 class="citation"><a href="#pt-ref-3">[3]</a><a href="#pt-ref-21">[21]</a></sup> para o
                             cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG), vinculado ao
-                            Ministério da Gestão e da Inovação em Serviços Públicos (MGI). A carreira de EPPGG<sup class="citation"><a href="#pt-ref-41">[41]</a></sup> é
+                            Ministério da Gestão e da Inovação em Serviços Públicos (MGI). A carreira de EPPGG<sup
+                                class="citation"><a href="#pt-ref-41">[41]</a></sup> é
                             responsável pela formulação, implementação e avaliação de políticas públicas no âmbito do
                             Poder Executivo Federal, com atuação em diversas áreas de governo.<sup class="citation"><a
                                     href="#pt-ref-14">[14]</a><a href="#pt-ref-15">[15]</a></sup></p>
                         <h4 class="analysis-chunk">5.2 Desempenho e Formação na Enap</h4>
                         <p class="analysis-chunk">As listas de classificação do CNU indicam pontuação final de 87,50
-                            para Higa, correspondendo ao 83º lugar de um total de 241.837 inscritos<sup class="citation"><a href="#pt-ref-42">[42]</a></sup> para o cargo de
+                            para Higa, correspondendo ao 83º lugar de um total de 241.837 inscritos<sup
+                                class="citation"><a href="#pt-ref-42">[42]</a></sup> para o cargo de
                             EPPGG no bloco.<sup class="citation"><a href="#pt-ref-23">[23]</a><a
                                     href="#pt-ref-24">[24]</a><a href="#pt-ref-25">[25]</a></sup> O Curso de Formação,
                             etapa final e eliminatória do concurso, foi realizado pela Escola Nacional de Administração
@@ -572,18 +609,21 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="pt-sec-6">6. Análise Sintética: O Legado e o Futuro</h3>
-                        <p class="analysis-chunk">A trajetória de Paulo Higa combina mais de uma década de atuação no
-                            jornalismo e na gestão de mídia digital com uma transição para a administração pública.
-                            Durante sua passagem pelo Tecnoblog, atuou tanto na produção editorial quanto na gestão
-                            operacional de uma das maiores plataformas de tecnologia do país. O interesse demonstrado ao
-                            longo de sua carreira em compreender o funcionamento dos sistemas — tecnológicos ou
-                            organizacionais — encontrou expressão posterior na gestão pública.</p>
-                        <p class="analysis-chunk">Sua aprovação no CNU insere-o num grupo de gestores públicos com
-                            formação técnica e experiência na economia digital, cuja atuação no setor público ainda está
-                            em curso. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico
-                            independente; na administração pública, sua contribuição é documentada nos registros do
-                            Diário Oficial e nos instrumentos desenvolvidos na SME.</p>
+                        <h3 class="analysis-chunk" id="pt-sec-6">6. Síntese Biográfica</h3>
+                        <p class="analysis-chunk">A trajetória de Paulo Higa abrange duas fases distintas. Na mídia,
+                            atuou como redator no TechTudo (Globo.com) entre 2010 e 2012, e no Tecnoblog de 2012 a 2023,
+                            onde exerceu as funções de editor, editor-executivo, head de operações e sócio. Foi também
+                            colunista de tecnologia na Rádio Globo (2018–2019), com foco na comunicação de temas
+                            técnicos
+                            para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e
+                            operacional, e recebeu reconhecimento do setor.</p>
+                        <p class="analysis-chunk">Na administração pública, atuou como APPGG e Assessor de Gabinete na
+                            Secretaria Municipal de Educação de São Paulo (2024–2025), com participação em projetos de
+                            planejamento estratégico, análise de dados e comunicação pública. Em 2026, foi aprovado no
+                            CNU para a carreira de EPPGG, estando em formação pela Enap em Brasília. Para leitores de
+                            sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na
+                            administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos
+                            instrumentos desenvolvidos na SME.</p>
                     </section>
 
                     <section class="references-section analysis-chunk">
@@ -694,13 +734,26 @@
                             <li id="pt-ref-35">Materiais de Comunicação SME-UPGE. <a
                                     href="https://sme-upge.github.io/diagnostico/one-pages.pdf"
                                     rel="noopener noreferrer" target="_blank">sme-upge.github.io (PDF)</a></li>
-                            <li id="pt-ref-36">Guia do PC. <a href="https://www.guiadopc.com.br" rel="noopener noreferrer" target="_blank">guiadopc.com.br</a></li>
-                            <li id="pt-ref-37">Tecnocast 187 – A crise global de chips. <a href="https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/" rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
-                            <li id="pt-ref-38">Tecnocast 204 – Seus dados nas mãos do poder. <a href="https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/" rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
-                            <li id="pt-ref-39">Política Editorial – Tecnoblog. <a href="https://tecnoblog.net/politica-editorial/" rel="noopener noreferrer" target="_blank">tecnoblog.net/politica-editorial/</a></li>
-                            <li id="pt-ref-40">Review Garmin Fenix 6 – Tecnoblog. <a href="https://tecnoblog.net/testamos/garmin-fenix-6-review/" rel="noopener noreferrer" target="_blank">tecnoblog.net/testamos</a></li>
-                            <li id="pt-ref-41">Carreira de EPPGG – Portal do Servidor. <a href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg" rel="noopener noreferrer" target="_blank">gov.br/servidor</a></li>
-                            <li id="pt-ref-42">Candidatos por Vaga – Bloco 7 – CNU. <a href="https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf" rel="noopener noreferrer" target="_blank">gov.br (PDF)</a></li>
+                            <li id="pt-ref-36">Guia do PC. <a href="https://www.guiadopc.com.br"
+                                    rel="noopener noreferrer" target="_blank">guiadopc.com.br</a></li>
+                            <li id="pt-ref-37">Tecnocast 187 – A crise global de chips. <a
+                                    href="https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
+                            <li id="pt-ref-38">Tecnocast 204 – Seus dados nas mãos do poder. <a
+                                    href="https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
+                            <li id="pt-ref-39">Política Editorial – Tecnoblog. <a
+                                    href="https://tecnoblog.net/politica-editorial/" rel="noopener noreferrer"
+                                    target="_blank">tecnoblog.net/politica-editorial/</a></li>
+                            <li id="pt-ref-40">Review Garmin Fenix 6 – Tecnoblog. <a
+                                    href="https://tecnoblog.net/testamos/garmin-fenix-6-review/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/testamos</a></li>
+                            <li id="pt-ref-41">Carreira de EPPGG – Portal do Servidor. <a
+                                    href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg"
+                                    rel="noopener noreferrer" target="_blank">gov.br/servidor</a></li>
+                            <li id="pt-ref-42">Candidatos por Vaga – Bloco 7 – CNU. <a
+                                    href="https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf"
+                                    rel="noopener noreferrer" target="_blank">gov.br (PDF)</a></li>
                         </ol>
                         <p class="references-note">Relatório elaborado em janeiro de 2026, consolidando dados
                             biográficos, registros de mídia e documentos oficiais.</p>
@@ -715,35 +768,52 @@
                     <aside class="ai-disclaimer analysis-chunk" role="note">
                         <i class="fas fa-robot" aria-hidden="true"></i>
                         <p>This content was generated by artificial intelligence (AI) based on publicly available
-                            sources up to January 2026. It may contain inaccuracies or subjective interpretations.
+                            sources up to January 2026.
                             References are listed at the end.</p>
                     </aside>
 
-                    <p class="analysis-chunk"><strong>Paulo Seikishi Higa</strong> (Chiba, Japan, April 15, 1993) is a Brazilian journalist, manager, and public servant. Currently, he is training to join the career of Specialist in Public Policy and Government Management (EPPGG)<sup class="citation"><a href="#en-ref-41">[41]</a></sup> of the Brazilian Government. Previously, he served as an Analyst of Public Policy and Government Management (APPGG) at the São Paulo City Hall and as an Advisor<sup class="citation"><a href="#en-ref-12">[12]</a></sup> to the Municipal Department of Education (SME). At SME, he participated in strategic planning and public communication initiatives<sup class="citation"><a href="#en-ref-32">[32]</a></sup>, as well as governance and data analysis projects, with a focus on modeling learning and equity criteria for the new Educational Performance Award (PDE)<sup class="citation"><a href="#en-ref-31">[31]</a></sup>.</p>
-                    <p class="analysis-chunk">Before entering public administration, Higa built his career in digital media as executive editor, head of operations, and partner at Tecnoblog, Brazil's largest independent technology website<sup class="citation"><a href="#en-ref-16">[16]</a></sup>. During his tenure at the outlet from 2012 to 2023, he helped expand the audience to over 30 million monthly pageviews. Recognized for his consumer electronics analysis and as co-host of the Tecnocast podcast<sup class="citation"><a href="#en-ref-8">[8]</a></sup>, he won the Especialistas Award for three consecutive years (2020, 2021, and 2022)<sup class="citation"><a href="#en-ref-29">[29]</a></sup> and was a finalist for the Comunique-se Award<sup class="citation"><a href="#en-ref-30">[30]</a></sup>. He holds a degree in Journalism from Faculdade Cásper Líbero and an MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV).</p>
+                    <p class="analysis-chunk"><strong>Paulo Seikishi Higa</strong> (Chiba, Japan, April 15, 1993) is a
+                        Brazilian journalist, manager, and public servant. Currently, he is training to join the career
+                        of Specialist in Public Policy and Government Management (EPPGG)<sup class="citation"><a
+                                href="#en-ref-41">[41]</a></sup> of the Brazilian Government. Previously, he served as
+                        an Analyst of Public Policy and Government Management (APPGG) at the São Paulo City Hall and as
+                        an Advisor<sup class="citation"><a href="#en-ref-12">[12]</a></sup> to the Municipal Department
+                        of Education (SME). At SME, he participated in strategic planning and public communication
+                        initiatives<sup class="citation"><a href="#en-ref-32">[32]</a></sup>, as well as governance and
+                        data analysis projects, with a focus on modeling learning and equity criteria for the new
+                        Educational Performance Award (PDE)<sup class="citation"><a href="#en-ref-31">[31]</a></sup>.
+                    </p>
+                    <p class="analysis-chunk">Before entering public administration, Higa built his career in digital
+                        media as executive editor, head of operations, and partner at Tecnoblog, Brazil's largest
+                        independent technology website<sup class="citation"><a href="#en-ref-16">[16]</a></sup>. During
+                        his tenure at the outlet from 2012 to 2023, he helped expand the audience to over 30 million
+                        monthly pageviews. Recognized for his consumer electronics analysis and as co-host of the
+                        Tecnocast podcast<sup class="citation"><a href="#en-ref-8">[8]</a></sup>, he won the
+                        Especialistas Award for three consecutive years (2020, 2021, and 2022)<sup class="citation"><a
+                                href="#en-ref-29">[29]</a></sup> and was a finalist for the Comunique-se Award<sup
+                            class="citation"><a href="#en-ref-30">[30]</a></sup>. He holds a degree in Journalism from
+                        Faculdade Cásper Líbero and an MBA in Management with an Emphasis on Leadership and Innovation
+                        from Fundação Getulio Vargas (FGV).</p>
 
                     <nav class="toc" aria-label="Table of Contents">
                         <h3>Table of Contents</h3>
                         <ul>
-                            <li><a href="#en-sec-1">1. Biographical Foundations and the Genesis of Technical
-                                    Thinking</a></li>
-                            <li><a href="#en-sec-2">2. The Tecnoblog Era (2012–2023): The Institutionalization of
-                                    Independent Media</a></li>
-                            <li><a href="#en-sec-3">3. The Sabbatical and the Philosophy of Disconnection
-                                    (2023–2024)</a></li>
+                            <li><a href="#en-sec-1">1. Origins and Background</a></li>
+                            <li><a href="#en-sec-2">2. Tecnoblog (2012–2023): Technology Journalism and Editorial
+                                    Management</a></li>
+                            <li><a href="#en-sec-3">3. The Sabbatical Period (2023–2024)</a></li>
                             <li><a href="#en-sec-4">4. The Transition to the Public Sector: São Paulo City Hall
                                     (2024–2025)</a></li>
                             <li><a href="#en-sec-5">5. The Federal Career: The Unified National Civil Service Exam
                                     (2026)</a></li>
-                            <li><a href="#en-sec-6">6. Synthetic Analysis: The Legacy and the Future</a></li>
+                            <li><a href="#en-sec-6">6. Biographical Summary</a></li>
                             <li><a href="#en-sec-7">7. References</a></li>
                         </ul>
                     </nav>
 
                     <section>
-                        <h3 class="analysis-chunk" id="en-sec-1">1. Biographical Foundations and the Genesis of
-                            Technical Thinking</h3>
-                        <h4 class="analysis-chunk">1.1 Multicultural Origins and Mechanical Curiosity</h4>
+                        <h3 class="analysis-chunk" id="en-sec-1">1. Origins and Background</h3>
+                        <h4 class="analysis-chunk">1.1 Early Life and Initial Career</h4>
                         <p class="analysis-chunk">Born on April 15, 1993, in the province of Chiba, Japan,<sup
                                 class="citation"><a href="#en-ref-2">[2]</a><a href="#en-ref-17">[17]</a></sup> Paulo
                             Higa grew up in Brazil with early exposure to technology. In interviews, he described his
@@ -751,10 +821,11 @@
                             worked.<sup class="citation"><a href="#en-ref-17">[17]</a><a
                                     href="#en-ref-18">[18]</a></sup></p>
                         <p class="analysis-chunk">His entry into the digital world came through active participation in
-                            internet discussion forums. Before joining Tecnoblog, Higa managed the blog "Guia do PC"<sup class="citation"><a href="#en-ref-36">[36]</a></sup> and
+                            internet discussion forums. Before joining Tecnoblog, Higa managed the blog "Guia do PC"<sup
+                                class="citation"><a href="#en-ref-36">[36]</a></sup> and
                             contributed to TechTudo, where he was described as a Computer Science student and technology
                             enthusiast.<sup class="citation"><a href="#en-ref-20">[20]</a></sup></p>
-                        <h4 class="analysis-chunk">1.2 Academic Convergence: From Computer Science to Journalism</h4>
+                        <h4 class="analysis-chunk">1.2 Academic Background</h4>
                         <p class="analysis-chunk">Initially enrolled in a Computer Science program in 2011,<sup
                                 class="citation"><a href="#en-ref-17">[17]</a><a href="#en-ref-20">[20]</a></sup> Higa
                             redirected his education toward Journalism, graduating from Faculdade Cásper Líbero in
@@ -764,9 +835,9 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="en-sec-2">2. The Tecnoblog Era (2012–2023): The
-                            Institutionalization of Independent Media</h3>
-                        <h4 class="analysis-chunk">2.1 Editorial Rise and the Construction of Authority</h4>
+                        <h3 class="analysis-chunk" id="en-sec-2">2. Tecnoblog (2012–2023): Technology Journalism and
+                            Editorial Management</h3>
+                        <h4 class="analysis-chunk">2.1 Editorial Career</h4>
                         <p class="analysis-chunk">Paulo Higa joined Tecnoblog in 2012 as an editor. Over a decade, he
                             published thousands of articles and conducted more than 400 detailed device reviews,
                             covering everything from smartphones and computers to TVs and wearables.<sup
@@ -776,8 +847,9 @@
                             his editorial leadership, the team expanded to more than 30 professionals,<sup
                                 class="citation"><a href="#en-ref-16">[16]</a></sup> and Higa played a central role in
                             shaping the outlet's editorial voice. His editorial management prioritized critical
-                            independence from manufacturers and advertisers.<sup class="citation"><a href="#en-ref-39">[39]</a></sup></p>
-                        <h4 class="analysis-chunk">2.2 The Role as Head of Operations and Business Strategist</h4>
+                            independence from manufacturers and advertisers.<sup class="citation"><a
+                                    href="#en-ref-39">[39]</a></sup></p>
+                        <h4 class="analysis-chunk">2.2 Head of Operations</h4>
                         <p class="analysis-chunk">Between 2018 and 2023, also serving as Head of Operations, Higa was
                             responsible for the technical and commercial viability of Tecnoblog. The portal reached more
                             than 30 million monthly pageviews,<sup class="citation"><a href="#en-ref-16">[16]</a><a
@@ -785,22 +857,24 @@
                             technology sites. The role covered traffic and SEO management, leadership of distributed
                             teams, and operation of the programmatic advertising ecosystem and branded content projects.
                         </p>
-                        <h4 class="analysis-chunk">2.3 Tecnocast: The Voice of In-Depth Analysis</h4>
+                        <h4 class="analysis-chunk">2.3 Tecnocast</h4>
                         <p class="analysis-chunk">As co-host of Tecnocast,<sup class="citation"><a
                                     href="#en-ref-28">[28]</a></sup> Higa contributed to deepening the outlet's
                             technological debate. While the website covered product launches, the podcast addressed
-                            topics such as geopolitical implications of supply chains<sup class="citation"><a href="#en-ref-37">[37]</a></sup> or privacy issues in emerging
+                            topics such as geopolitical implications of supply chains<sup class="citation"><a
+                                    href="#en-ref-37">[37]</a></sup> or privacy issues in emerging
                             technologies.<sup class="citation"><a href="#en-ref-38">[38]</a></sup></p>
                         <p class="analysis-chunk">Following his departure, some listeners posted reviews on Apple
                             Podcasts noting perceived changes to the program, citing a lack of in-depth technical
                             analysis.<sup class="citation"><a href="#en-ref-8">[8]</a></sup> These reflect the views of
                             part of the audience and do not represent an objective evaluation of the program's editorial
                             quality.</p>
-                        <h4 class="analysis-chunk">2.4 Analysis Methodology and Technical Pedagogy</h4>
+                        <h4 class="analysis-chunk">2.4 Analysis Methodology</h4>
                         <p class="analysis-chunk">Higa's written output at Tecnoblog included explanatory articles on
                             industry standards widely referenced in Portuguese. A distinctive feature of his reviews was
                             the integration with real-world use: by running 42 km with a smartwatch, his analysis of GPS
-                            accuracy or battery life incorporated data from extended use.<sup class="citation"><a href="#en-ref-40">[40]</a></sup> He also covered events in more
+                            accuracy or battery life incorporated data from extended use.<sup class="citation"><a
+                                    href="#en-ref-40">[40]</a></sup> He also covered events in more
                             than 10 countries, including product launches and technology trade fairs.</p>
                         <div class="analysis-chunk analysis-table-wrapper" role="region"
                             aria-label="Table 1: Thematic analysis of editorial output">
@@ -852,16 +926,15 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="en-sec-3">3. The Sabbatical and the Philosophy of Disconnection
-                            (2023–2024)</h3>
-                        <h4 class="analysis-chunk">3.1 The Silent Exit</h4>
+                        <h3 class="analysis-chunk" id="en-sec-3">3. The Sabbatical Period (2023–2024)</h3>
+                        <h4 class="analysis-chunk">3.1 Departure from Tecnoblog</h4>
                         <p class="analysis-chunk">In 2023, Paulo Higa concluded his cycle at Tecnoblog, leaving his
                             positions as Executive Editor and Head of Operations. His departure was discreet. Readers
                             reacted with speculation, creating forum threads asking "What happened to Paulo Higa?".<sup
                                 class="citation"><a href="#en-ref-4">[4]</a></sup> Responses from former colleagues
                             confirmed he was taking "a sabbatical year." The decision to withdraw completely contrasts
                             with the norm of constant visibility in the digital ecosystem.</p>
-                        <h4 class="analysis-chunk">3.2 The "Anti-Influencer"</h4>
+                        <h4 class="analysis-chunk">3.2 Digital Posture and Personal Interests</h4>
                         <p class="analysis-chunk">Higa's posture during and after the sabbatical can be described as
                             that of an "anti-influencer." His personal website, higa.me, remained minimalist, serving as
                             a static résumé rather than an active blog. He explicitly stated he does not use social
@@ -909,15 +982,18 @@
                         <p class="analysis-chunk">In 2026, Higa was approved in the Unified National Civil Service Exam
                             (CNU)<sup class="citation"><a href="#en-ref-3">[3]</a><a href="#en-ref-21">[21]</a></sup>
                             for the position of Specialist in Public Policy and Government Management (EPPGG), linked to
-                            the Ministry of Management and Innovation in Public Services (MGI). The EPPGG career<sup class="citation"><a href="#en-ref-41">[41]</a></sup> is
+                            the Ministry of Management and Innovation in Public Services (MGI). The EPPGG career<sup
+                                class="citation"><a href="#en-ref-41">[41]</a></sup> is
                             responsible for formulating, implementing, and evaluating public policies within the Federal
                             Executive Branch, with assignments across various areas of government.<sup
                                 class="citation"><a href="#en-ref-14">[14]</a><a href="#en-ref-15">[15]</a></sup></p>
                         <h4 class="analysis-chunk">5.2 Performance and Training at Enap</h4>
                         <p class="analysis-chunk">Classification lists for the CNU indicate a final score of 87.50 for
-                            Higa, corresponding to 83rd place out of a total of 241,837 applicants<sup class="citation"><a href="#en-ref-42">[42]</a></sup> for the EPPGG
-                            position in the block.<sup class="citation"><a href="#en-ref-23">[23]</a><a href="#en-ref-24">[24]</a><a
-                                    href="#en-ref-25">[25]</a></sup> The Training Course, the final and eliminatory
+                            Higa, corresponding to 83rd place out of a total of 241,837 applicants<sup
+                                class="citation"><a href="#en-ref-42">[42]</a></sup> for the EPPGG
+                            position in the block.<sup class="citation"><a href="#en-ref-23">[23]</a><a
+                                    href="#en-ref-24">[24]</a><a href="#en-ref-25">[25]</a></sup> The Training Course,
+                            the final and eliminatory
                             stage of the exam, was held by the National School of Public Administration (Enap) in
                             Brasília, covering topics such as ethics, human rights, government planning, and public
                             finances.<sup class="citation"><a href="#en-ref-15">[15]</a></sup></p>
@@ -963,18 +1039,20 @@
                     </section>
 
                     <section>
-                        <h3 class="analysis-chunk" id="en-sec-6">6. Synthetic Analysis: The Legacy and the Future</h3>
-                        <p class="analysis-chunk">Paulo Higa's trajectory combines over a decade of work in digital
-                            media journalism and operations with a transition into public administration. During his
-                            time at Tecnoblog, he worked both in editorial production and in the operational management
-                            of one of the country's largest technology platforms. The interest demonstrated throughout
-                            his career in understanding how systems work — whether technological or organizational —
-                            found later expression in public management.</p>
-                        <p class="analysis-chunk">His approval in the CNU places him among a cohort of public managers
-                            with technical backgrounds and experience in the digital economy, whose contribution to the
-                            public sector is still unfolding. For readers of his Tecnoblog output, Higa is associated
-                            with independent technical journalism; in public administration, his contribution is
-                            documented in Official Gazette records and in the tools developed at the SME.</p>
+                        <h3 class="analysis-chunk" id="en-sec-6">6. Biographical Summary</h3>
+                        <p class="analysis-chunk">Paulo Higa's trajectory spans two distinct phases. In media, he
+                            worked as a reporter at TechTudo (Globo.com) from 2010 to 2012, and at Tecnoblog from 2012
+                            to 2023, serving as editor, executive editor, head of operations, and partner. He also
+                            served as a technology columnist on Rádio Globo (2018–2019), focused on communicating
+                            technical topics to broad audiences. During this period, he combined journalistic
+                            production, editorial and operational management, and received industry recognition.</p>
+                        <p class="analysis-chunk">In public administration, he served as an APPGG and Cabinet Advisor
+                            at the São Paulo Municipal Secretariat of Education (2024–2025), contributing to strategic
+                            planning, data analysis, and public communication projects. In 2026, he was approved in the
+                            CNU for the EPPGG career and is currently undergoing training at Enap in Brasília. For
+                            readers of his Tecnoblog output, Higa is associated with independent technical journalism;
+                            in public administration, his contribution is documented in Official Gazette records and in
+                            the tools developed at the SME.</p>
                     </section>
 
                     <section class="references-section analysis-chunk">
@@ -1085,13 +1163,26 @@
                             <li id="en-ref-35">SME-UPGE Communication Materials. <a
                                     href="https://sme-upge.github.io/diagnostico/one-pages.pdf"
                                     rel="noopener noreferrer" target="_blank">sme-upge.github.io (PDF)</a></li>
-                            <li id="en-ref-36">Guia do PC. <a href="https://www.guiadopc.com.br" rel="noopener noreferrer" target="_blank">guiadopc.com.br</a></li>
-                            <li id="en-ref-37">Tecnocast 187 – A crise global de chips. <a href="https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/" rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
-                            <li id="en-ref-38">Tecnocast 204 – Seus dados nas mãos do poder. <a href="https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/" rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
-                            <li id="en-ref-39">Editorial Policy – Tecnoblog. <a href="https://tecnoblog.net/politica-editorial/" rel="noopener noreferrer" target="_blank">tecnoblog.net/politica-editorial/</a></li>
-                            <li id="en-ref-40">Garmin Fenix 6 Review – Tecnoblog. <a href="https://tecnoblog.net/testamos/garmin-fenix-6-review/" rel="noopener noreferrer" target="_blank">tecnoblog.net/testamos</a></li>
-                            <li id="en-ref-41">EPPGG Career – Portal do Servidor. <a href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg" rel="noopener noreferrer" target="_blank">gov.br/servidor</a></li>
-                            <li id="en-ref-42">Candidates per Vacancy – Block 7 – CNU. <a href="https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf" rel="noopener noreferrer" target="_blank">gov.br (PDF)</a></li>
+                            <li id="en-ref-36">Guia do PC. <a href="https://www.guiadopc.com.br"
+                                    rel="noopener noreferrer" target="_blank">guiadopc.com.br</a></li>
+                            <li id="en-ref-37">Tecnocast 187 – A crise global de chips. <a
+                                    href="https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
+                            <li id="en-ref-38">Tecnocast 204 – Seus dados nas mãos do poder. <a
+                                    href="https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/tecnocast</a></li>
+                            <li id="en-ref-39">Editorial Policy – Tecnoblog. <a
+                                    href="https://tecnoblog.net/politica-editorial/" rel="noopener noreferrer"
+                                    target="_blank">tecnoblog.net/politica-editorial/</a></li>
+                            <li id="en-ref-40">Garmin Fenix 6 Review – Tecnoblog. <a
+                                    href="https://tecnoblog.net/testamos/garmin-fenix-6-review/"
+                                    rel="noopener noreferrer" target="_blank">tecnoblog.net/testamos</a></li>
+                            <li id="en-ref-41">EPPGG Career – Portal do Servidor. <a
+                                    href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg"
+                                    rel="noopener noreferrer" target="_blank">gov.br/servidor</a></li>
+                            <li id="en-ref-42">Candidates per Vacancy – Block 7 – CNU. <a
+                                    href="https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf"
+                                    rel="noopener noreferrer" target="_blank">gov.br (PDF)</a></li>
                         </ol>
                         <p class="references-note">Report prepared in January 2026, consolidating biographical data,
                             media records, and official documents.</p>
