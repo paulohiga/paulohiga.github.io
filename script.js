@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const enVersion = document.getElementById('en-version');
 
     // Theme Selector
-    const themeIcon = themeToggle.querySelector('i');
+    const themeIcon = themeToggle.querySelector('.theme-icon');
 
     function setThemeIcon(isDark) {
-        themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+        themeIcon.textContent = isDark ? '●' : '○';
     }
 
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
