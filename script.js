@@ -16,11 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const ptVersion = document.getElementById('pt-version');
     const enVersion = document.getElementById('en-version');
 
-    // Theme Selector
-    const themeIcon = themeToggle.querySelector('i');
+    // Theme Selector — typographic toggle (text-only, no icon)
+    const themeLabel = themeToggle.querySelector('.theme-label');
+
+    const themeStrings = {
+        pt: { light: 'Claro', dark: 'Escuro', toLight: 'Mudar para tema claro', toDark: 'Mudar para tema escuro' },
+        en: { light: 'Light', dark: 'Dark',  toLight: 'Switch to light theme', toDark: 'Switch to dark theme' }
+    };
 
     function setThemeIcon(isDark) {
-        themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+        const s = themeStrings[getCurrentLanguage()] || themeStrings.pt;
+        themeLabel.textContent = isDark ? s.dark : s.light;
+        themeToggle.setAttribute('aria-label', isDark ? s.toLight : s.toDark);
+        themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     }
 
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -73,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             langPt.classList.remove('active');
             document.documentElement.lang = 'en-US';
         }
+        try { updateFormLanguage(lang); } catch (_) { /* formTranslations not yet initialized at first call */ }
+        setThemeIcon(document.body.classList.contains('dark-theme'));
     }
 
     const formOverlay = document.getElementById('form-overlay');
@@ -366,4 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Re-apply language translations now that form strings are initialized
+    updateFormLanguage(getCurrentLanguage());
+    setThemeIcon(document.body.classList.contains('dark-theme'));
 });

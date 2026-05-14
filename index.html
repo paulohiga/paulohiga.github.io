@@ -5,8 +5,15 @@
     <title>Paulo Higa</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paulo Higa é gestor público, jornalista, maratonista e entusiasta de tecnologia.">
-    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa, gestor público, EPPGG">
+    <meta name="description" content="Paulo Higa é Especialista em Políticas Públicas e Gestão Governamental (EPPGG) em formação pelo Governo Federal, jornalista, maratonista e ex-editor-executivo do Tecnoblog. Site pessoal em Brasília.">
+    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa, gestor público, EPPGG, APPGG, tecnoblog">
+    <meta name="author" content="Paulo Higa">
+    <meta property="og:title" content="Paulo Higa">
+    <meta property="og:description" content="Gestor público, jornalista e maratonista. EPPGG em formação pelo Governo Federal.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://higa.me/">
+    <meta property="og:image" content="https://higa.me/img/foto-paulo-higa-3.jpg">
+    <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://higa.me/">
     <link rel="alternate" href="https://higa.me/" hreflang="pt-BR">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,14 +23,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,30..100;1,9..144,400..500,30..100&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
     {
@@ -56,7 +57,17 @@
           "sameAs": "https://portal.fgv.br/"
         }
       ],
-      "description": "Paulo Higa é gestor público, jornalista, maratonista e entusiasta de tecnologia.",
+      "description": "Paulo Higa é jornalista, gestor público e maratonista. Especialista em Políticas Públicas e Gestão Governamental (EPPGG) em formação pelo Governo Federal, foi anteriormente Analista de Políticas Públicas (APPGG) na Prefeitura de São Paulo e editor-executivo, head de operações e sócio do Tecnoblog (2012–2023).",
+      "homeLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        }
+      },
+      "mainEntityOfPage": "https://higa.me/",
       "sameAs": [
         "https://tecnoblog.net/author/paulohiga/"
       ],
@@ -81,54 +92,38 @@
     <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
 
     <nav class="toolbar" aria-label="Opções de visualização">
-        <div class="language-selector">
+        <div class="language-selector" role="group" aria-label="Idioma">
             <button id="lang-pt" aria-label="Mudar para Português">PT</button>
+            <span class="sep" aria-hidden="true">·</span>
             <button id="lang-en" aria-label="Switch to English">EN</button>
         </div>
-        <div class="theme-selector">
-            <button id="theme-toggle" aria-label="Alternar tema claro/escuro"><i class="fas fa-sun"></i></button>
+        <div class="theme-selector" role="group" aria-label="Tema">
+            <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+                <span class="theme-label">Claro</span>
+            </button>
         </div>
     </nav>
 
     <main class="container" id="main-content">
-        <div class="profile-grid">
-            <!-- Sidebar / Identity -->
-            <aside class="profile-sidebar">
-                <div class="profile-image-wrapper">
-                    <button type="button" id="foto-btn" class="profile-image-button"
-                        aria-label="Ver biografia de Paulo Higa">
-                        <img src="img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="200"
-                            height="200">
-                    </button>
-                </div>
-                <h1>Paulo Higa</h1>
-                <div class="profile-details">
-                    <p class="profile-detail"><i class="fas fa-location-dot" aria-hidden="true"></i> Brasília, DF</p>
-                    <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span
-                            data-lang-key="profession">Gestor
-                            público</span></p>
-                </div>
-                <div class="profile-actions">
-                    <button type="button" class="contact-button contact-link" data-lang-key="contactButton">Entrar em
-                        contato</button>
-                    <a href="https://www.linkedin.com/in/paulohiga/" target="_blank"
-                        class="contact-button linkedin-button" aria-label="LinkedIn Profile (opens in new window)">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </aside>
+        <header class="masthead">
+            <button type="button" id="foto-btn" class="profile-image-button"
+                aria-label="Ver biografia de Paulo Higa">
+                <img src="img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="132"
+                    height="132">
+            </button>
+            <h1 class="name">Paulo Higa</h1>
+            <p class="role"><span data-lang-key="profession">Gestor público</span></p>
+            <p class="standfirst" aria-label="Localização">Brasília<span class="dot" aria-hidden="true">·</span>DF</p>
+        </header>
 
-            <!-- Main Content -->
-            <article class="content-area">
+        <article class="content-area">
                 <div>
                     <!-- Portuguese Content -->
                     <div id="pt-version" class="fade-in">
-                        <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button">Paulo
-                                    Higa <i class="fas fa-circle-plus bio-info-icon"
-                                        aria-hidden="true"></i></a></strong> é Especialista em Políticas Públicas e Gestão Governamental (EPPGG) em formação pelo Governo Federal, radicado em Brasília desde 2026. Jornalista de formação e gestor público por escolha, trabalhou por mais de uma década na mídia de tecnologia antes de ingressar no serviço público — primeiro como analista de políticas públicas na Prefeitura de São Paulo, onde atuou com dados, planejamento estratégico e comunicação pública na educação municipal, e agora na carreira federal. Nas horas vagas, corre maratonas.</p>
+                        <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button" aria-label="Abrir biografia de Paulo Higa">Paulo Higa</a></strong> é Especialista em Políticas Públicas e Gestão Governamental (EPPGG) em formação pelo Governo Federal, radicado em Brasília desde 2026. Jornalista de formação e gestor público por escolha, trabalhou por mais de uma década na mídia de tecnologia antes de ingressar no serviço público — primeiro como analista de políticas públicas na Prefeitura de São Paulo, onde atuou com dados, planejamento estratégico e comunicação pública na educação municipal, e agora na carreira federal. Nas horas vagas, corre maratonas.</p>
 
                         <section>
-                            <h2><i class="fas fa-landmark-flag" aria-hidden="true"></i> Público</h2>
+                            <h2><span class="num" aria-hidden="true">I.</span> Público</h2>
                             <p>É servidor público da carreira de <span class="job-title">Analista de
                                     Políticas Públicas e Gestão Governamental</span> (APPGG) na <span
                                     class="org-name">Prefeitura de São Paulo</span>. Alocado na unidade de planejamento
@@ -151,7 +146,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-newspaper" aria-hidden="true"></i> Privado</h2>
+                            <h2><span class="num" aria-hidden="true">II.</span> Privado</h2>
                             <p>No setor privado, sua carreira teve início em 2012, como editor no <a
                                     href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. Em 2018, tornou-se
                                 editor-executivo e sócio do veículo, liderando uma equipe de mais de 30 pessoas e
@@ -176,7 +171,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-person-running" aria-hidden="true"></i> Pessoal</h2>
+                            <h2><span class="num" aria-hidden="true">III.</span> Pessoal</h2>
                             <p>Além de sua carreira profissional, é apaixonado por cozinhar e correr. Gosta de
                                 experimentar vinhos de regiões diferentes e de vez em quando se aventura em variedades
                                 com nomes difíceis de pronunciar, como a Gewürztraminer e a Zweigelt, mas sua uva
@@ -199,11 +194,9 @@
 
                     <!-- English Content -->
                     <div id="en-version" class="fade-in" style="display: none;">
-                        <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button">Paulo
-                                    Higa <i class="fas fa-circle-plus bio-info-icon"
-                                        aria-hidden="true"></i></a></strong> is a Specialist in Public Policy and Government Management (EPPGG) in training with the Brazilian Federal Government, based in Brasília since 2026. A journalist by training and a public servant by choice, he spent over a decade in tech media before joining public service — first as a policy analyst at the São Paulo City Hall, working with data, strategic planning, and public communication in municipal education, and now in the federal career. In his spare time, he runs marathons.</p>
+                        <p class="intro-text"><strong><a href="#" class="analysis-modal-link" role="button" aria-label="Open Paulo Higa's biography">Paulo Higa</a></strong> is a Specialist in Public Policy and Government Management (EPPGG) in training with the Brazilian Federal Government, based in Brasília since 2026. A journalist by training and a public servant by choice, he spent over a decade in tech media before joining public service — first as a policy analyst at the São Paulo City Hall, working with data, strategic planning, and public communication in municipal education, and now in the federal career. In his spare time, he runs marathons.</p>
                         <section>
-                            <h2><i class="fas fa-landmark-flag" aria-hidden="true"></i> Public</h2>
+                            <h2><span class="num" aria-hidden="true">I.</span> Public</h2>
                             <p>He is a public servant in the career of <span class="job-title">Public Policy &
                                     Government Management Analyst</span>
                                 (APPGG) at <span class="org-name">São Paulo City Hall</span>. Assigned to the
@@ -227,7 +220,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-newspaper" aria-hidden="true"></i> Private</h2>
+                            <h2><span class="num" aria-hidden="true">II.</span> Private</h2>
                             <p>In the private sector, his career began in 2012, as an editor at <a
                                     href="https://tecnoblog.net/author/paulohiga/">Tecnoblog</a>. In 2018, he became
                                 executive editor and partner of the media outlet, leading a team of more than 30 people
@@ -252,7 +245,7 @@
                         </section>
 
                         <section>
-                            <h2><i class="fas fa-person-running" aria-hidden="true"></i> Personal</h2>
+                            <h2><span class="num" aria-hidden="true">III.</span> Personal</h2>
                             <p>Outside of work, he is passionate about cooking and running. He enjoys
                                 trying wines from different regions and occasionally ventures into varieties with
                                 hard-to-pronounce names, such as Gewürztraminer and Zweigelt, but his favorite grape
@@ -274,8 +267,11 @@
                         </section>
                     </div>
                 </div>
-            </article>
-        </div>
+            <footer class="colophon" aria-label="Contato">
+                <a href="https://www.linkedin.com/in/paulohiga/" target="_blank" rel="noopener" class="ext">LinkedIn</a>
+                <button type="button" class="contact-link" data-lang-key="contactButton">Entrar em contato</button>
+            </footer>
+        </article>
     </main>
 
     <!-- Contact Form Overlay -->
@@ -309,7 +305,7 @@
                 <div class="modal-floating-actions">
                     <button type="button" id="close-analysis" aria-label="Fechar análise">&times;</button>
                     <button type="button" id="back-to-top-analysis" aria-label="Voltar ao topo" class="hidden"
-                        title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+                        title="Voltar ao topo">Topo</button>
                 </div>
             </div>
             <div class="analysis-modal-body">
@@ -320,7 +316,6 @@
                     <h2 class="analysis-title">Paulo Higa</h2>
 
                     <aside class="ai-disclaimer analysis-chunk" role="note">
-                        <i class="fas fa-robot" aria-hidden="true"></i>
                         <p>Este conteúdo foi gerado por inteligência artificial (IA) com base em fontes públicas
                             disponíveis até janeiro de 2026. As
                             referências estão listadas ao final.</p>
@@ -616,7 +611,7 @@
                     </section>
 
                     <section class="references-section analysis-chunk">
-                        <h3 id="pt-sec-7"><i class="fas fa-book-open"></i> 7. Referências</h3>
+                        <h3 id="pt-sec-7">7. Referências</h3>
                         <ol class="references-list">
                             <li id="pt-ref-1">Carreira de EPPGG – Portal do Servidor. <a
                                     href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg"
@@ -745,7 +740,6 @@
                     <h2 class="analysis-title">Paulo Higa</h2>
 
                     <aside class="ai-disclaimer analysis-chunk" role="note">
-                        <i class="fas fa-robot" aria-hidden="true"></i>
                         <p>This content was generated by artificial intelligence (AI) based on publicly available
                             sources up to January 2026.
                             References are listed at the end.</p>
@@ -1039,7 +1033,7 @@
                     </section>
 
                     <section class="references-section analysis-chunk">
-                        <h3 id="en-sec-7"><i class="fas fa-book-open"></i> 7. References</h3>
+                        <h3 id="en-sec-7">7. References</h3>
                         <ol class="references-list">
                             <li id="en-ref-1">EPPGG Career – Portal do Servidor. <a
                                     href="https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg"
