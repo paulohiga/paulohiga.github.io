@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function validateForm(lang = 'pt') {
         let isValid = true;
-        const name = document.getElementById('name');
+        const name = nameInput;
         const email = document.getElementById('email');
         const message = document.getElementById('message');
         const translations = formTranslations[lang];
@@ -300,20 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Bio Inline Toggle ---
-    function collapseBio(lang) {
-        const shortEl = document.getElementById(`${lang}-bio-short`);
-        const fullEl = document.getElementById(`${lang}-bio-full`);
-        if (!shortEl || !fullEl || !fullEl.hidden) return;
-        fullEl.hidden = true;
-        shortEl.hidden = false;
-        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
-        if (expandBtn) {
-            expandBtn.setAttribute('aria-expanded', 'false');
-            const icon = expandBtn.querySelector('i');
-            if (icon) icon.className = 'fas fa-circle-plus bio-info-icon';
-        }
-    }
-
     function toggleBio(lang) {
         const shortEl = document.getElementById(`${lang}-bio-short`);
         const fullEl = document.getElementById(`${lang}-bio-full`);
