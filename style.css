@@ -158,6 +158,9 @@ body.dark-theme .toolbar button:hover {
     padding: var(--padding-top-container) 1.5rem 3rem;
     /* Top padding for toolbar */
     box-sizing: border-box;
+    /* clip (not hidden) avoids creating a scroll container that would
+       break position:sticky on the sidebar */
+    overflow-x: clip;
 }
 
 .profile-grid {
@@ -165,6 +168,15 @@ body.dark-theme .toolbar button:hover {
     grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
+    /* Prevent grid from expanding beyond the viewport */
+    min-width: 0;
+}
+
+/* Grid items must declare min-width: 0 or they expand to fit their content,
+   blowing out the column and creating horizontal scroll on mobile. */
+.profile-sidebar,
+.content-area {
+    min-width: 0;
 }
 
 /* --- Sidebar --- */
@@ -791,9 +803,13 @@ body.dark-theme h4.analysis-chunk {
 /* Analysis Tables */
 .analysis-table-wrapper {
     overflow-x: auto;
+    /* max-width keeps the wrapper inside the card on narrow viewports */
+    max-width: 100%;
     margin: 1.25rem 0;
     border-radius: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
+    /* -webkit-overflow-scrolling for smoother momentum scroll on iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 body.dark-theme .analysis-table-wrapper {
