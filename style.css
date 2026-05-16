@@ -158,6 +158,9 @@ body.dark-theme .toolbar button:hover {
     padding: var(--padding-top-container) 1.5rem 3rem;
     /* Top padding for toolbar */
     box-sizing: border-box;
+    /* clip (not hidden) avoids creating a scroll container that would
+       break position:sticky on the sidebar */
+    overflow-x: clip;
 }
 
 .profile-grid {
@@ -165,6 +168,15 @@ body.dark-theme .toolbar button:hover {
     grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
+    /* Prevent grid from expanding beyond the viewport */
+    min-width: 0;
+}
+
+/* Grid items must declare min-width: 0 or they expand to fit their content,
+   blowing out the column and creating horizontal scroll on mobile. */
+.profile-sidebar,
+.content-area {
+    min-width: 0;
 }
 
 /* --- Sidebar --- */
@@ -190,7 +202,7 @@ body.dark-theme .profile-image-wrapper img {
     box-shadow: var(--shadow-dark);
 }
 
-/* Profile photo button (opens biography modal) */
+/* Profile photo button (expands biography) */
 .profile-image-button {
     background: none;
     border: none;
@@ -285,7 +297,6 @@ body.dark-theme .profile-detail i {
     justify-content: center;
     gap: 0.5rem;
     box-sizing: border-box;
-    /* Ensure padding doesn't affect width */
 }
 
 .contact-button:hover {
@@ -295,23 +306,12 @@ body.dark-theme .profile-detail i {
 
 .linkedin-button {
     background-color: #0077b5;
-    /* LinkedIn Blue */
     color: white !important;
-    /* Force white text */
     box-shadow: 0 2px 4px rgba(0, 119, 181, 0.2);
 }
 
 .linkedin-button:hover {
     background-color: #006097;
-}
-
-body.dark-theme .contact-button {
-    background-color: var(--color-primary);
-    /* Keep blue or adjust */
-}
-
-body.dark-theme .linkedin-button {
-    background-color: #0077b5;
 }
 
 /* --- Main Content --- */
@@ -324,7 +324,6 @@ body.dark-theme .linkedin-button {
     border: 1px solid var(--card-border-light);
     box-shadow: var(--shadow-light);
     animation: slideUp 0.7s ease-out;
-    /* intentionally slightly slower than fadeIn for layered entry */
 }
 
 body.dark-theme .content-area {
@@ -391,7 +390,6 @@ a:focus-visible {
 
 body.dark-theme a {
     color: var(--color-accent);
-    /* Use a brighter blue for links in dark mode */
 }
 
 body.dark-theme a:focus-visible {
@@ -407,12 +405,47 @@ a:hover {
 .contact-button,
 .skip-link,
 .toc li a,
-sup.citation a,
-.analysis-modal-link {
+sup.citation a {
     text-decoration: none;
 }
 
-/* Info icon inside biography name link */
+/* Bio toggle buttons — inline, styled as links */
+.bio-toggle-btn,
+.bio-collapse-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 500;
+    color: var(--color-primary);
+    display: inline;
+    text-decoration: none;
+}
+
+.bio-toggle-btn:hover,
+.bio-collapse-btn:hover {
+    opacity: 0.8;
+}
+
+.bio-toggle-btn:focus-visible,
+.bio-collapse-btn:focus-visible {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+body.dark-theme .bio-toggle-btn,
+body.dark-theme .bio-collapse-btn {
+    color: var(--color-accent);
+}
+
+body.dark-theme .bio-toggle-btn:focus-visible,
+body.dark-theme .bio-collapse-btn:focus-visible {
+    outline-color: var(--color-accent);
+}
+
+/* Info icon inside biography name button */
 .bio-info-icon {
     font-size: 0.85em;
     opacity: 0.55;
@@ -420,15 +453,47 @@ sup.citation a,
     transition: opacity var(--duration-fast);
 }
 
-.analysis-modal-link:hover .bio-info-icon {
+.bio-toggle-btn:hover .bio-info-icon,
+.bio-collapse-btn:hover .bio-info-icon {
     opacity: 0.9;
+}
+
+/* --- Bio Inline Transition Animations --- */
+@keyframes bioExitAnim {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes bioEnterAnim {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bio-exiting {
+    animation: bioExitAnim 0.2s ease-out forwards;
+    pointer-events: none;
+}
+
+.bio-entering {
+    animation: bioEnterAnim 0.35s ease-out forwards;
 }
 
 /* --- Form Overlay --- */
 #form-overlay {
     position: fixed;
     inset: 0;
-    /* Top/Left/Right/Bottom: 0 */
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -461,7 +526,6 @@ sup.citation a,
 
 body.dark-theme #contact-form {
     background: #1e293b;
-    /* Slate 800 */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -547,6 +611,7 @@ body.dark-theme .form-content textarea {
 }
 
 .form-status {
+    display: none;
     margin-bottom: 1rem;
     padding: 0.75rem;
     border-radius: 0.5rem;
@@ -570,6 +635,7 @@ body.dark-theme .form-content textarea {
 
 /* Field-level Error Messages (WCAG 3.3.1) */
 .error-message {
+    display: none;
     color: #991b1b;
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
@@ -648,6 +714,10 @@ body.dark-theme .form-status.error {
     animation: fadeIn var(--duration-slow) ease-out;
 }
 
+#en-version {
+    display: none;
+}
+
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -660,123 +730,7 @@ body.dark-theme .form-status.error {
     }
 }
 
-/* --- Analysis Modal --- */
-#analysis-modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--duration-normal) ease, visibility var(--duration-normal) ease;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3rem 1.25rem 2rem;
-    overflow-y: auto;
-}
-
-#analysis-modal.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.analysis-modal-inner {
-    position: relative;
-    background: var(--card-bg-light);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border-light);
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-light);
-    width: 100%;
-    max-width: 780px;
-    margin: auto;
-    transform: translateY(16px);
-    opacity: 0;
-    transition: transform var(--duration-normal) ease, opacity var(--duration-normal) ease;
-}
-
-body.dark-theme .analysis-modal-inner {
-    background: var(--card-bg-dark);
-    border-color: var(--card-border-dark);
-    box-shadow: var(--shadow-dark);
-}
-
-#analysis-modal.visible .analysis-modal-inner {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.sticky-wrapper {
-    position: sticky;
-    top: 1.5rem;
-    height: 0;
-    z-index: 20;
-}
-
-.modal-floating-actions {
-    position: absolute;
-    right: 1.5rem;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-#close-analysis,
-#back-to-top-analysis {
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color var(--duration-fast), transform 0.15s, opacity var(--duration-normal), visibility var(--duration-normal);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
-    flex-shrink: 0;
-}
-
-#back-to-top-analysis {
-    font-size: 1rem;
-}
-
-#back-to-top-analysis.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    pointer-events: none;
-}
-
-#close-analysis:hover,
-#back-to-top-analysis:hover {
-    background-color: var(--color-primary-hover);
-    transform: scale(1.1);
-}
-
-#back-to-top-analysis.hidden:hover {
-    transform: translateY(10px);
-}
-
-@media (max-width: 768px) {
-    .modal-floating-actions {
-        right: 1.25rem;
-    }
-}
-
-.analysis-modal-body {
-    padding: 2rem 1.75rem 2rem;
-}
-
-/* AI Disclaimer */
+/* --- AI Disclaimer --- */
 .ai-disclaimer {
     display: flex;
     gap: 0.75rem;
@@ -792,7 +746,7 @@ body.dark-theme .ai-disclaimer {
     background: rgba(37, 99, 235, 0.12);
 }
 
-.ai-disclaimer>i {
+.ai-disclaimer > i {
     color: var(--color-primary);
     font-size: 1rem;
     flex-shrink: 0;
@@ -810,31 +764,23 @@ body.dark-theme .ai-disclaimer p {
     color: var(--color-text-muted-dark);
 }
 
-/* Analysis Sub-headings & Title */
-.analysis-title {
-    font-family: var(--font-serif);
-    font-size: 1.75rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    text-align: center;
+/* --- Biography Section Sub-headings --- */
+#pt-bio-full h2,
+#en-bio-full h2,
+#pt-bio-full h3,
+#en-bio-full h3 {
     color: var(--color-text-main-light);
 }
 
-body.dark-theme .analysis-title {
+body.dark-theme #pt-bio-full h2,
+body.dark-theme #en-bio-full h2,
+body.dark-theme #pt-bio-full h3,
+body.dark-theme #en-bio-full h3 {
     color: var(--color-text-main-dark);
 }
 
-h3.analysis-chunk,
-h4.analysis-chunk {
-    color: var(--color-text-main-light);
-}
-
-body.dark-theme h3.analysis-chunk,
-body.dark-theme h4.analysis-chunk {
-    color: var(--color-text-main-dark);
-}
-
-h3.analysis-chunk {
+#pt-bio-full h2,
+#en-bio-full h2 {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     margin-top: 2rem;
@@ -842,7 +788,8 @@ h3.analysis-chunk {
     font-weight: 700;
 }
 
-h4.analysis-chunk {
+#pt-bio-full h3,
+#en-bio-full h3 {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     font-weight: 600;
@@ -853,16 +800,21 @@ h4.analysis-chunk {
     color: var(--color-primary);
 }
 
-body.dark-theme h4.analysis-chunk {
+body.dark-theme #pt-bio-full h3,
+body.dark-theme #en-bio-full h3 {
     color: var(--color-primary-dark);
 }
 
 /* Analysis Tables */
 .analysis-table-wrapper {
     overflow-x: auto;
+    /* max-width keeps the wrapper inside the card on narrow viewports */
+    max-width: 100%;
     margin: 1.25rem 0;
     border-radius: 0.5rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
+    /* -webkit-overflow-scrolling for smoother momentum scroll on iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 body.dark-theme .analysis-table-wrapper {
@@ -937,7 +889,7 @@ body.dark-theme .references-section {
     border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-.references-section h3 {
+.references-section h2 {
     font-family: var(--font-serif);
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
@@ -947,7 +899,7 @@ body.dark-theme .references-section {
     gap: 0.5rem;
 }
 
-body.dark-theme .references-section h3 {
+body.dark-theme .references-section h2 {
     color: var(--color-text-main-dark);
 }
 
@@ -1009,7 +961,7 @@ body.dark-theme .toc {
     border-color: rgba(96, 165, 250, 0.1);
 }
 
-.toc h3 {
+.toc h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.1rem;
@@ -1017,7 +969,7 @@ body.dark-theme .toc {
     color: var(--color-text-main-light);
 }
 
-body.dark-theme .toc h3 {
+body.dark-theme .toc h2 {
     color: var(--color-text-main-dark);
 }
 
@@ -1059,53 +1011,16 @@ body.dark-theme .toc li a {
         scroll-behavior: auto !important;
     }
 
-    body {
-        transition: none;
-    }
-
-    .toolbar button {
-        transition: none;
-    }
-
-    .profile-image-wrapper img {
-        transition: none;
-    }
-
     .fade-in {
         animation: none;
         opacity: 1;
     }
 
-    .analysis-chunk {
-        transition: none;
-    }
-
-    .ai-dot {
+    .bio-exiting,
+    .bio-entering {
         animation: none;
         opacity: 1;
-    }
-
-    #form-overlay {
-        transition: none;
-    }
-
-    #contact-form {
-        transition: none;
-    }
-
-    #analysis-modal {
-        transition: none;
-    }
-}
-
-@media (max-width: 768px) {
-    #analysis-modal {
-        padding: 1rem 0.5rem;
-        align-items: flex-start;
-    }
-
-    .analysis-modal-body {
-        padding: 1rem 1.25rem 1.5rem;
+        transform: none;
     }
 }
 
@@ -1137,7 +1052,6 @@ body.dark-theme .toc li a {
 
     .toolbar,
     #form-overlay,
-    #analysis-modal,
     .profile-actions,
     .skip-link {
         display: none !important;
