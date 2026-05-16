@@ -1,15 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cache media query result once at startup
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Delay (ms) to allow modal reflow before moving focus
     const FOCUS_DELAY_MS = 50;
 
     const themeToggle = document.getElementById('theme-toggle');
     const langPt = document.getElementById('lang-pt');
     const langEn = document.getElementById('lang-en');
 
-    // Returns current active language ('pt' or 'en')
     function getCurrentLanguage() {
         return langPt.classList.contains('active') ? 'pt' : 'en';
     }
@@ -60,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     langEn.addEventListener('click', () => setLanguage('en'));
 
     function setLanguage(lang) {
+        collapseBio('pt');
+        collapseBio('en');
+
         if (lang === 'pt') {
             ptVersion.style.display = 'block';
             enVersion.style.display = 'none';
@@ -73,8 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             langPt.classList.remove('active');
             document.documentElement.lang = 'en-US';
         }
+        updateFormLanguage(lang);
     }
 
+    // Contact Form
     const formOverlay = document.getElementById('form-overlay');
     const contactForm = document.getElementById('contact-form');
     const contactLinks = document.querySelectorAll('.contact-link');
@@ -131,12 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const currentLang = getCurrentLanguage();
             updateFormLanguage(currentLang);
-            
+
             formLastFocused = document.activeElement;
             formOverlay.classList.add('visible');
             formOverlay.setAttribute('aria-hidden', 'false');
 
-            // Clear previous errors when opening form
             clearFormErrors();
 
             if (formStatus) {
@@ -163,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Clear field errors when opening form
     function clearFormErrors() {
         contactForm.querySelectorAll('[aria-invalid]').forEach(input => {
             const errorEl = document.getElementById(`${input.id}-error`);
@@ -175,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Validate form fields (WCAG 3.3.1, 3.3.4)
     function validateForm(lang = 'pt') {
         let isValid = true;
         const name = document.getElementById('name');
@@ -183,16 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = document.getElementById('message');
         const translations = formTranslations[lang];
 
-        // Clear previous errors
         clearFormErrors();
 
-        // Validate name
         if (!name.value.trim()) {
             setFieldError('name', translations.errorNameRequired);
             isValid = false;
         }
 
-        // Validate email
         if (!email.value.trim()) {
             setFieldError('email', translations.errorEmailInvalid);
             isValid = false;
@@ -201,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isValid = false;
         }
 
-        // Validate message
         if (!message.value.trim()) {
             setFieldError('message', translations.errorMessageRequired);
             isValid = false;
@@ -210,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return isValid;
     }
 
-    // Set field error (WCAG 3.3.1)
     function setFieldError(fieldId, errorText) {
         const errorEl = document.getElementById(`${fieldId}-error`);
         const input = document.getElementById(fieldId);
@@ -223,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const currentLang = getCurrentLanguage();
 
-        // Validate form before submission (WCAG 3.3.1, 3.3.4)
         if (!validateForm(currentLang)) {
             formStatus.textContent = currentLang === 'pt' ? 'Por favor, corrija os erros no formulário.' : 'Please correct the errors in the form.';
             formStatus.className = 'form-status error';
@@ -236,14 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.textContent = currentLang === 'pt' ? 'Enviando...' : 'Sending...';
 
         const formData = new FormData(contactForm);
-        
+
         try {
             const response = await fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
             });
-            
+
             if (response.ok) {
                 formStatus.textContent = currentLang === 'pt' ? 'Mensagem enviada com sucesso!' : 'Message sent successfully!';
                 formStatus.className = 'form-status success';
@@ -279,91 +271,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Hook into existing language switcher
-    langPt.addEventListener('click', () => updateFormLanguage('pt'));
-    langEn.addEventListener('click', () => updateFormLanguage('en'));
-
-    // --- Analysis Modal (easter egg: click "Paulo Higa" in the intro) ---
-    const analysisModal = document.getElementById('analysis-modal');
-    const analysisModalInner = analysisModal.querySelector('.analysis-modal-inner');
-    const closeAnalysisBtn = document.getElementById('close-analysis');
-    const backToTopBtn = document.getElementById('back-to-top-analysis');
-    let analysisLastFocused = null;
-
-    analysisModal.addEventListener('scroll', () => {
-        if (analysisModal.scrollTop > 300) {
-            backToTopBtn.classList.remove('hidden');
-        } else {
-            backToTopBtn.classList.add('hidden');
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && formOverlay.classList.contains('visible')) {
+            closeForm();
         }
     });
 
-    backToTopBtn.addEventListener('click', () => {
-        analysisModal.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-    });
-
-    function openAnalysisModal() {
-        const lang = getCurrentLanguage();
-
-        // Show correct language pane
-        document.getElementById('analysis-modal-pt').hidden = lang !== 'pt';
-        document.getElementById('analysis-modal-en').hidden = lang !== 'en';
-
-        analysisLastFocused = document.activeElement;
-        analysisModal.setAttribute('aria-hidden', 'false');
-        analysisModal.classList.add('visible');
-        document.body.style.overflow = 'hidden';
-        closeAnalysisBtn.focus();
+    // --- Bio Inline Toggle ---
+    function collapseBio(lang) {
+        const shortEl = document.getElementById(`${lang}-bio-short`);
+        const fullEl = document.getElementById(`${lang}-bio-full`);
+        if (!shortEl || !fullEl || !fullEl.hidden) return;
+        fullEl.hidden = true;
+        shortEl.hidden = false;
+        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
+        if (expandBtn) {
+            expandBtn.setAttribute('aria-expanded', 'false');
+            const icon = expandBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-circle-plus bio-info-icon';
+        }
     }
 
-    function closeAnalysisModal() {
-        analysisModal.classList.remove('visible');
-        analysisModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        if (analysisLastFocused) analysisLastFocused.focus();
+    function toggleBio(lang) {
+        const shortEl = document.getElementById(`${lang}-bio-short`);
+        const fullEl = document.getElementById(`${lang}-bio-full`);
+        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
+        const isExpanded = !fullEl.hidden;
+        const duration = prefersReducedMotion ? 0 : 200;
+
+        if (isExpanded) {
+            fullEl.classList.add('bio-exiting');
+            setTimeout(() => {
+                fullEl.hidden = true;
+                fullEl.classList.remove('bio-exiting');
+                shortEl.hidden = false;
+                shortEl.classList.add('bio-entering');
+                shortEl.addEventListener('animationend', () => shortEl.classList.remove('bio-entering'), { once: true });
+                if (expandBtn) {
+                    expandBtn.setAttribute('aria-expanded', 'false');
+                    const icon = expandBtn.querySelector('i');
+                    if (icon) icon.className = 'fas fa-circle-plus bio-info-icon';
+                    expandBtn.focus();
+                }
+            }, duration);
+        } else {
+            shortEl.classList.add('bio-exiting');
+            setTimeout(() => {
+                shortEl.hidden = true;
+                shortEl.classList.remove('bio-exiting');
+                fullEl.hidden = false;
+                fullEl.classList.add('bio-entering');
+                fullEl.addEventListener('animationend', () => fullEl.classList.remove('bio-entering'), { once: true });
+                if (expandBtn) {
+                    expandBtn.setAttribute('aria-expanded', 'true');
+                    const icon = expandBtn.querySelector('i');
+                    if (icon) icon.className = 'fas fa-circle-minus bio-info-icon';
+                }
+                const collapseBtn = fullEl.querySelector('.bio-collapse-btn');
+                if (collapseBtn) collapseBtn.focus();
+            }, duration);
+        }
     }
 
-    // Easter egg: clicking "Paulo Higa" link opens modal instead of PDF
-    document.querySelectorAll('.analysis-modal-link').forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            openAnalysisModal();
+    document.querySelectorAll('.bio-toggle-btn, .bio-collapse-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = getCurrentLanguage();
+            toggleBio(lang);
         });
     });
 
-    // Make profile photo button open biography modal (<button> handles Enter/Space natively)
-    document.getElementById('foto-btn').addEventListener('click', openAnalysisModal);
-
-    closeAnalysisBtn.addEventListener('click', closeAnalysisModal);
-
-    analysisModal.addEventListener('click', e => {
-        if (e.target === analysisModal) closeAnalysisModal();
-    });
-
-    // Focus trap inside modal
-    analysisModalInner.addEventListener('keydown', e => {
-        if (e.key !== 'Tab') return;
-        const focusable = analysisModalInner.querySelectorAll(
-            'button, a[href], input, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-        }
-    });
-
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') {
-            if (analysisModal.classList.contains('visible')) {
-                closeAnalysisModal();
-            } else if (formOverlay.classList.contains('visible')) {
-                closeForm();
-            }
-        }
+    // Photo button expands bio if not already expanded
+    document.getElementById('foto-btn').addEventListener('click', () => {
+        const lang = getCurrentLanguage();
+        const fullEl = document.getElementById(`${lang}-bio-full`);
+        if (fullEl && fullEl.hidden) toggleBio(lang);
     });
 });

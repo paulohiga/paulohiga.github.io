@@ -190,7 +190,7 @@ body.dark-theme .profile-image-wrapper img {
     box-shadow: var(--shadow-dark);
 }
 
-/* Profile photo button (opens biography modal) */
+/* Profile photo button (expands biography) */
 .profile-image-button {
     background: none;
     border: none;
@@ -285,7 +285,6 @@ body.dark-theme .profile-detail i {
     justify-content: center;
     gap: 0.5rem;
     box-sizing: border-box;
-    /* Ensure padding doesn't affect width */
 }
 
 .contact-button:hover {
@@ -295,9 +294,7 @@ body.dark-theme .profile-detail i {
 
 .linkedin-button {
     background-color: #0077b5;
-    /* LinkedIn Blue */
     color: white !important;
-    /* Force white text */
     box-shadow: 0 2px 4px rgba(0, 119, 181, 0.2);
 }
 
@@ -307,7 +304,6 @@ body.dark-theme .profile-detail i {
 
 body.dark-theme .contact-button {
     background-color: var(--color-primary);
-    /* Keep blue or adjust */
 }
 
 body.dark-theme .linkedin-button {
@@ -324,7 +320,6 @@ body.dark-theme .linkedin-button {
     border: 1px solid var(--card-border-light);
     box-shadow: var(--shadow-light);
     animation: slideUp 0.7s ease-out;
-    /* intentionally slightly slower than fadeIn for layered entry */
 }
 
 body.dark-theme .content-area {
@@ -391,7 +386,6 @@ a:focus-visible {
 
 body.dark-theme a {
     color: var(--color-accent);
-    /* Use a brighter blue for links in dark mode */
 }
 
 body.dark-theme a:focus-visible {
@@ -407,12 +401,47 @@ a:hover {
 .contact-button,
 .skip-link,
 .toc li a,
-sup.citation a,
-.analysis-modal-link {
+sup.citation a {
     text-decoration: none;
 }
 
-/* Info icon inside biography name link */
+/* Bio toggle buttons — inline, styled as links */
+.bio-toggle-btn,
+.bio-collapse-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 500;
+    color: var(--color-primary);
+    display: inline;
+    text-decoration: none;
+}
+
+.bio-toggle-btn:hover,
+.bio-collapse-btn:hover {
+    opacity: 0.8;
+}
+
+.bio-toggle-btn:focus-visible,
+.bio-collapse-btn:focus-visible {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+body.dark-theme .bio-toggle-btn,
+body.dark-theme .bio-collapse-btn {
+    color: var(--color-accent);
+}
+
+body.dark-theme .bio-toggle-btn:focus-visible,
+body.dark-theme .bio-collapse-btn:focus-visible {
+    outline-color: var(--color-accent);
+}
+
+/* Info icon inside biography name button */
 .bio-info-icon {
     font-size: 0.85em;
     opacity: 0.55;
@@ -420,15 +449,47 @@ sup.citation a,
     transition: opacity var(--duration-fast);
 }
 
-.analysis-modal-link:hover .bio-info-icon {
+.bio-toggle-btn:hover .bio-info-icon,
+.bio-collapse-btn:hover .bio-info-icon {
     opacity: 0.9;
+}
+
+/* --- Bio Inline Transition Animations --- */
+@keyframes bioExitAnim {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes bioEnterAnim {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bio-exiting {
+    animation: bioExitAnim 0.2s ease-out forwards;
+    pointer-events: none;
+}
+
+.bio-entering {
+    animation: bioEnterAnim 0.35s ease-out forwards;
 }
 
 /* --- Form Overlay --- */
 #form-overlay {
     position: fixed;
     inset: 0;
-    /* Top/Left/Right/Bottom: 0 */
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -461,7 +522,6 @@ sup.citation a,
 
 body.dark-theme #contact-form {
     background: #1e293b;
-    /* Slate 800 */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -660,123 +720,7 @@ body.dark-theme .form-status.error {
     }
 }
 
-/* --- Analysis Modal --- */
-#analysis-modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--duration-normal) ease, visibility var(--duration-normal) ease;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3rem 1.25rem 2rem;
-    overflow-y: auto;
-}
-
-#analysis-modal.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.analysis-modal-inner {
-    position: relative;
-    background: var(--card-bg-light);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border-light);
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-light);
-    width: 100%;
-    max-width: 780px;
-    margin: auto;
-    transform: translateY(16px);
-    opacity: 0;
-    transition: transform var(--duration-normal) ease, opacity var(--duration-normal) ease;
-}
-
-body.dark-theme .analysis-modal-inner {
-    background: var(--card-bg-dark);
-    border-color: var(--card-border-dark);
-    box-shadow: var(--shadow-dark);
-}
-
-#analysis-modal.visible .analysis-modal-inner {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.sticky-wrapper {
-    position: sticky;
-    top: 1.5rem;
-    height: 0;
-    z-index: 20;
-}
-
-.modal-floating-actions {
-    position: absolute;
-    right: 1.5rem;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-#close-analysis,
-#back-to-top-analysis {
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color var(--duration-fast), transform 0.15s, opacity var(--duration-normal), visibility var(--duration-normal);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
-    flex-shrink: 0;
-}
-
-#back-to-top-analysis {
-    font-size: 1rem;
-}
-
-#back-to-top-analysis.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    pointer-events: none;
-}
-
-#close-analysis:hover,
-#back-to-top-analysis:hover {
-    background-color: var(--color-primary-hover);
-    transform: scale(1.1);
-}
-
-#back-to-top-analysis.hidden:hover {
-    transform: translateY(10px);
-}
-
-@media (max-width: 768px) {
-    .modal-floating-actions {
-        right: 1.25rem;
-    }
-}
-
-.analysis-modal-body {
-    padding: 2rem 1.75rem 2rem;
-}
-
-/* AI Disclaimer */
+/* --- AI Disclaimer --- */
 .ai-disclaimer {
     display: flex;
     gap: 0.75rem;
@@ -792,7 +736,7 @@ body.dark-theme .ai-disclaimer {
     background: rgba(37, 99, 235, 0.12);
 }
 
-.ai-disclaimer>i {
+.ai-disclaimer > i {
     color: var(--color-primary);
     font-size: 1rem;
     flex-shrink: 0;
@@ -810,20 +754,7 @@ body.dark-theme .ai-disclaimer p {
     color: var(--color-text-muted-dark);
 }
 
-/* Analysis Sub-headings & Title */
-.analysis-title {
-    font-family: var(--font-serif);
-    font-size: 1.75rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--color-text-main-light);
-}
-
-body.dark-theme .analysis-title {
-    color: var(--color-text-main-dark);
-}
-
+/* --- Analysis Sub-headings --- */
 h3.analysis-chunk,
 h4.analysis-chunk {
     color: var(--color-text-main-light);
@@ -1080,11 +1011,6 @@ body.dark-theme .toc li a {
         transition: none;
     }
 
-    .ai-dot {
-        animation: none;
-        opacity: 1;
-    }
-
     #form-overlay {
         transition: none;
     }
@@ -1093,19 +1019,11 @@ body.dark-theme .toc li a {
         transition: none;
     }
 
-    #analysis-modal {
-        transition: none;
-    }
-}
-
-@media (max-width: 768px) {
-    #analysis-modal {
-        padding: 1rem 0.5rem;
-        align-items: flex-start;
-    }
-
-    .analysis-modal-body {
-        padding: 1rem 1.25rem 1.5rem;
+    .bio-exiting,
+    .bio-entering {
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -1137,7 +1055,6 @@ body.dark-theme .toc li a {
 
     .toolbar,
     #form-overlay,
-    #analysis-modal,
     .profile-actions,
     .skip-link {
         display: none !important;
