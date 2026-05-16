@@ -44,17 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Language Selector
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('en')) {
-        setLanguage('en');
-    } else {
-        setLanguage('pt');
-    }
-
-    langPt.addEventListener('click', () => setLanguage('pt'));
-    langEn.addEventListener('click', () => setLanguage('en'));
-
     const formTranslations = {
         pt: {
             formTitle: 'Contato',
@@ -83,6 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessageRequired: 'Message is required'
         }
     };
+
+    // Language Selector
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('en')) {
+        setLanguage('en');
+    } else {
+        setLanguage('pt');
+    }
+
+    langPt.addEventListener('click', () => setLanguage('pt'));
+    langEn.addEventListener('click', () => setLanguage('en'));
 
     function updateFormLanguage(lang) {
         const translations = formTranslations[lang];
