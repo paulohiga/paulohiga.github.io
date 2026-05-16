@@ -611,6 +611,7 @@ body.dark-theme .form-content textarea {
 }
 
 .form-status {
+    display: none;
     margin-bottom: 1rem;
     padding: 0.75rem;
     border-radius: 0.5rem;
@@ -634,6 +635,7 @@ body.dark-theme .form-content textarea {
 
 /* Field-level Error Messages (WCAG 3.3.1) */
 .error-message {
+    display: none;
     color: #991b1b;
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
@@ -712,6 +714,10 @@ body.dark-theme .form-status.error {
     animation: fadeIn var(--duration-slow) ease-out;
 }
 
+#en-version {
+    display: none;
+}
+
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -758,18 +764,23 @@ body.dark-theme .ai-disclaimer p {
     color: var(--color-text-muted-dark);
 }
 
-/* --- Analysis Sub-headings --- */
-h2.analysis-chunk,
-h3.analysis-chunk {
+/* --- Biography Section Sub-headings --- */
+#pt-bio-full h2,
+#en-bio-full h2,
+#pt-bio-full h3,
+#en-bio-full h3 {
     color: var(--color-text-main-light);
 }
 
-body.dark-theme h2.analysis-chunk,
-body.dark-theme h3.analysis-chunk {
+body.dark-theme #pt-bio-full h2,
+body.dark-theme #en-bio-full h2,
+body.dark-theme #pt-bio-full h3,
+body.dark-theme #en-bio-full h3 {
     color: var(--color-text-main-dark);
 }
 
-h2.analysis-chunk {
+#pt-bio-full h2,
+#en-bio-full h2 {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     margin-top: 2rem;
@@ -777,7 +788,8 @@ h2.analysis-chunk {
     font-weight: 700;
 }
 
-h3.analysis-chunk {
+#pt-bio-full h3,
+#en-bio-full h3 {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     font-weight: 600;
@@ -788,7 +800,8 @@ h3.analysis-chunk {
     color: var(--color-primary);
 }
 
-body.dark-theme h3.analysis-chunk {
+body.dark-theme #pt-bio-full h3,
+body.dark-theme #en-bio-full h3 {
     color: var(--color-primary-dark);
 }
 
