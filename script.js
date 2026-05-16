@@ -55,37 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     langPt.addEventListener('click', () => setLanguage('pt'));
     langEn.addEventListener('click', () => setLanguage('en'));
 
-    function setLanguage(lang) {
-        collapseBio('pt');
-        collapseBio('en');
-
-        if (lang === 'pt') {
-            ptVersion.style.display = 'block';
-            enVersion.style.display = 'none';
-            langPt.classList.add('active');
-            langEn.classList.remove('active');
-            document.documentElement.lang = 'pt-BR';
-        } else {
-            ptVersion.style.display = 'none';
-            enVersion.style.display = 'block';
-            langEn.classList.add('active');
-            langPt.classList.remove('active');
-            document.documentElement.lang = 'en-US';
-        }
-        updateFormLanguage(lang);
-    }
-
-    // Contact Form
-    const formOverlay = document.getElementById('form-overlay');
-    const contactForm = document.getElementById('contact-form');
-    const contactLinks = document.querySelectorAll('.contact-link');
-    const closeFormBtn = document.getElementById('close-form');
-    const nameInput = document.getElementById('name');
-    const formStatus = document.getElementById('form-status');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-
-    let formLastFocused = null;
-
     const formTranslations = {
         pt: {
             formTitle: 'Contato',
@@ -126,6 +95,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    function setLanguage(lang) {
+        collapseBio('pt');
+        collapseBio('en');
+
+        if (lang === 'pt') {
+            ptVersion.style.display = 'block';
+            enVersion.style.display = 'none';
+            langPt.classList.add('active');
+            langEn.classList.remove('active');
+            document.documentElement.lang = 'pt-BR';
+        } else {
+            ptVersion.style.display = 'none';
+            enVersion.style.display = 'block';
+            langEn.classList.add('active');
+            langPt.classList.remove('active');
+            document.documentElement.lang = 'en-US';
+        }
+        updateFormLanguage(lang);
+    }
+
+    // Contact Form
+    const formOverlay = document.getElementById('form-overlay');
+    const contactForm = document.getElementById('contact-form');
+    const contactLinks = document.querySelectorAll('.contact-link');
+    const closeFormBtn = document.getElementById('close-form');
+    const nameInput = document.getElementById('name');
+    const formStatus = document.getElementById('form-status');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    let formLastFocused = null;
 
     contactLinks.forEach(link => {
         link.addEventListener('click', (e) => {
