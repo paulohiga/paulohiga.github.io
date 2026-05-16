@@ -97,8 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setLanguage(lang) {
-        collapseBio('pt');
-        collapseBio('en');
+        const prevLang = getCurrentLanguage();
+        const prevFull = document.getElementById(`${prevLang}-bio-full`);
+        const bioWasExpanded = prevFull && !prevFull.hidden;
+
+        // Collapse both without animation before switching
+        ['pt', 'en'].forEach(l => {
+            const s = document.getElementById(`${l}-bio-short`);
+            const f = document.getElementById(`${l}-bio-full`);
+            if (s && f) { f.hidden = true; s.hidden = false; }
+        });
 
         if (lang === 'pt') {
             ptVersion.style.display = 'block';
@@ -113,6 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
             langPt.classList.remove('active');
             document.documentElement.lang = 'en-US';
         }
+
+        // Restore expanded state in the new language without animation
+        if (bioWasExpanded) {
+            const s = document.getElementById(`${lang}-bio-short`);
+            const f = document.getElementById(`${lang}-bio-full`);
+            const btn = document.getElementById(`${lang}-bio-toggle`);
+            if (s && f) { s.hidden = true; f.hidden = false; }
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'true');
+                const icon = btn.querySelector('i');
+                if (icon) icon.className = 'fas fa-circle-minus bio-info-icon';
+            }
+        }
+
         updateFormLanguage(lang);
     }
 
@@ -340,10 +362,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Photo button expands bio if not already expanded
+    // Photo button toggles bio (expand or collapse)
     document.getElementById('foto-btn').addEventListener('click', () => {
-        const lang = getCurrentLanguage();
-        const fullEl = document.getElementById(`${lang}-bio-full`);
-        if (fullEl && fullEl.hidden) toggleBio(lang);
+        toggleBio(getCurrentLanguage());
     });
 });
