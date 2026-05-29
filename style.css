@@ -334,6 +334,10 @@ body.dark-theme .content-area {
 
 p {
     line-height: 1.75;
+    /* Reset the UA default top margin so the first paragraph doesn't add
+       extra space on top of .content-area's padding (spacing is handled by
+       margin-bottom here and by the margin-top on headings). */
+    margin-top: 0;
     margin-bottom: 1.25rem;
     font-size: 1.05rem;
     color: var(--color-text-muted-light);
