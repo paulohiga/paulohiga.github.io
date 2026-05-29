@@ -878,6 +878,23 @@ body.dark-theme .analysis-table tr:hover td {
     background: rgba(255, 255, 255, 0.03);
 }
 
+/* Races (marathons) table: keep numeric columns compact and let only the
+   race name wrap, so the table fits narrow viewports without horizontal scroll. */
+.races-table {
+    table-layout: fixed;
+}
+
+.races-table .race-name-col {
+    width: 45%;
+    white-space: normal;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.races-table .race-num {
+    white-space: nowrap;
+}
+
 /* References Section */
 .references-section {
     margin-top: 2rem;
@@ -1044,6 +1061,20 @@ body.dark-theme .toc li a {
 
     h1 {
         font-size: 1.75rem;
+    }
+
+    /* Compact the races table on small screens so it fits without scrolling */
+    .races-table {
+        font-size: 0.8rem;
+    }
+
+    .races-table th,
+    .races-table td {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .races-table .race-name-col {
+        width: 40%;
     }
 }
 
