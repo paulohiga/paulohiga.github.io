@@ -73,9 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Language Selector
+    // Language Selector — honor stored choice, then fall back to browser language
+    const savedLang = localStorage.getItem('lang');
     const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('en')) {
+    if (savedLang === 'pt' || savedLang === 'en') {
+        setLanguage(savedLang);
+    } else if (userLang.startsWith('en')) {
         setLanguage('en');
     } else {
         setLanguage('pt');
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setLanguage(lang) {
+        localStorage.setItem('lang', lang);
         const prevLang = getCurrentLanguage();
         const prevFull = document.getElementById(`${prevLang}-bio-full`);
         const bioWasExpanded = prevFull && !prevFull.hidden;
@@ -210,10 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isValid = false;
         }
 
-        if (!email.value.trim()) {
-            setFieldError('email', translations.errorEmailInvalid);
-            isValid = false;
-        } else if (!email.value.includes('@') || !email.value.includes('.')) {
+        if (!email.value.trim() || !email.checkValidity()) {
             setFieldError('email', translations.errorEmailInvalid);
             isValid = false;
         }
