@@ -1064,6 +1064,8 @@ body.dark-theme .toc li a {
 
     .container {
         padding-top: 5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
     }
 
     h1 {
