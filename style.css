@@ -878,14 +878,10 @@ body.dark-theme .analysis-table tr:hover td {
     background: rgba(255, 255, 255, 0.03);
 }
 
-/* Races (marathons) table: keep numeric columns compact and let only the
-   race name wrap, so the table fits narrow viewports without horizontal scroll. */
-.races-table {
-    table-layout: fixed;
-}
-
+/* Races (marathons) table: numeric columns size to their (short) content and
+   stay on one line, while the race name takes the remaining width and wraps.
+   This avoids the columns overlapping and keeps the table inside the viewport. */
 .races-table .race-name-col {
-    width: 45%;
     white-space: normal;
     word-break: break-word;
     hyphens: auto;
@@ -893,6 +889,13 @@ body.dark-theme .analysis-table tr:hover td {
 
 .races-table .race-num {
     white-space: nowrap;
+    width: 1%;
+}
+
+/* Dotted underline cue for the elevation/segments tooltip on touch + desktop */
+.races-table abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
 }
 
 /* References Section */
@@ -1071,10 +1074,6 @@ body.dark-theme .toc li a {
     .races-table th,
     .races-table td {
         padding: 0.4rem 0.5rem;
-    }
-
-    .races-table .race-name-col {
-        width: 40%;
     }
 }
 
