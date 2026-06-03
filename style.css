@@ -721,7 +721,32 @@ body.dark-theme .form-status.error {
     animation: fadeIn var(--duration-slow) ease-out;
 }
 
+/* --- Language / View Visibility (attribute-driven, server-rendered) ---
+   The active language and bio view are encoded as data-* attributes on the
+   <html> element, so the correct state is painted immediately on load (no
+   flash, crawler-friendly) and toggled client-side without a reload. */
 #en-version {
+    display: none;
+}
+
+html[data-lang="en"] #en-version {
+    display: block;
+}
+
+html[data-lang="en"] #pt-version {
+    display: none;
+}
+
+/* Short summary is shown by default; data-view="full" swaps in the full bio. */
+.bio-full {
+    display: none;
+}
+
+html[data-view="full"] .bio-full {
+    display: block;
+}
+
+html[data-view="full"] .bio-short {
     display: none;
 }
 

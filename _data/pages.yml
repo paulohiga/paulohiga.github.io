@@ -1,0 +1,31 @@
+# Metadata for the four URL/state combinations.
+# Keyed by "<lang>-<view>" so both Jekyll (server render) and script.js
+# (client-side navigation) can share a single source of truth.
+pt-short:
+  url: /
+  canonical: https://higa.me/
+  htmlLang: pt-BR
+  ogLocale: pt_BR
+  title: Paulo Higa
+  description: Paulo Higa é gestor público, jornalista, maratonista e entusiasta de tecnologia.
+pt-full:
+  url: /bio.html
+  canonical: https://higa.me/bio.html
+  htmlLang: pt-BR
+  ogLocale: pt_BR
+  title: Paulo Higa — Biografia
+  description: Biografia completa de Paulo Higa, jornalista e servidor público da carreira de EPPGG, com passagem pelo Tecnoblog e pela administração pública.
+en-short:
+  url: /en/
+  canonical: https://higa.me/en/
+  htmlLang: en-US
+  ogLocale: en_US
+  title: Paulo Higa
+  description: Paulo Higa is a public manager, journalist, marathon runner, and technology enthusiast.
+en-full:
+  url: /en/bio.html
+  canonical: https://higa.me/en/bio.html
+  htmlLang: en-US
+  ogLocale: en_US
+  title: Paulo Higa — Biography
+  description: Full biography of Paulo Higa, journalist and public servant in the EPPGG career, with a background at Tecnoblog and in public administration.

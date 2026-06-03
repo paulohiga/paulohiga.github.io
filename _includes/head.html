@@ -1,0 +1,81 @@
+{% assign state = page.lang | append: '-' | append: page.view %}
+{% assign meta = site.data.pages[state] %}
+{% assign pt_state = 'pt-' | append: page.view %}
+{% assign en_state = 'en-' | append: page.view %}
+{% assign pt_meta = site.data.pages[pt_state] %}
+{% assign en_meta = site.data.pages[en_state] %}
+    <title>{{ meta.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa, gestor público, EPPGG">
+    <link rel="canonical" href="{{ meta.canonical }}">
+    <link rel="alternate" href="{{ pt_meta.canonical }}" hreflang="pt-BR">
+    <link rel="alternate" href="{{ en_meta.canonical }}" hreflang="en">
+    <link rel="alternate" href="{{ pt_meta.canonical }}" hreflang="x-default">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="{{ meta.title }}">
+    <meta property="og:description" content="{{ meta.description }}">
+    <meta property="og:url" content="{{ meta.canonical }}">
+    <meta property="og:locale" content="{{ meta.ogLocale }}">
+    <meta property="og:image" content="https://higa.me/img/foto-paulo-higa-3.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Shared page metadata for client-side (no-reload) navigation -->
+    <script type="application/json" id="page-meta">{{ site.data.pages | jsonify }}</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Paulo Higa",
+      "givenName": "Paulo",
+      "familyName": "Higa",
+      "birthDate": "1993-04-15",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Chiba, Japan"
+      },
+      "url": "https://higa.me/",
+      "image": "https://higa.me/img/foto-paulo-higa-3.jpg",
+      "jobTitle": "Gestor público",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Prefeitura de São Paulo"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Faculdade Cásper Líbero",
+          "sameAs": "https://casperlibero.edu.br/"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Fundação Getulio Vargas (FGV)",
+          "sameAs": "https://portal.fgv.br/"
+        }
+      ],
+      "description": "Paulo Higa é gestor público, jornalista, maratonista e entusiasta de tecnologia.",
+      "sameAs": [
+        "https://tecnoblog.net/author/paulohiga/"
+      ]
+    }
+    </script>

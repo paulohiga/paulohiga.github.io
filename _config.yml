@@ -1,0 +1,17 @@
+title: Paulo Higa
+url: https://higa.me
+encoding: utf-8
+
+# Pages declare their own permalinks; no automatic per-collection prefixes.
+permalink: pretty
+
+# Files that should not be copied into the built site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Keep emitted markup intact (no HTML minification surprises).
+keep_files:
+  - img
