@@ -254,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Contact Form ---
     const formOverlay = document.getElementById('form-overlay');
     const contactForm = document.getElementById('contact-form');
-    const contactLinks = document.querySelectorAll('.contact-link');
     const closeFormBtn = document.getElementById('close-form');
     const nameInput = document.getElementById('name');
     const formStatus = document.getElementById('form-status');
@@ -262,25 +261,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let formLastFocused = null;
 
-    contactLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateFormLanguage(getLang());
+    // Delegated handler so contact links inside dynamically swapped content
+    // (e.g. the "e-mail" link in the summary) keep working after navigation.
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest && e.target.closest('.contact-link');
+        if (!link) return;
+        e.preventDefault();
+        updateFormLanguage(getLang());
 
-            formLastFocused = document.activeElement;
-            formOverlay.classList.add('visible');
-            formOverlay.setAttribute('aria-hidden', 'false');
+        formLastFocused = document.activeElement;
+        formOverlay.classList.add('visible');
+        formOverlay.setAttribute('aria-hidden', 'false');
 
-            clearFormErrors();
+        clearFormErrors();
 
-            if (formStatus) {
-                formStatus.style.display = 'none';
-                formStatus.className = 'form-status';
-                formStatus.textContent = '';
-            }
+        if (formStatus) {
+            formStatus.style.display = 'none';
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+        }
 
-            setTimeout(() => nameInput.focus(), FOCUS_DELAY_MS);
-        });
+        setTimeout(() => nameInput.focus(), FOCUS_DELAY_MS);
     });
 
     function closeForm() {
