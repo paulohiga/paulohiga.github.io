@@ -124,7 +124,8 @@ body.dark-theme .theme-selector {
     box-shadow: var(--shadow-dark);
 }
 
-.toolbar button {
+.toolbar button,
+.toolbar a {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -137,23 +138,29 @@ body.dark-theme .theme-selector {
     transition: background-color var(--duration-fast), color var(--duration-fast);
 }
 
-.toolbar button:focus-visible {
+.toolbar button:focus-visible,
+.toolbar a:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
 .toolbar button.active,
-.toolbar button:hover {
+.toolbar button:hover,
+.toolbar a.active,
+.toolbar a:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--color-primary);
 }
 
-body.dark-theme .toolbar button:focus-visible {
+body.dark-theme .toolbar button:focus-visible,
+body.dark-theme .toolbar a:focus-visible {
     outline: 2px solid var(--color-primary-dark);
 }
 
 body.dark-theme .toolbar button.active,
-body.dark-theme .toolbar button:hover {
+body.dark-theme .toolbar button:hover,
+body.dark-theme .toolbar a.active,
+body.dark-theme .toolbar a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-primary-dark);
 }
@@ -721,34 +728,9 @@ body.dark-theme .form-status.error {
     animation: fadeIn var(--duration-slow) ease-out;
 }
 
-/* --- Language / View Visibility (attribute-driven, server-rendered) ---
-   The active language and bio view are encoded as data-* attributes on the
-   <html> element, so the correct state is painted immediately on load (no
-   flash, crawler-friendly) and toggled client-side without a reload. */
-#en-version {
-    display: none;
-}
-
-html[data-lang="en"] #en-version {
-    display: block;
-}
-
-html[data-lang="en"] #pt-version {
-    display: none;
-}
-
-/* Short summary is shown by default; data-view="full" swaps in the full bio. */
-.bio-full {
-    display: none;
-}
-
-html[data-view="full"] .bio-full {
-    display: block;
-}
-
-html[data-view="full"] .bio-short {
-    display: none;
-}
+/* Each page server-renders only its active language/view block, so no
+   show/hide rules are needed. In-page navigation swaps the block client-side
+   (see script.js); the correct state is painted immediately on load. */
 
 @keyframes slideUp {
     from {

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Per-state metadata (title/description/canonical/url), shared with Jekyll.
     const pageMeta = JSON.parse(document.getElementById('page-meta').textContent);
+    const internalUrls = new Set(Object.values(pageMeta).map(m => m.url));
 
     function getLang() { return root.getAttribute('data-lang'); }   // 'pt' | 'en'
     function getView() { return root.getAttribute('data-view'); }   // 'short' | 'full'
@@ -116,109 +117,138 @@ document.addEventListener('DOMContentLoaded', () => {
         setProperty('og:locale', m.ogLocale);
     }
 
-    // Keep a bio toggle button (icon + ARIA) in sync with a given view.
-    function syncBioButton(lang, view) {
-        const btn = document.getElementById(`${lang}-bio-toggle`);
-        if (!btn) return;
-        const expanded = view === 'full';
-        btn.setAttribute('aria-expanded', String(expanded));
-        const icon = btn.querySelector('i');
-        if (icon) icon.className = expanded
-            ? 'fas fa-circle-minus bio-info-icon'
-            : 'fas fa-circle-plus bio-info-icon';
+    // Accessible label for the sidebar photo link, which toggles the bio view.
+    function fotoLabel(lang, view) {
+        if (lang === 'en') {
+            return view === 'full' ? 'Collapse Paulo Higa biography' : 'Read the full biography of Paulo Higa';
+        }
+        return view === 'full' ? 'Recolher biografia de Paulo Higa' : 'Expandir biografia de Paulo Higa';
     }
 
-    function updateToolbar(lang) {
+    function setAriaCurrent(el, on) {
+        if (on) el.setAttribute('aria-current', 'true');
+        else el.removeAttribute('aria-current');
+    }
+
+    // Keep the persistent chrome (toolbar + sidebar photo link) in sync with
+    // the active state, so their real-link targets stay correct.
+    function syncChrome(lang, view) {
         langPt.classList.toggle('active', lang === 'pt');
         langEn.classList.toggle('active', lang === 'en');
-    }
+        langPt.href = metaFor('pt', view).url;
+        langEn.href = metaFor('en', view).url;
+        setAriaCurrent(langPt, lang === 'pt');
+        setAriaCurrent(langEn, lang === 'en');
 
-    // --- Language Selector (instant swap, mirrors the original behaviour) ---
-    function setLanguage(lang) {
-        if (lang === getLang()) return;
-        const view = getView();
-        root.setAttribute('data-lang', lang);
-        updateToolbar(lang);
-        syncBioButton(lang, view);
-        updateFormLanguage(lang);
-        applyHead(lang, view);
-        localStorage.setItem('lang', lang);
-        history.pushState({ lang, view }, '', metaFor(lang, view).url);
-    }
-
-    langPt.addEventListener('click', () => setLanguage('pt'));
-    langEn.addEventListener('click', () => setLanguage('en'));
-
-    // --- Bio Inline Toggle (short <-> full, animated) ---
-    function toggleBio() {
-        const lang = getLang();
-        const goingFull = getView() === 'short';
-        const shortEl = document.getElementById(`${lang}-bio-short`);
-        const fullEl = document.getElementById(`${lang}-bio-full`);
-        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
-        const fromEl = goingFull ? shortEl : fullEl;
-        const toEl = goingFull ? fullEl : shortEl;
-        const nextView = goingFull ? 'full' : 'short';
-        const duration = prefersReducedMotion ? 0 : BIO_EXIT_MS;
-
-        const commit = () => {
-            fromEl.classList.remove('bio-exiting');
-            root.setAttribute('data-view', nextView);
-            toEl.classList.add('bio-entering');
-            toEl.addEventListener('animationend', () => toEl.classList.remove('bio-entering'), { once: true });
-
-            if (expandBtn) {
-                expandBtn.setAttribute('aria-expanded', String(goingFull));
-                const icon = expandBtn.querySelector('i');
-                if (icon) icon.className = goingFull
-                    ? 'fas fa-circle-minus bio-info-icon'
-                    : 'fas fa-circle-plus bio-info-icon';
-            }
-
-            if (goingFull) {
-                const collapseBtn = fullEl.querySelector('.bio-collapse-btn');
-                if (collapseBtn) collapseBtn.focus();
-            } else if (expandBtn) {
-                expandBtn.focus();
-            }
-
-            applyHead(lang, nextView);
-            localStorage.setItem('lang', lang);
-            history.pushState({ lang, view: nextView }, '', metaFor(lang, nextView).url);
-        };
-
-        if (duration === 0) {
-            commit();
-            return;
+        const fotoBtn = document.getElementById('foto-btn');
+        if (fotoBtn) {
+            const oppositeView = view === 'full' ? 'short' : 'full';
+            fotoBtn.href = metaFor(lang, oppositeView).url;
+            fotoBtn.setAttribute('aria-label', fotoLabel(lang, view));
         }
-        fromEl.classList.add('bio-exiting');
-        setTimeout(commit, duration);
     }
 
-    document.querySelectorAll('.bio-toggle-btn, .bio-collapse-btn').forEach(btn => {
-        btn.addEventListener('click', toggleBio);
-    });
-
-    // Photo button toggles bio (expand or collapse)
-    document.getElementById('foto-btn').addEventListener('click', toggleBio);
-
-    // --- Back/forward navigation: apply state instantly, no history push ---
+    // --- In-page navigation (progressive enhancement over real links) ---
+    // Each URL is a standalone page that renders only its own content block.
+    // We fetch the target, swap in its .content-area, and update head/history
+    // without a reload. Fetched fragments are cached (and prewarmed on hover),
+    // so language swaps stay instant and bio toggles keep their animation.
     function stateFromPath(pathname) {
         const lang = pathname.startsWith('/en') ? 'en' : 'pt';
         const view = pathname.endsWith('/bio.html') ? 'full' : 'short';
         return { lang, view };
     }
 
-    window.addEventListener('popstate', (e) => {
-        const { lang, view } = e.state || stateFromPath(location.pathname);
-        if (lang !== getLang()) {
-            root.setAttribute('data-lang', lang);
-            updateToolbar(lang);
-            updateFormLanguage(lang);
-        }
-        root.setAttribute('data-view', view);
-        syncBioButton(lang, view);
-        applyHead(lang, view);
+    const pageCache = new Map();
+    function fetchContent(path) {
+        if (pageCache.has(path)) return pageCache.get(path);
+        const promise = fetch(path)
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+            .then(html => {
+                const area = new DOMParser().parseFromString(html, 'text/html').querySelector('.content-area');
+                if (!area) throw new Error('no .content-area');
+                return area.innerHTML;
+            })
+            .catch(err => { pageCache.delete(path); throw err; });
+        pageCache.set(path, promise);
+        return promise;
+    }
+
+    let navToken = 0;
+    function navigate(path, { push = true, animate } = {}) {
+        const target = stateFromPath(path);
+        const cur = { lang: getLang(), view: getView() };
+        if (target.lang === cur.lang && target.view === cur.view) return;
+        const doAnimate = animate !== undefined ? animate : (target.view !== cur.view);
+        const myToken = ++navToken;
+
+        fetchContent(path).then(html => {
+            if (myToken !== navToken) return;   // a newer navigation superseded this one
+            const contentArea = document.querySelector('.content-area');
+
+            const commit = () => {
+                contentArea.innerHTML = html;
+                root.setAttribute('data-lang', target.lang);
+                root.setAttribute('data-view', target.view);
+                applyHead(target.lang, target.view);
+                if (target.lang !== cur.lang) updateFormLanguage(target.lang);
+                syncChrome(target.lang, target.view);
+                localStorage.setItem('lang', target.lang);
+                if (push) history.pushState(target, '', path);
+
+                const block = contentArea.firstElementChild;
+                if (doAnimate && !prefersReducedMotion && block) {
+                    block.classList.add('bio-entering');
+                    block.addEventListener('animationend', () => block.classList.remove('bio-entering'), { once: true });
+                }
+
+                // On view changes, move focus into the new content so the
+                // transition is announced to assistive technology.
+                if (doAnimate) {
+                    const focusEl = target.view === 'full'
+                        ? contentArea.querySelector('.bio-collapse-btn')
+                        : document.getElementById(target.lang + '-bio-toggle');
+                    if (focusEl) focusEl.focus();
+                }
+            };
+
+            if (doAnimate && !prefersReducedMotion) {
+                const oldBlock = contentArea.firstElementChild;
+                if (oldBlock) oldBlock.classList.add('bio-exiting');
+                setTimeout(commit, BIO_EXIT_MS);
+            } else {
+                commit();
+            }
+        }).catch(() => { window.location.href = path; });
+    }
+
+    function navTarget(el) {
+        const link = el.closest && el.closest('a[data-nav]');
+        if (!link) return null;
+        const path = new URL(link.getAttribute('href'), location.origin).pathname;
+        return internalUrls.has(path) ? path : null;
+    }
+
+    // Intercept clicks on internal nav links; let modified clicks (new tab,
+    // download, etc.) and the no-JS path fall back to normal navigation.
+    document.addEventListener('click', e => {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        const path = navTarget(e.target);
+        if (!path) return;
+        e.preventDefault();
+        navigate(path);
+    });
+
+    // Warm the cache on hover/focus so the swap feels instant.
+    function prewarm(e) {
+        const path = navTarget(e.target);
+        if (path) fetchContent(path).catch(() => {});
+    }
+    document.addEventListener('pointerover', prewarm);
+    document.addEventListener('focusin', prewarm);
+
+    window.addEventListener('popstate', () => {
+        navigate(location.pathname, { push: false, animate: false });
     });
 
     // --- Contact Form ---

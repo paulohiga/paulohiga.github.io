@@ -19,13 +19,11 @@
             <!-- Sidebar / Identity -->
 {% include sidebar.html %}
 
-            <!-- Main Content -->
-            <article class="content-area">
-                    <!-- Portuguese Content -->
-{% include content-pt.html %}
-
-                    <!-- English Content -->
-{% include content-en.html %}
+            <!-- Main Content: only the active language/view is rendered.
+                 In-page navigation swaps this block client-side (see script.js). -->
+            <article class="content-area fade-in">
+{% assign bio_include = 'content/' | append: page.lang | append: '-' | append: page.view | append: '.html' %}
+{% include {{ bio_include }} %}
             </article>
         </div>
     </main>

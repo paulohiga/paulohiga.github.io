@@ -1,7 +1,9 @@
+{% assign pt_state = 'pt-' | append: page.view %}
+{% assign en_state = 'en-' | append: page.view %}
     <nav class="toolbar" aria-label="Opções de visualização">
         <div class="language-selector">
-            <button id="lang-pt" class="{% if page.lang == 'pt' %}active{% endif %}" aria-label="Mudar para Português">PT</button>
-            <button id="lang-en" class="{% if page.lang == 'en' %}active{% endif %}" aria-label="Switch to English">EN</button>
+            <a id="lang-pt" href="{{ site.data.pages[pt_state].url }}" data-nav lang="pt-BR" hreflang="pt-BR" class="{% if page.lang == 'pt' %}active{% endif %}" aria-label="Mudar para Português"{% if page.lang == 'pt' %} aria-current="true"{% endif %}>PT</a>
+            <a id="lang-en" href="{{ site.data.pages[en_state].url }}" data-nav lang="en" hreflang="en" class="{% if page.lang == 'en' %}active{% endif %}" aria-label="Switch to English"{% if page.lang == 'en' %} aria-current="true"{% endif %}>EN</a>
         </div>
         <div class="theme-selector">
             <button id="theme-toggle" aria-label="Alternar tema claro/escuro"><i class="fas fa-sun"></i></button>
