@@ -6,6 +6,9 @@ Site pessoal de Paulo Higa, publicado via **GitHub Pages (Jekyll)** em
 O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 (HTML/CSS/JS), de modo que atualizar a biografia é só editar arquivos Markdown.
 
+> **Agentes de IA generativa** (Claude Code, Gemini CLI, ChatGPT Codex etc.):
+> leiam [`AGENTS.md`](./AGENTS.md) antes de qualquer alteração.
+
 ## Estrutura
 
 ```
@@ -25,6 +28,7 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 ├── en/index.md             # Conteúdo: resumo em inglês            → /en/
 ├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
 │
+├── sitemap.xml             # Template Liquid: gera o sitemap automaticamente
 ├── style.css               # Todo o CSS (inclusive ícones via ::before/::after)
 ├── script.js               # Tema, troca de idioma, navegação sem reload, form
 └── img/                    # Imagens
@@ -40,6 +44,11 @@ Edite os arquivos `.md` — não é preciso mexer em HTML/CSS/JS.
 
 - **Resumo (home):** `index.md` (PT) e `en/index.md` (EN).
 - **Biografia completa:** `bio.md` (PT) e `en/bio.md` (EN).
+
+O `sitemap.xml` é gerado automaticamente (a partir de `_data/pages.yml` e da
+data do último commit de cada página) — não edite o `sitemap.xml` à mão nem se
+preocupe com o `<lastmod>`: basta commitar a alteração de conteúdo. Veja
+[Publicação](#publicação) abaixo.
 
 ### Títulos de seção e índice
 
@@ -79,3 +88,16 @@ bundle exec jekyll serve
 
 O site fica em `http://localhost:4000`. Os mesmos gems do GitHub Pages são
 usados (ver `Gemfile`), então o resultado local é igual ao publicado.
+
+## Publicação
+
+O site é compilado e publicado pelo workflow do GitHub Actions em
+`.github/workflows/pages.yml` a cada push na branch `master`. Esse build
+próprio (em vez do build padrão do GitHub Pages) permite usar o plugin
+`jekyll-last-modified-at`, que preenche o `<lastmod>` do `sitemap.xml` com a
+data do último commit de cada página — por isso o histórico do git é buscado
+por completo (`fetch-depth: 0`) e não é preciso editar datas manualmente.
+
+> **Configuração necessária no GitHub (uma vez):** em **Settings → Pages**,
+> defina **Source = GitHub Actions**. Sem isso, o workflow compila mas não
+> publica.

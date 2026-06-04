@@ -1,5 +1,6 @@
 ---
 layout: default
+last_modified: 2026-06-04
 permalink: /en/bio
 lang: en
 view: full
