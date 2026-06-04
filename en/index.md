@@ -5,7 +5,7 @@ lang: en
 view: short
 ---
 
-**[Paulo Higa](/en/bio.html){:#en-bio-toggle .bio-toggle-btn data-nav="" aria-label="Read the full biography of Paulo Higa"}** is a journalist and public servant in the career of Specialist in Public Policy and Government Management (EPPGG) of the Government of Brazil, based in Brasília since 2026. He spent over a decade in tech media before joining public administration, first as a Public Policy and Government Management Analyst at the São Paulo City Hall, working with data, strategic planning, and public communication in municipal education, and subsequently in the federal career. In his spare time, he runs marathons.
+**[Paulo Higa](/en/bio){:#en-bio-toggle .bio-toggle-btn data-nav="" aria-label="Read the full biography of Paulo Higa"}** is a journalist and public servant in the career of Specialist in Public Policy and Government Management (EPPGG) of the Government of Brazil, based in Brasília since 2026. He spent over a decade in tech media before joining public administration, first as a Public Policy and Government Management Analyst at the São Paulo City Hall, working with data, strategic planning, and public communication in municipal education, and subsequently in the federal career. In his spare time, he runs marathons.
 {:.intro-text}
 
 ## Public

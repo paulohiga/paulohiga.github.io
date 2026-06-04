@@ -5,7 +5,7 @@ lang: pt
 view: short
 ---
 
-**[Paulo Higa](/bio.html){:#pt-bio-toggle .bio-toggle-btn data-nav="" aria-label="Ler a biografia completa de Paulo Higa"}** é jornalista e servidor público da carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) do Governo do Brasil, radicado em Brasília desde 2026. Trabalhou por mais de uma década na mídia de tecnologia antes de ingressar na administração pública, primeiro como Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, onde atuou com dados, planejamento estratégico e comunicação pública na educação municipal, e, em seguida, na carreira federal. Nas horas vagas, corre maratonas.
+**[Paulo Higa](/bio){:#pt-bio-toggle .bio-toggle-btn data-nav="" aria-label="Ler a biografia completa de Paulo Higa"}** é jornalista e servidor público da carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) do Governo do Brasil, radicado em Brasília desde 2026. Trabalhou por mais de uma década na mídia de tecnologia antes de ingressar na administração pública, primeiro como Analista de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo, onde atuou com dados, planejamento estratégico e comunicação pública na educação municipal, e, em seguida, na carreira federal. Nas horas vagas, corre maratonas.
 {:.intro-text}
 
 ## Público

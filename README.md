@@ -21,9 +21,9 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 │   └── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa)
 │
 ├── index.md                # Conteúdo: resumo em português        → /
-├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio.html
+├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio
 ├── en/index.md             # Conteúdo: resumo em inglês            → /en/
-├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio.html
+├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
 │
 ├── style.css               # Todo o CSS (inclusive ícones via ::before/::after)
 ├── script.js               # Tema, troca de idioma, navegação sem reload, form

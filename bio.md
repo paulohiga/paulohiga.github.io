@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /bio.html
+permalink: /bio
 lang: pt
 view: full
 ---
