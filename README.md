@@ -28,6 +28,7 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 ├── en/index.md             # Conteúdo: resumo em inglês            → /en/
 ├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
 │
+├── sitemap.xml             # Template Liquid: gera o sitemap automaticamente
 ├── style.css               # Todo o CSS (inclusive ícones via ::before/::after)
 ├── script.js               # Tema, troca de idioma, navegação sem reload, form
 └── img/                    # Imagens
@@ -43,6 +44,10 @@ Edite os arquivos `.md` — não é preciso mexer em HTML/CSS/JS.
 
 - **Resumo (home):** `index.md` (PT) e `en/index.md` (EN).
 - **Biografia completa:** `bio.md` (PT) e `en/bio.md` (EN).
+
+Ao alterar o conteúdo de uma página, atualize o campo `last_modified`
+(`AAAA-MM-DD`) no front matter dela. O `sitemap.xml` é gerado automaticamente
+a partir desse campo e de `_data/pages.yml` — não edite o `sitemap.xml` à mão.
 
 ### Títulos de seção e índice
 

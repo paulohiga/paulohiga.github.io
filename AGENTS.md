@@ -67,4 +67,14 @@ diretórios e o fluxo de edição.
 - [ ] Acessibilidade verificada (WCAG, no mínimo AA).
 - [ ] Layout responsivo e fluido, inclusive em mobile.
 - [ ] HTML semântico e metadados estruturados preservados/aprimorados.
-- [ ] **`<lastmod>` do `sitemap.xml` atualizado** para as páginas alteradas.
+- [ ] **`last_modified` atualizado** no front matter de cada página de conteúdo
+      alterada (`index.md`, `bio.md`, `en/index.md`, `en/bio.md`).
+
+## Sitemap (`<lastmod>`)
+
+O `sitemap.xml` é **gerado automaticamente** pelo Jekyll a partir de
+`_data/pages.yml` (URLs e links `hreflang`) e do campo **`last_modified`** no
+front matter de cada página. **Não edite `sitemap.xml` diretamente.** Ao
+alterar o conteúdo de uma página, atualize apenas o `last_modified` no front
+matter dessa página (formato `AAAA-MM-DD`) — o `<lastmod>` correspondente é
+recalculado na compilação.

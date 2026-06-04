@@ -1,32 +1,44 @@
+---
+permalink: /sitemap.xml
+layout: null
+sitemap: false
+---
 <?xml version="1.0" encoding="UTF-8"?>
+{%- comment -%}
+  Sitemap gerado automaticamente. O <lastmod> de cada URL vem do campo
+  `last_modified` no front matter da página correspondente (index.md, bio.md,
+  en/index.md, en/bio.md). Ao alterar o conteúdo de uma página, atualize o
+  `last_modified` dela — esta lista e os links alternados (hreflang) são
+  montados a partir de _data/pages.yml, sem edição manual aqui.
+{%- endcomment -%}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for entry in site.data.pages -%}
+  {%- assign key = entry[0] -%}
+  {%- assign meta = entry[1] -%}
+  {%- comment -%} Deriva a view (short/full) a partir da chave "<lang>-<view>". {%- endcomment -%}
+  {%- assign view = key | split: "-" | last -%}
+  {%- assign lang = key | split: "-" | first -%}
+  {%- assign pt_key = view | prepend: "pt-" -%}
+  {%- assign en_key = view | prepend: "en-" -%}
+  {%- assign pt = site.data.pages[pt_key] -%}
+  {%- assign en = site.data.pages[en_key] -%}
+  {%- comment -%} Localiza a página correspondente para ler o last_modified. {%- endcomment -%}
+  {%- assign lastmod = "" -%}
+  {%- for page in site.pages -%}
+    {%- if page.lang == lang and page.view == view -%}
+      {%- assign lastmod = page.last_modified -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
   <url>
-    <loc>https://higa.me/</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://higa.me/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://higa.me/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://higa.me/"/>
-    <lastmod>2026-06-04</lastmod>
+    <loc>{{ meta.canonical }}</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="{{ pt.canonical }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ en.canonical }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ pt.canonical }}"/>
+    {%- if lastmod %}
+    <lastmod>{{ lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
   </url>
-  <url>
-    <loc>https://higa.me/bio</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://higa.me/bio"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://higa.me/en/bio"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://higa.me/bio"/>
-    <lastmod>2026-06-04</lastmod>
-  </url>
-  <url>
-    <loc>https://higa.me/en/</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://higa.me/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://higa.me/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://higa.me/"/>
-    <lastmod>2026-06-04</lastmod>
-  </url>
-  <url>
-    <loc>https://higa.me/en/bio</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://higa.me/bio"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://higa.me/en/bio"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://higa.me/bio"/>
-    <lastmod>2026-06-04</lastmod>
-  </url>
+{%- endfor %}
 </urlset>
