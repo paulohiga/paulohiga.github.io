@@ -5,9 +5,9 @@ lang: en
 view: full
 ---
 
-**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, April 15, 1993) is a Brazilian journalist, manager, and public servant. He was approved in the training course for the career of Specialist in Public Policy and Government Management (EPPGG)[^1] of the Government of Brazil[^34]. Previously, he served as an Analyst of Public Policy and Government Management (APPGG) at the São Paulo City Hall and as an Advisor[^2] to the Municipal Department of Education (SME). At SME, he participated in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, with a focus on modeling learning and equity criteria for the new Educational Performance Award (PDE)[^4].
+**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, April 15, 1993) is a Brazilian journalist, manager, and public servant. He passed the training course for the Specialist in Public Policy and Government Management (EPPGG)[^1] career of the Government of Brazil[^34]. Previously, he served as a Public Policy and Government Management Analyst (APPGG) at São Paulo City Hall and as a Cabinet Advisor[^2] at the Municipal Secretariat of Education (SME). At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, most notably the modeling of learning and equity criteria for the new Educational Performance Award (PDE)[^4].
 
-Before entering public administration, Higa built his career in digital media as executive editor, head of operations, and partner at Tecnoblog, Brazil's largest independent technology website[^5]. During his tenure at the outlet from 2012 to 2023, he helped expand the audience to over 30 million monthly pageviews. Recognized for his consumer electronics analysis and as co-host of the Tecnocast podcast[^6], he won the Especialistas Award for three consecutive years (2020, 2021, and 2022)[^7] and was a finalist for the Comunique-se Award[^8]. He holds a degree in Journalism from Faculdade Cásper Líbero and an MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV).
+Before entering public administration, Higa built his career in digital media as executive editor, head of operations, and partner at Tecnoblog, Brazil's largest independent technology website[^5]. During his tenure at the outlet from 2012 to 2023, he helped expand the audience to over 30 million monthly pageviews. Recognized for his consumer electronics reviews and as co-host of the Tecnocast podcast[^6], he won the Especialistas Award for three consecutive years (2020, 2021, and 2022)[^7] and was a finalist for the Comunique-se Award[^8]. He holds a degree in Journalism from Faculdade Cásper Líbero and an MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV).
 
 <nav class="toc" aria-label="Table of Contents" markdown="1">
 
@@ -29,7 +29,7 @@ His entry into the digital world came through active participation in internet d
 
 ### 1.2 Academic Background
 
-In 2011, he enrolled in the Bachelor of Science and Technology (BC&T) program at the Federal University of ABC (UFABC), the interdisciplinary entry-level course of the basic cycle, with the intention of completing the credits required for a double degree with the Bachelor of Computer Science.[^10][^12] He later redirected his education toward Journalism, graduating from Faculdade Cásper Líbero in 2017.[^9] His undergraduate capstone project was PodPods, a five-episode podcast that interviewed podcasters of the time, portrayed the medium's landscape in 2017, and pointed to future trends.[^35] He later completed an MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV) in 2022.[^9]
+In 2011, he enrolled in the Bachelor of Science and Technology (BC&T) program at the Federal University of ABC (UFABC), an interdisciplinary entry-level program, intending to complete the credits required for a double degree with the Bachelor of Computer Science.[^10][^12] He later redirected his education toward Journalism, graduating from Faculdade Cásper Líbero in 2017.[^9] His undergraduate capstone project was PodPods, a five-episode podcast that interviewed podcasters of the time, portrayed the medium's landscape in 2017, and pointed to future trends.[^35] He later completed an MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV) in 2022.[^9]
 
 ### 1.3 Road Running and Other Hobbies
 
@@ -64,7 +64,7 @@ His first marathon (42.195 km) was the Maratona Monumental de Brasília in 2021,
 
 Paulo Higa joined Tecnoblog in 2012 as an editor. Over a decade, he published thousands of articles and conducted more than 400 detailed device reviews, covering everything from smartphones and computers to TVs and wearables.[^13]
 
-In 2018, he became a partner in the venture,[^10] also holding the title of Executive Editor. Under his editorial leadership, the team expanded to more than 30 professionals,[^5] and Higa played a central role in shaping the outlet's editorial voice. His editorial management prioritized critical independence from manufacturers and advertisers.[^14] This critical approach is evident in in-depth analyses of topics such as Microsoft's recent trajectory and the Windows 10 Mobile saga, antitrust decisions involving Google and the European Union, the transition of Macs to Apple Silicon, and the impact of U.S. trade restrictions on Huawei, among others.[^37]
+In 2018, he became a partner in the venture,[^10] also holding the title of Executive Editor. Under his editorial leadership, the team expanded to more than 30 professionals,[^5] and Higa played a central role in shaping the outlet's editorial voice. His editorial management prioritized critical independence from manufacturers and advertisers.[^14] This critical approach is evident in his in-depth analyses of topics such as Microsoft's recent trajectory and the Windows 10 Mobile saga, antitrust decisions involving Google and the European Union, the transition of Macs to Apple Silicon, and the impact of U.S. trade restrictions on Huawei, among others.[^37]
 
 ### 2.2 Head of Operations
 
@@ -72,7 +72,7 @@ Between 2018 and 2023, also serving as Head of Operations, Higa was responsible 
 
 ### 2.3 Tecnocast
 
-As co-host of Tecnocast,[^16] Higa contributed to deepening the outlet's technological debate. While the website covered product launches, the podcast addressed topics such as geopolitical implications of supply chains[^17] or privacy issues in emerging technologies.[^18]
+As co-host of Tecnocast,[^16] Higa helped deepen the outlet's technology discussions. While the website covered product launches, the podcast addressed topics such as geopolitical implications of supply chains[^17] or privacy issues in emerging technologies.[^18]
 
 By the time of his graduation, Higa was already co-host of Tecnocast, which was establishing itself as one of Brazil's leading podcasts on technology, innovation, and business. Released in 2018, the episode Tecnocast 100 told the history of Tecnoblog from its founding, including Higa's own arrival at the site.[^36] Among the episodes he took part in, notable ones address topics such as data breaches, privacy, chip geopolitics, the future of work, the LGPD (Lei Geral de Proteção de Dados, Brazil's General Data Protection Law), and digital currency.[^39]
 
@@ -105,7 +105,7 @@ Higa received the Prêmio Especialistas da Revista Negócios da Comunicação[^7
 
 ### 3.1 Departure from Tecnoblog
 
-In 2023, Paulo Higa concluded his cycle at Tecnoblog, leaving his positions as Executive Editor and Head of Operations. His departure was discreet. Readers reacted with speculation, creating forum threads asking "What happened to Paulo Higa?".[^20] Responses from former colleagues confirmed he was taking "a sabbatical year." The decision to withdraw completely contrasts with the norm of constant visibility in the digital ecosystem.
+In 2023, Paulo Higa closed his chapter at Tecnoblog, stepping down from his positions as Executive Editor and Head of Operations. His departure was discreet. Readers reacted with speculation, creating forum threads asking "What happened to Paulo Higa?".[^20] Responses from former colleagues confirmed he was taking "a sabbatical year." The decision to withdraw completely contrasts with the norm of constant visibility in the digital ecosystem.
 
 ### 3.2 Digital Posture and Personal Interests
 
@@ -121,19 +121,19 @@ In 2024, after passing the civil service exam[^23], Higa took on the role of Pub
 
 ### 4.2 Redesigning the Educational Performance Award (PDE)
 
-At the SME, Higa contributed to modeling the criteria for the Educational Performance Award (PDE),[^4] a revised model that prioritized payment based on improved student learning outcomes and reduction of inequalities. He also developed a values simulator[^3] that allowed the approximately 80,000 municipal employees to calculate the amounts they would receive.
+At the SME, Higa contributed to modeling the criteria for the Educational Performance Award (PDE),[^4] a revised model that prioritized payment based on improved student learning outcomes and reduction of inequalities. He also developed a payment simulator[^3] that let the roughly 80,000 municipal employees calculate the amounts they would receive.
 
-Beyond the PDE, he contributed to the 2026–2029 Strategic Planning,[^26] developing data dashboards[^27] and communication materials[^28] for feedback processes with municipal network professionals. Successive appointments published in the Official Gazette document his progression through the secretariat's roles.[^24][^29][^2][^25]
+Beyond the PDE, he contributed to the 2026–2029 Strategic Planning,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions held with the municipal network's professionals. Successive appointments published in the Official Gazette document his progression through the secretariat's roles.[^24][^29][^2][^25]
 
 ## 5. The Federal Career: The Unified National Civil Service Exam (2026)
 
 ### 5.1 The "ENEM of Civil Service Exams" and the EPPGG Career
 
-In 2026, Higa was approved in the Unified National Civil Service Exam (CNU)[^30] for the position of Specialist in Public Policy and Government Management (EPPGG), linked to the Ministry of Management and Innovation in Public Services (MGI). The EPPGG career[^1] is responsible for formulating, implementing, and evaluating public policies within the Federal Executive Branch, with assignments across various areas of government.[^31]
+In 2026, Higa passed the Unified National Civil Service Exam (CNU)[^30] for the position of Specialist in Public Policy and Government Management (EPPGG), linked to the Ministry of Management and Innovation in Public Services (MGI). The EPPGG career[^1] is responsible for formulating, implementing, and evaluating public policies within the Federal Executive Branch, with assignments across various areas of government.[^31]
 
 ### 5.2 Performance and Training at Enap
 
-Classification lists for the CNU indicate a final score of 87.50 for Higa, corresponding to 83rd place out of a total of 241,837 applicants[^32] for the EPPGG position in the block.[^33] The Training Course, the final and eliminatory stage of the exam, was held by the National School of Public Administration (Enap) in Brasília, covering topics such as ethics, human rights, government planning, and public finances.[^31] Higa was approved in the training course with a score of 92.56 — the eighth highest in his class — as published in the Official Gazette of the Union (DOU) on May 26, 2026.[^34]
+Classification lists for the CNU indicate a final score of 87.50 for Higa, corresponding to 83rd place out of a total of 241,837 applicants[^32] for the EPPGG position in his block.[^33] The Training Course, the final and eliminatory stage of the exam, was held by the National School of Public Administration (Enap) in Brasília, covering topics such as ethics, human rights, government planning, and public finances.[^31] Higa passed the training course with a score of 92.56 — the eighth highest in his class — as published in the Official Gazette of the Union (DOU) on May 26, 2026.[^34]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 3: Milestones of the public sector transition">
 <table class="analysis-table">
@@ -153,7 +153,7 @@ Classification lists for the CNU indicate a final score of 87.50 for Higa, corre
 
 Paulo Higa's trajectory spans two distinct phases. In media, he worked as a reporter at TechTudo (Globo.com) from 2010 to 2012, and at Tecnoblog from 2012 to 2023, serving as editor, executive editor, head of operations, and partner. He also served as a technology columnist on Rádio Globo (2018–2019), focused on communicating technical topics to broad audiences. During this period, he combined journalistic production, editorial and operational management, and received industry recognition.
 
-In public administration, he served as an APPGG and Cabinet Advisor at the São Paulo Municipal Secretariat of Education (2024–2025), contributing to strategic planning, data analysis, and public communication projects. In 2026, he was approved in the CNU and in the Enap training course for the EPPGG career, in Brasília. For readers of his Tecnoblog output, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
+In public administration, he served as an APPGG and Cabinet Advisor at the São Paulo Municipal Secretariat of Education (2024–2025), contributing to strategic planning, data analysis, and public communication projects. In 2026, he passed the CNU and the Enap training course for the EPPGG career, in Brasília. For readers of his work at Tecnoblog, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
 
 ## 7. References
 {:.references-heading}
