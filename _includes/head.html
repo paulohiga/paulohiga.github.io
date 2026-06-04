@@ -1,0 +1,122 @@
+{% assign state = page.lang | append: '-' | append: page.view %}
+{% assign meta = site.data.pages[state] %}
+{% assign pt_state = 'pt-' | append: page.view %}
+{% assign en_state = 'en-' | append: page.view %}
+{% assign pt_meta = site.data.pages[pt_state] %}
+{% assign en_meta = site.data.pages[en_state] %}
+{% assign full_state = page.lang | append: '-full' %}
+{% assign full_meta = site.data.pages[full_state] %}
+{% if page.lang == 'en' %}{% assign alt_locale = 'pt_BR' %}{% assign job_title = 'Public manager' %}{% else %}{% assign alt_locale = 'en_US' %}{% assign job_title = 'Gestor público' %}{% endif %}
+    <title>{{ meta.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa, gestor público, EPPGG">
+    <link rel="canonical" href="{{ meta.canonical }}">
+    <link rel="alternate" href="{{ pt_meta.canonical }}" hreflang="pt-BR">
+    <link rel="alternate" href="{{ en_meta.canonical }}" hreflang="en">
+    <link rel="alternate" href="{{ pt_meta.canonical }}" hreflang="x-default">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Paulo Higa">
+    <meta property="og:title" content="{{ meta.title }}">
+    <meta property="og:description" content="{{ meta.description }}">
+    <meta property="og:url" content="{{ meta.canonical }}">
+    <meta property="og:locale" content="{{ meta.ogLocale }}">
+    <meta property="og:locale:alternate" content="{{ alt_locale }}">
+    <meta property="og:image" content="https://higa.me/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Paulo Higa">
+    <meta property="profile:first_name" content="Paulo">
+    <meta property="profile:last_name" content="Higa">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ meta.title }}">
+    <meta name="twitter:description" content="{{ meta.description }}">
+    <meta name="twitter:image" content="https://higa.me/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Paulo Higa">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Shared page metadata for client-side (no-reload) navigation -->
+    <script type="application/json" id="page-meta">{{ site.data.pages | jsonify }}</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://higa.me/#person",
+      "name": "Paulo Higa",
+      "alternateName": "Paulo Seikishi Higa",
+      "givenName": "Paulo",
+      "familyName": "Higa",
+      "birthDate": "1993-04-15",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Chiba, Japan"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "Brazil"
+      },
+      "url": "https://higa.me/",
+      "mainEntityOfPage": "https://higa.me/",
+      "image": "https://higa.me/img/foto-paulo-higa-3.jpg",
+      "jobTitle": {{ job_title | jsonify }},
+      "worksFor": {
+        "@type": "GovernmentOrganization",
+        "name": "Governo do Brasil",
+        "sameAs": "https://www.gov.br/"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Brasília, Brazil"
+      },
+      "knowsLanguage": ["pt-BR", "en"],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Faculdade Cásper Líbero",
+          "sameAs": "https://casperlibero.edu.br/"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Fundação Getulio Vargas (FGV)",
+          "sameAs": "https://portal.fgv.br/"
+        }
+      ],
+      "description": {{ meta.description | jsonify }},
+      "sameAs": [
+        "https://www.linkedin.com/in/paulohiga/",
+        "https://tecnoblog.net/author/paulohiga/",
+        "https://www.techtudo.com.br/colaborador/paulo-higa.html"
+      ],
+      "subjectOf": {
+        "@type": "AboutPage",
+        "@id": "{{ full_meta.canonical }}",
+        "url": "{{ full_meta.canonical }}",
+        "name": {{ full_meta.title | jsonify }},
+        "inLanguage": "{{ meta.htmlLang }}",
+        "about": { "@id": "https://higa.me/#person" }
+      }
+    }
+    </script>

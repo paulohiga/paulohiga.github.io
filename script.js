@@ -1,18 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const root = document.documentElement;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const FOCUS_DELAY_MS = 50;
+    const BIO_EXIT_MS = 200;
 
     const themeToggle = document.getElementById('theme-toggle');
     const langPt = document.getElementById('lang-pt');
     const langEn = document.getElementById('lang-en');
 
-    function getCurrentLanguage() {
-        return langPt.classList.contains('active') ? 'pt' : 'en';
-    }
-    const ptVersion = document.getElementById('pt-version');
-    const enVersion = document.getElementById('en-version');
+    // Per-state metadata (title/description/canonical/url), shared with Jekyll.
+    const pageMeta = JSON.parse(document.getElementById('page-meta').textContent);
 
-    // Theme Selector
+    function getLang() { return root.getAttribute('data-lang'); }   // 'pt' | 'en'
+    function getView() { return root.getAttribute('data-view'); }   // 'short' | 'full'
+    function metaFor(lang, view) { return pageMeta[lang + '-' + view]; }
+
+    // --- Theme Selector ---
     const themeIcon = themeToggle.querySelector('i');
 
     function setThemeIcon(isDark) {
@@ -73,24 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Language Selector — honor stored choice, then fall back to browser language
-    const savedLang = localStorage.getItem('lang');
-    const userLang = navigator.language || navigator.userLanguage;
-    if (savedLang === 'pt' || savedLang === 'en') {
-        setLanguage(savedLang);
-    } else if (userLang.startsWith('en')) {
-        setLanguage('en');
-    } else {
-        setLanguage('pt');
-    }
-
-    langPt.addEventListener('click', () => setLanguage('pt'));
-    langEn.addEventListener('click', () => setLanguage('en'));
-
     function updateFormLanguage(lang) {
         const translations = formTranslations[lang];
         if (!translations) return;
-
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
             if (translations[key]) {
@@ -99,50 +87,141 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setLanguage(lang) {
-        localStorage.setItem('lang', lang);
-        const prevLang = getCurrentLanguage();
-        const prevFull = document.getElementById(`${prevLang}-bio-full`);
-        const bioWasExpanded = prevFull && !prevFull.hidden;
-
-        // Collapse both without animation before switching
-        ['pt', 'en'].forEach(l => {
-            const s = document.getElementById(`${l}-bio-short`);
-            const f = document.getElementById(`${l}-bio-full`);
-            if (s && f) { f.hidden = true; s.hidden = false; }
-        });
-
-        if (lang === 'pt') {
-            ptVersion.style.display = 'block';
-            enVersion.style.display = 'none';
-            langPt.classList.add('active');
-            langEn.classList.remove('active');
-            document.documentElement.lang = 'pt-BR';
-        } else {
-            ptVersion.style.display = 'none';
-            enVersion.style.display = 'block';
-            langEn.classList.add('active');
-            langPt.classList.remove('active');
-            document.documentElement.lang = 'en-US';
-        }
-
-        // Restore expanded state in the new language without animation
-        if (bioWasExpanded) {
-            const s = document.getElementById(`${lang}-bio-short`);
-            const f = document.getElementById(`${lang}-bio-full`);
-            const btn = document.getElementById(`${lang}-bio-toggle`);
-            if (s && f) { s.hidden = true; f.hidden = false; }
-            if (btn) {
-                btn.setAttribute('aria-expanded', 'true');
-                const icon = btn.querySelector('i');
-                if (icon) icon.className = 'fas fa-circle-minus bio-info-icon';
-            }
-        }
-
-        updateFormLanguage(lang);
+    // --- Head metadata + URL for in-page (no-reload) navigation ---
+    function setNamedMeta(name, content) {
+        const el = document.querySelector(`meta[name="${name}"]`);
+        if (el) el.setAttribute('content', content);
     }
 
-    // Contact Form
+    function setProperty(prop, content) {
+        const el = document.querySelector(`meta[property="${prop}"]`);
+        if (el) el.setAttribute('content', content);
+    }
+
+    function setCanonical(href) {
+        const el = document.querySelector('link[rel="canonical"]');
+        if (el) el.setAttribute('href', href);
+    }
+
+    function applyHead(lang, view) {
+        const m = metaFor(lang, view);
+        if (!m) return;
+        document.title = m.title;
+        root.lang = m.htmlLang;
+        setNamedMeta('description', m.description);
+        setCanonical(m.canonical);
+        setProperty('og:title', m.title);
+        setProperty('og:description', m.description);
+        setProperty('og:url', m.canonical);
+        setProperty('og:locale', m.ogLocale);
+    }
+
+    // Keep a bio toggle button (icon + ARIA) in sync with a given view.
+    function syncBioButton(lang, view) {
+        const btn = document.getElementById(`${lang}-bio-toggle`);
+        if (!btn) return;
+        const expanded = view === 'full';
+        btn.setAttribute('aria-expanded', String(expanded));
+        const icon = btn.querySelector('i');
+        if (icon) icon.className = expanded
+            ? 'fas fa-circle-minus bio-info-icon'
+            : 'fas fa-circle-plus bio-info-icon';
+    }
+
+    function updateToolbar(lang) {
+        langPt.classList.toggle('active', lang === 'pt');
+        langEn.classList.toggle('active', lang === 'en');
+    }
+
+    // --- Language Selector (instant swap, mirrors the original behaviour) ---
+    function setLanguage(lang) {
+        if (lang === getLang()) return;
+        const view = getView();
+        root.setAttribute('data-lang', lang);
+        updateToolbar(lang);
+        syncBioButton(lang, view);
+        updateFormLanguage(lang);
+        applyHead(lang, view);
+        localStorage.setItem('lang', lang);
+        history.pushState({ lang, view }, '', metaFor(lang, view).url);
+    }
+
+    langPt.addEventListener('click', () => setLanguage('pt'));
+    langEn.addEventListener('click', () => setLanguage('en'));
+
+    // --- Bio Inline Toggle (short <-> full, animated) ---
+    function toggleBio() {
+        const lang = getLang();
+        const goingFull = getView() === 'short';
+        const shortEl = document.getElementById(`${lang}-bio-short`);
+        const fullEl = document.getElementById(`${lang}-bio-full`);
+        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
+        const fromEl = goingFull ? shortEl : fullEl;
+        const toEl = goingFull ? fullEl : shortEl;
+        const nextView = goingFull ? 'full' : 'short';
+        const duration = prefersReducedMotion ? 0 : BIO_EXIT_MS;
+
+        const commit = () => {
+            fromEl.classList.remove('bio-exiting');
+            root.setAttribute('data-view', nextView);
+            toEl.classList.add('bio-entering');
+            toEl.addEventListener('animationend', () => toEl.classList.remove('bio-entering'), { once: true });
+
+            if (expandBtn) {
+                expandBtn.setAttribute('aria-expanded', String(goingFull));
+                const icon = expandBtn.querySelector('i');
+                if (icon) icon.className = goingFull
+                    ? 'fas fa-circle-minus bio-info-icon'
+                    : 'fas fa-circle-plus bio-info-icon';
+            }
+
+            if (goingFull) {
+                const collapseBtn = fullEl.querySelector('.bio-collapse-btn');
+                if (collapseBtn) collapseBtn.focus();
+            } else if (expandBtn) {
+                expandBtn.focus();
+            }
+
+            applyHead(lang, nextView);
+            localStorage.setItem('lang', lang);
+            history.pushState({ lang, view: nextView }, '', metaFor(lang, nextView).url);
+        };
+
+        if (duration === 0) {
+            commit();
+            return;
+        }
+        fromEl.classList.add('bio-exiting');
+        setTimeout(commit, duration);
+    }
+
+    document.querySelectorAll('.bio-toggle-btn, .bio-collapse-btn').forEach(btn => {
+        btn.addEventListener('click', toggleBio);
+    });
+
+    // Photo button toggles bio (expand or collapse)
+    document.getElementById('foto-btn').addEventListener('click', toggleBio);
+
+    // --- Back/forward navigation: apply state instantly, no history push ---
+    function stateFromPath(pathname) {
+        const lang = pathname.startsWith('/en') ? 'en' : 'pt';
+        const view = pathname.endsWith('/bio.html') ? 'full' : 'short';
+        return { lang, view };
+    }
+
+    window.addEventListener('popstate', (e) => {
+        const { lang, view } = e.state || stateFromPath(location.pathname);
+        if (lang !== getLang()) {
+            root.setAttribute('data-lang', lang);
+            updateToolbar(lang);
+            updateFormLanguage(lang);
+        }
+        root.setAttribute('data-view', view);
+        syncBioButton(lang, view);
+        applyHead(lang, view);
+    });
+
+    // --- Contact Form ---
     const formOverlay = document.getElementById('form-overlay');
     const contactForm = document.getElementById('contact-form');
     const contactLinks = document.querySelectorAll('.contact-link');
@@ -156,8 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const currentLang = getCurrentLanguage();
-            updateFormLanguage(currentLang);
+            updateFormLanguage(getLang());
 
             formLastFocused = document.activeElement;
             formOverlay.classList.add('visible');
@@ -237,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const currentLang = getCurrentLanguage();
+        const currentLang = getLang();
 
         if (!validateForm(currentLang)) {
             formStatus.textContent = currentLang === 'pt' ? 'Por favor, corrija os erros no formulário.' : 'Please correct the errors in the form.';
@@ -300,57 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Bio Inline Toggle ---
-    function toggleBio(lang) {
-        const shortEl = document.getElementById(`${lang}-bio-short`);
-        const fullEl = document.getElementById(`${lang}-bio-full`);
-        const expandBtn = document.getElementById(`${lang}-bio-toggle`);
-        const isExpanded = !fullEl.hidden;
-        const duration = prefersReducedMotion ? 0 : 200;
-
-        if (isExpanded) {
-            fullEl.classList.add('bio-exiting');
-            setTimeout(() => {
-                fullEl.hidden = true;
-                fullEl.classList.remove('bio-exiting');
-                shortEl.hidden = false;
-                shortEl.classList.add('bio-entering');
-                shortEl.addEventListener('animationend', () => shortEl.classList.remove('bio-entering'), { once: true });
-                if (expandBtn) {
-                    expandBtn.setAttribute('aria-expanded', 'false');
-                    const icon = expandBtn.querySelector('i');
-                    if (icon) icon.className = 'fas fa-circle-plus bio-info-icon';
-                    expandBtn.focus();
-                }
-            }, duration);
-        } else {
-            shortEl.classList.add('bio-exiting');
-            setTimeout(() => {
-                shortEl.hidden = true;
-                shortEl.classList.remove('bio-exiting');
-                fullEl.hidden = false;
-                fullEl.classList.add('bio-entering');
-                fullEl.addEventListener('animationend', () => fullEl.classList.remove('bio-entering'), { once: true });
-                if (expandBtn) {
-                    expandBtn.setAttribute('aria-expanded', 'true');
-                    const icon = expandBtn.querySelector('i');
-                    if (icon) icon.className = 'fas fa-circle-minus bio-info-icon';
-                }
-                const collapseBtn = fullEl.querySelector('.bio-collapse-btn');
-                if (collapseBtn) collapseBtn.focus();
-            }, duration);
-        }
-    }
-
-    document.querySelectorAll('.bio-toggle-btn, .bio-collapse-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = getCurrentLanguage();
-            toggleBio(lang);
-        });
-    });
-
-    // Photo button toggles bio (expand or collapse)
-    document.getElementById('foto-btn').addEventListener('click', () => {
-        toggleBio(getCurrentLanguage());
-    });
+    // --- Initial sync ---
+    updateFormLanguage(getLang());
+    history.replaceState({ lang: getLang(), view: getView() }, '', location.pathname);
 });

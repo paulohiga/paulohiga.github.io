@@ -1,0 +1,38 @@
+{% assign state = page.lang | append: '-' | append: page.view %}
+{% assign meta = site.data.pages[state] %}
+<!DOCTYPE html>
+<html lang="{{ meta.htmlLang }}" data-lang="{{ page.lang }}" data-view="{{ page.view }}">
+
+<head>
+{% include head.html %}
+</head>
+
+<body class="light-theme">
+
+    <!-- Skip Link for Keyboard Users (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">{% if page.lang == 'en' %}Skip to main content{% else %}Pular para conteúdo principal{% endif %}</a>
+
+{% include toolbar.html %}
+
+    <main class="container" id="main-content">
+        <div class="profile-grid">
+            <!-- Sidebar / Identity -->
+{% include sidebar.html %}
+
+            <!-- Main Content -->
+            <article class="content-area">
+                    <!-- Portuguese Content -->
+{% include content-pt.html %}
+
+                    <!-- English Content -->
+{% include content-en.html %}
+            </article>
+        </div>
+    </main>
+
+{% include contact-form.html %}
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

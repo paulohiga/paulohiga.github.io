@@ -1,0 +1,22 @@
+            <aside class="profile-sidebar">
+                <div class="profile-image-wrapper">
+                    <button type="button" id="foto-btn" class="profile-image-button"
+                        aria-label="Expandir biografia de Paulo Higa">
+                        <img src="/img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="200"
+                            height="200">
+                    </button>
+                </div>
+                <h1>Paulo Higa</h1>
+                <div class="profile-details">
+                    <p class="profile-detail"><i class="fas fa-location-dot" aria-hidden="true"></i> Brasília, DF</p>
+                    <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span
+                            data-lang-key="profession">{% if page.lang == 'en' %}Public Manager{% else %}Gestor público{% endif %}</span></p>
+                </div>
+                <div class="profile-actions">
+                    <button type="button" class="contact-button contact-link" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</button>
+                    <a href="https://www.linkedin.com/in/paulohiga/" target="_blank"
+                        class="contact-button linkedin-button" aria-label="LinkedIn Profile (opens in new window)">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </aside>
