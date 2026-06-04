@@ -6,6 +6,9 @@ Site pessoal de Paulo Higa, publicado via **GitHub Pages (Jekyll)** em
 O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 (HTML/CSS/JS), de modo que atualizar a biografia é só editar arquivos Markdown.
 
+> **Agentes de IA generativa** (Claude Code, Gemini CLI, ChatGPT Codex etc.):
+> leiam [`AGENTS.md`](./AGENTS.md) antes de qualquer alteração.
+
 ## Estrutura
 
 ```
