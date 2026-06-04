@@ -7,11 +7,14 @@
 {% assign full_state = page.lang | append: '-full' %}
 {% assign full_meta = site.data.pages[full_state] %}
 {% if page.lang == 'en' %}{% assign alt_locale = 'pt_BR' %}{% assign job_title = 'Public manager' %}{% else %}{% assign alt_locale = 'en_US' %}{% assign job_title = 'Gestor público' %}{% endif %}
-    <title>{{ meta.title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ meta.title }}</title>
     <meta name="description" content="{{ meta.description }}">
-    <meta name="keywords" content="paulo higa, higa, paulo seikishi higa, gestor público, EPPGG">
+    <meta name="author" content="Paulo Higa">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="{{ meta.canonical }}">
     <link rel="alternate" href="{{ pt_meta.canonical }}" hreflang="pt-BR">
     <link rel="alternate" href="{{ en_meta.canonical }}" hreflang="en">
@@ -40,6 +43,7 @@
     <meta name="twitter:image" content="https://higa.me/img/og-image.jpg">
     <meta name="twitter:image:alt" content="Paulo Higa">
 
+    <link rel="preload" as="image" href="/img/foto-paulo-higa-3.jpg" fetchpriority="high">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

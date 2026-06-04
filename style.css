@@ -825,6 +825,15 @@ body.dark-theme .analysis-table-wrapper {
     border-color: rgba(255, 255, 255, 0.08);
 }
 
+.analysis-table-wrapper:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+body.dark-theme .analysis-table-wrapper:focus-visible {
+    outline-color: var(--color-primary-dark);
+}
+
 .analysis-table {
     width: 100%;
     border-collapse: collapse;
