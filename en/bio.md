@@ -97,7 +97,11 @@ Higa's written output at Tecnoblog included explanatory articles on industry sta
 </table>
 </div>
 
-### 2.5 Industry Recognition
+### 2.5 Radio Media Presence
+
+In 2017, while still a journalism student and an editor at Tecnoblog, Higa was invited to take part in the program CBN Gerações, on Rádio CBN, alongside engineer and columnist B. Piropo, author of the column "Trilha Zero" in the newspaper O Globo between 1991 and 2005. The program proposed an intergenerational dialogue about technology. On that occasion, Higa argued that the greatest advances in artificial intelligence would come not in decades, but in just a few years, and that technology would transform not only games — as illustrated by AlphaGo, Google's system that had recently defeated the world Go champion — but also health, education, and the way people work and think.[^40] The prediction proved accurate: between 2022 and 2023, large language models such as ChatGPT and generative AI systems broadly reshaped these areas. Higa also identified the decline of the traditional PC in favor of the smartphone as the primary device for internet access. The appearance foreshadowed his work as a technology columnist on Rádio Globo, between 2018 and 2019.
+
+### 2.6 Industry Recognition
 
 Higa received the Prêmio Especialistas da Revista Negócios da Comunicação[^7] in the Consumer Electronics category for three consecutive years: 2020, 2021, and 2022. He was also a finalist for the Prêmio Comunique-se[^8], considered the "Oscar of Brazilian Journalism"[^8], in the Technology category in 2019 and 2021.
 
@@ -238,3 +242,5 @@ Report prepared in May 2026, consolidating biographical data, media records, and
 [^38]: Event coverage and behind-the-scenes vlogs (YouTube): [MWC 2018](https://www.youtube.com/watch?v=aBWOULblT8o); [WWDC 2018](https://www.youtube.com/watch?v=CYlqhCnTYYY); [WWDC 2019](https://www.youtube.com/watch?v=__s7VDykEuQ); Samsung ([1](https://www.youtube.com/watch?v=J5lGx_s5SmU), [2](https://www.youtube.com/watch?v=Ej_A--OZKSA), [3](https://www.youtube.com/watch?v=7cyxJRQm474)); Huawei ([1](https://www.youtube.com/watch?v=VGpyb_kow3I), [2](https://www.youtube.com/watch?v=4bo5Ii4DkVE)); [Snapdragon Tech Summit 2018](https://www.youtube.com/watch?v=-Abq_oHIImk); [Snapdragon Tech Summit 2021](https://www.youtube.com/watch?v=FZnEuesvVfc); [CES 2019](https://www.youtube.com/watch?v=HKB4v_qzVpw); [CES 2022](https://www.youtube.com/watch?v=uwQUQ8LZmAw).
 
 [^39]: Tecnocast episodes (selection): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [the last one he took part in](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
+
+[^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la" (interview with B. Piropo and Paulo Higa). Rádio CBN, 2017. [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
