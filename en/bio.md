@@ -121,7 +121,7 @@ During this period, Higa dedicated himself to personal interests: long-distance 
 
 ### 4.1 Entry into Municipal Management
 
-In 2024, after passing the civil service exam[^23], Higa took on the role of Public Policy and Government Management Analyst (APPGG) at São Paulo City Hall,[^24] assigned to the Strategic Planning and Management Unit (UPGE) of the Municipal Secretariat of Education (SME). He was later appointed as a Cabinet Advisor to the Secretariat.[^25]
+In 2024, after passing the civil service exam[^23] in 19th place, with a final score of 213.89,[^41] among 7,760 registered candidates,[^42] Higa took on the role of Public Policy and Government Management Analyst (APPGG) at São Paulo City Hall,[^24] assigned to the Strategic Planning and Management Unit (UPGE) of the Municipal Secretariat of Education (SME). He was later appointed as a Cabinet Advisor to the Secretariat.[^25]
 
 ### 4.2 Redesigning the Educational Performance Award (PDE)
 
@@ -244,3 +244,7 @@ Report prepared in May 2026, consolidating biographical data, media records, and
 [^39]: Tecnocast episodes (selection): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [the last one he took part in](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
 
 [^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la" (interview with B. Piropo and Paulo Higa). Rádio CBN, 2017. [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
+
+[^41]: Final Ranking – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
+
+[^42]: List of Registered Candidates – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
