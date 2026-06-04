@@ -5,6 +5,14 @@ encoding: utf-8
 # Pages declare their own permalinks; no automatic per-collection prefixes.
 permalink: pretty
 
+# Plugins ativados no build via GitHub Actions (.github/workflows/pages.yml).
+plugins:
+  - jekyll-last-modified-at
+
+# Formato da data de última modificação (usada no <lastmod> do sitemap.xml).
+last_modified_at:
+  date_format: "%Y-%m-%d"
+
 # Files that should not be copied into the built site.
 exclude:
   - Gemfile

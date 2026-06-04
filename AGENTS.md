@@ -67,14 +67,17 @@ diretórios e o fluxo de edição.
 - [ ] Acessibilidade verificada (WCAG, no mínimo AA).
 - [ ] Layout responsivo e fluido, inclusive em mobile.
 - [ ] HTML semântico e metadados estruturados preservados/aprimorados.
-- [ ] **`last_modified` atualizado** no front matter de cada página de conteúdo
-      alterada (`index.md`, `bio.md`, `en/index.md`, `en/bio.md`).
 
 ## Sitemap (`<lastmod>`)
 
-O `sitemap.xml` é **gerado automaticamente** pelo Jekyll a partir de
-`_data/pages.yml` (URLs e links `hreflang`) e do campo **`last_modified`** no
-front matter de cada página. **Não edite `sitemap.xml` diretamente.** Ao
-alterar o conteúdo de uma página, atualize apenas o `last_modified` no front
-matter dessa página (formato `AAAA-MM-DD`) — o `<lastmod>` correspondente é
-recalculado na compilação.
+O `sitemap.xml` é **gerado automaticamente** e **não exige ação manual**. Ele é
+um template Liquid que monta as URLs e os links `hreflang` a partir de
+`_data/pages.yml`, e preenche o `<lastmod>` de cada página com a **data do
+último commit** que tocou o arquivo (plugin `jekyll-last-modified-at`, no build
+via GitHub Actions). **Não edite `sitemap.xml` diretamente** e **não é preciso**
+manter datas à mão: basta commitar a alteração de conteúdo.
+
+> O build de produção roda pelo workflow `.github/workflows/pages.yml` (não pelo
+> build padrão do GitHub Pages), o que permite usar plugins fora da allowlist do
+> Pages. O campo opcional `last_modified` no front matter serve apenas de
+> fallback caso o histórico do git não esteja disponível.
