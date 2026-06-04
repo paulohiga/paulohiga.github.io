@@ -9,8 +9,8 @@ pt-short:
   title: Paulo Higa
   description: Paulo Higa é gestor público, jornalista, maratonista e entusiasta de tecnologia.
 pt-full:
-  url: /bio.html
-  canonical: https://higa.me/bio.html
+  url: /bio
+  canonical: https://higa.me/bio
   htmlLang: pt-BR
   ogLocale: pt_BR
   title: Paulo Higa — Biografia
@@ -23,8 +23,8 @@ en-short:
   title: Paulo Higa
   description: Paulo Higa is a public manager, journalist, marathon runner, and technology enthusiast.
 en-full:
-  url: /en/bio.html
-  canonical: https://higa.me/en/bio.html
+  url: /en/bio
+  canonical: https://higa.me/en/bio
   htmlLang: en-US
   ogLocale: en_US
   title: Paulo Higa — Biography

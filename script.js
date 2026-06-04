@@ -170,7 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // so language swaps stay instant and bio toggles keep their animation.
     function stateFromPath(pathname) {
         const lang = pathname.startsWith('/en') ? 'en' : 'pt';
-        const view = pathname.endsWith('/bio.html') ? 'full' : 'short';
+        // Match the full-bio permalink (/bio, /en/bio) plus the legacy
+        // .html form and an optional trailing slash, so old links and
+        // extensionless URLs both resolve to the full view.
+        const view = /\/bio(\.html)?\/?$/.test(pathname) ? 'full' : 'short';
         return { lang, view };
     }
 
