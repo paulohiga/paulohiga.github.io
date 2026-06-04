@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formMessage: 'Mensagem:',
             formSubmit: 'Enviar',
             contactButton: 'Entrar em contato',
-            profession: 'Gestor Público',
+            profession: 'Gestor público',
             closeForm: 'Fechar formulário',
             errorNameRequired: 'Nome é obrigatório',
             errorEmailInvalid: 'Insira um e-mail válido',
@@ -130,6 +130,20 @@ document.addEventListener('DOMContentLoaded', () => {
         else el.removeAttribute('aria-current');
     }
 
+    // Persistent chrome aria-labels that must follow the active language.
+    const chromeLabels = {
+        pt: { nav: 'Opções de visualização', theme: 'Alternar tema claro/escuro' },
+        en: { nav: 'Display options', theme: 'Toggle light/dark theme' }
+    };
+
+    const toolbarNav = document.querySelector('nav.toolbar');
+
+    function syncChromeLabels(lang) {
+        const labels = chromeLabels[lang] || chromeLabels.pt;
+        if (toolbarNav) toolbarNav.setAttribute('aria-label', labels.nav);
+        if (themeToggle) themeToggle.setAttribute('aria-label', labels.theme);
+    }
+
     // Keep the persistent chrome (toolbar + sidebar photo link) in sync with
     // the active state, so their real-link targets stay correct.
     function syncChrome(lang, view) {
@@ -139,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         langEn.href = metaFor('en', view).url;
         setAriaCurrent(langPt, lang === 'pt');
         setAriaCurrent(langEn, lang === 'en');
+        syncChromeLabels(lang);
 
         const fotoBtn = document.getElementById('foto-btn');
         if (fotoBtn) {
