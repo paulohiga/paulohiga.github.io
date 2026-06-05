@@ -19,15 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Selector ---
     // The sun/moon glyphs are inline SVGs toggled purely via CSS
     // (body.dark-theme); JS only flips the theme class + persists the choice.
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (localStorage.getItem('theme') === 'dark' || (localStorage.getItem('theme') === null && prefersDark)) {
-        document.body.classList.add('dark-theme');
-        document.body.classList.remove('light-theme');
-    } else {
-        document.body.classList.add('light-theme');
-        document.body.classList.remove('dark-theme');
-    }
-
+    // The initial theme is applied before first paint by an inline script in
+    // the layout, so there is no work to do here on load.
     function toggleTheme() {
         if (document.body.classList.contains('dark-theme')) {
             document.body.classList.remove('dark-theme');
@@ -45,37 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const compactTheme = document.getElementById('compact-theme');
     if (compactTheme) compactTheme.addEventListener('click', toggleTheme);
 
-    // --- Full-bleed section banding (progressive enhancement) ---
-    // The Markdown renders a flat run of elements; here we group each section
-    // (an <h2>, or a trailing .contact-hint, and the siblings that follow it)
-    // into a full-width <section class="band"> so alternating, edge-to-edge
-    // backgrounds can divide the content. No-JS users keep the plain flow.
-    document.body.classList.add('js');
-
-    function bandStarts(el) {
-        return el.tagName === 'H2' || el.classList.contains('contact-hint');
-    }
-
+    // --- Full-bleed section banding ---
+    // The Markdown renders a flat run of elements that are grouped into
+    // full-bleed <section class="band"> wrappers by window.bandContent, defined
+    // and first run (before paint) by an inline script in the layout. Here we
+    // only re-band the content swapped in by in-page navigation.
     function enhanceSections() {
-        const block = document.querySelector('.content-area > .bio-short, .content-area > .bio-full');
-        if (!block) return;
-        const kids = Array.from(block.children);
-        if (kids.some(el => el.classList.contains('band'))) return;   // already banded
-
-        let inner = null;
-        const bands = [];
-        kids.forEach(el => {
-            if (inner === null || bandStarts(el)) {
-                const band = document.createElement('section');
-                band.className = 'band';
-                inner = document.createElement('div');
-                inner.className = 'band__inner';
-                band.appendChild(inner);
-                bands.push(band);
-            }
-            inner.appendChild(el);
-        });
-        bands.forEach(b => block.appendChild(b));
+        window.bandContent(document.querySelector('.content-area > .bio-short, .content-area > .bio-full'));
     }
 
     // --- Scroll reveal ---

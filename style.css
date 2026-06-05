@@ -545,6 +545,17 @@ body.dark-theme .site-footer .contact-button {
     color: var(--ink);
 }
 
+/* No-JS fallback: bands are built by script, so without JS keep the flat
+   content in the same centred reading column instead of running edge-to-edge.
+   (The .js class is added before first paint, so this never flashes when JS
+   is enabled.) */
+body:not(.js) .bio-short,
+body:not(.js) .bio-full {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: var(--band-pad-y) var(--band-pad-x);
+}
+
 /* The band background runs full-bleed (edge to edge of the viewport) while
    its inner column is centred to a comfortable reading measure. Centring the
    wrapper — not each child — keeps elements aligned even when their own
@@ -627,7 +638,7 @@ p {
     color: var(--ink-soft);
 }
 
-.band > p:last-child {
+.band__inner > :last-child {
     margin-bottom: 0;
 }
 
@@ -1279,6 +1290,9 @@ body.js .band {
     transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
 }
 
+/* The first band holds the LCP text; keep it visible from first paint so the
+   reveal animation never delays Largest Contentful Paint. */
+body.js .band:first-child,
 body.js .band.in-view {
     opacity: 1;
     transform: none;

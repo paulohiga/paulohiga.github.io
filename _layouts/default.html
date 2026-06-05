@@ -9,6 +9,17 @@
 
 <body class="light-theme">
 
+    <!-- Apply the persisted/preferred theme before first paint to avoid a
+         flash of the wrong theme (the markup defaults to light-theme). -->
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('dark-theme', dark);
+            document.body.classList.toggle('light-theme', !dark);
+        }());
+    </script>
+
     <!-- Skip Link for Keyboard Users (WCAG 2.4.1) -->
     <a href="#main-content" class="skip-link">{% if page.lang == 'en' %}Skip to main content{% else %}Pular para conteúdo principal{% endif %}</a>
 
@@ -32,6 +43,34 @@
             </div>
         </article>
     </main>
+
+    <!-- Full-bleed section banding, run synchronously here (before first paint)
+         so the content is grouped into its narrow reading column up front,
+         instead of flashing full-width and reflowing after load (CLS). The
+         function is reused by script.js after in-page navigation. No-JS users
+         keep the plain, readable flow. -->
+    <script>
+        window.bandContent = function (block) {
+            if (!block) return;
+            var kids = Array.prototype.slice.call(block.children);
+            if (!kids.length || kids.some(function (el) { return el.classList.contains('band'); })) return;
+            var inner = null, bands = [];
+            kids.forEach(function (el) {
+                if (inner === null || el.tagName === 'H2' || el.classList.contains('contact-hint')) {
+                    var band = document.createElement('section');
+                    band.className = 'band';
+                    inner = document.createElement('div');
+                    inner.className = 'band__inner';
+                    band.appendChild(inner);
+                    bands.push(band);
+                }
+                inner.appendChild(el);
+            });
+            bands.forEach(function (b) { block.appendChild(b); });
+        };
+        document.body.classList.add('js');
+        window.bandContent(document.querySelector('.content-area > .bio-short, .content-area > .bio-full'));
+    </script>
 
     <footer class="site-footer">
         <div class="site-footer__inner">
