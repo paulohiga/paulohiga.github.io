@@ -39,6 +39,26 @@ diretórios e o fluxo de edição.
   detalhadas na seção própria de referências bibliográficas, **gerada
   automaticamente pelo Jekyll** (notas de rodapé — ver `README.md`).
 
+## Fluxo de trabalho padrão
+
+1. O agente cria uma branch automaticamente e realiza as alterações nela.
+2. O **Netlify** detecta o push e faz o deploy de preview da branch
+   automaticamente (build com Jekyll).
+3. O **humano acessa a URL de preview** gerada pelo Netlify e valida as
+   alterações manualmente.
+4. Somente após a validação, o humano **solicita a criação do Pull Request**.
+5. O humano faz **squash and merge** do PR na branch principal.
+
+> Não crie o Pull Request sem solicitação explícita do humano.
+
+## Performance: Core Web Vitals
+
+- Toda alteração de código deve ser **testada para as métricas do Core Web
+  Vitals** (LCP, INP e CLS), garantindo a melhor experiência ao usuário.
+- Consulte a documentação de referência:
+  <https://web.dev/articles/vitals>.
+- Priorize especialmente **LCP ≤ 2,5 s**, **INP ≤ 200 ms** e **CLS ≤ 0,1**.
+
 ## Acessibilidade (WCAG)
 
 - Toda alteração de código deve ser **testada para acessibilidade** conforme a
@@ -65,6 +85,7 @@ diretórios e o fluxo de edição.
       referências citadas após cada afirmação.
 - [ ] Resumo da home não foi alterado sem solicitação explícita.
 - [ ] Acessibilidade verificada (WCAG, no mínimo AA).
+- [ ] Core Web Vitals verificados (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1).
 - [ ] Layout responsivo e fluido, inclusive em mobile.
 - [ ] HTML semântico e metadados estruturados preservados/aprimorados.
 

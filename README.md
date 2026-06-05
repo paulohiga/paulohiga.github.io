@@ -98,12 +98,24 @@ usados (ver `Gemfile`), então o resultado local é igual ao publicado.
 
 ## Publicação
 
-O site é compilado e publicado pelo workflow do GitHub Actions em
-`.github/workflows/pages.yml` a cada push na branch `master`. Esse build
-próprio (em vez do build padrão do GitHub Pages) permite usar o plugin
-`jekyll-last-modified-at`, que preenche o `<lastmod>` do `sitemap.xml` com a
-data do último commit de cada página — por isso o histórico do git é buscado
-por completo (`fetch-depth: 0`) e não é preciso editar datas manualmente.
+### Fluxo padrão (branches de feature)
+
+1. O agente cria uma branch e faz push das alterações.
+2. O **Netlify** detecta o push e publica automaticamente uma **URL de preview**
+   (build com Jekyll).
+3. O humano acessa a URL de preview e **valida manualmente** as alterações.
+4. Após validação, o humano solicita a criação do Pull Request.
+5. O humano realiza **squash and merge** do PR na branch `master`.
+
+### Build de produção
+
+O site de produção ([higa.me](https://higa.me)) é compilado e publicado pelo
+workflow do GitHub Actions em `.github/workflows/pages.yml` a cada push na
+branch `master`. Esse build próprio (em vez do build padrão do GitHub Pages)
+permite usar o plugin `jekyll-last-modified-at`, que preenche o `<lastmod>` do
+`sitemap.xml` com a data do último commit de cada página — por isso o histórico
+do git é buscado por completo (`fetch-depth: 0`) e não é preciso editar datas
+manualmente.
 
 > **Configuração necessária no GitHub (uma vez):** em **Settings → Pages**,
 > defina **Source = GitHub Actions**. Sem isso, o workflow compila mas não
