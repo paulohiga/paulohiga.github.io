@@ -14,23 +14,36 @@
 
 {% include toolbar.html %}
 
-    <main class="container" id="main-content">
-        <div class="profile-grid">
-            <!-- Sidebar / Identity -->
+{% include hero-compact.html %}
+
+    <main id="main-content">
+        <!-- Hero / Identity (photo, name, location, contact, LinkedIn) -->
 {% include sidebar.html %}
 
-            <!-- Main content: the prose lives in Markdown page files (index.md,
-                 bio.md, en/index.md, en/bio.md) and is rendered into the block
-                 below. Only the active language/view is rendered; in-page
-                 navigation swaps this block client-side (see script.js). -->
-            <article class="content-area fade-in">
-                <div class="bio-{{ page.view }}" id="{{ page.lang }}-bio-{{ page.view }}">
+        <!-- Main content: the prose lives in Markdown page files (index.md,
+             bio.md, en/index.md, en/bio.md) and is rendered into the block
+             below. The block is split into full-bleed banded sections by
+             script.js; only the active language/view is rendered, and in-page
+             navigation swaps it client-side. -->
+        <article class="content-area">
+            <div class="bio-{{ page.view }}" id="{{ page.lang }}-bio-{{ page.view }}">
 {% if page.view == 'full' %}{% include ai-disclaimer.html %}{% endif %}
 {{ content }}
-                </div>
-            </article>
-        </div>
+            </div>
+        </article>
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <button type="button" class="contact-button contact-link" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</button>
+            <a href="https://www.linkedin.com/in/paulohiga/" target="_blank" rel="noopener"
+                class="contact-button linkedin-button"
+                aria-label="{% if page.lang == 'en' %}LinkedIn profile (opens in a new window){% else %}Perfil no LinkedIn (abre em nova janela){% endif %}">
+                <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.78 24h20.44c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </footer>
 
 {% include contact-form.html %}
 

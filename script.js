@@ -17,36 +17,124 @@ document.addEventListener('DOMContentLoaded', () => {
     function metaFor(lang, view) { return pageMeta[lang + '-' + view]; }
 
     // --- Theme Selector ---
-    const themeIcon = themeToggle.querySelector('i');
-
-    function setThemeIcon(isDark) {
-        themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-    }
-
+    // The sun/moon glyphs are inline SVGs toggled purely via CSS
+    // (body.dark-theme); JS only flips the theme class + persists the choice.
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (localStorage.getItem('theme') === 'dark' || (localStorage.getItem('theme') === null && prefersDark)) {
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
-        setThemeIcon(true);
     } else {
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
-        setThemeIcon(false);
     }
 
-    themeToggle.addEventListener('click', () => {
+    function toggleTheme() {
         if (document.body.classList.contains('dark-theme')) {
             document.body.classList.remove('dark-theme');
             document.body.classList.add('light-theme');
-            setThemeIcon(false);
             localStorage.setItem('theme', 'light');
         } else {
             document.body.classList.add('dark-theme');
             document.body.classList.remove('light-theme');
-            setThemeIcon(true);
             localStorage.setItem('theme', 'dark');
         }
-    });
+    }
+
+    // Both the toolbar toggle and the compact-hero toggle share this behaviour.
+    themeToggle.addEventListener('click', toggleTheme);
+    const compactTheme = document.getElementById('compact-theme');
+    if (compactTheme) compactTheme.addEventListener('click', toggleTheme);
+
+    // --- Full-bleed section banding (progressive enhancement) ---
+    // The Markdown renders a flat run of elements; here we group each section
+    // (an <h2>, or a trailing .contact-hint, and the siblings that follow it)
+    // into a full-width <section class="band"> so alternating, edge-to-edge
+    // backgrounds can divide the content. No-JS users keep the plain flow.
+    document.body.classList.add('js');
+
+    function bandStarts(el) {
+        return el.tagName === 'H2' || el.classList.contains('contact-hint');
+    }
+
+    function enhanceSections() {
+        const block = document.querySelector('.content-area > .bio-short, .content-area > .bio-full');
+        if (!block) return;
+        const kids = Array.from(block.children);
+        if (kids.some(el => el.classList.contains('band'))) return;   // already banded
+
+        let inner = null;
+        const bands = [];
+        kids.forEach(el => {
+            if (inner === null || bandStarts(el)) {
+                const band = document.createElement('section');
+                band.className = 'band';
+                inner = document.createElement('div');
+                inner.className = 'band__inner';
+                band.appendChild(inner);
+                bands.push(band);
+            }
+            inner.appendChild(el);
+        });
+        bands.forEach(b => block.appendChild(b));
+    }
+
+    // --- Scroll reveal ---
+    let revealObserver = null;
+    const supportsIO = 'IntersectionObserver' in window;
+
+    function revealAll() {
+        document.querySelectorAll('.band').forEach(b => b.classList.add('in-view'));
+    }
+
+    function initReveal() {
+        if (prefersReducedMotion || !supportsIO) {
+            revealAll();
+            return;
+        }
+        if (revealObserver) revealObserver.disconnect();
+        revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        document.querySelectorAll('.band').forEach(b => revealObserver.observe(b));
+    }
+
+    function applyEnhancements(revealMode) {
+        enhanceSections();
+        if (revealMode === 'all') revealAll();
+        else initReveal();
+    }
+
+    // --- Sticky compact hero ---
+    // Reveal the compact hero once the full hero has scrolled out of view.
+    // The full hero is persistent chrome (not swapped on navigation), so this
+    // is wired up once. The smooth slide is handled by CSS transitions.
+    function initStickyHero() {
+        const hero = document.querySelector('.hero');
+        const compact = document.querySelector('.hero-compact');
+        if (!hero || !compact) return;
+
+        if (!supportsIO) {
+            // Fallback: always show the compact hero (no scroll detection).
+            document.body.classList.add('show-compact-hero');
+            return;
+        }
+        const obs = new IntersectionObserver(entries => {
+            document.body.classList.toggle('show-compact-hero', !entries[0].isIntersecting);
+        }, { threshold: 0 });
+        obs.observe(hero);
+
+        // Clicking the name in the compact hero smoothly returns to the top.
+        if (compactName) {
+            compactName.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+            });
+        }
+    }
 
     const formTranslations = {
         pt: {
@@ -125,6 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return view === 'full' ? 'Recolher biografia de Paulo Higa' : 'Expandir biografia de Paulo Higa';
     }
 
+    // The compact-hero language control is a single toggle: it shows (and
+    // switches to) the other language.
+    function langToggleCode(lang) { return lang === 'en' ? 'PT' : 'EN'; }
+    function langToggleLabel(lang) { return lang === 'en' ? 'Switch to Portuguese' : 'Mudar para inglês'; }
+
     function setAriaCurrent(el, on) {
         if (on) el.setAttribute('aria-current', 'true');
         else el.removeAttribute('aria-current');
@@ -132,20 +225,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Persistent chrome aria-labels that must follow the active language.
     const chromeLabels = {
-        pt: { nav: 'Opções de visualização', theme: 'Alternar tema claro/escuro' },
-        en: { nav: 'Display options', theme: 'Toggle light/dark theme' }
+        pt: { nav: 'Opções de visualização', theme: 'Alternar tema claro/escuro', backToTop: 'Voltar ao topo da página' },
+        en: { nav: 'Display options', theme: 'Toggle light/dark theme', backToTop: 'Back to top of page' }
     };
 
     const toolbarNav = document.querySelector('nav.toolbar');
+    const compactName = document.querySelector('.hero-compact__name');
+    const compactLang = document.getElementById('compact-lang');
 
     function syncChromeLabels(lang) {
         const labels = chromeLabels[lang] || chromeLabels.pt;
         if (toolbarNav) toolbarNav.setAttribute('aria-label', labels.nav);
         if (themeToggle) themeToggle.setAttribute('aria-label', labels.theme);
+        if (compactName) compactName.setAttribute('aria-label', labels.backToTop);
+        if (compactTheme) compactTheme.setAttribute('aria-label', labels.theme);
     }
 
-    // Keep the persistent chrome (toolbar + sidebar photo link) in sync with
-    // the active state, so their real-link targets stay correct.
+    // Keep the persistent chrome (toolbar + both photo links) in sync with the
+    // active state, so their real-link targets stay correct. There are two
+    // photo toggles — the main hero one and the compact sticky one.
     function syncChrome(lang, view) {
         langPt.classList.toggle('active', lang === 'pt');
         langEn.classList.toggle('active', lang === 'en');
@@ -155,11 +253,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setAriaCurrent(langEn, lang === 'en');
         syncChromeLabels(lang);
 
-        const fotoBtn = document.getElementById('foto-btn');
-        if (fotoBtn) {
-            const oppositeView = view === 'full' ? 'short' : 'full';
-            fotoBtn.href = metaFor(lang, oppositeView).url;
-            fotoBtn.setAttribute('aria-label', fotoLabel(lang, view));
+        const oppositeView = view === 'full' ? 'short' : 'full';
+        document.querySelectorAll('.foto-toggle').forEach(btn => {
+            btn.href = metaFor(lang, oppositeView).url;
+            btn.setAttribute('aria-label', fotoLabel(lang, view));
+        });
+
+        if (compactLang) {
+            compactLang.textContent = langToggleCode(lang);
+            compactLang.setAttribute('aria-label', langToggleLabel(lang));
         }
     }
 
@@ -206,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const commit = () => {
                 contentArea.innerHTML = html;
+                applyEnhancements('all');
                 root.setAttribute('data-lang', target.lang);
                 root.setAttribute('data-view', target.view);
                 applyHead(target.lang, target.view);
@@ -264,6 +367,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.addEventListener('pointerover', prewarm);
     document.addEventListener('focusin', prewarm);
+
+    // Compact-hero language toggle: switch to the other language, same view.
+    if (compactLang) {
+        compactLang.addEventListener('click', () => {
+            const otherLang = getLang() === 'pt' ? 'en' : 'pt';
+            navigate(metaFor(otherLang, getView()).url);
+        });
+    }
 
     window.addEventListener('popstate', () => {
         navigate(location.pathname, { push: false, animate: false });
@@ -428,6 +539,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Initial sync ---
+    applyEnhancements('observe');
+    initStickyHero();
     updateFormLanguage(getLang());
     history.replaceState({ lang: getLang(), view: getView() }, '', location.pathname);
 });
