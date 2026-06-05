@@ -18,12 +18,12 @@
     --band-pad-y: clamp(2.75rem, 7vw, 5.5rem);
     --band-pad-x: clamp(1.25rem, 5vw, 2rem);
 
-    /* --- Palette: harmonized with the profile photo (steel-blue blazer +
-       tropical greens) → an azure → teal → emerald family. --- */
-    --azure: #1d4ed8;
+    /* --- Palette: blues harmonized with the profile photo (steel-blue
+       blazer) → midnight · navy · royal · dodger/bright blue. --- */
+    --navy: #172554;
     --azure-deep: #1e3a8a;
-    --teal: #0f766e;
-    --emerald: #166534;
+    --azure: #1d4ed8;
+    --blue-bright: #2563eb;
 
     /* --- Light theme tokens (vibrant) --- */
     --page-bg: #f7f9fc;
@@ -32,7 +32,7 @@
     --link: #1d4ed8;
     --link-hover: #1e3a8a;
     --accent: #1d4ed8;
-    --accent-2: #0f766e;
+    --accent-2: #1e40af;
     --surface: #ffffff;
     --surface-tint: #eef4ff;
     --hairline: rgba(15, 23, 42, 0.12);
@@ -69,7 +69,7 @@ body.dark-theme {
     --link: #7dd3fc;
     --link-hover: #bae6fd;
     --accent: #7dd3fc;
-    --accent-2: #5eead4;
+    --accent-2: #93c5fd;
     --surface: #111a2e;
     --surface-tint: #131f38;
     --hairline: rgba(255, 255, 255, 0.12);
@@ -201,17 +201,17 @@ body.dark-theme .ico-moon {
 .hero {
     color: #fff;
     padding: calc(var(--spacing-toolbar) + 4.5rem) var(--band-pad-x) clamp(3rem, 7vw, 5rem);
-    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 32%, #0f766e 72%, #166534 100%);
+    background: linear-gradient(135deg, #172554 0%, #1e3a8a 30%, #1d4ed8 66%, #2563eb 100%);
     background-size: 180% 180%;
     animation: heroFlow 22s ease-in-out infinite alternate;
 }
 
 /* Same full-bleed "inverted band" concept in dark mode, but sober: a muted
-   navy → teal → green gradient that still reads as a distinct cut from the
-   page background below it. */
+   midnight → navy → royal gradient that still reads as a distinct cut from
+   the page background below it. */
 body.dark-theme .hero {
     color: #eef2f9;
-    background: linear-gradient(135deg, #132a4e 0%, #143a55 34%, #103f3c 72%, #14402a 100%);
+    background: linear-gradient(135deg, #0f2147 0%, #15346a 45%, #122a52 100%);
     background-size: 180% 180%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -356,7 +356,7 @@ body.dark-theme .hero .contact-button {
 
 /* Footer button treatment (on a light surface) */
 .site-footer .contact-button {
-    background: linear-gradient(120deg, var(--azure), var(--teal));
+    background: linear-gradient(120deg, var(--azure), var(--azure-deep));
     color: #fff;
     box-shadow: 0 12px 26px -16px rgba(29, 78, 216, 0.9);
 }
@@ -371,7 +371,7 @@ body.dark-theme .hero .contact-button {
 }
 
 body.dark-theme .site-footer .contact-button {
-    background: linear-gradient(120deg, #1e3a8a, #0f766e);
+    background: linear-gradient(120deg, #1e3a8a, #2563eb);
 }
 
 .contact-button:focus-visible {
@@ -421,11 +421,11 @@ body.dark-theme .site-footer .contact-button {
 }
 
 .bio-short .band:nth-child(2) {
-    background: linear-gradient(125deg, #1e40af 0%, #0f766e 100%);
+    background: linear-gradient(125deg, #172554 0%, #1e40af 100%);
 }
 
 .bio-short .band:nth-child(4) {
-    background: linear-gradient(125deg, #0f766e 0%, #166534 100%);
+    background: linear-gradient(125deg, #1d4ed8 0%, #2563eb 100%);
 }
 
 .bio-short .band:last-child {
@@ -445,17 +445,17 @@ body.dark-theme .bio-short .band:nth-child(4) {
     --ink-soft: rgba(238, 242, 249, 0.82);
     --link: #7dd3fc;
     --link-hover: #bae6fd;
-    --accent: #5eead4;
-    --accent-2: #5eead4;
+    --accent: #93c5fd;
+    --accent-2: #93c5fd;
     --hairline: rgba(255, 255, 255, 0.14);
 }
 
 body.dark-theme .bio-short .band:nth-child(2) {
-    background: linear-gradient(125deg, #102338 0%, #123b3a 100%);
+    background: linear-gradient(125deg, #102347 0%, #16356b 100%);
 }
 
 body.dark-theme .bio-short .band:nth-child(4) {
-    background: linear-gradient(125deg, #123b3a 0%, #102a1e 100%);
+    background: linear-gradient(125deg, #14233f 0%, #1b2f5e 100%);
 }
 
 body.dark-theme .bio-short .band:nth-child(3),
@@ -1003,7 +1003,7 @@ body.dark-theme .form-content textarea {
     font-weight: 700;
     font-size: 0.98rem;
     color: #fff;
-    background: linear-gradient(120deg, var(--azure), var(--teal));
+    background: linear-gradient(120deg, var(--azure), var(--azure-deep));
     transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast);
 }
 
@@ -1032,10 +1032,12 @@ body.dark-theme .form-content textarea {
     font-weight: 600;
 }
 
+/* Success uses the brand blue (not green) — the wording already signals
+   success, and the red error state keeps the two clearly distinct. */
 .form-status.success {
-    background-color: #dcfce7;
-    color: #166534;
-    border: 1px solid #bbf7d0;
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
 }
 
 .form-status.error {
@@ -1045,9 +1047,9 @@ body.dark-theme .form-content textarea {
 }
 
 body.dark-theme .form-status.success {
-    background-color: rgba(22, 101, 52, 0.3);
-    color: #4ade80;
-    border-color: rgba(74, 222, 128, 0.3);
+    background-color: rgba(37, 99, 235, 0.28);
+    color: #bfdbfe;
+    border-color: rgba(147, 197, 253, 0.35);
 }
 
 body.dark-theme .form-status.error {
