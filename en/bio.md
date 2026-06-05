@@ -94,6 +94,8 @@ Higa's written output at Tecnoblog included explanatory articles on industry sta
 <tr><td>Interface Standards</td><td>USB-C vs Lightning, Thunderbolt, HDMI ARC/eARC, DisplayPort</td><td>Clarify industry naming confusion to empower consumer purchasing decisions.</td></tr>
 <tr><td>Hardware Architecture</td><td>3nm lithography (Apple A17), RISC vs CISC, Stream Processors (AMD)</td><td>Translate computer engineering concepts for a lay audience, demystifying manufacturer marketing.</td></tr>
 <tr><td>Mobile Computing</td><td>Apple ProRAW, Smart HDR, Battery Health</td><td>Analyze how software and hardware interact to produce final results in consumer devices.</td></tr>
+<tr><td>Digital Privacy and Regulation</td><td>LGPD (Brazil's data protection law), GDPR, LAI (Brazil's freedom-of-information act), ANPD (Brazil's data protection authority), Marco Civil da Internet (Brazil's Internet civil-rights framework), privacy</td><td>Translate legislation and digital governance for a general audience, showing their concrete effects on users, companies, and platforms.</td></tr>
+<tr><td>Information and Data Security</td><td>Cryptography, 2FA, cybersecurity, Big Data</td><td>Explain the mechanisms that protect information and enable the data economy, demystifying technical concepts often treated superficially.</td></tr>
 </tbody>
 </table>
 </div>

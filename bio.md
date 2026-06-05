@@ -94,6 +94,8 @@ A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padr�
 <tr><td>Padrões de Interface</td><td>USB-C vs Lightning, Thunderbolt, HDMI ARC/eARC, DisplayPort</td><td>Clarificar a confusão de nomenclatura da indústria para empoderar a decisão de compra do consumidor.</td></tr>
 <tr><td>Arquitetura de Hardware</td><td>Litografia de 3nm (Apple A17), RISC vs CISC, Stream Processors (AMD)</td><td>Traduzir conceitos de engenharia de computação para o público leigo, desmistificando o marketing das fabricantes.</td></tr>
 <tr><td>Computação Móvel</td><td>Apple ProRAW, Smart HDR, saúde da bateria</td><td>Analisar como o software e o hardware interagem para produzir os resultados finais em dispositivos de consumo.</td></tr>
+<tr><td>Privacidade e Regulação Digital</td><td>LGPD, GDPR, LAI, ANPD, Marco Civil da Internet, privacidade</td><td>Traduzir a legislação e a governança digital para o público geral, mostrando seus efeitos concretos sobre usuários, empresas e plataformas.</td></tr>
+<tr><td>Segurança da Informação e Dados</td><td>Criptografia, 2FA, cibersegurança, Big Data</td><td>Explicar os mecanismos que protegem a informação e possibilitam a economia de dados, desmistificando conceitos técnicos frequentemente tratados de forma superficial.</td></tr>
 </tbody>
 </table>
 </div>
