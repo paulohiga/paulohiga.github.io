@@ -57,15 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const kids = Array.from(block.children);
         if (kids.some(el => el.classList.contains('band'))) return;   // already banded
 
-        let current = null;
+        let inner = null;
         const bands = [];
         kids.forEach(el => {
-            if (current === null || bandStarts(el)) {
-                current = document.createElement('section');
-                current.className = 'band';
-                bands.push(current);
+            if (inner === null || bandStarts(el)) {
+                const band = document.createElement('section');
+                band.className = 'band';
+                inner = document.createElement('div');
+                inner.className = 'band__inner';
+                band.appendChild(inner);
+                bands.push(band);
             }
-            current.appendChild(el);
+            inner.appendChild(el);
         });
         bands.forEach(b => block.appendChild(b));
     }

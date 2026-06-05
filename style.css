@@ -11,7 +11,9 @@
 
     /* --- Spacing --- */
     --spacing-toolbar: 1.25rem;
-    --reading-width: 720px;
+    /* Single shared column so the hero and every band align on the same
+       left/right edges. */
+    --content-max: 760px;
     --wide-width: 920px;
     --band-pad-y: clamp(2.75rem, 7vw, 5.5rem);
     --band-pad-x: clamp(1.25rem, 5vw, 2rem);
@@ -34,14 +36,6 @@
     --surface: #ffffff;
     --surface-tint: #eef4ff;
     --hairline: rgba(15, 23, 42, 0.12);
-
-    /* Per-band tokens (overridden on inverted/dark bands) */
-    --band-fg: var(--ink);
-    --band-fg-soft: var(--ink-soft);
-    --band-link: var(--link);
-    --band-link-hover: var(--link-hover);
-    --band-accent: var(--accent);
-    --band-hairline: var(--hairline);
 }
 
 /* --- Base --- */
@@ -154,6 +148,7 @@ body.dark-theme .theme-selector {
     font-weight: 700;
     letter-spacing: 0.02em;
     color: var(--ink);
+    text-decoration: none;
     line-height: 1;
     transition: background-color var(--duration-fast), color var(--duration-fast);
     display: inline-flex;
@@ -208,15 +203,17 @@ body.dark-theme .ico-moon {
     padding: calc(var(--spacing-toolbar) + 4.5rem) var(--band-pad-x) clamp(3rem, 7vw, 5rem);
     background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 32%, #0f766e 72%, #166534 100%);
     background-size: 180% 180%;
-}
-
-body:not(.dark-theme) .hero {
     animation: heroFlow 22s ease-in-out infinite alternate;
 }
 
+/* Same full-bleed "inverted band" concept in dark mode, but sober: a muted
+   navy → teal → green gradient that still reads as a distinct cut from the
+   page background below it. */
 body.dark-theme .hero {
     color: #eef2f9;
-    background: radial-gradient(120% 140% at 15% 0%, #15324a 0%, #0b1120 60%);
+    background: linear-gradient(135deg, #132a4e 0%, #143a55 34%, #103f3c 72%, #14402a 100%);
+    background-size: 180% 180%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 @keyframes heroFlow {
@@ -230,7 +227,7 @@ body.dark-theme .hero {
 }
 
 .hero__inner {
-    max-width: var(--wide-width);
+    max-width: var(--content-max);
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -297,7 +294,7 @@ body.dark-theme .profile-image-wrapper img {
     gap: 0.5rem;
     font-size: 0.98rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .hero__meta-item .ico {
@@ -389,20 +386,16 @@ body.dark-theme .site-footer .contact-button {
 
 .band {
     padding: var(--band-pad-y) var(--band-pad-x);
-    color: var(--band-fg);
+    color: var(--ink);
 }
 
-/* Center each band's content to a comfortable reading measure while the
-   background runs full-bleed (the "sense of amplitude" the brief asks for). */
-.band > * {
-    max-width: var(--reading-width);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.band > .analysis-table-wrapper,
-.band > .toc {
-    max-width: var(--wide-width);
+/* The band background runs full-bleed (edge to edge of the viewport) while
+   its inner column is centred to a comfortable reading measure. Centring the
+   wrapper — not each child — keeps elements aligned even when their own
+   `margin` shorthand resets the horizontal margins (e.g. h3, .references-note). */
+.band__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
 }
 
 /* Lead band (intro) sits on the page surface */
@@ -418,12 +411,13 @@ body.dark-theme .site-footer .contact-button {
 
 .bio-short .band:nth-child(2),
 .bio-short .band:nth-child(4) {
-    --band-fg: #fff;
-    --band-fg-soft: rgba(255, 255, 255, 0.9);
-    --band-link: #e8f3ff;
-    --band-link-hover: #ffffff;
-    --band-accent: #ffffff;
-    --band-hairline: rgba(255, 255, 255, 0.28);
+    --ink: #ffffff;
+    --ink-soft: rgba(255, 255, 255, 0.92);
+    --link: #ffffff;
+    --link-hover: #e8f3ff;
+    --accent: #ffffff;
+    --accent-2: #ffffff;
+    --hairline: rgba(255, 255, 255, 0.28);
 }
 
 .bio-short .band:nth-child(2) {
@@ -447,12 +441,13 @@ body.dark-theme .site-footer .contact-button {
 /* --- Dark theme: sober bands (no vibrant gradients) --- */
 body.dark-theme .bio-short .band:nth-child(2),
 body.dark-theme .bio-short .band:nth-child(4) {
-    --band-fg: #eef2f9;
-    --band-fg-soft: rgba(238, 242, 249, 0.82);
-    --band-link: var(--accent);
-    --band-link-hover: #bae6fd;
-    --band-accent: var(--accent-2);
-    --band-hairline: rgba(255, 255, 255, 0.14);
+    --ink: #eef2f9;
+    --ink-soft: rgba(238, 242, 249, 0.82);
+    --link: #7dd3fc;
+    --link-hover: #bae6fd;
+    --accent: #5eead4;
+    --accent-2: #5eead4;
+    --hairline: rgba(255, 255, 255, 0.14);
 }
 
 body.dark-theme .bio-short .band:nth-child(2) {
@@ -473,7 +468,7 @@ p {
     margin: 0 0 1.25rem;
     font-size: 1.06rem;
     line-height: 1.78;
-    color: var(--band-fg-soft);
+    color: var(--ink-soft);
 }
 
 .band > p:last-child {
@@ -482,7 +477,7 @@ p {
 
 strong {
     font-weight: 700;
-    color: var(--band-fg);
+    color: var(--ink);
 }
 
 .intro-text {
@@ -490,19 +485,19 @@ strong {
     font-size: clamp(1.2rem, 2.6vw, 1.6rem);
     line-height: 1.6;
     font-weight: 400;
-    color: var(--band-fg);
+    color: var(--ink);
 }
 
 .contact-hint {
     font-size: 1.1rem;
-    color: var(--band-fg-soft);
+    color: var(--ink-soft);
 }
 
 /* Section headings — short view */
 h2 {
     font-family: var(--font-serif);
     font-weight: 900;
-    color: var(--band-fg);
+    color: var(--ink);
     letter-spacing: -0.01em;
     margin: 0 0 1.25rem;
 }
@@ -521,7 +516,7 @@ h2 {
     margin-top: 0;
     margin-bottom: 1.1rem;
     padding-bottom: 0.6rem;
-    border-bottom: 2px solid var(--band-hairline);
+    border-bottom: 2px solid var(--hairline);
 }
 
 .bio-full .band:nth-child(even) h2 {
@@ -544,7 +539,7 @@ h2 {
 
 /* Links */
 a {
-    color: var(--band-link);
+    color: var(--link);
     text-decoration: underline;
     text-underline-offset: 0.18em;
     text-decoration-thickness: 1.5px;
@@ -553,7 +548,7 @@ a {
 }
 
 a:hover {
-    color: var(--band-link-hover);
+    color: var(--link-hover);
 }
 
 a:focus-visible {
@@ -569,7 +564,7 @@ a:focus-visible {
 .bio-collapse-btn::after {
     content: "";
     display: inline-block;
-    background-color: var(--band-accent);
+    background-color: var(--accent);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -607,7 +602,7 @@ a:focus-visible {
     cursor: pointer;
     font: inherit;
     font-weight: 700;
-    color: var(--band-link);
+    color: var(--link);
     display: inline;
     text-decoration: underline;
     text-underline-offset: 0.18em;
@@ -615,7 +610,7 @@ a:focus-visible {
 
 .bio-toggle-btn:hover,
 .bio-collapse-btn:hover {
-    color: var(--band-link-hover);
+    color: var(--link-hover);
 }
 
 .bio-toggle-btn:focus-visible,
@@ -810,7 +805,7 @@ body.dark-theme .toc {
     max-width: 100%;
     margin: 1.5rem auto;
     border-radius: 0.7rem;
-    border: 1px solid var(--band-hairline);
+    border: 1px solid var(--hairline);
     background: var(--surface);
 }
 
@@ -1250,13 +1245,13 @@ body.js .band.in-view {
         padding: 0.75rem 0;
         opacity: 1 !important;
         transform: none !important;
-        --band-fg: #000;
-        --band-fg-soft: #000;
-        --band-accent: #000;
-        --band-link: #000;
+        --ink: #000;
+        --ink-soft: #000;
+        --accent: #000;
+        --link: #000;
     }
 
-    .band > * {
+    .band__inner {
         max-width: 100%;
     }
 
