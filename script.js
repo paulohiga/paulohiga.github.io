@@ -104,6 +104,33 @@ document.addEventListener('DOMContentLoaded', () => {
         else initReveal();
     }
 
+    // --- Sticky compact hero ---
+    // Reveal the compact hero once the full hero has scrolled out of view.
+    // The full hero is persistent chrome (not swapped on navigation), so this
+    // is wired up once. The smooth slide is handled by CSS transitions.
+    function initStickyHero() {
+        const hero = document.querySelector('.hero');
+        const compact = document.querySelector('.hero-compact');
+        if (!hero || !compact) return;
+
+        if (!supportsIO) {
+            // Fallback: always show the compact hero (no scroll detection).
+            document.body.classList.add('show-compact-hero');
+            return;
+        }
+        const obs = new IntersectionObserver(entries => {
+            document.body.classList.toggle('show-compact-hero', !entries[0].isIntersecting);
+        }, { threshold: 0 });
+        obs.observe(hero);
+
+        // Clicking the name in the compact hero smoothly returns to the top.
+        if (compactName) {
+            compactName.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+            });
+        }
+    }
+
     const formTranslations = {
         pt: {
             formTitle: 'Contato',
@@ -188,20 +215,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Persistent chrome aria-labels that must follow the active language.
     const chromeLabels = {
-        pt: { nav: 'Opções de visualização', theme: 'Alternar tema claro/escuro' },
-        en: { nav: 'Display options', theme: 'Toggle light/dark theme' }
+        pt: { nav: 'Opções de visualização', theme: 'Alternar tema claro/escuro', backToTop: 'Voltar ao topo da página' },
+        en: { nav: 'Display options', theme: 'Toggle light/dark theme', backToTop: 'Back to top of page' }
     };
 
     const toolbarNav = document.querySelector('nav.toolbar');
+    const compactName = document.querySelector('.hero-compact__name');
 
     function syncChromeLabels(lang) {
         const labels = chromeLabels[lang] || chromeLabels.pt;
         if (toolbarNav) toolbarNav.setAttribute('aria-label', labels.nav);
         if (themeToggle) themeToggle.setAttribute('aria-label', labels.theme);
+        if (compactName) compactName.setAttribute('aria-label', labels.backToTop);
     }
 
-    // Keep the persistent chrome (toolbar + sidebar photo link) in sync with
-    // the active state, so their real-link targets stay correct.
+    // Keep the persistent chrome (toolbar + both photo links) in sync with the
+    // active state, so their real-link targets stay correct. There are two
+    // photo toggles — the main hero one and the compact sticky one.
     function syncChrome(lang, view) {
         langPt.classList.toggle('active', lang === 'pt');
         langEn.classList.toggle('active', lang === 'en');
@@ -211,12 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setAriaCurrent(langEn, lang === 'en');
         syncChromeLabels(lang);
 
-        const fotoBtn = document.getElementById('foto-btn');
-        if (fotoBtn) {
-            const oppositeView = view === 'full' ? 'short' : 'full';
-            fotoBtn.href = metaFor(lang, oppositeView).url;
-            fotoBtn.setAttribute('aria-label', fotoLabel(lang, view));
-        }
+        const oppositeView = view === 'full' ? 'short' : 'full';
+        document.querySelectorAll('.foto-toggle').forEach(btn => {
+            btn.href = metaFor(lang, oppositeView).url;
+            btn.setAttribute('aria-label', fotoLabel(lang, view));
+        });
     }
 
     // --- In-page navigation (progressive enhancement over real links) ---
@@ -486,6 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Initial sync ---
     applyEnhancements('observe');
+    initStickyHero();
     updateFormLanguage(getLang());
     history.replaceState({ lang: getLang(), view: getView() }, '', location.pathname);
 });

@@ -1,0 +1,17 @@
+{% if page.view == 'full' %}{% assign foto_state = page.lang | append: '-short' %}{% else %}{% assign foto_state = page.lang | append: '-full' %}{% endif %}
+    <!-- Compact, sticky version of the hero, revealed on scroll (see
+         script.js). The photo keeps the bio-toggle behaviour; the name
+         smoothly scrolls back to the top; the mail button opens the form. -->
+    <div class="hero-compact" id="hero-compact">
+        <div class="hero-compact__inner">
+            <a class="profile-image-button foto-toggle hero-compact__photo" href="{{ site.data.pages[foto_state].url }}" data-nav
+                aria-label="{% if page.lang == 'en' %}{% if page.view == 'full' %}Collapse Paulo Higa biography{% else %}Read the full biography of Paulo Higa{% endif %}{% else %}{% if page.view == 'full' %}Recolher biografia de Paulo Higa{% else %}Expandir biografia de Paulo Higa{% endif %}{% endif %}">
+                <img src="/img/foto-paulo-higa-3.jpg" alt="" width="40" height="40" decoding="async">
+            </a>
+            <button type="button" class="hero-compact__name" aria-label="{% if page.lang == 'en' %}Back to top of page{% else %}Voltar ao topo da página{% endif %}">Paulo Higa</button>
+            <button type="button" class="contact-button contact-link hero-compact__mail">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span class="visually-hidden" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</span>
+            </button>
+        </div>
+    </div>
