@@ -117,6 +117,17 @@ img {
     display: flex;
     gap: 0.6rem;
     z-index: 100;
+    transition: opacity var(--duration-normal) ease, transform var(--duration-normal) var(--ease-out), visibility 0s;
+}
+
+/* When the compact hero takes over, the language/theme controls live inside
+   it, so the floating top toolbar fades out. */
+body.show-compact-hero .toolbar {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) ease, transform var(--duration-normal) var(--ease-out), visibility 0s linear var(--duration-normal);
 }
 
 .language-selector,
@@ -272,11 +283,11 @@ body.dark-theme .profile-image-wrapper img {
 }
 
 .hero__name {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-weight: 900;
-    font-size: clamp(2.6rem, 9vw, 5rem);
-    line-height: 0.95;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.4rem, 8vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
     margin: 0 0 1rem;
     color: #fff;
 }
@@ -310,16 +321,19 @@ body.dark-theme .profile-image-wrapper img {
 }
 
 /* --- Compact sticky hero (revealed on scroll) --- */
+/* Mirrors the full hero's look (blue gradient, white serif name). Padding sits
+   on the outer element with a no-padding, centred inner — exactly like .hero
+   and .band — so the photo lines up with the page content. */
 .hero-compact {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 90;
-    background: rgba(247, 249, 252, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline);
+    padding: 0.5rem var(--band-pad-x);
+    color: #fff;
+    background: linear-gradient(135deg, #172554 0%, #1e3a8a 30%, #1d4ed8 66%, #2563eb 100%);
+    box-shadow: 0 8px 24px -12px rgba(8, 15, 30, 0.55);
     /* Hidden until scrolled; slides down smoothly when .show-compact-hero
        is toggled on <body> by the IntersectionObserver in script.js. */
     transform: translateY(-100%);
@@ -331,7 +345,9 @@ body.dark-theme .profile-image-wrapper img {
 }
 
 body.dark-theme .hero-compact {
-    background: rgba(11, 17, 32, 0.82);
+    color: #eef2f9;
+    background: linear-gradient(135deg, #0f2147 0%, #15346a 45%, #122a52 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 body.show-compact-hero .hero-compact {
@@ -349,7 +365,6 @@ body.show-compact-hero .hero-compact {
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    padding: 0.5rem var(--band-pad-x);
 }
 
 .hero-compact__photo {
@@ -361,7 +376,8 @@ body.show-compact-hero .hero-compact {
     height: 2.4rem;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 10px -4px rgba(15, 23, 42, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.5);
     transition: transform var(--duration-fast) var(--ease-out);
 }
 
@@ -370,7 +386,7 @@ body.show-compact-hero .hero-compact {
 }
 
 .hero-compact__photo:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid #fff;
     outline-offset: 3px;
 }
 
@@ -380,55 +396,71 @@ body.show-compact-hero .hero-compact {
     padding: 0.2rem 0.1rem;
     margin: 0;
     cursor: pointer;
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: 1.1rem;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 1.15rem;
     letter-spacing: -0.01em;
-    color: var(--ink);
+    color: #fff;
     line-height: 1;
 }
 
 .hero-compact__name:hover {
-    color: var(--accent);
+    opacity: 0.85;
 }
 
 .hero-compact__name:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid #fff;
     outline-offset: 2px;
     border-radius: 4px;
 }
 
-/* Discreet, icon-only mail button. Kept in the left cluster (next to the
-   name) so it never collides with the fixed toolbar on the right. */
-.hero-compact .hero-compact__mail {
-    width: 2.4rem;
-    height: 2.4rem;
-    padding: 0;
-    border-radius: 50%;
-    background: rgba(29, 78, 216, 0.12);
-    color: var(--accent);
+/* Integrated, compact language/theme/contact controls (right-aligned). All
+   three share one glass pill and the same button style. */
+.compact-controls {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.2rem;
+    border-radius: 9999px;
+    /* Dark glass keeps the white text/icons above 4.5:1 anywhere on the blue
+       gradient (a white glass would wash out on the bright end). */
+    background: rgba(8, 15, 30, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.hero-compact .hero-compact__mail .ico {
-    width: 1.15rem;
-    height: 1.15rem;
+.compact-ctrl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.55rem;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 9999px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    transition: background-color var(--duration-fast) ease;
 }
 
-.hero-compact .hero-compact__mail:hover {
-    background: rgba(29, 78, 216, 0.2);
+.compact-ctrl:hover {
+    background: rgba(255, 255, 255, 0.16);
 }
 
-body.dark-theme .hero-compact .hero-compact__mail {
-    background: rgba(125, 211, 252, 0.16);
-}
-
-body.dark-theme .hero-compact .hero-compact__mail:hover {
-    background: rgba(125, 211, 252, 0.26);
-}
-
-.hero-compact .hero-compact__mail:focus-visible {
-    outline: 2px solid var(--accent);
+.compact-ctrl:focus-visible {
+    outline: 2px solid #fff;
     outline-offset: 2px;
+}
+
+.compact-ctrl .ico {
+    width: 1.05rem;
+    height: 1.05rem;
 }
 
 /* --- Buttons --- */
@@ -1324,42 +1356,25 @@ body.js .band.in-view {
         flex-wrap: wrap;
     }
 
-    /* Slim the toolbar and the compact-hero cluster on phones so the cluster
-       (kept on the left) never reaches the fixed toolbar on the right. */
-    .toolbar button,
-    .toolbar a {
-        padding: 0.4rem 0.65rem;
-        font-size: 0.78rem;
-    }
-
-    .theme-selector button {
-        padding: 0.4rem;
-    }
-
-    .theme-selector .ico {
-        width: 0.95rem;
-        height: 0.95rem;
-    }
-
+    /* Tighten the compact hero on phones so the left cluster and the
+       right-aligned controls both fit comfortably. */
     .hero-compact__inner {
         gap: 0.5rem;
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
     }
 
-    .hero-compact__photo img,
-    .hero-compact .hero-compact__mail {
-        width: 1.95rem;
-        height: 1.95rem;
-    }
-
-    .hero-compact .hero-compact__mail .ico {
-        width: 1rem;
-        height: 1rem;
+    .hero-compact__photo img {
+        width: 2rem;
+        height: 2rem;
     }
 
     .hero-compact__name {
-        font-size: 0.92rem;
+        font-size: 1rem;
+    }
+
+    .compact-ctrl {
+        min-width: 1.85rem;
+        height: 1.85rem;
+        padding: 0 0.45rem;
     }
 }
 

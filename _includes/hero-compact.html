@@ -1,7 +1,9 @@
 {% if page.view == 'full' %}{% assign foto_state = page.lang | append: '-short' %}{% else %}{% assign foto_state = page.lang | append: '-full' %}{% endif %}
     <!-- Compact, sticky version of the hero, revealed on scroll (see
-         script.js). The photo keeps the bio-toggle behaviour; the name
-         smoothly scrolls back to the top; the mail button opens the form. -->
+         script.js). It mirrors the full hero's look (serif name, blue
+         gradient). The photo keeps the bio-toggle behaviour; the name
+         smoothly scrolls to the top; and the language/theme/contact controls
+         move in here (the top toolbar fades out) in a compact form. -->
     <div class="hero-compact" id="hero-compact">
         <div class="hero-compact__inner">
             <a class="profile-image-button foto-toggle hero-compact__photo" href="{{ site.data.pages[foto_state].url }}" data-nav
@@ -9,9 +11,19 @@
                 <img src="/img/foto-paulo-higa-3.jpg" alt="" width="40" height="40" decoding="async">
             </a>
             <button type="button" class="hero-compact__name" aria-label="{% if page.lang == 'en' %}Back to top of page{% else %}Voltar ao topo da página{% endif %}">Paulo Higa</button>
-            <button type="button" class="contact-button contact-link hero-compact__mail">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <span class="visually-hidden" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</span>
-            </button>
+
+            <div class="compact-controls" role="group" aria-label="{% if page.lang == 'en' %}Display options{% else %}Opções de visualização{% endif %}">
+                <button type="button" id="compact-lang" class="compact-ctrl compact-ctrl--lang"
+                    aria-label="{% if page.lang == 'en' %}Switch to Portuguese{% else %}Mudar para inglês{% endif %}">{% if page.lang == 'en' %}PT{% else %}EN{% endif %}</button>
+                <button type="button" id="compact-theme" class="compact-ctrl compact-ctrl--theme"
+                    aria-label="{% if page.lang == 'en' %}Toggle light/dark theme{% else %}Alternar tema claro/escuro{% endif %}">
+                    <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                <button type="button" class="compact-ctrl compact-ctrl--mail contact-link">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="visually-hidden" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</span>
+                </button>
+            </div>
         </div>
     </div>

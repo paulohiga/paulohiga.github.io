@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('dark-theme');
     }
 
-    themeToggle.addEventListener('click', () => {
+    function toggleTheme() {
         if (document.body.classList.contains('dark-theme')) {
             document.body.classList.remove('dark-theme');
             document.body.classList.add('light-theme');
@@ -38,7 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('light-theme');
             localStorage.setItem('theme', 'dark');
         }
-    });
+    }
+
+    // Both the toolbar toggle and the compact-hero toggle share this behaviour.
+    themeToggle.addEventListener('click', toggleTheme);
+    const compactTheme = document.getElementById('compact-theme');
+    if (compactTheme) compactTheme.addEventListener('click', toggleTheme);
 
     // --- Full-bleed section banding (progressive enhancement) ---
     // The Markdown renders a flat run of elements; here we group each section
@@ -208,6 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return view === 'full' ? 'Recolher biografia de Paulo Higa' : 'Expandir biografia de Paulo Higa';
     }
 
+    // The compact-hero language control is a single toggle: it shows (and
+    // switches to) the other language.
+    function langToggleCode(lang) { return lang === 'en' ? 'PT' : 'EN'; }
+    function langToggleLabel(lang) { return lang === 'en' ? 'Switch to Portuguese' : 'Mudar para inglês'; }
+
     function setAriaCurrent(el, on) {
         if (on) el.setAttribute('aria-current', 'true');
         else el.removeAttribute('aria-current');
@@ -221,12 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toolbarNav = document.querySelector('nav.toolbar');
     const compactName = document.querySelector('.hero-compact__name');
+    const compactLang = document.getElementById('compact-lang');
 
     function syncChromeLabels(lang) {
         const labels = chromeLabels[lang] || chromeLabels.pt;
         if (toolbarNav) toolbarNav.setAttribute('aria-label', labels.nav);
         if (themeToggle) themeToggle.setAttribute('aria-label', labels.theme);
         if (compactName) compactName.setAttribute('aria-label', labels.backToTop);
+        if (compactTheme) compactTheme.setAttribute('aria-label', labels.theme);
     }
 
     // Keep the persistent chrome (toolbar + both photo links) in sync with the
@@ -246,6 +258,11 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.href = metaFor(lang, oppositeView).url;
             btn.setAttribute('aria-label', fotoLabel(lang, view));
         });
+
+        if (compactLang) {
+            compactLang.textContent = langToggleCode(lang);
+            compactLang.setAttribute('aria-label', langToggleLabel(lang));
+        }
     }
 
     // --- In-page navigation (progressive enhancement over real links) ---
@@ -350,6 +367,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.addEventListener('pointerover', prewarm);
     document.addEventListener('focusin', prewarm);
+
+    // Compact-hero language toggle: switch to the other language, same view.
+    if (compactLang) {
+        compactLang.addEventListener('click', () => {
+            const otherLang = getLang() === 'pt' ? 'en' : 'pt';
+            navigate(metaFor(otherLang, getView()).url);
+        });
+    }
 
     window.addEventListener('popstate', () => {
         navigate(location.pathname, { push: false, animate: false });
