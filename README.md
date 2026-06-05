@@ -15,11 +15,11 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 .
 ├── _config.yml             # Configuração do Jekyll
 ├── _data/pages.yml         # Metadados (título, descrição, URL) de cada estado
-├── _layouts/default.html   # Casca da página (head, sidebar, conteúdo, form)
+├── _layouts/default.html   # Casca da página (head, herói, conteúdo, rodapé, form)
 ├── _includes/
 │   ├── head.html           # <head>: meta tags, Open Graph, JSON-LD
-│   ├── toolbar.html        # Seletor de idioma + tema
-│   ├── sidebar.html        # Foto, nome, ações
+│   ├── toolbar.html        # Seletor de idioma + tema (ícones SVG inline)
+│   ├── sidebar.html        # Herói: foto, nome, localização, ações
 │   ├── contact-form.html   # Formulário de contato (modal)
 │   └── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa)
 │
@@ -29,10 +29,17 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 ├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
 │
 ├── sitemap.xml             # Template Liquid: gera o sitemap automaticamente
-├── style.css               # Todo o CSS (inclusive ícones via ::before/::after)
-├── script.js               # Tema, troca de idioma, navegação sem reload, form
+├── style.css               # Todo o CSS (ícones via máscaras SVG; sem dependências)
+├── script.js               # Tema, troca de idioma, navegação sem reload, form,
+│                           #   faixas full-bleed das seções e animações de scroll
 └── img/                    # Imagens
 ```
+
+O conteúdo é fatiado em **faixas full-bleed** (`<section class="band">`) pelo
+`script.js`: cada `##` (ou a dica de contato) inicia uma faixa, com fundos
+alternados e de larguras totais. Sem JavaScript, o texto cai num fluxo simples
+e legível. Os ícones são **SVG inline** ou **máscaras CSS** — não há Font
+Awesome nem outras dependências de ícones.
 
 As quatro páginas `.md` contêm **apenas o texto** (em Markdown). Toda a
 apresentação (cartão, ícones, tabelas, índice, lista de referências) é montada

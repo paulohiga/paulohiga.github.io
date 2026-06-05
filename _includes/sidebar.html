@@ -1,5 +1,6 @@
 {% if page.view == 'full' %}{% assign foto_state = page.lang | append: '-short' %}{% else %}{% assign foto_state = page.lang | append: '-full' %}{% endif %}
-            <aside class="profile-sidebar">
+        <header class="hero" id="hero">
+            <div class="hero__inner">
                 <div class="profile-image-wrapper">
                     <a id="foto-btn" class="profile-image-button" href="{{ site.data.pages[foto_state].url }}" data-nav
                         aria-label="{% if page.lang == 'en' %}{% if page.view == 'full' %}Collapse Paulo Higa biography{% else %}Read the full biography of Paulo Higa{% endif %}{% else %}{% if page.view == 'full' %}Recolher biografia de Paulo Higa{% else %}Expandir biografia de Paulo Higa{% endif %}{% endif %}">
@@ -7,18 +8,27 @@
                             height="200" fetchpriority="high" decoding="async">
                     </a>
                 </div>
-                <h1>Paulo Higa</h1>
-                <div class="profile-details">
-                    <p class="profile-detail"><i class="fas fa-location-dot" aria-hidden="true"></i> Brasília, DF</p>
-                    <p class="profile-detail"><i class="fas fa-briefcase" aria-hidden="true"></i> <span
-                            data-lang-key="profession">{% if page.lang == 'en' %}Public Manager{% else %}Gestor público{% endif %}</span></p>
+                <div class="hero__identity">
+                    <h1 class="hero__name">Paulo Higa</h1>
+                    <ul class="hero__meta">
+                        <li class="hero__meta-item">
+                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.4-8 12-8 12s-8-7.6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Brasília, DF</span>
+                        </li>
+                        <li class="hero__meta-item">
+                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            <span data-lang-key="profession">{% if page.lang == 'en' %}Public Manager{% else %}Gestor público{% endif %}</span>
+                        </li>
+                    </ul>
+                    <div class="profile-actions">
+                        <button type="button" class="contact-button contact-link" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</button>
+                        <a href="https://www.linkedin.com/in/paulohiga/" target="_blank" rel="noopener"
+                            class="contact-button linkedin-button"
+                            aria-label="{% if page.lang == 'en' %}LinkedIn profile (opens in a new window){% else %}Perfil no LinkedIn (abre em nova janela){% endif %}">
+                            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.78 24h20.44c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="profile-actions">
-                    <button type="button" class="contact-button contact-link" data-lang-key="contactButton">{% if page.lang == 'en' %}Get in touch{% else %}Entrar em contato{% endif %}</button>
-                    <a href="https://www.linkedin.com/in/paulohiga/" target="_blank" rel="noopener"
-                        class="contact-button linkedin-button"
-                        aria-label="{% if page.lang == 'en' %}LinkedIn profile (opens in a new window){% else %}Perfil no LinkedIn (abre em nova janela){% endif %}">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
-                    </a>
-                </div>
-            </aside>
+            </div>
+        </header>

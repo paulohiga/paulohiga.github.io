@@ -17,36 +17,89 @@ document.addEventListener('DOMContentLoaded', () => {
     function metaFor(lang, view) { return pageMeta[lang + '-' + view]; }
 
     // --- Theme Selector ---
-    const themeIcon = themeToggle.querySelector('i');
-
-    function setThemeIcon(isDark) {
-        themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-    }
-
+    // The sun/moon glyphs are inline SVGs toggled purely via CSS
+    // (body.dark-theme); JS only flips the theme class + persists the choice.
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (localStorage.getItem('theme') === 'dark' || (localStorage.getItem('theme') === null && prefersDark)) {
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
-        setThemeIcon(true);
     } else {
         document.body.classList.add('light-theme');
         document.body.classList.remove('dark-theme');
-        setThemeIcon(false);
     }
 
     themeToggle.addEventListener('click', () => {
         if (document.body.classList.contains('dark-theme')) {
             document.body.classList.remove('dark-theme');
             document.body.classList.add('light-theme');
-            setThemeIcon(false);
             localStorage.setItem('theme', 'light');
         } else {
             document.body.classList.add('dark-theme');
             document.body.classList.remove('light-theme');
-            setThemeIcon(true);
             localStorage.setItem('theme', 'dark');
         }
     });
+
+    // --- Full-bleed section banding (progressive enhancement) ---
+    // The Markdown renders a flat run of elements; here we group each section
+    // (an <h2>, or a trailing .contact-hint, and the siblings that follow it)
+    // into a full-width <section class="band"> so alternating, edge-to-edge
+    // backgrounds can divide the content. No-JS users keep the plain flow.
+    document.body.classList.add('js');
+
+    function bandStarts(el) {
+        return el.tagName === 'H2' || el.classList.contains('contact-hint');
+    }
+
+    function enhanceSections() {
+        const block = document.querySelector('.content-area > .bio-short, .content-area > .bio-full');
+        if (!block) return;
+        const kids = Array.from(block.children);
+        if (kids.some(el => el.classList.contains('band'))) return;   // already banded
+
+        let current = null;
+        const bands = [];
+        kids.forEach(el => {
+            if (current === null || bandStarts(el)) {
+                current = document.createElement('section');
+                current.className = 'band';
+                bands.push(current);
+            }
+            current.appendChild(el);
+        });
+        bands.forEach(b => block.appendChild(b));
+    }
+
+    // --- Scroll reveal ---
+    let revealObserver = null;
+    const supportsIO = 'IntersectionObserver' in window;
+
+    function revealAll() {
+        document.querySelectorAll('.band').forEach(b => b.classList.add('in-view'));
+    }
+
+    function initReveal() {
+        if (prefersReducedMotion || !supportsIO) {
+            revealAll();
+            return;
+        }
+        if (revealObserver) revealObserver.disconnect();
+        revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        document.querySelectorAll('.band').forEach(b => revealObserver.observe(b));
+    }
+
+    function applyEnhancements(revealMode) {
+        enhanceSections();
+        if (revealMode === 'all') revealAll();
+        else initReveal();
+    }
 
     const formTranslations = {
         pt: {
@@ -206,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const commit = () => {
                 contentArea.innerHTML = html;
+                applyEnhancements('all');
                 root.setAttribute('data-lang', target.lang);
                 root.setAttribute('data-view', target.view);
                 applyHead(target.lang, target.view);
@@ -428,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Initial sync ---
+    applyEnhancements('observe');
     updateFormLanguage(getLang());
     history.replaceState({ lang: getLang(), view: getView() }, '', location.pathname);
 });
