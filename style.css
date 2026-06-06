@@ -252,8 +252,8 @@ body.dark-theme .hero {
 }
 
 .profile-image-wrapper img {
-    width: clamp(120px, 22vw, 168px);
-    height: clamp(120px, 22vw, 168px);
+    width: clamp(192px, 35.2vw, 269px);
+    height: clamp(192px, 35.2vw, 269px);
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.85);
@@ -398,7 +398,7 @@ body.show-compact-hero .hero-compact {
     cursor: pointer;
     font-family: var(--font-serif);
     font-weight: 900;
-    font-size: 1.15rem;
+    font-size: 1.495rem;
     letter-spacing: -0.01em;
     color: #fff;
     line-height: 1;
@@ -1275,22 +1275,6 @@ body.dark-theme .form-content textarea[aria-invalid="true"] {
 }
 
 /* --- Scroll-reveal animations --- */
-.hero__inner {
-    animation: heroRise var(--duration-slow) var(--ease-out) both;
-}
-
-@keyframes heroRise {
-    from {
-        opacity: 0;
-        transform: translateY(22px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
 body.js .band {
     opacity: 0;
     transform: translateY(28px);
@@ -1389,7 +1373,7 @@ body.js .band.in-view {
     }
 
     .hero-compact__name {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .compact-ctrl {
