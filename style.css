@@ -1275,22 +1275,6 @@ body.dark-theme .form-content textarea[aria-invalid="true"] {
 }
 
 /* --- Scroll-reveal animations --- */
-.hero__inner {
-    animation: heroRise var(--duration-slow) var(--ease-out) both;
-}
-
-@keyframes heroRise {
-    from {
-        opacity: 0;
-        transform: translateY(22px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
 body.js .band {
     opacity: 0;
     transform: translateY(28px);
