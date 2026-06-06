@@ -252,8 +252,8 @@ body.dark-theme .hero {
 }
 
 .profile-image-wrapper img {
-    width: clamp(120px, 22vw, 168px);
-    height: clamp(120px, 22vw, 168px);
+    width: clamp(192px, 35.2vw, 269px);
+    height: clamp(192px, 35.2vw, 269px);
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.85);
