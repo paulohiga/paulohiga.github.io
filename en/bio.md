@@ -6,7 +6,7 @@ lang: en
 view: full
 ---
 
-**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. In **June 2026**, the **final results of Brazil's Unified National Civil Service Exam (CNU) were officially certified**, with Higa **approved within the number of available positions** for the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career of the **Government of Brazil**[^43], after passing the training course[^34]. That same month, he was **appointed Municipal Internal Control Auditor** at the **Office of the Comptroller General of the City of São Paulo (CGM-SP)**[^44]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as a **Cabinet Advisor**[^2] at the **Municipal Secretariat of Education (SME)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, most notably the modeling of learning and equity criteria for the new **Educational Performance Award (PDE)**[^4].
+**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He passed the training course for the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career of the **Government of Brazil**[^34]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as a **Cabinet Advisor**[^2] at the **Municipal Secretariat of Education (SME)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, most notably the modeling of learning and equity criteria for the new **Educational Performance Award (PDE)**[^4].
 
 Before entering public administration, Higa built his career in digital media as **executive editor, head of operations, and partner at Tecnoblog**, Brazil's largest independent technology website[^5]. During his tenure at the outlet **from 2012 to 2023**, he helped expand the audience to **over 30 million monthly pageviews**. Recognized for his consumer electronics reviews and as co-host of the **Tecnocast** podcast[^6], he won the **Especialistas Award for three consecutive years (2020, 2021, and 2022)**[^7] and was a finalist for the **Comunique-se Award**[^8]. He holds a **degree in Journalism from Faculdade Cásper Líbero** and an **MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV)**.
 
@@ -120,7 +120,7 @@ Higa's posture during and after the sabbatical can be described as that of an **
 
 During this period, Higa dedicated himself to personal interests: **long-distance running**, accumulating **more than 12,000 km recorded**,[^21] with participation in races such as the **Paraty Trail Run (55 km, September 2023)**,[^22] as well as an interest in wines and cooking.
 
-## 4. The Transition to the Public Sector: São Paulo City Hall (2024–2025)
+## 4. The Transition to the Public Sector: São Paulo City Hall (2024–2026)
 
 ### 4.1 Entry into Municipal Management
 
@@ -132,19 +132,21 @@ At the SME, Higa contributed to modeling the criteria for the **Educational Perf
 
 Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions held with the municipal network's professionals. Successive appointments published in the Official Gazette document his progression through the secretariat's roles.[^24][^29][^2][^25]
 
+### 4.3 Appointment to the Office of the Comptroller General of the City of São Paulo (2026)
+
+On **June 10, 2026**, the **Official Gazette of the City of São Paulo** published **Higa's appointment to the permanent position of Auditor Municipal de Controle Interno (AMCI) – Level I, General area** — São Paulo's municipal internal control auditor career — following his approval in **9th place on the general list** of the corresponding civil service exam.[^44] AMCI positions are based at the **Office of the Comptroller General of the City of São Paulo (CGM-SP)**, the body responsible for internal control, auditing, disciplinary oversight, ombudsman activities, and the promotion of integrity and transparency in the municipal administration.[^45]
+
 ## 5. The Federal Career: The Unified National Civil Service Exam (2026)
 
 ### 5.1 The "ENEM of Civil Service Exams" and the EPPGG Career
 
 In **2026**, Higa passed the **Unified National Civil Service Exam (CNU)**[^30] for the position of **Specialist in Public Policy and Government Management (EPPGG)**, linked to the **Ministry of Management and Innovation in Public Services (MGI)**. The EPPGG career[^1] is responsible for formulating, implementing, and evaluating public policies within the Federal Executive Branch, with assignments across various areas of government.[^31]
 
-### 5.2 Performance and Training at Enap
+### 5.2 Performance, Training at Enap, and Certification of the Final Results
 
 Classification lists for the CNU indicate a **final score of 87.50** for Higa, corresponding to **83rd place out of a total of 241,837 applicants**[^32] for the EPPGG position in his block.[^33] The **Training Course**, the final and eliminatory stage of the exam, was held by the **National School of Public Administration (Enap) in Brasília**, covering topics such as ethics, human rights, government planning, and public finances.[^31] Higa passed the training course with a **score of 92.56 — the eighth highest in his class** — as published in the **Official Gazette of the Union (DOU) on May 26, 2026**.[^34]
 
-### 5.3 Certification of the Final Results
-
-On **June 10, 2026**, **Notice (Edital) No. 92 of June 9, 2026**, issued by the Ministry of Management and Innovation in Public Services and published in the **Official Gazette of the Union**, **officially certified the final results of the exam**. Higa is listed among the candidates **approved within the number of available positions** for the EPPGG role at the MGI (position code B7-09-E), with a **final score of 180.06** and the **4th place in the open competition ranking** of his classification list.[^43]
+Published in the **Official Gazette of the Union on June 10, 2026**, **Notice (Edital) No. 92, of June 9, 2026**, issued by the Ministry of Management and Innovation in Public Services, **officially certified the final results of the exam**. Higa is listed among the candidates **approved within the number of available positions** for the EPPGG role at the MGI (position code B7-09-E), with a **final score of 180.06** and the **4th place in the open competition ranking** of his classification list.[^43]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 3: Milestones of the public sector transition">
 <table class="analysis-table">
@@ -154,24 +156,20 @@ On **June 10, 2026**, **Notice (Edital) No. 92 of June 9, 2026**, issued by the 
 </thead>
 <tbody>
 <tr><td>Aug/2024 – Oct/2025</td><td>São Paulo City Hall (SME)</td><td>Analyst (APPGG) / Advisor II</td><td>Management at UPGE; redesign of the PDE focused on reducing learning inequalities.</td></tr>
-<tr><td>Nov/2025 – Dec/2025</td><td>São Paulo City Hall (SME)</td><td>Advisor V, Ref. CDA-5 (Secretary's Office)</td><td>Direct advisory to the Secretary's Office; consolidation of data dashboards for the 2026–2029 Strategic Planning.</td></tr>
+<tr><td>Nov/2025 – Jan/2026</td><td>São Paulo City Hall (SME)</td><td>Advisor V, Ref. CDA-5 (Secretary's Office)</td><td>Direct advisory to the Secretary's Office; consolidation of data dashboards for the 2026–2029 Strategic Planning.</td></tr>
 <tr><td>Jan/2026 – Jun/2026</td><td>Government of Brazil (MGI/Enap)</td><td>Approved in the CNU (EPPGG)</td><td>Completion of the Training Course in Brasília; final results certified by Notice No. 92/2026, within the number of available positions, with a final score of 180.06.</td></tr>
-<tr><td>Jun/2026</td><td>São Paulo City Hall (CGM)</td><td>Municipal Internal Control Auditor (appointed)</td><td>Appointment published in the City's Official Gazette on 06/10/2026, in 9th place on the general list (General area).</td></tr>
+<tr><td>Jun/2026</td><td>São Paulo City Hall (CGM)</td><td>Auditor Municipal de Controle Interno (appointed)</td><td>Appointment published in the City's Official Gazette on 06/10/2026, in 9th place on the general list (General area).</td></tr>
 </tbody>
 </table>
 </div>
 
-## 6. Appointment to the Office of the Comptroller General of the City of São Paulo (2026)
-
-On **June 10, 2026**, the **Official Gazette of the City of São Paulo** published **Higa's appointment to the permanent position of Municipal Internal Control Auditor (Auditor-Municipal de Controle Interno) – Level I, General area**, following his approval in **9th place on the general list** of the corresponding civil service exam.[^44] Municipal Internal Control Auditor positions are based at the **Office of the Comptroller General of the City of São Paulo (CGM-SP)**, the body responsible for internal control, auditing, disciplinary oversight, ombudsman activities, and the promotion of integrity and transparency in the municipal administration.[^45]
-
-## 7. Biographical Summary
+## 6. Biographical Summary
 
 Paulo Higa's trajectory spans **two distinct phases**. In media, he worked as a reporter at **TechTudo (Globo.com) from 2010 to 2012**, and at **Tecnoblog from 2012 to 2023**, serving as **editor, executive editor, head of operations, and partner**. He also served as a **technology columnist on Rádio Globo (2018–2019)**, focused on communicating technical topics to broad audiences. During this period, he combined journalistic production, editorial and operational management, and received industry recognition.
 
-In public administration, he served as an **APPGG and Cabinet Advisor at the São Paulo Municipal Secretariat of Education (2024–2025)**, contributing to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **CNU** — with the final results certified in June[^43] — and the **Enap** training course for the **EPPGG career, in Brasília**, and was also **appointed Municipal Internal Control Auditor** at the **Office of the Comptroller General of the City of São Paulo**[^44]. For readers of his work at Tecnoblog, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
+In public administration, he served as an **APPGG and Cabinet Advisor at the São Paulo Municipal Secretariat of Education (2024–2025)**, contributing to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **CNU** — with the final results certified in June[^43] — and the **Enap** training course for the **EPPGG career, in Brasília**, and was also **appointed Auditor Municipal de Controle Interno (AMCI)** at the **Office of the Comptroller General of the City of São Paulo**[^44]. For readers of his work at Tecnoblog, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
 
-## 8. References
+## 7. References
 {:.references-heading}
 
 Report prepared in May 2026 and updated in June 2026, consolidating biographical data, media records, and official documents.
@@ -263,6 +261,6 @@ Report prepared in May 2026 and updated in June 2026, consolidating biographical
 
 [^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU Final Results for the EPPGG position (DOU, 06/10/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
-[^44]: São Paulo City Hall Official Gazette – Appointment as Municipal Internal Control Auditor (06/10/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+[^44]: São Paulo City Hall Official Gazette – Appointment as Auditor Municipal de Controle Interno (06/10/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
-[^45]: Municipal Internal Control Auditor career – Office of the Comptroller General of the City of São Paulo. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
+[^45]: Auditor Municipal de Controle Interno (AMCI) career – Office of the Comptroller General of the City of São Paulo. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
