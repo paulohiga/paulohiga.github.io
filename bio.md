@@ -1,12 +1,12 @@
 ---
 layout: default
-last_modified: 2026-06-04
+last_modified: 2026-06-10
 permalink: /bio
 lang: pt
 view: full
 ---
 
-**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Foi aprovado no curso de formação para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^34]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, destacando-se a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
+**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Em **junho de 2026**, teve **homologado o resultado final do Concurso Público Nacional Unificado (CNU)**, no qual foi **aprovado dentro do número de vagas** para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^43], após aprovação no curso de formação[^34]. No mesmo mês, foi **nomeado Auditor-Municipal de Controle Interno** da **Controladoria Geral do Município de São Paulo (CGM-SP)**[^44]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, destacando-se a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
 
 Antes de ingressar na administração pública, Higa consolidou sua carreira na mídia digital como **editor-executivo, head de operações e sócio do Tecnoblog**, maior site de tecnologia independente do Brasil[^5]. Durante sua atuação no veículo **entre 2012 e 2023**, ajudou a expandir a audiência para **mais de 30 milhões de acessos mensais**. Reconhecido por suas análises de produtos eletrônicos e como coapresentador do podcast **Tecnocast**[^6], venceu o **Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)**[^7] e foi finalista do **Prêmio Comunique-se**[^8]. É graduado em **Jornalismo pela Faculdade Cásper Líbero** e possui **MBA em Gestão com Ênfase em Liderança e Inovação pela Fundação Getulio Vargas (FGV)**.
 
@@ -142,6 +142,10 @@ Em **2026**, Higa foi aprovado no **Concurso Nacional Unificado (CNU)**[^30] par
 
 As listas de classificação do CNU indicam **pontuação final de 87,50** para Higa, correspondendo ao **83º lugar de um total de 241.837 inscritos**[^32] para o cargo de EPPGG no bloco.[^33] O **Curso de Formação**, etapa final e eliminatória do concurso, foi realizado pela **Escola Nacional de Administração Pública (Enap) em Brasília**, abordando temas como ética, direitos humanos, planejamento governamental e finanças públicas.[^31] Higa foi aprovado no curso de formação com **nota 92,56 — a oitava maior da turma** —, conforme resultado publicado no **Diário Oficial da União em 26 de maio de 2026**.[^34]
 
+### 5.3 Homologação do Resultado Final
+
+Em **10 de junho de 2026**, o **Edital nº 92, de 9 de junho de 2026**, do Ministério da Gestão e da Inovação em Serviços Públicos, publicado no **Diário Oficial da União**, **homologou o resultado final do concurso**. Higa consta entre os candidatos **aprovados dentro do número de vagas** para o cargo de EPPGG no MGI (código B7-09-E), com **nota final de 180,06** e a **4ª colocação na ampla concorrência** de sua lista de classificação.[^43]
+
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 3: Marcos da transição para o setor público">
 <table class="analysis-table">
 <caption>Tabela 3 — Marcos da Transição de Paulo Higa para o Setor Público (2024–2026)</caption>
@@ -151,21 +155,26 @@ As listas de classificação do CNU indicam **pontuação final de 87,50** para 
 <tbody>
 <tr><td>Ago/2024 – Out/2025</td><td>Prefeitura de São Paulo (SME)</td><td>Analista (APPGG) / Assessor II</td><td>Gestão na UPGE; remodelagem do PDE com foco na redução de desigualdades de aprendizagem.</td></tr>
 <tr><td>Nov/2025 – Dez/2025</td><td>Prefeitura de São Paulo (SME)</td><td>Assessor V, Ref. CDA-5 (Gabinete)</td><td>Assessoria direta ao Gabinete da Secretaria; consolidação de painéis de dados para o Planejamento 2026-2029.</td></tr>
-<tr><td>Jan/2026 – presente</td><td>Governo do Brasil (MGI/Enap)</td><td>Aprovado no curso de formação (EPPGG)</td><td>Aprovação no CNU com nota 87,50 e conclusão do Curso de Formação para a carreira de gestor governamental em Brasília.</td></tr>
+<tr><td>Jan/2026 – Jun/2026</td><td>Governo do Brasil (MGI/Enap)</td><td>Aprovado no CNU (EPPGG)</td><td>Conclusão do Curso de Formação em Brasília; resultado final homologado pelo Edital nº 92/2026, dentro do número de vagas, com nota final de 180,06.</td></tr>
+<tr><td>Jun/2026</td><td>Prefeitura de São Paulo (CGM)</td><td>Auditor-Municipal de Controle Interno (nomeado)</td><td>Nomeação publicada no Diário Oficial da Cidade em 10/06/2026, em 9º lugar na lista geral (área Geral).</td></tr>
 </tbody>
 </table>
 </div>
 
-## 6. Síntese Biográfica
+## 6. Nomeação para a Controladoria Geral do Município de São Paulo (2026)
+
+Em **10 de junho de 2026**, o **Diário Oficial da Cidade de São Paulo** publicou a **nomeação de Higa para o cargo efetivo de Auditor-Municipal de Controle Interno – Nível I, na área Geral**, em decorrência de sua aprovação em **9º lugar na lista geral** do concurso público para a carreira.[^44] Os cargos de Auditor-Municipal de Controle Interno são lotados na **Controladoria Geral do Município de São Paulo (CGM-SP)**, órgão responsável pelas atividades de controle interno, auditoria, correição, ouvidoria e promoção da integridade e da transparência na administração municipal.[^45]
+
+## 7. Síntese Biográfica
 
 A trajetória de Paulo Higa abrange **duas fases distintas**. Na mídia, atuou como redator no **TechTudo (Globo.com) entre 2010 e 2012**, e no **Tecnoblog de 2012 a 2023**, onde exerceu as funções de **editor, editor-executivo, head de operações e sócio**. Foi também **colunista de tecnologia na Rádio Globo (2018–2019)**, com foco na comunicação de temas técnicos para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e operacional, e recebeu reconhecimento do setor.
 
-Na administração pública, atuou como **APPGG e Assessor de Gabinete na Secretaria Municipal de Educação de São Paulo (2024–2025)**, com participação em projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **CNU** e no curso de formação da **Enap** para a carreira de **EPPGG, em Brasília**. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
+Na administração pública, atuou como **APPGG e Assessor de Gabinete na Secretaria Municipal de Educação de São Paulo (2024–2025)**, com participação em projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **CNU** — com resultado final homologado em junho[^43] — e no curso de formação da **Enap** para a carreira de **EPPGG, em Brasília**, além de ter sido **nomeado Auditor-Municipal de Controle Interno** na **Controladoria Geral do Município de São Paulo**[^44]. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
 
-## 7. Referências
+## 8. Referências
 {:.references-heading}
 
-Relatório elaborado em maio de 2026, consolidando dados biográficos, registros de mídia e documentos oficiais.
+Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando dados biográficos, registros de mídia e documentos oficiais.
 {:.references-note}
 
 [^1]: Carreira de EPPGG – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
@@ -251,3 +260,9 @@ Relatório elaborado em maio de 2026, consolidando dados biográficos, registros
 [^41]: Classificação Final – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
 
 [^42]: Relação de Inscritos – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
+
+[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do Resultado Final do CNU para o cargo de EPPGG (DOU, 10/06/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+
+[^44]: Diário Oficial da Cidade de São Paulo – Nomeação de Auditor-Municipal de Controle Interno (10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+
+[^45]: Carreira de Auditor Municipal de Controle Interno – Controladoria Geral do Município. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
