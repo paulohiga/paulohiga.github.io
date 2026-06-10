@@ -1,6 +1,6 @@
 ---
 layout: default
-last_modified: 2026-06-04
+last_modified: 2026-06-10
 permalink: /bio
 lang: pt
 view: full
@@ -81,7 +81,7 @@ Após sua saída, alguns ouvintes registraram, em avaliações na Apple Podcasts
 
 ### 2.4 Metodologia de Análise
 
-A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padrões industriais amplamente citados em língua portuguesa. Uma característica de seus *reviews* era a **integração com uso real**: ao correr 42 km com um relógio inteligente, a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso prolongado.[^19] Ele também cobriu eventos em **mais de 10 países**, incluindo feiras como o **Mobile World Congress (MWC, em Barcelona)**, a **Consumer Electronics Show (CES, em Las Vegas** — tendo sinalizado a edição de 2022 como sua última) e a **Worldwide Developers Conference (WWDC) da Apple**, além de lançamentos de fabricantes como Samsung e Huawei e do Snapdragon Tech Summit, no Havaí; parte dessas viagens foi documentada em vlogs de bastidores.[^38]
+A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padrões industriais amplamente citados em língua portuguesa. Uma característica de seus *reviews* era a **integração com uso real**: ao correr 42 km com um relógio inteligente, a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso prolongado.[^19] Ele também cobriu eventos em **mais de 10 países**, incluindo feiras como o **Mobile World Congress (MWC, em Barcelona)**, a **Consumer Electronics Show (CES, em Las Vegas**, tendo sinalizado a edição de 2022 como sua última) e a **Worldwide Developers Conference (WWDC) da Apple**, além de lançamentos de fabricantes como Samsung e Huawei e do Snapdragon Tech Summit, no Havaí; parte dessas viagens foi documentada em vlogs de bastidores.[^38]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 2: Análise temática da produção editorial">
 <table class="analysis-table">
@@ -102,7 +102,7 @@ A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padr�
 
 ### 2.5 Presença na Mídia de Rádio
 
-Em **2017**, ainda estudante de jornalismo e editor do Tecnoblog, Higa foi convidado a participar do programa **CBN Gerações, da Rádio CBN**, ao lado do engenheiro e colunista **B. Piropo**, autor da coluna "Trilha Zero" no jornal O Globo entre 1991 e 2005. O programa propunha um diálogo intergeracional sobre tecnologia. Na ocasião, Higa defendeu que os **maiores avanços em inteligência artificial ocorreriam não em décadas, mas em poucos anos**, e que a tecnologia transformaria não apenas jogos — como ilustrava o AlphaGo, sistema do Google recém-vitorioso sobre o campeão mundial de Go — mas também saúde, educação e a forma como as pessoas trabalham e pensam.[^40] **A previsão mostrou-se precisa**: entre 2022 e 2023, modelos de linguagem de grande escala como o ChatGPT e sistemas de IA generativa remodelaram amplamente essas áreas. Higa também identificou o declínio do PC tradicional frente ao smartphone como principal dispositivo de acesso à internet. A participação antecipou sua atuação como **colunista de tecnologia na Rádio Globo, entre 2018 e 2019**.
+Em **2017**, ainda estudante de jornalismo e editor do Tecnoblog, Higa foi convidado a participar do programa **CBN Gerações, da Rádio CBN**, ao lado do engenheiro e colunista **B. Piropo**, autor da coluna "Trilha Zero" no jornal O Globo entre 1991 e 2005. O programa propunha um diálogo intergeracional sobre tecnologia. Na ocasião, Higa defendeu que os **maiores avanços em inteligência artificial ocorreriam não em décadas, mas em poucos anos**, e que a tecnologia transformaria não apenas jogos, como ilustrava o AlphaGo, sistema do Google recém-vitorioso sobre o campeão mundial de Go, mas também saúde, educação e a forma como as pessoas trabalham e pensam.[^40] **A previsão mostrou-se precisa**: entre 2022 e 2023, modelos de linguagem de grande escala como o ChatGPT e sistemas de IA generativa remodelaram amplamente essas áreas. Higa também identificou o declínio do PC tradicional frente ao smartphone como principal dispositivo de acesso à internet. A participação antecipou sua atuação como **colunista de tecnologia na Rádio Globo, entre 2018 e 2019**.
 
 ### 2.6 Reconhecimento da Indústria
 
@@ -116,11 +116,11 @@ Em **2023**, Paulo Higa encerrou o seu ciclo no Tecnoblog, deixando os cargos de
 
 ### 3.2 Postura Digital e Interesses Pessoais
 
-A postura de Higa durante e após o sabático pode ser descrita como a de um **"anti-influenciador"**. O seu site pessoal, **higa.me**, manteve-se minimalista, servindo como um currículo estático em vez de um blog ativo. Ele declarou explicitamente **não usar redes sociais**, oferecendo apenas um formulário de e-mail para contato. Esta escolha reforça a sua identidade como jornalista e gestor — papéis que exigem distanciamento e análise, em oposição à figura da personalidade de internet que depende do engajamento algorítmico.
+A postura de Higa durante e após o sabático pode ser descrita como a de um **"anti-influenciador"**. O seu site pessoal, **higa.me**, manteve-se minimalista, servindo como um currículo estático em vez de um blog ativo. Ele declarou explicitamente **não usar redes sociais**, oferecendo apenas um formulário de e-mail para contato. Esta escolha reforça a sua identidade como jornalista e gestor, papéis que exigem distanciamento e análise, em oposição à figura da personalidade de internet que depende do engajamento algorítmico.
 
 Durante este período, Higa dedicou-se a interesses pessoais: a prática de **corrida de longa distância**, acumulando **mais de 12.000 km registrados**,[^21] com participação em provas como a **Paraty Trail Run de 55 km (setembro de 2023)**,[^22] além do interesse por vinhos e culinária.
 
-## 4. A Transição para o Setor Público: A Prefeitura de São Paulo (2024–2025)
+## 4. A Transição para o Setor Público: A Prefeitura de São Paulo (2024–2026)
 
 ### 4.1 A Entrada na Gestão Municipal
 
@@ -132,15 +132,21 @@ Na SME, Higa participou da modelagem dos critérios do **Prêmio de Desempenho E
 
 Além do PDE, contribuiu com o **Planejamento Estratégico 2026-2029**,[^26] desenvolvendo painéis de dados[^27] e materiais de comunicação[^28] para os processos de escuta dos profissionais da rede municipal. Nomeações sucessivas publicadas no Diário Oficial documentam sua progressão de cargos na secretaria.[^24][^29][^2][^25]
 
+### 4.3 Nomeação para a Controladoria Geral do Município de São Paulo (2026)
+
+Em **10 de junho de 2026**, o **Diário Oficial da Cidade de São Paulo** publicou a **nomeação de Higa para o cargo efetivo de Auditor Municipal de Controle Interno (AMCI), Nível I, na área Geral**, em decorrência de sua aprovação em **9º lugar na lista geral** do concurso público para a carreira.[^44] Os cargos de AMCI são lotados na **Controladoria Geral do Município de São Paulo (CGM-SP)**, órgão responsável pelas atividades de controle interno, auditoria, correição, ouvidoria e promoção da integridade e da transparência na administração municipal.[^45]
+
 ## 5. A Carreira Federal: O Concurso Nacional Unificado (2026)
 
 ### 5.1 O "ENEM dos Concursos" e a Carreira de EPPGG
 
 Em **2026**, Higa foi aprovado no **Concurso Nacional Unificado (CNU)**[^30] para o cargo de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculado ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)**. A carreira de EPPGG[^1] é responsável pela formulação, implementação e avaliação de políticas públicas no âmbito do Poder Executivo Federal, com atuação em diversas áreas de governo.[^31]
 
-### 5.2 Desempenho e Formação na Enap
+### 5.2 Desempenho, Formação na Enap e Homologação do Resultado Final
 
-As listas de classificação do CNU indicam **pontuação final de 87,50** para Higa, correspondendo ao **83º lugar de um total de 241.837 inscritos**[^32] para o cargo de EPPGG no bloco.[^33] O **Curso de Formação**, etapa final e eliminatória do concurso, foi realizado pela **Escola Nacional de Administração Pública (Enap) em Brasília**, abordando temas como ética, direitos humanos, planejamento governamental e finanças públicas.[^31] Higa foi aprovado no curso de formação com **nota 92,56 — a oitava maior da turma** —, conforme resultado publicado no **Diário Oficial da União em 26 de maio de 2026**.[^34]
+As listas de classificação do CNU indicam **pontuação final de 87,50** para Higa, correspondendo ao **83º lugar de um total de 241.837 inscritos**[^32] para o cargo de EPPGG no bloco.[^33] O **Curso de Formação**, etapa final e eliminatória do concurso, foi realizado pela **Escola Nacional de Administração Pública (Enap) em Brasília**, abordando temas como ética, direitos humanos, planejamento governamental e finanças públicas.[^31] Higa foi aprovado no curso de formação com **nota 92,56, a oitava maior da turma**, conforme resultado publicado no **Diário Oficial da União em 26 de maio de 2026**.[^34]
+
+Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital nº 92, de 9 de junho de 2026**, do Ministério da Gestão e da Inovação em Serviços Públicos, **homologou o resultado final do concurso**. Higa consta entre os candidatos **aprovados dentro do número de vagas** para o cargo de EPPGG no MGI (código B7-09-E), com **nota final de 180,06** e a **4ª colocação na ampla concorrência** de sua lista de classificação.[^43]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 3: Marcos da transição para o setor público">
 <table class="analysis-table">
@@ -150,8 +156,9 @@ As listas de classificação do CNU indicam **pontuação final de 87,50** para 
 </thead>
 <tbody>
 <tr><td>Ago/2024 – Out/2025</td><td>Prefeitura de São Paulo (SME)</td><td>Analista (APPGG) / Assessor II</td><td>Gestão na UPGE; remodelagem do PDE com foco na redução de desigualdades de aprendizagem.</td></tr>
-<tr><td>Nov/2025 – Dez/2025</td><td>Prefeitura de São Paulo (SME)</td><td>Assessor V, Ref. CDA-5 (Gabinete)</td><td>Assessoria direta ao Gabinete da Secretaria; consolidação de painéis de dados para o Planejamento 2026-2029.</td></tr>
-<tr><td>Jan/2026 – presente</td><td>Governo do Brasil (MGI/Enap)</td><td>Aprovado no curso de formação (EPPGG)</td><td>Aprovação no CNU com nota 87,50 e conclusão do Curso de Formação para a carreira de gestor governamental em Brasília.</td></tr>
+<tr><td>Nov/2025 – Jan/2026</td><td>Prefeitura de São Paulo (SME)</td><td>Assessor V, Ref. CDA-5 (Gabinete)</td><td>Assessoria direta ao Gabinete da Secretaria; consolidação de painéis de dados para o Planejamento 2026-2029.</td></tr>
+<tr><td>Jan/2026 – Jun/2026</td><td>Governo do Brasil (MGI/Enap)</td><td>Aprovado no CNU (EPPGG)</td><td>Conclusão do Curso de Formação em Brasília; resultado final homologado pelo Edital nº 92/2026, dentro do número de vagas, com nota final de 180,06.</td></tr>
+<tr><td>Jun/2026</td><td>Prefeitura de São Paulo (CGM)</td><td>Auditor Municipal de Controle Interno (nomeado)</td><td>Nomeação publicada no Diário Oficial da Cidade em 10/06/2026, em 9º lugar na lista geral (área Geral).</td></tr>
 </tbody>
 </table>
 </div>
@@ -160,12 +167,12 @@ As listas de classificação do CNU indicam **pontuação final de 87,50** para 
 
 A trajetória de Paulo Higa abrange **duas fases distintas**. Na mídia, atuou como redator no **TechTudo (Globo.com) entre 2010 e 2012**, e no **Tecnoblog de 2012 a 2023**, onde exerceu as funções de **editor, editor-executivo, head de operações e sócio**. Foi também **colunista de tecnologia na Rádio Globo (2018–2019)**, com foco na comunicação de temas técnicos para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e operacional, e recebeu reconhecimento do setor.
 
-Na administração pública, atuou como **APPGG e Assessor de Gabinete na Secretaria Municipal de Educação de São Paulo (2024–2025)**, com participação em projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **CNU** e no curso de formação da **Enap** para a carreira de **EPPGG, em Brasília**. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
+Na administração pública, atuou como **APPGG e Assessor de Gabinete na Secretaria Municipal de Educação de São Paulo (2024–2025)**, com participação em projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **CNU**, com resultado final homologado em junho[^43], e no curso de formação da **Enap** para a carreira de **EPPGG, em Brasília**, além de ter sido **nomeado Auditor Municipal de Controle Interno (AMCI)** na **Controladoria Geral do Município de São Paulo**[^44]. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
 
 ## 7. Referências
 {:.references-heading}
 
-Relatório elaborado em maio de 2026, consolidando dados biográficos, registros de mídia e documentos oficiais.
+Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando dados biográficos, registros de mídia e documentos oficiais.
 {:.references-note}
 
 [^1]: Carreira de EPPGG – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
@@ -251,3 +258,9 @@ Relatório elaborado em maio de 2026, consolidando dados biográficos, registros
 [^41]: Classificação Final – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
 
 [^42]: Relação de Inscritos – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
+
+[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do Resultado Final do CNU para o cargo de EPPGG (DOU, 10/06/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+
+[^44]: Diário Oficial da Cidade de São Paulo – Nomeação de Auditor Municipal de Controle Interno (10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+
+[^45]: Carreira de Auditor Municipal de Controle Interno (AMCI) – Controladoria Geral do Município. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)

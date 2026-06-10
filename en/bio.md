@@ -1,14 +1,14 @@
 ---
 layout: default
-last_modified: 2026-06-04
+last_modified: 2026-06-10
 permalink: /en/bio
 lang: en
 view: full
 ---
 
-**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He passed the training course for the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career of the **Government of Brazil**[^34]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as a **Cabinet Advisor**[^2] at the **Municipal Secretariat of Education (SME)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, most notably the modeling of learning and equity criteria for the new **Educational Performance Award (PDE)**[^4].
+**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He completed the training course for the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career track in **Brazil's federal civil service**[^34]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as an **Advisor to the Secretary's Office**[^2] at the **Municipal Department of Education (SME, in the Portuguese acronym)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, most notably the modeling of learning and equity criteria for the new **Educational Performance Bonus (PDE)**[^4].
 
-Before entering public administration, Higa built his career in digital media as **executive editor, head of operations, and partner at Tecnoblog**, Brazil's largest independent technology website[^5]. During his tenure at the outlet **from 2012 to 2023**, he helped expand the audience to **over 30 million monthly pageviews**. Recognized for his consumer electronics reviews and as co-host of the **Tecnocast** podcast[^6], he won the **Especialistas Award for three consecutive years (2020, 2021, and 2022)**[^7] and was a finalist for the **Comunique-se Award**[^8]. He holds a **degree in Journalism from Faculdade Cásper Líbero** and an **MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV)**.
+Before entering public administration, Higa built his career in digital media as **executive editor, head of operations, and partner at Tecnoblog**, Brazil's largest independent technology website[^5]. During his tenure at the outlet **from 2012 to 2023**, he helped expand the audience to **over 30 million monthly pageviews**. Recognized for his consumer electronics reviews and as co-host of the **Tecnocast** podcast[^6], he won the **Especialistas Award for three consecutive years (2020, 2021, and 2022)**[^7] and was a finalist for the **Comunique-se Award**[^8]. He holds a **degree in Journalism from Faculdade Cásper Líbero**, a journalism school in São Paulo, and an **MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV)**, one of Brazil's leading business schools.
 
 <nav class="toc" aria-label="Table of Contents" markdown="1">
 
@@ -24,19 +24,19 @@ Before entering public administration, Higa built his career in digital media as
 
 ### 1.1 Early Life and Initial Career
 
-Born on **April 15, 1993**, in the province of **Chiba, Japan**,[^9][^10] Paulo Higa grew up in Brazil with early exposure to technology. In interviews, he described his interest from a young age in **reverse engineering**, dismantling watches to understand how they worked.[^10]
+Born on **April 15, 1993**, in **Chiba Prefecture, Japan**,[^9][^10] Paulo Higa grew up in Brazil with early exposure to technology. In interviews, he described his interest from a young age in **reverse engineering**, dismantling watches to understand how they worked.[^10]
 
 His entry into the digital world came through active participation in internet discussion forums. Before joining Tecnoblog, Higa managed the blog **"Guia do PC"**[^11] and contributed to **TechTudo**, where he was described as a Computer Science student and technology enthusiast.[^12]
 
 ### 1.2 Academic Background
 
-In **2011**, he enrolled in the **Bachelor of Science and Technology (BC&T)** program at the **Federal University of ABC (UFABC)**, an interdisciplinary entry-level program, intending to complete the credits required for a double degree with the Bachelor of Computer Science.[^10][^12] He later redirected his education toward **Journalism**, graduating from **Faculdade Cásper Líbero in 2017**.[^9] His undergraduate capstone project was **PodPods**, a five-episode podcast that interviewed podcasters of the time, portrayed the medium's landscape in 2017, and pointed to future trends.[^35] He later completed an **MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV)** in **2022**.[^9]
+In **2011**, he enrolled in the **Bachelor of Science and Technology (BC&T)**, an interdisciplinary foundation program at the **Federal University of ABC (UFABC)**, in Greater São Paulo, intending to complete the credits required for a dual degree including a bachelor's in Computer Science.[^10][^12] He later redirected his education toward **Journalism**, graduating from **Faculdade Cásper Líbero in 2017**.[^9] His undergraduate capstone project was **PodPods**, a five-episode podcast that interviewed podcasters of the time, portrayed the medium's landscape in 2017, and pointed to future trends.[^35] He later completed an **MBA in Management with an Emphasis on Leadership and Innovation at Fundação Getulio Vargas (FGV)** in **2022**.[^9]
 
 ### 1.3 Road Running and Other Hobbies
 
-His leisure activities include cooking and road running. Running is the more frequent of the two: since he started training, Higa has recorded at least one long-distance race entry per year.
+His leisure activities include cooking and road running. Running is the more frequent of the two: since he started training, Higa has taken part in at least one long-distance race every year.
 
-His first marathon (42.195 km) was the **Maratona Monumental de Brasília in 2021**, followed by races of the same distance in Rio de Janeiro, São Paulo, Curitiba, New York City, and Porto Alegre. In 2023, he also completed the **Paraty Brazil by UTMB**, a trail-running ultramarathon of **55 km with 2,682 meters of elevation gain**. The table below lists the marathons and ultramarathons he has run so far.
+His first marathon (42.195 km, or 26.2 miles) was the **Maratona Monumental de Brasília in 2021**, followed by races of the same distance in Rio de Janeiro, São Paulo, Curitiba, New York City, and Porto Alegre. In 2023, he also completed the **Paraty Brazil by UTMB**, a trail-running ultramarathon of **55 km with 2,682 meters of elevation gain** (about 34 miles and 8,800 feet). The table below lists the marathons and ultramarathons he has run so far.
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 1: Completed marathons and ultramarathons">
 <table class="analysis-table races-table">
@@ -45,16 +45,16 @@ His first marathon (42.195 km) was the **Maratona Monumental de Brasília in 202
 <tr><th scope="col">Race</th><th scope="col">Date</th><th scope="col">Distance</th><th scope="col">Time</th></tr>
 </thead>
 <tbody>
-<tr><td><strong><a href="https://brlive.info/brlive/brlive-bsb1.html?f=resultados/bsb/monumentao2021.bsb.clax">Maratona Monumental de Brasília 2021</a></strong></td><td class="race-num">10/10/2021</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/6092532552">4:04:06</a></td></tr>
-<tr><td><a href="https://marathonview.net/result/67061482">Maratona do Rio 2022</a></td><td class="race-num">19/06/2022</td><td class="race-num">42 km</td><td class="race-num"><strong><a href="https://www.strava.com/activities/7334316763">3:57:27</a></strong></td></tr>
-<tr><td><a href="https://resultados.runking.com.br/iguana-sports/sp-city-marathon-2023/13415">SP City Marathon 2023</a></td><td class="race-num">30/07/2023</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/9549924330">4:16:11</a></td></tr>
-<tr><td><strong><a href="https://utmb.world/utmb-index/races/35708.paratybyutmbparatytrailrun55.2023">Paraty Brazil by UTMB 2023</a></strong></td><td class="race-num">22/09/2023</td><td class="race-num"><abbr title="55 km with 2,682 m of elevation gain">55 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/9907987928">14:19:09</a></td></tr>
-<tr><td><a href="https://results.nyrr.org/event/M2023/result/26602">New York City Marathon 2023</a></td><td class="race-num">05/11/2023</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/10167569831">4:07:13</a></td></tr>
-<tr><td><a href="https://eventos.chiptiming.com.br/resultados/2024/maratonadecuritiba2024/atletas/1305">Maratona de Curitiba 2024</a></td><td class="race-num">17/11/2024</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/12921519708">4:14:09</a></td></tr>
-<tr><td><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/608862">Maratona do Rio 2025</a></td><td class="race-num">22/06/2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/14881030456">4:07:12</a></td></tr>
-<tr><td><strong><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/60886">Desafio Cidade Maravilhosa 2025</a></strong></td><td class="race-num">21–22/06/2025</td><td class="race-num"><abbr title="63 km, combining a 21 km and a 42 km on consecutive days">63 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/9907987928">6:59:15</a></td></tr>
-<tr><td><a href="https://resultados.runking.com.br/iguana-sports/on-sp-city-marathon-2025/24476">SP City Marathon 2025</a></td><td class="race-num">27/07/2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/15253361589">4:13:32</a></td></tr>
-<tr><td><a href="https://maratonadeportoalegre.runking.com.br/results/athlete/7183">Maratona de Porto Alegre 2026</a></td><td class="race-num">31/05/2026</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/18729627451">4:19:31</a></td></tr>
+<tr><td><strong><a href="https://brlive.info/brlive/brlive-bsb1.html?f=resultados/bsb/monumentao2021.bsb.clax">Maratona Monumental de Brasília 2021</a></strong></td><td class="race-num">Oct 10, 2021</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/6092532552">4:04:06</a></td></tr>
+<tr><td><a href="https://marathonview.net/result/67061482">Maratona do Rio 2022</a></td><td class="race-num">Jun 19, 2022</td><td class="race-num">42 km</td><td class="race-num"><strong><a href="https://www.strava.com/activities/7334316763">3:57:27</a></strong></td></tr>
+<tr><td><a href="https://resultados.runking.com.br/iguana-sports/sp-city-marathon-2023/13415">SP City Marathon 2023</a></td><td class="race-num">Jul 30, 2023</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/9549924330">4:16:11</a></td></tr>
+<tr><td><strong><a href="https://utmb.world/utmb-index/races/35708.paratybyutmbparatytrailrun55.2023">Paraty Brazil by UTMB 2023</a></strong></td><td class="race-num">Sep 22, 2023</td><td class="race-num"><abbr title="55 km with 2,682 m of elevation gain">55 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/9907987928">14:19:09</a></td></tr>
+<tr><td><a href="https://results.nyrr.org/event/M2023/result/26602">New York City Marathon 2023</a></td><td class="race-num">Nov 5, 2023</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/10167569831">4:07:13</a></td></tr>
+<tr><td><a href="https://eventos.chiptiming.com.br/resultados/2024/maratonadecuritiba2024/atletas/1305">Maratona de Curitiba 2024</a></td><td class="race-num">Nov 17, 2024</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/12921519708">4:14:09</a></td></tr>
+<tr><td><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/608862">Maratona do Rio 2025</a></td><td class="race-num">Jun 22, 2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/14881030456">4:07:12</a></td></tr>
+<tr><td><strong><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/60886">Desafio Cidade Maravilhosa 2025</a></strong></td><td class="race-num">Jun 21–22, 2025</td><td class="race-num"><abbr title="63 km, combining a 21 km and a 42 km on consecutive days">63 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/9907987928">6:59:15</a></td></tr>
+<tr><td><a href="https://resultados.runking.com.br/iguana-sports/on-sp-city-marathon-2025/24476">SP City Marathon 2025</a></td><td class="race-num">Jul 27, 2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/15253361589">4:13:32</a></td></tr>
+<tr><td><a href="https://maratonadeportoalegre.runking.com.br/results/athlete/7183">Maratona de Porto Alegre 2026</a></td><td class="race-num">May 31, 2026</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/18729627451">4:19:31</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -69,7 +69,7 @@ In **2018**, he became a **partner in the venture**,[^10] also holding the title
 
 ### 2.2 Head of Operations
 
-Between **2018 and 2023**, also serving as **Head of Operations**, Higa was responsible for the technical and commercial viability of Tecnoblog. The portal reached **more than 30 million monthly pageviews**,[^5][^15] making it **one of Brazil's largest independent technology sites**. The role covered traffic and SEO management, leadership of distributed teams, and operation of the programmatic advertising ecosystem and branded content projects.
+Between **2018 and 2023**, also serving as **Head of Operations**, Higa was responsible for the technical and commercial viability of Tecnoblog. The site reached **more than 30 million monthly pageviews**,[^5][^15] making it **one of Brazil's largest independent technology sites**. The role covered traffic and SEO management, leadership of distributed teams, and operation of the programmatic advertising ecosystem and branded content projects.
 
 ### 2.3 Tecnocast
 
@@ -79,9 +79,9 @@ By the time of his graduation, Higa was already co-host of **Tecnocast**, which 
 
 Following his departure, some listeners posted reviews on Apple Podcasts noting perceived changes to the program, citing a lack of in-depth technical analysis.[^6] These reflect the views of part of the audience and do not represent an objective evaluation of the program's editorial quality.
 
-### 2.4 Analysis Methodology
+### 2.4 Review Methodology
 
-Higa's written output at Tecnoblog included explanatory articles on industry standards widely referenced in Portuguese. A distinctive feature of his reviews was the **integration with real-world use**: by running 42 km with a smartwatch, his analysis of GPS accuracy or battery life incorporated data from extended use.[^19] He also covered events in **more than 10 countries**, including trade fairs such as the **Mobile World Congress (MWC, in Barcelona)**, the **Consumer Electronics Show (CES, in Las Vegas** — having signaled the 2022 edition as his last) and **Apple's Worldwide Developers Conference (WWDC)**, as well as launches by manufacturers such as Samsung and Huawei and the Snapdragon Tech Summit in Hawaii; part of these trips was documented in behind-the-scenes vlogs.[^38]
+Higa's written output at Tecnoblog included explanatory articles on industry standards that became widely cited in Portuguese-language media. A distinctive feature of his reviews was the **integration with real-world use**: by running 42 km with a smartwatch, his analysis of GPS accuracy or battery life incorporated data from extended use.[^19] He also covered events in **more than 10 countries**, including trade fairs such as the **Mobile World Congress (MWC, in Barcelona)**, the **Consumer Electronics Show (CES, in Las Vegas**, where he flagged the 2022 edition as his last) and **Apple's Worldwide Developers Conference (WWDC)**, as well as launches by manufacturers such as Samsung and Huawei and the Snapdragon Tech Summit in Hawaii; several of these trips were documented in behind-the-scenes vlogs.[^38]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 2: Thematic analysis of editorial output">
 <table class="analysis-table">
@@ -100,47 +100,53 @@ Higa's written output at Tecnoblog included explanatory articles on industry sta
 </table>
 </div>
 
-### 2.5 Radio Media Presence
+### 2.5 Radio Appearances
 
-In **2017**, while still a journalism student and an editor at Tecnoblog, Higa was invited to take part in the program **CBN Gerações, on Rádio CBN**, alongside engineer and columnist **B. Piropo**, author of the column "Trilha Zero" in the newspaper O Globo between 1991 and 2005. The program proposed an intergenerational dialogue about technology. On that occasion, Higa argued that the **greatest advances in artificial intelligence would come not in decades, but in just a few years**, and that technology would transform not only games — as illustrated by AlphaGo, Google's system that had recently defeated the world Go champion — but also health, education, and the way people work and think.[^40] **The prediction proved accurate**: between 2022 and 2023, large language models such as ChatGPT and generative AI systems broadly reshaped these areas. Higa also identified the decline of the traditional PC in favor of the smartphone as the primary device for internet access. The appearance foreshadowed his work as a **technology columnist on Rádio Globo, between 2018 and 2019**.
+In **2017**, while still a journalism student and an editor at Tecnoblog, Higa was invited to take part in the program **CBN Gerações**, on **CBN, a leading Brazilian news radio network**, alongside engineer and columnist **B. Piropo**, author of the column "Trilha Zero" in the major Brazilian newspaper O Globo between 1991 and 2005. The program was conceived as an intergenerational dialogue about technology. On that occasion, Higa argued that the **greatest advances in artificial intelligence would come not in decades, but in just a few years**, and that technology would transform not only games, as illustrated by AlphaGo, Google's system that had recently defeated the world Go champion, but also health, education, and the way people work and think.[^40] **The prediction proved accurate**: between 2022 and 2023, large language models such as ChatGPT and generative AI systems broadly reshaped these areas. Higa also identified the decline of the traditional PC in favor of the smartphone as the primary device for internet access. The appearance foreshadowed his work as a **technology columnist on Rádio Globo, between 2018 and 2019**.
 
 ### 2.6 Industry Recognition
 
-Higa received the **Prêmio Especialistas da Revista Negócios da Comunicação**[^7] in the Consumer Electronics category for **three consecutive years: 2020, 2021, and 2022**. He was also a finalist for the **Prêmio Comunique-se**[^8], considered the **"Oscar of Brazilian Journalism"**[^8], in the Technology category in **2019 and 2021**.
+Higa received the **Especialistas Award**, from the Brazilian trade magazine **Negócios da Comunicação**,[^7] in the Consumer Electronics category for **three consecutive years: 2020, 2021, and 2022**. He was also a finalist for the **Comunique-se Award**[^8], considered the **"Oscar of Brazilian Journalism"**[^8], in the Technology category in **2019 and 2021**.
 
 ## 3. The Sabbatical Period (2023–2024)
 
 ### 3.1 Departure from Tecnoblog
 
-In **2023**, Paulo Higa closed his chapter at Tecnoblog, stepping down from his positions as **Executive Editor and Head of Operations**. **His departure was discreet.** Readers reacted with speculation, creating forum threads asking "What happened to Paulo Higa?".[^20] Responses from former colleagues confirmed he was taking **"a sabbatical year."** The decision to withdraw completely contrasts with the norm of constant visibility in the digital ecosystem.
+In **2023**, Paulo Higa closed his chapter at Tecnoblog, stepping down from his positions as **Executive Editor and Head of Operations**. **His departure was low-key.** Readers reacted with speculation, creating forum threads asking "What happened to Paulo Higa?".[^20] Responses from former colleagues confirmed he was taking **"a sabbatical year."** His decision to step away entirely contrasted with the expectation of constant visibility in the digital ecosystem.
 
-### 3.2 Digital Posture and Personal Interests
+### 3.2 Online Presence and Personal Interests
 
-Higa's posture during and after the sabbatical can be described as that of an **"anti-influencer."** His personal website, **higa.me**, remained minimalist, serving as a static résumé rather than an active blog. He explicitly stated he **does not use social media**, offering only an email form for contact. This choice reinforces his identity as a journalist and manager — roles that require detachment and analysis, as opposed to the internet personality who depends on algorithmic engagement.
+Higa's public stance during and after the sabbatical can be described as that of an **"anti-influencer."** His personal website, **higa.me**, remained minimalist, serving as a static résumé rather than an active blog. He explicitly stated he **does not use social media**, offering only an email form for contact. This choice reinforces his identity as a journalist and manager, roles that require detachment and analysis, as opposed to the internet personality who depends on algorithmic engagement.
 
-During this period, Higa dedicated himself to personal interests: **long-distance running**, accumulating **more than 12,000 km recorded**,[^21] with participation in races such as the **Paraty Trail Run (55 km, September 2023)**,[^22] as well as an interest in wines and cooking.
+During this period, Higa dedicated himself to personal interests: **long-distance running**, accumulating **more than 12,000 km (about 7,500 miles) recorded**,[^21] with participation in races such as the **Paraty Trail Run (55 km, September 2023)**,[^22] as well as an interest in wine and cooking.
 
-## 4. The Transition to the Public Sector: São Paulo City Hall (2024–2025)
+## 4. The Transition to the Public Sector: São Paulo City Hall (2024–2026)
 
 ### 4.1 Entry into Municipal Management
 
-In **2024**, after passing the civil service exam[^23] in **19th place**, with a final score of **213.89**,[^41] among **7,760 registered candidates**,[^42] Higa took on the role of **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall**,[^24] assigned to the **Strategic Planning and Management Unit (UPGE)** of the **Municipal Secretariat of Education (SME)**. He was later appointed as a **Cabinet Advisor to the Secretariat**.[^25]
+In **2024**, after placing **19th** among **7,760 applicants**[^42] in a civil service exam,[^23] with a final score of **213.89**,[^41] Higa joined **São Paulo City Hall**[^24] as a **Public Policy and Government Management Analyst (APPGG)**, assigned to the **Strategic Planning and Management Unit (UPGE)** of the **Municipal Department of Education (SME)**. He was later appointed as an **Advisor to the Secretary's Office**.[^25]
 
-### 4.2 Redesigning the Educational Performance Award (PDE)
+### 4.2 Redesigning the Educational Performance Bonus (PDE)
 
-At the SME, Higa contributed to modeling the criteria for the **Educational Performance Award (PDE)**,[^4] a revised model that prioritized **payment based on improved student learning outcomes and reduction of inequalities**. He also developed a **payment simulator**[^3] that let the roughly **80,000 municipal employees** calculate the amounts they would receive.
+At the SME, Higa contributed to modeling the criteria for the **Educational Performance Bonus (PDE)**,[^4] a revised model that prioritized **payment based on improved student learning outcomes and reduction of inequalities**. He also developed a **payment simulator**[^3] that allowed the school network's roughly **80,000 employees** to estimate how much they would receive.
 
-Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions held with the municipal network's professionals. Successive appointments published in the Official Gazette document his progression through the secretariat's roles.[^24][^29][^2][^25]
+Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions with staff across the municipal school network. Successive appointments published in the Official Gazette document his progression through the department's roles.[^24][^29][^2][^25]
+
+### 4.3 Appointment to the Office of the Comptroller General of the City of São Paulo (2026)
+
+On **June 10, 2026**, the **City of São Paulo's Official Gazette** published **Higa's appointment to the permanent position of Auditor Municipal de Controle Interno (AMCI, the city's internal control auditor career), Level I, General area**, after he placed **9th on the general list** of the corresponding civil service exam.[^44] AMCI positions are based at the **Office of the Comptroller General of the City of São Paulo (CGM-SP)**, the body responsible for internal control, auditing, disciplinary oversight, ombudsman activities, and the promotion of integrity and transparency in the municipal administration.[^45]
 
 ## 5. The Federal Career: The Unified National Civil Service Exam (2026)
 
-### 5.1 The "ENEM of Civil Service Exams" and the EPPGG Career
+### 5.1 Brazil's Unified National Civil Service Exam and the EPPGG Career
 
 In **2026**, Higa passed the **Unified National Civil Service Exam (CNU)**[^30] for the position of **Specialist in Public Policy and Government Management (EPPGG)**, linked to the **Ministry of Management and Innovation in Public Services (MGI)**. The EPPGG career[^1] is responsible for formulating, implementing, and evaluating public policies within the Federal Executive Branch, with assignments across various areas of government.[^31]
 
-### 5.2 Performance and Training at Enap
+### 5.2 Performance, Training at Enap, and Certification of the Final Results
 
-Classification lists for the CNU indicate a **final score of 87.50** for Higa, corresponding to **83rd place out of a total of 241,837 applicants**[^32] for the EPPGG position in his block.[^33] The **Training Course**, the final and eliminatory stage of the exam, was held by the **National School of Public Administration (Enap) in Brasília**, covering topics such as ethics, human rights, government planning, and public finances.[^31] Higa passed the training course with a **score of 92.56 — the eighth highest in his class** — as published in the **Official Gazette of the Union (DOU) on May 26, 2026**.[^34]
+Classification lists for the CNU indicate a **final score of 87.50** for Higa, corresponding to **83rd place out of a total of 241,837 applicants**[^32] for the EPPGG position in his block.[^33] The **Training Course**, the final, pass-or-fail stage of the exam, was held by the **National School of Public Administration (Enap) in Brasília**, covering topics such as ethics, human rights, government planning, and public finances.[^31] Higa passed the training course with a **score of 92.56, the eighth highest in his class**, as published in **Brazil's federal Official Gazette (Diário Oficial da União, DOU) on May 26, 2026**.[^34]
+
+The final results were certified by **Notice (Edital) No. 92, of June 9, 2026**, issued by the Ministry of Management and Innovation in Public Services and published in the **federal Official Gazette on June 10, 2026**. Higa is listed **among the candidates who secured one of the available positions** for the EPPGG role at the MGI (position code B7-09-E), with a **final score of 180.06** and **4th place in the open competition ranking** of his classification list.[^43]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 3: Milestones of the public sector transition">
 <table class="analysis-table">
@@ -150,22 +156,23 @@ Classification lists for the CNU indicate a **final score of 87.50** for Higa, c
 </thead>
 <tbody>
 <tr><td>Aug/2024 – Oct/2025</td><td>São Paulo City Hall (SME)</td><td>Analyst (APPGG) / Advisor II</td><td>Management at UPGE; redesign of the PDE focused on reducing learning inequalities.</td></tr>
-<tr><td>Nov/2025 – Dec/2025</td><td>São Paulo City Hall (SME)</td><td>Advisor V, Ref. CDA-5 (Secretary's Office)</td><td>Direct advisory to the Secretary's Office; consolidation of data dashboards for the 2026–2029 Strategic Planning.</td></tr>
-<tr><td>Jan/2026 – present</td><td>Government of Brazil (MGI/Enap)</td><td>Approved in the training course (EPPGG)</td><td>Approved in the CNU with a score of 87.50 and completion of the Training Course for the government manager career in Brasília.</td></tr>
+<tr><td>Nov/2025 – Jan/2026</td><td>São Paulo City Hall (SME)</td><td>Advisor V (Secretary's Office)</td><td>Direct advisory to the Secretary's Office; consolidation of data dashboards for the 2026–2029 Strategic Planning.</td></tr>
+<tr><td>Jan/2026 – Jun/2026</td><td>Government of Brazil (MGI/Enap)</td><td>Passed the CNU (EPPGG)</td><td>Completion of the Training Course in Brasília; final results certified by Notice No. 92/2026, within the available positions, with a final score of 180.06.</td></tr>
+<tr><td>Jun/2026</td><td>São Paulo City Hall (CGM)</td><td>Auditor Municipal de Controle Interno (appointed)</td><td>Appointment published in the City's Official Gazette on June 10, 2026, in 9th place on the general list (General area).</td></tr>
 </tbody>
 </table>
 </div>
 
 ## 6. Biographical Summary
 
-Paulo Higa's trajectory spans **two distinct phases**. In media, he worked as a reporter at **TechTudo (Globo.com) from 2010 to 2012**, and at **Tecnoblog from 2012 to 2023**, serving as **editor, executive editor, head of operations, and partner**. He also served as a **technology columnist on Rádio Globo (2018–2019)**, focused on communicating technical topics to broad audiences. During this period, he combined journalistic production, editorial and operational management, and received industry recognition.
+Paulo Higa's career spans **two distinct phases**. In media, he worked as a reporter at **TechTudo (Globo.com) from 2010 to 2012**, and at **Tecnoblog from 2012 to 2023**, serving as **editor, executive editor, head of operations, and partner**. He also served as a **technology columnist on Rádio Globo (2018–2019)**, focused on communicating technical topics to broad audiences. During this period, he combined journalistic production, editorial and operational management, and received industry recognition.
 
-In public administration, he served as an **APPGG and Cabinet Advisor at the São Paulo Municipal Secretariat of Education (2024–2025)**, contributing to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **CNU** and the **Enap** training course for the **EPPGG career, in Brasília**. For readers of his work at Tecnoblog, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
+In public administration, he served as an **APPGG and Advisor to the Secretary's Office at São Paulo's Municipal Department of Education (2024–2025)**, contributing to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **CNU**, whose final results were certified in June[^43], and completed the **Enap** training course for the **EPPGG career, in Brasília**; that same month, he was **appointed Auditor Municipal de Controle Interno (AMCI)** at the **Office of the Comptroller General of the City of São Paulo**[^44]. For readers of his work at Tecnoblog, Higa is associated with independent technical journalism; in public administration, his contribution is documented in Official Gazette records and in the tools developed at the SME.
 
 ## 7. References
 {:.references-heading}
 
-Report prepared in May 2026, consolidating biographical data, media records, and official documents.
+Report prepared in May 2026 and updated in June 2026, consolidating biographical data, media records, and official documents.
 {:.references-note}
 
 [^1]: EPPGG Career – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
@@ -251,3 +258,9 @@ Report prepared in May 2026, consolidating biographical data, media records, and
 [^41]: Final Ranking – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
 
 [^42]: List of Registered Candidates – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
+
+[^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU Final Results for the EPPGG position (DOU, 06/10/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+
+[^44]: São Paulo City Hall Official Gazette – Appointment as Auditor Municipal de Controle Interno (06/10/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+
+[^45]: Auditor Municipal de Controle Interno (AMCI) career – Office of the Comptroller General of the City of São Paulo. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
