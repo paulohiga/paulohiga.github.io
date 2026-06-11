@@ -1,14 +1,14 @@
 ---
 layout: default
-last_modified: 2026-06-10
+last_modified: 2026-06-11
 permalink: /bio
 lang: pt
 view: full
 ---
 
-**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Foi aprovado no curso de formação para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^34]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, destacando-se a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
+**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Foi aprovado no curso de formação para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^34]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, entre eles a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
 
-Antes de ingressar na administração pública, Higa consolidou sua carreira na mídia digital como **editor-executivo, head de operações e sócio do Tecnoblog**, maior site de tecnologia independente do Brasil[^5]. Durante sua atuação no veículo **entre 2012 e 2023**, ajudou a expandir a audiência para **mais de 30 milhões de acessos mensais**. Reconhecido por suas análises de produtos eletrônicos e como coapresentador do podcast **Tecnocast**[^6], venceu o **Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)**[^7] e foi finalista do **Prêmio Comunique-se**[^8]. É graduado em **Jornalismo pela Faculdade Cásper Líbero** e possui **MBA em Gestão com Ênfase em Liderança e Inovação pela Fundação Getulio Vargas (FGV)**.
+Antes de ingressar na administração pública, Higa consolidou sua carreira na mídia digital como **editor-executivo, head de operações e sócio do Tecnoblog**, maior site de tecnologia independente do Brasil[^5]. Durante sua atuação no veículo **entre 2012 e 2023**, o site atingiu **mais de 30 milhões de acessos mensais**.[^5][^15] Autor de mais de 400 análises de produtos eletrônicos[^13] e coapresentador do podcast **Tecnocast**[^6], venceu o **Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)**[^7] e foi finalista do **Prêmio Comunique-se**[^8]. É graduado em **Jornalismo pela Faculdade Cásper Líbero** e possui **MBA em Gestão com Ênfase em Liderança e Inovação pela Fundação Getulio Vargas (FGV)**.
 
 <nav class="toc" aria-label="Índice" markdown="1">
 
@@ -24,7 +24,7 @@ Antes de ingressar na administração pública, Higa consolidou sua carreira na 
 
 ### 1.1 Origem e Trajetória Inicial
 
-Nascido em **15 de abril de 1993**, na província de **Chiba, Japão**,[^9][^10] Paulo Higa cresceu no Brasil com exposição à tecnologia desde cedo. Em entrevistas, relatou ter interesse desde jovem pela **engenharia reversa**, desmontando relógios para compreender seu funcionamento interno.[^10]
+Nascido em **15 de abril de 1993**, na província de **Chiba, Japão**,[^9][^10] Paulo Higa cresceu no Brasil. Em entrevistas, relatou ter interesse desde jovem pela **engenharia reversa**, desmontando relógios para compreender seu funcionamento interno.[^10]
 
 A sua inserção no mundo digital ocorreu através da participação ativa em fóruns de discussão na internet. Antes de ingressar no Tecnoblog, Higa administrava o blog **"Guia do PC"**[^11] e colaborava com o **TechTudo**, onde era descrito como estudante de Ciência da Computação e entusiasta de tecnologia.[^12]
 
@@ -34,7 +34,7 @@ Em **2011**, ingressou no **Bacharelado em Ciência e Tecnologia (BC&T)** na **U
 
 ### 1.3 Corrida de Rua e Outros Hobbies
 
-Entre suas atividades de lazer estão a culinária e a corrida de rua. A corrida é a prática mais recorrente: desde que começou a treinar, Higa registrou pelo menos uma participação em prova de longa distância por ano.
+Entre suas atividades de lazer estão a culinária e a corrida de rua. A corrida é a prática mais recorrente: entre 2021 e 2026, Higa completou ao menos uma prova de longa distância por ano.[^21]
 
 Sua primeira maratona (42,195 km) foi a **Maratona Monumental de Brasília, em 2021**, seguida por provas da mesma distância no Rio de Janeiro, em São Paulo, em Curitiba, na cidade de Nova York e em Porto Alegre. Em 2023, completou também o **Paraty Brazil by UTMB**, uma ultramaratona de trail running de **55 km com 2.682 metros de ganho altimétrico**. A tabela a seguir relaciona as maratonas e ultramaratonas que disputou até o momento.
 
@@ -52,7 +52,7 @@ Sua primeira maratona (42,195 km) foi a **Maratona Monumental de Brasília, em 2
 <tr><td><a href="https://results.nyrr.org/event/M2023/result/26602">New York City Marathon 2023</a></td><td class="race-num">05/11/2023</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/10167569831">4:07:13</a></td></tr>
 <tr><td><a href="https://eventos.chiptiming.com.br/resultados/2024/maratonadecuritiba2024/atletas/1305">Maratona de Curitiba 2024</a></td><td class="race-num">17/11/2024</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/12921519708">4:14:09</a></td></tr>
 <tr><td><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/608862">Maratona do Rio 2025</a></td><td class="race-num">22/06/2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/14881030456">4:07:12</a></td></tr>
-<tr><td><strong><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/60886">Desafio Cidade Maravilhosa 2025</a></strong></td><td class="race-num">21–22/06/2025</td><td class="race-num"><abbr title="63 km, somando 21 km e 42 km em dias consecutivos">63 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/9907987928">6:59:15</a></td></tr>
+<tr><td><strong><a href="https://resultados.runking.com.br/maratona-do-rio/maratona-do-rio-2025/60886">Desafio Cidade Maravilhosa 2025</a></strong></td><td class="race-num">21–22/06/2025</td><td class="race-num"><abbr title="63 km, somando 21 km e 42 km em dias consecutivos">63 km</abbr></td><td class="race-num"><a href="https://www.strava.com/activities/14881030456">6:59:15</a></td></tr>
 <tr><td><a href="https://resultados.runking.com.br/iguana-sports/on-sp-city-marathon-2025/24476">SP City Marathon 2025</a></td><td class="race-num">27/07/2025</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/15253361589">4:13:32</a></td></tr>
 <tr><td><a href="https://maratonadeportoalegre.runking.com.br/results/athlete/7183">Maratona de Porto Alegre 2026</a></td><td class="race-num">31/05/2026</td><td class="race-num">42 km</td><td class="race-num"><a href="https://www.strava.com/activities/18729627451">4:19:31</a></td></tr>
 </tbody>
@@ -65,23 +65,19 @@ Sua primeira maratona (42,195 km) foi a **Maratona Monumental de Brasília, em 2
 
 Paulo Higa ingressou no **Tecnoblog em 2012** como editor. Ao longo de uma década, publicou milhares de artigos e conduziu **mais de 400 análises (*reviews*)** detalhadas de dispositivos, abrangendo desde smartphones e computadores até televisores e tecnologias vestíveis.[^13]
 
-Em **2018**, tornou-se **sócio do empreendimento**,[^10] acumulando o cargo de **Editor-Executivo**. Sob sua liderança editorial, a equipe se expandiu para **mais de 30 profissionais**,[^5] e Higa desempenhou papel central na definição da voz editorial do veículo. Sua gestão editorial privilegiava a **independência crítica em relação a fabricantes e anunciantes**.[^14] Essa abordagem crítica aparece em análises de fôlego sobre temas como a trajetória recente da Microsoft e a saga do Windows 10 Mobile, decisões antitruste envolvendo Google e União Europeia, a transição dos Macs para o Apple Silicon e o impacto de restrições comerciais dos EUA sobre a Huawei, entre outros.[^37]
+Em **2018**, tornou-se **sócio do empreendimento**,[^10] acumulando o cargo de **Editor-Executivo**. Nesse período, a equipe se expandiu para **mais de 30 profissionais**.[^5] O veículo mantinha política editorial de **independência em relação a fabricantes e anunciantes**.[^14] Essa abordagem aparece em análises aprofundadas sobre temas como a trajetória recente da Microsoft e a saga do Windows 10 Mobile, decisões antitruste envolvendo Google e União Europeia, a transição dos Macs para o Apple Silicon e o impacto de restrições comerciais dos EUA sobre a Huawei, entre outros.[^37]
 
 ### 2.2 Head de Operações
 
-Entre **2018 e 2023**, acumulando a função de **Head de Operações**, Higa foi responsável pela viabilidade técnica e comercial do Tecnoblog. O portal atingiu **mais de 30 milhões de acessos mensais**,[^5][^15] o que o tornava **um dos maiores sites independentes de tecnologia do Brasil**. A função abrangia gestão de tráfego e SEO, liderança de equipes distribuídas e operação do ecossistema de publicidade programática e projetos de marca.
+Entre **2018 e 2023**, acumulando a função de **Head de Operações**, Higa foi responsável pela viabilidade técnica e comercial do Tecnoblog.[^9] O portal atingiu **mais de 30 milhões de acessos mensais**,[^5][^15] o que o tornava **um dos maiores sites independentes de tecnologia do Brasil**. A função abrangia gestão de tráfego e SEO, liderança de equipes distribuídas e operação do ecossistema de publicidade programática e projetos de marca.
 
 ### 2.3 Tecnocast
 
-Como coapresentador do Tecnocast,[^16] Higa contribuiu para aprofundar o debate tecnológico do veículo. Enquanto o site cobria lançamentos de produtos, o podcast abordava temas como implicações geopolíticas da cadeia de suprimentos[^17] ou questões de privacidade em tecnologias emergentes.[^18]
-
-À época de sua graduação, Higa já era coapresentador do **Tecnocast**, que se consolidava como **um dos principais podcasts de tecnologia, inovação e negócios do Brasil**. Publicado em **2018**, o episódio **Tecnocast 100** narrou a história do Tecnoblog desde a sua fundação, incluindo o ingresso de Higa no site.[^36] Entre os episódios de que participou, destacam-se discussões sobre vazamento de dados, privacidade, geopolítica de chips, futuro do trabalho, a Lei Geral de Proteção de Dados (LGPD) e moeda digital.[^39]
-
-Após sua saída, alguns ouvintes registraram, em avaliações na Apple Podcasts, percepção de mudanças no programa, citando a falta de análises técnicas aprofundadas.[^6] Esses registros refletem a visão de parte da audiência e não representam necessariamente uma avaliação objetiva da qualidade editorial do programa.
+Como coapresentador do **Tecnocast**,[^16] **um dos principais podcasts de tecnologia, inovação e negócios do Brasil**, Higa participou de episódios sobre temas como implicações geopolíticas da cadeia de suprimentos,[^17] privacidade em tecnologias emergentes,[^18] vazamento de dados, geopolítica de chips, futuro do trabalho, a Lei Geral de Proteção de Dados (LGPD) e moeda digital.[^39] Publicado em **2018**, o episódio **Tecnocast 100** narrou a história do Tecnoblog desde a sua fundação, incluindo o ingresso de Higa no site.[^36]
 
 ### 2.4 Metodologia de Análise
 
-A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padrões industriais amplamente citados em língua portuguesa. Uma característica de seus *reviews* era a **integração com uso real**: ao correr 42 km com um relógio inteligente, a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso prolongado.[^19] Ele também cobriu eventos em **mais de 10 países**, incluindo feiras como o **Mobile World Congress (MWC, em Barcelona)**, a **Consumer Electronics Show (CES, em Las Vegas**, tendo sinalizado a edição de 2022 como sua última) e a **Worldwide Developers Conference (WWDC) da Apple**, além de lançamentos de fabricantes como Samsung e Huawei e do Snapdragon Tech Summit, no Havaí; parte dessas viagens foi documentada em vlogs de bastidores.[^38]
+A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padrões industriais. Uma característica de seus *reviews* era a **integração com uso real**: ao correr 42 km com um relógio inteligente, a análise sobre precisão do GPS ou duração de bateria incorporava dados de uso prolongado.[^19] Ele também cobriu eventos em **mais de 10 países**, incluindo feiras como o **Mobile World Congress (MWC, em Barcelona)**, a **Consumer Electronics Show (CES, em Las Vegas)** — tendo sinalizado a edição de 2022 como sua última — e a **Worldwide Developers Conference (WWDC) da Apple**, além de lançamentos de fabricantes como Samsung e Huawei e do Snapdragon Tech Summit, no Havaí; parte dessas viagens foi documentada em vlogs de bastidores.[^38]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 2: Análise temática da produção editorial">
 <table class="analysis-table">
@@ -102,33 +98,35 @@ A produção textual de Higa no Tecnoblog abrangia artigos explicativos de padr�
 
 ### 2.5 Presença na Mídia de Rádio
 
-Em **2017**, ainda estudante de jornalismo e editor do Tecnoblog, Higa foi convidado a participar do programa **CBN Gerações, da Rádio CBN**, ao lado do engenheiro e colunista **B. Piropo**, autor da coluna "Trilha Zero" no jornal O Globo entre 1991 e 2005. O programa propunha um diálogo intergeracional sobre tecnologia. Na ocasião, Higa defendeu que os **maiores avanços em inteligência artificial ocorreriam não em décadas, mas em poucos anos**, e que a tecnologia transformaria não apenas jogos, como ilustrava o AlphaGo, sistema do Google recém-vitorioso sobre o campeão mundial de Go, mas também saúde, educação e a forma como as pessoas trabalham e pensam.[^40] **A previsão mostrou-se precisa**: entre 2022 e 2023, modelos de linguagem de grande escala como o ChatGPT e sistemas de IA generativa remodelaram amplamente essas áreas. Higa também identificou o declínio do PC tradicional frente ao smartphone como principal dispositivo de acesso à internet. A participação antecipou sua atuação como **colunista de tecnologia na Rádio Globo, entre 2018 e 2019**.
+Em **2017**, ainda estudante de jornalismo e editor do Tecnoblog, Higa foi convidado a participar do programa **CBN Gerações, da Rádio CBN**, ao lado do engenheiro e colunista **B. Piropo**, autor da coluna "Trilha Zero" no jornal O Globo entre 1991 e 2005. O programa propunha um diálogo intergeracional sobre tecnologia. Na ocasião, Higa defendeu que os **maiores avanços em inteligência artificial ocorreriam não em décadas, mas em poucos anos**, e que a tecnologia transformaria não apenas jogos, como ilustrava o AlphaGo, sistema do Google recém-vitorioso sobre o campeão mundial de Go, mas também saúde, educação e a forma como as pessoas trabalham e pensam.[^40] Entre 2022 e 2023, modelos de linguagem de grande escala como o ChatGPT e sistemas de IA generativa alcançaram adoção em massa nessas áreas. Higa também identificou o declínio do PC tradicional frente ao smartphone como principal dispositivo de acesso à internet. A participação antecipou sua atuação como **colunista de tecnologia na Rádio Globo, entre 2018 e 2019**.[^15]
+
+Na **Rádio Globo**, Higa manteve uma **coluna semanal ao vivo no Café das Seis**, programa jornalístico matinal da emissora, transmitido simultaneamente pelas estações **FM 98,1 MHz, do Rio de Janeiro**, com os âncoras **Carolina Morand e Fernando Ceylão**, e **FM 94,1 MHz, de São Paulo**, com **Mariana Godoy e Marc Tawil**. Na coluna, era responsável pela definição e apresentação de pautas sobre **tecnologia, inovação e comportamento digital**, voltadas a um público amplo e não especializado, com a tradução de temas técnicos em linguagem acessível.[^48]
 
 ### 2.6 Reconhecimento da Indústria
 
-Higa recebeu o **Prêmio Especialistas da Revista Negócios da Comunicação**[^7] na categoria Eletroeletrônicos por **três anos consecutivos: 2020, 2021 e 2022**. Foi também finalista do **Prêmio Comunique-se**[^8], considerado o **"Oscar do Jornalismo Brasileiro"**[^8], na categoria Tecnologia em **2019 e 2021**.
+Higa recebeu o **Prêmio Especialistas da Revista Negócios da Comunicação**[^7] na categoria Eletroeletrônicos por **três anos consecutivos: 2020, 2021 e 2022**. Foi também finalista do **Prêmio Comunique-se**[^8], descrito pela organização como o **"Oscar do Jornalismo Brasileiro"**[^8], na categoria Tecnologia em **2019 e 2021**.[^46]
 
-## 3. O Período Sabático (2023–2024)
+## 3. Período Sabático (2023–2024)
 
 ### 3.1 Saída do Tecnoblog
 
-Em **2023**, Paulo Higa encerrou o seu ciclo no Tecnoblog, deixando os cargos de **Editor-Executivo e Head de Operações**. **A sua saída foi discreta.** Leitores reagiram com especulação, criando tópicos em fóruns questionando "O que houve com o Paulo Higa?".[^20] Ex-colegas confirmaram que se tratava de um **"ano sabático"**. A decisão de se retirar completamente contrasta com a norma de visibilidade constante do ecossistema digital.
+Em **2023**, Paulo Higa encerrou o seu ciclo no Tecnoblog, deixando os cargos de **Editor-Executivo e Head de Operações**. Higa não anunciou publicamente a saída: em tópico no fórum do site, leitores questionaram "O que houve com o Paulo Higa?", e ex-colegas informaram tratar-se de um **"ano sabático"**.[^20]
 
 ### 3.2 Postura Digital e Interesses Pessoais
 
-A postura de Higa durante e após o sabático pode ser descrita como a de um **"anti-influenciador"**. O seu site pessoal, **higa.me**, manteve-se minimalista, servindo como um currículo estático em vez de um blog ativo. Ele declarou explicitamente **não usar redes sociais**, oferecendo apenas um formulário de e-mail para contato. Esta escolha reforça a sua identidade como jornalista e gestor, papéis que exigem distanciamento e análise, em oposição à figura da personalidade de internet que depende do engajamento algorítmico.
+Durante e após o sabático, o seu site pessoal, **higa.me**, manteve-se minimalista, servindo como um currículo estático em vez de um blog ativo.[^9] Ele declarou **não usar redes sociais**, oferecendo apenas um formulário de e-mail para contato.[^9]
 
-Durante este período, Higa dedicou-se a interesses pessoais: a prática de **corrida de longa distância**, acumulando **mais de 12.000 km registrados**,[^21] com participação em provas como a **Paraty Trail Run de 55 km (setembro de 2023)**,[^22] além do interesse por vinhos e culinária.
+Durante este período, Higa dedicou-se a interesses pessoais: a prática de **corrida de longa distância**, acumulando **mais de 12.000 km registrados** até janeiro de 2026,[^21] com participação em provas como o **Paraty Brazil by UTMB, de 55 km (setembro de 2023)**,[^22] além do interesse por vinhos e culinária.
 
-## 4. A Transição para o Setor Público: A Prefeitura de São Paulo (2024–2026)
+## 4. Prefeitura de São Paulo (2024–2026)
 
-### 4.1 A Entrada na Gestão Municipal
+### 4.1 Entrada na Gestão Municipal
 
 Em **2024**, após ser aprovado em concurso público[^23] em **19º lugar**, com nota final de **213,89**,[^41] entre **7.760 candidatos inscritos**,[^42] Higa assumiu o cargo de **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo**,[^24] lotado na **Unidade de Planejamento e Gestão Estratégica (UPGE)** da **Secretaria Municipal de Educação (SME)**. Posteriormente foi nomeado **Assessor de Gabinete da Secretaria**.[^25]
 
-### 4.2 O Redesenho do Prêmio de Desempenho Educacional (PDE)
+### 4.2 Redesenho do Prêmio de Desempenho Educacional (PDE)
 
-Na SME, Higa participou da modelagem dos critérios do **Prêmio de Desempenho Educacional (PDE)**,[^4] cujo novo modelo priorizou **pagamento baseado na melhoria da aprendizagem dos alunos e na redução das desigualdades**. Higa também desenvolveu um **simulador de valores**[^3] que permitiu aos cerca de **80 mil servidores** da rede municipal calcular os valores a receber.
+Na SME, Higa participou da modelagem dos critérios do **Prêmio de Desempenho Educacional (PDE)**,[^4] cujo novo modelo priorizou **pagamento baseado na melhoria da aprendizagem dos alunos e na redução das desigualdades**. Higa também desenvolveu um **simulador de valores**[^3] que permitiu aos cerca de **88 mil educadores** da rede municipal calcular os valores a receber.
 
 Além do PDE, contribuiu com o **Planejamento Estratégico 2026-2029**,[^26] desenvolvendo painéis de dados[^27] e materiais de comunicação[^28] para os processos de escuta dos profissionais da rede municipal. Nomeações sucessivas publicadas no Diário Oficial documentam sua progressão de cargos na secretaria.[^24][^29][^2][^25]
 
@@ -136,11 +134,11 @@ Além do PDE, contribuiu com o **Planejamento Estratégico 2026-2029**,[^26] des
 
 Em **10 de junho de 2026**, o **Diário Oficial da Cidade de São Paulo** publicou a **nomeação de Higa para o cargo efetivo de Auditor Municipal de Controle Interno (AMCI), Nível I, na área Geral**, em decorrência de sua aprovação em **9º lugar na lista geral** do concurso público para a carreira.[^44] Os cargos de AMCI são lotados na **Controladoria Geral do Município de São Paulo (CGM-SP)**, órgão responsável pelas atividades de controle interno, auditoria, correição, ouvidoria e promoção da integridade e da transparência na administração municipal.[^45]
 
-## 5. A Carreira Federal: O Concurso Nacional Unificado (2026)
+## 5. Carreira Federal: Concurso Nacional Unificado (2026)
 
-### 5.1 O "ENEM dos Concursos" e a Carreira de EPPGG
+### 5.1 O CNU e a Carreira de EPPGG
 
-Em **2026**, Higa foi aprovado no **Concurso Nacional Unificado (CNU)**[^30] para o cargo de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculado ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)**. A carreira de EPPGG[^1] é responsável pela formulação, implementação e avaliação de políticas públicas no âmbito do Poder Executivo Federal, com atuação em diversas áreas de governo.[^31]
+Em **2026**, Higa foi aprovado no **Concurso Nacional Unificado (CNU)**,[^30] apelidado pela imprensa de **"Enem dos Concursos"**,[^47] para o cargo de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculado ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)**. A carreira de EPPGG[^1] é responsável pela formulação, implementação e avaliação de políticas públicas no âmbito do Poder Executivo Federal, com atuação em diversas áreas de governo.[^31]
 
 ### 5.2 Desempenho, Formação na Enap e Homologação do Resultado Final
 
@@ -165,9 +163,9 @@ Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital n�
 
 ## 6. Síntese Biográfica
 
-A trajetória de Paulo Higa abrange **duas fases distintas**. Na mídia, atuou como redator no **TechTudo (Globo.com) entre 2010 e 2012**, e no **Tecnoblog de 2012 a 2023**, onde exerceu as funções de **editor, editor-executivo, head de operações e sócio**. Foi também **colunista de tecnologia na Rádio Globo (2018–2019)**, com foco na comunicação de temas técnicos para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e operacional, e recebeu reconhecimento do setor.
+A trajetória de Paulo Higa abrange **duas fases distintas**. Na mídia, atuou como redator no **TechTudo (Globo.com) entre 2010 e 2012**, e no **Tecnoblog de 2012 a 2023**, onde exerceu as funções de **editor, editor-executivo, head de operações e sócio**. Foi também **colunista de tecnologia na Rádio Globo (2018–2019)**,[^15] com foco na comunicação de temas técnicos para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e operacional, e recebeu reconhecimento do setor.
 
-Na administração pública, atuou como **APPGG e Assessor de Gabinete na Secretaria Municipal de Educação de São Paulo (2024–2025)**, com participação em projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **CNU**, com resultado final homologado em junho[^43], e no curso de formação da **Enap** para a carreira de **EPPGG, em Brasília**, além de ter sido **nomeado Auditor Municipal de Controle Interno (AMCI)** na **Controladoria Geral do Município de São Paulo**[^44]. Para leitores de sua produção no Tecnoblog, Higa é associado ao jornalismo técnico independente; na administração pública, sua contribuição é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
+Na administração pública, Higa atuou por cerca de dois anos (2024–2026) como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** e **Assessor de Gabinete** na **Secretaria Municipal de Educação de São Paulo**, onde participou da modelagem do Prêmio de Desempenho Educacional (PDE) e de projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **Concurso Nacional Unificado (CNU)** e no curso de formação da **Enap, em Brasília**, ingressando na carreira federal de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculada ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)** — etapa que marca a continuidade de sua trajetória no setor público.[^43] No mesmo período, foi também nomeado **Auditor Municipal de Controle Interno** na Controladoria Geral do Município de São Paulo.[^44] Sua produção jornalística no Tecnoblog permanece disponível no arquivo do site;[^13] na administração pública, sua atuação é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
 
 ## 7. Referências
 {:.references-heading}
@@ -264,3 +262,9 @@ Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando
 [^44]: Diário Oficial da Cidade de São Paulo – Nomeação de Auditor Municipal de Controle Interno (10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
 [^45]: Carreira de Auditor Municipal de Controle Interno (AMCI) – Controladoria Geral do Município. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
+
+[^46]: Paulo Higa, do Tecnoblog, é indicado ao Prêmio Comunique-se 2021 – Terra. [terra.com.br](https://www.terra.com.br/noticias/tecnologia/paulo-higa-do-tecnoblog-e-indicado-ao-premio-comunique-se-2021,c4ac8599c6378e2e12601b4e648bfaf7muhnkd9j.html)
+
+[^47]: Concurso Nacional Unificado: o que é e como funcionou o "Enem dos Concursos" – Correio Braziliense (abr./2026). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); Agência Brasil: [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
+
+[^48]: Paulo Higa – LinkedIn. [linkedin.com/in/paulohiga](https://www.linkedin.com/in/paulohiga/)
