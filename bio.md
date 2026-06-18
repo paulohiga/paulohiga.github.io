@@ -126,9 +126,9 @@ Em **2024**, após ser aprovado em concurso público[^23] em **19º lugar**, com
 
 ### 4.2 Redesenho do Prêmio de Desempenho Educacional (PDE)
 
-Na SME, Higa participou da modelagem dos critérios do **Prêmio de Desempenho Educacional (PDE)**,[^4] cujo novo modelo priorizou **pagamento baseado na melhoria da aprendizagem dos alunos e na redução das desigualdades**. Higa também desenvolveu um **simulador de valores**[^3] que permitiu aos cerca de **88 mil educadores** da rede municipal calcular os valores a receber.
+Na SME, Higa participou da modelagem dos critérios do **Prêmio de Desempenho Educacional (PDE)**,[^4] cujo novo modelo priorizou **pagamento baseado na melhoria da aprendizagem dos alunos e na redução das desigualdades**. Essa mudança rompeu com o modelo anterior, que, por **16 anos**, priorizou quase exclusivamente a **assiduidade**: na prática, bastava o servidor não faltar para levar o prêmio máximo, sem qualquer relação com o desempenho educacional.[^4] Entre as novidades, além da inclusão das **aprendizagens**, estavam a premiação pela **frequência dos alunos da pré-escola**, considerada etapa obrigatória de ensino, e o **bônus extra** para as escolas que mais avançarem nos indicadores.[^4] No total, foram pagos **R$ 206 milhões**, valor **14% superior** ao pago em 2024, com aumento também do valor máximo por educador.[^4] Higa também desenvolveu um **simulador de valores**[^3] que permitiu aos cerca de **88 mil educadores** da rede municipal calcular os valores a receber. O novo PDE foi **premiado em 3º lugar na categoria Larga Escala do Prêmia Sampa 2026** — premiação da Prefeitura de São Paulo que reconhece as melhores iniciativas e práticas inovadoras de servidores municipais.[^49][^50]
 
-Além do PDE, contribuiu com o **Planejamento Estratégico 2026-2029**,[^26] desenvolvendo painéis de dados[^27] e materiais de comunicação[^28] para os processos de escuta dos profissionais da rede municipal. Nomeações sucessivas publicadas no Diário Oficial documentam sua progressão de cargos na secretaria.[^24][^29][^2][^25]
+Além do PDE, contribuiu com o **Planejamento Estratégico 2026-2029**,[^26] desenvolvendo painéis de dados[^27] e materiais de comunicação[^28] para os processos de escuta dos profissionais da rede municipal. O Planejamento Estratégico 2026-2029 foi **semifinalista na categoria Processos Internos do Prêmia Sampa 2026**.[^49] Nomeações sucessivas publicadas no Diário Oficial documentam sua progressão de cargos na secretaria.[^24][^29][^2][^25]
 
 ### 4.3 Nomeação para a Controladoria Geral do Município de São Paulo (2026)
 
@@ -268,3 +268,7 @@ Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando
 [^47]: Concurso Nacional Unificado: o que é e como funcionou o "Enem dos Concursos" – Correio Braziliense (abr./2026). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); Agência Brasil: [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
 
 [^48]: Paulo Higa – LinkedIn. [linkedin.com/in/paulohiga](https://www.linkedin.com/in/paulohiga/)
+
+[^49]: Prêmia Sampa 2026 – Prefeitura de São Paulo. [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
+
+[^50]: Cerimônia de premiação do Prêmia Sampa 2026 (YouTube). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
