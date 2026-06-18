@@ -126,9 +126,9 @@ In **2024**, after placing **19th** among **7,760 applicants**[^42] in a civil s
 
 ### 4.2 Redesigning the Educational Performance Bonus (PDE)
 
-At the SME, Higa contributed to modeling the criteria for the **Educational Performance Bonus (PDE)**,[^4] a revised model that prioritized **payment based on improved student learning outcomes and reduction of inequalities**. He also developed a **payment simulator**[^3] that allowed the school network's roughly **88,000 educators** to estimate how much they would receive.
+At the SME, Higa contributed to modeling the criteria for the **Educational Performance Bonus (PDE)**,[^4] a revised model that prioritized **payment based on improved student learning outcomes and reduction of inequalities**. The change broke with the previous model, which for **16 years** had rewarded almost exclusively **attendance**: in practice, an employee only had to avoid missing work to earn the maximum bonus, with no connection to educational performance.[^4] Among the new criteria, alongside the inclusion of **learning outcomes**, were a bonus for **preschool attendance** — a mandatory stage of education — and an **extra reward** for the schools that improve the most on the indicators.[^4] In all, **R$ 206 million** was paid out, **14% more** than in 2024, with an increase in the maximum amount per educator as well.[^4] Higa also developed a **payment simulator**[^3] that allowed the school network's roughly **88,000 educators** to estimate how much they would receive. The redesigned PDE was **awarded 3rd place in the Large Scale category of Prêmia Sampa 2026**, São Paulo City Hall's award recognizing the best initiatives and innovative practices by municipal civil servants.[^49][^50]
 
-Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions with staff across the municipal school network. Successive appointments published in the Official Gazette document his progression through the department's roles.[^24][^29][^2][^25]
+Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions with staff across the municipal school network. The 2026–2029 Strategic Planning was a **semifinalist in the Internal Processes category of Prêmia Sampa 2026**.[^49] Successive appointments published in the Official Gazette document his progression through the department's roles.[^24][^29][^2][^25]
 
 ### 4.3 Appointment to the Office of the Comptroller General of the City of São Paulo (2026)
 
@@ -268,3 +268,7 @@ Report prepared in May 2026 and updated in June 2026, consolidating biographical
 [^47]: Unified National Civil Service Exam: what it is and how the "Enem dos Concursos" worked – Correio Braziliense (Apr./2026, in Portuguese). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); Agência Brasil: [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
 
 [^48]: Paulo Higa – LinkedIn. [linkedin.com/in/paulohiga](https://www.linkedin.com/in/paulohiga/)
+
+[^49]: Prêmia Sampa 2026 – São Paulo City Hall (in Portuguese). [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
+
+[^50]: Prêmia Sampa 2026 awards ceremony (YouTube, in Portuguese). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
