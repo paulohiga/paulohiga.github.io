@@ -1,12 +1,12 @@
 ---
 layout: default
-last_modified: 2026-06-11
+last_modified: 2026-07-10
 permalink: /bio
 lang: pt
 view: full
 ---
 
-**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Foi aprovado no curso de formação para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^34]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, entre eles a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
+**[Paulo Seikishi Higa](/){:.bio-collapse-btn data-nav="" aria-label="Recolher biografia de Paulo Higa"}** (Chiba, Japão, **15 de abril de 1993**) é um **jornalista, gestor e servidor público brasileiro**. Foi **nomeado** para a carreira de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**[^1] do **Governo do Brasil**[^51], com **lotação inicial na Agência Nacional de Proteção de Dados (ANPD)**[^52]. Anteriormente, atuou como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** na **Prefeitura de São Paulo** e como **Assessor de Gabinete**[^2] na **Secretaria Municipal de Educação (SME)**. Na SME, participou de iniciativas de planejamento estratégico e comunicação pública[^3], além de projetos de governança e análise de dados, entre eles a modelagem de critérios de aprendizagem e equidade para o novo **Prêmio de Desempenho Educacional (PDE)**[^4].
 
 Antes de ingressar na administração pública, Higa consolidou sua carreira na mídia digital como **editor-executivo, head de operações e sócio do Tecnoblog**, maior site de tecnologia independente do Brasil[^5]. Durante sua atuação no veículo **entre 2012 e 2023**, o site atingiu **mais de 30 milhões de acessos mensais**.[^5][^15] Autor de mais de 400 análises de produtos eletrônicos[^13] e coapresentador do podcast **Tecnocast**[^6], venceu o **Prêmio Especialistas por três anos consecutivos (2020, 2021 e 2022)**[^7] e foi finalista do **Prêmio Comunique-se**[^8]. É graduado em **Jornalismo pela Faculdade Cásper Líbero** e possui **MBA em Gestão com Ênfase em Liderança e Inovação pela Fundação Getulio Vargas (FGV)**.
 
@@ -146,6 +146,10 @@ As listas de classificação do CNU indicam **pontuação final de 87,50** para 
 
 Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital nº 92, de 9 de junho de 2026**, do Ministério da Gestão e da Inovação em Serviços Públicos, **homologou o resultado final do concurso**. Higa consta entre os candidatos **aprovados dentro do número de vagas** para o cargo de EPPGG no MGI (código B7-09-E), com **nota final de 180,06** e a **4ª colocação na ampla concorrência** de sua lista de classificação.[^43]
 
+### 5.3 Nomeação e Lotação na Agência Nacional de Proteção de Dados (ANPD)
+
+Após a homologação do resultado final, Higa foi **nomeado para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG)** pela **Portaria MGI nº 7.912, de 8 de julho de 2026**, publicada no **Diário Oficial da União**.[^51] Em seguida, pela **Portaria MGI nº 7.918, de 8 de julho de 2026**, também publicada no DOU, teve sua **lotação inicial na Agência Nacional de Proteção de Dados (ANPD)**,[^52] autarquia federal responsável por zelar pela proteção de dados pessoais e pela implementação e fiscalização da **Lei Geral de Proteção de Dados (LGPD)** no país.
+
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 3: Marcos da transição para o setor público">
 <table class="analysis-table">
 <caption>Tabela 3 — Marcos da Transição de Paulo Higa para o Setor Público (2024–2026)</caption>
@@ -157,6 +161,7 @@ Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital n�
 <tr><td>Nov/2025 – Jan/2026</td><td>Prefeitura de São Paulo (SME)</td><td>Assessor V, Ref. CDA-5 (Gabinete)</td><td>Assessoria direta ao Gabinete da Secretaria; consolidação de painéis de dados para o Planejamento 2026-2029.</td></tr>
 <tr><td>Jan/2026 – Jun/2026</td><td>Governo do Brasil (MGI/Enap)</td><td>Aprovado no CNU (EPPGG)</td><td>Conclusão do Curso de Formação em Brasília; resultado final homologado pelo Edital nº 92/2026, dentro do número de vagas, com nota final de 180,06.</td></tr>
 <tr><td>Jun/2026</td><td>Prefeitura de São Paulo (CGM)</td><td>Auditor Municipal de Controle Interno (nomeado)</td><td>Nomeação publicada no Diário Oficial da Cidade em 10/06/2026, em 9º lugar na lista geral (área Geral).</td></tr>
+<tr><td>Jul/2026</td><td>Governo do Brasil (MGI/ANPD)</td><td>EPPGG (nomeado e lotado)</td><td>Nomeação pela Portaria MGI nº 7.912/2026 e lotação inicial na ANPD pela Portaria MGI nº 7.918/2026, publicadas no DOU.</td></tr>
 </tbody>
 </table>
 </div>
@@ -165,7 +170,7 @@ Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital n�
 
 A trajetória de Paulo Higa abrange **duas fases distintas**. Na mídia, atuou como redator no **TechTudo (Globo.com) entre 2010 e 2012**, e no **Tecnoblog de 2012 a 2023**, onde exerceu as funções de **editor, editor-executivo, head de operações e sócio**. Foi também **colunista de tecnologia na Rádio Globo (2018–2019)**,[^15] com foco na comunicação de temas técnicos para públicos amplos. Nesse período, combinou produção jornalística, gestão editorial e operacional, e recebeu reconhecimento do setor.
 
-Na administração pública, Higa atuou por cerca de dois anos (2024–2026) como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** e **Assessor de Gabinete** na **Secretaria Municipal de Educação de São Paulo**, onde participou da modelagem do Prêmio de Desempenho Educacional (PDE) e de projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **Concurso Nacional Unificado (CNU)** e no curso de formação da **Enap, em Brasília**, ingressando na carreira federal de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculada ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)** — etapa que marca a continuidade de sua trajetória no setor público.[^43] No mesmo período, foi também nomeado **Auditor Municipal de Controle Interno** na Controladoria Geral do Município de São Paulo.[^44] Sua produção jornalística no Tecnoblog permanece disponível no arquivo do site;[^13] na administração pública, sua atuação é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
+Na administração pública, Higa atuou por cerca de dois anos (2024–2026) como **Analista de Políticas Públicas e Gestão Governamental (APPGG)** e **Assessor de Gabinete** na **Secretaria Municipal de Educação de São Paulo**, onde participou da modelagem do Prêmio de Desempenho Educacional (PDE) e de projetos de planejamento estratégico, análise de dados e comunicação pública. Em **2026**, foi aprovado no **Concurso Nacional Unificado (CNU)** e no curso de formação da **Enap, em Brasília**, ingressando na carreira federal de **Especialista em Políticas Públicas e Gestão Governamental (EPPGG)**, vinculada ao **Ministério da Gestão e da Inovação em Serviços Públicos (MGI)** — etapa que marca a continuidade de sua trajetória no setor público.[^43] Em **julho de 2026**, foi **nomeado** para o cargo e teve **lotação inicial na Agência Nacional de Proteção de Dados (ANPD)**.[^51][^52] No mesmo período, foi também nomeado **Auditor Municipal de Controle Interno** na Controladoria Geral do Município de São Paulo.[^44] Sua produção jornalística no Tecnoblog permanece disponível no arquivo do site;[^13] na administração pública, sua atuação é documentada nos registros do Diário Oficial e nos instrumentos desenvolvidos na SME.
 
 ## 7. Referências
 {:.references-heading}
@@ -272,3 +277,7 @@ Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando
 [^49]: Prêmia Sampa 2026 – Prefeitura de São Paulo. [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
 
 [^50]: Cerimônia de premiação do Prêmia Sampa 2026 (YouTube). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
+
+[^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de EPPGG (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+
+[^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Lotação na Agência Nacional de Proteção de Dados (ANPD) (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
