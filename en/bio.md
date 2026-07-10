@@ -1,12 +1,12 @@
 ---
 layout: default
-last_modified: 2026-06-11
+last_modified: 2026-07-10
 permalink: /en/bio
 lang: en
 view: full
 ---
 
-**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He completed the training course for the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career track in **Brazil's federal civil service**[^34]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as an **Advisor to the Secretary's Office**[^2] at the **Municipal Department of Education (SME, in the Portuguese acronym)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, among them the modeling of learning and equity criteria for the new **Educational Performance Bonus (PDE)**[^4].
+**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He was **appointed** to the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career track in **Brazil's federal civil service**[^51], with an **initial assignment to the National Data Protection Authority (ANPD)**[^52]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as an **Advisor to the Secretary's Office**[^2] at the **Municipal Department of Education (SME, in the Portuguese acronym)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, among them the modeling of learning and equity criteria for the new **Educational Performance Bonus (PDE)**[^4].
 
 Before entering public administration, Higa built his career in digital media as **executive editor, head of operations, and partner at Tecnoblog**, Brazil's largest independent technology website[^5]. During his tenure at the outlet **from 2012 to 2023**, the site reached **over 30 million monthly pageviews**.[^5][^15] Author of more than 400 consumer electronics reviews[^13] and co-host of the **Tecnocast** podcast[^6], he won the **Especialistas Award for three consecutive years (2020, 2021, and 2022)**[^7] and was a finalist for the **Comunique-se Award**[^8]. He holds a **degree in Journalism from Faculdade Cásper Líbero**, a journalism school in São Paulo, and an **MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV)**, one of Brazil's leading business schools.
 
@@ -146,6 +146,10 @@ Classification lists for the CNU indicate a **final score of 87.50** for Higa, c
 
 The final results were certified by **Notice (Edital) No. 92, of June 9, 2026**, issued by the Ministry of Management and Innovation in Public Services and published in the **federal Official Gazette on June 10, 2026**. Higa is listed **among the candidates who secured one of the available positions** for the EPPGG role at the MGI (position code B7-09-E), with a **final score of 180.06** and **4th place in the open competition ranking** of his classification list.[^43]
 
+### 5.3 Appointment and Assignment to the National Data Protection Authority (ANPD)
+
+Following certification of the final results, Higa was **appointed to the position of Specialist in Public Policy and Government Management (EPPGG)** by **MGI Ordinance No. 7,912, of July 8, 2026**, published in the federal Official Gazette.[^51] He was then given his **initial assignment to the National Data Protection Authority (ANPD)** by **MGI Ordinance No. 7,918, of July 8, 2026**, also published in the DOU.[^52] The ANPD is the federal agency responsible for safeguarding personal data protection and for implementing and enforcing Brazil's **General Data Protection Law (LGPD)**.
+
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 3: Milestones of the public sector transition">
 <table class="analysis-table">
 <caption>Table 3 — Milestones of Paulo Higa's Transition to the Public Sector (2024–2026)</caption>
@@ -157,6 +161,7 @@ The final results were certified by **Notice (Edital) No. 92, of June 9, 2026**,
 <tr><td>Nov/2025 – Jan/2026</td><td>São Paulo City Hall (SME)</td><td>Advisor V (Secretary's Office)</td><td>Direct advisory to the Secretary's Office; consolidation of data dashboards for the 2026–2029 Strategic Planning.</td></tr>
 <tr><td>Jan/2026 – Jun/2026</td><td>Government of Brazil (MGI/Enap)</td><td>Passed the CNU (EPPGG)</td><td>Completion of the Training Course in Brasília; final results certified by Notice No. 92/2026, within the available positions, with a final score of 180.06.</td></tr>
 <tr><td>Jun/2026</td><td>São Paulo City Hall (CGM)</td><td>Auditor Municipal de Controle Interno (appointed)</td><td>Appointment published in the City's Official Gazette on June 10, 2026, in 9th place on the general list (General area).</td></tr>
+<tr><td>Jul/2026</td><td>Government of Brazil (MGI/ANPD)</td><td>EPPGG (appointed and assigned)</td><td>Appointment by MGI Ordinance No. 7,912/2026 and initial assignment to the ANPD by MGI Ordinance No. 7,918/2026, published in the DOU.</td></tr>
 </tbody>
 </table>
 </div>
@@ -165,7 +170,7 @@ The final results were certified by **Notice (Edital) No. 92, of June 9, 2026**,
 
 Paulo Higa's career spans **two distinct phases**. In media, he worked as a reporter at **TechTudo (Globo.com) from 2010 to 2012**, and at **Tecnoblog from 2012 to 2023**, serving as **editor, executive editor, head of operations, and partner**. He also served as a **technology columnist on Rádio Globo (2018–2019)**,[^15] focused on communicating technical topics to broad audiences. During this period, he combined journalistic production, editorial and operational management, and received industry recognition.
 
-In public administration, Higa served for about two years (2024–2026) as a **Public Policy and Government Management Analyst (APPGG)** and **Advisor to the Secretary's Office** at **São Paulo's Municipal Department of Education**, where he contributed to the modeling of the Educational Performance Bonus (PDE) and to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **Unified National Civil Service Exam (CNU)** and completed the **Enap** training course **in Brasília**, entering the federal **Specialist in Public Policy and Government Management (EPPGG)** career, linked to the **Ministry of Management and Innovation in Public Services (MGI)** — a step that marks the continuation of his trajectory in the public sector.[^43] That same period, he was also **appointed Auditor Municipal de Controle Interno** at the Office of the Comptroller General of the City of São Paulo.[^44] His journalistic output at Tecnoblog remains available in the site's archive;[^13] in public administration, his work is documented in Official Gazette records and in the tools developed at the SME.
+In public administration, Higa served for about two years (2024–2026) as a **Public Policy and Government Management Analyst (APPGG)** and **Advisor to the Secretary's Office** at **São Paulo's Municipal Department of Education**, where he contributed to the modeling of the Educational Performance Bonus (PDE) and to strategic planning, data analysis, and public communication projects. In **2026**, he passed the **Unified National Civil Service Exam (CNU)** and completed the **Enap** training course **in Brasília**, entering the federal **Specialist in Public Policy and Government Management (EPPGG)** career, linked to the **Ministry of Management and Innovation in Public Services (MGI)** — a step that marks the continuation of his trajectory in the public sector.[^43] In **July 2026**, he was **appointed** to the position and given his **initial assignment to the National Data Protection Authority (ANPD)**.[^51][^52] That same period, he was also **appointed Auditor Municipal de Controle Interno** at the Office of the Comptroller General of the City of São Paulo.[^44] His journalistic output at Tecnoblog remains available in the site's archive;[^13] in public administration, his work is documented in Official Gazette records and in the tools developed at the SME.
 
 ## 7. References
 {:.references-heading}
@@ -272,3 +277,7 @@ Report prepared in May 2026 and updated in June 2026, consolidating biographical
 [^49]: Prêmia Sampa 2026 – São Paulo City Hall (in Portuguese). [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
 
 [^50]: Prêmia Sampa 2026 awards ceremony (YouTube, in Portuguese). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
+
+[^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the EPPGG position (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+
+[^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Assignment to the National Data Protection Authority (ANPD) (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
