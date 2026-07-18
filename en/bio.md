@@ -175,9 +175,6 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 ## 7. References
 {:.references-heading}
 
-Report prepared in May 2026 and updated in June 2026, consolidating biographical data, media records, and official documents.
-{:.references-note}
-
 [^1]: EPPGG Career – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
 
 [^2]: São Paulo City Hall Official Gazette – Dec./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?hEYKw9IjCCgoCihtR_cKWC98n7Pd3P-Do_56XMFgRHlvX_C9sPjjaSCyRUdcpn-a79V3HX-BmH1nKd4IQ6LKcw,,)

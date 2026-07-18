@@ -175,9 +175,6 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 ## 7. Referências
 {:.references-heading}
 
-Relatório elaborado em maio de 2026 e atualizado em junho de 2026, consolidando dados biográficos, registros de mídia e documentos oficiais.
-{:.references-note}
-
 [^1]: Carreira de EPPGG – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
 
 [^2]: Diário Oficial da Prefeitura de São Paulo – dez./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?hEYKw9IjCCgoCihtR_cKWC98n7Pd3P-Do_56XMFgRHlvX_C9sPjjaSCyRUdcpn-a79V3HX-BmH1nKd4IQ6LKcw,,)
