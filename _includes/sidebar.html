@@ -11,8 +11,11 @@
                             <source type="image/webp"
                                 srcset="/img/foto-paulo-higa-3-384.webp 384w, /img/foto-paulo-higa-3-640.webp 640w"
                                 sizes="(min-width: 765px) 269px, (min-width: 546px) 35.2vw, 192px">
+                            <!-- decoding="sync": this is the LCP image on the
+                                 bio pages; async decode pushes its paint past
+                                 first paint on slow devices. -->
                             <img src="/img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="320"
-                                height="320" fetchpriority="high" decoding="async">
+                                height="320" fetchpriority="high" decoding="sync">
                         </picture>
                     </a>
                 </div>

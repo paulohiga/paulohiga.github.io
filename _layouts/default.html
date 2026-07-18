@@ -37,11 +37,13 @@
              bio.md, en/index.md, en/bio.md) and is rendered into the block
              below. The block is split into full-bleed banded sections by
              script.js; only the active language/view is rendered, and in-page
-             navigation swaps it client-side. -->
+             navigation swaps it client-side. The replace filters strip the
+             deprecated DPUB-ARIA roles (doc-endnote/doc-noteref) that kramdown
+             hardcodes into footnote markup. -->
         <article class="content-area">
             <div class="bio-{{ page.view }}" id="{{ page.lang }}-bio-{{ page.view }}">
 {% if page.view == 'full' %}{% include ai-disclaimer.html %}{% endif %}
-{{ content }}
+{{ content | replace: ' role="doc-endnote"', '' | replace: ' role="doc-noteref"', '' }}
             </div>
         </article>
     </main>

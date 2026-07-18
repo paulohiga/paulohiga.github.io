@@ -1,22 +1,25 @@
 /* --- Metric-matched font fallbacks --- */
 /* Local fonts adjusted (via Capsize metrics) to occupy the same space as the
    web fonts, so the swap when Inter/Merriweather arrive never moves layout
-   (CLS) nor produces a later, larger LCP candidate. */
+   (CLS) nor produces a later, larger LCP candidate. size-adjust carries a
+   ~2% margin over the exact metric match: Chrome only re-emits LCP when a
+   *larger* candidate paints, so the fallback must render at least as large
+   as the real font for the swap to never push LCP back. */
 @font-face {
     font-family: 'Inter Fallback';
     src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
-    size-adjust: 107.12%;
-    ascent-override: 90.44%;
-    descent-override: 22.52%;
+    size-adjust: 109.1%;
+    ascent-override: 88.8%;
+    descent-override: 22.11%;
     line-gap-override: 0%;
 }
 
 @font-face {
     font-family: 'Merriweather Fallback';
     src: local('Georgia'), local('Times New Roman'), local('Liberation Serif');
-    size-adjust: 108.79%;
-    ascent-override: 90.45%;
-    descent-override: 25.09%;
+    size-adjust: 111%;
+    ascent-override: 88.65%;
+    descent-override: 24.59%;
     line-gap-override: 0%;
 }
 
@@ -154,7 +157,9 @@ body.show-compact-hero .toolbar {
 
 .language-selector,
 .theme-selector {
-    background: rgba(255, 255, 255, 0.78);
+    /* Opaque enough that the active/hover blue below keeps ≥4.5:1 contrast
+       when composited over the hero's navy background (WCAG 1.4.3). */
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.7);
@@ -209,7 +214,9 @@ body.dark-theme .theme-selector {
 .toolbar button:hover,
 .toolbar a:hover {
     background-color: rgba(29, 78, 216, 0.12);
-    color: var(--accent);
+    /* Darker than --accent: composited over the glass pill on the hero, the
+       lighter royal blue lands just under the 4.5:1 contrast threshold. */
+    color: var(--link-hover);
 }
 
 body.dark-theme .toolbar a.active,
@@ -255,7 +262,16 @@ body.dark-theme .ico-moon {
     height: 180%;
     background: linear-gradient(135deg, #172554 0%, #1e3a8a 30%, #1d4ed8 66%, #2563eb 100%);
     transform: translate3d(0, -22.23%, 0);
+    /* Paused until the visitor's first interaction (script.js adds
+       .hero-anim to <body>): a decorative 22s loop running during page load
+       keeps changing pixels and tanks the Speed Index metric, while nobody
+       notices it starting on the first scroll/touch instead. */
     animation: heroFlow 22s ease-in-out infinite alternate;
+    animation-play-state: paused;
+}
+
+body.hero-anim .hero::before {
+    animation-play-state: running;
 }
 
 /* Same full-bleed "inverted band" concept in dark mode, but sober: a muted

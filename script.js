@@ -78,6 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
         else initReveal();
     }
 
+    // --- Hero gradient animation ---
+    // The decorative gradient flow starts on the visitor's first interaction
+    // (it loads paused — see .hero::before in the CSS): a forever-running
+    // animation during page load keeps repainting the screencast frames that
+    // the Speed Index metric is computed from.
+    (function initHeroAnimation() {
+        if (prefersReducedMotion) return;
+        const start = () => {
+            document.body.classList.add('hero-anim');
+            events.forEach(ev => removeEventListener(ev, start, opts));
+        };
+        const events = ['pointerdown', 'pointermove', 'wheel', 'touchstart', 'keydown', 'scroll'];
+        const opts = { passive: true };
+        events.forEach(ev => addEventListener(ev, start, opts));
+    }());
+
     // --- Sticky compact hero ---
     // Reveal the compact hero once the full hero has scrolled out of view.
     // The full hero is persistent chrome (not swapped on navigation), so this
