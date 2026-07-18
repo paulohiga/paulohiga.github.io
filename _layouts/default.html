@@ -10,8 +10,10 @@
 <body class="light-theme">
 
     <!-- Apply the persisted/preferred theme before first paint to avoid a
-         flash of the wrong theme (the markup defaults to light-theme). -->
-    <script>
+         flash of the wrong theme (the markup defaults to light-theme).
+         data-cfasync="false" keeps Cloudflare Rocket Loader from deferring
+         this must-run-before-paint script. -->
+    <script data-cfasync="false">
         (function () {
             var t = localStorage.getItem('theme');
             var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
@@ -48,8 +50,10 @@
          so the content is grouped into its narrow reading column up front,
          instead of flashing full-width and reflowing after load (CLS). The
          function is reused by script.js after in-page navigation. No-JS users
-         keep the plain, readable flow. -->
-    <script>
+         keep the plain, readable flow. data-cfasync="false" keeps Cloudflare
+         Rocket Loader from deferring it to after paint (which would shift
+         layout). -->
+    <script data-cfasync="false">
         window.bandContent = function (block) {
             if (!block) return;
             var kids = Array.prototype.slice.call(block.children);

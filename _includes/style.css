@@ -1,7 +1,29 @@
+/* --- Metric-matched font fallbacks --- */
+/* Local fonts adjusted (via Capsize metrics) to occupy the same space as the
+   web fonts, so the swap when Inter/Merriweather arrive never moves layout
+   (CLS) nor produces a later, larger LCP candidate. */
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
+    size-adjust: 107.12%;
+    ascent-override: 90.44%;
+    descent-override: 22.52%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Merriweather Fallback';
+    src: local('Georgia'), local('Times New Roman'), local('Liberation Serif');
+    size-adjust: 108.79%;
+    ascent-override: 90.45%;
+    descent-override: 25.09%;
+    line-gap-override: 0%;
+}
+
 :root {
     /* --- Fonts --- */
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-serif: 'Merriweather', Georgia, serif;
+    --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Merriweather', 'Merriweather Fallback', Georgia, serif;
 
     /* --- Animation durations --- */
     --duration-fast: 0.2s;
@@ -211,11 +233,28 @@ body.dark-theme .ico-moon {
 }
 
 /* --- Hero --- */
+/* The flowing gradient lives on an oversized ::before animated with
+   transform (GPU-composited) instead of background-position, which forces
+   repaints on the main thread on every frame. */
 .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     color: #fff;
     padding: calc(var(--spacing-toolbar) + 4.5rem) var(--band-pad-x) clamp(3rem, 7vw, 5rem);
+    background: #1e3a8a;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 180%;
+    height: 180%;
     background: linear-gradient(135deg, #172554 0%, #1e3a8a 30%, #1d4ed8 66%, #2563eb 100%);
-    background-size: 180% 180%;
+    transform: translate3d(0, -22.23%, 0);
     animation: heroFlow 22s ease-in-out infinite alternate;
 }
 
@@ -224,18 +263,21 @@ body.dark-theme .ico-moon {
    the page background below it. */
 body.dark-theme .hero {
     color: #eef2f9;
-    background: linear-gradient(135deg, #0f2147 0%, #15346a 45%, #122a52 100%);
-    background-size: 180% 180%;
+    background: #15346a;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .hero::before {
+    background: linear-gradient(135deg, #0f2147 0%, #15346a 45%, #122a52 100%);
 }
 
 @keyframes heroFlow {
     from {
-        background-position: 0% 50%;
+        transform: translate3d(0, -22.23%, 0);
     }
 
     to {
-        background-position: 100% 50%;
+        transform: translate3d(-44.45%, -22.23%, 0);
     }
 }
 
@@ -1332,6 +1374,11 @@ body.js .band.in-view {
         opacity: 1;
         transform: none;
     }
+
+    /* The universal selector above doesn't reach pseudo-elements. */
+    .hero::before {
+        animation: none;
+    }
 }
 
 /* --- Responsive --- */
@@ -1398,6 +1445,10 @@ body.js .band.in-view {
         color: #000;
         padding: 1rem 0;
         animation: none;
+    }
+
+    .hero::before {
+        display: none;
     }
 
     .hero__name {

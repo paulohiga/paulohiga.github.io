@@ -4,8 +4,16 @@
                 <div class="profile-image-wrapper">
                     <a id="foto-btn" class="profile-image-button foto-toggle" href="{{ site.data.pages[foto_state].url }}" data-nav
                         aria-label="{% if page.lang == 'en' %}{% if page.view == 'full' %}Collapse Paulo Higa biography{% else %}Read the full biography of Paulo Higa{% endif %}{% else %}{% if page.view == 'full' %}Recolher biografia de Paulo Higa{% else %}Expandir biografia de Paulo Higa{% endif %}{% endif %}">
-                        <img src="/img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="320"
-                            height="320" fetchpriority="high" decoding="async">
+                        <picture>
+                            <source type="image/avif"
+                                srcset="/img/foto-paulo-higa-3-384.avif 384w, /img/foto-paulo-higa-3-640.avif 640w"
+                                sizes="(min-width: 765px) 269px, (min-width: 546px) 35.2vw, 192px">
+                            <source type="image/webp"
+                                srcset="/img/foto-paulo-higa-3-384.webp 384w, /img/foto-paulo-higa-3-640.webp 640w"
+                                sizes="(min-width: 765px) 269px, (min-width: 546px) 35.2vw, 192px">
+                            <img src="/img/foto-paulo-higa-3.jpg" id="foto" alt="Paulo Seikishi Higa" width="320"
+                                height="320" fetchpriority="high" decoding="async">
+                        </picture>
                     </a>
                 </div>
                 <div class="hero__identity">

@@ -24,8 +24,11 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 │   ├── hero-compact.html   # Cabeçalho fixo compacto, revelado ao rolar
 │   ├── sidebar.html        # Herói: foto, nome, localização, ações
 │   ├── contact-form.html   # Formulário de contato (modal)
-│   └── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa),
-│                           #   com a data-limite das fontes (last_modified)
+│   ├── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa),
+│   │                       #   com a data-limite das fontes (last_modified)
+│   └── style.css           # Todo o CSS (ícones via máscaras SVG; sem
+│                           #   dependências) — inserido inline no <head> de
+│                           #   cada página para não bloquear a renderização
 │
 ├── index.md                # Conteúdo: resumo em português        → /
 ├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio
@@ -33,7 +36,6 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 ├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
 │
 ├── sitemap.xml             # Template Liquid: gera o sitemap automaticamente
-├── style.css               # Todo o CSS (ícones via máscaras SVG; sem dependências)
 ├── script.js               # Tema, troca de idioma, navegação sem reload, form,
 │                           #   faixas full-bleed das seções e animações de scroll
 ├── robots.txt              # Política de crawlers (robôs de IA liberados)

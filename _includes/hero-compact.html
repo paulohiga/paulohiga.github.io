@@ -8,7 +8,11 @@
         <div class="hero-compact__inner">
             <a class="profile-image-button foto-toggle hero-compact__photo" href="{{ site.data.pages[foto_state].url }}" data-nav
                 aria-label="{% if page.lang == 'en' %}{% if page.view == 'full' %}Collapse Paulo Higa biography{% else %}Read the full biography of Paulo Higa{% endif %}{% else %}{% if page.view == 'full' %}Recolher biografia de Paulo Higa{% else %}Expandir biografia de Paulo Higa{% endif %}{% endif %}">
-                <img src="/img/foto-paulo-higa-3.jpg" alt="" width="40" height="40" decoding="async">
+                <picture>
+                    <source type="image/avif" srcset="/img/foto-paulo-higa-3-96.avif">
+                    <source type="image/webp" srcset="/img/foto-paulo-higa-3-96.webp">
+                    <img src="/img/foto-paulo-higa-3.jpg" alt="" width="40" height="40" decoding="async" loading="lazy">
+                </picture>
             </a>
             <button type="button" class="hero-compact__name" aria-label="{% if page.lang == 'en' %}Back to top of page{% else %}Voltar ao topo da página{% endif %}">Paulo Higa</button>
 
