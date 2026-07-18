@@ -1,18 +1,18 @@
 ---
 layout: default
-last_modified: 2026-06-04
+last_modified: 2026-07-18
 permalink: /
 lang: pt
 view: short
 ---
 
-**[Paulo Higa](/bio){:#pt-bio-toggle .bio-toggle-btn data-nav="" aria-label="Ler a biografia completa de Paulo Higa"}** é servidor público da carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) do Governo do Brasil e vive em Brasília desde 2026. Antes de ingressar na administração pública, trabalhou por mais de uma década como jornalista especializado em tecnologia. Iniciou sua trajetória no setor público na Prefeitura de São Paulo, atuando com dados, planejamento estratégico e comunicação pública, e hoje integra a carreira federal. Nas horas vagas, corre maratonas.
+**[Paulo Higa](/bio){:#pt-bio-toggle .bio-toggle-btn data-nav="" aria-label="Ler a biografia completa de Paulo Higa"}** é servidor público da carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) do Governo do Brasil e vive em Brasília desde 2026. Antes de ingressar na administração pública, trabalhou por mais de uma década como jornalista especializado em tecnologia. Iniciou sua trajetória no setor público na Prefeitura de São Paulo e hoje integra a carreira federal, com exercício na Agência Nacional de Proteção de Dados (ANPD). Nas horas vagas, corre maratonas.
 {:.intro-text}
 
 ## Público
 {:.bio-section .icon-public}
 
-Foi Analista de Políticas Públicas e Gestão Governamental (APPGG) na Prefeitura de São Paulo. Atuou na unidade de planejamento estratégico da Secretaria Municipal de Educação em 2024 e, no ano seguinte, como assessor do Gabinete, trabalhando com governança, análise de dados e normativos de gestão de pessoas. Participou da reformulação do [Prêmio de Desempenho Educacional](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil), que passou a adotar critérios focados em aprendizagem e redução das desigualdades, e do desenvolvimento de uma [ferramenta inédita](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/) que permitiu aos cerca de 80 mil servidores da educação municipal simular o valor da premiação. Também colaborou na elaboração do [Planejamento Estratégico 2026-2029](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/), criando [painéis de dados](https://sme-upge.github.io/arvore/) e [materiais de comunicação](https://sme-upge.github.io/diagnostico/one-pages.pdf) para os processos de escuta da rede municipal. Em 2026, ingressou na carreira federal de Especialista em Políticas Públicas e Gestão Governamental (EPPGG), vinculada ao Ministério da Gestão e da Inovação em Serviços Públicos.
+É servidor da carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG), vinculada ao Ministério da Gestão e da Inovação em Serviços Públicos, desde 2026. Atua no Conselho Diretor da Agência Nacional de Proteção de Dados (ANPD). Foi Analista de Políticas Públicas e Gestão Governamental (APPGG) na Prefeitura de São Paulo, onde trabalhou na unidade de planejamento estratégico e na assessoria do Gabinete da Secretaria Municipal de Educação com governança, análise de dados e normativos de gestão de pessoas. Participou da reformulação do [Prêmio de Desempenho Educacional](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milhões-a-88-mil-educadores-e-prêmio-por-desempenho-pode-chegar-a-r-8-7-mil), que passou a adotar critérios focados em aprendizagem e redução das desigualdades, e do desenvolvimento de uma [ferramenta inédita](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/) que permitiu aos cerca de 80 mil servidores da educação municipal simular o valor da premiação. Também colaborou na elaboração do [Planejamento Estratégico 2026-2029](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/), criando [painéis de dados](https://sme-upge.github.io/arvore/) e [materiais de comunicação](https://sme-upge.github.io/diagnostico/one-pages.pdf) para os processos de escuta da rede municipal.
 
 ## Privado
 {:.bio-section .icon-private}
