@@ -559,7 +559,7 @@ body:not(.js) .bio-full {
 /* The band background runs full-bleed (edge to edge of the viewport) while
    its inner column is centred to a comfortable reading measure. Centring the
    wrapper — not each child — keeps elements aligned even when their own
-   `margin` shorthand resets the horizontal margins (e.g. h3, .references-note). */
+   `margin` shorthand resets the horizontal margins (e.g. h3). */
 .band__inner {
     max-width: var(--content-max);
     margin: 0 auto;
@@ -901,13 +901,6 @@ body.dark-theme .toc {
 }
 
 /* --- References --- */
-.references-note {
-    font-size: 0.82rem;
-    margin: 0 0 1rem;
-    font-style: italic;
-    color: var(--ink-soft);
-}
-
 .footnotes {
     border-top: 1px solid var(--hairline);
     padding-top: 1.25rem;

@@ -5,12 +5,14 @@
      summary (short view) via the same in-page navigation (data-nav). -->
 {% assign short_state = page.lang | append: '-short' %}
 {% comment %}
-    A data limite das fontes acompanha a última modificação da biografia:
-    prioriza a data do último commit (plugin jekyll-last-modified-at) e usa o
-    `last_modified` do front matter como fallback — mesmo critério do sitemap.
-    A data é escrita por extenso no idioma da página.
+    A data limite das fontes vem do campo `last_modified` do front matter da
+    biografia — uma data editorial definida à mão ("fontes públicas disponíveis
+    até X"). Não usamos `page.last_modified_at` (data do último commit, via
+    jekyll-last-modified-at): aquele valor alimenta o <lastmod> do sitemap e
+    muda sempre que o arquivo é tocado, ainda que por edições que não alteram o
+    recorte das fontes. A data é escrita por extenso no idioma da página.
 {% endcomment %}
-{% assign bio_date = page.last_modified_at | default: page.last_modified %}
+{% assign bio_date = page.last_modified %}
 {% assign months_pt = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: ',' %}
 {% assign bio_day = bio_date | date: '%-d' %}
 {% assign bio_month_index = bio_date | date: '%-m' | minus: 1 %}
