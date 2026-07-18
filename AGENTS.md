@@ -38,6 +38,11 @@ diretórios e o fluxo de edição.
 - Cite a **referência imediatamente após cada afirmação**. As referências são
   detalhadas na seção própria de referências bibliográficas, **gerada
   automaticamente pelo Jekyll** (notas de rodapé — ver `README.md`).
+- Ao incorporar **fontes mais recentes**, atualize o campo `last_modified` no
+  front matter de `bio.md` **e** de `en/bio.md` (mesma data nos dois arquivos):
+  é ele que define a data-limite exibida no aviso de conteúdo gerado por IA
+  ("…fontes públicas disponíveis até X"). É uma data **editorial** — não a
+  atualize em edições que não mudam o recorte das fontes (ver `README.md`).
 
 ## Fluxo de trabalho padrão
 
@@ -83,6 +88,8 @@ diretórios e o fluxo de edição.
 - [ ] Conteúdo alterado em pt-br **e** replicado em en-us com tom consistente.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.
+- [ ] `last_modified` de `bio.md` e `en/bio.md` atualizado (mesma data) se o
+      recorte de fontes da biografia mudou.
 - [ ] Resumo da home não foi alterado sem solicitação explícita.
 - [ ] Acessibilidade verificada (WCAG, no mínimo AA).
 - [ ] Core Web Vitals verificados (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1).
@@ -100,5 +107,7 @@ manter datas à mão: basta commitar a alteração de conteúdo.
 
 > O build de produção roda pelo workflow `.github/workflows/pages.yml` (não pelo
 > build padrão do GitHub Pages), o que permite usar plugins fora da allowlist do
-> Pages. O campo opcional `last_modified` no front matter serve apenas de
-> fallback caso o histórico do git não esteja disponível.
+> Pages. Para o `<lastmod>` do sitemap, o campo `last_modified` do front matter
+> serve apenas de fallback caso o histórico do git não esteja disponível — mas,
+> nas biografias, esse mesmo campo define a data-limite do aviso de conteúdo
+> gerado por IA e é mantido à mão (ver regras da biografia, acima).
