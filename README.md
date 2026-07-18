@@ -13,15 +13,19 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 
 ```
 .
+├── .github/workflows/
+│   └── pages.yml           # Build (Jekyll) e deploy no GitHub Pages
 ├── _config.yml             # Configuração do Jekyll
 ├── _data/pages.yml         # Metadados (título, descrição, URL) de cada estado
 ├── _layouts/default.html   # Casca da página (head, herói, conteúdo, rodapé, form)
 ├── _includes/
 │   ├── head.html           # <head>: meta tags, Open Graph, JSON-LD
 │   ├── toolbar.html        # Seletor de idioma + tema (ícones SVG inline)
+│   ├── hero-compact.html   # Cabeçalho fixo compacto, revelado ao rolar
 │   ├── sidebar.html        # Herói: foto, nome, localização, ações
 │   ├── contact-form.html   # Formulário de contato (modal)
-│   └── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa)
+│   └── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (bio completa),
+│                           #   com a data-limite das fontes (last_modified)
 │
 ├── index.md                # Conteúdo: resumo em português        → /
 ├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio
@@ -32,6 +36,8 @@ O site é compilado pelo Jekyll: o conteúdo (texto) fica separado do código
 ├── style.css               # Todo o CSS (ícones via máscaras SVG; sem dependências)
 ├── script.js               # Tema, troca de idioma, navegação sem reload, form,
 │                           #   faixas full-bleed das seções e animações de scroll
+├── robots.txt              # Política de crawlers (robôs de IA liberados)
+├── CNAME                   # Domínio do GitHub Pages (higa.me)
 └── img/                    # Imagens
 ```
 
@@ -45,6 +51,12 @@ As quatro páginas `.md` contêm **apenas o texto** (em Markdown). Toda a
 apresentação (cartão, ícones, tabelas, índice, lista de referências) é montada
 pelo layout, pelo CSS e pelo Markdown processado pelo Jekyll.
 
+Cada página declara no front matter os campos `lang` (`pt`/`en`), `view`
+(`short`/`full`) e `permalink`. A combinação `<lang>-<view>` é a chave dos
+metadados em `_data/pages.yml` (título, descrição, URL canônica), compartilhados
+pelo Jekyll e pelo `script.js`. As páginas declaram ainda `last_modified` —
+nas biografias, esse campo tem papel especial (ver abaixo).
+
 ## Como atualizar o conteúdo
 
 Edite os arquivos `.md` — não é preciso mexer em HTML/CSS/JS.
@@ -56,6 +68,17 @@ O `sitemap.xml` é gerado automaticamente (a partir de `_data/pages.yml` e da
 data do último commit de cada página) — não edite o `sitemap.xml` à mão nem se
 preocupe com o `<lastmod>`: basta commitar a alteração de conteúdo. Veja
 [Publicação](#publicação) abaixo.
+
+### Data-limite do aviso de IA (`last_modified`)
+
+A biografia completa abre com um aviso de conteúdo gerado por IA que informa a
+data-limite das fontes ("…fontes públicas disponíveis até X"). Essa data vem do
+campo `last_modified` do front matter de `bio.md` e `en/bio.md` — uma data
+**editorial**, mantida à mão (não é a data do último commit; edições que não
+mudam o recorte das fontes não a alteram). Ao atualizar a biografia com fontes
+mais recentes, **atualize o campo nos dois arquivos**, com a mesma data. O
+campo também serve de fallback para o `<lastmod>` do sitemap quando o histórico
+do git não está disponível.
 
 ### Títulos de seção e índice
 
