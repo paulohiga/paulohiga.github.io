@@ -221,7 +221,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^23]: Civil service examination SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG, Public Policy and Government Management Analyst), São Paulo City Hall / Fundação VUNESP, the examination board (in Portuguese). [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
 
-[^24]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Personnel acts on the entry into the APPGG position, issue of Sep. 2024 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
+[^24]: Ordinance No. 073/SEGES/2024 – Assignment of the duty station at the Municipal Department of Education (SME) for members of the APPGG career track, effective August 19, 2024 (DOC – São Paulo City Official Gazette – of August 20, 2024; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
 [^25]: Appointment Instrument No. 1,163, of November 14, 2025 – Appointment to the political-appointee post of Assessor V (Advisor V), grade CDA-5, in the Office of the Municipal Department of Education (DOC – São Paulo City Official Gazette – of November 17, 2025; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
@@ -231,7 +231,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^28]: Communication materials of the Strategic Planning and Management Unit (UPGE) – SME (in Portuguese). [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
 
-[^29]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Personnel acts of the Municipal Department of Education (SME), issue of Nov. 2025 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
+[^29]: Appointment Instrument No. 1,014, of October 3, 2025 – Appointment to the political-appointee post of Assessor II (Advisor II), grade CDA-2, in the Office of the Municipal Department of Education (DOC – São Paulo City Official Gazette – of October 6, 2025; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
 
 [^30]: Call-ups for the CNU 2024 training courses – 1st and 2nd rounds (in Portuguese). [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
 
@@ -261,7 +261,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU final results for the EPPGG position (DOU – Brazil's Federal Official Gazette – of June 10, 2026, Section 3, p. 101; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
-[^44]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Appointment to the tenured position of Auditor Municipal de Controle Interno (AMCI, Municipal Internal Control Auditor), Level I, General track, issue of June 10, 2026 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+[^44]: Appointment notice – SEGES/COGEP – Appointment to the tenured position of Auditor Municipal de Controle Interno (AMCI, Municipal Internal Control Auditor), Level I, General track, ranked 9th on the general list (DOC – São Paulo City Official Gazette – of June 10, 2026; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
 [^45]: Auditor Municipal de Controle Interno (AMCI) career – São Paulo City Hall / Office of the Comptroller General of the City of São Paulo (CGM-SP); entry in the Portuguese-language Wikipedia (in Portuguese). [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
 

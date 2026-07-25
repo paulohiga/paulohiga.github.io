@@ -221,7 +221,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^23]: Concurso Público SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG), Prefeitura de São Paulo / Fundação VUNESP. [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
 
-[^24]: Diário Oficial da Cidade de São Paulo – Atos de pessoal referentes ao ingresso no cargo de Analista de Políticas Públicas e Gestão Governamental (APPGG) (DOC de set./2024). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
+[^24]: Portaria nº 073/SEGES/2024 – Fixação da unidade de exercício na Secretaria Municipal de Educação (SME) para servidores da carreira de Analista de Políticas Públicas e Gestão Governamental (APPGG), com início de exercício em 19/08/2024 (DOC de 20/08/2024). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
 [^25]: Título de Nomeação nº 1.163, de 14 de novembro de 2025 – Nomeação para o cargo de Assessor V, Ref. CDA-5, do Gabinete da Secretaria Municipal de Educação (DOC de 17/11/2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
@@ -231,7 +231,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^28]: Materiais de comunicação da Unidade de Planejamento e Gestão Estratégica (UPGE) – SME. [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
 
-[^29]: Diário Oficial da Cidade de São Paulo – Atos de pessoal da Secretaria Municipal de Educação (SME) (DOC de nov./2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
+[^29]: Título de Nomeação nº 1.014, de 3 de outubro de 2025 – Nomeação para o cargo de Assessor II, Ref. CDA-2, do Gabinete da Secretaria Municipal de Educação (DOC de 06/10/2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
 
 [^30]: Convocações para os Cursos de Formação do CNU 2024 – 1ª e 2ª chamadas. [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
 
@@ -261,7 +261,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do resultado final do CNU para o cargo de EPPGG (DOU de 10/06/2026, Seção 3, p. 101). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
-[^44]: Diário Oficial da Cidade de São Paulo – Nomeação para o cargo de Auditor Municipal de Controle Interno (AMCI), Nível I, área Geral (DOC de 10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+[^44]: Comunicado de nomeação – SEGES/COGEP – Nomeação para o cargo de Auditor Municipal de Controle Interno (AMCI), Nível I, área Geral, 9º colocado na lista geral (DOC de 10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
 [^45]: Carreira de Auditor Municipal de Controle Interno (AMCI) – Prefeitura de São Paulo / Controladoria Geral do Município (CGM-SP); verbete na Wikipédia em português. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
 
