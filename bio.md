@@ -175,110 +175,110 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 ## 7. Referências
 {:.references-heading}
 
-[^1]: Carreira de EPPGG – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
+[^1]: Carreira de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) – Portal do Servidor, Ministério da Gestão e da Inovação em Serviços Públicos (MGI). [gov.br](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
 
-[^2]: Diário Oficial da Prefeitura de São Paulo – dez./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?hEYKw9IjCCgoCihtR_cKWC98n7Pd3P-Do_56XMFgRHlvX_C9sPjjaSCyRUdcpn-a79V3HX-BmH1nKd4IQ6LKcw,,)
+[^2]: Diário Oficial da Cidade de São Paulo – Atos de pessoal da Secretaria Municipal de Educação (SME) (DOC de dez./2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?hEYKw9IjCCgoCihtR_cKWC98n7Pd3P-Do_56XMFgRHlvX_C9sPjjaSCyRUdcpn-a79V3HX-BmH1nKd4IQ6LKcw,,)
 
-[^3]: Simulador de Valores do PDE – SME. [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/)
+[^3]: Prefeitura de SP disponibiliza simulador de valores do PDE – Secretaria Municipal de Educação (SME). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/)
 
-[^4]: Prefeitura vai pagar R$ 206 milhões a 88 mil educadores – Prêmio por Desempenho (PDE). [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milh%C3%B5es-a-88-mil-educadores-e-pr%C3%AAmio-por-desempenho-pode-chegar-a-r-8-7-mil)
+[^4]: Prefeitura vai pagar R$ 206 milhões a 88 mil educadores e Prêmio por Desempenho pode chegar a R$ 8,7 mil – Prefeitura de São Paulo. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milh%C3%B5es-a-88-mil-educadores-e-pr%C3%AAmio-por-desempenho-pode-chegar-a-r-8-7-mil)
 
-[^5]: Sobre o Tecnoblog. [tecnoblog.net/sobre-o-tb/](https://tecnoblog.net/sobre-o-tb/)
+[^5]: Sobre o Tecnoblog – Tecnoblog. [tecnoblog.net](https://tecnoblog.net/sobre-o-tb/)
 
 [^6]: Tecnocast – Apple Podcasts. [podcasts.apple.com](https://podcasts.apple.com/br/podcast/tecnocast/id505204037)
 
-[^7]: Prêmio Especialistas – Portal da Comunicação. [portaldacomunicacao.com.br](https://portaldacomunicacao.com.br/premios/premio-especialistas/)
+[^7]: Prêmio Especialistas – Plataforma Negócios da Comunicação (Portal da Comunicação). [portaldacomunicacao.com.br](https://portaldacomunicacao.com.br/premios/premio-especialistas/)
 
-[^8]: Prêmio Comunique-se (página oficial e vencedores). [premio.comunique-se.com.br](https://premio.comunique-se.com.br/); [comunique-se.com.br](https://comunique-se.com.br/blog/vencedores-premio-comunique-se/)
+[^8]: Prêmio Comunique-se – Página oficial e relação de vencedores. [premio.comunique-se.com.br](https://premio.comunique-se.com.br/); [comunique-se.com.br](https://comunique-se.com.br/blog/vencedores-premio-comunique-se/)
 
 [^9]: Paulo Higa – Site pessoal. [higa.me](https://higa.me/)
 
-[^10]: Entrevista com Paulo Higa – Mac Magazine (abr./2021). [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
+[^10]: Vídeo: MM Entrevista com Paulo Higa – MacMagazine, 11/04/2021. [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
 
-[^11]: Guia do PC. [guiadopc.com.br](https://www.guiadopc.com.br)
+[^11]: Guia do PC – Dicas e notícias sobre o mundo da informática (blog mantido por Paulo Higa antes do Tecnoblog). [guiadopc.com.br](https://www.guiadopc.com.br)
 
-[^12]: Paulo Higa – TechTudo (colaborador, 2012). [techtudo.com.br](http://www.techtudo.com.br/colaborador/paulo-higa/10.html)
+[^12]: Paulo Higa – Página de colaborador do TechTudo (2012). [techtudo.com.br](https://www.techtudo.com.br/colaborador/paulo-higa.html)
 
-[^13]: Paulo Higa – Tecnoblog. [tecnoblog.net/author/paulo-higa/](https://tecnoblog.net/author/paulo-higa/)
+[^13]: Paulo Higa – Arquivo de autor no Tecnoblog. [tecnoblog.net](https://tecnoblog.net/author/paulo-higa/)
 
-[^14]: Política Editorial – Tecnoblog. [tecnoblog.net/politica-editorial/](https://tecnoblog.net/politica-editorial/)
+[^14]: Política Editorial – Tecnoblog. [tecnoblog.net](https://tecnoblog.net/politica-editorial/)
 
-[^15]: Tecnoblog – Wikipédia. [pt.wikipedia.org/wiki/Tecnoblog](https://pt.wikipedia.org/wiki/Tecnoblog)
+[^15]: Tecnoblog – Wikipédia em português. [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Tecnoblog)
 
-[^16]: Tecnocast – Tecnoblog. [tecnoblog.net/tecnocast/](https://tecnoblog.net/tecnocast/)
+[^16]: Tecnocast – Página oficial do podcast no Tecnoblog. [tecnoblog.net](https://tecnoblog.net/tecnocast/)
 
-[^17]: Tecnocast 187 – A crise global de chips. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/)
+[^17]: Tecnocast 187 – A crise global de chips – Tecnoblog. [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/)
 
-[^18]: Tecnocast 204 – Seus dados nas mãos do poder. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/)
+[^18]: Tecnocast 204 – Seus dados nas mãos do poder – Tecnoblog. [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/)
 
-[^19]: Review Garmin Fenix 6 – Tecnoblog. [tecnoblog.net/testamos](https://tecnoblog.net/testamos/garmin-fenix-6-review/)
+[^19]: Garmin Fenix 6: review do relógio esportivo – Tecnoblog. [tecnoblog.net](https://tecnoblog.net/testamos/garmin-fenix-6-review/)
 
-[^20]: O que houve com o Paulo Higa? – Tecnoblog Comunidade. [tecnoblog.net/comunidade](https://tecnoblog.net/comunidade/t/o-que-houve-com-o-paulo-higa/131341)
+[^20]: O que houve com o Paulo Higa? – Tópico na Tecnoblog Comunidade, ago./2024. [tecnoblog.net](https://tecnoblog.net/comunidade/t/o-que-houve-com-o-paulo-higa/131341)
 
-[^21]: Paulo Higa – Strava. [strava.com/athletes/10005981](https://www.strava.com/athletes/10005981)
+[^21]: Paulo Higa – Perfil de atleta no Strava. [strava.com](https://www.strava.com/athletes/10005981)
 
-[^22]: Paulo HIGA – UTMB World. [utmb.world](https://utmb.world/en/runner/4915599.paulo.higa)
+[^22]: Paulo HIGA – Perfil de atleta no UTMB World. [utmb.world](https://utmb.world/en/runner/4915599.paulo.higa)
 
-[^23]: Concurso Público – Analista de Políticas Públicas e Gestão Governamental (SMGE2303). [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
+[^23]: Concurso Público SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG), Prefeitura de São Paulo / Fundação VUNESP. [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
 
-[^24]: Diário Oficial da Prefeitura de São Paulo – set./2024. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
+[^24]: Diário Oficial da Cidade de São Paulo – Atos de pessoal referentes ao ingresso no cargo de Analista de Políticas Públicas e Gestão Governamental (APPGG) (DOC de set./2024). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
-[^25]: Diário Oficial da Prefeitura de São Paulo – Nomeação Assessor V (14 nov./2025). [diariooficial.prefeitura.sp.gov.br](http://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
+[^25]: Diário Oficial da Cidade de São Paulo – Nomeação para o cargo em comissão de Assessor V, ref. CDA-5, no Gabinete da Secretaria Municipal de Educação (DOC de 14/11/2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
-[^26]: Planejamento Estratégico 2026-2029 – SME. [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
+[^26]: Planejamento Estratégico 2026-2029 – Secretaria Municipal de Educação (SME). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
 
-[^27]: Painéis de Dados SME-UPGE. [sme-upge.github.io/arvore/](https://sme-upge.github.io/arvore/)
+[^27]: Painéis de dados da Unidade de Planejamento e Gestão Estratégica (UPGE) – SME. [sme-upge.github.io](https://sme-upge.github.io/arvore/)
 
-[^28]: Materiais de Comunicação SME-UPGE. [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
+[^28]: Materiais de comunicação da Unidade de Planejamento e Gestão Estratégica (UPGE) – SME. [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
 
-[^29]: Diário Oficial da Prefeitura de São Paulo – nov./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
+[^29]: Diário Oficial da Cidade de São Paulo – Atos de pessoal da Secretaria Municipal de Educação (SME) (DOC de nov./2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
 
-[^30]: Convocações para o Curso de Formação – CNU 2024 (1ª e 2ª). [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
+[^30]: Convocações para os Cursos de Formação do CNU 2024 – 1ª e 2ª chamadas. [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
 
-[^31]: Curso de Formação e carreira de EPPGG – informações oficiais. [gov.br/gestao](https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/janeiro/mgi-e-enap-participam-da-abertura-dos-cursos-de-formacao-da-2a-chamada-do-cpnu-1-1); [enap.gov.br](https://www.enap.gov.br/educacao-e-capacitacao/cpnu-segunda-chamada/guia-do-candidato/)
+[^31]: MGI e Enap participam da abertura dos cursos de formação da 2ª chamada do CPNU – Ministério da Gestão e da Inovação em Serviços Públicos, jan./2026; Guia do/a Candidato/a – Cursos de Formação do CPNU (2ª chamada) – Escola Nacional de Administração Pública (Enap). [gov.br](https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/janeiro/mgi-e-enap-participam-da-abertura-dos-cursos-de-formacao-da-2a-chamada-do-cpnu-1-1); [enap.gov.br](https://www.enap.gov.br/educacao-e-capacitacao/cpnu-segunda-chamada/guia-do-candidato/)
 
-[^32]: Candidatos por Vaga – Bloco 7 – CNU. [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf)
+[^32]: Bloco 7 – Gestão Governamental e Administração Pública: candidatos por vaga – Concurso Nacional Unificado (CNU), MGI. [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf)
 
-[^33]: Classificação no CPNU 2024 – EPPGG. [vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); Ranking dos Concursos: [lista 1](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1), [lista 2](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
+[^33]: Classificação no CPNU 2024 para o cargo de EPPGG – Listas não oficiais de acompanhamento. [mail.vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); [rankingdosconcursos.com.br (lista 1)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1); [rankingdosconcursos.com.br (lista 2)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
 
-[^34]: Edital ENAP nº 173, de 25 de maio de 2026 – Resultado do Curso de Formação (DOU, 26/05/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
+[^34]: Edital Enap nº 173, de 25 de maio de 2026 – Resultado final do Curso de Formação do CPNU para o cargo de EPPGG do MGI (DOU de 26/05/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
 
-[^35]: PodPods – Trabalho de Conclusão de Curso (podcast). [soundcloud.com/podpods](https://soundcloud.com/podpods)
+[^35]: PodPods – Podcast em cinco episódios sobre o cenário brasileiro de podcasts, trabalho de conclusão de curso na Faculdade Cásper Líbero (2017). [soundcloud.com](https://soundcloud.com/podpods)
 
-[^36]: Tecnocast 100 – Como tudo começou. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-100-como-tudo-comecou/); [podcasts.apple.com](https://podcasts.apple.com/br/podcast/como-tudo-come%C3%A7ou/id505204037?i=1000421896563)
+[^36]: Tecnocast 100 – Como tudo começou – Tecnoblog, 2018. [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-100-como-tudo-comecou/); [podcasts.apple.com](https://podcasts.apple.com/br/podcast/como-tudo-come%C3%A7ou/id505204037?i=1000421896563)
 
-[^37]: Análises críticas no Tecnoblog (seleção): [Microsoft](https://tecnoblog.net/especiais/eu-nunca-vi-microsoft-tao-bem-como-agora/); [Windows 10 Mobile](https://tecnoblog.net/especiais/microsoft-windows-10-mobile-saga/); [Google × UE](https://tecnoblog.net/especiais/google-uniao-europeia-abuso-poder-mercado/); [VPN grátis](https://tecnoblog.net/especiais/vpn-gratis-ilimitado-opera/); [Wi-Fi 6E](https://tecnoblog.net/especiais/wi-fi-6e-frequencia-6-ghz-aprovado-fcc/); [acessibilidade](https://tecnoblog.net/especiais/maquina-cartao-acessibilidade-cegos/); [rastreamento COVID-19](https://tecnoblog.net/especiais/como-funciona-a-tecnologia-feita-por-apple-e-google-para-monitorar-covid-19/); [Apple Silicon](https://tecnoblog.net/especiais/sai-intel-entra-apple-silicon-transicao-arm-macs/); [Huawei](https://tecnoblog.net/especiais/huawei-futuro-lista-negra-eua/); [Intel (México)](https://tecnoblog.net/especiais/intel-guadalajara-design-center-mexico-onde-nascem-os-processadores/); [falha KRACK](https://tecnoblog.net/especiais/falha-wifi-wpa2-krack-como-se-proteger/); [Samsung](https://tecnoblog.net/especiais/samsung-vale-do-silicio-coreia-do-sul/).
+[^37]: Análises críticas publicadas no Tecnoblog (seleção): [Microsoft](https://tecnoblog.net/especiais/eu-nunca-vi-microsoft-tao-bem-como-agora/); [Windows 10 Mobile](https://tecnoblog.net/especiais/microsoft-windows-10-mobile-saga/); [Google × UE](https://tecnoblog.net/especiais/google-uniao-europeia-abuso-poder-mercado/); [VPN grátis](https://tecnoblog.net/especiais/vpn-gratis-ilimitado-opera/); [Wi-Fi 6E](https://tecnoblog.net/especiais/wi-fi-6e-frequencia-6-ghz-aprovado-fcc/); [acessibilidade](https://tecnoblog.net/especiais/maquina-cartao-acessibilidade-cegos/); [rastreamento COVID-19](https://tecnoblog.net/especiais/como-funciona-a-tecnologia-feita-por-apple-e-google-para-monitorar-covid-19/); [Apple Silicon](https://tecnoblog.net/especiais/sai-intel-entra-apple-silicon-transicao-arm-macs/); [Huawei](https://tecnoblog.net/especiais/huawei-futuro-lista-negra-eua/); [Intel (México)](https://tecnoblog.net/especiais/intel-guadalajara-design-center-mexico-onde-nascem-os-processadores/); [falha KRACK](https://tecnoblog.net/especiais/falha-wifi-wpa2-krack-como-se-proteger/); [Samsung](https://tecnoblog.net/especiais/samsung-vale-do-silicio-coreia-do-sul/).
 
-[^38]: Coberturas de eventos e vlogs de bastidores (YouTube): [MWC 2018](https://www.youtube.com/watch?v=aBWOULblT8o); [WWDC 2018](https://www.youtube.com/watch?v=CYlqhCnTYYY); [WWDC 2019](https://www.youtube.com/watch?v=__s7VDykEuQ); Samsung ([1](https://www.youtube.com/watch?v=J5lGx_s5SmU), [2](https://www.youtube.com/watch?v=Ej_A--OZKSA), [3](https://www.youtube.com/watch?v=7cyxJRQm474)); Huawei ([1](https://www.youtube.com/watch?v=VGpyb_kow3I), [2](https://www.youtube.com/watch?v=4bo5Ii4DkVE)); [Snapdragon Tech Summit 2018](https://www.youtube.com/watch?v=-Abq_oHIImk); [Snapdragon Tech Summit 2021](https://www.youtube.com/watch?v=FZnEuesvVfc); [CES 2019](https://www.youtube.com/watch?v=HKB4v_qzVpw); [CES 2022](https://www.youtube.com/watch?v=uwQUQ8LZmAw).
+[^38]: Coberturas de eventos e vlogs de bastidores no canal do Tecnoblog no YouTube (seleção): [MWC 2018](https://www.youtube.com/watch?v=aBWOULblT8o); [WWDC 2018](https://www.youtube.com/watch?v=CYlqhCnTYYY); [WWDC 2019](https://www.youtube.com/watch?v=__s7VDykEuQ); Samsung ([1](https://www.youtube.com/watch?v=J5lGx_s5SmU), [2](https://www.youtube.com/watch?v=Ej_A--OZKSA), [3](https://www.youtube.com/watch?v=7cyxJRQm474)); Huawei ([1](https://www.youtube.com/watch?v=VGpyb_kow3I), [2](https://www.youtube.com/watch?v=4bo5Ii4DkVE)); [Snapdragon Tech Summit 2018](https://www.youtube.com/watch?v=-Abq_oHIImk); [Snapdragon Tech Summit 2021](https://www.youtube.com/watch?v=FZnEuesvVfc); [CES 2019](https://www.youtube.com/watch?v=HKB4v_qzVpw); [CES 2022](https://www.youtube.com/watch?v=uwQUQ8LZmAw).
 
-[^39]: Episódios do Tecnocast (seleção): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [o último de que participou](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
+[^39]: Episódios do Tecnocast com participação de Paulo Higa (seleção): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [o último de que participou](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
 
-[^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la" (entrevista com B. Piropo e Paulo Higa). Rádio CBN, 2017. [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
+[^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la": entrevista com B. Piropo e Paulo Higa – Rádio CBN, 2017. [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
 
-[^41]: Classificação Final – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
+[^41]: Classificação final do Concurso Público SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP. [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
 
-[^42]: Relação de Inscritos – Analista de Políticas Públicas e Gestão Governamental (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
+[^42]: Relação de inscritos no Concurso Público SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP. [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
 
-[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do Resultado Final do CNU para o cargo de EPPGG (DOU, 10/06/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do resultado final do CNU para o cargo de EPPGG (DOU de 10/06/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
-[^44]: Diário Oficial da Cidade de São Paulo – Nomeação de Auditor Municipal de Controle Interno (10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+[^44]: Diário Oficial da Cidade de São Paulo – Nomeação para o cargo de Auditor Municipal de Controle Interno (AMCI), Nível I, área Geral (DOC de 10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
-[^45]: Carreira de Auditor Municipal de Controle Interno (AMCI) – Controladoria Geral do Município. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
+[^45]: Carreira de Auditor Municipal de Controle Interno (AMCI) – Prefeitura de São Paulo / Controladoria Geral do Município (CGM-SP); verbete na Wikipédia em português. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
 
-[^46]: Paulo Higa, do Tecnoblog, é indicado ao Prêmio Comunique-se 2021 – Terra. [terra.com.br](https://www.terra.com.br/noticias/tecnologia/paulo-higa-do-tecnoblog-e-indicado-ao-premio-comunique-se-2021,c4ac8599c6378e2e12601b4e648bfaf7muhnkd9j.html)
+[^46]: Paulo Higa, do Tecnoblog, é indicado ao Prêmio Comunique-se 2021 – Terra, 2021. [terra.com.br](https://www.terra.com.br/noticias/tecnologia/paulo-higa-do-tecnoblog-e-indicado-ao-premio-comunique-se-2021,c4ac8599c6378e2e12601b4e648bfaf7muhnkd9j.html)
 
-[^47]: Concurso Nacional Unificado: o que é e como funcionou o "Enem dos Concursos" – Correio Braziliense (abr./2026). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); Agência Brasil: [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
+[^47]: Concurso Nacional Unificado: o que é e como funcionou o "Enem dos Concursos" – Correio Braziliense, 02/04/2026; CNU 2025: locais de prova serão divulgados a partir das 18h de hoje – Agência Brasil, set./2025. [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
 
-[^48]: Paulo Higa – LinkedIn. [linkedin.com/in/paulohiga](https://www.linkedin.com/in/paulohiga/)
+[^48]: Paulo Higa – Perfil no LinkedIn. [linkedin.com](https://www.linkedin.com/in/paulohiga/)
 
-[^49]: Prêmia Sampa 2026 – Prefeitura de São Paulo. [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
+[^49]: Prêmia Sampa 2026 – Prefeitura de São Paulo / Secretaria Municipal de Gestão (SEGES). [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
 
-[^50]: Cerimônia de premiação do Prêmia Sampa 2026 (YouTube). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
+[^50]: Cerimônia de premiação do Prêmia Sampa 2026 – Prefeitura de São Paulo (YouTube). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
 
-[^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de EPPGG (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+[^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) (DOU de jul./2026). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
-[^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Lotação na Agência Nacional de Proteção de Dados (ANPD) (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+[^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Lotação na Agência Nacional de Proteção de Dados (ANPD) (DOU de jul./2026). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
 
 [^53]: Portaria GABPR/ANPD nº 491, de 16 de julho de 2026 – Designação para a Função Comissionada Executiva de Chefe de Projeto II (FCE 3.07), no Gabinete da Diretoria 2 da ANPD (DOU de 22/07/2026, Seção 2, p. 41). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
 
-[^54]: Conselho Diretor – Agência Nacional de Proteção de Dados (ANPD). [gov.br/anpd](https://www.gov.br/anpd/pt-br/composicao/conselho-diretor)
+[^54]: Conselho Diretor – Agência Nacional de Proteção de Dados (ANPD). [gov.br](https://www.gov.br/anpd/pt-br/composicao/conselho-diretor)
