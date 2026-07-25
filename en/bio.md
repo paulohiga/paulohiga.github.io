@@ -195,7 +195,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^10]: Video: MM Entrevista with Paulo Higa – MacMagazine, April 11, 2021 (in Portuguese). [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
 
-[^11]: Guia do PC – Computing news and tips, the blog Higa ran before joining Tecnoblog (in Portuguese). [guiadopc.com.br](https://www.guiadopc.com.br)
+[^11]: Guia do PC – Computing news and tips, the blog Higa ran before joining Tecnoblog. The site is no longer online; archived snapshot from Feb. 2012 (in Portuguese). [web.archive.org](https://web.archive.org/web/20120228192627/http://www.guiadopc.com.br/)
 
 [^12]: Paulo Higa – Contributor page at TechTudo, a technology outlet owned by Grupo Globo (2012; in Portuguese). [techtudo.com.br](https://www.techtudo.com.br/colaborador/paulo-higa.html)
 
@@ -223,7 +223,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^24]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Personnel acts on the entry into the APPGG position, issue of Sep. 2024 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
-[^25]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Appointment to the political-appointee post of Assessor V (Advisor V), grade CDA-5, in the Office of the Municipal Department of Education, issue of Nov. 14, 2025 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
+[^25]: Appointment Instrument No. 1,163, of November 14, 2025 – Appointment to the political-appointee post of Assessor V (Advisor V), grade CDA-5, in the Office of the Municipal Department of Education (DOC – São Paulo City Official Gazette – of November 17, 2025; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
 [^26]: 2026–2029 Strategic Plan – Municipal Department of Education (SME) (in Portuguese). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
 
@@ -241,7 +241,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^33]: CPNU 2024 rankings for the EPPGG position – Unofficial candidate-tracking lists (in Portuguese). [mail.vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); [rankingdosconcursos.com.br (list 1)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1); [rankingdosconcursos.com.br (list 2)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
 
-[^34]: Enap Notice No. 173, of May 25, 2026 – Final result of the CPNU training course for the MGI's EPPGG position (DOU – Brazil's Federal Official Gazette – of May 26, 2026; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
+[^34]: Enap Notice No. 173, of May 25, 2026 – Final result of the CPNU initial training course for the MGI's EPPGG position, 18th edition (DOU – Brazil's Federal Official Gazette – of May 26, 2026, Section 3, p. 111; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
 
 [^35]: PodPods – Five-episode podcast on the Brazilian podcasting scene, produced as an undergraduate capstone project at Faculdade Cásper Líbero (2017; in Portuguese). [soundcloud.com](https://soundcloud.com/podpods)
 
@@ -259,7 +259,7 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^42]: List of registered candidates for civil service examination SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP (in Portuguese). [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
 
-[^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU final results for the EPPGG position (DOU – Brazil's Federal Official Gazette – of June 10, 2026; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+[^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU final results for the EPPGG position (DOU – Brazil's Federal Official Gazette – of June 10, 2026, Section 3, p. 101; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
 [^44]: Diário Oficial da Cidade de São Paulo (São Paulo City Official Gazette) – Appointment to the tenured position of Auditor Municipal de Controle Interno (AMCI, Municipal Internal Control Auditor), Level I, General track, issue of June 10, 2026 (in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
@@ -275,9 +275,9 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 
 [^50]: Prêmia Sampa 2026 awards ceremony – São Paulo City Hall (YouTube; in Portuguese). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
 
-[^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the position of Especialista em Políticas Públicas e Gestão Governamental (EPPGG) (DOU – Brazil's Federal Official Gazette – of July 2026; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+[^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the position of Especialista em Políticas Públicas e Gestão Governamental (EPPGG), Class B, Step III (DOU – Brazil's Federal Official Gazette – of July 9, 2026, Section 2, p. 71; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
-[^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Assignment to the Agência Nacional de Proteção de Dados (ANPD, Brazil's National Data Protection Authority) (DOU – Brazil's Federal Official Gazette – of July 2026; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+[^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Confirmation of duty station at the Agência Nacional de Proteção de Dados (ANPD, Brazil's National Data Protection Authority) (DOU – Brazil's Federal Official Gazette – of July 9, 2026, Section 2 – Extra A, p. 1; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
 
 [^53]: Ordinance GABPR/ANPD No. 491, of July 16, 2026 – Designation to the executive commissioned role of Chefe de Projeto II (Project Head II, code FCE 3.07), in the Office of Directorate 2 of the ANPD (DOU – Brazil's Federal Official Gazette – of July 22, 2026, Section 2, p. 41; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
 

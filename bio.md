@@ -195,7 +195,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^10]: Vídeo: MM Entrevista com Paulo Higa – MacMagazine, 11/04/2021. [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
 
-[^11]: Guia do PC – Dicas e notícias sobre o mundo da informática (blog mantido por Paulo Higa antes do Tecnoblog). [guiadopc.com.br](https://www.guiadopc.com.br)
+[^11]: Guia do PC – Dicas e notícias sobre o mundo da informática (blog mantido por Paulo Higa antes do Tecnoblog). Site fora do ar; captura do Internet Archive de fev./2012. [web.archive.org](https://web.archive.org/web/20120228192627/http://www.guiadopc.com.br/)
 
 [^12]: Paulo Higa – Página de colaborador do TechTudo (2012). [techtudo.com.br](https://www.techtudo.com.br/colaborador/paulo-higa.html)
 
@@ -223,7 +223,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^24]: Diário Oficial da Cidade de São Paulo – Atos de pessoal referentes ao ingresso no cargo de Analista de Políticas Públicas e Gestão Governamental (APPGG) (DOC de set./2024). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
-[^25]: Diário Oficial da Cidade de São Paulo – Nomeação para o cargo em comissão de Assessor V, ref. CDA-5, no Gabinete da Secretaria Municipal de Educação (DOC de 14/11/2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
+[^25]: Título de Nomeação nº 1.163, de 14 de novembro de 2025 – Nomeação para o cargo de Assessor V, Ref. CDA-5, do Gabinete da Secretaria Municipal de Educação (DOC de 17/11/2025). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
 [^26]: Planejamento Estratégico 2026-2029 – Secretaria Municipal de Educação (SME). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
 
@@ -241,7 +241,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^33]: Classificação no CPNU 2024 para o cargo de EPPGG – Listas não oficiais de acompanhamento. [mail.vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); [rankingdosconcursos.com.br (lista 1)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1); [rankingdosconcursos.com.br (lista 2)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
 
-[^34]: Edital Enap nº 173, de 25 de maio de 2026 – Resultado final do Curso de Formação do CPNU para o cargo de EPPGG do MGI (DOU de 26/05/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
+[^34]: Edital Enap nº 173, de 25 de maio de 2026 – Resultado final do Curso de Formação Inicial do CPNU para o cargo de EPPGG do MGI, 18ª edição (DOU de 26/05/2026, Seção 3, p. 111). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
 
 [^35]: PodPods – Podcast em cinco episódios sobre o cenário brasileiro de podcasts, trabalho de conclusão de curso na Faculdade Cásper Líbero (2017). [soundcloud.com](https://soundcloud.com/podpods)
 
@@ -259,7 +259,7 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^42]: Relação de inscritos no Concurso Público SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP. [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
 
-[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do resultado final do CNU para o cargo de EPPGG (DOU de 10/06/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+[^43]: Edital nº 92, de 9 de junho de 2026 – Homologação do resultado final do CNU para o cargo de EPPGG (DOU de 10/06/2026, Seção 3, p. 101). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
 [^44]: Diário Oficial da Cidade de São Paulo – Nomeação para o cargo de Auditor Municipal de Controle Interno (AMCI), Nível I, área Geral (DOC de 10/06/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
@@ -275,9 +275,9 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 
 [^50]: Cerimônia de premiação do Prêmia Sampa 2026 – Prefeitura de São Paulo (YouTube). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
 
-[^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG) (DOU de jul./2026). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+[^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG), Classe B, Padrão III (DOU de 09/07/2026, Seção 2, p. 71). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
-[^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Lotação na Agência Nacional de Proteção de Dados (ANPD) (DOU de jul./2026). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+[^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Efetivação de exercício na Agência Nacional de Proteção de Dados (ANPD) (DOU de 09/07/2026, Seção 2 – Extra A, p. 1). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
 
 [^53]: Portaria GABPR/ANPD nº 491, de 16 de julho de 2026 – Designação para a Função Comissionada Executiva de Chefe de Projeto II (FCE 3.07), no Gabinete da Diretoria 2 da ANPD (DOU de 22/07/2026, Seção 2, p. 41). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
 
