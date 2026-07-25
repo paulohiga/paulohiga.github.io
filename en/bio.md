@@ -1,6 +1,6 @@
 ---
 layout: default
-last_modified: 2026-07-10
+last_modified: 2026-07-16
 permalink: /en/bio
 lang: en
 view: full
@@ -148,7 +148,7 @@ The final results were certified by **Notice (Edital) No. 92, of June 9, 2026**,
 
 ### 5.3 Appointment and Assignment to the National Data Protection Authority (ANPD)
 
-Following certification of the final results, Higa was **appointed to the position of Specialist in Public Policy and Government Management (EPPGG)** by **MGI Ordinance No. 7,912, of July 8, 2026**, published in the federal Official Gazette.[^51] He was then given his **initial assignment to the National Data Protection Authority (ANPD)** by **MGI Ordinance No. 7,918, of July 8, 2026**, also published in the DOU.[^52] The ANPD is the federal agency responsible for safeguarding personal data protection and for implementing and enforcing Brazil's **General Data Protection Law (LGPD)**.
+Following certification of the final results, Higa was **appointed to the position of Specialist in Public Policy and Government Management (EPPGG)** by **MGI Ordinance No. 7,912, of July 8, 2026**, published in the federal Official Gazette.[^51] He was then given his **initial assignment to the National Data Protection Authority (ANPD)** by **MGI Ordinance No. 7,918, of July 8, 2026**, also published in the DOU.[^52] The ANPD is the federal agency responsible for safeguarding personal data protection and for implementing and enforcing Brazil's **General Data Protection Law (LGPD)**. Within the agency, he was **appointed Project Manager II (FCE 3.07, an executive commissioned function)** in the **Office of Director Iagê Zendron Miola**, one of the members of the **ANPD's Board of Directors**, by **ANPD Ordinance No. 491, of July 16, 2026**, published in the federal Official Gazette.[^53]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Table 3: Milestones of the public sector transition">
 <table class="analysis-table">
@@ -278,3 +278,5 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 [^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the EPPGG position (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
 [^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Assignment to the National Data Protection Authority (ANPD) (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+
+[^53]: Ordinance GABPR/ANPD No. 491, of July 16, 2026 – Appointment as Project Manager II (FCE 3.07) in the Office of Director Iagê Zendron Miola, on the ANPD's Board of Directors (DOU, in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)

@@ -1,6 +1,6 @@
 ---
 layout: default
-last_modified: 2026-07-10
+last_modified: 2026-07-16
 permalink: /bio
 lang: pt
 view: full
@@ -148,7 +148,7 @@ Publicado no **Diário Oficial da União em 10 de junho de 2026**, o **Edital n�
 
 ### 5.3 Nomeação e Lotação na Agência Nacional de Proteção de Dados (ANPD)
 
-Após a homologação do resultado final, Higa foi **nomeado para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG)** pela **Portaria MGI nº 7.912, de 8 de julho de 2026**, publicada no **Diário Oficial da União**.[^51] Em seguida, pela **Portaria MGI nº 7.918, de 8 de julho de 2026**, também publicada no DOU, teve sua **lotação inicial na Agência Nacional de Proteção de Dados (ANPD)**,[^52] autarquia federal responsável por zelar pela proteção de dados pessoais e pela implementação e fiscalização da **Lei Geral de Proteção de Dados (LGPD)** no país.
+Após a homologação do resultado final, Higa foi **nomeado para o cargo de Especialista em Políticas Públicas e Gestão Governamental (EPPGG)** pela **Portaria MGI nº 7.912, de 8 de julho de 2026**, publicada no **Diário Oficial da União**.[^51] Em seguida, pela **Portaria MGI nº 7.918, de 8 de julho de 2026**, também publicada no DOU, teve sua **lotação inicial na Agência Nacional de Proteção de Dados (ANPD)**,[^52] autarquia federal responsável por zelar pela proteção de dados pessoais e pela implementação e fiscalização da **Lei Geral de Proteção de Dados (LGPD)** no país. Na agência, foi **nomeado Chefe de Projeto II (FCE 3.07)** no **Gabinete do Diretor Iagê Zendron Miola**, do **Conselho Diretor da ANPD**, pela **Portaria GABPR/ANPD nº 491, de 16 de julho de 2026**, publicada no Diário Oficial da União.[^53]
 
 <div class="analysis-table-wrapper" role="region" tabindex="0" aria-label="Tabela 3: Marcos da transição para o setor público">
 <table class="analysis-table">
@@ -278,3 +278,5 @@ Na administração pública, Higa atuou por cerca de dois anos (2024–2026) com
 [^51]: Portaria de Pessoal DGP/SSC/MGI nº 7.912, de 8 de julho de 2026 – Nomeação para o cargo de EPPGG (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
 [^52]: Portaria de Pessoal DICAT/SE/MGI nº 7.918, de 8 de julho de 2026 – Lotação na Agência Nacional de Proteção de Dados (ANPD) (DOU). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+
+[^53]: Portaria GABPR/ANPD nº 491, de 16 de julho de 2026 – Nomeação para Chefe de Projeto II (FCE 3.07) no Gabinete do Diretor Iagê Zendron Miola, do Conselho Diretor da ANPD (DOU). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
