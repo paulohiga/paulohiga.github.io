@@ -960,7 +960,6 @@ body.dark-theme .toc {
 
 /* --- References --- */
 .footnotes {
-    border-top: 1px solid var(--hairline);
     padding-top: 1.25rem;
     margin-top: 1rem;
 }
