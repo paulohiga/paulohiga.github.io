@@ -6,7 +6,7 @@ lang: en
 view: full
 ---
 
-**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He was **appointed** to the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career track in **Brazil's federal civil service**[^51], with an **initial assignment to the National Data Protection Authority (ANPD)**[^52]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as an **Advisor to the Secretary's Office**[^2] at the **Municipal Department of Education (SME, in the Portuguese acronym)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, among them the modeling of learning and equity criteria for the new **Educational Performance Bonus (PDE)**[^4].
+**[Paulo Seikishi Higa](/en/){:.bio-collapse-btn data-nav="" aria-label="Collapse Paulo Higa biography"}** (Chiba, Japan, **April 15, 1993**) is a **Brazilian journalist, manager, and public servant**. He was **appointed** to the **Specialist in Public Policy and Government Management (EPPGG)**[^1] career track in **Brazil's federal civil service**[^51], with an **initial assignment to the National Data Protection Authority (ANPD)**[^52]. Previously, he served as a **Public Policy and Government Management Analyst (APPGG)** at **São Paulo City Hall** and as an **Advisor to the Secretary's Office**[^25] at the **Municipal Department of Education (SME, in the Portuguese acronym)**. At the SME, he took part in strategic planning and public communication initiatives[^3], as well as governance and data analysis projects, among them the modeling of learning and equity criteria for the new **Educational Performance Bonus (PDE)**[^4].
 
 Before entering public administration, Higa built his career in digital media as **executive editor, head of operations, and partner at Tecnoblog**, Brazil's largest independent technology website[^5]. During his tenure at the outlet **from 2012 to 2023**, the site reached **over 30 million monthly pageviews**.[^5][^15] Author of more than 400 consumer electronics reviews[^13] and co-host of the **Tecnocast** podcast[^6], he won the **Especialistas Award for three consecutive years (2020, 2021, and 2022)**[^7] and was a finalist for the **Comunique-se Award**[^8]. He holds a **degree in Journalism from Faculdade Cásper Líbero**, a journalism school in São Paulo, and an **MBA in Management with an Emphasis on Leadership and Innovation from Fundação Getulio Vargas (FGV)**, one of Brazil's leading business schools.
 
@@ -128,7 +128,7 @@ In **2024**, after placing **19th** among **7,760 applicants**[^42] in a civil s
 
 At the SME, Higa contributed to modeling the criteria for the **Educational Performance Bonus (PDE)**,[^4] a revised model that prioritized **payment based on improved student learning outcomes and reduction of inequalities**. The change broke with the previous model, which for **16 years** had rewarded almost exclusively **attendance**: in practice, an employee only had to avoid missing work to earn the maximum bonus, with no connection to educational performance.[^4] Among the new criteria, alongside the inclusion of **learning outcomes**, were a bonus for **preschool attendance** — a mandatory stage of education — and an **extra reward** for the schools that improve the most on the indicators.[^4] In all, **R$ 206 million** was paid out, **14% more** than in 2024, with an increase in the maximum amount per educator as well.[^4] Higa also developed a **payment simulator**[^3] that allowed the school network's roughly **88,000 educators** to estimate how much they would receive. The redesigned PDE was **awarded 3rd place in the Large Scale category of Prêmia Sampa 2026**, São Paulo City Hall's award recognizing the best initiatives and innovative practices by municipal civil servants.[^49][^50]
 
-Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions with staff across the municipal school network. The 2026–2029 Strategic Planning was a **semifinalist in the Internal Processes category of Prêmia Sampa 2026**.[^49] Successive appointments published in the Official Gazette document his progression through the department's roles.[^24][^29][^2][^25]
+Beyond the PDE, he contributed to the **2026–2029 Strategic Planning**,[^26] developing data dashboards[^27] and communication materials[^28] for the listening sessions with staff across the municipal school network. The 2026–2029 Strategic Planning was a **semifinalist in the Internal Processes category of Prêmia Sampa 2026**.[^49] Successive appointments published in the Official Gazette document his progression through the department's roles.[^24][^29][^25]
 
 ### 4.3 Appointment to the Office of the Comptroller General of the City of São Paulo (2026)
 
@@ -175,110 +175,108 @@ In public administration, Higa served for about two years (2024–2026) as a **P
 ## 7. References
 {:.references-heading}
 
-[^1]: EPPGG Career – Portal do Servidor. [gov.br/servidor](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
+[^1]: Especialista em Políticas Públicas e Gestão Governamental (EPPGG) career – Portal do Servidor, Brazil's Ministry of Management and Innovation in Public Services (MGI). The EPPGG is a senior federal civil service career for public policy formulation and evaluation (in Portuguese). [gov.br](https://www.gov.br/servidor/pt-br/acesso-a-informacao/servidor/carreiras/eppgg)
 
-[^2]: São Paulo City Hall Official Gazette – Dec./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?hEYKw9IjCCgoCihtR_cKWC98n7Pd3P-Do_56XMFgRHlvX_C9sPjjaSCyRUdcpn-a79V3HX-BmH1nKd4IQ6LKcw,,)
+[^3]: São Paulo City Hall releases the PDE payout simulator – Municipal Department of Education (SME) (in Portuguese). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/)
 
-[^3]: PDE Values Simulator – SME. [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/noticias/prefeitura-de-sp-disponibiliza-simulador-de-valores-do-pde/)
+[^4]: City Hall to pay R$ 206 million to 88,000 educators, with the performance award reaching up to R$ 8,700 – São Paulo City Hall (in Portuguese). [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milh%C3%B5es-a-88-mil-educadores-e-pr%C3%AAmio-por-desempenho-pode-chegar-a-r-8-7-mil)
 
-[^4]: City Hall to pay R$ 206 million to 88,000 educators – PDE. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/prefeitura-vai-pagar-r-206-milh%C3%B5es-a-88-mil-educadores-e-pr%C3%AAmio-por-desempenho-pode-chegar-a-r-8-7-mil)
+[^5]: About Tecnoblog – Tecnoblog, Brazil's largest independent technology news site (in Portuguese). [tecnoblog.net](https://tecnoblog.net/sobre-o-tb/)
 
-[^5]: About Tecnoblog. [tecnoblog.net/sobre-o-tb/](https://tecnoblog.net/sobre-o-tb/)
+[^6]: Tecnocast – Apple Podcasts (in Portuguese). [podcasts.apple.com](https://podcasts.apple.com/br/podcast/tecnocast/id505204037)
 
-[^6]: Tecnocast – Apple Podcasts. [podcasts.apple.com](https://podcasts.apple.com/br/podcast/tecnocast/id505204037)
+[^7]: Prêmio Especialistas – Negócios da Comunicação platform (Portal da Comunicação). A Brazilian award honouring specialised journalists, voted on by the communications sector (in Portuguese). [portaldacomunicacao.com.br](https://portaldacomunicacao.com.br/premios/premio-especialistas/)
 
-[^7]: Prêmio Especialistas – Portal da Comunicação. [portaldacomunicacao.com.br](https://portaldacomunicacao.com.br/premios/premio-especialistas/)
-
-[^8]: Prêmio Comunique-se (official page and winners). [premio.comunique-se.com.br](https://premio.comunique-se.com.br/); [comunique-se.com.br](https://comunique-se.com.br/blog/vencedores-premio-comunique-se/)
+[^8]: Prêmio Comunique-se – Official page and list of winners. A Brazilian journalism award described by its organisers as the "Oscars of Brazilian journalism" (in Portuguese). [premio.comunique-se.com.br](https://premio.comunique-se.com.br/); [comunique-se.com.br](https://comunique-se.com.br/blog/vencedores-premio-comunique-se/)
 
 [^9]: Paulo Higa – Personal website. [higa.me](https://higa.me/)
 
-[^10]: Interview with Paulo Higa – Mac Magazine (Apr./2021). [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
+[^10]: Video: MM Entrevista with Paulo Higa – MacMagazine, April 11, 2021 (in Portuguese). [macmagazine.com.br](https://macmagazine.com.br/post/2021/04/11/video-mm-entrevista-com-paulo-higa/); [youtube.com](https://www.youtube.com/watch?v=s0gwW-D3qWE)
 
-[^11]: Guia do PC. [guiadopc.com.br](https://www.guiadopc.com.br)
+[^11]: Guia do PC – Computing news and tips, the blog Higa ran before joining Tecnoblog. The site is no longer online; archived snapshot from Feb. 2012 (in Portuguese). [web.archive.org](https://web.archive.org/web/20120228192627/http://www.guiadopc.com.br/)
 
-[^12]: Paulo Higa – TechTudo (contributor, 2012). [techtudo.com.br](http://www.techtudo.com.br/colaborador/paulo-higa/10.html)
+[^12]: Paulo Higa – Contributor page at TechTudo, a technology outlet owned by Grupo Globo (2012; in Portuguese). [techtudo.com.br](https://www.techtudo.com.br/colaborador/paulo-higa.html)
 
-[^13]: Paulo Higa – Tecnoblog. [tecnoblog.net/author/paulo-higa/](https://tecnoblog.net/author/paulo-higa/)
+[^13]: Paulo Higa – Author archive at Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/author/paulo-higa/)
 
-[^14]: Editorial Policy – Tecnoblog. [tecnoblog.net/politica-editorial/](https://tecnoblog.net/politica-editorial/)
+[^14]: Editorial Policy – Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/politica-editorial/)
 
-[^15]: Tecnoblog – Wikipedia (Portuguese). [pt.wikipedia.org/wiki/Tecnoblog](https://pt.wikipedia.org/wiki/Tecnoblog)
+[^15]: Tecnoblog – Portuguese-language Wikipedia. [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Tecnoblog)
 
-[^16]: Tecnocast – Tecnoblog. [tecnoblog.net/tecnocast/](https://tecnoblog.net/tecnocast/)
+[^16]: Tecnocast – Official podcast page at Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/tecnocast/)
 
-[^17]: Tecnocast 187 – A crise global de chips. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/)
+[^17]: Tecnocast 187 – "A crise global de chips" (The global chip crisis) – Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-187-a-crise-global-de-chips/)
 
-[^18]: Tecnocast 204 – Seus dados nas mãos do poder. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/)
+[^18]: Tecnocast 204 – "Seus dados nas mãos do poder" (Your data in the hands of power) – Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-204-seus-dados-nas-maos-do-poder/)
 
-[^19]: Garmin Fenix 6 Review – Tecnoblog. [tecnoblog.net/testamos](https://tecnoblog.net/testamos/garmin-fenix-6-review/)
+[^19]: Garmin Fenix 6: sports watch review – Tecnoblog (in Portuguese). [tecnoblog.net](https://tecnoblog.net/testamos/garmin-fenix-6-review/)
 
-[^20]: What happened to Paulo Higa? – Tecnoblog Community. [tecnoblog.net/comunidade](https://tecnoblog.net/comunidade/t/o-que-houve-com-o-paulo-higa/131341)
+[^20]: "O que houve com o Paulo Higa?" (What happened to Paulo Higa?) – Thread on the Tecnoblog Community forum, Aug. 2024 (in Portuguese). [tecnoblog.net](https://tecnoblog.net/comunidade/t/o-que-houve-com-o-paulo-higa/131341)
 
-[^21]: Paulo Higa – Strava. [strava.com/athletes/10005981](https://www.strava.com/athletes/10005981)
+[^21]: Paulo Higa – Athlete profile on Strava. [strava.com](https://www.strava.com/athletes/10005981)
 
-[^22]: Paulo HIGA – UTMB World. [utmb.world](https://utmb.world/en/runner/4915599.paulo.higa)
+[^22]: Paulo HIGA – Athlete profile on UTMB World. [utmb.world](https://utmb.world/en/runner/4915599.paulo.higa)
 
-[^23]: Civil Service Exam – Public Policy and Government Management Analyst (SMGE2303). [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
+[^23]: Civil service examination SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG, Public Policy and Government Management Analyst), São Paulo City Hall / Fundação VUNESP, the examination board (in Portuguese). [vunesp.com.br](https://www.vunesp.com.br/SMGE2303)
 
-[^24]: São Paulo City Hall Official Gazette – Aug./2024. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
+[^24]: Ordinance No. 073/SEGES/2024 – Assignment of the duty station at the Municipal Department of Education (SME) for members of the APPGG career track, effective August 19, 2024 (DOC – São Paulo City Official Gazette – of August 20, 2024; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?FcojpIuChgfh5s2vhSHfwOyuANy4pprxJEgYg0ADLCFwSDoCvHdZwtyrwy5kz1-vk2ovCEU_Oh7iZLUssGe27A,,)
 
-[^25]: São Paulo City Hall Official Gazette – Appointment as Advisor V (14 Nov./2025). [diariooficial.prefeitura.sp.gov.br](http://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
+[^25]: Appointment Instrument No. 1,163, of November 14, 2025 – Appointment to the political-appointee post of Assessor V (Advisor V), grade CDA-5, in the Office of the Municipal Department of Education (DOC – São Paulo City Official Gazette – of November 17, 2025; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?DVyJ1nrP3gHni6hA09MHH4chWuoFHEN2m05OYPiO9BscHeN7iRiW7LDxKnSb758UkpT2tBMHfI8SgQQ6Kkk4oaJ_Z12B7qMpaaflEwC3ebJFj0rJxTkrYOis0cxiahvT)
 
-[^26]: 2026–2029 Strategic Planning – SME. [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
+[^26]: 2026–2029 Strategic Plan – Municipal Department of Education (SME) (in Portuguese). [educacao.sme.prefeitura.sp.gov.br](https://educacao.sme.prefeitura.sp.gov.br/planejamento-estrategico-2026-2029/)
 
-[^27]: SME-UPGE Data Dashboards. [sme-upge.github.io/arvore/](https://sme-upge.github.io/arvore/)
+[^27]: Data dashboards of the Strategic Planning and Management Unit (UPGE) – SME (in Portuguese). [sme-upge.github.io](https://sme-upge.github.io/arvore/)
 
-[^28]: SME-UPGE Communication Materials. [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
+[^28]: Communication materials of the Strategic Planning and Management Unit (UPGE) – SME (in Portuguese). [sme-upge.github.io (PDF)](https://sme-upge.github.io/diagnostico/one-pages.pdf)
 
-[^29]: São Paulo City Hall Official Gazette – Nov./2025. [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
+[^29]: Appointment Instrument No. 1,014, of October 3, 2025 – Appointment to the political-appointee post of Assessor II (Advisor II), grade CDA-2, in the Office of the Municipal Department of Education (DOC – São Paulo City Official Gazette – of October 6, 2025; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?tnNBy-b8zWoYI1v8uweNOdThZG7zgqK6YSwpWoutw_p0z2MvSFfQu6QzQVZC2rXv7S28ovL9f6tApz2_qv2I8g,,)
 
-[^30]: Call-ups for the Training Course – CNU 2024 (1st and 2nd). [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
+[^30]: Call-ups for the CNU 2024 training courses – 1st and 2nd rounds (in Portuguese). [cdn.direcaoconcursos.com.br (PDF)](https://cdn.direcaoconcursos.com.br/uploads/2026/01/cnu-2024-convocacao-curso-formacao.pdf); [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/convocacao-novas-vagas/aprovados-convocados/documentos/segunda_convocacao_cf_regular_20260109.pdf)
 
-[^31]: Training Course and EPPGG career – official information. [gov.br/gestao](https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/janeiro/mgi-e-enap-participam-da-abertura-dos-cursos-de-formacao-da-2a-chamada-do-cpnu-1-1); [enap.gov.br](https://www.enap.gov.br/educacao-e-capacitacao/cpnu-segunda-chamada/guia-do-candidato/)
+[^31]: MGI and Enap take part in the opening of the 2nd-round CPNU training courses – Ministry of Management and Innovation in Public Services, Jan. 2026; Candidate's Guide – CPNU Training Courses (2nd round) – Enap, Brazil's National School of Public Administration (in Portuguese). [gov.br](https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/janeiro/mgi-e-enap-participam-da-abertura-dos-cursos-de-formacao-da-2a-chamada-do-cpnu-1-1); [enap.gov.br](https://www.enap.gov.br/educacao-e-capacitacao/cpnu-segunda-chamada/guia-do-candidato/)
 
-[^32]: Candidates per Vacancy – Block 7 – CNU. [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf)
+[^32]: Block 7 – Government Management and Public Administration: candidates per vacancy – Concurso Nacional Unificado (CNU), MGI (in Portuguese). [gov.br (PDF)](https://www.gov.br/gestao/pt-br/concursonacional/blocos-tematicos/arquivos/candidatos-por-vaga-bloco-7.pdf)
 
-[^33]: CPNU 2024 Classification – EPPGG. [vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); Ranking dos Concursos: [list 1](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1), [list 2](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
+[^33]: CPNU 2024 rankings for the EPPGG position – Unofficial candidate-tracking lists (in Portuguese). [mail.vagasapp.com.br](https://mail.vagasapp.com.br/concursos/?edital=25&pagina=1495&filtro=&regiao=&cargo=); [rankingdosconcursos.com.br (list 1)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=644_1&tV=1); [rankingdosconcursos.com.br (list 2)](https://www.rankingdosconcursos.com.br/index.php?tC=6&sCa=571_1&tV=1)
 
-[^34]: Enap Notice No. 173, of May 25, 2026 – Training Course Results (DOU, 05/26/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
+[^34]: Enap Notice No. 173, of May 25, 2026 – Final result of the CPNU initial training course for the MGI's EPPGG position, 18th edition (DOU – Brazil's Federal Official Gazette – of May 26, 2026, Section 3, p. 111; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-enap-n-173-de-25-de-maio-de-2026-708263131)
 
-[^35]: PodPods – Undergraduate Capstone Project (podcast). [soundcloud.com/podpods](https://soundcloud.com/podpods)
+[^35]: PodPods – Five-episode podcast on the Brazilian podcasting scene, produced as an undergraduate capstone project at Faculdade Cásper Líbero (2017; in Portuguese). [soundcloud.com](https://soundcloud.com/podpods)
 
-[^36]: Tecnocast 100 – How it all began. [tecnoblog.net/tecnocast](https://tecnoblog.net/tecnocast/tecnocast-100-como-tudo-comecou/); [podcasts.apple.com](https://podcasts.apple.com/br/podcast/como-tudo-come%C3%A7ou/id505204037?i=1000421896563)
+[^36]: Tecnocast 100 – "Como tudo começou" (How it all began) – Tecnoblog, 2018 (in Portuguese). [tecnoblog.net](https://tecnoblog.net/tecnocast/tecnocast-100-como-tudo-comecou/); [podcasts.apple.com](https://podcasts.apple.com/br/podcast/como-tudo-come%C3%A7ou/id505204037?i=1000421896563)
 
-[^37]: Critical analyses at Tecnoblog (selection): [Microsoft](https://tecnoblog.net/especiais/eu-nunca-vi-microsoft-tao-bem-como-agora/); [Windows 10 Mobile](https://tecnoblog.net/especiais/microsoft-windows-10-mobile-saga/); [Google × EU](https://tecnoblog.net/especiais/google-uniao-europeia-abuso-poder-mercado/); [free VPN](https://tecnoblog.net/especiais/vpn-gratis-ilimitado-opera/); [Wi-Fi 6E](https://tecnoblog.net/especiais/wi-fi-6e-frequencia-6-ghz-aprovado-fcc/); [accessibility](https://tecnoblog.net/especiais/maquina-cartao-acessibilidade-cegos/); [COVID-19 tracking](https://tecnoblog.net/especiais/como-funciona-a-tecnologia-feita-por-apple-e-google-para-monitorar-covid-19/); [Apple Silicon](https://tecnoblog.net/especiais/sai-intel-entra-apple-silicon-transicao-arm-macs/); [Huawei](https://tecnoblog.net/especiais/huawei-futuro-lista-negra-eua/); [Intel (Mexico)](https://tecnoblog.net/especiais/intel-guadalajara-design-center-mexico-onde-nascem-os-processadores/); [KRACK flaw](https://tecnoblog.net/especiais/falha-wifi-wpa2-krack-como-se-proteger/); [Samsung](https://tecnoblog.net/especiais/samsung-vale-do-silicio-coreia-do-sul/).
+[^37]: Critical analyses published at Tecnoblog (selection; in Portuguese): [Microsoft](https://tecnoblog.net/especiais/eu-nunca-vi-microsoft-tao-bem-como-agora/); [Windows 10 Mobile](https://tecnoblog.net/especiais/microsoft-windows-10-mobile-saga/); [Google × EU](https://tecnoblog.net/especiais/google-uniao-europeia-abuso-poder-mercado/); [free VPN](https://tecnoblog.net/especiais/vpn-gratis-ilimitado-opera/); [Wi-Fi 6E](https://tecnoblog.net/especiais/wi-fi-6e-frequencia-6-ghz-aprovado-fcc/); [accessibility](https://tecnoblog.net/especiais/maquina-cartao-acessibilidade-cegos/); [COVID-19 tracking](https://tecnoblog.net/especiais/como-funciona-a-tecnologia-feita-por-apple-e-google-para-monitorar-covid-19/); [Apple Silicon](https://tecnoblog.net/especiais/sai-intel-entra-apple-silicon-transicao-arm-macs/); [Huawei](https://tecnoblog.net/especiais/huawei-futuro-lista-negra-eua/); [Intel (Mexico)](https://tecnoblog.net/especiais/intel-guadalajara-design-center-mexico-onde-nascem-os-processadores/); [KRACK flaw](https://tecnoblog.net/especiais/falha-wifi-wpa2-krack-como-se-proteger/); [Samsung](https://tecnoblog.net/especiais/samsung-vale-do-silicio-coreia-do-sul/).
 
-[^38]: Event coverage and behind-the-scenes vlogs (YouTube): [MWC 2018](https://www.youtube.com/watch?v=aBWOULblT8o); [WWDC 2018](https://www.youtube.com/watch?v=CYlqhCnTYYY); [WWDC 2019](https://www.youtube.com/watch?v=__s7VDykEuQ); Samsung ([1](https://www.youtube.com/watch?v=J5lGx_s5SmU), [2](https://www.youtube.com/watch?v=Ej_A--OZKSA), [3](https://www.youtube.com/watch?v=7cyxJRQm474)); Huawei ([1](https://www.youtube.com/watch?v=VGpyb_kow3I), [2](https://www.youtube.com/watch?v=4bo5Ii4DkVE)); [Snapdragon Tech Summit 2018](https://www.youtube.com/watch?v=-Abq_oHIImk); [Snapdragon Tech Summit 2021](https://www.youtube.com/watch?v=FZnEuesvVfc); [CES 2019](https://www.youtube.com/watch?v=HKB4v_qzVpw); [CES 2022](https://www.youtube.com/watch?v=uwQUQ8LZmAw).
+[^38]: Event coverage and behind-the-scenes vlogs on Tecnoblog's YouTube channel (selection; in Portuguese): [MWC 2018](https://www.youtube.com/watch?v=aBWOULblT8o); [WWDC 2018](https://www.youtube.com/watch?v=CYlqhCnTYYY); [WWDC 2019](https://www.youtube.com/watch?v=__s7VDykEuQ); Samsung ([1](https://www.youtube.com/watch?v=J5lGx_s5SmU), [2](https://www.youtube.com/watch?v=Ej_A--OZKSA), [3](https://www.youtube.com/watch?v=7cyxJRQm474)); Huawei ([1](https://www.youtube.com/watch?v=VGpyb_kow3I), [2](https://www.youtube.com/watch?v=4bo5Ii4DkVE)); [Snapdragon Tech Summit 2018](https://www.youtube.com/watch?v=-Abq_oHIImk); [Snapdragon Tech Summit 2021](https://www.youtube.com/watch?v=FZnEuesvVfc); [CES 2019](https://www.youtube.com/watch?v=HKB4v_qzVpw); [CES 2022](https://www.youtube.com/watch?v=uwQUQ8LZmAw).
 
-[^39]: Tecnocast episodes (selection): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [the last one he took part in](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
+[^39]: Tecnocast episodes featuring Paulo Higa (selection; in Portuguese): [177](https://tecnoblog.net/tecnocast/tecnocast-177-o-grande-vazamento-de-dados-do-brasil/), [027](https://tecnoblog.net/tecnocast/tecnocast-027-nas-profundezas-da-web/), [049](https://tecnoblog.net/tecnocast/tecnocast-049-o-futuro-trabalho/), [148](https://tecnoblog.net/tecnocast/tecnocast-148-sumonando-jogos-na-educacao/), [143](https://tecnoblog.net/tecnocast/tecnocast-143-por-onde-anda-a-lgpd/), [118](https://tecnoblog.net/tecnocast/tecnocast-118-qual-e-a-treta-dos-eua-com-a-china/), [092](https://tecnoblog.net/tecnocast/tecnocast-092-celulares-nostalgicos/), [186](https://tecnoblog.net/tecnocast/tecnocast-186-a-nova-velha-intel/), [155](https://tecnoblog.net/tecnocast/tecnocast-155-as-gigantes-tem-poder/), [223](https://tecnoblog.net/tecnocast/tecnocast-223-os-sistemas-do-governo-sob-ataque/), [214](https://tecnoblog.net/tecnocast/tecnocast-214-e-se-o-real-fosse-digital/), [the last one he took part in](https://tecnoblog.net/tecnocast/aplicativos-de-conversa-que-nao-conversam/).
 
-[^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la" (interview with B. Piropo and Paulo Higa). Rádio CBN, 2017. [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
+[^40]: CBN Gerações – "Tecnologia é muito simples, você só precisa encará-la" (Technology is very simple, you just have to face it): interview with B. Piropo and Paulo Higa – Rádio CBN, a Brazilian all-news radio network, 2017 (in Portuguese). [cbn.globoradio.globo.com](https://cbn.globoradio.globo.com/media/audio/136481/tecnologia-e-muito-simples-voce-so-precisa-encara-.htm)
 
-[^41]: Final Ranking – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
+[^41]: Final ranking of civil service examination SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP (in Portuguese). [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NTc1MzEzNw%3d%3d)
 
-[^42]: List of Registered Candidates – Public Policy and Government Management Analyst (APPGG) – VUNESP. [documento.vunesp.com.br](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
+[^42]: List of registered candidates for civil service examination SMGE2303 – Analista de Políticas Públicas e Gestão Governamental (APPGG) – Fundação VUNESP (in Portuguese). [documento.vunesp.com.br (PDF)](https://documento.vunesp.com.br/documento/stream/NDYyOTkyNw%3d%3d)
 
-[^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU Final Results for the EPPGG position (DOU, 06/10/2026). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
+[^43]: Notice No. 92, of June 9, 2026 – Certification of the CNU final results for the EPPGG position (DOU – Brazil's Federal Official Gazette – of June 10, 2026, Section 3, p. 101; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/edital-n-92-de-9-junho-de-2026-711263674)
 
-[^44]: São Paulo City Hall Official Gazette – Appointment as Auditor Municipal de Controle Interno (06/10/2026). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
+[^44]: Appointment notice – SEGES/COGEP – Appointment to the tenured position of Auditor Municipal de Controle Interno (AMCI, Municipal Internal Control Auditor), Level I, General track, ranked 9th on the general list (DOC – São Paulo City Official Gazette – of June 10, 2026; in Portuguese). [diariooficial.prefeitura.sp.gov.br](https://diariooficial.prefeitura.sp.gov.br/md_epubli_visualizar.php?H6V05Ih5fsKdqiiC8OzqZbcV4K3ZgVSzqmyYNgwaAuACItbNieh6WV3L6Tkb8xusUmMLzxl5GG4oFf-k8Hsdkg,,)
 
-[^45]: Auditor Municipal de Controle Interno (AMCI) career – Office of the Comptroller General of the City of São Paulo. [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
+[^45]: Auditor Municipal de Controle Interno (AMCI) career – São Paulo City Hall / Office of the Comptroller General of the City of São Paulo (CGM-SP); entry in the Portuguese-language Wikipedia (in Portuguese). [prefeitura.sp.gov.br](https://prefeitura.sp.gov.br/w/noticia/prefeitura-de-sao-paulo-autoriza-a-abertura-de-concurso-publico-para-50-vagas-de-auditores-municipais-de-controle-interno); [pt.wikipedia.org](https://pt.wikipedia.org/wiki/Auditor_Municipal_de_Controle_Interno_%28S%C3%A3o_Paulo%29)
 
-[^46]: Paulo Higa, of Tecnoblog, shortlisted for the 2021 Comunique-se Award – Terra (in Portuguese). [terra.com.br](https://www.terra.com.br/noticias/tecnologia/paulo-higa-do-tecnoblog-e-indicado-ao-premio-comunique-se-2021,c4ac8599c6378e2e12601b4e648bfaf7muhnkd9j.html)
+[^46]: Paulo Higa, of Tecnoblog, shortlisted for the 2021 Prêmio Comunique-se – Terra, 2021 (in Portuguese). [terra.com.br](https://www.terra.com.br/noticias/tecnologia/paulo-higa-do-tecnoblog-e-indicado-ao-premio-comunique-se-2021,c4ac8599c6378e2e12601b4e648bfaf7muhnkd9j.html)
 
-[^47]: Unified National Civil Service Exam: what it is and how the "Enem dos Concursos" worked – Correio Braziliense (Apr./2026, in Portuguese). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); Agência Brasil: [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
+[^47]: Concurso Nacional Unificado: what it is and how the "Enem dos Concursos" worked – Correio Braziliense, April 2, 2026; CNU 2025: exam locations to be released from 6 p.m. today – Agência Brasil, Sep. 2025 (in Portuguese). [correiobraziliense.com.br](https://www.correiobraziliense.com.br/aqui/2026/04/02/concurso-nacional-unificado-o-que-e-e-como-funcionou-o-enem-dos-concursos/); [agenciabrasil.ebc.com.br](https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/cnu-2025-locais-de-prova-serao-divulgados-partir-das-18h-de-hoje)
 
-[^48]: Paulo Higa – LinkedIn. [linkedin.com/in/paulohiga](https://www.linkedin.com/in/paulohiga/)
+[^48]: Paulo Higa – LinkedIn profile. [linkedin.com](https://www.linkedin.com/in/paulohiga/)
 
-[^49]: Prêmia Sampa 2026 – São Paulo City Hall (in Portuguese). [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
+[^49]: Prêmia Sampa 2026 – São Paulo City Hall / Municipal Department of Management (SEGES). An annual award recognising innovative projects by the city's civil servants (in Portuguese). [premiasampa.prefeitura.sp.gov.br](https://premiasampa.prefeitura.sp.gov.br)
 
-[^50]: Prêmia Sampa 2026 awards ceremony (YouTube, in Portuguese). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
+[^50]: Prêmia Sampa 2026 awards ceremony – São Paulo City Hall (YouTube; in Portuguese). [youtube.com](https://www.youtube.com/watch?v=LlSHX1FQJLM)
 
-[^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the EPPGG position (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
+[^51]: Personnel Ordinance DGP/SSC/MGI No. 7,912, of July 8, 2026 – Appointment to the position of Especialista em Políticas Públicas e Gestão Governamental (EPPGG), Class B, Step III (DOU – Brazil's Federal Official Gazette – of July 9, 2026, Section 2, p. 71; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dgp/ssc/mgi-n-7.912-de-8-de-julho-de-2026-717771595)
 
-[^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Assignment to the National Data Protection Authority (ANPD) (DOU, in Portuguese). [in.gov.br](http://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
+[^52]: Personnel Ordinance DICAT/SE/MGI No. 7,918, of July 8, 2026 – Confirmation of duty station at the Agência Nacional de Proteção de Dados (ANPD, Brazil's National Data Protection Authority) (DOU – Brazil's Federal Official Gazette – of July 9, 2026, Section 2 – Extra A, p. 1; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-de-pessoal-dicat/se/mgi-n-7.918-de-8-de-julho-de-2026-718108405)
 
-[^53]: Ordinance GABPR/ANPD No. 491, of July 16, 2026 – Designation to the executive commissioned role of Chefe de Projeto II (FCE 3.07), in the Office of Directorate 2 of the ANPD (DOU of July 22, 2026, Section 2, p. 41; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
+[^53]: Ordinance GABPR/ANPD No. 491, of July 16, 2026 – Designation to the executive commissioned role of Chefe de Projeto II (Project Head II, code FCE 3.07), in the Office of Directorate 2 of the ANPD (DOU – Brazil's Federal Official Gazette – of July 22, 2026, Section 2, p. 41; in Portuguese). [in.gov.br](https://www.in.gov.br/web/dou/-/portaria-gabpr/anpd-n-491-de-16-de-julho-de-2026-720598149)
 
-[^54]: Board of Directors – National Data Protection Authority (ANPD, in Portuguese). [gov.br/anpd](https://www.gov.br/anpd/pt-br/composicao/conselho-diretor)
+[^54]: Board of Directors – Agência Nacional de Proteção de Dados (ANPD, Brazil's National Data Protection Authority) (in Portuguese). [gov.br](https://www.gov.br/anpd/pt-br/composicao/conselho-diretor)
