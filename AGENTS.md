@@ -67,16 +67,71 @@ apresentação, e vice-versa.
 ### Estrutura
 
 - `_notas/<assunto>.md` — a nota publicada (comentários). Front matter:
-  `layout: nota`, `permalink`, `title`, `description`, `lei` (qual texto legal
-  exibir ao lado) e `revisado_em` (data da última revisão **humana**).
+  `layout: nota`, `permalink`, `title`, `description`, `lei` (a norma
+  principal, pré-carregada no HTML), `normas_extra` (opcional — lista de
+  slugs de `_leis` para normas adicionais, ver abaixo) e `revisado_em` (data
+  da última revisão **humana**).
 - `_leis/<assunto>.md` — o texto legal em Markdown puro, sem âncoras nem
-  classes. Só o front matter (`titulo`, `apelido`, `fonte`, `compilado_ate`) é
-  acrescentado; **o texto da lei não se altera**.
+  classes. Front matter: `titulo`, `apelido`, `fonte`, `compilado_ate`
+  (opcional) e, só para normas adicionais (ver abaixo), `tipo` e `prefixo`.
+  **O texto da lei não se altera.**
 - `_layouts/nota.html` monta os dois painéis; `_includes/lei-anotada.html`
   renderiza o texto legal dando um id a cada dispositivo.
 
 Criar uma nota é criar um arquivo; excluir é apagá-lo. O sitemap e os links se
 ajustam sozinhos no build.
+
+#### Múltiplas normas por nota
+
+Uma nota pode exibir, no painel "Lei seca", mais de um texto legal — por
+exemplo a lei e um decreto que a regulamenta. A norma indicada em `lei` é a
+principal: fica pré-carregada no HTML, sem prefixo de id, exatamente como
+antes desse recurso existir (as âncoras já publicadas, tipo `#art-5-v`, não
+mudam). Normas adicionais entram em `normas_extra` (lista de slugs de
+`_leis/`), com dois requisitos extras no front matter do arquivo em `_leis/`:
+
+- `tipo` — `lei`, `decreto` ou `resolucao` (documentação; não altera o
+  comportamento hoje, mas evita ambiguidade se o rótulo do link de fonte vier
+  a depender do tipo).
+- `prefixo` — namespace curto e estável dos ids dessa norma (ex.:
+  `dec12880`), para não colidir com os ids da norma principal nem de outras
+  normas extras. Vira `dec12880-art-5`, `lei-dec12880-capitulo-i-…` etc. —
+  ver o include `lei-anotada.html`, que recebe `prefixo` como parâmetro
+  opcional.
+
+Uma norma extra **não é pré-carregada**: ela é buscada via `fetch()` só quando
+o leitor a seleciona no seletor de normas (ou ao abrir um link com âncora
+prefixada, tipo `/notas/eca-digital#dec12880-art-24`), e o resultado fica em
+cache na aba enquanto ela estiver aberta. Isso significa que **o seletor de
+normas e a navegação para uma norma extra exigem JavaScript** — é uma exceção
+consciente à regra geral de "funciona sem JS" das notas, decidida para não
+pré-carregar normas que ainda vão se multiplicar (resoluções da ANPD, outros
+decretos do MCI). Sem JavaScript, o seletor fica oculto e só a norma principal
+aparece.
+
+A norma extra é servida por um HTML solto em `_fragmentos/<slug>.html`
+(coleção `fragmentos`, ver `_config.yml`), sem link algum apontando para ele,
+fora do sitemap (`sitemap: false`) e bloqueado em `robots.txt`
+(`/notas/fragmentos/`) — não é uma página para navegação humana. Ele só chama
+`lei-anotada.html` com o `prefixo` da norma:
+
+```liquid
+{%- assign norma = site.leis | where: 'slug', 'decreto-12880' | first -%}
+{%- include lei-anotada.html lei=norma prefixo=norma.prefixo -%}
+```
+
+**Por que uma coleção própria, e por que ela vem antes de `leis` no
+`_config.yml`:** o Jekyll renderiza as coleções na ordem declarada em
+`_config.yml`, e renderizar uma coleção reescreve o `.content` de cada
+documento dela para o HTML já convertido (mesmo com `output: false`). Se o
+fragmento fosse uma página solta (fora de qualquer coleção), ele seria
+renderizado *depois* de todas as coleções — inclusive depois de `leis` — e
+receberia o `.content` da norma já convertido pelo Kramdown padrão, sem as
+âncoras por dispositivo. Colocar o fragmento numa coleção (`fragmentos`)
+declarada *antes* de `leis` garante que ele lê o Markdown ainda cru, do mesmo
+jeito que `_notas/*.md` já fazia. Ao criar uma nova norma extra, replique o
+padrão de `_fragmentos/decreto-12880.html` — não crie uma página solta fora de
+coleção para isso.
 
 ### Referências clicáveis
 
@@ -101,10 +156,14 @@ um defeito, não um detalhe.
 
 Três cuidados que já custaram tempo:
 
-- **`#art-…` é sempre a lei daquela nota.** Uma nota comenta decretos,
-  resoluções e outras leis, e o número do artigo colide: "Decreto nº
-  12.880/2026, art. 24" não é o art. 24 do ECA Digital. Só vire link o que
-  remete à própria lei exibida ao lado; o resto fica em texto puro.
+- **`#art-…` sem prefixo é sempre a norma principal (`lei`) daquela nota.**
+  Uma nota pode comentar decretos, resoluções e outras leis citadas só em
+  texto puro — nesses casos o número do artigo colide: "Decreto nº
+  12.880/2026, art. 24" não é o art. 24 do ECA Digital, e não deve virar link
+  para `#art-24`. Isso só deixa de valer para uma norma listada em
+  `normas_extra` (ver "Múltiplas normas por nota" acima): ela tem prefixo
+  próprio (ex. `dec12880-art-24`) e pode ser linkada com segurança, porque o
+  prefixo já evita a colisão.
 - **Redação superada não recebe âncora.** Quando o texto legal traz a redação
   antiga tachada (`~~…~~`) ao lado da nova, só a vigente é ancorada — é o que
   evita id duplicado e link para texto fora de vigor. Se um dispositivo só
@@ -114,6 +173,43 @@ Três cuidados que já custaram tempo:
   5º), e do art. 36-A do ECA Digital, com vigência encerrada.
 - **Entre notas, use o caminho da página**: `[art. 6º da LGPD](/notas/lgpd#art-6)`
   abre a outra nota já posicionada no dispositivo.
+
+### Ancorando referências automaticamente
+
+`scripts/ancorar_referencias.py` varre um comentário em busca de menções, em
+texto puro, a uma norma que já existe em `/notas` (a própria lei da nota, uma
+`normas_extra` dela, ou a lei principal de outra nota) e as transforma nesses
+links — sem gastar token de LLM nisso a cada nova norma publicada ou
+comentário editado. Ele reconhece a norma por um registro de aliases em
+`_data/normas.yml` (adicione uma entrada lá para cada norma nova) e só cria o
+link se o id de destino realmente existir no texto legal correspondente —
+recalculado a partir de `_leis/<norma>.md` com a mesma regra de
+`lei-anotada.html` (ids inválidos não geram link partido).
+
+```bash
+python3 scripts/ancorar_referencias.py --check eca-digital lgpd mci   # mostra o diff, não grava
+python3 scripts/ancorar_referencias.py --apply eca-digital            # grava
+python3 scripts/ancorar_referencias.py --validar lgpd mci             # mede fidelidade contra os links já existentes
+```
+
+**Por padrão, o script só cria link quando a norma está nomeada perto da
+citação** (antes: "Decreto nº 12.880/2026, art. 24"; ou depois: "art. 6º da
+LGPD"). Citações "nuas" (só "art. 24", sem norma por perto) não são ligadas
+por padrão — use `--incluir-padrao` para isso, com **revisão redobrada do
+diff**: essa opção assume que uma citação nua é da norma principal da própria
+nota, o que já se mostrou errado em parágrafos que nomeiam a norma numa frase
+e a omitem nas seguintes (o script não rastreia contexto entre linhas). É por
+isso que `--validar` mede a fidelidade contra o LGPD e o Marco Civil (que já
+têm essas citações nuas manualmente linkadas) sempre com `--incluir-padrao`
+ligado — é o que está sendo calibrado — mas o `--apply` do dia a dia deve
+continuar no modo padrão (sem essa opção), que é o que gerou os links do
+Decreto nº 12.880/2026.
+
+Limitações conhecidas, por design (documentadas com mais detalhe no docstring
+do script): citações compostas com mais de um sufixo em formatos incomuns
+(ex.: uma faixa de parágrafos "§§ 2º a 4º"), ou que misturam faixa e lista de
+artigos, ficam de fora — o script prefere não linkar a linkar para o
+dispositivo errado.
 
 ### Regras editoriais (não negociáveis)
 
@@ -174,7 +270,9 @@ bundle exec jekyll serve   # http://localhost:4000
   Core Web Vitals abaixo. Lembre que a minificação de CSS/JS só ocorre no build
   de produção — o preview do Netlify é o ambiente mais fiel ao publicado.
 - **Sem JavaScript:** desative o JS e confirme que o texto, a navegação por links
-  e o layout continuam legíveis.
+  e o layout continuam legíveis. Exceção conhecida e aceita: nas notas com mais
+  de uma norma (`normas_extra`), o seletor de normas some e só a norma
+  principal fica visível — ver "Múltiplas normas por nota".
 - **Teclado e leitores de tela:** navegue só com o teclado (skip link, foco
   visível, _focus trap_ do modal, `aria-current` no idioma ativo).
 - **Temas e idiomas:** teste claro/escuro e PT/EN, incluindo a troca sem reload.

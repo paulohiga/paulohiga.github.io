@@ -41,6 +41,76 @@
         });
     });
 
+    /* --- Seletor de normas, quando a nota exibe mais de uma (ex.: a lei e um
+       decreto que a regulamenta). Um <select> nativo, não uma aba por norma:
+       não degrada com o número de normas (ver nota-style.css). A norma
+       principal já vem pronta no HTML; as demais só são buscadas (fetch) na
+       primeira vez em que o leitor as seleciona — o <select> em si funciona
+       sem JavaScript, mas escolher uma norma diferente não tem efeito sem
+       ele. Ver a seção "Múltiplas normas por nota" do AGENTS.md. */
+    var fonteLink = document.getElementById('lei-fonte');
+    var seletorNorma = document.getElementById('lei-norma-select');
+    var normas = seletorNorma
+        ? Array.prototype.slice.call(seletorNorma.options).map(function (opcao) {
+            return {
+                opcao: opcao,
+                doc: document.getElementById(opcao.value),
+                fonte: opcao.dataset.normaFonte,
+                fragmento: opcao.dataset.normaFragmento || null,
+                prefixo: opcao.dataset.normaPrefixo || ''
+            };
+        })
+        : [];
+
+    function ativarNorma(normaAlvo) {
+        normas.forEach(function (norma) {
+            norma.doc.hidden = norma !== normaAlvo;
+        });
+        if (fonteLink) fonteLink.href = normaAlvo.fonte;
+        if (seletorNorma.value !== normaAlvo.opcao.value) seletorNorma.value = normaAlvo.opcao.value;
+        corpoDaLei.scrollTop = 0;
+    }
+
+    function carregarNorma(norma, pronto) {
+        if (!norma.fragmento) { pronto(); return; }
+        fetch(norma.fragmento).then(function (resposta) {
+            if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+            return resposta.text();
+        }).then(function (html) {
+            norma.doc.innerHTML = html;
+            norma.fragmento = null;
+            pronto();
+        }).catch(function () {
+            norma.doc.innerHTML = '<p>Não foi possível carregar este texto agora. ' +
+                '<a href="' + norma.fonte + '" target="_blank" rel="noopener">Consulte a fonte oficial</a>.</p>';
+            pronto();
+        });
+    }
+
+    if (seletorNorma) {
+        seletorNorma.addEventListener('change', function () {
+            var normaAlvo = normas[seletorNorma.selectedIndex];
+            ativarNorma(normaAlvo);
+            carregarNorma(normaAlvo, function () {});
+        });
+    }
+
+    // Dado um id de âncora, encontra a norma a que ele pertence pelo prefixo
+    // do id. Sem prefixo correspondente, mas ainda assim um "art-...", é a
+    // norma principal — que também precisa ser reativada explicitamente
+    // quando o leitor está vendo outra norma no momento (ex.: voltar da
+    // "lei seca" do decreto para a da lei ao seguir uma referência cruzada).
+    function normaDoId(id) {
+        var extra = normas.filter(function (norma) {
+            return norma.prefixo && id.indexOf(norma.prefixo + '-') === 0;
+        })[0];
+        if (extra) return extra;
+        if (id.indexOf('art-') === 0) {
+            return normas.filter(function (norma) { return !norma.prefixo; })[0];
+        }
+        return undefined;
+    }
+
     /* --- Ir até um dispositivo da lei --- */
     function alturaDosElementosFixos() {
         var barraDeAbas = document.querySelector('.nota-abas');
@@ -89,9 +159,21 @@
     }
 
     comentarios.addEventListener('click', function (evento) {
-        var link = evento.target.closest('a[href^="#art-"]');
+        var link = evento.target.closest('a[href^="#"]');
         if (!link) return;
         var id = decodeURIComponent(link.getAttribute('href').slice(1));
+        var normaAlvo = normaDoId(id);
+
+        if (normaAlvo) {
+            evento.preventDefault();
+            ativarNorma(normaAlvo);
+            carregarNorma(normaAlvo, function () {
+                if (irPara(id)) history.replaceState(null, '', '#' + id);
+            });
+            return;
+        }
+
+        if (id.indexOf('art-') !== 0) return;
         if (irPara(id)) {
             evento.preventDefault();
             history.replaceState(null, '', '#' + id);
@@ -121,5 +203,14 @@
     }
 
     /* --- Link compartilhado com âncora (/notas/lgpd#art-5-v) --- */
-    if (location.hash) irPara(decodeURIComponent(location.hash.slice(1)));
+    if (location.hash) {
+        var idInicial = decodeURIComponent(location.hash.slice(1));
+        var normaInicial = normaDoId(idInicial);
+        if (normaInicial) {
+            ativarNorma(normaInicial);
+            carregarNorma(normaInicial, function () { irPara(idInicial); });
+        } else {
+            irPara(idInicial);
+        }
+    }
 }());

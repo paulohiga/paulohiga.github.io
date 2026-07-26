@@ -32,7 +32,20 @@
     errado.
 
     Parâmetro: `lei` — o documento da coleção `_leis` a renderizar.
+
+    Parâmetro opcional `prefixo` — namespace dos ids, para uma nota exibir mais
+    de uma norma ao lado dos comentários (ex.: a lei e um decreto que a
+    regulamenta) sem que os artigos de uma colidam com os da outra. A norma
+    principal de cada nota é renderizada sem prefixo, para não quebrar os ids
+    (`#art-5-v` etc.) já usados nos comentários publicados; normas adicionais
+    recebem o `prefixo` definido no próprio front matter de `_leis/<norma>.md`
+    (ex.: `dec12880` → `dec12880-art-5`).
 {%- endcomment -%}
+
+{%- assign prefixo_id = '' -%}
+{%- if include.prefixo and include.prefixo != '' -%}
+    {%- assign prefixo_id = include.prefixo | append: '-' -%}
+{%- endif -%}
 
 {%- capture quebra %}
 {% endcapture -%}
@@ -57,7 +70,7 @@
     {%- if inicial == '#' -%}
         {%- assign titulo = texto | remove_first: marcador | strip -%}
         {%- assign nivel = marcador | size | plus: 1 -%}
-        <h{{ nivel }} id="lei-{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
+        <h{{ nivel }} id="lei-{{ prefixo_id }}{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
 
     {%- elsif texto contains '~~' -%}
         {%- comment -%}
@@ -77,7 +90,7 @@
         {%- assign tipo = '' -%}
 
         {%- if marcador == 'Art.' -%}
-            {%- assign artigo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' -%}
+            {%- assign artigo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' | prepend: prefixo_id -%}
             {%- assign subdivisao = '' -%}
             {%- assign inciso = '' -%}
             {%- assign id = artigo -%}

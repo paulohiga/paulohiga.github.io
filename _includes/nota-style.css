@@ -220,6 +220,34 @@ body.dark-theme .nota-tema .ico-moon {
     text-transform: uppercase;
 }
 
+/* --- Seletor de normas, quando a nota exibe mais de um texto legal ---
+   Um <select> nativo em vez de uma aba por norma: não degrada com o número
+   de normas (uma nota pode vir a referenciar dezenas de resoluções), é
+   utilizável sem JavaScript (só não troca de norma sem ele) e não precisa de
+   ARIA customizado — o próprio elemento já é acessível por teclado e leitor
+   de tela. Estilizado para ocupar o lugar do <h2> do painel. */
+.lei-norma-select {
+    max-width: 100%;
+    margin: 0;
+    padding: 0.15rem 0.1rem;
+    border: none;
+    border-bottom: 1px dashed var(--hairline);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.lei-norma-select:hover,
+.lei-norma-select:focus-visible {
+    border-bottom-color: var(--accent);
+}
+
 .painel__nota {
     margin: 0;
     font-size: 0.8rem;
@@ -406,7 +434,7 @@ body:not(.js) .lei-ir {
     font-weight: 600;
 }
 
-.painel--lei .painel__corpo > h2:first-child {
+.painel--lei .lei-doc > h2:first-child {
     margin-top: 0;
 }
 

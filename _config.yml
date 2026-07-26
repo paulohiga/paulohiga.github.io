@@ -7,9 +7,21 @@ permalink: pretty
 
 # Notas de estudo sobre legislação (seção /notas, isolada do restante do site).
 # `notas` são as páginas publicadas; `leis` guarda o texto legal em Markdown
-# puro, renderizado dentro da nota que o cita — nunca como página própria.
+# puro, renderizado dentro da nota que o cita — nunca como página própria;
+# `fragmentos` são os HTML soltos (sem link algum) buscados via fetch() pelo
+# seletor de normas de uma nota, para as normas que não vêm pré-carregadas no
+# HTML (ver `_fragmentos/` e a seção "Múltiplas normas por nota" do AGENTS.md).
+#
+# Ordem importa: Jekyll renderiza as coleções na ordem declarada aqui, e
+# renderizar uma coleção reescreve o `.content` de cada documento dela para o
+# HTML já convertido. `fragmentos` (como `notas`) precisa vir *antes* de
+# `leis` — senão o `.content` que `lei-anotada.html` espera receber em
+# Markdown puro já chegaria convertido em HTML pelo Kramdown padrão, sem as
+# âncoras por dispositivo.
 collections:
   notas:
+    output: true
+  fragmentos:
     output: true
   leis:
     output: false
