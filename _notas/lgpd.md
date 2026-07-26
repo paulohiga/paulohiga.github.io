@@ -37,7 +37,7 @@ revisado_em: 2026-07-26
 
 - [Lei nº 12.965 - Marco Civil da Internet](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm)
 - [Lei nº 8.078/1990 - Código de Defesa do Consumidor](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm), especialmente nas relações de consumo; sanções e reparações podem coexistir com a LGPD.
-- [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm), quando aplicáveis a produtos e serviços digitais destinados ou acessíveis a crianças e adolescentes.
+- [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital), quando aplicáveis a produtos e serviços digitais destinados ou acessíveis a crianças e adolescentes.
 
 ## Fundamentos
 
@@ -199,7 +199,7 @@ Para estudos de saúde pública, há requisitos reforçados de ambiente seguro, 
 ### Crianças e adolescentes ([art. 14](#art-14))
 
 - O tratamento deve observar o **melhor interesse** da criança e do adolescente, além da legislação pertinente.
-    - [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm)
+    - [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital)
 - Para dados de crianças, exige-se **consentimento específico e em destaque de ao menos um dos pais ou responsável legal**, salvo coleta estritamente necessária para contatá-lo, sem armazenamento e uso único, ou para proteção da criança ([art. 14, § 1º](#art-14-p1) e [§ 3º](#art-14-p3)).
 - O controlador deve divulgar os dados coletados, uso e procedimentos de exercício de direitos; empregar esforços razoáveis para verificar o consentimento do responsável; e não condicionar jogos, aplicações ou atividades a dados além dos estritamente necessários ([art. 14, §§ 2º](#art-14-p2), [5º](#art-14-p5) e [4º](#art-14-p4)).
 - As informações devem ser simples, claras e acessíveis, inclusive à compreensão da criança quando apropriado ([art. 14, § 6º](#art-14-p6)).

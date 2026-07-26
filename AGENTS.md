@@ -99,6 +99,19 @@ introduza referências que dependam de JS. **Confira toda remissão nova contra 
 texto legal antes de publicar**: link errado numa página pública de legislação é
 um defeito, não um detalhe.
 
+Três cuidados que já custaram tempo:
+
+- **`#art-…` é sempre a lei daquela nota.** Uma nota comenta decretos,
+  resoluções e outras leis, e o número do artigo colide: "Decreto nº
+  12.880/2026, art. 24" não é o art. 24 do ECA Digital. Só vire link o que
+  remete à própria lei exibida ao lado; o resto fica em texto puro.
+- **Redação superada não recebe âncora.** Quando o texto legal traz a redação
+  antiga tachada (`~~…~~`) ao lado da nova, só a vigente é ancorada — é o que
+  evita id duplicado e link para texto fora de vigor. Se um artigo só existe em
+  redação tachada, ele não tem âncora e não deve ser linkado.
+- **Entre notas, use o caminho da página**: `[art. 6º da LGPD](/notas/lgpd#art-6)`
+  abre a outra nota já posicionada no dispositivo.
+
 ### Regras editoriais (não negociáveis)
 
 - **Só fontes públicas.** Nada de processos, minutas, discussões ou entendimentos

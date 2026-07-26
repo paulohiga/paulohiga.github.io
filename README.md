@@ -59,9 +59,11 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   └── style.css           # Todo o CSS — inserido inline no <head> de cada página
 │
 ├── _notas/                 # Notas de legislação (comentários)     → /notas/<assunto>
-│   └── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
+│   ├── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
+│   └── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
 ├── _leis/                  # Textos legais em Markdown puro (não viram página)
-│   └── lgpd.md             #   Lei nº 13.709/2018, texto compilado
+│   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
+│   └── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
 ├── _layouts/nota.html      # Casca das notas: dois painéis lado a lado
 ├── _includes/
 │   ├── nota-head.html      # <head> das notas (canonical, OG, JSON-LD Article)
@@ -237,10 +239,15 @@ telas estreitas viram abas ("Comentários" / "Lei seca").
 bloco a bloco e dá a cada dispositivo um id previsível (`art-5`, `art-5-v`,
 `art-3-p2`, `art-1-pu`, `art-52-p1-i`, `art-4-ii-b`), rebaixando os títulos em
 um nível e prefixando os ids deles com `lei-` para não colidirem com os do
-comentário. Dispositivos dentro de citações — as alterações que a lei faz em
-*outras* leis, no art. 60 — ficam de fora, porque não são desta lei. Assim os
-arquivos `.md` continuam limpos: os comentários citam a lei com links Markdown
-comuns, como `([art. 5º, inciso V](#art-5-v))`.
+comentário. Assim os arquivos `.md` continuam limpos: os comentários citam a lei
+com links Markdown comuns, como `([art. 5º, inciso V](#art-5-v))`.
+
+Dois casos ficam deliberadamente **sem âncora**, porque a âncora deve levar
+sempre ao texto desta lei e em vigor: os dispositivos citados dentro de blocos de
+citação (as alterações que a lei promove em *outras* leis, como no art. 60 da
+LGPD) e a redação superada, marcada com tachado no texto compilado. Esta última
+é também o que evita id duplicado quando o mesmo artigo aparece duas vezes — a
+redação antiga e a nova, como no art. 41-A do ECA Digital.
 
 O clique é interceptado pelo `notas.js`, que rola o painel da lei, destaca o
 dispositivo e leva o foco até ele. **Sem JavaScript nada quebra**: as âncoras

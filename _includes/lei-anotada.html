@@ -21,8 +21,15 @@
     comentário exibido ao lado.
 
     Dispositivos dentro de blocos de citação são alterações que a lei promove em
-    *outras* leis (art. 60, por exemplo). Não são dispositivos desta lei e por
-    isso não recebem âncora — o bloco é apenas convertido.
+    *outras* leis (art. 60 da LGPD, por exemplo). Não são dispositivos desta lei
+    e por isso não recebem âncora — o bloco é apenas convertido.
+
+    Redação tachada (`~~texto~~`) é redação superada: a que foi substituída por
+    lei posterior ou cuja vigência se encerrou. Também não recebe âncora, por
+    duas razões. A âncora deve levar sempre ao texto **em vigor** — e, quando um
+    artigo aparece duas vezes (a redação antiga e a nova, como no art. 41-A do
+    ECA Digital), é o que evita id duplicado e link apontando para o texto
+    errado.
 
     Parâmetro: `lei` — o documento da coleção `_leis` a renderizar.
 {%- endcomment -%}
@@ -51,6 +58,13 @@
         {%- assign titulo = texto | remove_first: marcador | strip -%}
         {%- assign nivel = marcador | size | plus: 1 -%}
         <h{{ nivel }} id="lei-{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
+
+    {%- elsif texto contains '~~' -%}
+        {%- comment -%}
+            Redação superada: entra no texto, mas sem âncora e sem alterar o
+            artigo/inciso vigente, que continua valendo para os blocos seguintes.
+        {%- endcomment -%}
+        {{ texto | markdownify | replace_first: '<p>', '<p class="lei-revogado">' }}
 
     {%- else -%}
         {%- assign id = '' -%}
