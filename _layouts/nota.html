@@ -22,7 +22,10 @@
 {% assign lei = site.leis | where: 'slug', page.lei | first %}
 {% assign normas_extra = "" | split: "," %}
 {% if page.normas_extra %}
-    {% assign normas_extra = site.leis | where_exp: "n", "page.normas_extra contains n.slug" %}
+    {% for slug in page.normas_extra %}
+        {% assign norma_extra = site.leis | where: 'slug', slug | first %}
+        {% assign normas_extra = normas_extra | push: norma_extra %}
+    {% endfor %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="pt-BR">

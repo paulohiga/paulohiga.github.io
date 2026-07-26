@@ -1,0 +1,15 @@
+---
+permalink: /notas/fragmentos/decreto-12975.html
+layout: null
+sitemap: false
+---
+{%- comment -%}
+    Fragmento HTML puro (sem <html>/<head>/<body>) de uma norma adicional de
+    uma nota — só existe para ser buscado via fetch() pelo painel "Lei seca" e
+    injetado no DOM, sem pré-carregar o documento no HTML da página principal.
+    Não é uma página para navegação humana: não aparece em `_data/pages.yml`,
+    não entra no sitemap.xml (`sitemap: false`) e é bloqueado em robots.txt.
+    Ver a seção "Múltiplas normas por nota" do AGENTS.md.
+{%- endcomment -%}
+{%- assign norma = site.leis | where: 'slug', 'decreto-12975' | first -%}
+{%- include lei-anotada.html lei=norma prefixo=norma.prefixo -%}

@@ -60,3 +60,33 @@ mci:
     - "Lei nº 12.965"
     - "Lei n. 12.965"
     - "Lei 12.965"
+
+decreto-8771:
+  nota: mci
+  prefixo: "dec8771"
+  aliases:
+    - "Decreto nº 8.771/2016"
+    - "Decreto nº 8.771"
+    - "Decreto n. 8.771"
+    - "Decreto 8.771/2016"
+    - "Decreto 8.771"
+
+decreto-12975:
+  nota: mci
+  prefixo: "dec12975"
+  aliases:
+    - "Decreto nº 12.975/2026"
+    - "Decreto nº 12.975"
+    - "Decreto n. 12.975"
+    - "Decreto 12.975/2026"
+    - "Decreto 12.975"
+
+decreto-12976:
+  nota: mci
+  prefixo: "dec12976"
+  aliases:
+    - "Decreto nº 12.976/2026"
+    - "Decreto nº 12.976"
+    - "Decreto n. 12.976"
+    - "Decreto 12.976/2026"
+    - "Decreto 12.976"
