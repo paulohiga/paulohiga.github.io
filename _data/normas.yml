@@ -1,0 +1,62 @@
+# Registro das normas disponíveis em /notas, usado por
+# scripts/ancorar_referencias.py para reconhecer, nos comentários de
+# `_notas/*.md`, menções a uma norma que já tem texto ancorado no site — e
+# transformá-las em links para o dispositivo certo, sem gastar token de LLM
+# nisso a cada nova norma ou edição.
+#
+# Cada entrada é uma norma da coleção `_leis` (chave = slug do arquivo em
+# `_leis/`). Campos:
+#   nota      — slug da nota (`_notas/<slug>.md`) cujo painel "Lei seca" exibe
+#               essa norma. Se for a mesma nota sendo processada, o link vira
+#               âncora na própria página (#...); se for outra nota, vira link
+#               para a página dela (/notas/<nota>#...).
+#   prefixo   — prefixo dos ids dessa norma no HTML (ver lei-anotada.html).
+#               Vazio quando a norma é a principal (`lei:`) da nota indicada;
+#               preenchido quando é uma norma extra (`normas_extra:`).
+#   aliases   — formas como a norma é citada em texto corrido. Ordem não
+#               importa (o script ordena por tamanho antes de casar), mas
+#               evite aliases ambíguos ou curtos demais (ex.: não cadastre só
+#               "ECA" aqui — colidiria com menções à Lei nº 8.069, que não
+#               tem nota própria).
+#
+# Ao publicar uma nota nova ou uma norma extra nova, adicione a entrada aqui.
+
+eca-digital:
+  nota: eca-digital
+  prefixo: ""
+  aliases:
+    - "ECA Digital"
+    - "Lei nº 15.211"
+    - "Lei n. 15.211"
+    - "Lei 15.211"
+
+decreto-12880:
+  nota: eca-digital
+  prefixo: "dec12880"
+  aliases:
+    - "Decreto nº 12.880/2026"
+    - "Decreto nº 12.880"
+    - "Decreto n. 12.880"
+    - "Decreto 12.880/2026"
+    - "Decreto 12.880"
+
+lgpd:
+  nota: lgpd
+  prefixo: ""
+  aliases:
+    - "LGPD"
+    - "Lei Geral de Proteção de Dados Pessoais"
+    - "Lei nº 13.709"
+    - "Lei n. 13.709"
+    - "Lei 13.709"
+
+mci:
+  nota: mci
+  prefixo: ""
+  aliases:
+    - "Marco Civil da Internet"
+    - "Marco Civil"
+    - "MCI"
+    - "Lei nº 12.965"
+    - "Lei n. 12.965"
+    - "Lei 12.965"

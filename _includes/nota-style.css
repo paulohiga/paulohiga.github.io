@@ -220,33 +220,32 @@ body.dark-theme .nota-tema .ico-moon {
     text-transform: uppercase;
 }
 
-/* --- Seletor de normas, quando a nota exibe mais de um texto legal --- */
-.lei-normas {
-    display: flex;
-    gap: 0.3rem;
-    flex-wrap: wrap;
-}
-
-.lei-normas button {
-    padding: 0.2rem 0.55rem;
-    border: 1px solid var(--hairline);
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--ink-soft);
+/* --- Seletor de normas, quando a nota exibe mais de um texto legal ---
+   Um <select> nativo em vez de uma aba por norma: não degrada com o número
+   de normas (uma nota pode vir a referenciar dezenas de resoluções), é
+   utilizável sem JavaScript (só não troca de norma sem ele) e não precisa de
+   ARIA customizado — o próprio elemento já é acessível por teclado e leitor
+   de tela. Estilizado para ocupar o lugar do <h2> do painel. */
+.lei-norma-select {
+    max-width: 100%;
+    margin: 0;
+    padding: 0.15rem 0.1rem;
+    border: none;
+    border-bottom: 1px dashed var(--hairline);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
     font: inherit;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     cursor: pointer;
 }
 
-.lei-normas button[aria-pressed="true"] {
-    background: var(--surface-tint);
-    color: var(--ink);
-    border-color: var(--accent);
-}
-
-body:not(.js) .lei-normas {
-    display: none;
+.lei-norma-select:hover,
+.lei-norma-select:focus-visible {
+    border-bottom-color: var(--accent);
 }
 
 .painel__nota {

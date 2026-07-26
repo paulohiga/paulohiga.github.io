@@ -12,9 +12,13 @@
      um decreto que a regulamenta), listada no front matter `normas_extra`
      (slugs de `_leis`). Só a norma principal (`lei`) é pré-carregada no HTML,
      sem prefixo de id — para não quebrar as âncoras já publicadas. As normas
-     extras são buscadas via fetch() só quando o leitor as seleciona (ver
-     `notas.js` e `notas-fragmentos/`), o que **exige JavaScript**: sem ele, o
-     seletor de normas não aparece e só a norma principal fica visível. -->
+     extras são buscadas via fetch() só quando o leitor as seleciona no
+     `<select>` de normas, ou ao abrir um link com âncora de outra norma (ver
+     `notas.js` e `_fragmentos/`). O `<select>` nativo funciona sem JavaScript
+     (é só um formulário), mas trocar de norma não tem efeito sem JS — a norma
+     principal permanece visível até o script rodar. Um `<select>` foi
+     escolhido em vez de botões (uma aba por norma) porque não degrada com o
+     número de normas: uma nota pode vir a referenciar dezenas de resoluções. -->
 {% assign lei = site.leis | where: 'slug', page.lei | first %}
 {% assign normas_extra = "" | split: "," %}
 {% if page.normas_extra %}
@@ -77,16 +81,17 @@
             </div>
         </section>
 
-        <section class="painel painel--lei" id="lei" aria-labelledby="titulo-lei">
+        <section class="painel painel--lei" id="lei" aria-label="Lei seca">
             <div class="painel__topo">
-                <h2 id="titulo-lei">{{ lei.apelido }}</h2>
 {% if normas_extra.size > 0 %}
-                <div class="lei-normas" role="group" aria-label="Escolher norma">
-                    <button type="button" aria-pressed="true" data-norma-doc="lei-doc-{{ lei.slug }}" data-norma-fonte="{{ lei.fonte }}">{{ lei.apelido }}</button>
+                <select id="lei-norma-select" class="lei-norma-select" aria-label="Escolher norma exibida">
+                    <option value="lei-doc-{{ lei.slug }}" data-norma-fonte="{{ lei.fonte }}">{{ lei.apelido }}</option>
 {% for norma in normas_extra %}
-                    <button type="button" aria-pressed="false" data-norma-doc="lei-doc-{{ norma.slug }}" data-norma-fonte="{{ norma.fonte }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" data-norma-prefixo="{{ norma.prefixo }}">{{ norma.apelido }}</button>
+                    <option value="lei-doc-{{ norma.slug }}" data-norma-fonte="{{ norma.fonte }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" data-norma-prefixo="{{ norma.prefixo }}">{{ norma.apelido }}</option>
 {% endfor %}
-                </div>
+                </select>
+{% else %}
+                <h2 id="titulo-lei">{{ lei.apelido }}</h2>
 {% endif %}
                 <p class="painel__nota">
                     <a href="{{ lei.fonte }}" target="_blank" rel="noopener" id="lei-fonte">Texto oficial</a>

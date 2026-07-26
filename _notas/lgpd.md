@@ -177,7 +177,7 @@ O tratamento somente pode ocorrer em uma das seguintes hipóteses do [art. 7º](
     - A ANPD pode exigir RIPD nessa hipótese ([art. 10](#art-10)).
 10. [**Proteção do crédito**](#art-7-x), inclusive segundo a legislação pertinente.
 
-Dados cujo acesso é público continuam sujeitos à finalidade, boa-fé e interesse público que justificaram a disponibilização. A dispensa de consentimento não dispensa os demais deveres da LGPD (art. 7º, [§§ 3º a 6º](#art-7-p3)).
+Dados cujo acesso é público continuam sujeitos à finalidade, boa-fé e interesse público que justificaram a disponibilização. A dispensa de consentimento não dispensa os demais deveres da LGPD ([art. 7º](#art-7), [§§ 3º a 6º](#art-7-p3)).
 
 ### Transparência ([art. 9º](#art-9))
 

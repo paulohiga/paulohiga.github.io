@@ -174,6 +174,43 @@ Três cuidados que já custaram tempo:
 - **Entre notas, use o caminho da página**: `[art. 6º da LGPD](/notas/lgpd#art-6)`
   abre a outra nota já posicionada no dispositivo.
 
+### Ancorando referências automaticamente
+
+`scripts/ancorar_referencias.py` varre um comentário em busca de menções, em
+texto puro, a uma norma que já existe em `/notas` (a própria lei da nota, uma
+`normas_extra` dela, ou a lei principal de outra nota) e as transforma nesses
+links — sem gastar token de LLM nisso a cada nova norma publicada ou
+comentário editado. Ele reconhece a norma por um registro de aliases em
+`_data/normas.yml` (adicione uma entrada lá para cada norma nova) e só cria o
+link se o id de destino realmente existir no texto legal correspondente —
+recalculado a partir de `_leis/<norma>.md` com a mesma regra de
+`lei-anotada.html` (ids inválidos não geram link partido).
+
+```bash
+python3 scripts/ancorar_referencias.py --check eca-digital lgpd mci   # mostra o diff, não grava
+python3 scripts/ancorar_referencias.py --apply eca-digital            # grava
+python3 scripts/ancorar_referencias.py --validar lgpd mci             # mede fidelidade contra os links já existentes
+```
+
+**Por padrão, o script só cria link quando a norma está nomeada perto da
+citação** (antes: "Decreto nº 12.880/2026, art. 24"; ou depois: "art. 6º da
+LGPD"). Citações "nuas" (só "art. 24", sem norma por perto) não são ligadas
+por padrão — use `--incluir-padrao` para isso, com **revisão redobrada do
+diff**: essa opção assume que uma citação nua é da norma principal da própria
+nota, o que já se mostrou errado em parágrafos que nomeiam a norma numa frase
+e a omitem nas seguintes (o script não rastreia contexto entre linhas). É por
+isso que `--validar` mede a fidelidade contra o LGPD e o Marco Civil (que já
+têm essas citações nuas manualmente linkadas) sempre com `--incluir-padrao`
+ligado — é o que está sendo calibrado — mas o `--apply` do dia a dia deve
+continuar no modo padrão (sem essa opção), que é o que gerou os links do
+Decreto nº 12.880/2026.
+
+Limitações conhecidas, por design (documentadas com mais detalhe no docstring
+do script): citações compostas com mais de um sufixo em formatos incomuns
+(ex.: uma faixa de parágrafos "§§ 2º a 4º"), ou que misturam faixa e lista de
+artigos, ficam de fora — o script prefere não linkar a linkar para o
+dispositivo errado.
+
 ### Regras editoriais (não negociáveis)
 
 - **Só fontes públicas.** Nada de processos, minutas, discussões ou entendimentos

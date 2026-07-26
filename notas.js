@@ -42,29 +42,32 @@
     });
 
     /* --- Seletor de normas, quando a nota exibe mais de uma (ex.: a lei e um
-       decreto que a regulamenta). A norma principal já vem pronta no HTML;
-       as demais só são buscadas (fetch) na primeira vez em que o leitor as
-       seleciona — por isso este recurso não funciona sem JavaScript: sem ele
-       o seletor fica oculto (ver nota-style.css) e só a norma principal é
-       exibida. Ver a seção "Múltiplas normas por nota" do AGENTS.md. */
+       decreto que a regulamenta). Um <select> nativo, não uma aba por norma:
+       não degrada com o número de normas (ver nota-style.css). A norma
+       principal já vem pronta no HTML; as demais só são buscadas (fetch) na
+       primeira vez em que o leitor as seleciona — o <select> em si funciona
+       sem JavaScript, mas escolher uma norma diferente não tem efeito sem
+       ele. Ver a seção "Múltiplas normas por nota" do AGENTS.md. */
     var fonteLink = document.getElementById('lei-fonte');
-    var normas = Array.prototype.slice.call(document.querySelectorAll('.lei-normas [data-norma-doc]')).map(function (botao) {
-        return {
-            botao: botao,
-            doc: document.getElementById(botao.dataset.normaDoc),
-            fonte: botao.dataset.normaFonte,
-            fragmento: botao.dataset.normaFragmento || null,
-            prefixo: botao.dataset.normaPrefixo || ''
-        };
-    });
+    var seletorNorma = document.getElementById('lei-norma-select');
+    var normas = seletorNorma
+        ? Array.prototype.slice.call(seletorNorma.options).map(function (opcao) {
+            return {
+                opcao: opcao,
+                doc: document.getElementById(opcao.value),
+                fonte: opcao.dataset.normaFonte,
+                fragmento: opcao.dataset.normaFragmento || null,
+                prefixo: opcao.dataset.normaPrefixo || ''
+            };
+        })
+        : [];
 
     function ativarNorma(normaAlvo) {
         normas.forEach(function (norma) {
-            var ativa = norma === normaAlvo;
-            norma.botao.setAttribute('aria-pressed', String(ativa));
-            norma.doc.hidden = !ativa;
+            norma.doc.hidden = norma !== normaAlvo;
         });
         if (fonteLink) fonteLink.href = normaAlvo.fonte;
+        if (seletorNorma.value !== normaAlvo.opcao.value) seletorNorma.value = normaAlvo.opcao.value;
         corpoDaLei.scrollTop = 0;
     }
 
@@ -84,12 +87,13 @@
         });
     }
 
-    normas.forEach(function (norma) {
-        norma.botao.addEventListener('click', function () {
-            ativarNorma(norma);
-            carregarNorma(norma, function () {});
+    if (seletorNorma) {
+        seletorNorma.addEventListener('change', function () {
+            var normaAlvo = normas[seletorNorma.selectedIndex];
+            ativarNorma(normaAlvo);
+            carregarNorma(normaAlvo, function () {});
         });
-    });
+    }
 
     // Dado um id de âncora, encontra a norma (extra) a que ele pertence pelo
     // prefixo do seu id — a principal não tem prefixo e já está carregada.
