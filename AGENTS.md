@@ -211,6 +211,22 @@ bundle exec jekyll serve   # http://localhost:4000
 
 > Não crie o Pull Request sem solicitação explícita do humano.
 
+### Nome da branch: limite de 63 caracteres
+
+O preview do Netlify é publicado em `<branch>--<site>.netlify.app`, e as barras
+do nome da branch viram hifens. Esse rótulo de subdomínio **não pode passar de
+63 caracteres** — somados o nome da branch e o nome do site. Se estourar, o
+Netlify simplesmente **não publica o preview**, e o passo 3 do fluxo acima fica
+impossível.
+
+Como o nome do site consome parte do limite, mantenha a branch **curta e
+descritiva: até cerca de 25 caracteres**, contando o prefixo `claude/`.
+
+- Bom: `claude/notas-lgpd`, `claude/bio-links-audit`
+- Ruim: `claude/public-legislation-notes-repo-8bvrdo` (43 caracteres)
+
+Não use o assunto inteiro do pedido como nome da branch — resuma.
+
 ## Antes de finalizar (checklist)
 
 - [ ] Conteúdo alterado em pt-br **e** replicado em en-us com tom consistente

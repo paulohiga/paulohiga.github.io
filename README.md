@@ -343,7 +343,8 @@ O site fica em `http://localhost:4000`. Os mesmos gems do GitHub Pages são usad
 
 ### Fluxo padrão (branches de feature)
 
-1. O agente cria uma branch e faz push das alterações.
+1. O agente cria uma branch e faz push das alterações — com **nome curto**, pelo
+   motivo explicado abaixo.
 2. O **Netlify** detecta o push e publica automaticamente uma **URL de preview**
    (build com Jekyll).
 3. O humano acessa a URL de preview e **valida manualmente** as alterações.
@@ -351,6 +352,24 @@ O site fica em `http://localhost:4000`. Os mesmos gems do GitHub Pages são usad
 5. O humano realiza **squash and merge** do PR na branch `master`.
 
 > Não crie o Pull Request sem solicitação explícita do humano.
+
+#### Nome da branch: limite de 63 caracteres
+
+O preview do Netlify sai em `<branch>--<site>.netlify.app` (as barras do nome da
+branch viram hifens). Esse rótulo de subdomínio é limitado a **63 caracteres**,
+somados o nome da branch e o nome do site — é limite de DNS, não do Netlify.
+Passando disso, **o preview não é publicado** e não há o que validar antes do PR.
+
+Na prática: branches **curtas e descritivas, até cerca de 25 caracteres**,
+incluindo o prefixo `claude/`. `claude/notas-lgpd` funciona;
+`claude/public-legislation-notes-repo-8bvrdo` (43) não deixa margem. Se uma
+branch já foi criada com nome longo, renomeie antes de pedir o preview:
+
+```bash
+git branch -m claude/nome-curto
+git push -u origin claude/nome-curto
+git push origin --delete claude/nome-antigo-e-comprido
+```
 
 ### Build de produção
 
