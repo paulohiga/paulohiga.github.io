@@ -205,10 +205,11 @@ body.dark-theme .nota-tema .ico-moon {
     position: relative;
     flex: none;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     gap: 0.25rem 0.75rem;
-    padding: 0.6rem clamp(1rem, 3vw, 1.75rem);
+    min-height: 2.7rem;
+    padding: 0.4rem clamp(1rem, 3vw, 1.75rem);
     background: var(--surface-tint);
     border-bottom: 1px solid var(--hairline);
 }
@@ -283,7 +284,7 @@ body:not(.js) .lei-ir {
 
 .lei-ir input {
     width: 7.5rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.5rem;
     border: 1px solid var(--hairline);
     border-radius: 0.35rem;
     background: var(--surface);
@@ -293,7 +294,7 @@ body:not(.js) .lei-ir {
 }
 
 .lei-ir button {
-    padding: 0.25rem 0.6rem;
+    padding: 0.15rem 0.6rem;
     border: 1px solid var(--hairline);
     border-radius: 0.35rem;
     background: var(--surface);
@@ -340,21 +341,26 @@ body:not(.js) .lei-ir {
     max-width: 46rem;
 }
 
-.painel--comentarios h2,
-.painel--comentarios h3 {
+/* Escopo restrito a .painel__corpo: o título do painel (#titulo-comentarios,
+   em .painel__topo) é um <h2> também, mas não deve herdar o estilo de título
+   de seção do texto — foi o que fez as duas barras de título (comentários e
+   lei seca) terem alturas diferentes entre notas, dependendo de a lei seca
+   exibir um <h2> ou o <select> de normas. */
+.painel--comentarios .painel__corpo h2,
+.painel--comentarios .painel__corpo h3 {
     font-family: var(--font-serif);
     line-height: 1.3;
     scroll-margin-top: 1rem;
 }
 
-.painel--comentarios h2 {
+.painel--comentarios .painel__corpo h2 {
     margin: 2.25rem 0 0.75rem;
     padding-bottom: 0.35rem;
     border-bottom: 1px solid var(--hairline);
     font-size: 1.3rem;
 }
 
-.painel--comentarios h3 {
+.painel--comentarios .painel__corpo h3 {
     margin: 1.75rem 0 0.5rem;
     font-size: 1.05rem;
 }
@@ -403,34 +409,38 @@ body:not(.js) .lei-ir {
     max-width: 44rem;
 }
 
-.painel--lei h2,
-.painel--lei h3,
-.painel--lei h4,
-.painel--lei h5 {
+/* Escopo restrito a .painel__corpo (ver comentário equivalente acima, para
+   o painel de comentários): o título do painel (#titulo-lei, quando a nota
+   não tem normas extras) não deve herdar o estilo de título de dispositivo
+   da lei. */
+.painel--lei .painel__corpo h2,
+.painel--lei .painel__corpo h3,
+.painel--lei .painel__corpo h4,
+.painel--lei .painel__corpo h5 {
     margin: 2rem 0 0.9rem;
     font-family: var(--font-sans);
     line-height: 1.3;
     scroll-margin-top: 1rem;
 }
 
-.painel--lei h2 {
+.painel--lei .painel__corpo h2 {
     font-size: 1.15rem;
 }
 
-.painel--lei h3 {
+.painel--lei .painel__corpo h3 {
     font-size: 0.95rem;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--ink-soft);
 }
 
-.painel--lei h4,
-.painel--lei h5 {
+.painel--lei .painel__corpo h4,
+.painel--lei .painel__corpo h5 {
     font-size: 0.9rem;
     color: var(--ink-soft);
 }
 
-.painel--lei h5 {
+.painel--lei .painel__corpo h5 {
     font-style: italic;
     font-weight: 600;
 }
@@ -439,7 +449,7 @@ body:not(.js) .lei-ir {
     margin-top: 0;
 }
 
-.painel--lei p {
+.painel--lei .painel__corpo p {
     margin: 0 0 0.85rem;
 }
 
