@@ -77,6 +77,22 @@
     var semMovimento = matchMedia('(prefers-reduced-motion: reduce)');
     var destacado = null;
 
+    /* Com os painéis lado a lado, quem rola é cada painel (.painel__corpo),
+       nunca a página — é o que garante que o cabeçalho fique sempre visível.
+       Mas o próprio navegador, ao abrir um link com âncora (ex.:
+       /notas/mci#art-5), rola a página inteira até o dispositivo antes do
+       nosso script rodar, ignorando o `overflow: hidden` do body (que só
+       impede a rolagem por gesto do usuário, não a programática/nativa).
+       Sem isso, o cabeçalho some atrás do topo da janela nesse acesso
+       direto. Zera essa rolagem sempre que ela aparecer nesse layout. */
+    function travarRolagemDaPagina() {
+        if (duasColunas.matches && (window.scrollX !== 0 || window.scrollY !== 0)) {
+            window.scrollTo(0, 0);
+        }
+    }
+    travarRolagemDaPagina();
+    window.addEventListener('scroll', travarRolagemDaPagina, { passive: true });
+
     /* --- Rolagem suave própria, com metade da duração da rolagem suave
        nativa dos navegadores — a "rolagem" usada tanto pelos links âncora
        quanto pela busca "ir para o dispositivo". `behavior: 'smooth'` nativo

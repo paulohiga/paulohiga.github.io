@@ -337,8 +337,11 @@ body:not(.js) .lei-ir {
 }
 
 /* --- Painel de comentários --- */
+/* Preenche a largura do painel (ajustável pelo divisor — ver .nota-resizer),
+   com um teto generoso só para não deixar a linha ilegível num painel
+   redimensionado para quase toda a largura da tela. */
 .painel--comentarios .painel__corpo {
-    max-width: 46rem;
+    max-width: min(100%, 70rem);
 }
 
 /* Escopo restrito a .painel__corpo: o título do painel (#titulo-comentarios,
@@ -406,7 +409,9 @@ body:not(.js) .lei-ir {
     font-family: var(--font-serif);
     font-size: 0.9rem;
     line-height: 1.75;
-    max-width: 44rem;
+    /* Mesmo raciocínio do painel de comentários: preenche a largura
+       ajustável pelo divisor, com teto generoso. */
+    max-width: min(100%, 68rem);
 }
 
 /* Escopo restrito a .painel__corpo (ver comentário equivalente acima, para
