@@ -107,8 +107,11 @@ Três cuidados que já custaram tempo:
   remete à própria lei exibida ao lado; o resto fica em texto puro.
 - **Redação superada não recebe âncora.** Quando o texto legal traz a redação
   antiga tachada (`~~…~~`) ao lado da nova, só a vigente é ancorada — é o que
-  evita id duplicado e link para texto fora de vigor. Se um artigo só existe em
-  redação tachada, ele não tem âncora e não deve ser linkado.
+  evita id duplicado e link para texto fora de vigor. Se um dispositivo só
+  existe em redação tachada, ele não tem âncora e não deve ser linkado: é o caso
+  dos artigos que vieram de medida provisória rejeitada, como a MPV nº
+  1.068/2021 no Marco Civil (arts. 8º-A a 8º-D, 28-A e os incisos IX e X do art.
+  5º), e do art. 36-A do ECA Digital, com vigência encerrada.
 - **Entre notas, use o caminho da página**: `[art. 6º da LGPD](/notas/lgpd#art-6)`
   abre a outra nota já posicionada no dispositivo.
 

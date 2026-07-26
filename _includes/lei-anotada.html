@@ -63,8 +63,14 @@
         {%- comment -%}
             Redação superada: entra no texto, mas sem âncora e sem alterar o
             artigo/inciso vigente, que continua valendo para os blocos seguintes.
+
+            Títulos de seção também podem estar tachados (o Marco Civil tem os
+            da MPV nº 1.068/2021, rejeitada). Como não entram no sumário da lei
+            vigente, viram parágrafo — os `#` são removidos para não aparecerem
+            como texto solto.
         {%- endcomment -%}
-        {{ texto | markdownify | replace_first: '<p>', '<p class="lei-revogado">' }}
+        {%- assign revogado = texto | replace: '~~# ', '~~' | replace: '~~## ', '~~' | replace: '~~### ', '~~' | replace: '~~#### ', '~~' -%}
+        {{ revogado | markdownify | replace_first: '<p>', '<p class="lei-revogado">' }}
 
     {%- else -%}
         {%- assign id = '' -%}

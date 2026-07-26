@@ -376,7 +376,8 @@ body:not(.js) .lei-ir {
 
 .painel--lei h2,
 .painel--lei h3,
-.painel--lei h4 {
+.painel--lei h4,
+.painel--lei h5 {
     margin: 2rem 0 0.9rem;
     font-family: var(--font-sans);
     line-height: 1.3;
@@ -394,9 +395,15 @@ body:not(.js) .lei-ir {
     color: var(--ink-soft);
 }
 
-.painel--lei h4 {
+.painel--lei h4,
+.painel--lei h5 {
     font-size: 0.9rem;
     color: var(--ink-soft);
+}
+
+.painel--lei h5 {
+    font-style: italic;
+    font-weight: 600;
 }
 
 .painel--lei .painel__corpo > h2:first-child {
