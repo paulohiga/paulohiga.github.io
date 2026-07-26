@@ -27,6 +27,7 @@
         {% assign normas_extra = normas_extra | push: norma_extra %}
     {% endfor %}
 {% endif %}
+{% assign outras_notas = site.notas | where_exp: "n", "n.url != page.url" | sort: "title" %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -36,9 +37,11 @@
 
 <body class="light-theme">
 
-    <!-- Tema e marcação de JS antes do primeiro paint: evita o flash do tema
-         errado e o pulo das abas ao aparecerem. data-cfasync="false" impede o
-         Rocket Loader do Cloudflare de adiar o script. -->
+    <!-- Tema e divisão dos painéis antes do primeiro paint: evita o flash do
+         tema errado, o pulo das abas ao aparecerem e o salto visual da divisão
+         entre os painéis quando o leitor já ajustou a proporção nesta sessão.
+         data-cfasync="false" impede o Rocket Loader do Cloudflare de adiar o
+         script. -->
     <script data-cfasync="false">
         (function () {
             var t = localStorage.getItem('theme');
@@ -46,6 +49,9 @@
             document.body.classList.toggle('dark-theme', dark);
             document.body.classList.toggle('light-theme', !dark);
             document.body.classList.add('js');
+
+            var split = sessionStorage.getItem('notas-split');
+            if (split) document.documentElement.style.setProperty('--nota-split', split);
         }());
     </script>
 
@@ -54,9 +60,20 @@
     <header class="nota-topo">
         <div class="nota-topo__texto">
             <nav class="nota-trilha" aria-label="Você está em">
-                <a href="/">higa.me</a> <span aria-hidden="true">/</span> <span>notas</span>
+                <a href="/">higa.me</a> <span aria-hidden="true">/</span> <a href="/notas">notas</a>
             </nav>
-            <h1>{{ page.title }}</h1>
+            <h1>
+                <button type="button" id="nota-titulo-btn" class="nota-titulo-btn" aria-controls="nota-titulo-menu">
+                    {{ page.title }}
+                    <svg class="ico nota-titulo-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+            </h1>
+            <ul id="nota-titulo-menu" class="nota-titulo-menu" aria-label="Outras notas de legislação">
+{% for outra in outras_notas %}
+                <li><a href="{{ outra.url }}">{{ outra.title }}</a></li>
+{% endfor %}
+                <li class="nota-titulo-menu__separador"><a href="/notas">Ver todas as notas</a></li>
+            </ul>
         </div>
         <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
             <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
@@ -72,17 +89,50 @@
         <button type="button" data-painel="lei" aria-controls="lei" aria-pressed="false">Lei seca</button>
     </div>
 
+    <!-- Sumários retráteis (table of contents) de cada painel. Ocultos por
+         padrão; abrem por um botão fixo na borda da tela — o dos comentários à
+         esquerda, o da lei seca à direita — e funcionam só com JavaScript
+         (dependem da rolagem programática do notas.js). -->
+    <button type="button" id="toc-comentarios-btn" class="nota-toc-btn nota-toc-btn--esquerda" aria-controls="toc-comentarios" aria-label="Abrir sumário dos comentários">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    </button>
+    <div id="toc-comentarios" class="nota-toc nota-toc--esquerda" hidden>
+        <div class="nota-toc__topo">
+            <h2>Sumário dos comentários</h2>
+            <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <nav class="nota-toc__corpo" aria-label="Sumário dos comentários"><ul></ul></nav>
+    </div>
+
+    <button type="button" id="toc-lei-btn" class="nota-toc-btn nota-toc-btn--direita" aria-controls="toc-lei" aria-label="Abrir sumário da lei seca">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    </button>
+    <div id="toc-lei" class="nota-toc nota-toc--direita" hidden>
+        <div class="nota-toc__topo">
+            <h2>Sumário da lei seca</h2>
+            <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <nav class="nota-toc__corpo" aria-label="Sumário da lei seca"><ul></ul></nav>
+    </div>
+
     <main class="nota-divisao">
         <section class="painel painel--comentarios" id="comentarios" aria-labelledby="titulo-comentarios">
             <div class="painel__topo">
                 <h2 id="titulo-comentarios">Comentários</h2>
                 <p class="painel__nota">Notas pessoais de estudo</p>
+                <div class="nota-progresso" id="progresso-comentarios" aria-hidden="true"><div class="nota-progresso__barra"></div></div>
             </div>
             <div class="painel__corpo">
 {% include nota-aviso.html %}
 {{ content }}
             </div>
         </section>
+
+        <div class="nota-resizer" role="separator" aria-orientation="vertical" aria-label="Redimensionar os painéis de comentários e lei seca" tabindex="0" aria-valuemin="20" aria-valuemax="80" aria-valuenow="50"></div>
 
         <section class="painel painel--lei" id="lei" aria-label="Lei seca">
             <div class="painel__topo">
@@ -105,6 +155,7 @@
                     <button type="submit">Ir</button>
                     <span id="lei-ir-ajuda" class="visualmente-oculto">Digite o artigo e, opcionalmente, o inciso em algarismo romano.</span>
                 </form>
+                <div class="nota-progresso" id="progresso-lei" aria-hidden="true"><div class="nota-progresso__barra"></div></div>
             </div>
             <div class="painel__corpo">
                 <div class="lei-doc" id="lei-doc-{{ lei.slug }}">

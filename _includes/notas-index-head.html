@@ -1,0 +1,80 @@
+{% assign url_canonica = site.url | append: page.url %}
+{% assign notas = site.notas | sort: "title" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Paulo Higa</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="Paulo Higa">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#1d4ed8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="{{ url_canonica }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Paulo Higa">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:url" content="{{ url_canonica }}">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="{{ site.url }}/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Paulo Higa">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/img/og-image.jpg">
+    <meta name="twitter:image:alt" content="Paulo Higa">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS próprio da seção, inline (mesma estratégia do restante do site e
+         das notas individuais — ver nota-head.html). -->
+    <style>{% include nota-style.css %}</style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "inLanguage": "pt-BR",
+      "url": "{{ url_canonica }}",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Paulo Higa",
+        "url": "https://higa.me/"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+{%- for nota in notas %}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": "{{ site.url }}{{ nota.url }}",
+            "name": {{ nota.title | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "higa.me", "item": "https://higa.me/" },
+          { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": "{{ url_canonica }}" }
+        ]
+      }
+    }
+    </script>

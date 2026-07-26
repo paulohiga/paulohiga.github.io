@@ -1,0 +1,64 @@
+<!-- Página principal da seção de notas (/notas): lista as notas publicadas,
+     linkando cada uma. A lista vem de site.notas (a coleção `_notas`), então
+     se atualiza sozinha a cada nota criada ou removida — nenhuma edição
+     manual aqui quando o conteúdo muda. Reaproveita o CSS e os tokens visuais
+     de nota-style.css (mesma identidade das notas individuais), mas com um
+     layout mais simples: sem painéis, sem abas, sem lei ao lado. -->
+{% assign notas = site.notas | sort: "title" %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+{% include notas-index-head.html %}
+</head>
+
+<body class="light-theme">
+
+    <!-- Tema antes do primeiro paint, para não haver flash do tema errado —
+         mesmo script usado nas notas individuais. -->
+    <script data-cfasync="false">
+        (function () {
+            var t = localStorage.getItem('theme');
+            var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('dark-theme', dark);
+            document.body.classList.toggle('light-theme', !dark);
+            document.body.classList.add('js');
+        }());
+    </script>
+
+    <a href="#lista-notas" class="skip-link">Pular para a lista de notas</a>
+
+    <header class="nota-topo">
+        <div class="nota-topo__texto">
+            <nav class="nota-trilha" aria-label="Você está em">
+                <a href="/">higa.me</a> <span aria-hidden="true">/</span> <span aria-current="page">notas</span>
+            </nav>
+            <h1>Notas de legislação</h1>
+        </div>
+        <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
+            <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+    </header>
+
+    <main class="notas-index">
+        <p class="notas-index__intro">
+            Notas pessoais de estudo sobre legislação brasileira de tecnologia e proteção de dados,
+            com o texto da lei ao lado dos comentários.
+        </p>
+        <ul class="notas-index__lista" id="lista-notas">
+{% for nota in notas %}
+            <li class="notas-index__item">
+                <a href="{{ nota.url }}">
+                    <h2>{{ nota.title }}</h2>
+                    <p>{{ nota.description }}</p>
+                </a>
+            </li>
+{% endfor %}
+        </ul>
+    </main>
+
+    <script src="/notas.js" defer></script>
+</body>
+
+</html>

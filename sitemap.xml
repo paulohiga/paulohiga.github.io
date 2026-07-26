@@ -47,6 +47,16 @@ sitemap: false
   <lastmod> segue a mesma regra: data do último commit, com a data de revisão
   do front matter como reserva.
 {%- endcomment -%}
+{%- assign pagina_notas = site.pages | where: "permalink", "/notas" | first %}
+{%- if pagina_notas %}
+  <url>
+    <loc>{{ site.url }}{{ pagina_notas.url }}</loc>
+    {%- assign notas_lastmod = pagina_notas.last_modified_at %}
+    {%- if notas_lastmod %}
+    <lastmod>{{ notas_lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endif %}
 {%- for nota in site.notas %}
   <url>
     <loc>{{ site.url }}{{ nota.url }}</loc>
