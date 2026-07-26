@@ -1,35 +1,50 @@
+# /notas/fragmentos/ não são páginas: são fragmentos HTML buscados via
+# fetch() pelo seletor de normas das notas de legislação (ver AGENTS.md), sem
+# link algum apontando para eles e sem entrada no sitemap. Bloqueados em todo
+# user-agent para não serem indexados como páginas soltas e incompletas.
+
 # Default: open to all cooperative crawlers
 User-agent: *
+Disallow: /notas/fragmentos/
 Allow: /
 
 # AI search / answer crawlers — explicitly allowed so the site can be
 # surfaced and cited in AI assistants and AI-powered search results.
 User-agent: OAI-SearchBot
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: ChatGPT-User
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: Perplexity-User
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: Google-Extended
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: Applebot-Extended
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /notas/fragmentos/
 Allow: /
 
 User-agent: Claude-Web
+Disallow: /notas/fragmentos/
 Allow: /
 
 # AI training crawler — allowed (owner opted in).
 User-agent: GPTBot
+Disallow: /notas/fragmentos/
 Allow: /
 
 Sitemap: https://higa.me/sitemap.xml

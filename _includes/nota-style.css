@@ -220,6 +220,35 @@ body.dark-theme .nota-tema .ico-moon {
     text-transform: uppercase;
 }
 
+/* --- Seletor de normas, quando a nota exibe mais de um texto legal --- */
+.lei-normas {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.lei-normas button {
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lei-normas button[aria-pressed="true"] {
+    background: var(--surface-tint);
+    color: var(--ink);
+    border-color: var(--accent);
+}
+
+body:not(.js) .lei-normas {
+    display: none;
+}
+
 .painel__nota {
     margin: 0;
     font-size: 0.8rem;
@@ -406,7 +435,7 @@ body:not(.js) .lei-ir {
     font-weight: 600;
 }
 
-.painel--lei .painel__corpo > h2:first-child {
+.painel--lei .lei-doc > h2:first-child {
     margin-top: 0;
 }
 
