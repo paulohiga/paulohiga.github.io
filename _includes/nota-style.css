@@ -1,0 +1,538 @@
+/* Estilos exclusivos da seção de notas (/notas). Independente do
+   _includes/style.css: os tokens de cor e tipografia são repetidos aqui de
+   propósito, para que a identidade visual continue a mesma sem criar uma
+   dependência entre as duas partes do site. */
+
+:root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Merriweather', Georgia, serif;
+
+    --page-bg: #f7f9fc;
+    --ink: #0f172a;
+    --ink-soft: #475569;
+    --link: #1d4ed8;
+    --link-hover: #1e3a8a;
+    --accent: #1d4ed8;
+    --surface: #ffffff;
+    --surface-tint: #eef4ff;
+    --hairline: rgba(15, 23, 42, 0.12);
+    --realce: rgba(29, 78, 216, 0.16);
+}
+
+body.dark-theme {
+    --page-bg: #0b1120;
+    --ink: #e6ecf5;
+    --ink-soft: #a3b2c9;
+    --link: #7dd3fc;
+    --link-hover: #bae6fd;
+    --accent: #7dd3fc;
+    --surface: #111a2e;
+    --surface-tint: #131f38;
+    --hairline: rgba(255, 255, 255, 0.12);
+    --realce: rgba(125, 211, 252, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    background-color: var(--page-bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.ico {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+}
+
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: 0;
+    z-index: 10;
+    padding: 0.6rem 1.1rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* --- Cabeçalho --- */
+.nota-topo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem clamp(1rem, 3vw, 1.75rem);
+    background: var(--surface);
+    border-bottom: 1px solid var(--hairline);
+}
+
+.nota-topo__texto {
+    min-width: 0;
+}
+
+.nota-trilha {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+}
+
+.nota-trilha a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nota-trilha a:hover {
+    text-decoration: underline;
+}
+
+.nota-topo h1 {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.nota-tema {
+    margin-left: auto;
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    background: var(--page-bg);
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.nota-tema .ico-moon,
+body.dark-theme .nota-tema .ico-sun {
+    display: none;
+}
+
+body.dark-theme .nota-tema .ico-moon {
+    display: block;
+}
+
+/* --- Abas (uma coluna) --- */
+.nota-abas {
+    flex: none;
+    display: none;
+    gap: 0.25rem;
+    padding: 0.4rem clamp(1rem, 3vw, 1.75rem);
+    background: var(--surface);
+    border-bottom: 1px solid var(--hairline);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.nota-abas button {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    background: none;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nota-abas button[aria-pressed="true"] {
+    background: var(--surface-tint);
+    border-color: var(--hairline);
+    color: var(--ink);
+}
+
+/* --- Os dois painéis --- */
+.nota-divisao {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+}
+
+.painel__topo {
+    flex: none;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    padding: 0.6rem clamp(1rem, 3vw, 1.75rem);
+    background: var(--surface-tint);
+    border-bottom: 1px solid var(--hairline);
+}
+
+.painel__topo h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.painel__nota {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+}
+
+.painel__corpo {
+    padding: 1.25rem clamp(1rem, 3vw, 1.75rem) 4rem;
+}
+
+/* Espaço para o topo do painel ao saltar para uma âncora. */
+.painel__corpo [id] {
+    scroll-margin-top: 1rem;
+}
+
+/* --- Campo "ir para o dispositivo" --- */
+.lei-ir {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
+body:not(.js) .lei-ir {
+    display: none;
+}
+
+.lei-ir label {
+    color: var(--ink-soft);
+}
+
+.lei-ir input {
+    width: 7.5rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.35rem;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.lei-ir button {
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.35rem;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lei-ir input[aria-invalid="true"] {
+    border-color: #dc2626;
+}
+
+/* --- Aviso de conteúdo gerado por IA --- */
+.nota-aviso {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0 0 1.75rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--surface-tint);
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--accent);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+}
+
+.nota-aviso .ico {
+    margin-top: 0.2rem;
+    color: var(--accent);
+}
+
+.nota-aviso p {
+    margin: 0 0 0.5rem;
+}
+
+.nota-aviso p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Painel de comentários --- */
+.painel--comentarios .painel__corpo {
+    max-width: 46rem;
+}
+
+.painel--comentarios h2,
+.painel--comentarios h3 {
+    font-family: var(--font-serif);
+    line-height: 1.3;
+    scroll-margin-top: 1rem;
+}
+
+.painel--comentarios h2 {
+    margin: 2.25rem 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 1.3rem;
+}
+
+.painel--comentarios h3 {
+    margin: 1.75rem 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+.painel--comentarios .painel__corpo > h2:first-of-type {
+    margin-top: 0;
+}
+
+.painel--comentarios ul,
+.painel--comentarios ol {
+    padding-left: 1.35rem;
+}
+
+.painel--comentarios li {
+    margin-bottom: 0.4rem;
+}
+
+.painel--comentarios li > ul,
+.painel--comentarios li > ol {
+    margin-top: 0.4rem;
+}
+
+/* Links para dispositivos da lei: sublinhado pontilhado para se distinguirem
+   dos links externos, que levam o leitor para fora da página. */
+.painel--comentarios a[href^="#art-"] {
+    text-decoration-style: dotted;
+    text-underline-offset: 0.2em;
+    font-weight: 600;
+}
+
+.painel--comentarios a[href^="#art-"]:hover {
+    background: var(--realce);
+    border-radius: 0.2rem;
+}
+
+/* --- Painel da lei --- */
+.painel--lei {
+    border-left: 1px solid var(--hairline);
+    background: var(--surface);
+}
+
+.painel--lei .painel__corpo {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    max-width: 44rem;
+}
+
+.painel--lei h2,
+.painel--lei h3,
+.painel--lei h4 {
+    margin: 2rem 0 0.9rem;
+    font-family: var(--font-sans);
+    line-height: 1.3;
+    scroll-margin-top: 1rem;
+}
+
+.painel--lei h2 {
+    font-size: 1.15rem;
+}
+
+.painel--lei h3 {
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.painel--lei h4 {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+}
+
+.painel--lei .painel__corpo > h2:first-child {
+    margin-top: 0;
+}
+
+.painel--lei p {
+    margin: 0 0 0.85rem;
+}
+
+.painel--lei blockquote {
+    margin: 0 0 0.85rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--hairline);
+    color: var(--ink-soft);
+}
+
+/* Hierarquia dos dispositivos, marcada pelo filtro `anotar_lei`. */
+.lei-artigo {
+    margin-top: 1.5rem !important;
+}
+
+.lei-paragrafo {
+    padding-left: 1rem;
+}
+
+.lei-inciso {
+    padding-left: 2rem;
+}
+
+.lei-alinea {
+    padding-left: 3rem;
+}
+
+.lei-artigo,
+.lei-paragrafo,
+.lei-inciso,
+.lei-alinea {
+    border-radius: 0.25rem;
+    transition: background-color 0.4s ease;
+}
+
+/* Realce do dispositivo alcançado por um link ou pela busca. */
+.lei-destacado,
+.painel--lei :target {
+    background-color: var(--realce);
+    box-shadow: 0 0 0 0.4rem var(--realce);
+}
+
+/* --- Duas colunas --- */
+@media (min-width: 900px) {
+    body {
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .nota-divisao {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .painel__corpo {
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+}
+
+/* --- Uma coluna: as abas assumem, e a página rola normalmente --- */
+@media (max-width: 899px) {
+    body.js .nota-abas {
+        display: flex;
+    }
+
+    body.js[data-painel-ativo="lei"] .painel--comentarios,
+    body.js:not([data-painel-ativo="lei"]) .painel--lei {
+        display: none;
+    }
+
+    .painel--lei {
+        border-left: 0;
+        border-top: 1px solid var(--hairline);
+    }
+
+    .painel__topo {
+        position: sticky;
+        top: 0;
+        z-index: 4;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
+    }
+
+    body.js .painel__topo {
+        top: 3.1rem;
+    }
+
+    /* Com as abas visíveis o título do painel vira repetição da aba ativa.
+       Some da tela, mas continua nomeando a seção para leitores de tela. */
+    body.js .painel__topo h2 {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    /* Rede de segurança para saltos de âncora feitos pelo próprio navegador
+       (sem JavaScript): o dispositivo não pode parar sob o topo fixo. */
+    .painel__corpo [id] {
+        scroll-margin-top: 6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media print {
+    .nota-abas,
+    .nota-tema,
+    .lei-ir {
+        display: none;
+    }
+
+    body {
+        height: auto;
+        overflow: visible;
+    }
+
+    .nota-divisao {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .painel__corpo {
+        overflow: visible;
+    }
+}

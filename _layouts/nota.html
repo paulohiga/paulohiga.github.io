@@ -1,0 +1,90 @@
+<!-- Layout das notas de legislação (/notas). Deliberadamente independente do
+     layout `default`: a seção tem outra finalidade, outro público e outra
+     navegação, e o código dela (CSS, JS, includes) fica isolado do restante do
+     site para que uma mudança aqui nunca afete as páginas já publicadas.
+
+     A página combina dois painéis: os comentários (este arquivo Markdown) e o
+     texto legal (um documento da coleção `_leis`, indicado pelo front matter
+     `lei`). O texto legal é renderizado por `lei-anotada.html`, que ancora cada
+     dispositivo — são essas âncoras que os links dos comentários usam. -->
+{% assign lei = site.leis | where: 'slug', page.lei | first %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+{% include nota-head.html %}
+</head>
+
+<body class="light-theme">
+
+    <!-- Tema e marcação de JS antes do primeiro paint: evita o flash do tema
+         errado e o pulo das abas ao aparecerem. data-cfasync="false" impede o
+         Rocket Loader do Cloudflare de adiar o script. -->
+    <script data-cfasync="false">
+        (function () {
+            var t = localStorage.getItem('theme');
+            var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('dark-theme', dark);
+            document.body.classList.toggle('light-theme', !dark);
+            document.body.classList.add('js');
+        }());
+    </script>
+
+    <a href="#comentarios" class="skip-link">Pular para os comentários</a>
+
+    <header class="nota-topo">
+        <div class="nota-topo__texto">
+            <nav class="nota-trilha" aria-label="Você está em">
+                <a href="/">higa.me</a> <span aria-hidden="true">/</span> <span>notas</span>
+            </nav>
+            <h1>{{ page.title }}</h1>
+        </div>
+        <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
+            <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+    </header>
+
+    <!-- Abas: só fazem sentido quando os painéis não cabem lado a lado. Ficam
+         ocultas no desktop e sem JS (nesse caso os dois painéis são exibidos
+         empilhados e as âncoras funcionam pelo próprio navegador). -->
+    <div class="nota-abas" role="group" aria-label="Escolher painel">
+        <button type="button" data-painel="comentarios" aria-controls="comentarios" aria-pressed="true">Comentários</button>
+        <button type="button" data-painel="lei" aria-controls="lei" aria-pressed="false">Lei seca</button>
+    </div>
+
+    <main class="nota-divisao">
+        <section class="painel painel--comentarios" id="comentarios" aria-labelledby="titulo-comentarios">
+            <div class="painel__topo">
+                <h2 id="titulo-comentarios">Comentários</h2>
+                <p class="painel__nota">Notas pessoais de estudo</p>
+            </div>
+            <div class="painel__corpo">
+{% include nota-aviso.html %}
+{{ content }}
+            </div>
+        </section>
+
+        <section class="painel painel--lei" id="lei" aria-labelledby="titulo-lei">
+            <div class="painel__topo">
+                <h2 id="titulo-lei">{{ lei.apelido }}</h2>
+                <p class="painel__nota">
+                    <a href="{{ lei.fonte }}" target="_blank" rel="noopener">Texto oficial no Planalto</a>
+                </p>
+                <form class="lei-ir" role="search">
+                    <label for="lei-ir-campo">Ir para</label>
+                    <input id="lei-ir-campo" type="text" autocomplete="off" placeholder="art. 5º, V" aria-describedby="lei-ir-ajuda">
+                    <button type="submit">Ir</button>
+                    <span id="lei-ir-ajuda" class="visualmente-oculto">Digite o artigo e, opcionalmente, o inciso em algarismo romano.</span>
+                </form>
+            </div>
+            <div class="painel__corpo">
+{% include lei-anotada.html lei=lei %}
+            </div>
+        </section>
+    </main>
+
+    <script src="/notas.js" defer></script>
+</body>
+
+</html>

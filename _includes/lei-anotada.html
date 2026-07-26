@@ -1,0 +1,101 @@
+{%- comment -%}
+    Renderiza um texto legal da coleção `_leis` dando um id a cada dispositivo.
+
+    O arquivo-fonte é Markdown puro — sem âncoras, sem classes — para continuar
+    legível e fácil de atualizar. A identificação é feita aqui, na renderização:
+    o texto é percorrido bloco a bloco e cada dispositivo recebe um id estável,
+    que é o alvo dos links escritos nos comentários (ex.: `#art-5-v`).
+
+    Esquema de ids, previsível o bastante para ser escrito à mão nas notas:
+
+        Art. 5º                      → art-5
+        Art. 55-A                    → art-55-a
+        § 2º do art. 3º              → art-3-p2
+        Parágrafo único do art. 1º   → art-1-pu
+        inciso V do art. 5º          → art-5-v
+        inciso I do § 1º do art. 52  → art-52-p1-i   (o inciso herda a subdivisão)
+        alínea "b" do inciso II      → art-4-ii-b    (a alínea herda o inciso)
+
+    Os títulos são rebaixados em um nível, porque a página já tem o seu <h1>, e
+    recebem o prefixo `lei-` no id, para nunca colidirem com os títulos do
+    comentário exibido ao lado.
+
+    Dispositivos dentro de blocos de citação são alterações que a lei promove em
+    *outras* leis (art. 60, por exemplo). Não são dispositivos desta lei e por
+    isso não recebem âncora — o bloco é apenas convertido.
+
+    Parâmetro: `lei` — o documento da coleção `_leis` a renderizar.
+{%- endcomment -%}
+
+{%- capture quebra %}
+{% endcapture -%}
+{%- assign separador = quebra | append: quebra -%}
+{%- assign blocos = include.lei.content | split: separador -%}
+
+{%- assign romanos = 'I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,I-A,V-A,V-B' | split: ',' -%}
+{%- assign letras = 'a,b,c,d,e,f,g,h,i,j' | split: ',' -%}
+
+{%- assign artigo = '' -%}
+{%- assign subdivisao = '' -%}
+{%- assign inciso = '' -%}
+
+{%- for bloco in blocos -%}
+    {%- assign texto = bloco | strip -%}
+    {%- if texto == '' -%}{%- continue -%}{%- endif -%}
+
+    {%- assign palavras = texto | split: ' ' -%}
+    {%- assign marcador = palavras[0] -%}
+    {%- assign inicial = texto | slice: 0 -%}
+
+    {%- if inicial == '#' -%}
+        {%- assign titulo = texto | remove_first: marcador | strip -%}
+        {%- assign nivel = marcador | size | plus: 1 -%}
+        <h{{ nivel }} id="lei-{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
+
+    {%- else -%}
+        {%- assign id = '' -%}
+        {%- assign tipo = '' -%}
+
+        {%- if marcador == 'Art.' -%}
+            {%- assign artigo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' -%}
+            {%- assign subdivisao = '' -%}
+            {%- assign inciso = '' -%}
+            {%- assign id = artigo -%}
+            {%- assign tipo = 'artigo' -%}
+
+        {%- elsif marcador == '§' or marcador == 'Parágrafo' -%}
+            {%- if marcador == '§' -%}
+                {%- assign subdivisao = palavras[1] | replace: 'º', '' | prepend: 'p' -%}
+            {%- else -%}
+                {%- assign subdivisao = 'pu' -%}
+            {%- endif -%}
+            {%- assign inciso = '' -%}
+            {%- assign id = artigo | append: '-' | append: subdivisao -%}
+            {%- assign tipo = 'paragrafo' -%}
+
+        {%- elsif romanos contains marcador -%}
+            {%- assign id = artigo -%}
+            {%- if subdivisao != '' -%}
+                {%- assign id = id | append: '-' | append: subdivisao -%}
+            {%- endif -%}
+            {%- assign inciso = marcador | downcase | prepend: '-' | prepend: id -%}
+            {%- assign id = inciso -%}
+            {%- assign tipo = 'inciso' -%}
+
+        {%- else -%}
+            {%- assign letra = marcador | remove: ')' -%}
+            {%- assign fechamento = marcador | slice: -1 -%}
+            {%- if fechamento == ')' and inciso != '' and letras contains letra -%}
+                {%- assign id = inciso | append: '-' | append: letra -%}
+                {%- assign tipo = 'alinea' -%}
+            {%- endif -%}
+        {%- endif -%}
+
+        {%- if id != '' and artigo != '' -%}
+            {%- capture abertura -%}<p id="{{ id }}" class="lei-{{ tipo }}">{%- endcapture -%}
+            {{ texto | markdownify | replace_first: '<p>', abertura }}
+        {%- else -%}
+            {{ texto | markdownify }}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}

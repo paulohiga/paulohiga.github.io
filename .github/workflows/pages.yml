@@ -35,14 +35,19 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       # Minifica CSS/JS antes do build: o CSS entra inline no <head> de cada
-      # página (via _includes/style.css) e o script.js é servido como arquivo.
+      # página (via _includes/*.css) e os .js são servidos como arquivo. As
+      # notas de legislação (/notas) têm CSS e JS próprios, minificados junto.
       # Roda só na produção; os previews do Netlify usam os fontes legíveis.
       - name: Minify CSS and JS
         run: |
           npx -y lightningcss-cli --minify _includes/style.css -o /tmp/style.min.css
           mv /tmp/style.min.css _includes/style.css
+          npx -y lightningcss-cli --minify _includes/nota-style.css -o /tmp/nota-style.min.css
+          mv /tmp/nota-style.min.css _includes/nota-style.css
           npx -y terser script.js --compress --mangle -o /tmp/script.min.js
           mv /tmp/script.min.js script.js
+          npx -y terser notas.js --compress --mangle -o /tmp/notas.min.js
+          mv /tmp/notas.min.js notas.js
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
