@@ -35,7 +35,7 @@ revisado_em: 2026-07-26
 
 ### Normas correlatas
 
-- [Lei nº 12.965 - Marco Civil da Internet](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm)
+- [Lei nº 12.965 - Marco Civil da Internet](/notas/mci)
 - [Lei nº 8.078/1990 - Código de Defesa do Consumidor](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm), especialmente nas relações de consumo; sanções e reparações podem coexistir com a LGPD.
 - [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital), quando aplicáveis a produtos e serviços digitais destinados ou acessíveis a crianças e adolescentes.
 

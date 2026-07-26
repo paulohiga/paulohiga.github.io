@@ -60,10 +60,12 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │
 ├── _notas/                 # Notas de legislação (comentários)     → /notas/<assunto>
 │   ├── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
-│   └── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
+│   ├── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
+│   └── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
 ├── _leis/                  # Textos legais em Markdown puro (não viram página)
 │   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
-│   └── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
+│   ├── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
+│   └── mci.md              #   Lei nº 12.965/2014, texto compilado
 ├── _layouts/nota.html      # Casca das notas: dois painéis lado a lado
 ├── _includes/
 │   ├── nota-head.html      # <head> das notas (canonical, OG, JSON-LD Article)

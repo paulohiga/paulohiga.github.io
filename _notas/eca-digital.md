@@ -53,7 +53,7 @@ revisado_em: 2026-07-26
 ### Normas correlatas
 
 - [Lei nº 13.709 - Lei Geral de Proteção de Dados Pessoais (LGPD)](/notas/lgpd) — remetida expressamente nos [arts. 3º](#art-3) (nível elevado de privacidade e proteção de dados), [7º, § 2º](#art-7-p2), e [12, I](#art-12-i) (princípios do [art. 6º da LGPD](/notas/lgpd#art-6)), [16](#art-16) ([art. 14 da LGPD](/notas/lgpd#art-14)), [31, VI](#art-31-vi) (consentimento parental do [art. 14, § 1º](/notas/lgpd#art-14-p1)), [34, § 1º](#art-34-p1), e [37, parágrafo único](#art-37-pu).
-- [Lei nº 12.965 - Marco Civil da Internet](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm) — conceitos de internet, aplicações de internet e terminal ([art. 2º, § 1º](#art-2-p1)) e prazos de guarda de registros ([art. 27, § 2º](#art-27-p2)).
+- [Lei nº 12.965 - Marco Civil da Internet](/notas/mci) — conceitos de internet, aplicações de internet e terminal ([art. 2º, § 1º](#art-2-p1)) e prazos de guarda de registros ([art. 27, § 2º](#art-27-p2)).
 - [Lei nº 8.078/1990 - Código de Defesa do Consumidor](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm) — deveres de segurança e informação ([art. 5º](#art-5)) e publicidade abusiva (art. 37, § 2º).
 - [Lei nº 14.852/2024](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14852.htm) — marco legal da indústria de jogos eletrônicos; art. 16 (salvaguardas de interação) incorporado pelo [art. 21](#art-21).
 - [Lei nº 13.431/2017](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm) — sistema de garantia de direitos da criança e do adolescente vítima ou testemunha de violência.
