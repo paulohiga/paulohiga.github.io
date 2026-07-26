@@ -95,12 +95,20 @@
         });
     }
 
-    // Dado um id de âncora, encontra a norma (extra) a que ele pertence pelo
-    // prefixo do seu id — a principal não tem prefixo e já está carregada.
+    // Dado um id de âncora, encontra a norma a que ele pertence pelo prefixo
+    // do id. Sem prefixo correspondente, mas ainda assim um "art-...", é a
+    // norma principal — que também precisa ser reativada explicitamente
+    // quando o leitor está vendo outra norma no momento (ex.: voltar da
+    // "lei seca" do decreto para a da lei ao seguir uma referência cruzada).
     function normaDoId(id) {
-        return normas.filter(function (norma) {
+        var extra = normas.filter(function (norma) {
             return norma.prefixo && id.indexOf(norma.prefixo + '-') === 0;
         })[0];
+        if (extra) return extra;
+        if (id.indexOf('art-') === 0) {
+            return normas.filter(function (norma) { return !norma.prefixo; })[0];
+        }
+        return undefined;
     }
 
     /* --- Ir até um dispositivo da lei --- */
