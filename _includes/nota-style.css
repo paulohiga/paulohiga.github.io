@@ -439,6 +439,13 @@ body:not(.js) .lei-ir {
     transition: background-color 0.4s ease;
 }
 
+/* Redação superada (substituída por lei posterior ou com vigência encerrada):
+   permanece no texto, em tom mais discreto, mas não é alvo de âncora. */
+.lei-revogado {
+    color: var(--ink-soft);
+    font-size: 0.95em;
+}
+
 /* Realce do dispositivo alcançado por um link ou pela busca. */
 .lei-destacado,
 .painel--lei :target {
