@@ -41,4 +41,19 @@ sitemap: false
     {%- endif %}
   </url>
 {%- endfor %}
+{%- comment -%}
+  As notas de legislação (/notas) existem só em pt-br — por isso não entram no
+  esquema de estados <lang>-<view> acima e não têm links alternados. O
+  <lastmod> segue a mesma regra: data do último commit, com a data de revisão
+  do front matter como reserva.
+{%- endcomment -%}
+{%- for nota in site.notas %}
+  <url>
+    <loc>{{ site.url }}{{ nota.url }}</loc>
+    {%- assign nota_lastmod = nota.last_modified_at | default: nota.revisado_em %}
+    {%- if nota_lastmod %}
+    <lastmod>{{ nota_lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endfor %}
 </urlset>

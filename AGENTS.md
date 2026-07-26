@@ -56,6 +56,72 @@ estratégia de performance e os dados estruturados.
   ("…fontes públicas disponíveis até X"). É uma data **editorial** — não a
   atualize em edições que não mudam o recorte das fontes (ver `README.md`).
 
+## Notas de legislação (`/notas`)
+
+Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital), pública e
+indexável. É **isolada do restante do site**: layout, CSS, JS e includes
+próprios, sem passar pelo `default.html`, pelo `script.js` nem pelo
+`_data/pages.yml`. Uma mudança nas notas não pode afetar as quatro páginas de
+apresentação, e vice-versa.
+
+### Estrutura
+
+- `_notas/<assunto>.md` — a nota publicada (comentários). Front matter:
+  `layout: nota`, `permalink`, `title`, `description`, `lei` (qual texto legal
+  exibir ao lado) e `revisado_em` (data da última revisão **humana**).
+- `_leis/<assunto>.md` — o texto legal em Markdown puro, sem âncoras nem
+  classes. Só o front matter (`titulo`, `apelido`, `fonte`, `compilado_ate`) é
+  acrescentado; **o texto da lei não se altera**.
+- `_layouts/nota.html` monta os dois painéis; `_includes/lei-anotada.html`
+  renderiza o texto legal dando um id a cada dispositivo.
+
+Criar uma nota é criar um arquivo; excluir é apagá-lo. O sitemap e os links se
+ajustam sozinhos no build.
+
+### Referências clicáveis
+
+Os comentários apontam para o texto legal com links Markdown comuns, cujo
+destino segue um esquema previsível gerado por `lei-anotada.html`:
+
+| Dispositivo | id |
+| --- | --- |
+| Art. 5º | `art-5` |
+| Art. 55-A | `art-55-a` |
+| § 2º do art. 3º | `art-3-p2` |
+| Parágrafo único do art. 1º | `art-1-pu` |
+| Inciso V do art. 5º | `art-5-v` |
+| Inciso I do § 1º do art. 52 | `art-52-p1-i` |
+| Alínea "b" do inciso II do art. 4º | `art-4-ii-b` |
+
+Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
+citação. Sem JavaScript o link continua funcionando como âncora normal — não
+introduza referências que dependam de JS. **Confira toda remissão nova contra o
+texto legal antes de publicar**: link errado numa página pública de legislação é
+um defeito, não um detalhe.
+
+### Regras editoriais (não negociáveis)
+
+- **Só fontes públicas.** Nada de processos, minutas, discussões ou entendimentos
+  internos da ANPD. Não escreva "a ANPD entende que…" sem citar ato público com
+  link.
+- **Nada de voz institucional.** O material é pessoal e privado; não usa
+  identidade visual de órgão público nem se apresenta como orientação oficial. O
+  aviso de `_includes/nota-aviso.html` é renderizado pelo layout em toda nota —
+  não o remova nem o mova para o Markdown.
+- **Não mencione concursos públicos** nem qualquer certame.
+- **Direito autoral**: leis, decretos e decisões judiciais são de uso livre;
+  doutrina e material de terceiros, não. Resuma com palavras próprias e cite.
+- **Sem dados pessoais** de partes ao comentar jurisprudência: refira o caso por
+  número, órgão e tema.
+- `revisado_em` é atualizado **pelo humano** que revisou, não pela IA.
+
+### Idioma
+
+Esta seção é **pt-br apenas** — exceção consciente à regra de replicação em
+en-us, que continua valendo para as quatro páginas de apresentação. O objeto é
+legislação brasileira e a manutenção em dois idiomas não se justifica. Não
+"corrija" isso criando `/en/notas`.
+
 ## Padrões técnicos a preservar
 
 Ao mexer no código, mantenha as decisões de arquitetura que sustentam a
@@ -147,7 +213,10 @@ bundle exec jekyll serve   # http://localhost:4000
 
 ## Antes de finalizar (checklist)
 
-- [ ] Conteúdo alterado em pt-br **e** replicado em en-us com tom consistente.
+- [ ] Conteúdo alterado em pt-br **e** replicado em en-us com tom consistente
+      (não se aplica às notas de legislação, que são pt-br apenas).
+- [ ] Nas notas de legislação: aviso preservado, remissões conferidas contra o
+      texto legal e regras editoriais observadas.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.
 - [ ] `last_modified` de `bio.md` e `en/bio.md` atualizado (mesma data) se o

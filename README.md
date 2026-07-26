@@ -58,6 +58,18 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   │                       #   com a data-limite das fontes (last_modified)
 │   └── style.css           # Todo o CSS — inserido inline no <head> de cada página
 │
+├── _notas/                 # Notas de legislação (comentários)     → /notas/<assunto>
+│   └── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
+├── _leis/                  # Textos legais em Markdown puro (não viram página)
+│   └── lgpd.md             #   Lei nº 13.709/2018, texto compilado
+├── _layouts/nota.html      # Casca das notas: dois painéis lado a lado
+├── _includes/
+│   ├── nota-head.html      # <head> das notas (canonical, OG, JSON-LD Article)
+│   ├── nota-aviso.html     # Aviso de IA + isenção institucional (toda nota)
+│   ├── nota-style.css      # CSS das notas — inline, isolado do style.css
+│   └── lei-anotada.html    # Renderiza o texto legal ancorando cada dispositivo
+├── notas.js                # Painéis, referências clicáveis e busca (só em /notas)
+│
 ├── index.md                # Conteúdo: resumo em português        → /
 ├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio
 ├── en/index.md             # Conteúdo: resumo em inglês            → /en/
@@ -202,6 +214,39 @@ O site é otimizado para nota alta de PageSpeed em mobile e desktop:
   ChatGPT-User, PerplexityBot, Google-Extended, ClaudeBot, GPTBot etc.), para o
   site poder ser citado por assistentes e buscas com IA.
 - **`sitemap.xml`** gerado automaticamente (ver [Publicação](#publicação)).
+
+### Notas de legislação (`/notas`)
+
+Seção de estudo sobre legislação, pública e indexável, **isolada do restante do
+site**: `_layouts/nota.html` não usa o `default.html`, o `script.js` nem o
+`_data/pages.yml`, e o CSS (`_includes/nota-style.css`) e o JS (`notas.js`) são
+próprios. É uma seção só em pt-br — exceção consciente à regra de replicação em
+en-us.
+
+Cada nota junta duas fontes em Markdown:
+
+- **os comentários**, em `_notas/<assunto>.md`, que viram a página; e
+- **o texto legal**, em `_leis/<assunto>.md`, apontado pelo front matter `lei`.
+  A coleção tem `output: false`: o texto nunca vira página própria, só é
+  exibido dentro da nota que o cita.
+
+A página mostra os dois lado a lado, cada painel com rolagem independente. Em
+telas estreitas viram abas ("Comentários" / "Lei seca").
+
+**Referências clicáveis.** `_includes/lei-anotada.html` percorre o texto legal
+bloco a bloco e dá a cada dispositivo um id previsível (`art-5`, `art-5-v`,
+`art-3-p2`, `art-1-pu`, `art-52-p1-i`, `art-4-ii-b`), rebaixando os títulos em
+um nível e prefixando os ids deles com `lei-` para não colidirem com os do
+comentário. Dispositivos dentro de citações — as alterações que a lei faz em
+*outras* leis, no art. 60 — ficam de fora, porque não são desta lei. Assim os
+arquivos `.md` continuam limpos: os comentários citam a lei com links Markdown
+comuns, como `([art. 5º, inciso V](#art-5-v))`.
+
+O clique é interceptado pelo `notas.js`, que rola o painel da lei, destaca o
+dispositivo e leva o foco até ele. **Sem JavaScript nada quebra**: as âncoras
+existem no HTML e o navegador faz o salto sozinho, com o realce vindo do
+`:target`. A tabela completa de ids e as regras editoriais da seção estão no
+[`AGENTS.md`](./AGENTS.md).
 
 ## Serviços externos
 

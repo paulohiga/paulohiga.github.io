@@ -5,6 +5,15 @@ encoding: utf-8
 # Pages declare their own permalinks; no automatic per-collection prefixes.
 permalink: pretty
 
+# Notas de estudo sobre legislação (seção /notas, isolada do restante do site).
+# `notas` são as páginas publicadas; `leis` guarda o texto legal em Markdown
+# puro, renderizado dentro da nota que o cita — nunca como página própria.
+collections:
+  notas:
+    output: true
+  leis:
+    output: false
+
 # Plugins ativados no build via GitHub Actions (.github/workflows/pages.yml).
 plugins:
   - jekyll-last-modified-at
