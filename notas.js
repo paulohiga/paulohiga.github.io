@@ -220,6 +220,12 @@
         })
         : [];
 
+    // Norma exibida no momento no painel da lei seca — a busca "ir para o
+    // dispositivo" precisa levar em conta o prefixo dela (ver mais abaixo),
+    // senão o campo sempre resolve o id contra a norma principal, mesmo com
+    // outra norma selecionada.
+    var normaAtiva = normas.length ? normas[0] : null;
+
     function ativarNorma(normaAlvo) {
         normas.forEach(function (norma) {
             norma.doc.hidden = norma !== normaAlvo;
@@ -227,6 +233,7 @@
         if (fonteLink) fonteLink.href = normaAlvo.fonte;
         if (seletorNorma.value !== normaAlvo.opcao.value) seletorNorma.value = normaAlvo.opcao.value;
         corpoDaLei.scrollTop = 0;
+        normaAtiva = normaAlvo;
         reconstruirSumarioLei();
     }
 
@@ -347,12 +354,22 @@
     });
 
     /* --- Busca "ir para o dispositivo" ---
-       Aceita as formas usadas nas citações: "5", "5º", "art. 5º, V", "55-A". */
+       Aceita as formas usadas nas citações: "5", "5º", "art. 5º, V", "55-A".
+       O parágrafo usa a mesma notação compacta dos ids ("p2", "pu"), em vez
+       do símbolo §, difícil de digitar num teclado comum — também aceita
+       "único"/"unico" por extenso. Ex.: "art. 3º, p2" ou "3º, p2, I". */
     function idDoTermo(termo) {
         var texto = termo.toLowerCase().replace(/^art\.?\s*/, '').trim();
-        var partes = texto.match(/^(\d+)(?:\s*-\s*([a-z]))?\s*[º°.]?(?:[,\s]+([ivxlc]+(?:-[a-z])?))?$/);
+        var partes = texto.match(
+            /^(\d+)(?:\s*-\s*([a-z]))?\s*[º°.]?(?:[,\s]+(?:p\.?\s*([0-9]+)|(único|unico|pu))[º°.]?)?(?:[,\s]+([ivxlc]+(?:-[a-z])?))?(?:[,\s]+([a-z])\)?)?$/
+        );
         if (!partes) return null;
-        return 'art-' + partes[1] + (partes[2] ? '-' + partes[2] : '') + (partes[3] ? '-' + partes[3] : '');
+        var id = 'art-' + partes[1] + (partes[2] ? '-' + partes[2] : '');
+        if (partes[3]) id += '-p' + partes[3];
+        else if (partes[4]) id += '-pu';
+        if (partes[5]) id += '-' + partes[5];
+        if (partes[6]) id += '-' + partes[6];
+        return id;
     }
 
     var busca = document.querySelector('.lei-ir');
@@ -360,7 +377,11 @@
         var campo = busca.querySelector('input');
         busca.addEventListener('submit', function (evento) {
             evento.preventDefault();
-            var encontrou = irPara(idDoTermo(campo.value));
+            var id = idDoTermo(campo.value);
+            // O id do termo digitado nunca leva prefixo — é sempre resolvido
+            // contra a norma exibida no momento no painel da lei seca.
+            if (id && normaAtiva && normaAtiva.prefixo) id = normaAtiva.prefixo + '-' + id;
+            var encontrou = irPara(id);
             campo.setAttribute('aria-invalid', String(!encontrou));
         });
         campo.addEventListener('input', function () {
