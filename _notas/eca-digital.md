@@ -216,7 +216,7 @@ Configuração, **por padrão e desde a concepção**, no modelo mais protetivo 
 
 Obrigação de implementar mecanismos que evitem esse uso, com a ANPD regulamentando os **requisitos mínimos de segurança por padrão** e coibindo práticas manipulativas.
 
-#### Obrigações para serviços de IA generativa e agentes conversacionais ([art. 11 do Decreto nº 12.880/2026](#dec12880-art-11))
+### Obrigações para serviços de IA generativa e agentes conversacionais ([art. 11 do Decreto nº 12.880/2026](#dec12880-art-11))
 
 - **transparência** quanto ao caráter sintético e automatizado da interação;
 - **prevenção de manipulação comportamental**;
@@ -280,6 +280,8 @@ A vedação do inciso III alcança o tratamento para criação de perfis comport
 - o recebimento do sinal **não isenta** a responsabilidade do fornecedor pela efetividade da adequação etária e das medidas de proteção adotadas (Decreto, art. 26, § 3º); e
 - possibilitar ao usuário **meio adequado para contestar** a idade ou faixa etária aferida (Decreto, art. 27).
 
+**Papel do Estado**: o MGI poderá disponibilizar solução tecnológica pública e gratuita para verificação de idade e para confirmar a vinculação de crianças e adolescentes a responsáveis legais (Decreto nº 12.880/2026, [arts. 20](#dec12880-art-20) e [28](#dec12880-art-28)). A ANPD disciplinará a **certificação** das soluções, diretamente ou por entidades acreditadoras (art. 30), e poderá determinar medidas técnicas adicionais para impedir ou dificultar mecanismos tecnológicos que visem a contornar ou burlar as regras de aferição de idade e de vedação de acesso (art. 29).
+
 ### Dupla camada de verificação
 
 O desenho normativo não desloca a aferição para um único ponto da cadeia: ela é exigida **cumulativamente** na camada do dispositivo (lojas de aplicações e sistemas operacionais, [art. 12](#art-12)) e na camada do serviço (fornecedor, [art. 14, parágrafo único](#art-14-pu)).
@@ -295,8 +297,6 @@ A [Digital Age Assurance Act](https://leginfo.legislature.ca.gov/faces/billTextC
 Já o **Reino Unido** (dever de _highly effective age assurance_ do serviço regulado, sob o [Online Safety Act 2023](https://www.legislation.gov.uk/ukpga/2023/50/section/82)) e a **Austrália** ([Social Media Minimum Age](https://www.legislation.gov.au/C2024A00127/asmade), Parte 4A do [Online Safety Act 2021](https://www.legislation.gov.au/C2021A00076/latest/text), com dever de _reasonable steps_ da plataforma desde dezembro de 2025) alocam a obrigação **à camada do serviço**, sem dever equivalente para lojas e sistemas operacionais.
 
 A combinação brasileira — dever em ambas as camadas, vedação expressa de exoneração pelo sinal recebido e solidariedade — não encontra correspondência direta nesses regimes.
-
-**Papel do Estado**: o MGI poderá disponibilizar solução tecnológica pública e gratuita para verificação de idade e para confirmar a vinculação de crianças e adolescentes a responsáveis legais (Decreto nº 12.880/2026, [arts. 20](#dec12880-art-20) e [28](#dec12880-art-28)). A ANPD disciplinará a **certificação** das soluções, diretamente ou por entidades acreditadoras (art. 30), e poderá determinar medidas técnicas adicionais para impedir ou dificultar mecanismos tecnológicos que visem a contornar ou burlar as regras de aferição de idade e de vedação de acesso (art. 29).
 
 ## Supervisão parental ([arts. 16 a 18](#art-16))
 
@@ -398,7 +398,7 @@ Circunstâncias de dosimetria ([§ 1º](#art-35-p1)): gravidade da infração e 
 - **Rito** ([§ 3º](#art-35-p3)): segue o procedimento já usado pelo ECA para apurar qualquer infração contra os direitos da criança — arts. 194 a 197 da Lei nº 8.069/1990. Ver o passo a passo simplificado [abaixo](#rito-passo-a-passo).
 - **Destinação — sem regra em vigor**: o [art. 36](#art-36) do PL, que vinculava a receita das multas, foi **vetado**. O art. 36-A, incluído pela [Medida Provisória nº 1.318/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/Mpv/mpv1318.htm) para destinar os valores ao **FNCA** por 5 anos, teve sua **vigência encerrada em 25/2/2026** por perda de eficácia — a MP não foi convertida em lei dentro do prazo constitucional (art. 62, § 3º, da CF) nem houve decreto legislativo disciplinando as relações jurídicas dela decorrentes. Atualmente, portanto, a Lei não prevê destinação específica para os valores arrecadados com as multas.
 
-#### Rito, passo a passo
+### Rito das sanções
 
 O procedimento não foi criado especificamente para o ambiente digital — é o mesmo que o ECA já usa para apurar qualquer infração contra os direitos da criança e do adolescente (arts. 194 a 197). Em termos simples:
 
