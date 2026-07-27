@@ -267,7 +267,7 @@ versionados no código-fonte (não são segredos), mas troque-os com cuidado.
 | **Cloudflare**        | CDN/proxy do domínio. **Rocket Loader** adia scripts (por isso os que precisam rodar antes do paint levam `data-cfasync="false"`). **Cloudflare Fonts** reescreve o `<link>` do Google Fonts, inlina o CSS e serve os `woff2` a partir de `higa.me` (sem `preconnect` ao Google). | Configurado no painel da Cloudflare. No código: atributos `data-cfasync="false"` (`_layouts/default.html`, `_includes/head.html`) e o `<link>` de fontes em `_includes/head.html`. |
 | **Netlify**           | Publica uma **URL de preview** a cada push de branch (build com Jekyll), para validação manual antes do PR. | Configurado no painel do Netlify (não há `netlify.toml` no repositório). |
 | **Formspree**         | Recebe as mensagens do formulário de contato.                         | `action` do form em `_includes/contact-form.html` (endpoint `/f/xdklqqqg`). |
-| **Microsoft Clarity** | Analytics de comportamento (heatmaps, gravações).                     | Snippet em `_includes/head.html` (project id `x1sidv15u2`), carregado só no idle. |
+| **Microsoft Clarity** | Analytics de comportamento (heatmaps, gravações).                     | Snippet em `_includes/head.html`, `_includes/nota-head.html` e `_includes/notas-index-head.html` (project id `x1sidv15u2`), carregado só no idle. |
 
 ## Como atualizar o conteúdo
 
