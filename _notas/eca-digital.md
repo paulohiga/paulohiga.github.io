@@ -5,7 +5,7 @@ title: ECA Digital — Estatuto Digital da Criança e do Adolescente
 description: Notas de estudo sobre a Lei nº 15.211/2025 — aplicação, deveres de prevenção e design, aferição de idade, supervisão parental, redes sociais, sanções e o papel da ANPD, com o texto da lei ao lado.
 lei: eca-digital
 normas_extra: [decreto-12880]
-revisado_em: 2026-07-26
+revisado_em: 2026-07-28
 ---
 
 ## Normas
