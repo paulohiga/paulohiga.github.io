@@ -5,7 +5,7 @@ title: ECA Digital — Estatuto Digital da Criança e do Adolescente
 description: Notas de estudo sobre a Lei nº 15.211/2025 — aplicação, deveres de prevenção e design, aferição de idade, supervisão parental, redes sociais, sanções e o papel da ANPD, com o texto da lei ao lado.
 lei: eca-digital
 normas_extra: [decreto-12880]
-revisado_em: 2026-07-26
+revisado_em: 2026-07-28
 ---
 
 ## Normas
@@ -182,6 +182,31 @@ Aplicam-se ainda os conceitos de **criança e adolescente** do art. 2º do ECA e
     - **prejuízo ao exercício de direitos** — ocultar, fragmentar ou dificultar o acesso a controles de privacidade, supervisão parental, consentimento ou revogação de permissões.
 
 ## Deveres e vedações essenciais
+
+### Idade no meio digital: quem deve o quê
+
+A Lei não trata crianças e adolescentes como bloco homogêneo: usa a faixa etária, em vários pontos, como critério de graduação de deveres. Os cortes relevantes são o de **18 anos** (fim da incidência da Lei), o de **16 anos** (vinculação obrigatória de conta a responsável legal, [art. 24](#art-24)) e o de **12 anos** (criança, na definição do [art. 2º, § 1º](#art-2-p1), remetida ao art. 2º do ECA, com reflexo no consentimento da LGPD).
+
+**Para todos os menores de 18 anos** (crianças e adolescentes, sem distinção de idade dentro dessa faixa):
+
+- verificação de idade a cada acesso a conteúdo, produto ou serviço impróprio, inadequado ou proibido, vedada a autodeclaração ([art. 9º](#art-9) e [§ 1º](#art-9-p1));
+- prevenção e mitigação de riscos de exploração sexual, violência, indução a comportamentos danosos, jogos de azar, publicidade predatória e conteúdo pornográfico, desde a concepção do produto ou serviço ([art. 6º](#art-6));
+- configuração **por padrão** no modelo mais protetivo de privacidade e proteção de dados ([art. 7º](#art-7));
+- vedação de **perfilamento, análise emocional** e uso de realidade aumentada, estendida ou virtual para direcionar publicidade ([art. 22](#art-22)), e de criação de perfis comportamentais para fins publicitários ([art. 26](#art-26));
+- vedação de monetização ou impulsionamento de conteúdo que os retrate de forma erotizada ou sexualmente sugestiva ([art. 23](#art-23));
+- vedação de caixas de recompensa (_loot boxes_) em jogos a eles direcionados ou de acesso provável ([art. 20](#art-20));
+- direito a ferramentas de supervisão parental fáceis de encontrar e usar, com o essencial ativado por padrão ([arts. 16 a 18](#art-16));
+- remoção e comunicação às autoridades de conteúdos de exploração, abuso sexual, sequestro e aliciamento ([art. 27](#art-27)).
+
+**Para menores de 16 anos** (crianças e adolescentes até 16 anos incompletos), soma-se um dever adicional e mais intrusivo, que não alcança quem já os completou:
+
+- **vinculação obrigatória** da conta a um usuário ou conta de um responsável legal, no âmbito dos serviços do provedor ([art. 24, _caput_](#art-24));
+- na ausência de conta ou usuário do responsável, é **vedado** rebaixar as configurações de supervisão parental abaixo do padrão dos [arts. 3º e 7º](#art-3) ([art. 24, § 5º](#art-24-p5));
+- havendo fundados indícios de conta operada por criança ou adolescente sem o vínculo exigido, o provedor de rede social deve **suspender o acesso** e garantir procedimento célere de apelação ao responsável ([art. 24, § 4º](#art-24-p4)).
+
+Dentro dessa faixa, um subcorte adicional vem da LGPD: para **menores de 12 anos** (criança, [art. 2º, § 1º](#art-2-p1)), o tratamento de dados pessoais depende de **consentimento específico e em destaque** de ao menos um dos pais ou responsável legal, nos termos do [art. 14, § 1º, da LGPD](/notas/lgpd#art-14-p1), cujo aprimoramento os provedores devem reportar nos relatórios semestrais de transparência ([art. 31, VI](#art-31-vi)).
+
+**Para adolescentes entre 16 e 18 anos incompletos**, aplicam-se todos os deveres gerais acima, mas **não** a vinculação obrigatória de conta a responsável do [art. 24](#art-24), restrita a quem tem até 16 anos — o que reflete o princípio da **autonomia e do desenvolvimento progressivo** ([art. 4º, V](#art-4-v); [art. 5º, § 2º](#art-5-p2)), também determinante do desenho das próprias ferramentas de supervisão parental ([art. 17, § 2º](#art-17-p2)) e da autorização de _download_ de aplicativos por lojas e sistemas operacionais (Decreto nº 12.880/2026, [art. 25, § 3º](#dec12880-art-25-p3)). Na prática, o corte de 16 anos concentra nessa faixa (16 a 18) uma supervisão parental **por adesão** — dependente da existência de conta do responsável e do padrão protetivo já configurado — em vez da vinculação **por imposição** que vale até os 16.
 
 - Não permitir **autodeclaração de idade** como mecanismo de verificação para conteúdo impróprio, inadequado ou proibido ([art. 9º, § 1º](#art-9-p1)).
 - Não usar dados coletados para aferição de idade em **qualquer outra finalidade**, inclusive perfis comportamentais ([art. 13](#art-13); Decreto nº 12.880/2026, [art. 24, III](#dec12880-art-24-iii) e [§ 1º](#dec12880-art-24-p1)).
