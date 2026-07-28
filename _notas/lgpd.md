@@ -39,6 +39,16 @@ revisado_em: 2026-07-26
 - [Lei nº 8.078/1990 - Código de Defesa do Consumidor](https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm), especialmente nas relações de consumo; sanções e reparações podem coexistir com a LGPD.
 - [Lei nº 15.211 - Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital), quando aplicáveis a produtos e serviços digitais destinados ou acessíveis a crianças e adolescentes.
 
+## Resumo geral
+
+A LGPD é o marco regulatório central da proteção de dados pessoais no Brasil, aplicável de forma transversal a qualquer operação de tratamento de dados — pública ou privada, digital ou não — realizada no país ou que tenha por objetivo oferecer bens ou serviços a pessoas aqui localizadas. Antes dela, a proteção de dados era tratada de forma fragmentada, por meio de disposições esparsas (Código de Defesa do Consumidor, Marco Civil da Internet) e sem uma autoridade especializada para fiscalizar seu cumprimento.
+
+A lei garante um conjunto de direitos ao titular dos dados — confirmação da existência de tratamento, acesso, correção, anonimização, portabilidade, eliminação, entre outros (Capítulo III) — e impõe aos agentes de tratamento deveres de transparência, segurança e prestação de contas, sob pena de sanções administrativas que vão de advertência a multa de até 2% do faturamento (Capítulo VIII). Ela também estruturou a Autoridade Nacional de Proteção de Dados (ANPD), com competência para regulamentar, fiscalizar e sancionar o descumprimento da lei.
+
+Sancionada em 2018, a LGPD teve sua entrada em vigor adiada por duas vezes até vigorar definitivamente em 18 de setembro de 2020, com as sanções administrativas aplicáveis somente a partir de agosto de 2021 — um período de adaptação que refletia a novidade do regime para empresas e órgãos públicos brasileiros. A ANPD, inicialmente vinculada à Presidência da República, foi transformada em autarquia de natureza especial em 2022 e, mais recentemente, viu sua autonomia e organização institucional atualizadas pela Lei nº 15.352/2026, no mesmo movimento legislativo que a transformou em agência reguladora.
+
+Desde então, a ANPD vem editando resoluções que detalham a aplicação da lei — dosimetria de sanções, comunicação de incidentes, transferência internacional de dados, atuação do encarregado, entre outras — e a jurisprudência e a prática regulatória sobre o tema seguem em consolidação, com interseções crescentes com outras normas do ambiente digital, como o Marco Civil da Internet e o ECA Digital.
+
 ## Fundamentos
 
 "É assegurado, nos termos da lei, o direito à proteção dos dados pessoais, inclusive nos meios digitais" _(CF, art. 5º, LXXIX, incluído pela EC nº 115/2022)_
