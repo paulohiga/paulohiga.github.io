@@ -165,6 +165,38 @@ A LGPD **não se aplica** ao tratamento realizado:
 - Não transferir a particulares bases do Poder Público fora das exceções e finalidades estritas do [art. 26](#art-26).
 - Não ignorar requisições de titulares, incidentes relevantes, medidas de segurança, registros de tratamento ou determinações legítimas da ANPD.
 
+## Atribuições: o que cabe a cada instrumento normativo
+
+A disciplina da proteção de dados pessoais é distribuída entre diferentes instrumentos normativos, cada um com alcance próprio.
+
+### Reserva legal — o que só a lei pode dispor
+
+Compete **privativamente à União legislar** sobre proteção e tratamento de dados pessoais (CF, art. 22, XXX), matéria que também lhe cabe organizar e fiscalizar (CF, art. 21, XXVI). Por afetarem direitos fundamentais e criarem obrigações e penalidades, ficam reservados à lei, entre outros pontos:
+
+- a criação, extinção e as competências da ANPD ([art. 55-A](#art-55-a) e [55-J](#art-55-j));
+- as hipóteses que legitimam o tratamento, comuns e sensíveis ([arts. 7º](#art-7) e [11](#art-11));
+- os direitos assegurados ao titular (Capítulo III, [arts. 17 a 22](#art-17));
+- os tipos de sanção administrativa e seus limites máximos, como o teto de 2% do faturamento e o teto de R$ 50 milhões por infração ([art. 52](#art-52)).
+
+### O que a ANPD pode fazer por regulamento (resolução do Conselho Diretor)
+
+A própria LGPD atribui à ANPD competência para **editar regulamentos e procedimentos** sobre proteção de dados e privacidade, inclusive sobre RIPD para tratamentos de alto risco ([art. 55-J, XIII](#art-55-j)). É o instrumento usado, por exemplo, para:
+
+- detalhar a dosimetria das sanções dentro dos limites já fixados em lei ([art. 53](#art-53); [Resolução nº 4/2023](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077));
+- disciplinar a portabilidade de dados ([art. 18, V](#art-18-v)) e a transferência internacional ([art. 33](#art-33); [Resolução nº 19/2024](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024));
+- regular a comunicação de incidentes de segurança ([art. 48](#art-48); [Resolução nº 15/2024](https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis)) e a atuação do encarregado ([art. 41](#art-41); [Resolução nº 18/2024](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd));
+- estabelecer regras simplificadas para agentes de pequeno porte ([art. 55-J, XVIII](#art-55-j); [Resolução nº 2/2022](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd)).
+
+Esses regulamentos devem ser precedidos de consulta e audiência públicas e de análise de impacto regulatório ([art. 55-J, § 2º](#art-55-j)), e servem para **executar e detalhar** a lei — não para criar hipóteses de tratamento, direitos ou sanções que a LGPD não previu.
+
+### O que depende de decreto presidencial
+
+Cabe a **ato do Presidente da República** dispor sobre a **estrutura regimental da ANPD** — organização interna, cargos e órgãos da autarquia — na forma do [art. 55-G](#art-55-g), atualmente disciplinada pelo [Decreto nº 12.881/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm), que revogou o Decreto nº 10.474/2020. Esse decreto trata da organização administrativa do Poder Executivo (CF, art. 84, VI, "a"), e não da disciplina material da proteção de dados: não cria direitos, deveres ou sanções para titulares e agentes de tratamento, papel que permanece com a lei e com os regulamentos da própria ANPD.
+
+### Competências de fiscalização e sanção
+
+A aplicação das sanções previstas na LGPD **compete exclusivamente à ANPD**, prevalecendo suas competências, quanto à proteção de dados, sobre as de outras entidades ou órgãos ([art. 55-K](#art-55-k)). Isso não impede a articulação com reguladores setoriais para o exercício coordenado de competências afins ([art. 55-J, §§ 3º e 4º](#art-55-j)) — a ANPD é o órgão central de interpretação da LGPD e de fixação de normas e diretrizes para sua implementação, mas não substitui a atuação de outros reguladores em suas respectivas esferas.
+
 ## Detalhamento de bases legais e requisitos de tratamento
 
 ### Hipóteses de tratamento de dados ([arts. 7º a 10](#art-7))
