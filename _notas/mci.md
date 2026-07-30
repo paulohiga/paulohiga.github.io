@@ -243,6 +243,77 @@ A ampliação de mandato acompanha o fortalecimento institucional recente da Ag�
 
 A atuação da ANPD sobre o Marco Civil é declaradamente **sistêmica**: fiscaliza mecanismos, processos e estruturas de governança dos provedores, não conteúdos ou publicações isolados. Cabe também à Agência editar normas complementares sobre formas de notificação, prazos de resposta, procedimentos de contestação, legitimidade para notificar, relatórios de transparência e salvaguardas técnicas contra conteúdo íntimo gerado por IA.
 
+## Quem pode o quê: a divisão de competências normativas
+
+Entre as três normas comentadas nestas notas, o Marco Civil é a que tem o desenho institucional mais disperso. Não há um regulador único: a fiscalização foi repartida por decreto entre **quatro** órgãos, cada um aplicando a sua própria lei. Não há, tampouco, um capítulo de competências equivalente ao [art. 55-J da LGPD](/notas/lgpd#art-55-j) — o MCI é uma lei principiológica, que remete pontos a decreto e cala sobre quem os fiscaliza. E, diferentemente das outras duas, a mudança mais profunda da última década não veio do Legislativo nem do Executivo, mas do **Supremo Tribunal Federal**.
+
+### Quem pode legislar
+
+Compete **privativamente à União** legislar sobre informática e telecomunicações (CF, art. 22, IV) e, desde a EC nº 115/2022, sobre proteção e tratamento de dados pessoais (CF, art. 22, XXX). Estados e Municípios não editam "marcos civis" próprios — mas não estão fora do jogo: o [art. 24](#art-24) do MCI fixa **diretrizes para a atuação da União, dos Estados, do Distrito Federal e dos Municípios** no desenvolvimento da internet, e o [art. 25](#art-25) alcança as aplicações de internet de todos os entes públicos. É competência de fomento e de organização dos próprios serviços, não de regulação de terceiros.
+
+### O que só a lei pode fazer (reserva legal)
+
+Pela regra do art. 5º, II, da Constituição, ficam reservados à lei:
+
+- os **direitos e garantias dos usuários** (Capítulo II, [arts. 7º](#art-7) e [8º](#art-8)), inclusive a nulidade de pleno direito das cláusulas que os contrariem;
+- o **regime de responsabilidade** dos provedores por conteúdo de terceiros ([arts. 18 a 21](#art-18));
+- os **tipos de sanção e seu teto** — advertência, multa de até 10% do faturamento do grupo econômico no Brasil, suspensão e proibição ([art. 12](#art-12)).
+
+O MCI ainda contém duas **reservas legais que ele mesmo declarou e que seguem sem cumprimento**, o que é um dado relevante para quem estuda a lei:
+
+- a responsabilidade por infração a **direitos autorais** depende de "lei específica" ([art. 19, § 2º](#art-19-p2)); até que ela venha, aplica-se a legislação autoral vigente em 2014 ([art. 31](#art-31));
+- a tese do STF nos Temas 987 e 533 vale expressamente **"enquanto não sobrevier legislação específica"** — o próprio Tribunal reconheceu que a palavra final é do Congresso.
+
+Um episódio ilustra bem o limite: a **Medida Provisória nº 1.068/2021** pretendeu reformar o regime de moderação de conteúdo e foi **devolvida sumariamente** pelo presidente do Senado, sem sequer entrar em pauta (ver "Alterações posteriores ao Marco Civil", acima). Reformar esse núcleo exige lei em sentido próprio, discutida nas duas Casas.
+
+### O que só o Judiciário pode fazer
+
+O MCI é generoso em reservas de jurisdição, e por uma razão constitucional direta: o art. 5º, XII, da Constituição só admite a quebra do sigilo das comunicações **por ordem judicial**.
+
+- **Conteúdo de comunicações privadas** e **registros que permitam identificar o usuário** só podem ser disponibilizados mediante ordem judicial ([art. 10, §§ 1º e 2º](#art-10-p1)).
+- **Requisição de registros** para formar prova em processo cível ou penal depende de decisão judicial fundamentada, com delimitação de período e demonstração de utilidade ([arts. 22](#art-22) e [23](#art-23)).
+- A **exceção** é estreita e vale a pena guardar: autoridades administrativas com competência legal podem requisitar diretamente **dados cadastrais** — qualificação pessoal, filiação e endereço ([art. 10, § 3º](#art-10-p3)). Nada além disso.
+
+O caso do art. 19 é de outra natureza: nos **Temas 987 e 533**, o STF não alterou o texto da lei, mas declarou sua inconstitucionalidade parcial e fixou tese vinculante — competência que nem o Executivo nem qualquer agência possuem, pois só ao Judiciário cabe o controle de constitucionalidade. Ao mesmo tempo, o Tribunal delimitou a própria atuação, condicionando a tese à ausência de lei específica (ver "O novo regime de responsabilização das plataformas", acima).
+
+### O que a própria lei reservou a decreto
+
+Aqui o Marco Civil tem uma peculiaridade que merece registro: ele **nomeia o dispositivo constitucional** no seu próprio texto. O [art. 9º, § 1º](#art-9-p1) diz que a discriminação ou degradação de tráfego "será regulamentada nos termos das atribuições privativas do Presidente da República previstas no inciso IV do art. 84 da Constituição Federal, **para a fiel execução desta Lei**, ouvidos o Comitê Gestor da Internet e a Agência Nacional de Telecomunicações".
+
+São três informações numa frase só: o instrumento é o **decreto de execução**; ele não pode inovar, apenas executar; e sua edição depende de **oitiva prévia** do CGI.br e da Anatel. O [art. 11, § 4º](#art-11-p4) traz a segunda remessa expressa — "Decreto regulamentará o procedimento para apuração de infrações ao disposto neste artigo" —, e o [§ 3º](#art-11-p3) manda que os provedores prestem informações de conformidade "na forma da regulamentação".
+
+Foi nesse espaço que se editou o [Decreto nº 8.771/2016](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8771.htm), cujo preâmbulo invoca apenas o art. 84, IV — regulamento de execução puro, precedido de consulta pública com mais de 2.500 contribuições.
+
+### Quem fiscaliza: quatro portas, não uma
+
+O MCI não criou agência nem designou autoridade. Quem repartiu a fiscalização foi o Capítulo IV do Decreto nº 8.771/2016, e cada órgão atua **nos termos da sua própria lei**:
+
+- **Anatel** — regulação, fiscalização e apuração de infrações, nos termos da Lei nº 9.472/1997 ([dec. art. 17](#dec8771-art-17)); é dela a fiscalização dos requisitos técnicos da neutralidade de rede, consideradas as diretrizes do CGI.br ([dec. art. 5º, § 2º](#dec8771-art-5-p2));
+- **Secretaria Nacional do Consumidor** — nos termos do Código de Defesa do Consumidor ([dec. art. 18](#dec8771-art-18));
+- **Sistema Brasileiro de Defesa da Concorrência** — infrações à ordem econômica, nos termos da Lei nº 12.529/2011 ([dec. art. 19](#dec8771-art-19));
+- **ANPD** — desde 2026, direitos dos usuários e deveres dos provedores de aplicações ([dec. art. 19-A](#dec8771-art-19-a)).
+
+O decreto ainda determina atuação **colaborativa** entre esses órgãos, consideradas as diretrizes do CGI.br ([dec. art. 20](#dec8771-art-20)), e deixa claro que cada apuração segue os procedimentos internos do órgão competente, podendo iniciar-se de ofício ou por requerimento ([dec. art. 21](#dec8771-art-21)).
+
+O **CGI.br**, criado pelo [Decreto nº 4.829/2003](https://www.planalto.gov.br/ccivil_03/decreto/2003/d4829.htm), é peça central desse arranjo sem ser regulador: é órgão de governança multiparticipativa, cuja oitiva a lei exige ([art. 9º, § 1º](#art-9-p1)) e cujas diretrizes o decreto manda considerar — mas não fiscaliza nem sanciona.
+
+### A entrada da ANPD e o debate sobre os limites do regulamento
+
+O [art. 19-A](#dec8771-art-19-a), incluído pelo Decreto nº 12.975/2026, atribui à ANPD a regulação, a fiscalização e a apuração de infrações quanto aos direitos dos usuários e aos deveres dos provedores de aplicações — e ancora essa competência em **três leis**: o Marco Civil (especialmente os [arts. 10 a 12](#art-10)), a [LGPD](/notas/lgpd) e o [ECA Digital](/notas/eca-digital). Vale notar que a [Lei nº 15.352/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm), que reorganizou a ANPD como agência reguladora, **não acrescentou** essa frente ao rol do [art. 55-J da LGPD](/notas/lgpd#art-55-j): a atribuição veio por decreto.
+
+Isso põe em evidência a pergunta que atravessa o debate público sobre os Decretos nºs 12.975/2026 e 12.976/2026 — **até onde vai o poder regulamentar**. Há duas leituras em disputa:
+
+- **A favor da validade**: os decretos apenas operacionalizam o que já estava na lei e na tese vinculante do STF. Contam com amparo legal expresso (o [art. 11, § 4º](#art-11-p4) remete a decreto o procedimento de apuração de infrações), invocam o art. 84, IV e VI, "a", da Constituição, e reproduzem o rol de crimes graves fixado pelo próprio Supremo. As sanções aplicáveis continuam sendo **as do [art. 12](#art-12) do MCI** — o decreto não criou tipo sancionatório novo nem elevou teto.
+- **Críticas**: deveres detalhados como os dos [arts. 16-A a 16-P](#dec8771-art-16-a) — dever de cuidado, prazos de resposta, relatórios de transparência, sede e representante legal no País — não constam do texto do Marco Civil, e criar obrigação para particular é matéria de lei (CF, art. 5º, II). Daí a articulação, noticiada desde maio de 2026, para sustar os decretos por **decreto legislativo**, instrumento que a Constituição confere ao Congresso justamente para "sustar os atos normativos do Poder Executivo que exorbitem do poder regulamentar" (CF, art. 49, V).
+
+Enquanto o Congresso não se manifesta e o Judiciário não é provocado, os decretos estão em vigor e a ANPD atua com base neles — a [Nota Técnica nº 5/2026/CGTAD/SRE/ANPD](https://www.gov.br/anpd/pt-br/assuntos/marco-civil-da-internet) registra que seus dispositivos são autoaplicáveis.
+
+### Um limite que o próprio decreto impôs ao regulador
+
+Vale destacar, por ser incomum, uma autolimitação escrita na norma: **é vedado à autoridade competente notificar provedores para moderar conteúdos criminosos ou ilícitos de forma isolada** ([dec. art. 16-I, parágrafo único](#dec8771-art-16-i-pu)). E, na apuração de responsabilidade, é proibido fundamentar a punição exclusivamente na manutenção ou na remoção de um conteúdo específico ([dec. art. 16-I](#dec8771-art-16-i)).
+
+Ou seja: o desenho normativo impede que a ANPD funcione como instância de moderação caso a caso. É a tradução regulamentar da **atuação sistêmica** que a Agência descreve em seu [FAQ público](https://www.gov.br/anpd/pt-br/assuntos/marco-civil-da-internet) — avaliar mecanismos, processos e governança, não publicações. O decreto também preserva a exigência de **ordem judicial específica** para responsabilizar provedor por conteúdo de terceiro nos crimes contra a honra e nos serviços excluídos ([dec. art. 16-J](#dec8771-art-16-j)), e admite critérios diferenciados conforme porte, grau de interferência, estado da técnica e risco ([dec. art. 16-P](#dec8771-art-16-p)).
+
 ## Sanções
 
 Os dois regimes abaixo **coexistem** — não há substituição de um pelo outro. Continuam sendo hipóteses distintas de infração, previstas em normas diferentes e fiscalizadas com fundamentos diferentes: o regime original do [art. 12](#art-12) nunca foi revogado e segue punindo o descumprimento dos deveres de guarda e tratamento de registros e dados ([arts. 10](#art-10) e [11](#art-11)); o novo regime do Decreto nº 12.975/2026 é uma camada adicional, criada para operacionalizar a decisão do STF sobre responsabilização por conteúdo de terceiros ([art. 19-A](#dec8771-art-19-a)) — um problema jurídico diferente, que antes simplesmente não tinha sanção administrativa prevista em decreto. Uma mesma plataforma pode, em tese, ser enquadrada nos dois regimes ao mesmo tempo, por fatos distintos.

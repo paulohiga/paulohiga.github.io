@@ -165,6 +165,67 @@ A LGPD **não se aplica** ao tratamento realizado:
 - Não transferir a particulares bases do Poder Público fora das exceções e finalidades estritas do [art. 26](#art-26).
 - Não ignorar requisições de titulares, incidentes relevantes, medidas de segurança, registros de tratamento ou determinações legítimas da ANPD.
 
+## Quem pode o quê: a divisão de competências normativas
+
+Muitas dúvidas práticas sobre a LGPD ("a ANPD pode exigir isso por resolução?", "um decreto pode mudar esse ponto?") são, no fundo, uma só pergunta: **qual instrumento normativo pode dispor sobre o quê**. A lei responde em degraus. A Constituição define quem legisla; a lei fixa o núcleo de direitos, deveres e sanções; o decreto presidencial cuida da organização administrativa; e o regulamento da ANPD detalha a execução. Nenhum degrau pode invadir o de cima — e a ANPD, embora seja o órgão central da matéria, não é o único ator.
+
+### Quem pode legislar
+
+Desde a [EC nº 115/2022](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc115.htm), compete **privativamente à União legislar** sobre proteção e tratamento de dados pessoais (CF, art. 22, XXX), e a ela cabe **organizar e fiscalizar** a matéria, nos termos da lei (CF, art. 21, XXVI). A única exceção admitida é lei complementar que autorize os Estados a legislar sobre questões específicas (CF, art. 22, parágrafo único) — o que não ocorreu.
+
+Não existe, portanto, "LGPD estadual" ou "LGPD municipal": as normas gerais da lei são de **interesse nacional** e devem ser observadas por União, Estados, Distrito Federal e Municípios ([art. 1º, parágrafo único](#art-1-pu)). Entes subnacionais continuam podendo organizar internamente o próprio tratamento de dados — designar encarregado, editar políticas e fluxos, no exercício da autonomia administrativa —, mas não criar bases legais, direitos ou sanções distintos dos da LGPD.
+
+### O que só a lei pode fazer (reserva legal)
+
+Vale a regra do art. 5º, II, da Constituição: ninguém é obrigado a fazer ou deixar de fazer alguma coisa **senão em virtude de lei**. Ficam fora do alcance de qualquer regulamento:
+
+- **A existência e as competências da ANPD.** Cada degrau da sua trajetória institucional exigiu lei própria: ela nasceu pela [Lei nº 13.853/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13853.htm) como órgão da administração federal ligado à Presidência da República, foi transformada em **autarquia** de natureza especial pela [Lei nº 14.460/2022](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14460.htm) — e autarquia só se cria por lei específica (CF, art. 37, XIX) — e foi reorganizada como agência reguladora pela [Lei nº 15.352/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm) ([art. 55-A](#art-55-a)). Suas atribuições são as do [art. 55-J](#art-55-j); a Agência não pode ampliá-las por conta própria.
+- **As hipóteses que autorizam o tratamento.** O [art. 7º](#art-7) diz que o tratamento "somente poderá ser realizado nas seguintes hipóteses": é rol fechado. Nem a ANPD nem um decreto criam uma décima primeira base legal, e o mesmo vale para os dados sensíveis do [art. 11](#art-11).
+- **Os direitos do titular** (Capítulo III, [arts. 17 a 22](#art-17)) e os princípios do [art. 6º](#art-6). O regulamento pode dizer *como* se exerce um direito; não pode suprimi-lo nem condicioná-lo além do que a lei previu.
+- **Os tipos de sanção e seus limites.** O [art. 52](#art-52) define quais sanções existem, o teto de 2% do faturamento e o limite de R$ 50 milhões por infração. À ANPD a lei delegou apenas a **metodologia de cálculo do valor-base**, e ainda assim mediante consulta pública obrigatória ([art. 53](#art-53)). É a divisão típica: a lei diz *o que* e *até quanto*; o regulamento diz *como calcular*.
+- **O regime de dados para segurança pública e persecução penal.** O [art. 4º, III](#art-4-iii), afasta esses tratamentos da LGPD, e o [§ 1º](#art-4-p1) exige **legislação específica** para discipliná-los — lei que até hoje não foi editada. Nessa zona, a ANPD apenas emite opiniões técnicas e recomendações e pode solicitar relatório de impacto ([art. 4º, § 3º](#art-4-p3)); não regulamenta nem sanciona.
+
+### O que a ANPD pode fazer por regulamento
+
+O poder normativo da ANPD é exercido por **resolução do Conselho Diretor** e tem fundamento expresso no [art. 55-J, XIII](#art-55-j-xiii): editar regulamentos e procedimentos sobre proteção de dados e privacidade. Ele opera onde a própria lei abriu espaço, remetendo pontos ao regulamento — técnica conhecida como deslegalização, em que o legislador fixa o marco e transfere o detalhamento a quem tem capacidade técnica para acompanhá-lo. Exemplos, todos com a remissão na própria lei:
+
+- **dosimetria** das sanções ([art. 53](#art-53)) — [Resolução nº 4/2023](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077);
+- **transferência internacional**, incluindo decisões de adequação e cláusulas-padrão ([art. 33](#art-33)) — [Resolução nº 19/2024](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024);
+- **comunicação de incidentes** ([art. 48](#art-48)) — [Resolução nº 15/2024](https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis);
+- **atuação do encarregado** ([art. 41](#art-41)) — [Resolução nº 18/2024](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd);
+- **agentes de pequeno porte** ([art. 55-J, XVIII](#art-55-j-xviii)) — [Resolução nº 2/2022](https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd);
+- **portabilidade** ([art. 18, V](#art-18-v)), **cópia eletrônica** dos dados ([art. 19, § 3º](#art-19-p3)) e **relatório de impacto** ([art. 38](#art-38)) — ainda sem regulamento próprio.
+
+Há um caso peculiar, em que a lei autorizou a Agência não só a detalhar, mas a **proibir**: o compartilhamento de dados sensíveis entre controladores para obter vantagem econômica pode ser objeto de vedação ou de regulamentação pela ANPD, ouvidos os órgãos setoriais ([art. 11, § 3º](#art-11-p3)).
+
+Esse poder tem limites de conteúdo e de forma:
+
+- **Mínima intervenção** — ao impor limites, encargos ou sujeições a agentes privados, a ANPD deve observar a exigência de intervenção mínima, preservados os fundamentos da ordem econômica do art. 170 da Constituição ([art. 55-J, § 1º](#art-55-j-p1)).
+- **Devido processo regulatório** — regulamentos e normas da ANPD devem ser precedidos de **consulta e audiência públicas** e de **análise de impacto regulatório** ([art. 55-J, § 2º](#art-55-j-p2)). Como agência reguladora, a ANPD também se submete ao processo decisório da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm) ([art. 55-A](#art-55-a)).
+- **Interpretação terminativa, mas só na esfera administrativa** — a ANPD delibera em caráter terminativo sobre a interpretação da lei e os casos omissos ([art. 55-J, XX](#art-55-j-xx)) e é o órgão central de interpretação da LGPD ([art. 55-K, parágrafo único](#art-55-k-pu)). Isso não afasta o controle judicial: nenhuma lesão ou ameaça a direito escapa da apreciação do Judiciário (CF, art. 5º, XXXV).
+
+### O que depende de decreto presidencial
+
+O decreto entra aqui em papel estreito: **organização administrativa**, não disciplina material. A LGPD reserva a **ato do Presidente da República** a estrutura regimental da ANPD ([art. 55-G](#art-55-g)) — hoje o [Decreto nº 12.881/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm), que revogou o Decreto nº 10.474/2020. É competência do art. 84, VI, "a", da Constituição, que autoriza dispor por decreto sobre organização e funcionamento da administração federal **desde que não haja aumento de despesa nem criação ou extinção de órgãos públicos**.
+
+Essa restrição não é teórica: é justamente por causa dela que os cargos em comissão e as funções de confiança da ANPD tiveram de ser **remanejados de outros órgãos** do Executivo federal, e não criados pelo decreto ([art. 55-H](#art-55-h)). Criar cargo novo exigiria lei.
+
+Abaixo do decreto ainda há um terceiro degrau: o **regimento interno**, editado pelo próprio Conselho Diretor ([art. 55-G, § 2º](#art-55-g-p2)). A escada completa é lei → decreto → regimento interno, cada um com objeto mais estreito que o anterior.
+
+### Quem fiscaliza e quem aplica sanção
+
+A **aplicação das sanções da LGPD compete exclusivamente à ANPD**, e suas competências prevalecem, quanto à proteção de dados, sobre as competências correlatas de outros órgãos ([art. 55-K](#art-55-k)). Três qualificações importantes:
+
+- **A ANPD não multa o Poder Público.** Às entidades e órgãos públicos só se aplicam advertência, publicização, bloqueio, eliminação, suspensão parcial do banco de dados, suspensão do tratamento e proibição de atividades — as multas simples e diária ficam de fora ([art. 52, § 3º](#art-52-p3)), sem prejuízo das responsabilizações da Lei nº 8.112/1990, da Lei nº 8.429/1992 e da Lei de Acesso à Informação.
+- **As sanções mais graves são escalonadas e ouvem outros reguladores.** Suspensão parcial, suspensão do tratamento e proibição só podem ser aplicadas depois de já imposta outra sanção no mesmo caso e, quando o controlador estiver sujeito a outro órgão com competência sancionatória, ouvido esse órgão ([art. 52, § 6º](#art-52-p6)).
+- **A ANPD não fica com o dinheiro das multas.** O produto da arrecadação vai para o Fundo de Defesa de Direitos Difusos ([art. 52, § 5º](#art-52-p5)) — arranjo que separa quem sanciona de quem arrecada. As receitas da Agência são as do [art. 55-L](#art-55-l).
+
+Exclusividade quanto às sanções *da LGPD* também não significa monopólio sobre o tema: as sanções da lei não substituem as do Código de Defesa do Consumidor e de legislação específica ([art. 52, § 2º](#art-52-p2)), e a ANPD deve coordenar-se com os reguladores setoriais e manter fórum permanente com eles ([art. 55-J, §§ 3º e 4º](#art-55-j-p3)).
+
+### O CNPD: consultivo, sem poder normativo
+
+O **Conselho Nacional de Proteção de Dados Pessoais e da Privacidade** é órgão da estrutura da ANPD ([art. 55-C, II](#art-55-c-ii)), com 23 representantes do Poder Público, do Congresso, do CNJ, do CNMP, do CGI.br, da sociedade civil, da academia e dos setores produtivo e laboral ([art. 58-A](#art-58-a)). Sua competência é inteiramente **propositiva**: propor diretrizes, elaborar relatórios e estudos, sugerir ações e disseminar conhecimento ([art. 58-B](#art-58-b)). Não edita normas, não fiscaliza e não sanciona — é canal de participação social, não instância decisória.
+
 ## Detalhamento de bases legais e requisitos de tratamento
 
 ### Hipóteses de tratamento de dados ([arts. 7º a 10](#art-7))

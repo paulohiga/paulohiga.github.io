@@ -220,6 +220,79 @@ Dentro dessa faixa, um subcorte adicional vem da LGPD: para **menores de 12 anos
 - Não operar no País sem **representante legal** com poderes de recebimento de citações e de resposta perante Executivo, Judiciário e Ministério Público ([art. 40](#art-40)).
 - **Vedação dirigida ao regulador**: a regulamentação não pode impor, autorizar ou resultar em **vigilância massiva, genérica ou indiscriminada**, nem comprometer liberdade de expressão e privacidade ([arts. 34, § 1º](#art-34-p1), e [37, parágrafo único](#art-37-pu)).
 
+## Quem pode o quê: a divisão de competências normativas
+
+O ECA Digital distribui competências de um jeito próprio, diferente do da [LGPD](/notas/lgpd). Três traços o distinguem: a lei **não nomeou** a autoridade que a aplicaria, deixando a escolha ao Executivo; as sanções foram **partidas** entre a autoridade administrativa e o Poder Judiciário; e boa parte da governança ficou com **outros ministérios**, não com o regulador. Entender esses recortes ajuda a saber, diante de cada obrigação, de quem esperar a regra que ainda falta.
+
+### Quem pode legislar
+
+A base material é o art. 227 da Constituição — dever da família, da sociedade e do Estado de assegurar a crianças e adolescentes, com **absoluta prioridade**, um conjunto de direitos e de colocá-los a salvo de negligência, exploração e violência.
+
+A competência legislativa é mista, e vale distinguir:
+
+- **proteção à infância e à juventude** é competência **concorrente** da União, dos Estados e do Distrito Federal (CF, art. 24, XV), cabendo à União as normas gerais (CF, art. 24, § 1º) — foi nessa chave que se editou o próprio [ECA](https://www.planalto.gov.br/ccivil_03/leis/l8069.htm);
+- já o **objeto** que o ECA Digital regula — produtos e serviços de tecnologia da informação e tratamento de dados pessoais — recai em competência **privativa** da União (CF, art. 22, IV e XXX).
+
+Daí a lei ser federal e a autoridade fiscalizar seu cumprimento "em todo o território nacional" ([art. 34](#art-34)), sem que isso esvazie os órgãos locais do sistema de garantia de direitos: conselhos tutelares e Ministério Público, por exemplo, seguem com atribuições próprias (Decreto nº 12.880/2026, [art. 1º, parágrafo único](#dec12880-art-1-pu)).
+
+### O que só a lei pode fazer (reserva legal)
+
+Pela regra do art. 5º, II, da Constituição, os deveres impostos a fornecedores e as penalidades correspondentes precisam vir de lei. Estão nesse núcleo:
+
+- os **deveres e vedações substantivos** — prevenção e _design_ ([arts. 5º a 8º](#art-5)), aferição de idade ([arts. 9º a 15](#art-9)), supervisão parental ([arts. 16 a 18](#art-16)), publicidade ([arts. 22](#art-22) e [23](#art-23)), redes sociais ([arts. 24 a 26](#art-24)) e remoção de conteúdo ([arts. 27 a 30](#art-27));
+- os **tipos de sanção e seus limites** — advertência, multa de até 10% do faturamento do grupo econômico no Brasil (ou de R$ 10 a R$ 1.000 por usuário cadastrado, na ausência de faturamento), limitada a R$ 50 milhões por infração, suspensão e proibição ([art. 35](#art-35));
+- a **repartição da competência sancionadora** entre autoridade administrativa e Judiciário ([art. 35, § 5º](#art-35-p5));
+- a **exigência de que a autoridade seja entidade criada por lei** ([art. 2º, X](#art-2-x)).
+
+Dois episódios do histórico da lei mostram a reserva legal funcionando na prática:
+
+- **A destinação das multas.** O art. 36 do projeto, que vinculava a receita das multas, foi **vetado** por incompatibilidade com a Lei de Diretrizes Orçamentárias (CF, art. 66, § 1º). A [Medida Provisória nº 1.318/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/Mpv/mpv1318.htm) tentou recompô-la destinando os valores ao FNCA, mas **perdeu a eficácia** em 25/2/2026 por não ter sido convertida em lei no prazo do art. 62, § 3º, da Constituição. Resultado: hoje não há destinação específica — contraste com a LGPD, cujo [art. 52, § 5º](/notas/lgpd#art-52-p5) manda o produto das multas ao Fundo de Defesa de Direitos Difusos.
+- **A vigência.** O veto à _vacatio legis_ e sua recomposição por medida provisória só se estabilizaram quando a MP nº 1.317/2025 virou a [Lei nº 15.352/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm), que deu a redação atual ao [art. 41-A](#art-41-a). Nenhum decreto poderia ter feito isso.
+
+### A autoridade que a lei não nomeou
+
+O [art. 2º, X](#art-2-x), define a "autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital" como **entidade da administração pública criada por lei**, responsável por zelar pela aplicação da Lei, fiscalizá-la e editar regulamentos e procedimentos para sua execução, observado, no processo decisório, o Capítulo I da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm) (regime geral das agências reguladoras).
+
+Repare no desenho: a lei descreveu o cargo, mas não disse quem o ocuparia. Coube ao [Decreto nº 12.622/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12622.htm) **designar a ANPD**. E o decreto só podia designar — jamais criar —, porque autarquia depende de lei específica (CF, art. 37, XIX) e a própria lei exigia entidade "criada por lei". A escolha recaiu sobre uma autoridade que já existia.
+
+Uma consequência prática costuma passar despercebida: ao atuar aqui, a ANPD exerce as competências **do ECA Digital**, não as da LGPD. O fundamento de cada exigência é o [art. 34](#art-34) desta Lei, e não o [art. 55-J da LGPD](/notas/lgpd#art-55-j) — ainda que sejam a mesma Agência, o mesmo Conselho Diretor e o mesmo corpo técnico dos dois lados.
+
+### Duas trilhas de regulamentação: decreto e normas da ANPD
+
+O ECA Digital abriu **duas** vias regulamentares distintas, e confundi-las é fonte comum de erro:
+
+1. **Decreto do Poder Executivo** — o [art. 37](#art-37) determina que "o Poder Executivo regulamentará, no que couber, o disposto nesta Lei". É a via do [Decreto nº 12.880/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12880.htm), editado com fundamento no art. 84, IV e VI, "a", da Constituição, e tendo em vista o art. 227 da Constituição, dispositivos do ECA (inclusive o art. 149), o art. 37 do CDC, a Lei nº 14.852/2024 e o [art. 37](#art-37) da própria Lei.
+2. **Normas complementares da autoridade** — o [art. 34](#art-34) autoriza a ANPD a "editar normas complementares para regulamentar os seus dispositivos". É a via das resoluções e dos guias, hoje em boa parte pendentes (ver "Regulamentos e atos aplicáveis", acima).
+
+A segunda trilha é a mais movimentada: lei e decreto remetem à ANPD dezenas de pontos — requisitos mínimos de segurança por padrão ([dec. art. 10](#dec12880-art-10)), IA generativa e agentes conversacionais ([dec. art. 11, parágrafo único](#dec12880-art-11-pu)), parâmetros de aferição de idade ([art. 12, § 3º](#art-12-p3)), padrões de supervisão parental ([art. 17, § 1º](#art-17-p1)), avaliação da verificação de idade nas redes sociais ([art. 24, § 2º](#art-24-p2)), certificação de soluções técnicas ([dec. art. 30](#dec12880-art-30)), habilitação de entidades notificantes ([dec. art. 44, § 1º](#dec12880-art-44-p1)) e de instituições de pesquisa ([dec. art. 48](#dec12880-art-48)), entre outros.
+
+Nas duas trilhas incidem os **mesmos dois limites expressos**, escritos em termos quase idênticos:
+
+- **vedação à vigilância massiva** — a regulamentação não pode, "em nenhuma hipótese", impor, autorizar ou resultar em mecanismos de vigilância massiva, genérica ou indiscriminada, nem em práticas contrárias à liberdade de expressão, à privacidade, à proteção integral e ao tratamento diferenciado dos dados de crianças e adolescentes ([art. 34, § 1º](#art-34-p1), dirigido à autoridade; [art. 37, parágrafo único](#art-37-pu), dirigido ao Executivo). É raro uma lei brasileira endereçar proibição tão direta a quem vai regulamentá-la;
+- **assimetria regulatória e abordagem responsiva** — tratamento diferenciado e proporcional conforme natureza, risco e modelo de negócio ([art. 34, § 2º](#art-34-p2)), reforçado pela modulação do [art. 39](#art-39) e pela definição de etapas de implementação ([dec. art. 49](#dec12880-art-49)).
+
+### O que só o Judiciário pode fazer
+
+Aqui está a diferença mais marcante em relação à LGPD, em que todas as sanções ficam com a ANPD ([art. 52 da LGPD](/notas/lgpd#art-52)). No ECA Digital a competência é **dividida pela própria lei** ([art. 35, § 5º](#art-35-p5)): advertência e multa cabem à **ANPD**; suspensão temporária e proibição do exercício das atividades, ao **Poder Judiciário**.
+
+A opção faz sentido pelo efeito das medidas: suspender ou proibir a atividade implica, quando não cumprida diretamente pelo infrator, **ordem de bloqueio** dirigida a prestadoras de conexão, gestoras de pontos de troca de tráfego, provedores de DNS e demais agentes que viabilizam a conexão ([art. 35, § 6º](#art-35-p6)) — medida que atinge a comunicação de terceiros e cuja gravidade a lei quis submeter a reserva de jurisdição.
+
+Também depende de decisão judicial a **autorização do art. 149 do ECA** para conteúdo monetizado ou impulsionado que explore de forma habitual a imagem ou a rotina de criança ou adolescente (Decreto nº 12.880/2026, [art. 34](#dec12880-art-34)) — nenhum ato administrativo dispensa esse alvará. Note-se que o decreto encarrega o MJSP de atuar **em articulação** com o CNJ e o CNMP para operacionalizar o dispositivo ([dec. art. 34, § 3º](#dec12880-art-34-p3)): um decreto do Executivo não comanda o Judiciário nem o Ministério Público, cujos atos normativos próprios cabem aos respectivos conselhos (CF, arts. 103-B, § 4º, e 130-A, § 2º).
+
+**Um ponto ainda aberto.** O [§ 3º](#art-35-p3) do art. 35 manda que o processo de apuração das infrações e de aplicação das sanções siga o rito de infrações administrativas do ECA (arts. 194 a 197 da Lei nº 8.069/1990), conduzido pela autoridade judiciária, enquanto o [§ 5º](#art-35-p5) atribui advertência e multa à ANPD. Como conciliar os dois dispositivos é questão que a regulamentação ainda não enfrentou: o cronograma da Agência prevê para agosto de 2026 a atualização dos Regulamentos de Fiscalização e de Aplicação de Sanções Administrativas (ver "Implementação e cronograma da ANPD", ao final).
+
+### Os outros órgãos
+
+Ao contrário da LGPD, aqui a ANPD está longe de concentrar tudo. A repartição, fixada sobretudo pelo Decreto nº 12.880/2026, é:
+
+- **MJSP** — classificação indicativa ([dec. arts. 12](#dec12880-art-12) e [13](#dec12880-art-13)), estrutura e funcionamento do Centro Nacional de Triagem de Notificações e normas sobre os alvarás de atividade artística;
+- **Polícia Federal** — recebimento centralizado, triagem e distribuição dos relatórios de violações graves ([dec. arts. 36](#dec12880-art-36) e [37](#dec12880-art-37)), por meio do Centro Nacional de Proteção à Criança e ao Adolescente criado pelo Decreto nº 12.882/2026;
+- **MGI** — soluções tecnológicas públicas de verificação de idade e de vinculação a responsáveis legais ([dec. arts. 20](#dec12880-art-20) e [28](#dec12880-art-28));
+- **MDHC** — coordenação da Política Nacional e do comitê intersetorial ([dec. arts. 7º](#dec12880-art-7) e [8º](#dec12880-art-8));
+- **Poder Executivo** — critérios objetivos do grau de intervenção do fornecedor, para a modulação proporcional das obrigações ([art. 39, § 3º](#art-39-p3)).
+
+Essa divisão de trabalho está desenvolvida em "Política Nacional e arranjo institucional", mais abaixo.
+
 ## Deveres gerais de prevenção e _design_ ([arts. 5º a 8º](#art-5))
 
 ### Prevenção e mitigação de riscos ([art. 6º](#art-6))
@@ -430,7 +503,7 @@ Circunstâncias de dosimetria ([§ 1º](#art-35-p1)): gravidade da infração e 
 - **Competência dividida** ([§ 5º](#art-35-p5)): advertência e multa cabem à **ANPD**; suspensão e proibição, ao **Poder Judiciário**.
 - **Execução do bloqueio** ([§ 6º](#art-35-p6)): ordem dirigida a prestadoras de conexão, gestoras de pontos de troca de tráfego (PTT), provedores de DNS e demais agentes que viabilizam a conexão.
 - **Solidariedade** ([§ 2º](#art-35-p2)): filial, sucursal, escritório ou estabelecimento no País responde solidariamente pela multa de empresa estrangeira.
-- **Rito** ([§ 3º](#art-35-p3)): segue o procedimento já usado pelo ECA para apurar qualquer infração contra os direitos da criança — arts. 194 a 197 da Lei nº 8.069/1990. Ver o passo a passo simplificado [abaixo](#rito-passo-a-passo).
+- **Rito** ([§ 3º](#art-35-p3)): segue o procedimento já usado pelo ECA para apurar qualquer infração contra os direitos da criança — arts. 194 a 197 da Lei nº 8.069/1990. Ver o passo a passo simplificado em "Rito das sanções", abaixo.
 - **Destinação — sem regra em vigor**: o [art. 36](#art-36) do PL, que vinculava a receita das multas, foi **vetado**. O art. 36-A, incluído pela [Medida Provisória nº 1.318/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/Mpv/mpv1318.htm) para destinar os valores ao **FNCA** por 5 anos, teve sua **vigência encerrada em 25/2/2026** por perda de eficácia — a MP não foi convertida em lei dentro do prazo constitucional (art. 62, § 3º, da CF) nem houve decreto legislativo disciplinando as relações jurídicas dela decorrentes. Atualmente, portanto, a Lei não prevê destinação específica para os valores arrecadados com as multas.
 
 ### Rito das sanções
