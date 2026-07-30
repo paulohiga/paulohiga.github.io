@@ -297,17 +297,6 @@ O decreto ainda determina atuação **colaborativa** entre esses órgãos, consi
 
 O **CGI.br**, criado pelo [Decreto nº 4.829/2003](https://www.planalto.gov.br/ccivil_03/decreto/2003/d4829.htm), é peça central desse arranjo sem ser regulador: é órgão de governança multiparticipativa, cuja oitiva a lei exige ([art. 9º, § 1º](#art-9-p1)) e cujas diretrizes o decreto manda considerar — mas não fiscaliza nem sanciona.
 
-### A entrada da ANPD e o debate sobre os limites do regulamento
-
-O [art. 19-A](#dec8771-art-19-a), incluído pelo Decreto nº 12.975/2026, atribui à ANPD a regulação, a fiscalização e a apuração de infrações quanto aos direitos dos usuários e aos deveres dos provedores de aplicações — e ancora essa competência em **três leis**: o Marco Civil (especialmente os [arts. 10 a 12](#art-10)), a [LGPD](/notas/lgpd) e o [ECA Digital](/notas/eca-digital). Vale notar que a [Lei nº 15.352/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm), que reorganizou a ANPD como agência reguladora, **não acrescentou** essa frente ao rol do [art. 55-J da LGPD](/notas/lgpd#art-55-j): a atribuição veio por decreto.
-
-Isso põe em evidência a pergunta que atravessa o debate público sobre os Decretos nºs 12.975/2026 e 12.976/2026 — **até onde vai o poder regulamentar**. Há duas leituras em disputa:
-
-- **A favor da validade**: os decretos apenas operacionalizam o que já estava na lei e na tese vinculante do STF. Contam com amparo legal expresso (o [art. 11, § 4º](#art-11-p4) remete a decreto o procedimento de apuração de infrações), invocam o art. 84, IV e VI, "a", da Constituição, e reproduzem o rol de crimes graves fixado pelo próprio Supremo. As sanções aplicáveis continuam sendo **as do [art. 12](#art-12) do MCI** — o decreto não criou tipo sancionatório novo nem elevou teto.
-- **Críticas**: deveres detalhados como os dos [arts. 16-A a 16-P](#dec8771-art-16-a) — dever de cuidado, prazos de resposta, relatórios de transparência, sede e representante legal no País — não constam do texto do Marco Civil, e criar obrigação para particular é matéria de lei (CF, art. 5º, II). Daí a articulação, noticiada desde maio de 2026, para sustar os decretos por **decreto legislativo**, instrumento que a Constituição confere ao Congresso justamente para "sustar os atos normativos do Poder Executivo que exorbitem do poder regulamentar" (CF, art. 49, V).
-
-Enquanto o Congresso não se manifesta e o Judiciário não é provocado, os decretos estão em vigor e a ANPD atua com base neles — a [Nota Técnica nº 5/2026/CGTAD/SRE/ANPD](https://www.gov.br/anpd/pt-br/assuntos/marco-civil-da-internet) registra que seus dispositivos são autoaplicáveis.
-
 ### Um limite que o próprio decreto impôs ao regulador
 
 Vale destacar, por ser incomum, uma autolimitação escrita na norma: **é vedado à autoridade competente notificar provedores para moderar conteúdos criminosos ou ilícitos de forma isolada** ([dec. art. 16-I, parágrafo único](#dec8771-art-16-i-pu)). E, na apuração de responsabilidade, é proibido fundamentar a punição exclusivamente na manutenção ou na remoção de um conteúdo específico ([dec. art. 16-I](#dec8771-art-16-i)).
