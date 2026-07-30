@@ -220,6 +220,34 @@ Dentro dessa faixa, um subcorte adicional vem da LGPD: para **menores de 12 anos
 - Não operar no País sem **representante legal** com poderes de recebimento de citações e de resposta perante Executivo, Judiciário e Ministério Público ([art. 40](#art-40)).
 - **Vedação dirigida ao regulador**: a regulamentação não pode impor, autorizar ou resultar em **vigilância massiva, genérica ou indiscriminada**, nem comprometer liberdade de expressão e privacidade ([arts. 34, § 1º](#art-34-p1), e [37, parágrafo único](#art-37-pu)).
 
+## Atribuições: o que cabe a cada instrumento normativo e órgão
+
+O ECA Digital reparte a disciplina entre lei, decreto e regulamentos de diferentes órgãos — com uma peculiaridade que o distingue da [LGPD](/notas/lgpd): parte das sanções fica sob reserva de jurisdição, e não na própria autoridade administrativa.
+
+### Reserva legal — o que só a Lei nº 15.211/2025 dispõe
+
+Ficam reservados à lei os deveres e vedações essenciais em si (Capítulos II a VII), os tipos de sanção e seus tetos — multa de até **10% do faturamento do grupo econômico** ou, na ausência de faturamento, de R$ 10 a R$ 1.000 por usuário cadastrado, limitada a **R$ 50 milhões por infração** ([art. 35, II](#art-35-ii) e [§ 4º](#art-35-p4)) — e a própria divisão de competência sancionadora entre ANPD e Poder Judiciário ([art. 35, § 5º](#art-35-p5)).
+
+### O que cabe a regulamento da ANPD
+
+O [art. 37](#art-37) autoriza a **regulamentação pelo Poder Executivo**, com a mesma vedação a vigilância massiva do [art. 34, § 1º](#art-34-p1). Na prática, a lei e o Decreto nº 12.880/2026 remetem à ANPD uma extensa lista de regulamentações específicas — a maior parte ainda pendente em julho de 2026 (ver "Regulamentos e atos aplicáveis", acima): requisitos mínimos de segurança por padrão ([dec. art. 10](#dec12880-art-10)); regras para IA generativa e agentes conversacionais ([dec. art. 11, pu](#dec12880-art-11-pu)); requisitos de transparência, segurança e interoperabilidade da aferição de idade ([art. 12, § 3º](#art-12-p3)); padrões de supervisão parental ([art. 17, §§ 1º e 3º](#art-17-p1)); avaliação da efetividade da verificação de idade em redes sociais ([art. 24, §§ 2º e 4º](#art-24-p2)); certificação de soluções técnicas de aferição de idade ([dec. art. 30](#dec12880-art-30)); habilitação de entidades notificantes ([dec. art. 44](#dec12880-art-44-p1)) e de instituições de pesquisa ([art. 31, pu](#art-31-pu); [dec. art. 48](#dec12880-art-48)); e a avaliação de impacto à segurança e à saúde ([dec. art. 47, § 2º](#dec12880-art-47-p2)). Esses atos devem observar o processo decisório do Capítulo I da Lei nº 13.848/2019 ([art. 2º, X](#art-2-x)) — consulta e audiência públicas, análise de impacto regulatório — e não podem ultrapassar os limites do [art. 34, § 1º](#art-34-p1).
+
+### O que depende de decreto presidencial
+
+Três decretos organizam a matéria, sem criar direitos, deveres ou sanções além dos previstos em lei:
+
+- [Decreto nº 12.622/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12622.htm) — **designa a ANPD** como a autoridade administrativa autônoma a que se refere o [art. 2º, X](#art-2-x); a Lei não nomeia o órgão diretamente, deixando essa escolha ao Executivo.
+- [Decreto nº 12.880/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12880.htm) — regulamento de execução da Lei (CF, art. 84, IV) que institui a Política Nacional e detalha os deveres já previstos, sem inová-los.
+- [Decreto nº 12.881/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm) e [Decreto nº 12.882/2026](https://www.gov.br/mj/pt-br/assuntos/arquivos-imprensa/sedigi/decretos-eca-digital.pdf) — organização administrativa interna da ANPD e da Polícia Federal (estrutura regimental e criação de órgão de triagem), sem efeito sobre titulares de direitos ou fornecedores.
+
+### Reserva de jurisdição — o que só o Judiciário decide
+
+Ao contrário da LGPD, em que a ANPD aplica sozinha todas as sanções ([art. 52 da LGPD](/notas/lgpd#art-52)), aqui a competência é **dividida** ([art. 35, § 5º](#art-35-p5)): advertência e multa cabem à ANPD; **suspensão temporária e proibição do exercício de atividades** ficam sob reserva de jurisdição, decididas pela autoridade judiciária segundo o rito do ECA (arts. 194 a 197 da Lei nº 8.069/1990). Do mesmo modo, a **autorização judicial** do art. 149 do ECA é pré-requisito para a monetização habitual da imagem ou rotina de crianças e adolescentes (Decreto nº 12.880/2026, [art. 34](#dec12880-art-34)) — matéria que nenhum regulamento administrativo pode dispensar.
+
+### Outros órgãos com competência específica
+
+Nem toda a governança do ECA Digital passa pela ANPD. Cabe ao **MJSP** a classificação indicativa (Decreto nº 12.880/2026, arts. 12 e 13) e a estrutura do Centro Nacional de Triagem de Notificações; à **Polícia Federal**, operar esse Centro (Decreto nº 12.882/2026; Decreto nº 12.880/2026, [art. 36](#dec12880-art-36)); ao **MGI**, ofertar soluções tecnológicas públicas de verificação de idade e de vinculação a responsáveis ([dec. arts. 20 e 28](#dec12880-art-20-ii)); e ao **MDHC**, coordenar a Política Nacional por meio do comitê intersetorial (Decreto nº 12.880/2026, arts. 7º e 8º). Essa divisão de trabalho está resumida na seção "Política Nacional e arranjo institucional", mais abaixo.
+
 ## Deveres gerais de prevenção e _design_ ([arts. 5º a 8º](#art-5))
 
 ### Prevenção e mitigação de riscos ([art. 6º](#art-6))

@@ -243,6 +243,33 @@ A ampliação de mandato acompanha o fortalecimento institucional recente da Ag�
 
 A atuação da ANPD sobre o Marco Civil é declaradamente **sistêmica**: fiscaliza mecanismos, processos e estruturas de governança dos provedores, não conteúdos ou publicações isolados. Cabe também à Agência editar normas complementares sobre formas de notificação, prazos de resposta, procedimentos de contestação, legitimidade para notificar, relatórios de transparência e salvaguardas técnicas contra conteúdo íntimo gerado por IA.
 
+## Atribuições: o que cabe a cada instrumento normativo e órgão
+
+O Marco Civil combina, ao longo de mais de dez anos, disciplina de lei, regulamentação por decreto e — de forma inédita entre as leis tratadas nestas notas — uma reinterpretação vinculante do próprio Judiciário, com competências repartidas entre diferentes órgãos.
+
+### Reserva legal — o que só a lei dispõe
+
+Os direitos e garantias dos usuários (Capítulo II), o regime de responsabilidade dos provedores por conteúdo de terceiros ([arts. 18 a 21](#art-18)) e os tipos de sanção e seu teto — multa de até **10% do faturamento do grupo econômico no Brasil** ([art. 12, II](#art-12-ii)) — permanecem matéria de lei; nenhum decreto os altera. Há também **reserva de jurisdição** expressa: o conteúdo de comunicações privadas e os registros associados a dados pessoais só podem ser disponibilizados mediante **ordem judicial** ([art. 10, §§ 1º e 2º](#art-10-p1)), ressalvados apenas os dados cadastrais básicos, acessíveis por requisição administrativa direta ([art. 10, § 3º](#art-10-p3)). A tentativa de alterar o regime de responsabilização por medida provisória (MPV nº 1.068/2021) foi devolvida sumariamente por versar sobre matéria vedada a esse instrumento — mudança de fundo depende de lei, não de ato do Executivo (ver "Alterações posteriores ao Marco Civil", acima).
+
+### O que cabe a regulamento por decreto
+
+O próprio [art. 9º, § 1º](#art-9-p1), remete a **decreto** a regulamentação das hipóteses excepcionais de discriminação ou degradação de tráfego, ouvidos o CGI.br e a Anatel — função cumprida pelo [Decreto nº 8.771/2016](https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2016/Decreto/D8771.htm), que também disciplina a proteção a registros e dados pessoais ([art. 10, § 4º](#art-10-p4)) e a prestação de informações sobre cumprimento da legislação ([art. 11, §§ 3º e 4º](#art-11-p3)). É regulamento de execução (CF, art. 84, IV): detalha a disciplina já prevista na lei, sem criar direito, dever ou sanção novos.
+
+Depois da decisão do STF nos Temas 987 e 533, o Executivo usou o mesmo instrumento para operacionalizar a nova interpretação, sem alterar a lei:
+
+- [Decreto nº 12.975/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12975.htm) insere o [art. 19-A no Decreto nº 8.771/2016](#dec8771-art-19-a) e atribui à **ANPD** competência de regulação, fiscalização e apuração de infrações quanto ao dever de cuidado.
+- [Decreto nº 12.976/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12976.htm), com fundamento no art. 84, _caput_, incisos IV e VI, "a", da Constituição, e na própria Lei nº 12.965/2014, estabelece diretrizes de proteção de mulheres no ambiente digital.
+
+Ambos aplicam o **mesmo rol de sanções** já previsto no [art. 12](#art-12) do MCI — não criam novo tipo de sanção, apenas uma nova hipótese de incidência (a falha sistêmica no dever de cuidado).
+
+### Papel do Judiciário
+
+O STF, nos Temas 987 e 533, não alterou o texto legal, mas fixou **interpretação vinculante** sobre o alcance do [art. 19](#art-19), com efeito equivalente a uma reforma legislativa "enquanto não sobrevier lei específica" (ver "O novo regime de responsabilização das plataformas", acima) — competência que nem a ANPD nem o Executivo têm: só o Judiciário resolve controvérsia sobre a constitucionalidade de uma norma. Seguem também dependendo de decisão judicial a requisição de registros para instruir processo ([arts. 22](#art-22) e [23](#art-23)) e, na leitura consolidada pelos casos WhatsApp e Telegram, a suspensão ou o bloqueio de provedor sem representante no País ([art. 12, III e IV](#art-12-iii)).
+
+### Papel da ANPD e de outros órgãos
+
+A ANPD acumula três frentes regulatórias: [LGPD](/notas/lgpd), [ECA Digital](/notas/eca-digital) e, desde os Decretos nºs 12.975/2026 e 12.976/2026, o Marco Civil — regulação, fiscalização e apuração de infrações quanto ao dever de cuidado dos provedores. A fiscalização da **neutralidade de rede**, porém, permanece com a **Anatel**, ouvido o CGI.br (Decreto nº 8.771/2016) — competência que não migrou para a ANPD. O **CGI.br**, por sua vez, é órgão consultivo de governança multiparticipativa, interlocutor obrigatório na regulamentação da neutralidade de rede ([art. 9º, § 1º](#art-9-p1)) e na atuação do poder público ([art. 24](#art-24)), mas sem poder normativo ou sancionador próprio sobre o Marco Civil.
+
 ## Sanções
 
 Os dois regimes abaixo **coexistem** — não há substituição de um pelo outro. Continuam sendo hipóteses distintas de infração, previstas em normas diferentes e fiscalizadas com fundamentos diferentes: o regime original do [art. 12](#art-12) nunca foi revogado e segue punindo o descumprimento dos deveres de guarda e tratamento de registros e dados ([arts. 10](#art-10) e [11](#art-11)); o novo regime do Decreto nº 12.975/2026 é uma camada adicional, criada para operacionalizar a decisão do STF sobre responsabilização por conteúdo de terceiros ([art. 19-A](#dec8771-art-19-a)) — um problema jurídico diferente, que antes simplesmente não tinha sanção administrativa prevista em decreto. Uma mesma plataforma pode, em tese, ser enquadrada nos dois regimes ao mesmo tempo, por fatos distintos.
