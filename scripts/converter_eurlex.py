@@ -16,15 +16,17 @@ Dois casos que não podem virar dispositivo, e por isso saem de outra forma:
   art. 60 da LGPD já aparece em `_leis/lgpd.md`. O include não ancora bloco de
   citação: é alteração feita em *outro* ato, não dispositivo deste.
 
-O que fica de fora, e por quê: os **considerandos** (180 no AI Act, mais de
-metade do documento) e o **aparato de notas de rodapé** do JO, que são
-referências de publicação. O articulado e os anexos entram íntegros. É uma
-decisão de peso de página — o texto legal vai inline no HTML da nota —, não
-editorial; `--com-considerandos` inclui os considerandos, se um dia fizer
-sentido.
+O ato entra inteiro: preâmbulo, **considerandos**, articulado e anexos. Os
+considerandos importam de verdade num regulamento europeu — são eles que dizem
+por que cada regra existe, e a Comissão e o Tribunal de Justiça os usam para
+interpretar o articulado. Não recebem âncora (não são dispositivos), mas ficam
+no painel, pesquisáveis.
+
+Fica de fora só o **aparato de notas de rodapé** do JO, que é referência
+bibliográfica de publicação e não texto normativo.
 
 Uso:
-    python3 scripts/converter_eurlex.py <arquivo.html> [--com-considerandos] > _leis/<slug>.md
+    python3 scripts/converter_eurlex.py <arquivo.html> > _leis/<slug>.md
 
 O HTML de entrada é o "Texto integral" em português baixado do EUR-Lex. O
 script depende de `beautifulsoup4` e `lxml`, que são **ferramenta de autoria**
@@ -51,7 +53,6 @@ warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 # Enumerador de lista do JO: "a)", "iii)", "12)", "14-B)", "1.", "—".
 ENUMERADOR = re.compile(r"^(?:[a-zA-Z]{1,5}|\d{1,3})(?:[-–][A-Za-z0-9]{1,3})?\)$|^[—–-]$|^\d{1,3}\.$")
-CONSIDERANDO = re.compile(r"^\(\d+\)$")
 CABECALHO_JO = re.compile(r"^\d{4}/\d+ — \d|^Jornal Oficial da União")
 
 
@@ -232,7 +233,7 @@ def itens_de_tabela(tabela, nivel: int) -> list[str]:
     return blocos
 
 
-def converter(caminho: Path, com_considerandos: bool = False) -> str:
+def converter(caminho: Path) -> str:
     sopa = BeautifulSoup(caminho.read_text(encoding="utf-8", errors="replace"), "lxml")
     for tag in sopa.select("p.oj-note, div.oj-doc-end, p.oj-doc-sep, div.oj-final,"
                            " p.oj-signatory, p.oj-separator"):
@@ -240,7 +241,6 @@ def converter(caminho: Path, com_considerandos: bool = False) -> str:
 
     blocos: list[str] = []
     vistos = set()
-    considerandos = False
     citacao_aberta: list[str] = []
 
     def fechar_citacao():
@@ -254,10 +254,6 @@ def converter(caminho: Path, com_considerandos: bool = False) -> str:
 
         if no.name == "table":
             fechar_citacao()
-            corpo = no.find("tbody") or no
-            primeira = corpo.find("td")
-            if considerandos and not com_considerandos and CONSIDERANDO.match(texto(primeira) if primeira else ""):
-                continue
             blocos.extend(itens_de_tabela(no, 0))
             continue
 
@@ -269,15 +265,6 @@ def converter(caminho: Path, com_considerandos: bool = False) -> str:
             citacao_aberta.append(t)
             continue
         fechar_citacao()
-
-        if t == "Considerando o seguinte:":
-            considerandos = True
-            if not com_considerandos:
-                continue
-        elif t.startswith(("ADOTARAM O PRESENTE", "ADOTOU O PRESENTE")):
-            considerandos = False
-        if considerandos and not com_considerandos:
-            continue
 
         classes = set(no.get("class") or [])
 
@@ -337,4 +324,4 @@ def converter(caminho: Path, com_considerandos: bool = False) -> str:
 
 
 if __name__ == "__main__":
-    sys.stdout.write(converter(Path(sys.argv[1]), "--com-considerandos" in sys.argv))
+    sys.stdout.write(converter(Path(sys.argv[1])))

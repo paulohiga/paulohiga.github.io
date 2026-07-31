@@ -193,10 +193,15 @@ link menos preciso, nunca errado.
 #### Trazendo uma norma do EUR-Lex
 
 `scripts/converter_eurlex.py` converte o HTML oficial do Jornal Oficial para o
-Markdown de `_leis`, já nesse dialeto — ver o docstring do script para o uso e
-para o que ele deixa de fora (considerandos e notas de rodapé, por peso de
-página). Ele depende de `beautifulsoup4` e `lxml`, ferramentas de autoria que
-não entram no site, como o `pyyaml` do script de ancoragem.
+Markdown de `_leis`, já nesse dialeto — ver o docstring do script para o uso.
+Ele depende de `beautifulsoup4` e `lxml`, ferramentas de autoria que não entram
+no site, como o `pyyaml` do script de ancoragem.
+
+O ato entra **inteiro**: preâmbulo, considerandos, articulado e anexos. Os
+considerandos não são dispositivos e não recebem âncora, mas ficam no painel —
+num regulamento europeu são eles que dizem por que cada regra existe, e a
+Comissão e o Tribunal de Justiça os usam para interpretar o articulado. Fica de
+fora só o aparato de notas de rodapé do JO, que é referência bibliográfica.
 
 Quando a União Europeia **ainda não publicou a versão consolidada** de uma
 norma alterada, é o caso do AI Act com o Digital Omnibus: publique as **duas
