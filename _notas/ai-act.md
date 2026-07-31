@@ -4,6 +4,7 @@ permalink: /notas/ai-act
 title: AI Act — Regulamento de Inteligência Artificial da União Europeia
 description: Notas de estudo sobre o Regulamento (UE) 2024/1689 — pirâmide de risco, práticas proibidas, sistemas de alto risco, modelos de finalidade geral, governança e sanções, já com as alterações do Digital Omnibus, e a comparação com o PL nº 2338/2023.
 lei: ai-act
+normas_extra: [regulamento-2026-1744]
 revisado_em: 2026-07-31
 ---
 
@@ -18,6 +19,8 @@ revisado_em: 2026-07-31
 ### Alterações posteriores ao AI Act
 
 - [Regulamento (UE) 2026/1744, de 8 de julho de 2026](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — **Digital Omnibus sobre a IA**. Altera o Regulamento (UE) 2024/1689, o Regulamento de Base da Aviação (UE) 2018/1139 e o Regulamento Máquinas (UE) 2023/1230 quanto à simplificação da execução das regras harmonizadas de IA. Publicado no JOUE de 24 de julho de 2026 e **em vigor desde 27 de julho de 2026**. É a primeira alteração de fundo do AI Act, e está sinalizada ao longo desta nota como **Digital Omnibus**.
+
+> **Sobre o painel "Lei seca".** O EUR-Lex ainda **não publicou a versão consolidada** do AI Act com as alterações do Omnibus. Por isso o painel ao lado traz as **duas normas separadas**, selecionáveis no alto: o Regulamento (UE) 2024/1689 na redação original do Jornal Oficial, e o Regulamento (UE) 2026/1744 com as alterações. Na prática, isso significa que **um dispositivo alterado aparece no texto do AI Act na redação antiga** — a redação nova está no Omnibus, em bloco de citação. Cada ponto em que isso ocorre está sinalizado nos comentários abaixo. Consolidar os dois à mão produziria um texto que não é o de nenhuma fonte oficial, e por isso não foi feito.
 
 ### Regulamentos e atos aplicáveis
 
@@ -194,7 +197,7 @@ Sete requisitos, cumulativos e verificados ao longo de todo o ciclo de vida:
 
 - **Gestão de riscos** ([art. 9.º](#art-9)) — processo iterativo e contínuo de identificação, estimativa e mitigação dos riscos previsíveis para a saúde, a segurança e os direitos fundamentais, incluindo os decorrentes de utilização indevida razoavelmente previsível, com atenção específica a crianças e a grupos vulneráveis.
 - **Dados e governação de dados** ([art. 10.º](#art-10)) — conjuntos de treino, validação e teste pertinentes, suficientemente representativos, tão isentos de erros quanto possível e completos para a finalidade prevista, com exame de possíveis enviesamentos e consideração do contexto geográfico e comportamental de uso.
-    - **Digital Omnibus**: alargada a base jurídica para o tratamento de **dados de categorias especiais** do RGPD estritamente necessário à **deteção e correção de enviesamentos**, com salvaguardas obrigatórias. Resolve um impasse real do desenho original — exigir que se comprove a ausência de discriminação racial ou de gênero sem permitir tratar os dados que a revelariam —, e é o mesmo dilema que a [LGPD](/notas/lgpd#art-11) enfrenta em seu [art. 11](/notas/lgpd#art-11), sem solução equivalente.
+    - **Digital Omnibus**: o [n.º 5 deste artigo](#art-10-p5) foi **revogado** e seu conteúdo virou um artigo próprio e bem mais detalhado — o novo **art. 4.º-A**, "Tratamento de categorias especiais de dados pessoais para deteção e correção de enviesamentos". O tratamento excecional dessas categorias passa a depender de **seis condições cumulativas**: impossibilidade de obter o resultado com dados sintéticos ou anonimizados; limitações técnicas de reutilização e pseudonimização; controlo rigoroso e documentado de acesso; proibição de transmissão a terceiros; eliminação assim que corrigido o enviesamento; e registo das razões nas atividades de tratamento. Um segundo número estende a faculdade — sem criar dever — aos prestadores de outros sistemas e modelos e aos responsáveis pela implantação. Resolve um impasse real do desenho original (exigir prova de ausência de discriminação racial ou de gênero sem permitir tratar os dados que a revelariam), e é o mesmo dilema que a [LGPD](/notas/lgpd#art-11) enfrenta no seu [art. 11](/notas/lgpd#art-11), sem solução equivalente. O texto está no [art. 1.º do Omnibus](#omnibus-art-1), item 6.
 - **Documentação técnica** ([art. 11.º](#art-11)) — elaborada **antes** da colocação no mercado, com o conteúdo mínimo do Anexo IV, e mantida atualizada.
 - **Conservação de registos** ([art. 12.º](#art-12)) — registo automático de eventos (_logs_) ao longo do ciclo de vida, apto a assegurar rastreabilidade proporcional à finalidade.
 - **Transparência e prestação de informações** ([art. 13.º](#art-13)) — funcionamento suficientemente transparente para que o responsável pela implantação interprete os resultados e os utilize adequadamente, com instruções de utilização claras.
@@ -310,7 +313,9 @@ Esse desenho transfere para fora do processo legislativo — e, no caso das norm
 Não há uma autoridade única, e sim uma repartição por objeto:
 
 - **Serviço de IA** (_AI Office_, [art. 64.º](#art-64)), na Comissão — competência **exclusiva** sobre os modelos de IA de finalidade geral ([arts. 88.º a 94.º](#art-88)), com poderes de pedido de informação, avaliação de modelos, exigência de medidas e aplicação de coimas ([art. 101.º](#art-101)).
-    - **Digital Omnibus**: a competência do Serviço de IA foi **ampliada** para abranger também os sistemas de IA construídos sobre modelos de finalidade geral do **mesmo prestador ou grupo** e os sistemas de IA **integrados em plataformas e motores de pesquisa em linha de muito grande dimensão** designados pelo DSA. É a mudança institucional mais significativa do pacote: desloca para Bruxelas a supervisão dos maiores agentes do setor, pela mesma lógica de centralização que o DSA já adotara para as VLOPs, e reduz o risco de 27 interpretações divergentes sobre os mesmos produtos.
+    - **Digital Omnibus**: a competência do Serviço de IA foi **ampliada** para além dos modelos de finalidade geral. Pela nova redação do [art. 75.º, n.º 1](#art-75-p1), ele passa a deter **competência exclusiva** de supervisão e execução sobre os **sistemas de IA** construídos sobre modelos de finalidade geral quando modelo e sistema vêm do **mesmo prestador ou da mesma empresa**, e sobre os sistemas que **constituam ou estejam integrados** em plataformas e motores de pesquisa em linha de muito grande dimensão designados pelo DSA. É a mudança institucional mais significativa do pacote: desloca para Bruxelas a supervisão dos maiores agentes do setor, pela mesma lógica de centralização que o DSA já adotara para as VLOPs, e reduz o risco de 27 interpretações divergentes sobre os mesmos produtos.
+        - A exclusividade **não é total**: ficam de fora os sistemas ligados a produtos do Anexo I, os de **infraestruturas críticas** (Anexo III, ponto 2), os fornecidos por autoridades de aplicação da lei, de gestão de fronteiras e por instituições financeiras, e os de **administração da justiça** (Anexo III, ponto 8) — precisamente os domínios de maior sensibilidade nacional, que permanecem com as autoridades dos Estados-Membros. A competência também só alcança o **prestador**: atinge o responsável pela implantação apenas quando ele for igualmente o prestador ou parte da mesma empresa.
+        - Nesses casos, os incidentes graves passam a ser comunicados **ao próprio Serviço de IA**, e não à autoridade nacional, que é informada em seguida.
 - **Autoridades nacionais competentes** ([art. 70.º](#art-70)) — cada Estado-Membro designa ao menos uma **autoridade notificadora** e uma **autoridade de fiscalização do mercado**, com independência, competência técnica e recursos adequados. É a elas que se dirigem as queixas do [art. 85.º](#art-85).
 - **Autoridades de proteção dos direitos fundamentais** ([art. 77.º](#art-77)) — organismos nacionais de supervisão de direitos fundamentais podem requisitar e aceder à documentação dos sistemas de alto risco.
 - **Autoridade Europeia para a Proteção de Dados** ([art. 100.º](#art-100)) — aplica coimas às instituições, órgãos e organismos da própria União.
@@ -384,11 +389,22 @@ A distinção importa porque boa parte da controvérsia pública — inclusive o
 
 **Adia**: o alto risco do Anexo III de 2 de agosto de 2026 para **2 de dezembro de 2027**; o alto risco embarcado do Anexo I de 2 de agosto de 2027 para **2 de agosto de 2028**. São **datas fixas**, e não prazos condicionados à publicação das normas harmonizadas, como cogitado durante a negociação — escolha que favorece a previsibilidade e retira da Comissão o poder de acionar o relógio.
 
-**Amplia**: duas novas práticas proibidas no [art. 5.º](#art-5), aplicáveis desde 2 de dezembro de 2026; e a competência do **Serviço de IA**, que passa a supervisionar os sistemas construídos sobre modelos de finalidade geral do mesmo prestador e os integrados em plataformas de muito grande dimensão do DSA.
+São 43 itens de alteração ao AI Act, no [art. 1.º do Omnibus](#omnibus-art-1), mais ajustes ao Regulamento de Base da Aviação e ao Regulamento Máquinas. Agrupados por efeito:
 
-**Simplifica**: base jurídica expressa para tratar **dados de categorias especiais** na deteção e correção de enviesamentos ([art. 10.º](#art-10)); normas harmonizadas que cubram simultaneamente o AI Act e a legislação setorial; ambiente de testagem à escala da União a partir de 2028; extensão do apoio regulatório às **pequenas empresas de média capitalização**; e ponto único de entrada para notificações de incidentes que hoje se repartem entre vários regimes.
+**Adia**: o alto risco do Anexo III de 2 de agosto de 2026 para **2 de dezembro de 2027**; o alto risco embarcado do Anexo I de 2 de agosto de 2027 para **2 de agosto de 2028** (nova redação do [art. 113.º](#art-113), terceiro parágrafo, alínea c)). São **datas fixas**, e não prazos condicionados à publicação das normas harmonizadas, como se cogitou durante a negociação — escolha que favorece a previsibilidade e retira da Comissão o poder de acionar o relógio.
 
-**Preservou** o que a proposta original queria enxugar: o **registo na base de dados da UE** dos sistemas autoexcluídos do alto risco pelo [art. 6.º, n.º 3](#art-6-p3) — o texto final considerou-o essencial à vigilância do mercado e à prestação de contas, e limitou-se a suprimir dois campos do Anexo VIII; e a **aplicação do [art. 50.º](#art-50)** na data original.
+**Amplia**: duas novas práticas proibidas no [art. 5.º](#art-5) — alíneas b-A) e b-B) do n.º 1, com os novos n.º 1-A e 1-B a delimitá-las —, aplicáveis a partir de 2 de dezembro de 2026; e a **competência exclusiva do Serviço de IA** do [art. 75.º](#art-75), sobre os sistemas construídos sobre modelos de finalidade geral do mesmo prestador e os integrados em plataformas de muito grande dimensão do DSA, com as exceções descritas acima.
+
+**Simplifica**:
+
+- artigo próprio para o tratamento de **dados de categorias especiais** na deteção e correção de enviesamentos (novo **art. 4.º-A**, com o [art. 10.º, n.º 5](#art-10-p5), revogado);
+- **critério do componente de segurança** afinado no [art. 6.º](#art-6) (novos n.º 1-A a 1-C): IA usada só para conforto, desempenho, eficiência ou controlo de qualidade **não** é componente de segurança — salvo se a sua falha puder pôr em perigo a saúde e a segurança —, e a avaliação por terceiros exigida por riscos alheios à saúde e à segurança (interferência eletromagnética, espetro de radiofrequências) deixa de arrastar o sistema para o alto risco;
+- **documentação técnica simplificada** para PME e pequenas empresas de média capitalização, em formulário que a Comissão deve criar e que os organismos notificados são obrigados a aceitar ([art. 11.º](#art-11));
+- normas harmonizadas que cubram **simultaneamente** o AI Act e a legislação setorial ([art. 40.º](#art-40));
+- ambiente de testagem à escala da União e extensão do apoio regulatório às **pequenas empresas de média capitalização**, inclusive no teto das coimas, que para elas passa a ser o **menor** dos dois valores ([art. 99.º](#art-99), novo n.º 6-A);
+- ponto único de entrada para notificações de incidentes hoje repartidas entre vários regimes.
+
+**Preservou** o que a proposta original queria enxugar: o **registo na base de dados da UE** dos sistemas autoexcluídos do alto risco pelo [art. 6.º, n.º 3](#art-6-p3) — o texto final considerou-o essencial à vigilância do mercado e à prestação de contas, e limitou-se a suprimir dois campos da secção B do Anexo VIII (pontos 7 e 9); e a **aplicação do [art. 50.º](#art-50)** na data original.
 
 ### O que se pode ler disso
 
@@ -409,9 +425,11 @@ O AI Act não substitui nem derroga nenhum deles: **acumula**. Um mesmo sistema 
 
 ### Onde está o projeto brasileiro
 
-O [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233), de autoria do então presidente do Senado, resultou dos trabalhos de uma comissão de juristas e foi **aprovado pelo Plenário do Senado em 10 de dezembro de 2024**. Na Câmara dos Deputados, tramita em **comissão especial** instalada em 2025, presidida pela deputada Luísa Canziani e relatada pelo deputado Aguinaldo Ribeiro, que realizou ciclo de audiências públicas ao longo de 2025. A votação foi sucessivamente adiada — do fim de 2025 para 2026 — em meio a divergências sobre pontos sensíveis, e **até o fechamento desta nota o projeto não havia se convertido em lei**.
+O [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233), de autoria do então presidente do Senado, resultou dos trabalhos de uma comissão de juristas e foi **aprovado pelo Plenário do Senado em 10 de dezembro de 2024**. Chegou à [Câmara dos Deputados](https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262) em 17 de março de 2025, com regime de **prioridade** e sujeito à apreciação do Plenário. Em 29 de abril de 2025, ato da Presidência constituiu a **comissão especial** para examiná-lo, presidida pela deputada Luisa Canziani (PSD-PR); em 20 de maio de 2025 foi designado relator o deputado Aguinaldo Ribeiro (PP-PB). A comissão realizou ciclo de audiências públicas e seminários regionais ao longo de 2025, e ao projeto já foram **apensadas 35 proposições**.
 
-O contraste de ritmo é o dado mais eloquente da comparação: enquanto o Brasil discute a aprovação de sua primeira lei geral de IA, a União Europeia já está na **primeira reforma** da sua.
+A votação foi sucessivamente adiada — do fim de 2025 para 2026 — em meio a divergências sobre os pontos sensíveis. Na data de fechamento desta nota, a ficha de tramitação registra a situação como **"aguardando parecer do relator na comissão especial"**: o parecer ainda não foi apresentado, e a movimentação de 2026 se resume a despachos de apensação de novos projetos. O PL **não é lei**, e não há texto de relatoria a comparar — a comparação abaixo é, portanto, com o **substitutivo aprovado pelo Senado**, único texto com deliberação concluída.
+
+O contraste de ritmo é o dado mais eloquente da comparação: entre a aprovação do texto no Senado e hoje, a União Europeia colocou o AI Act em vigor, aplicou três das suas quatro fases de exigibilidade e **já aprovou a primeira reforma** — enquanto o projeto brasileiro aguarda o primeiro parecer na casa revisora.
 
 ### Onde os dois convergem
 

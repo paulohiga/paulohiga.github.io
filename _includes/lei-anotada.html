@@ -82,6 +82,17 @@
 {%- assign subdivisao = '' -%}
 {%- assign inciso = '' -%}
 
+{%- comment -%}
+    Um id só pode aparecer uma vez na página. Num regulamento europeu isso não
+    é automático: o mesmo número pode ter duas listas de alíneas independentes,
+    em parágrafos diferentes (o art. 43.º, n.º 1, do AI Act tem duas a)/b)), e
+    as duas dariam `art-43-p1-a`. Quando o id repete, o segundo dispositivo
+    entra sem âncora — mesma regra de sempre: melhor não ancorar do que ancorar
+    para o lugar errado. Nas normas brasileiras publicadas não há repetição
+    alguma, então isto não altera nada delas.
+{%- endcomment -%}
+{%- assign ids_usados = '|' -%}
+
 {%- for bloco in blocos -%}
     {%- assign texto = bloco | strip -%}
     {%- if texto == '' -%}{%- continue -%}{%- endif -%}
@@ -93,6 +104,20 @@
     {%- if inicial == '#' -%}
         {%- assign titulo = texto | remove_first: marcador | strip -%}
         {%- assign nivel = marcador | size | plus: 1 -%}
+        {%- comment -%}
+            Um anexo não continua a numeração dos artigos: os itens dele são
+            "1.", "a)" como os de um artigo, mas não pertencem a nenhum. Sem
+            zerar o artigo corrente aqui, o "1." do Anexo III herdaria o último
+            artigo do regulamento e viraria um `art-113-p1` — id errado e ainda
+            por cima duplicado. Zerado o artigo, o conteúdo do anexo
+            simplesmente não é ancorado, que é o certo.
+        {%- endcomment -%}
+        {%- assign abre_anexo = titulo | slice: 0, 5 -%}
+        {%- if formato == 'ue' and abre_anexo == 'ANEXO' -%}
+            {%- assign artigo = '' -%}
+            {%- assign subdivisao = '' -%}
+            {%- assign inciso = '' -%}
+        {%- endif -%}
         <h{{ nivel }} id="lei-{{ prefixo_id }}{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
 
     {%- elsif texto contains '~~' -%}
@@ -133,11 +158,19 @@
                     pelo valor reconstruído descarta o que apenas se parece com
                     um ("1.2.", "5.º", texto comum), que ficaria sem âncora.
                 {%- endcomment -%}
-                {%- assign digitos = marcador | remove: '.' -%}
+                {%- comment -%}
+                    O ponto do número vem escapado no texto-fonte (`1\.`): sem
+                    isso o Kramdown leria "1. Texto" como lista ordenada, o
+                    dispositivo viraria <ol> em vez de <p> (perdendo a âncora,
+                    que é posta no primeiro <p>) e cada bloco reiniciaria a
+                    numeração em 1. A barra sai na renderização.
+                {%- endcomment -%}
+                {%- assign numero = marcador | remove: '\' -%}
+                {%- assign digitos = numero | remove: '.' -%}
                 {%- assign valor = digitos | plus: 0 -%}
                 {%- capture reconstruido -%}{{ valor }}.{%- endcapture -%}
 
-                {%- if reconstruido == marcador -%}
+                {%- if reconstruido == numero -%}
                     {%- assign subdivisao = valor | prepend: 'p' -%}
                     {%- assign inciso = '' -%}
                     {%- assign id = artigo | append: '-' | append: subdivisao -%}
@@ -192,7 +225,13 @@
             {%- endif -%}
         {%- endif -%}
 
+        {%- capture chave -%}|{{ id }}|{%- endcapture -%}
+        {%- if id != '' and artigo != '' and ids_usados contains chave -%}
+            {%- assign id = '' -%}
+        {%- endif -%}
+
         {%- if id != '' and artigo != '' -%}
+            {%- assign ids_usados = ids_usados | append: id | append: '|' -%}
             {%- capture abertura -%}<p id="{{ id }}" class="lei-{{ tipo }}">{%- endcapture -%}
             {{ texto | markdownify | replace_first: '<p>', abertura }}
         {%- else -%}

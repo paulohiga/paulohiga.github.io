@@ -65,6 +65,7 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   └── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
 ├── _leis/                  # Textos legais em Markdown puro (não viram página)
 │   ├── ai-act.md           #   Regulamento (UE) 2024/1689 (formato: ue)
+│   ├── regulamento-2026-1744.md  # Digital Omnibus sobre a IA (norma extra)
 │   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
 │   ├── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
 │   └── mci.md              #   Lei nº 12.965/2014, texto compilado

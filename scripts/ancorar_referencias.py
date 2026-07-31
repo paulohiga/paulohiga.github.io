@@ -157,7 +157,12 @@ def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
 
     for bloco in re.split(r"\n\s*\n", corpo):
         bruto = bloco.strip()
-        if not bruto or bruto[0] == "#" or "~~" in bruto:
+        if bruto.startswith("#"):
+            # Anexo não continua a numeração dos artigos — ver lei-anotada.html.
+            if bruto.lstrip("# ").startswith("ANEXO"):
+                artigo = subdivisao = ""
+            continue
+        if not bruto or "~~" in bruto:
             continue
 
         palavras = bruto.split(" ")
@@ -169,8 +174,9 @@ def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
             artigo = f"{prefixo_id}art-{numero}"
             subdivisao = ""
             id_ = artigo
-        elif re.fullmatch(r"[1-9]\d*\.", marcador):
-            subdivisao = "p" + marcador.rstrip(".")
+        elif re.fullmatch(r"[1-9]\d*\\?\.", marcador):
+            # O ponto vem escapado no texto-fonte (`1\.`) — ver lei-anotada.html.
+            subdivisao = "p" + marcador.rstrip(".").rstrip("\\")
             id_ = f"{artigo}-{subdivisao}"
         else:
             letra = marcador.rstrip(")")

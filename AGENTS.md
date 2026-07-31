@@ -171,10 +171,41 @@ de uma lista longa, então remissão a subalínea se confere no texto ou fica se
 link. O mesmo vale para os considerandos, que não são dispositivos e não são
 ancorados.
 
+Três cuidados próprios desse formato:
+
+- **O ponto do número vem escapado** no arquivo de `_leis` (`1\. Texto`). Sem
+  isso o Kramdown lê "1. Texto" como lista ordenada: o dispositivo vira `<ol>`
+  em vez de `<p>` (perdendo a âncora, que é posta no primeiro `<p>`) e cada
+  bloco reinicia a numeração em 1. A barra não aparece na renderização.
+- **Anexo zera o artigo corrente.** Os itens de um anexo são "1.", "a)" como os
+  de um artigo, mas não pertencem a nenhum — sem zerar, o "1." do Anexo III
+  herdaria o último artigo e viraria `art-113-p1`. Conteúdo de anexo não é
+  ancorado.
+- **Id repetido não vira âncora.** O mesmo número pode ter duas listas de
+  alíneas independentes (o art. 43.º, n.º 1, do AI Act tem duas a)/b)); a
+  segunda entra sem âncora.
+
 `scripts/ancorar_referencias.py` acompanha o formato ao calcular os ids
 válidos, mas continua reconhecendo *citações* na praxe brasileira: uma citação
 europeia com sufixo ("art. 5.º, n.º 1") cai no artigo seco em vez do número —
 link menos preciso, nunca errado.
+
+#### Trazendo uma norma do EUR-Lex
+
+`scripts/converter_eurlex.py` converte o HTML oficial do Jornal Oficial para o
+Markdown de `_leis`, já nesse dialeto — ver o docstring do script para o uso e
+para o que ele deixa de fora (considerandos e notas de rodapé, por peso de
+página). Ele depende de `beautifulsoup4` e `lxml`, ferramentas de autoria que
+não entram no site, como o `pyyaml` do script de ancoragem.
+
+Quando a União Europeia **ainda não publicou a versão consolidada** de uma
+norma alterada, é o caso do AI Act com o Digital Omnibus: publique as **duas
+normas separadas** (a alterada como `lei`, a alteradora em `normas_extra`) e
+diga isso ao leitor na própria nota. Não monte uma consolidação à mão — o
+resultado não seria o texto de nenhuma fonte oficial. O texto de uma norma
+alteradora é quase todo citação, e citação não recebe âncora: as remissões dos
+comentários devem apontar para o dispositivo na norma alterada, sinalizando em
+texto o que mudou.
 
 Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
 citação. Sem JavaScript o link continua funcionando como âncora normal — não
