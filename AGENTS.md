@@ -69,8 +69,8 @@ apresentação, e vice-versa.
 - `_notas/<assunto>.md` — a nota publicada (comentários). Front matter:
   `layout: nota`, `permalink`, `title`, `description`, `lei` (a norma
   principal, pré-carregada no HTML), `normas_extra` (opcional — lista de
-  slugs de `_leis` para normas adicionais, ver abaixo) e `revisado_em` (data
-  da última revisão **humana**).
+  slugs de `_leis` para normas adicionais, ver abaixo) e `atualizado_em` (data
+  da última atualização de conteúdo — ver as regras editoriais, abaixo).
 - `_leis/<assunto>.md` — o texto legal em Markdown puro, sem âncoras nem
   classes. Front matter: `titulo`, `apelido`, `fonte`, `compilado_ate`
   (opcional), `formato` (opcional — `br`, o padrão, ou `ue`; ver "Normas
@@ -289,7 +289,16 @@ dispositivo errado.
   doutrina e material de terceiros, não. Resuma com palavras próprias e cite.
 - **Sem dados pessoais** de partes ao comentar jurisprudência: refira o caso por
   número, órgão e tema.
-- `revisado_em` é atualizado **pelo humano** que revisou, não pela IA.
+- `atualizado_em` é a data da **última atualização de conteúdo** da nota. É o
+  que o aviso exibe ("atualizadas em…") e o que alimenta o `dateModified` do
+  JSON-LD e o `<lastmod>` do sitemap quando o histórico do git não estiver
+  disponível. Atualize-o sempre que mexer no conteúdo dos comentários — mas
+  **não** em correções que não mudam o que a nota afirma (typo, link, ajuste
+  de marcação).
+- O campo **não afirma que alguém conferiu o texto**: é data de atualização,
+  não de revisão. Era por isso que o nome antigo (`revisado_em`) foi trocado —
+  ele prometia uma revisão humana que nem sempre houve. Não reintroduza essa
+  leitura no aviso nem no nome do campo.
 
 ### Idioma
 

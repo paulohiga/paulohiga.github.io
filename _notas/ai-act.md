@@ -5,7 +5,7 @@ title: AI Act — Regulamento de Inteligência Artificial da União Europeia
 description: Notas de estudo sobre o Regulamento (UE) 2024/1689 — pirâmide de risco, práticas proibidas, sistemas de alto risco, modelos de finalidade geral, governança e sanções, já com as alterações do Digital Omnibus, e a comparação com o PL nº 2338/2023.
 lei: ai-act
 normas_extra: [regulamento-2026-1744]
-revisado_em: 2026-07-31
+atualizado_em: 2026-07-31
 ---
 
 ## Normas

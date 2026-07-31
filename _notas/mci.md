@@ -8,7 +8,7 @@ normas_extra:
   - decreto-8771
   - decreto-12975
   - decreto-12976
-revisado_em: 2026-07-26
+atualizado_em: 2026-07-26
 ---
 
 ## Normas
