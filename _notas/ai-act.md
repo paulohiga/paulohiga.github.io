@@ -55,6 +55,78 @@ O resultado é um regulamento em vigor há dois anos cujo núcleo mais oneroso a
 
 Para o leitor brasileiro, o AI Act interessa por dois motivos simultâneos e distintos. É norma **diretamente aplicável** a empresas brasileiras que ofereçam sistemas de IA no mercado europeu — do mesmo modo que o RGPD já as alcançava. E é o **modelo declarado** do [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233), aprovado pelo Senado em dezembro de 2024 e ainda pendente na Câmara dos Deputados: a classificação por risco, os direitos das pessoas afetadas e a avaliação de impacto vieram de lá, mas o projeto brasileiro fez escolhas próprias em pontos sensíveis — algoritmos de recomendação, direitos autorais no treino e desenho da autoridade —, tratadas na comparação ao final desta nota. Vale a mesma advertência que a [LGPD](/notas/lgpd) já ensinou: inspiração estrutural não é equivalência jurídica.
 
+## Os considerandos
+
+O AI Act tem **180 considerandos** — mais do que os seus 113 artigos, e mais da metade do documento. Não são dispositivos: não criam obrigação por si e não recebem âncora no painel ao lado. Mas são parte do ato publicado no Jornal Oficial, e é a eles que a Comissão e o Tribunal de Justiça recorrem para fixar o sentido do articulado quando o texto do artigo é aberto. Vários dos conceitos operacionais do regulamento — o que é "inferir", o que é "influenciar significativamente uma decisão", o que conta como licença livre — só ganham contorno ali.
+
+O que se segue é um mapa do que está em cada bloco, com o número do considerando para consulta no painel.
+
+### Por que o regulamento existe (1 a 11)
+
+O objetivo declarado é duplo — melhorar o funcionamento do mercado interno e promover uma IA centrada no ser humano e de confiança (1) —, e a aplicação deve seguir os valores da Carta (2, 6). O problema que justifica a harmonização é a fragmentação: Estados-Membros já vinham adotando regras nacionais próprias, o que reduziria a segurança jurídica e prejudicaria a livre circulação (3). Os considerandos 4 e 5 arrolam benefícios e riscos em paralelo, e os 10 e 11 fixam o que o regulamento **não** faz: não prejudica o RGPD nem o regime de responsabilidade dos prestadores intermediários do DSA.
+
+### Como ler as definições (12 a 19)
+
+- **"Sistema de IA"** (12) — a definição deve alinhar-se ao trabalho de organizações internacionais, para favorecer a convergência, e apoiar-se no que distingue esses sistemas de software tradicional. A característica central é a **capacidade de inferir**; ficam de fora os sistemas baseados em regras definidas exclusivamente por pessoas para executar operações automaticamente.
+- **Biometria** (14 a 18) — "dados biométricos" deve ser lido à luz do RGPD, e os considerandos delimitam identificação biométrica, categorização biométrica, identificação à distância e reconhecimento de emoções.
+- **"Espaço acessível ao público"** (19) — qualquer espaço físico acessível a um número indeterminado de pessoas, independentemente de propriedade e de condições de acesso.
+
+### A abordagem baseada no risco e os sete princípios (26 e 27)
+
+O considerando 27 é a ponte entre o regulamento e o debate ético que o precedeu: recorda as **Orientações Éticas para uma IA de Confiança**, elaboradas em 2019 pelo grupo de peritos de alto nível nomeado pela Comissão, e lista os **sete princípios não vinculativos** que dali saíram — iniciativa e supervisão por humanos; solidez técnica e segurança; privacidade e governação dos dados; transparência; diversidade, não discriminação e equidade; bem-estar social e ambiental; e responsabilização. O texto é expresso em dizer que eles não substituem os requisitos vinculantes do regulamento.
+
+### Por que cada prática foi proibida (28 a 45)
+
+- **Manipulação e exploração de vulnerabilidades** (29) — técnicas que persuadem pessoas a comportamentos indesejados sem que elas percebam.
+- **Categorização biométrica** (30) e **classificação social** (31) — esta última por produzir tratamento prejudicial descontextualizado, por atores públicos **ou privados**.
+- **Identificação biométrica à distância em tempo real** (32 a 39) — o bloco mais extenso: descreve a intrusão, o efeito inibidor sobre liberdades e o desenho das exceções, da autorização prévia e do registo. Os considerandos 40 e 41 registram a posição do Reino Unido, da Irlanda e da Dinamarca quanto aos protocolos dos Tratados.
+- **Avaliação preditiva de risco criminal** (42) — fundamentada na **presunção de inocência**: as pessoas devem ser avaliadas pelo comportamento real, não por comportamento previsto por máquina.
+- **Recolha não seletiva de imagens faciais** (43).
+- **Reconhecimento de emoções** (44) — a justificação é científica antes de ser jurídica: há "sérias preocupações quanto à base científica" desses sistemas, porque a expressão de emoções varia entre culturas, situações e no mesmo indivíduo, com "fiabilidade limitada, falta de especificidade e possibilidade limitada de generalização". A proibição alcança o trabalho e o ensino por causa do **desequilíbrio de poder** nesses contextos.
+
+### Por que estes domínios são de alto risco (46 a 63)
+
+Um considerando para cada domínio do Anexo III, explicando o bem jurídico em causa: biometria (54), infraestruturas críticas (55), educação (56), emprego e gestão de trabalhadores (57), serviços essenciais e avaliação de crédito (58), aplicação da lei (59), migração e fronteiras (60), administração da justiça e processos democráticos (61 e 62).
+
+Dois merecem leitura direta:
+
+- **Considerando 53** — desenvolve os critérios da derrogação do [art. 6.º, n.º 3](#art-6-p3), com exemplos do que é "tarefa processual restrita" (converter dados não estruturados em estruturados, classificar documentos) e do que significa não influenciar significativamente o resultado da decisão.
+- **Considerando 63** — a advertência mais importante do bloco: classificar um sistema como de alto risco **não** o torna lícito perante o resto do direito da União ou nacional, e o regulamento **não é fundamento jurídico** para tratar dados pessoais, salvo onde ele próprio disser o contrário.
+
+### Os requisitos e a cadeia de valor (64 a 96)
+
+A gestão de riscos é descrita como processo **iterativo e contínuo** por todo o ciclo de vida (65); a qualidade dos dados, como condição para que o sistema funcione como pretendido e não gere discriminação proibida (67 e 70); a privacidade, como exigência de todo o ciclo (69). Os considerandos 71 e 72 tratam da opacidade e da complexidade como o problema que a transparência e a documentação técnica endereçam; o 73, da supervisão humana; os 74 a 77, de exatidão, solidez e cibersegurança, incluindo resistência a envenenamento de dados e de modelos.
+
+Na cadeia, o considerando 79 explica por que a responsabilidade pela conformidade se concentra no **prestador**, o 84 por que distribuidores, importadores e responsáveis pela implantação passam a prestador em certas condições, o 85 o caso do sistema de finalidade geral usado como componente de alto risco, e o 89 por que ferramentas e componentes livres e de fonte aberta que não sejam modelos de finalidade geral ficam fora dos deveres de cadeia. O 92 ressalva os deveres de informação e consulta a trabalhadores que já decorrem de outros atos.
+
+### Modelos de finalidade geral (97 a 117)
+
+- **Conceito** (97 a 100) — o modelo se distingue do sistema; os **grandes modelos generativos** são "um exemplo típico" de modelo de finalidade geral, por permitirem geração flexível de texto, áudio, imagens ou vídeo adaptável a tarefas distintas (99).
+- **Fonte aberta** (102 a 104) — o considerando 102 define o que se espera de uma licença livre para efeitos do regulamento (parâmetros, ponderações, arquitetura e informações de uso disponibilizados ao público), e o 104 fecha a porta: a exceção **não vale** para modelos com risco sistémico, e não alcança o sumário do conteúdo de treino nem a política de direito de autor, porque abrir o modelo não revela como o treino foi feito.
+- **Treino e direito de autor** (105 a 107) — fundamentam a política de direitos de autor e o sumário público do conteúdo usado no treino.
+- **Risco sistémico** (110 e 111) — decorre de "capacidades de elevado impacto", entendidas como as que igualam ou excedem as dos modelos mais avançados; o limiar em operações de vírgula flutuante é apresentado como reflexo do **estado da arte no momento da entrada em vigor**, e não como critério permanente.
+- **Códigos de práticas** (116 e 117) — descritos como "instrumento central" de cumprimento, com uma hierarquia explícita: publicada uma norma harmonizada adequada, a conformidade com ela passa a conferir presunção de conformidade; sem código nem norma, o prestador demonstra por meios alternativos adequados.
+
+### Transparência de conteúdo sintético (132 a 137)
+
+O considerando 133 é a justificação do [art. 50.º](#art-50): conteúdo sintético cada vez mais difícil de distinguir do humano, com impacto "na integridade e na confiança no ecossistema da informação" e riscos de desinformação em grande escala, fraude, usurpação de identidade e dissimulação dos consumidores. Daí a exigência de marcação legível por máquina, "na medida em que tal seja tecnicamente viável". O 134 trata das ultrafalsificações do lado de quem as implanta.
+
+### Inovação, governança e vigência (138 a 179)
+
+Os considerandos 138 a 147 descrevem os objetivos dos ambientes de testagem, a base jurídica para tratamento ulterior de dados pessoais dentro deles e as medidas para PME e microempresas. Os 148 a 167 desenham a governança — Comité, fórum consultivo, painel científico, autoridades nacionais independentes e a repartição de competências entre União e Estados-Membros. Os 168 e 169 tratam das sanções; o **171** delimita o direito a explicação do [art. 86.º](#art-86), que só alcança decisões baseadas **principalmente** no resultado de sistemas do Anexo III e não se aplica onde o direito da União já preveja o mesmo; o 172, a proteção de denunciantes; os 173 a 175, a delegação de poderes à Comissão.
+
+O **considerando 179** explica o escalonamento: as proibições se antecipam para 2 de fevereiro de 2025 "tendo em conta o risco inaceitável" das práticas do [art. 5.º](#art-5), com efeitos que se irradiam para outros procedimentos, inclusive de direito civil; a governança e os organismos notificados precisam estar operacionais **antes** da aplicação geral, daí agosto de 2025; e as obrigações dos modelos de finalidade geral vêm nessa mesma data por causa do ritmo de adoção desses modelos.
+
+### Os considerandos do Digital Omnibus (47)
+
+O regulamento alterador tem 47 considerandos próprios, também no painel. Os que sustentam as mudanças de maior efeito:
+
+- **40** — a justificação do adiamento: o atraso na disponibilidade de normas, especificações comuns e orientações e na instituição das autoridades nacionais competentes compromete o início efetivo da aplicação e ameaça elevar consideravelmente os custos, "de tal modo que a manutenção da sua data inicial de aplicação, a saber, 2 de agosto de 2026, deixe de se justificar".
+- **22** — por que o registo dos sistemas autoexcluídos do alto risco foi mantido, e apenas simplificado: é "essencial para uma supervisão eficaz do mercado e para a responsabilização pública".
+- **32** — por que a Comissão recebe poderes de autoridade de fiscalização sobre sistemas integrados em plataformas e motores de pesquisa de muito grande dimensão: o sistema de supervisão que o DSA já instituiu.
+- **17 e 21** — pedido único e procedimento unificado de designação de organismos notificados, e o pedido às organizações europeias de normalização de produtos de normalização que sirvam ao mesmo tempo ao AI Act e à legislação setorial.
+- **42** — a transferência do Regulamento Máquinas da secção A para a secção B do Anexo I, adotando abordagem setorial para as máquinas baseadas em IA.
+
 ## Fundamentos
 
 ### Objeto e objetivos ([art. 1.º](#art-1))
