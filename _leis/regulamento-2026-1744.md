@@ -16,17 +16,13 @@ formato: ue
 # aqui valem por si: são eles que explicam o motivo de cada adiamento e de
 # cada proibição nova. Fora do texto ficou só o aparato de notas de rodapé.
 ---
-Jornal Oficial da União Europeia — PT Série L
+# REGULAMENTO (UE) 2026/1744, de 8 de julho de 2026
 
-2026/1744 — 24.7.2026
+*DO PARLAMENTO EUROPEU E DO CONSELHO*
 
-# REGULAMENTO (UE) 2026/1744 DO PARLAMENTO EUROPEU E DO CONSELHO
+*que altera os Regulamentos (UE) 2024/1689, (UE) 2018/1139 e (UE) 2023/1230 no que diz respeito à simplificação da aplicação das regras harmonizadas em matéria de inteligência artificial (Regulamento Omnibus Digital em matéria de IA)*
 
-# de 8 de julho de 2026
-
-# que altera os Regulamentos (UE) 2024/1689, (UE) 2018/1139 e (UE) 2023/1230 no que diz respeito à simplificação da aplicação das regras harmonizadas em matéria de inteligência artificial (Regulamento Omnibus Digital em matéria de IA)
-
-# (Texto relevante para efeitos do EEE)
+*(Texto relevante para efeitos do EEE)*
 
 O PARLAMENTO EUROPEU E O CONSELHO DA UNIÃO EUROPEIA,
 

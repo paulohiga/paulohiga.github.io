@@ -16,17 +16,13 @@ formato: ue
 # por que cada regra existe. Fora do texto ficou só o aparato de notas de
 # rodapé do JO, que é referência bibliográfica de publicação.
 ---
-Jornal Oficial da União Europeia — PT Série L
+# REGULAMENTO (UE) 2024/1689, de 13 de junho de 2024
 
-2024/1689 — 12.7.2024
+*DO PARLAMENTO EUROPEU E DO CONSELHO*
 
-# REGULAMENTO (UE) 2024/1689 DO PARLAMENTO EUROPEU E DO CONSELHO
+*que cria regras harmonizadas em matéria de inteligência artificial e que altera os Regulamentos (CE) n.º 300/2008, (UE) n.º 167/2013, (UE) n.º 168/2013, (UE) 2018/858, (UE) 2018/1139 e (UE) 2019/2144 e as Diretivas 2014/90/UE, (UE) 2016/797 e (UE) 2020/1828 (Regulamento da Inteligência Artificial)*
 
-# de 13 de junho de 2024
-
-# que cria regras harmonizadas em matéria de inteligência artificial e que altera os Regulamentos (CE) n.º 300/2008, (UE) n.º 167/2013, (UE) n.º 168/2013, (UE) 2018/858, (UE) 2018/1139 e (UE) 2019/2144 e as Diretivas 2014/90/UE, (UE) 2016/797 e (UE) 2020/1828 (Regulamento da Inteligência Artificial)
-
-# (Texto relevante para efeitos do EEE)
+*(Texto relevante para efeitos do EEE)*
 
 O PARLAMENTO EUROPEU E O CONSELHO DA UNIÃO EUROPEIA,
 
@@ -3063,7 +3059,9 @@ O prestador analisa as informações contidas na documentação técnica para de
 
 O prestador também verifica se o processo de conceção e desenvolvimento do sistema de IA e do seu acompanhamento pós-comercialização a que se refere o artigo 72.º estão de acordo com a documentação técnica.
 
-## ANEXO VII — Conformidade baseada numa avaliação do sistema de gestão da qualidade e numa avaliação da documentação técnica — 1. Introdução
+## ANEXO VII — Conformidade baseada numa avaliação do sistema de gestão da qualidade e numa avaliação da documentação técnica
+
+### 1. Introdução
 
 A conformidade baseada numa avaliação do sistema de gestão da qualidade e numa avaliação da documentação técnica é o procedimento de avaliação da conformidade descrito nos pontos 2 a 5.
 
@@ -3187,7 +3185,9 @@ As informações a seguir indicadas devem ser prestadas e, subsequentemente, man
 
 5\. Informações sobre a suspensão ou cessação da testagem em condições reais.
 
-## ANEXO X — Atos legislativos da União relativos a sistemas informáticos de grande escala no espaço de liberdade, segurança e justiça — 1. Sistema de Informação de Schengen
+## ANEXO X — Atos legislativos da União relativos a sistemas informáticos de grande escala no espaço de liberdade, segurança e justiça
+
+### 1. Sistema de Informação de Schengen
 
 a) Regulamento (UE) 2018/1860 do Parlamento Europeu e do Conselho, de 28 de novembro de 2018, relativo à utilização do Sistema de Informação de Schengen para efeitos de regresso dos nacionais de países terceiros em situação irregular (JO L 312 de 7.12.2018, p. 1).
 
@@ -3227,9 +3227,7 @@ b) Regulamento (UE) 2019/818 do Parlamento Europeu e do Conselho, de 20 de maio 
 
 ## ANEXO XI — Documentação técnica a que se refere o artigo 53.º, n.º 1, alínea a) — documentação técnica para os prestadores de modelos de IA de finalidade geral
 
-### SECÇÃO 1
-
-### Informações a apresentar por todos os prestadores de modelos de IA de finalidade geral
+### SECÇÃO 1 — Informações a apresentar por todos os prestadores de modelos de IA de finalidade geral
 
 A documentação técnica a que se refere o artigo 53.º, n.º 1, alínea a), deve conter, pelo menos, as informações indicadas a seguir, consoante aplicável à dimensão e ao perfil de risco do modelo:
 
@@ -3261,9 +3259,7 @@ A documentação técnica a que se refere o artigo 53.º, n.º 1, alínea a), de
 
 No que diz respeito à alínea e), se o consumo de energia do modelo for desconhecido, o consumo de energia pode basear-se em informações sobre os recursos computacionais utilizados.
 
-### SECÇÃO 2
-
-### Informações adicionais a prestar pelos prestadores de modelos de IA de finalidade geral com risco sistémico
+### SECÇÃO 2 — Informações adicionais a prestar pelos prestadores de modelos de IA de finalidade geral com risco sistémico
 
 1\. — Uma descrição pormenorizada das estratégias de avaliação, incluindo os resultados da avaliação, com base nos protocolos e ferramentas de avaliação públicos disponíveis ou noutras metodologias de avaliação. As estratégias de avaliação devem incluir critérios de avaliação, parâmetros e a metodologia de identificação de limitações.
 

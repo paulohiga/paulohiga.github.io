@@ -838,8 +838,19 @@ body:not(.js) .nota-toc-btn {
     padding-left: 1rem;
 }
 
+/* A epígrafe de um capítulo ou anexo pode ser muito longa — a do Anexo XII do
+   AI Act tem 275 caracteres, a do Capítulo III do ECA Digital tem 133 —, e sem
+   corte uma única entrada ocuparia meia tela do sumário. O corte é só visual:
+   `line-clamp` não remove texto do nome acessível do link, então leitores de
+   tela continuam anunciando o título inteiro. Onde `-webkit-box` não for
+   entendido, a declaração cai e o `display: block` de antes prevalece. */
 .nota-toc__corpo a {
     display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
     padding: 0.3rem 0.45rem;
     border-radius: 0.35rem;
     text-decoration: none;

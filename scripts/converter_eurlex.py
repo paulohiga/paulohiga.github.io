@@ -298,27 +298,51 @@ def converter(caminho: Path) -> str:
     fechar_citacao()
 
     # "CAPÍTULO III" / "SISTEMAS DE IA DE RISCO ELEVADO" e "ANEXO I" / epígrafe
-    # saem em dois parágrafos no JO; aqui viram um título só.
+    # saem em dois parágrafos no JO; aqui viram um título só. Só a **primeira**
+    # epígrafe é absorvida: um anexo costuma ser seguido de outros títulos seus
+    # (as secções, ou o "1. Introdução" do Anexo VII), e encadeá-los daria um
+    # título quilométrico — que é o que o leitor vê no sumário da lei seca.
     saida: list[str] = []
+    aguarda_epigrafe = False
     for b in blocos:
         anterior = saida[-1] if saida else ""
-        abre_unidade = re.match(r"^#{1,2} (CAPÍTULO|SECÇÃO|ANEXO)\b", anterior)
-        segue_epigrafe = re.match(r"^#{1,3} ", b) and not re.match(r"^#{1,3} (CAPÍTULO|SECÇÃO|ANEXO)\b", b)
-        if abre_unidade and segue_epigrafe:
+        abre_unidade = re.match(r"^#{1,3} (CAPÍTULO|SECÇÃO|ANEXO)\b", b)
+        eh_titulo = re.match(r"^#{1,3} ", b)
+        if aguarda_epigrafe and eh_titulo and not abre_unidade:
             saida[-1] = anterior + " — " + re.sub(r"^#+ ", "", b)
+            aguarda_epigrafe = False
         elif b.strip() and b.strip() != anterior.strip():
             saida.append(b)
+            aguarda_epigrafe = bool(abre_unidade)
 
-    # O JO quebra o título do ato em quatro parágrafos; aqui vira um título só
-    # + subtítulo em itálico, como nas leis brasileiras já publicadas.
+    # O número e a data de página do Jornal Oficial saem numa tabela no alto
+    # de cada documento. Não são texto do ato, e precisam cair aqui: o filtro
+    # do laço principal só alcança os <p>.
+    saida = [b for b in saida if not CABECALHO_JO.match(b)]
+
+    # O JO quebra o título do ato em quatro parágrafos, e os quatro virariam
+    # <h2> — quatro entradas no sumário da lei seca, uma delas com o texto
+    # inteiro da ementa. Aqui eles viram um título só, com o identificador da
+    # norma (número e data), mais subtítulos em itálico com o restante,
+    # palavra por palavra: é o mesmo recorte das leis brasileiras já
+    # publicadas, em que o título é "LEI Nº 15.211, DE 17 DE SETEMBRO DE 2025"
+    # e a ementa vem embaixo, em itálico.
     cabecalho = []
     while saida and saida[0].startswith("# "):
         cabecalho.append(saida.pop(0)[2:])
     if cabecalho:
-        titulo = cabecalho[0]
-        if len(cabecalho) > 1 and re.match(r"^de \d", cabecalho[1]):
-            titulo += ", " + cabecalho.pop(1)
-        saida = [f"# {titulo}"] + [f"*{c}*" for c in cabecalho[1:]] + saida
+        titulo, subtitulos = cabecalho[0], cabecalho[1:]
+        # "REGULAMENTO (UE) 2024/1689 DO PARLAMENTO EUROPEU E DO CONSELHO":
+        # quem editou a norma é subtítulo, não identificador dela.
+        emissor = re.match(r"^(.*?)(\s+D[AEO]S?\s+(?:PARLAMENTO|CONSELHO|COMISSÃO)\b.*)$", titulo)
+        if emissor:
+            titulo = emissor.group(1).strip()
+            subtitulos.insert(0, emissor.group(2).strip())
+        if subtitulos and re.match(r"^de \d", subtitulos[0]):
+            titulo += ", " + subtitulos.pop(0)
+        elif len(subtitulos) > 1 and re.match(r"^de \d", subtitulos[1]):
+            titulo += ", " + subtitulos.pop(1)
+        saida = [f"# {titulo}"] + [f"*{c}*" for c in subtitulos] + saida
 
     return "\n\n".join(neutralizar_lista(b) for b in saida) + "\n"
 
