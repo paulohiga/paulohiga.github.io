@@ -31,6 +31,27 @@
     ECA Digital), é o que evita id duplicado e link apontando para o texto
     errado.
 
+    Normas da União Europeia usam outra marcação de dispositivo, e por isso o
+    documento em `_leis` pode declarar `formato: ue` no front matter (o padrão
+    é `br`). O que muda é só como o dispositivo é reconhecido, não o esquema de
+    ids — que continua na mesma família usada pelas notas brasileiras:
+
+        Artigo 5.º                   → art-5      (em vez de "Art. 5º")
+        Artigo 6.º-A                 → art-6-a
+        n.º 1 do artigo 5.º          → art-5-p1   (parágrafo numerado "1.",
+                                                   no lugar do "§ 1º")
+        alínea a) do n.º 1 do art. 5.º → art-5-p1-a
+
+    Assim os links dos comentários (`#art-5-p1-a`) e o campo "Ir para" do painel
+    da lei seca ("5, p1, a") valem para os dois formatos, sem exceção a decorar.
+    Um regulamento europeu não tem inciso romano entre o parágrafo e a alínea:
+    a alínea se pendura direto no parágrafo corrente ou, quando o artigo não é
+    dividido em números, no próprio artigo (`art-1-a`). Subalíneas ficam de
+    fora: "ii)", "iii)" e seguintes não recebem âncora, e "i)" é indistinguível
+    da alínea "i)" de uma lista que passa de h) — por isso toda remissão a
+    subalínea deve ser conferida no texto antes de virar link, ou escrita sem
+    link, como já vale para as citações compostas incomuns.
+
     Parâmetro: `lei` — o documento da coleção `_leis` a renderizar.
 
     Parâmetro opcional `prefixo` — namespace dos ids, para uma nota exibir mais
@@ -54,6 +75,8 @@
 
 {%- assign romanos = 'I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,I-A,V-A,V-B' | split: ',' -%}
 {%- assign letras = 'a,b,c,d,e,f,g,h,i,j' | split: ',' -%}
+
+{%- assign formato = include.lei.formato | default: 'br' -%}
 
 {%- assign artigo = '' -%}
 {%- assign subdivisao = '' -%}
@@ -89,7 +112,52 @@
         {%- assign id = '' -%}
         {%- assign tipo = '' -%}
 
-        {%- if marcador == 'Art.' -%}
+        {%- if formato == 'ue' -%}
+            {%- comment -%}
+                Regulamento europeu: "Artigo 5.º" abre o artigo, "1." abre o
+                número (o equivalente ao parágrafo) e "a)" a alínea, que se
+                pendura no número corrente — ou no artigo, quando ele não tem
+                números. O "º" do EUR-Lex às vezes vem como um "o" solto
+                ("Artigo 5.o"), então os dois são removidos.
+            {%- endcomment -%}
+            {%- if marcador == 'Artigo' -%}
+                {%- assign artigo = palavras[1] | replace: 'º', '' | replace: 'o', '' | replace: '.', '' | downcase | prepend: 'art-' | prepend: prefixo_id -%}
+                {%- assign subdivisao = '' -%}
+                {%- assign inciso = '' -%}
+                {%- assign id = artigo -%}
+                {%- assign tipo = 'artigo' -%}
+
+            {%- else -%}
+                {%- comment -%}
+                    Um número é um marcador tipo "1." — e só isso. A conferência
+                    pelo valor reconstruído descarta o que apenas se parece com
+                    um ("1.2.", "5.º", texto comum), que ficaria sem âncora.
+                {%- endcomment -%}
+                {%- assign digitos = marcador | remove: '.' -%}
+                {%- assign valor = digitos | plus: 0 -%}
+                {%- capture reconstruido -%}{{ valor }}.{%- endcapture -%}
+
+                {%- if reconstruido == marcador -%}
+                    {%- assign subdivisao = valor | prepend: 'p' -%}
+                    {%- assign inciso = '' -%}
+                    {%- assign id = artigo | append: '-' | append: subdivisao -%}
+                    {%- assign tipo = 'paragrafo' -%}
+
+                {%- else -%}
+                    {%- assign letra = marcador | remove: ')' -%}
+                    {%- assign fechamento = marcador | slice: -1 -%}
+                    {%- if fechamento == ')' and letras contains letra -%}
+                        {%- assign id = artigo -%}
+                        {%- if subdivisao != '' -%}
+                            {%- assign id = id | append: '-' | append: subdivisao -%}
+                        {%- endif -%}
+                        {%- assign id = id | append: '-' | append: letra -%}
+                        {%- assign tipo = 'alinea' -%}
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endif -%}
+
+        {%- elsif marcador == 'Art.' -%}
             {%- assign artigo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' | prepend: prefixo_id -%}
             {%- assign subdivisao = '' -%}
             {%- assign inciso = '' -%}

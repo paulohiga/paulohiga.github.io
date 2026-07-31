@@ -58,8 +58,8 @@ estratégia de performance e os dados estruturados.
 
 ## Notas de legislação (`/notas`)
 
-Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital), pública e
-indexável. É **isolada do restante do site**: layout, CSS, JS e includes
+Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital e o AI Act
+europeu), pública e indexável. É **isolada do restante do site**: layout, CSS, JS e includes
 próprios, sem passar pelo `default.html`, pelo `script.js` nem pelo
 `_data/pages.yml`. Uma mudança nas notas não pode afetar as quatro páginas de
 apresentação, e vice-versa.
@@ -73,8 +73,9 @@ apresentação, e vice-versa.
   da última revisão **humana**).
 - `_leis/<assunto>.md` — o texto legal em Markdown puro, sem âncoras nem
   classes. Front matter: `titulo`, `apelido`, `fonte`, `compilado_ate`
-  (opcional) e, só para normas adicionais (ver abaixo), `tipo` e `prefixo`.
-  **O texto da lei não se altera.**
+  (opcional), `formato` (opcional — `br`, o padrão, ou `ue`; ver "Normas
+  estrangeiras", abaixo) e, só para normas adicionais (ver abaixo), `tipo` e
+  `prefixo`. **O texto da lei não se altera.**
 - `_layouts/nota.html` monta os dois painéis; `_includes/lei-anotada.html`
   renderiza o texto legal dando um id a cada dispositivo.
 
@@ -147,6 +148,33 @@ destino segue um esquema previsível gerado por `lei-anotada.html`:
 | Inciso V do art. 5º | `art-5-v` |
 | Inciso I do § 1º do art. 52 | `art-52-p1-i` |
 | Alínea "b" do inciso II do art. 4º | `art-4-ii-b` |
+
+#### Normas estrangeiras (`formato: ue`)
+
+Uma norma da União Europeia marca o dispositivo de outro jeito, e o arquivo em
+`_leis/` sinaliza isso com `formato: ue` no front matter (o padrão, `br`, não
+precisa ser escrito). **O esquema de ids não muda** — muda só o que o include
+reconhece como dispositivo:
+
+| Dispositivo | id |
+| --- | --- |
+| Artigo 5.º | `art-5` |
+| Artigo 6.º-A | `art-6-a` |
+| n.º 1 do artigo 5.º (o "1." do texto) | `art-5-p1` |
+| alínea "a" do n.º 1 do artigo 5.º | `art-5-p1-a` |
+| alínea "a" de artigo sem números | `art-1-a` |
+
+Não há inciso romano entre o número e a alínea: a alínea se pendura no número
+corrente ou, na falta dele, no próprio artigo. **Subalíneas ficam de fora** —
+"ii)" e seguintes não recebem âncora, e "i)" é indistinguível da alínea "i)"
+de uma lista longa, então remissão a subalínea se confere no texto ou fica sem
+link. O mesmo vale para os considerandos, que não são dispositivos e não são
+ancorados.
+
+`scripts/ancorar_referencias.py` acompanha o formato ao calcular os ids
+válidos, mas continua reconhecendo *citações* na praxe brasileira: uma citação
+europeia com sufixo ("art. 5.º, n.º 1") cai no artigo seco em vez do número —
+link menos preciso, nunca errado.
 
 Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
 citação. Sem JavaScript o link continua funcionando como âncora normal — não
@@ -230,9 +258,16 @@ dispositivo errado.
 ### Idioma
 
 Esta seção é **pt-br apenas** — exceção consciente à regra de replicação em
-en-us, que continua valendo para as quatro páginas de apresentação. O objeto é
-legislação brasileira e a manutenção em dois idiomas não se justifica. Não
-"corrija" isso criando `/en/notas`.
+en-us, que continua valendo para as quatro páginas de apresentação. O público é
+brasileiro e a manutenção em dois idiomas não se justifica. Não "corrija" isso
+criando `/en/notas`.
+
+Isso vale inclusive para as normas estrangeiras que entram na seção por
+iluminarem o direito brasileiro (é o caso do AI Act): os comentários são
+escritos em pt-br, e o painel "Lei seca" exibe a **versão oficial em
+português** da norma — no caso da União Europeia, o texto do EUR-Lex, que é
+PT-PT. Quando a terminologia oficial divergir da brasileira, explique a
+correspondência na própria nota em vez de reescrever o texto legal.
 
 ## Padrões técnicos a preservar
 
