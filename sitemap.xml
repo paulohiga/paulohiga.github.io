@@ -60,7 +60,7 @@ sitemap: false
 {%- for nota in site.notas %}
   <url>
     <loc>{{ site.url }}{{ nota.url }}</loc>
-    {%- assign nota_lastmod = nota.last_modified_at | default: nota.revisado_em %}
+    {%- assign nota_lastmod = nota.last_modified_at | default: nota.atualizado_em %}
     {%- if nota_lastmod %}
     <lastmod>{{ nota_lastmod | date: "%Y-%m-%d" }}</lastmod>
     {%- endif %}

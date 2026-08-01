@@ -84,6 +84,9 @@ def ids_da_lei(slug: str, prefixo: str) -> set[str]:
     else:
         corpo = texto
 
+    if front_matter(caminho).get("formato") == "ue":
+        return _ids_da_lei_ue(corpo, prefixo)
+
     prefixo_id = f"{prefixo}-" if prefixo else ""
     blocos = re.split(r"\n\s*\n", corpo)
 
@@ -128,6 +131,60 @@ def ids_da_lei(slug: str, prefixo: str) -> set[str]:
             letra = marcador.rstrip(")")
             if marcador.endswith(")") and inciso and letra in LETRAS:
                 id_ = f"{inciso}-{letra}"
+
+        if id_ and artigo:
+            ids.add(id_)
+
+    return ids
+
+
+def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
+    """Mesma coisa para as normas com `formato: ue` no front matter (os
+    regulamentos da União Europeia). Muda só o reconhecimento do dispositivo —
+    "Artigo 5.º" no lugar de "Art. 5º", número "1." no lugar de "§ 1º" e
+    alínea "a)" pendurada direto no número, sem inciso romano no meio. Os ids
+    continuam os mesmos: art-5, art-5-p1, art-5-p1-a.
+
+    Continua valendo o que o resto do script já faz: um id que não estiver
+    aqui nunca vira link. Como o reconhecimento de *citações* (`_extrai_sufixos`)
+    é o da praxe brasileira, uma citação europeia com sufixo ("art. 5.º, n.º 1")
+    cai no artigo seco em vez do número — link menos preciso, nunca errado.
+    """
+    prefixo_id = f"{prefixo}-" if prefixo else ""
+    artigo = ""
+    subdivisao = ""
+    ids: set[str] = set()
+
+    for bloco in re.split(r"\n\s*\n", corpo):
+        bruto = bloco.strip()
+        if bruto.startswith("#"):
+            # Anexo não continua a numeração dos artigos — ver lei-anotada.html.
+            if bruto.lstrip("# ").startswith("ANEXO"):
+                artigo = subdivisao = ""
+            continue
+        if not bruto or "~~" in bruto:
+            continue
+
+        palavras = bruto.split(" ")
+        marcador = palavras[0]
+        id_ = ""
+
+        if marcador == "Artigo" and len(palavras) > 1:
+            numero = palavras[1].replace("º", "").replace("o", "").replace(".", "").lower()
+            artigo = f"{prefixo_id}art-{numero}"
+            subdivisao = ""
+            id_ = artigo
+        elif (m := re.fullmatch(r"([1-9]\d*)(?:-([A-Z]))?\\?\.", marcador)):
+            # O ponto vem escapado no texto-fonte (`1\.`) — ver lei-anotada.html.
+            # O sufixo de dispositivo acrescentado entra colado: 1-A → p1a.
+            subdivisao = "p" + m.group(1) + (m.group(2) or "").lower()
+            id_ = f"{artigo}-{subdivisao}"
+        else:
+            letra = marcador.rstrip(")")
+            base = letra.split("-")[0]
+            if marcador.endswith(")") and base in LETRAS and re.fullmatch(r"[a-j](?:-[A-Z])?", letra):
+                sufixado = letra.replace("-", "").lower()
+                id_ = f"{artigo}-{subdivisao}-{sufixado}" if subdivisao else f"{artigo}-{sufixado}"
 
         if id_ and artigo:
             ids.add(id_)

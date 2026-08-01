@@ -1,14 +1,15 @@
 <!-- Aviso obrigatório de toda nota. Fica no layout, e não no Markdown, para que
      nenhuma página da seção possa ser publicada sem ele. A data é a da última
-     revisão humana (`revisado_em` no front matter), escrita por extenso. -->
+     atualização de conteúdo (`atualizado_em` no front matter), escrita por
+     extenso — não é declaração de que alguém conferiu o texto. -->
 {% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: ',' %}
-{% assign dia = page.revisado_em | date: '%-d' %}
-{% assign mes = page.revisado_em | date: '%-m' | minus: 1 %}
-{% assign ano = page.revisado_em | date: '%Y' %}
+{% assign dia = page.atualizado_em | date: '%-d' %}
+{% assign mes = page.atualizado_em | date: '%-m' | minus: 1 %}
+{% assign ano = page.atualizado_em | date: '%Y' %}
 <aside class="nota-aviso" role="note">
     <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
     <div class="nota-aviso__corpo">
         <p><strong>Notas pessoais de estudo, redigidas com apoio de inteligência artificial (IA)</strong> e atualizadas em {{ dia }} de {{ meses[mes] }} de {{ ano }}.</p>
-        <p>Não representam a posição da ANPD nem de qualquer órgão público, não vinculam a Administração e não constituem orientação oficial nem aconselhamento jurídico. Textos gerados por IA podem conter erros.</p>
+        <p>Não representam a posição da ANPD nem de qualquer órgão público, não vinculam a Administração e não constituem orientação oficial nem aconselhamento jurídico. Contêm apenas informações disponíveis publicamente. Textos gerados por IA podem conter erros.</p>
     </div>
 </aside>

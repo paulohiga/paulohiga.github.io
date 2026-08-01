@@ -58,8 +58,8 @@ estratégia de performance e os dados estruturados.
 
 ## Notas de legislação (`/notas`)
 
-Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital), pública e
-indexável. É **isolada do restante do site**: layout, CSS, JS e includes
+Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital e o AI Act
+europeu), pública e indexável. É **isolada do restante do site**: layout, CSS, JS e includes
 próprios, sem passar pelo `default.html`, pelo `script.js` nem pelo
 `_data/pages.yml`. Uma mudança nas notas não pode afetar as quatro páginas de
 apresentação, e vice-versa.
@@ -69,12 +69,13 @@ apresentação, e vice-versa.
 - `_notas/<assunto>.md` — a nota publicada (comentários). Front matter:
   `layout: nota`, `permalink`, `title`, `description`, `lei` (a norma
   principal, pré-carregada no HTML), `normas_extra` (opcional — lista de
-  slugs de `_leis` para normas adicionais, ver abaixo) e `revisado_em` (data
-  da última revisão **humana**).
+  slugs de `_leis` para normas adicionais, ver abaixo) e `atualizado_em` (data
+  da última atualização de conteúdo — ver as regras editoriais, abaixo).
 - `_leis/<assunto>.md` — o texto legal em Markdown puro, sem âncoras nem
   classes. Front matter: `titulo`, `apelido`, `fonte`, `compilado_ate`
-  (opcional) e, só para normas adicionais (ver abaixo), `tipo` e `prefixo`.
-  **O texto da lei não se altera.**
+  (opcional), `formato` (opcional — `br`, o padrão, ou `ue`; ver "Normas
+  estrangeiras", abaixo) e, só para normas adicionais (ver abaixo), `tipo` e
+  `prefixo`. **O texto da lei não se altera.**
 - `_layouts/nota.html` monta os dois painéis; `_includes/lei-anotada.html`
   renderiza o texto legal dando um id a cada dispositivo.
 
@@ -147,6 +148,84 @@ destino segue um esquema previsível gerado por `lei-anotada.html`:
 | Inciso V do art. 5º | `art-5-v` |
 | Inciso I do § 1º do art. 52 | `art-52-p1-i` |
 | Alínea "b" do inciso II do art. 4º | `art-4-ii-b` |
+
+#### Normas estrangeiras (`formato: ue`)
+
+Uma norma da União Europeia marca o dispositivo de outro jeito, e o arquivo em
+`_leis/` sinaliza isso com `formato: ue` no front matter (o padrão, `br`, não
+precisa ser escrito). **O esquema de ids não muda** — muda só o que o include
+reconhece como dispositivo:
+
+| Dispositivo | id |
+| --- | --- |
+| Artigo 5.º | `art-5` |
+| Artigo 6.º-A | `art-6-a` |
+| n.º 1 do artigo 5.º (o "1." do texto) | `art-5-p1` |
+| alínea "a" do n.º 1 do artigo 5.º | `art-5-p1-a` |
+| alínea "a" de artigo sem números | `art-1-a` |
+
+Não há inciso romano entre o número e a alínea: a alínea se pendura no número
+corrente ou, na falta dele, no próprio artigo. **Subalíneas ficam de fora** —
+"ii)" e seguintes não recebem âncora, e "i)" é indistinguível da alínea "i)"
+de uma lista longa, então remissão a subalínea se confere no texto ou fica sem
+link. O mesmo vale para os considerandos, que não são dispositivos e não são
+ancorados.
+
+Três cuidados próprios desse formato:
+
+- **O ponto do número vem escapado** no arquivo de `_leis` (`1\. Texto`). Sem
+  isso o Kramdown lê "1. Texto" como lista ordenada: o dispositivo vira `<ol>`
+  em vez de `<p>` (perdendo a âncora, que é posta no primeiro `<p>`) e cada
+  bloco reinicia a numeração em 1. A barra não aparece na renderização.
+- **Anexo zera o artigo corrente.** Os itens de um anexo são "1.", "a)" como os
+  de um artigo, mas não pertencem a nenhum — sem zerar, o "1." do Anexo III
+  herdaria o último artigo e viraria `art-113-p1`. Conteúdo de anexo não é
+  ancorado.
+- **Id repetido não vira âncora.** O mesmo número pode ter duas listas de
+  alíneas independentes (o art. 43.º, n.º 1, do AI Act tem duas a)/b)); a
+  segunda entra sem âncora.
+
+`scripts/ancorar_referencias.py` acompanha o formato ao calcular os ids
+válidos, mas continua reconhecendo *citações* na praxe brasileira: uma citação
+europeia com sufixo ("art. 5.º, n.º 1") cai no artigo seco em vez do número —
+link menos preciso, nunca errado.
+
+#### Trazendo uma norma do EUR-Lex
+
+`scripts/converter_eurlex.py` converte o HTML oficial do Jornal Oficial para o
+Markdown de `_leis`, já nesse dialeto — ver o docstring do script para o uso.
+Ele depende de `beautifulsoup4` e `lxml`, ferramentas de autoria que não entram
+no site, como o `pyyaml` do script de ancoragem.
+
+O ato entra **inteiro**: preâmbulo, considerandos, articulado e anexos. Os
+considerandos não são dispositivos e não recebem âncora, mas ficam no painel —
+num regulamento europeu são eles que dizem por que cada regra existe, e a
+Comissão e o Tribunal de Justiça os usam para interpretar o articulado. Fica de
+fora só o aparato de notas de rodapé do JO, que é referência bibliográfica.
+
+Quando a União Europeia **ainda não publicou a versão consolidada** de uma
+norma alterada — é o caso do AI Act com o Digital Omnibus —, publique **os dois
+textos oficiais** no painel, e diga isso ao leitor na própria nota. O texto de
+uma norma alteradora é quase todo citação, e citação não recebe âncora.
+
+Uma consolidação pode ser oferecida ao lado deles, e é o que /notas/ai-act faz,
+sob três condições que não se negociam:
+
+- **gerada por script, nunca à mão** — `scripts/consolidar_ai_act.py` endereça
+  cada alteração e copia o texto novo do próprio arquivo do ato alterador;
+  nenhuma palavra é redigitada, e o script aborta se um dispositivo alvo sumir.
+  O arquivo gerado leva "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter;
+- **rotulada como não oficial** no `apelido`, no front matter e na nota, com o
+  aviso de que prevalece o Jornal Oficial em caso de divergência;
+- **acompanhada dos textos oficiais** no mesmo painel, para conferência.
+
+Dispositivo acrescentado por ato alterador leva sufixo, e o id o traz colado:
+o n.º 1-A é `art-5-p1a`, a alínea b-A) é `art-5-p1-ba`. Colado, e não com
+hífen, porque `art-5-p1-a` já é a alínea a) do n.º 1.
+
+Quando um dispositivo é **revogado**, a remissão a ele nos comentários aponta
+para o texto **original** (`#original-art-10-p5`), não para a consolidação, que
+por definição não o tem.
 
 Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
 citação. Sem JavaScript o link continua funcionando como âncora normal — não
@@ -225,14 +304,30 @@ dispositivo errado.
   doutrina e material de terceiros, não. Resuma com palavras próprias e cite.
 - **Sem dados pessoais** de partes ao comentar jurisprudência: refira o caso por
   número, órgão e tema.
-- `revisado_em` é atualizado **pelo humano** que revisou, não pela IA.
+- `atualizado_em` é a data da **última atualização de conteúdo** da nota. É o
+  que o aviso exibe ("atualizadas em…") e o que alimenta o `dateModified` do
+  JSON-LD e o `<lastmod>` do sitemap quando o histórico do git não estiver
+  disponível. Atualize-o sempre que mexer no conteúdo dos comentários — mas
+  **não** em correções que não mudam o que a nota afirma (typo, link, ajuste
+  de marcação).
+- O campo **não afirma que alguém conferiu o texto**: é data de atualização,
+  não de revisão. Era por isso que o nome antigo (`revisado_em`) foi trocado —
+  ele prometia uma revisão humana que nem sempre houve. Não reintroduza essa
+  leitura no aviso nem no nome do campo.
 
 ### Idioma
 
 Esta seção é **pt-br apenas** — exceção consciente à regra de replicação em
-en-us, que continua valendo para as quatro páginas de apresentação. O objeto é
-legislação brasileira e a manutenção em dois idiomas não se justifica. Não
-"corrija" isso criando `/en/notas`.
+en-us, que continua valendo para as quatro páginas de apresentação. O público é
+brasileiro e a manutenção em dois idiomas não se justifica. Não "corrija" isso
+criando `/en/notas`.
+
+Isso vale inclusive para as normas estrangeiras que entram na seção por
+iluminarem o direito brasileiro (é o caso do AI Act): os comentários são
+escritos em pt-br, e o painel "Lei seca" exibe a **versão oficial em
+português** da norma — no caso da União Europeia, o texto do EUR-Lex, que é
+PT-PT. Quando a terminologia oficial divergir da brasileira, explique a
+correspondência na própria nota em vez de reescrever o texto legal.
 
 ## Padrões técnicos a preservar
 

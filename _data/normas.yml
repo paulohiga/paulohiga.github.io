@@ -21,6 +21,26 @@
 #
 # Ao publicar uma nota nova ou uma norma extra nova, adicione a entrada aqui.
 
+ai-act-consolidado:
+  nota: ai-act
+  prefixo: ""
+  aliases:
+    - "AI Act"
+    - "Regulamento (UE) 2024/1689"
+    - "Regulamento de Inteligência Artificial"
+
+ai-act:
+  nota: ai-act
+  prefixo: "original"
+  aliases: []
+
+regulamento-2026-1744:
+  nota: ai-act
+  prefixo: "omnibus"
+  aliases:
+    - "Regulamento (UE) 2026/1744"
+    - "Digital Omnibus sobre a IA"
+
 eca-digital:
   nota: eca-digital
   prefixo: ""

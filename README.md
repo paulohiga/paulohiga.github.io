@@ -59,10 +59,15 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   └── style.css           # Todo o CSS — inserido inline no <head> de cada página
 │
 ├── _notas/                 # Notas de legislação (comentários)     → /notas/<assunto>
+│   ├── ai-act.md           #   Comentários sobre o AI Act europeu  → /notas/ai-act
 │   ├── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
 │   ├── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
 │   └── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
 ├── _leis/                  # Textos legais em Markdown puro (não viram página)
+│   ├── ai-act-consolidado.md     # AI Act + Omnibus, consolidação não oficial
+│   │                             #   (gerada; norma principal de /notas/ai-act)
+│   ├── ai-act.md           #   Regulamento (UE) 2024/1689, texto original
+│   ├── regulamento-2026-1744.md  # Digital Omnibus sobre a IA (norma extra)
 │   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
 │   ├── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
 │   └── mci.md              #   Lei nº 12.965/2014, texto compilado
@@ -243,6 +248,19 @@ bloco a bloco e dá a cada dispositivo um id previsível (`art-5`, `art-5-v`,
 um nível e prefixando os ids deles com `lei-` para não colidirem com os do
 comentário. Assim os arquivos `.md` continuam limpos: os comentários citam a lei
 com links Markdown comuns, como `([art. 5º, inciso V](#art-5-v))`.
+
+Normas da União Europeia marcam o dispositivo de outro jeito, e por isso o
+arquivo em `_leis/` pode declarar `formato: ue` no front matter: aí o include
+reconhece `Artigo 5.º`, o número `1.` (o equivalente ao parágrafo) e a alínea
+`a)` pendurada nele. **Os ids não mudam** — continuam `art-5`, `art-5-p1`,
+`art-5-p1-a` —, de modo que os links dos comentários e o campo "Ir para" valem
+igual nos dois formatos. Dispositivo acrescentado por ato alterador leva o
+sufixo colado no id: o n.º 1-A é `art-5-p1a`, a alínea b-A) é `art-5-p1-ba`.
+
+`scripts/converter_eurlex.py` traz uma norma do EUR-Lex para `_leis/`, e
+`scripts/consolidar_ai_act.py` gera a consolidação não oficial do AI Act
+aplicando as alterações do Digital Omnibus. Ambos dependem de `beautifulsoup4`
+e `lxml`, ferramentas de autoria que não entram no site.
 
 Dois casos ficam deliberadamente **sem âncora**, porque a âncora deve levar
 sempre ao texto desta lei e em vigor: os dispositivos citados dentro de blocos de
