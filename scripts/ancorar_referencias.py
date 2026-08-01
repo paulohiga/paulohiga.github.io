@@ -174,14 +174,17 @@ def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
             artigo = f"{prefixo_id}art-{numero}"
             subdivisao = ""
             id_ = artigo
-        elif re.fullmatch(r"[1-9]\d*\\?\.", marcador):
+        elif (m := re.fullmatch(r"([1-9]\d*)(?:-([A-Z]))?\\?\.", marcador)):
             # O ponto vem escapado no texto-fonte (`1\.`) — ver lei-anotada.html.
-            subdivisao = "p" + marcador.rstrip(".").rstrip("\\")
+            # O sufixo de dispositivo acrescentado entra colado: 1-A → p1a.
+            subdivisao = "p" + m.group(1) + (m.group(2) or "").lower()
             id_ = f"{artigo}-{subdivisao}"
         else:
             letra = marcador.rstrip(")")
-            if marcador.endswith(")") and letra in LETRAS:
-                id_ = f"{artigo}-{subdivisao}-{letra}" if subdivisao else f"{artigo}-{letra}"
+            base = letra.split("-")[0]
+            if marcador.endswith(")") and base in LETRAS and re.fullmatch(r"[a-j](?:-[A-Z])?", letra):
+                sufixado = letra.replace("-", "").lower()
+                id_ = f"{artigo}-{subdivisao}-{sufixado}" if subdivisao else f"{artigo}-{sufixado}"
 
         if id_ and artigo:
             ids.add(id_)

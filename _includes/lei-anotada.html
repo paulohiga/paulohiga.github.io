@@ -165,13 +165,29 @@
                     que é posta no primeiro <p>) e cada bloco reiniciaria a
                     numeração em 1. A barra sai na renderização.
                 {%- endcomment -%}
+                {%- comment -%}
+                    Um ato alterador acrescenta dispositivos entre os que já
+                    existem, e o número deles leva sufixo: "1-A.", "b-B)". A
+                    lógica é a mesma dos números e alíneas simples, com o
+                    sufixo entrando no id colado, em minúscula: o n.º 1-A é
+                    `art-5-p1a` e a alínea b-A) é `art-5-p1-ba`. Colado, e não
+                    com hífen, porque `art-5-p1-a` já é a alínea a) do n.º 1 —
+                    com hífen, o número 1-A colidiria com ela.
+                {%- endcomment -%}
                 {%- assign numero = marcador | remove: '\' -%}
-                {%- assign digitos = numero | remove: '.' -%}
-                {%- assign valor = digitos | plus: 0 -%}
-                {%- capture reconstruido -%}{{ valor }}.{%- endcapture -%}
+                {%- assign pedacos = numero | remove: '.' | split: '-' -%}
+                {%- assign valor = pedacos[0] | plus: 0 -%}
+                {%- assign sufixo = '' -%}
+                {%- if pedacos.size == 2 and pedacos[1].size == 1 -%}
+                    {%- assign sufixo = pedacos[1] -%}
+                {%- endif -%}
+                {%- capture reconstruido -%}{{ valor }}{% if sufixo != '' %}-{{ sufixo }}{% endif %}.{%- endcapture -%}
 
                 {%- if reconstruido == numero -%}
                     {%- assign subdivisao = valor | prepend: 'p' -%}
+                    {%- if sufixo != '' -%}
+                        {%- assign subdivisao = subdivisao | append: sufixo | downcase -%}
+                    {%- endif -%}
                     {%- assign inciso = '' -%}
                     {%- assign id = artigo | append: '-' | append: subdivisao -%}
                     {%- assign tipo = 'paragrafo' -%}
@@ -179,12 +195,22 @@
                 {%- else -%}
                     {%- assign letra = marcador | remove: ')' -%}
                     {%- assign fechamento = marcador | slice: -1 -%}
-                    {%- if fechamento == ')' and letras contains letra -%}
+                    {%- assign pl = letra | split: '-' -%}
+                    {%- assign vale = false -%}
+                    {%- if fechamento == ')' and letras contains pl[0] -%}
+                        {%- if pl.size == 1 -%}
+                            {%- assign vale = true -%}
+                        {%- elsif pl.size == 2 and pl[1].size == 1 -%}
+                            {%- assign vale = true -%}
+                        {%- endif -%}
+                    {%- endif -%}
+                    {%- if vale -%}
                         {%- assign id = artigo -%}
                         {%- if subdivisao != '' -%}
                             {%- assign id = id | append: '-' | append: subdivisao -%}
                         {%- endif -%}
-                        {%- assign id = id | append: '-' | append: letra -%}
+                        {%- assign letra_id = letra | replace: '-', '' | downcase -%}
+                        {%- assign id = id | append: '-' | append: letra_id -%}
                         {%- assign tipo = 'alinea' -%}
                     {%- endif -%}
                 {%- endif -%}

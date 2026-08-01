@@ -204,13 +204,28 @@ Comissão e o Tribunal de Justiça os usam para interpretar o articulado. Fica d
 fora só o aparato de notas de rodapé do JO, que é referência bibliográfica.
 
 Quando a União Europeia **ainda não publicou a versão consolidada** de uma
-norma alterada, é o caso do AI Act com o Digital Omnibus: publique as **duas
-normas separadas** (a alterada como `lei`, a alteradora em `normas_extra`) e
-diga isso ao leitor na própria nota. Não monte uma consolidação à mão — o
-resultado não seria o texto de nenhuma fonte oficial. O texto de uma norma
-alteradora é quase todo citação, e citação não recebe âncora: as remissões dos
-comentários devem apontar para o dispositivo na norma alterada, sinalizando em
-texto o que mudou.
+norma alterada — é o caso do AI Act com o Digital Omnibus —, publique **os dois
+textos oficiais** no painel, e diga isso ao leitor na própria nota. O texto de
+uma norma alteradora é quase todo citação, e citação não recebe âncora.
+
+Uma consolidação pode ser oferecida ao lado deles, e é o que /notas/ai-act faz,
+sob três condições que não se negociam:
+
+- **gerada por script, nunca à mão** — `scripts/consolidar_ai_act.py` endereça
+  cada alteração e copia o texto novo do próprio arquivo do ato alterador;
+  nenhuma palavra é redigitada, e o script aborta se um dispositivo alvo sumir.
+  O arquivo gerado leva "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter;
+- **rotulada como não oficial** no `apelido`, no front matter e na nota, com o
+  aviso de que prevalece o Jornal Oficial em caso de divergência;
+- **acompanhada dos textos oficiais** no mesmo painel, para conferência.
+
+Dispositivo acrescentado por ato alterador leva sufixo, e o id o traz colado:
+o n.º 1-A é `art-5-p1a`, a alínea b-A) é `art-5-p1-ba`. Colado, e não com
+hífen, porque `art-5-p1-a` já é a alínea a) do n.º 1.
+
+Quando um dispositivo é **revogado**, a remissão a ele nos comentários aponta
+para o texto **original** (`#original-art-10-p5`), não para a consolidação, que
+por definição não o tem.
 
 Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
 citação. Sem JavaScript o link continua funcionando como âncora normal — não

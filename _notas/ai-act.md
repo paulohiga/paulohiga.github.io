@@ -3,9 +3,9 @@ layout: nota
 permalink: /notas/ai-act
 title: AI Act — Regulamento de Inteligência Artificial da União Europeia
 description: Notas de estudo sobre o Regulamento (UE) 2024/1689 — pirâmide de risco, práticas proibidas, sistemas de alto risco, modelos de finalidade geral, governança e sanções, já com as alterações do Digital Omnibus, e a comparação com o PL nº 2338/2023.
-lei: ai-act
-normas_extra: [regulamento-2026-1744]
-atualizado_em: 2026-07-31
+lei: ai-act-consolidado
+normas_extra: [ai-act, regulamento-2026-1744]
+atualizado_em: 2026-08-01
 ---
 
 ## Normas
@@ -20,9 +20,13 @@ atualizado_em: 2026-07-31
 
 - [Regulamento (UE) 2026/1744, de 8 de julho de 2026](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — **Digital Omnibus sobre a IA**. Altera o Regulamento (UE) 2024/1689, o Regulamento de Base da Aviação (UE) 2018/1139 e o Regulamento Máquinas (UE) 2023/1230 quanto à simplificação da execução das regras harmonizadas de IA. Publicado no JOUE de 24 de julho de 2026 e **em vigor desde 27 de julho de 2026**. É a primeira alteração de fundo do AI Act, e está sinalizada ao longo desta nota como **Digital Omnibus**.
 
-> **Sobre o painel "Lei seca".** As duas normas estão ali **na íntegra**, com os considerandos — os 180 do AI Act e os do Omnibus. Eles não são dispositivos e não recebem âncora, mas num regulamento europeu é neles que está o *porquê* de cada regra, e tanto a Comissão quanto o Tribunal de Justiça os usam para interpretar o articulado.
+> **Sobre o painel "Lei seca".** O EUR-Lex ainda **não publicou a versão consolidada** do AI Act com as alterações do Omnibus. O painel traz, então, **três textos**, selecionáveis no alto:
 >
-> O EUR-Lex ainda **não publicou a versão consolidada** do AI Act com as alterações do Omnibus. Por isso o painel traz as **duas normas separadas**, selecionáveis no alto: o Regulamento (UE) 2024/1689 na redação original do Jornal Oficial, e o Regulamento (UE) 2026/1744 com as alterações. Na prática, isso significa que **um dispositivo alterado aparece no texto do AI Act na redação antiga** — a redação nova está no Omnibus, em bloco de citação. Cada ponto em que isso ocorre está sinalizado nos comentários abaixo. Consolidar os dois à mão produziria um texto que não é o de nenhuma fonte oficial, e por isso não foi feito.
+> 1. **AI Act consolidado (não oficial)** — o que abre por padrão, e o alvo dos links destes comentários. É o Regulamento (UE) 2024/1689 com as 43 alterações do art. 1.º do Omnibus já aplicadas, geradas por script a partir dos dois textos oficiais: nenhuma palavra foi redigitada, e o script para se um dispositivo alvo não for encontrado. **Não é fonte oficial** — serve para ler o regulamento como ele vigora hoje, mas em caso de divergência prevalece o Jornal Oficial.
+> 2. **AI Act (texto original)** — o Regulamento (UE) 2024/1689 como publicado em 12/7/2024, para quem precise da redação anterior de um dispositivo alterado. É para onde aponta, por exemplo, o link do art. 10.º, n.º 5, que a consolidação não tem porque foi revogado.
+> 3. **Digital Omnibus sobre a IA** — o Regulamento (UE) 2026/1744, o ato alterador em si.
+>
+> Os três estão ali **na íntegra**, com os considerandos — os 180 do AI Act e os 47 do Omnibus. Considerando não é dispositivo e não recebe âncora, mas num regulamento europeu é neles que está o *porquê* de cada regra, e tanto a Comissão quanto o Tribunal de Justiça os usam para interpretar o articulado.
 
 ### Regulamentos e atos aplicáveis
 
@@ -298,7 +302,7 @@ Sete requisitos, cumulativos e verificados ao longo de todo o ciclo de vida:
 
 - **Gestão de riscos** ([art. 9.º](#art-9)) — processo iterativo e contínuo de identificação, estimativa e mitigação dos riscos previsíveis para a saúde, a segurança e os direitos fundamentais, incluindo os decorrentes de utilização indevida razoavelmente previsível, com atenção específica a crianças e a grupos vulneráveis.
 - **Dados e governação de dados** ([art. 10.º](#art-10)) — conjuntos de treino, validação e teste pertinentes, suficientemente representativos, tão isentos de erros quanto possível e completos para a finalidade prevista, com exame de possíveis enviesamentos e consideração do contexto geográfico e comportamental de uso.
-    - **Digital Omnibus**: o [n.º 5 deste artigo](#art-10-p5) foi **revogado** e seu conteúdo virou um artigo próprio e bem mais detalhado — o novo **art. 4.º-A**, "Tratamento de categorias especiais de dados pessoais para deteção e correção de enviesamentos". O tratamento excecional dessas categorias passa a depender de **seis condições cumulativas**: impossibilidade de obter o resultado com dados sintéticos ou anonimizados; limitações técnicas de reutilização e pseudonimização; controlo rigoroso e documentado de acesso; proibição de transmissão a terceiros; eliminação assim que corrigido o enviesamento; e registro das razões nas atividades de tratamento. Um segundo número estende a faculdade — sem criar dever — aos prestadores de outros sistemas e modelos e aos responsáveis pela implantação. Resolve um impasse real do desenho original (exigir prova de ausência de discriminação racial ou de gênero sem permitir tratar os dados que a revelariam), e é o mesmo dilema que a [LGPD](/notas/lgpd#art-11) enfrenta no seu [art. 11](/notas/lgpd#art-11), sem solução equivalente. O texto está no [art. 1.º do Omnibus](#omnibus-art-1), item 6.
+    - **Digital Omnibus**: o [n.º 5 deste artigo](#original-art-10-p5) foi **revogado** — o link vai ao texto original, porque no consolidado ele já não existe — e seu conteúdo virou um artigo próprio e bem mais detalhado, o novo [art. 4.º-A](#art-4-a), "Tratamento de categorias especiais de dados pessoais para deteção e correção de enviesamentos". O tratamento excecional dessas categorias passa a depender de **seis condições cumulativas**: impossibilidade de obter o resultado com dados sintéticos ou anonimizados; limitações técnicas de reutilização e pseudonimização; controlo rigoroso e documentado de acesso; proibição de transmissão a terceiros; eliminação assim que corrigido o enviesamento; e registro das razões nas atividades de tratamento. Um segundo número estende a faculdade — sem criar dever — aos prestadores de outros sistemas e modelos e aos responsáveis pela implantação. Resolve um impasse real do desenho original (exigir prova de ausência de discriminação racial ou de gênero sem permitir tratar os dados que a revelariam), e é o mesmo dilema que a [LGPD](/notas/lgpd#art-11) enfrenta no seu [art. 11](/notas/lgpd#art-11), sem solução equivalente. O texto está no [art. 1.º do Omnibus](#omnibus-art-1), item 6.
 - **Documentação técnica** ([art. 11.º](#art-11)) — elaborada **antes** da colocação no mercado, com o conteúdo mínimo do Anexo IV, e mantida atualizada.
 - **Conservação de registros** ([art. 12.º](#art-12)) — registro automático de eventos (_logs_) ao longo do ciclo de vida, apto a assegurar rastreabilidade proporcional à finalidade.
 - **Transparência e prestação de informações** ([art. 13.º](#art-13)) — funcionamento suficientemente transparente para que o responsável pela implantação interprete os resultados e os utilize adequadamente, com instruções de utilização claras.
@@ -498,7 +502,7 @@ São 43 itens de alteração ao AI Act, no [art. 1.º do Omnibus](#omnibus-art-1
 
 **Simplifica**:
 
-- artigo próprio para o tratamento de **dados de categorias especiais** na detecção e correção de enviesamentos (novo **art. 4.º-A**, com o [art. 10.º, n.º 5](#art-10-p5), revogado);
+- artigo próprio para o tratamento de **dados de categorias especiais** na detecção e correção de enviesamentos (novo [art. 4.º-A](#art-4-a), com o [art. 10.º, n.º 5](#original-art-10-p5), revogado);
 - **critério do componente de segurança** afinado no [art. 6.º](#art-6) (novos n.º 1-A a 1-C): IA usada só para conforto, desempenho, eficiência ou controlo de qualidade **não** é componente de segurança — salvo se a sua falha puder pôr em perigo a saúde e a segurança —, e a avaliação por terceiros exigida por riscos alheios à saúde e à segurança (interferência eletromagnética, espetro de radiofrequências) deixa de arrastar o sistema para o alto risco;
 - **documentação técnica simplificada** para PME e pequenas empresas de média capitalização, em formulário que a Comissão deve criar e que os organismos notificados são obrigados a aceitar ([art. 11.º](#art-11));
 - normas harmonizadas que cubram **simultaneamente** o AI Act e a legislação setorial ([art. 40.º](#art-40));
