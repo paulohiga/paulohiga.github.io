@@ -43,13 +43,13 @@ Toda organização precisa de duas coisas: uma lista de quem pode decidir o quê
 
 Ele responde a perguntas bem concretas. Quem assina uma norma da ANPD? Como um processo chega a um diretor? O que acontece quando um diretor quer mais tempo para estudar um caso? Uma empresa investigada pode falar na reunião em que seu caso será decidido — e por quanto tempo? O que a Agência publica, e em quanto tempo? Quando a decisão sai, ainda cabe recurso?
 
-O Regimento tem 75 artigos organizados em seis títulos. Os dois primeiros são curtos e apenas dizem o que a ANPD é ([art. 1º](#art-1)) e de que peças ela é feita ([art. 2º](#art-2)). O Título III trata do **Conselho Diretor**, o colegiado de cinco diretores que é o órgão máximo da casa. O Título IV despacha em dois artigos o Conselho Nacional de Proteção de Dados Pessoais e da Privacidade (CNPD), que tem regimento próprio. O Título V distribui competências entre as unidades administrativas — é a parte mais desatualizada do texto. E o Título VI, o maior e o mais interessante, é o **manual do rito**: como se delibera, como se edita norma, como se ouve a sociedade, como se recorre.
+O Regimento tem 75 artigos organizados em seis títulos. Os dois primeiros são curtos e apenas dizem o que a ANPD é ([art. 1º](#art-1)) e de que peças ela é feita ([art. 2º](#art-2)). O Título III trata do **Conselho Diretor**, o colegiado de cinco diretores que é o órgão máximo da casa. O Título IV despacha em dois artigos o Conselho Nacional de Proteção de Dados Pessoais e da Privacidade (CNPD), que tem regimento próprio. O Título V distribui competências entre as unidades administrativas — é a parte cujos nomes de unidade mais mudaram desde 2021. E o Título VI, o maior deles, é o **manual do rito**: como se delibera, como se edita norma, como se ouve a sociedade, como se recorre.
 
-O ponto central, para quem está chegando agora: a ANPD **não decide por uma pessoa**. Nem o Diretor-Presidente decide sozinho o que a Agência pensa. As decisões que importam são colegiadas, tomadas por cinco pessoas com mandato fixo, em ritos que se parecem muito com os de um tribunal — relator, pauta, manifestação oral dos interessados, pedido de vista, voto de qualidade. Esse desenho não é acidente: é o que sustenta, na prática, a autonomia técnica e decisória de que fala o [art. 1º](#art-1).
+Um ponto de partida útil para quem está chegando agora: a ANPD **não decide por uma pessoa**. As deliberações são colegiadas ([art. 19](#art-19)), tomadas por cinco diretores com mandato fixo, em ritos próximos aos de um tribunal — relator, pauta, manifestação oral dos interessados, pedido de vista, voto de qualidade.
 
 ## Decreto, regimento, resolução: quem escreve o quê
 
-Três documentos diferentes, três autores diferentes, três funções diferentes. Confundi-los é o erro mais comum de quem começa a ler a normatização da ANPD.
+Três documentos diferentes, três autores diferentes, três funções diferentes — e três nomes que se parecem o bastante para valer a distinção.
 
 | Documento | Quem edita | Para que serve | Qual é hoje |
 | --- | --- | --- | --- |
@@ -101,7 +101,7 @@ E a correspondência com o texto de 2021, para ler o Regimento sem se perder:
 | [Coordenação-Geral de Tecnologia e Pesquisa](#art-18) | **SITEC** — Superintendência de Inovação Tecnológica (estudos e pesquisas; fomento a ambientes digitais seguros; Laboratório de Inovação) |
 | — | **Auditoria** e **Escritório do Encarregado** não existiam em 2021 |
 
-Duas leituras que o organograma novo entrega de graça. A primeira: a **SFI** é a que concentra mais cargos e funções comissionados entre as seis superintendências, e está dividida em quatro Coordenações-Gerais que correspondem às quatro etapas do trabalho — **monitorar** (com coordenações de monitoramento preventivo, tratamento de requerimentos e inteligência), **fiscalizar**, **sancionar** e tratar **incidentes de segurança** (esta com coordenação de perícia própria). A segunda: há coordenações espelhadas para **proteção de dados** e para **crianças e adolescentes no ambiente digital**, tanto na fiscalização quanto nas sanções — a marca visível de que o [ECA Digital](/notas/eca-digital) virou frente permanente de trabalho, e não um apêndice da LGPD.
+Dois registros sobre o organograma novo. A **SFI** é a que concentra mais cargos e funções comissionados entre as seis superintendências, e está dividida em quatro Coordenações-Gerais que correspondem a quatro etapas do trabalho — **monitoramento** (com coordenações de monitoramento preventivo, tratamento de requerimentos e inteligência), **fiscalização**, **sanções** e **incidentes de segurança** (esta com coordenação de perícia própria). E há coordenações espelhadas para **proteção de dados** e para **crianças e adolescentes no ambiente digital**, tanto na fiscalização quanto nas sanções, o que corresponde às duas frentes de atuação da Agência nessas matérias ([ECA Digital](/notas/eca-digital) e [LGPD](/notas/lgpd)).
 
 ## O Conselho Diretor
 
@@ -109,7 +109,7 @@ Duas leituras que o organograma novo entrega de graça. A primeira: a **SFI** é
 
 O Conselho Diretor é o **órgão máximo de direção** da ANPD, com cinco diretores, incluído o Diretor-Presidente ([art. 3º](#art-3)). Eles são escolhidos pelo Presidente da República e nomeados **depois de aprovados pelo Senado**, com mandato de **quatro anos**, e só perdem o cargo por renúncia, condenação judicial transitada em julgado ou demissão em processo administrativo disciplinar ([LGPD, arts. 55-D](/notas/lgpd#art-55-d) e [55-E](/notas/lgpd#art-55-e)).
 
-Essa estabilidade é o coração do arranjo. Um dirigente que pode ser exonerado a qualquer momento decide olhando para quem o nomeou; um diretor com mandato protegido pode decidir contra o governo, contra uma estatal ou contra uma empresa poderosa e continuar no cargo no dia seguinte. É o que dá conteúdo prático à expressão "autonomia técnica e decisória" do [art. 1º](#art-1).
+São essas duas garantias — mandato por prazo certo e rol fechado de hipóteses de perda do cargo — que a lei associa à **autonomia técnica e decisória** mencionada no [art. 1º](#art-1) do Regimento: um diretor não pode ser exonerado por discordar de quem o nomeou.
 
 Cada diretor conta com um **Gerente de Projeto** diretamente subordinado ([§ 1º](#art-3-p1)) — o equivalente, aqui, ao gabinete de um magistrado: a estrutura mínima para estudar processos e redigir votos.
 
@@ -120,12 +120,12 @@ O quórum tem duas partes, fáceis de embaralhar:
 - **quórum de instalação**: maioria **absoluta** — três dos cinco diretores precisam estar presentes para a reunião existir ([art. 27](#art-27));
 - **quórum de decisão**: maioria **simples** — decide-se pela maioria dos votos ([art. 19](#art-19)).
 
-E há quatro regras de contagem que costumam surpreender quem lê pela primeira vez:
+E há quatro regras de contagem que convém destacar:
 
 - **Voto proferido não caduca.** O cômputo leva em conta os votos já dados por diretores que estejam ausentes **ou cujo mandato já tenha se encerrado** ([§ 1º](#art-19-p1)). Um voto proferido em março continua contando em julho, mesmo que quem o proferiu já tenha deixado a Agência.
-- **Quem sucede não revota.** O diretor substituto ou sucessor daquele que já votou não participa da deliberação ([§ 2º](#art-19-p2)) — do contrário, a troca de um diretor viraria mecanismo de reversão de resultado.
+- **Quem sucede não revota.** O diretor substituto ou sucessor daquele que já votou não participa da deliberação ([§ 2º](#art-19-p2)) — o voto do antecessor permanece no cômputo, e o sucessor não o substitui.
 - **Salvo mudança de contexto.** O próprio colegiado pode excepcionar a regra do voto que sobrevive, se fatos, provas ou circunstâncias supervenientes tiverem alterado o contexto decisório ([§ 3º](#art-19-p3)).
-- **Alcançado o quórum, ninguém trava a votação saindo da sala.** Obtido o quórum de deliberação, a ausência de um diretor não impede o encerramento ([art. 4º, § 1º](#art-4-p1)).
+- **Alcançado o quórum, a ausência não interrompe a votação.** Obtido o quórum de deliberação, a ausência de um diretor não impede o encerramento ([art. 4º, § 1º](#art-4-p1)).
 
 Havendo **empate**, o Diretor-Presidente tem, além do voto ordinário, o **voto de qualidade** ([art. 20](#art-20)) — vota duas vezes, na prática, quando o placar fecha empatado.
 
@@ -174,7 +174,7 @@ Esta é a parte que mais se parece com um tribunal. Vale acompanhar o caminho in
 
 Todo processo que sobe ao Conselho Diretor é **sorteado** entre os diretores, de forma igualitária, observados os princípios da publicidade, da equanimidade e da proporcionalidade ([art. 23](#art-23)). O diretor sorteado vira o **relator** daquela matéria.
 
-Por que sorteio, e não distribuição por afinidade temática? Pela mesma razão que existe no Judiciário: se alguém pudesse escolher quem decide o quê, poderia escolher o resultado. O Regimento reforça a garantia em várias camadas:
+O sorteio é a mesma técnica de distribuição usada no Judiciário: nenhuma autoridade escolhe quem decide cada caso. O Regimento o cerca de várias regras:
 
 - o sorteio é **proporcional ao tipo de procedimento** ([§ 1º](#art-23-p1)) — ninguém acumula só processos sancionadores enquanto outro fica com pedidos de informação;
 - o **resultado do sorteio é publicado** no site da ANPD ([§ 3º](#art-23-p3));
@@ -198,13 +198,13 @@ A partir daí, a matéria segue por um de dois trilhos ([art. 3º, § 2º](#art-
 | É pública? | Sim, e pode ser transmitida ao vivo ([art. 29](#art-29)) | Não há sessão; o **inteiro teor dos votos** vai ao site em até 5 dias do encerramento ([art. 43, § 3º](#art-43-p3)) |
 | Manifestação oral | Sim, 15 minutos por matéria | Não |
 
-O circuito é o instrumento de eficiência do colegiado: evita reunir cinco pessoas para reafirmar o que já está pacificado. Mas o Regimento cerca o atalho — **o Diretor-Presidente, ou dois diretores em conjunto, podem puxar a matéria do circuito para a reunião** ([art. 40, § 2º](#art-40-p2)), justamente para permitir o debate oral. A **PFE** (o Regimento diz "Consultor Jurídico") e o **Ouvidor** são comunicados de toda abertura de circuito ([§ 3º](#art-40-p3)). E, se o prazo termina sem quórum, a matéria vai para a pauta da reunião seguinte ([art. 43, § 1º](#art-43-p1)).
+O circuito dispensa a sessão, e o Regimento prevê o caminho de volta: **o Diretor-Presidente, ou dois diretores em conjunto, podem levar à Reunião Deliberativa a matéria que está em circuito** ([art. 40, § 2º](#art-40-p2)), a fim de proporcionar o debate oral das questões suscitadas. A **PFE** (o Regimento diz "Consultor Jurídico") e o **Ouvidor** são comunicados de toda abertura de circuito ([§ 3º](#art-40-p3)). E, se o prazo termina sem quórum, a matéria vai para a pauta da reunião seguinte ([art. 43, § 1º](#art-43-p1)).
 
 ### 3. Na reunião: destaque, manifestação oral, debate e voto
 
 A ordem dos trabalhos é fixa ([art. 30](#art-30)): verifica-se quem está presente; anunciam-se as matérias **destacadas** e as **retiradas de pauta**; proclamam-se as aprovadas por unanimidade; e só então se discutem as demais.
 
-O mecanismo do **destaque** ([art. 31](#art-31)) é o que dá ritmo à sessão, e é mais engenhoso do que parece. No começo da reunião, qualquer diretor pode destacar uma matéria — a sua ou a de outro. As que **ninguém destacou** são proclamadas aprovadas **por unanimidade**, nos termos do voto do relator, sem leitura e sem debate ([§ 2º](#art-31-p2)). É o equivalente a uma lista de consenso: silêncio vale como concordância, e o tempo da sessão fica reservado ao que é efetivamente controverso. Pedido de vista e manifestação oral exigem destaque ([§ 1º](#art-31-p1)).
+O mecanismo do **destaque** ([art. 31](#art-31)) é o que organiza a sessão. No começo da reunião, qualquer diretor pode destacar uma matéria — a sua ou a de outro. As que **ninguém destacou** são proclamadas aprovadas **por unanimidade**, nos termos do voto do relator, sem leitura e sem debate ([§ 2º](#art-31-p2)): funciona como uma lista de consenso, em que o silêncio equivale à concordância. Pedido de vista e manifestação oral exigem destaque ([§ 1º](#art-31-p1)).
 
 Ainda no art. 31: o relator pode substituir a leitura do relatório por um resumo, com autorização do colegiado ([§ 3º](#art-31-p3)); e o diretor impossibilitado de comparecer pode, excepcionalmente, **enviar o voto antecipadamente** ao Diretor-Presidente, para apresentação na hora da votação, desde que esteja no exercício regular da função naquela data ([§ 5º](#art-31-p5)).
 
@@ -215,7 +215,7 @@ A **manifestação oral** ([art. 32](#art-32)) é o direito de o interessado —
 - a inscrição pode ser **indeferida com motivação**, quanto a cabimento, legitimidade e tempestividade ([§ 3º](#art-32-p3));
 - cabe em qualquer procedimento levado ao colegiado, **exceto nos normativos** ([§ 5º](#art-32-p5)) — para norma de caráter geral o canal de participação é outro: consulta e audiência públicas;
 - é permitida **uma única vez**, sem interrupção, e só sobre a matéria destacada, no momento da relatoria e antes de aberta a deliberação ([§ 6º](#art-32-p6)); quem exceder o tempo ou fugir do objeto pode ter a palavra cassada ([§ 7º](#art-32-p7));
-- **não se recebem documentos durante a reunião** ([§ 8º](#art-32-p8)) — prova se junta nos autos, no tempo da instrução, não da tribuna.
+- **não se recebem documentos durante a reunião** ([§ 8º](#art-32-p8)): os relacionados à matéria em apreciação devem ser juntados aos autos antes dela.
 
 Encerradas as manifestações, o relator pode pedir o adiamento para a reunião seguinte ou apresentar seu voto ([§ 4º](#art-32-p4)). Apresentado o voto, abre-se o **debate** entre os diretores ([art. 33](#art-33)); encerrado o debate, o relator ainda pode pedir adiamento, **uma única vez**, para reanalisar o tema ([§ 1º](#art-33-p1)). Cada diretor vota de forma fundamentada, oralmente ou por escrito, e o Diretor-Presidente computa os votos e proclama o resultado ([§ 2º](#art-33-p2)).
 
@@ -231,7 +231,7 @@ Depois de proferido o voto do relator, **qualquer diretor** pode pedir vista da 
 - Durante a vista, o diretor pode pedir informação e parecer às áreas da ANPD ([art. 35](#art-35)). Esses pedidos têm **prioridade** e prazo impreterível ([§ 1º](#art-35-p1)); se a área não conseguir cumprir, devolve os autos justificando e indicando o prazo adicional necessário ([§ 2º](#art-35-p2)) — e aí o diretor, ainda dentro do prazo de vista, tem de escolher: apresentar voto ou propor a conversão em diligência ([§ 3º](#art-35-p3)).
 - Vencido o prazo, a matéria volta **automaticamente** à pauta da reunião seguinte ([art. 36](#art-36)), e a tramitação dos autos dentro da casa não serve de motivo para adiar essa inclusão ([parágrafo único](#art-36-pu)).
 
-A razão de ser desse conjunto de regras é fácil de reconhecer: em colegiados sem prazo de vista, um único pedido pode congelar um caso por anos. Aqui, o pedido tem teto, a prorrogação é única e a devolução à pauta é automática.
+Em resumo, o pedido de vista tem teto de prazo, prorrogação única e devolução automática à pauta.
 
 ### 5. Conversão da deliberação em diligência ([arts. 37](#art-37) e [38](#art-38))
 
@@ -239,13 +239,13 @@ Se o diretor conclui que a matéria não está madura — falta uma informação
 
 Aprovada, o colegiado fixa **prazo específico** para concluir a diligência ([art. 38](#art-38)). A área consultada devolve os autos ao diretor proponente, que tem **30 dias** para pautar a matéria ([§ 1º](#art-38-p1)). Se a área não responder no prazo, o diretor apresenta voto deliberativo ou pede dilação ([§ 2º](#art-38-p2)). E se o colegiado **rejeitar** a conversão ou a dilação, a matéria volta automaticamente à pauta seguinte, ocasião em que o proponente terá de votar o mérito ([§ 3º](#art-38-p3)).
 
-A diferença em relação ao pedido de vista é útil de guardar: **vista** é tempo para o diretor **estudar** o que já está nos autos; **diligência** é tempo para a Agência **produzir** o que ainda não está.
+A diferença em relação ao pedido de vista: **vista** é tempo para o diretor **estudar** o que já está nos autos; **diligência** é tempo para a Agência **produzir** o que ainda não está.
 
 ### 6. A ata ([arts. 44](#art-44) a [47](#art-47))
 
 Quem registra é a **SE**, e a ata é assinada pelos diretores presentes ([art. 44](#art-44)). O conteúdo mínimo ([art. 45](#art-45)): dia, hora, local e quem presidiu; presentes e ausentes, com justificativas; identificação dos interessados e participantes; os fatos ocorridos; e a síntese da deliberação, **com indicação dos votos favoráveis e contrários ao voto do relator** ([inciso V](#art-45-v)) — ou seja, a ata mostra as divergências, não só o resultado.
 
-A ata é aprovada até a reunião seguinte e divulgada em até **5 dias** da aprovação ([art. 46](#art-46)). E há uma regra de prevalência que raramente se vê escrita: havendo divergência, prevalecem sobre o teor da ata, **nesta ordem**, as gravações, os votos escritos e os demais documentos de suporte ([art. 47](#art-47)). A ata é o resumo; a fonte é o registro.
+A ata é aprovada até a reunião seguinte e divulgada em até **5 dias** da aprovação ([art. 46](#art-46)). Há ainda uma regra de prevalência: havendo divergência, prevalecem sobre o teor da ata, **nesta ordem**, as gravações, os votos escritos e os demais documentos de suporte ([art. 47](#art-47)).
 
 ## Glossário do rito
 
@@ -283,7 +283,7 @@ A Agência não se manifesta "por comunicado". Cada tipo de manifestação tem f
 
 O rol é aberto — a ANPD se manifesta por esses instrumentos "dentre outros" —, mas o [parágrafo único](#art-51-pu) fecha o essencial: **resolução, enunciado, ata de deliberação e consulta pública de minuta de ato normativo são de competência exclusiva do Conselho Diretor**. Nenhuma unidade da Agência edita norma, fixa interpretação vinculante ou abre consulta pública normativa por conta própria.
 
-O detalhe do **enunciado** merece atenção: ele vincula **a Agência**, não o administrado. É a ANPD dizendo publicamente "é assim que eu vou interpretar isto" e amarrando-se à própria palavra. Para o regulado, o efeito prático é previsibilidade — sabe-se de antemão como a autoridade lerá o dispositivo —, sem que o enunciado crie obrigação nova, que só resolução (ou lei) pode criar.
+Quanto ao **enunciado**, o [inciso II](#art-51-ii) delimita o alcance do efeito vinculativo: ele vincula **a Agência**, e não o administrado. O enunciado fixa como a ANPD interpretará o dispositivo, sem criar obrigação nova — o que só resolução (ou lei) pode fazer.
 
 ## Como nasce uma norma da ANPD
 
@@ -310,21 +310,21 @@ O caminho está nos [arts. 63](#art-63) a [66](#art-66), e vale seguir na ordem.
 
 A consulta pública tem regras que vale conhecer, porque definem o que se pode esperar dela:
 
-- a divulgação no site é feita **na mesma data** da publicação no DOU e vem acompanhada dos documentos da matéria ([§ 2º](#art-62-p2)): informes e demais manifestações das áreas técnicas, **incluindo a AIR** ([I](#art-62-p2-i)); manifestações da **PFE**, quando houver ([II](#art-62-p2-ii)); análises e votos dos diretores sobre a minuta ([III](#art-62-p2-iii)); e um **texto resumido** que explique de forma clara e suficiente o objeto da consulta ([IV](#art-62-p2-iv)) — este último é o que torna a consulta acessível a quem não é advogado;
+- a divulgação no site é feita **na mesma data** da publicação no DOU e vem acompanhada dos documentos da matéria ([§ 2º](#art-62-p2)): informes e demais manifestações das áreas técnicas, **incluindo a AIR** ([I](#art-62-p2-i)); manifestações da **PFE**, quando houver ([II](#art-62-p2-ii)); análises e votos dos diretores sobre a minuta ([III](#art-62-p2-iii)); e um **texto resumido** que explique de forma clara e suficiente o objeto da consulta ([IV](#art-62-p2-iv));
 - as críticas e sugestões **devidamente justificadas** são apreciadas quando da elaboração da proposta final ([§ 3º](#art-62-p3));
 - pedidos de **prorrogação** são decididos pelo colegiado ([§ 4º](#art-62-p4)), e os prazos devem considerar complexidade, relevância e interesse público da matéria ([§ 5º](#art-62-p5));
-- **a ANPD não é obrigada a comentar cada contribuição individualmente** ([§ 6º](#art-62-p6)): pode agrupá-las por conexão e eliminar as repetitivas ou de conteúdo não conexo. É uma limitação honesta — consulta pública não é processo com direito a resposta individual —, e mostra que o peso de uma contribuição está na sua qualidade argumentativa, não no volume de envios idênticos.
+- **a ANPD não é obrigada a comentar ou considerar cada contribuição individualmente** ([§ 6º](#art-62-p6)): pode agrupá-las por conexão e eliminar as repetitivas ou de conteúdo não conexo ou irrelevante para a matéria. A consulta pública não é, portanto, um processo com direito a resposta individual.
 
 Na audiência pública, a participação, a manifestação e o oferecimento de documentos são facultados a **qualquer interessado**, diretamente ou por meio de organizações e associações legalmente reconhecidas ([art. 60, § 1º](#art-60-p1)); o procedimento é detalhado em portaria ([§ 3º](#art-60-p3)); e a gravação pode ir ao site, salvo inviabilidade técnica ([art. 61](#art-61)).
 
 ## Enunciados: a jurisprudência administrativa da casa
 
-O capítulo dos enunciados monta um sistema pequeno e bem pensado, que funciona como a súmula de um tribunal:
+O capítulo dos enunciados monta um sistema com a mesma mecânica de uma súmula de tribunal:
 
 - o procedimento corre em **autos próprios**, disponíveis no site ([art. 67](#art-67));
 - a iniciativa de editar, alterar ou revogar enunciado é do Diretor-Presidente, de diretores ou de unidades da ANPD ([art. 68](#art-68));
-- a **SE** organiza a numeração, sempre acompanhada da **menção aos dispositivos legais e às decisões** que fundamentam o enunciado ([art. 69](#art-69)) — o enunciado não nasce do nada, nasce de decisões;
-- enunciado revogado **não tem o número reaproveitado**: fica vago, com nota de cancelamento; o que é apenas modificado **conserva o número**, com a ressalva correspondente ([parágrafo único](#art-69-pu)). É exatamente o que se faz com súmulas — a numeração precisa ser um endereço estável;
+- a **SE** organiza a numeração, sempre acompanhada da **menção aos dispositivos legais e às decisões** que fundamentam o enunciado ([art. 69](#art-69));
+- enunciado revogado **não tem o número reaproveitado**: fica vago, com nota de cancelamento; o que é apenas modificado **conserva o número**, com a ressalva correspondente ([parágrafo único](#art-69-pu)), como se faz com as súmulas dos tribunais;
 - enunciados são datados, numerados em séries separadas e contínuas, e publicados **no site e no DOU** ([art. 70](#art-70));
 - e cabe à **SE** varrer periodicamente as **deliberações reiteradas** e apontá-las ao Diretor-Presidente, para avaliar se já é hora de fixar o entendimento em enunciado ([art. 71](#art-71)).
 
@@ -341,7 +341,7 @@ O capítulo dos enunciados monta um sistema pequeno e bem pensado, que funciona 
 ## Quando ainda dá para recorrer
 
 - O **recurso administrativo** segue, no que couber, a Lei nº 9.784/1999, a legislação especial e os regulamentos da ANPD ([art. 73](#art-73)). A **instância máxima** da Agência é o Conselho Diretor ([parágrafo único](#art-73-pu)) — combinado com o [art. 5º, VIII](#art-5-viii), fecha o desenho: a **SFI** decide em primeira instância, o colegiado reexamina.
-- Quando o Conselho Diretor funciona como **instância única** — decidindo originariamente, sem decisão anterior a rever —, não há a quem recorrer acima. Nesse caso cabe **pedido de reconsideração**, devidamente fundamentado ([art. 74](#art-74)), distribuído a um **diretor distinto** daquele que proferiu o voto condutor da decisão recorrida ([parágrafo único](#art-74-pu)). Não é recurso a outra instância; é um pedido para que o mesmo colegiado reveja o que decidiu, com a relatoria trocada para reduzir o risco de o reexame ser apenas a confirmação do próprio ponto de vista.
+- Quando o Conselho Diretor funciona como **instância única** — decidindo originariamente, sem decisão anterior a rever —, não há a quem recorrer acima. Nesse caso cabe **pedido de reconsideração**, devidamente fundamentado ([art. 74](#art-74)), distribuído a um **diretor distinto** daquele que proferiu o voto condutor da decisão recorrida ([parágrafo único](#art-74-pu)). Não é recurso a outra instância: é um pedido para que o mesmo colegiado reveja o que decidiu, com a relatoria trocada.
 - Esgotada a via administrativa, resta o **Judiciário**: "terminativo" ([art. 5º, IX](#art-5-ix)) qualifica o encerramento da discussão **dentro** da Agência, e nada mais.
 - Casos omissos do próprio Regimento são resolvidos pelo Conselho Diretor ([art. 75](#art-75)).
 
@@ -365,14 +365,14 @@ Um resumo dos prazos de transparência espalhados pelo Regimento — útil para 
 
 A publicidade tem um limite explícito: quando a divulgação ampla puder violar sigilo protegido por lei ou a intimidade, a privacidade ou a dignidade de alguém, a participação na reunião e a divulgação do conteúdo ficam **restritas às partes e a seus procuradores** ([art. 29, § 1º](#art-29-p1)).
 
-## Detalhes que envelheceram, e dois deslizes de remissão
+## Detalhes que envelheceram
 
 Ler um regimento de 2021 em 2026 exige alguns ajustes de tradução. Os principais:
 
 - **"Órgão integrante da Presidência da República"** ([art. 1º](#art-1)) — a ANPD é hoje autarquia de natureza especial, agência reguladora vinculada ao Ministério da Justiça e Segurança Pública.
 - **"Autoridade Nacional"** — hoje **Agência** Nacional de Proteção de Dados, pela Lei nº 15.352/2026. A troca alcança inclusive o efeito vinculativo do enunciado ([art. 51, II](#art-51-ii)), que se lê hoje como vinculação da Agência.
 - **Decreto nº 10.474/2020** — citado no preâmbulo da portaria e em quase todos os artigos de competência do Título V; foi revogado pelo Decreto nº 12.881/2026.
-- **Coordenações-Gerais do Título V** — substituídas pelas seis superintendências (ver a tabela de correspondência, acima). Na prática, o Título V é a parte do Regimento que se lê hoje como registro histórico.
+- **Coordenações-Gerais do Título V** — substituídas pelas seis superintendências (ver a tabela de correspondência, acima).
 - **"Assessoria Jurídica"** e **"Consultor Jurídico"** ([arts. 15](#art-15), [27](#art-27) e [50](#art-50)) — funções que hoje correspondem à **PFE** e ao **Procurador-Chefe**.
 - **"Secretaria-Geral"** ([arts. 42](#art-42), [44](#art-44), [69](#art-69) e [71](#art-71)) — o apoio ao colegiado é hoje da **SE**, pela Coordenação-Geral de Articulação Interna e Apoio aos Colegiados.
 
@@ -389,16 +389,8 @@ Para consulta rápida, as siglas usadas nestes comentários:
 | **SRII** | Superintendência de Relações Institucionais e Internacionais |
 | **SITEC** | Superintendência de Inovação Tecnológica |
 
-E dois deslizes de remissão que sobreviveram à publicação — pequenos, mas boas lições sobre por que a técnica legislativa importa:
+## O que não está aqui
 
-- o [art. 68](#art-68) manda instaurar processo "nos termos do art. 68", remetendo a si mesmo; pelo contexto, o dispositivo pretendido é o [art. 67](#art-67), que trata dos autos próprios do enunciado;
-- o [art. 74, parágrafo único](#art-74-pu) manda distribuir o pedido de reconsideração "conforme o Capítulo I, Seção V" — mas a Seção V daquele capítulo é a **Da Ata**; a distribuição está na **Seção II**.
-
-Nenhum dos dois compromete a compreensão, e é justamente por isso que sobreviveram: ninguém erra a interpretação, então ninguém corrige o texto.
-
-## Pontos de atenção
-
-- **O Regimento não traz o processo sancionador.** Ele mesmo remete essa disciplina a regulamento próprio ([art. 49, parágrafo único](#art-49-pu)), com base nos [arts. 52](/notas/lgpd#art-52) e [53](/notas/lgpd#art-53) da LGPD. Quem procura prazos de defesa, dosimetria de multa ou rito de apuração precisa dos regulamentos de fiscalização e de dosimetria — não deste texto.
-- **A defasagem entre estrutura e rito.** A estrutura da ANPD foi reescrita em 2026 (decreto novo, seis superintendências, carreira própria); o rito continua o de 2021. Isso não invalida o Regimento — ritos envelhecem mais devagar que organogramas —, mas cria o desconforto de um texto que nomeia unidades inexistentes para atribuir tarefas que continuam sendo feitas.
-- **Um regime de agência reguladora que ainda não aparece no Regimento.** Desde a Lei nº 15.352/2026 a ANPD está sob a [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm), que traz suas próprias exigências de processo decisório, agenda regulatória, análise de impacto regulatório, consulta pública e prestação de contas. Boa parte já estava no Regimento de 2021 — que, nesse ponto, se antecipou —, mas a compatibilização fina entre os dois textos é assunto em aberto.
-- **Três leis, um só colegiado.** Quando o Regimento foi escrito, a ANPD aplicava uma lei. Hoje aplica três — [LGPD](/notas/lgpd), [ECA Digital](/notas/eca-digital) e [Marco Civil](/notas/mci) —, com o mesmo Conselho Diretor de cinco membros, as mesmas reuniões mensais e os mesmos 30 dias de vista. O organograma de 2026 respondeu à sobrecarga criando coordenações temáticas espelhadas na **SFI**; o rito do colegiado, por ora, é o mesmo de 2021.
+- **O processo sancionador.** O Regimento remete essa disciplina a regulamento próprio ([art. 49, parágrafo único](#art-49-pu)), na forma dos [arts. 52](/notas/lgpd#art-52) e [53](/notas/lgpd#art-53) da LGPD. Prazos de defesa, dosimetria de multa e rito de apuração estão nos regulamentos de fiscalização e de dosimetria, não neste texto.
+- **O regime das agências reguladoras.** Desde a Lei nº 15.352/2026 a ANPD está sob a [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm), que tem exigências próprias de processo decisório, agenda regulatória, análise de impacto regulatório, consulta pública e prestação de contas. O Regimento de 2021 é anterior a essa mudança e não faz remissão a ela.
+- **O funcionamento do CNPD**, que tem regimento interno próprio ([art. 9º](#art-9)), e o das unidades administrativas, hoje regidas pela estrutura regimental do Decreto nº 12.881/2026.
