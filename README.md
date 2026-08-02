@@ -62,7 +62,9 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   ├── ai-act.md           #   Comentários sobre o AI Act europeu  → /notas/ai-act
 │   ├── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
 │   ├── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
-│   └── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
+│   ├── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
+│   └── regimento-interno-anpd.md  # Comentários sobre o Regimento
+│                           #     Interno da ANPD          → /notas/regimento-interno-anpd
 ├── _leis/                  # Textos legais em Markdown puro (não viram página)
 │   ├── ai-act-consolidado.md     # AI Act + Omnibus, consolidação não oficial
 │   │                             #   (gerada; norma principal de /notas/ai-act)
@@ -70,7 +72,9 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 │   ├── regulamento-2026-1744.md  # Digital Omnibus sobre a IA (norma extra)
 │   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
 │   ├── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
-│   └── mci.md              #   Lei nº 12.965/2014, texto compilado
+│   ├── mci.md              #   Lei nº 12.965/2014, texto compilado
+│   └── regimento-interno-anpd.md  # Regimento Interno da ANPD (Anexo da
+│                           #     Portaria nº 1/2021), como publicado no DOU
 ├── _layouts/nota.html      # Casca das notas: dois painéis lado a lado
 ├── _includes/
 │   ├── nota-head.html      # <head> das notas (canonical, OG, JSON-LD Article)

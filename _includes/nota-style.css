@@ -386,6 +386,63 @@ body:not(.js) .lei-ir {
     margin-top: 0.4rem;
 }
 
+/* Tabelas dos comentários (comparações, correspondências, glossários).
+
+   A tabela tem de caber sempre na largura do painel: no mobile o painel ocupa
+   a tela toda, e uma tabela mais larga do que ele empurraria a página inteira
+   para a rolagem horizontal. Envolvê-la numa caixa rolável seria a saída
+   usual, mas o kramdown não gera esse invólucro e a marcação dos comentários
+   é Markdown puro — então o ajuste é feito na própria tabela, com três peças:
+
+   - `width: 100%` com o algoritmo automático de colunas, que reparte o espaço
+     disponível conforme o conteúdo de cada coluna;
+   - `overflow-wrap: break-word` nas células, que quebra a palavra que não
+     couber na coluna sem encolher a coluna abaixo da maior palavra dela — é o
+     que mantém a repartição do espaço sensata quando há folga;
+   - no painel estreito (ver a consulta de mídia adiante), `overflow-wrap:
+     anywhere` no lugar dele, com `min-width` de contrapeso: `anywhere` é o
+     que garante que a largura mínima da tabela nunca supere a do painel, por
+     mais extenso que seja o vocabulário jurídico da célula, e o `min-width`
+     impede que uma coluna de rótulos curtos encolha a poucos caracteres. */
+.painel--comentarios .painel__corpo table {
+    width: 100%;
+    margin: 1rem 0 1.25rem;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+}
+
+.painel--comentarios .painel__corpo th,
+.painel--comentarios .painel__corpo td {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--hairline);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: break-word;
+}
+
+.painel--comentarios .painel__corpo th {
+    background: var(--surface-tint);
+    font-weight: 600;
+}
+
+/* Painel estreito — tanto o de uma coluna só (abaixo de 900px) quanto o
+   painel de comentários lado a lado numa janela pequena. Aqui a soma das
+   maiores palavras de cada coluna já passa da largura disponível, e
+   `break-word` não basta para a tabela caber: `anywhere` permite quebrar em
+   qualquer ponto (zerando a largura mínima da coluna) e o `min-width`
+   devolve um piso, para nenhuma coluna virar uma tira de dois caracteres.
+   O corte em 1100px é onde a medição para de acusar estouro com
+   `break-word`; o padding menor é o que faz três colunas caberem nos ~330px
+   de painel de um telefone de 360px. */
+@media (max-width: 1100px) {
+    .painel--comentarios .painel__corpo th,
+    .painel--comentarios .painel__corpo td {
+        padding: 0.5rem;
+        overflow-wrap: anywhere;
+        min-width: 4.5rem;
+    }
+}
+
 /* Links para dispositivos da lei: sublinhado pontilhado para se distinguirem
    dos links externos, que levam o leitor para fora da página. */
 .painel--comentarios a[href^="#art-"] {
