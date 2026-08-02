@@ -60,8 +60,8 @@ decreto-12880:
     - "Decreto 12.880/2026"
     - "Decreto 12.880"
 
-portaria-1-anpd:
-  nota: portaria-1-anpd
+regimento-interno-anpd:
+  nota: regimento-interno-anpd
   prefixo: ""
   aliases:
     - "Regimento Interno da ANPD"
