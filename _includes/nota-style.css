@@ -506,7 +506,8 @@ body:not(.js) .lei-ir {
 
 /* --- Duas colunas --- */
 @media (min-width: 900px) {
-    body {
+    /* Apenas quando há painéis (notas individuais, não a página de índice) */
+    body:has(#comentarios, #lei) {
         height: 100dvh;
         overflow: hidden;
     }
