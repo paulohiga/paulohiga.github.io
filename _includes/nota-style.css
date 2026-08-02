@@ -386,6 +386,44 @@ body:not(.js) .lei-ir {
     margin-top: 0.4rem;
 }
 
+/* Tabelas dos comentários (comparações, correspondências, glossários).
+
+   A tabela tem de caber sempre na largura do painel: no mobile o painel ocupa
+   a tela toda, e uma tabela mais larga do que ele empurraria a página inteira
+   para a rolagem horizontal. Envolvê-la numa caixa rolável seria a saída
+   usual, mas o kramdown não gera esse invólucro e a marcação dos comentários
+   é Markdown puro — então o ajuste é feito na própria tabela, com três peças:
+
+   - `width: 100%` com o algoritmo automático de colunas, que reparte o espaço
+     disponível conforme o conteúdo de cada coluna;
+   - `overflow-wrap: anywhere` nas células, que permite quebrar uma palavra
+     longa demais e assim garante que a largura mínima da tabela nunca supere
+     a do painel, por mais extenso que seja o vocabulário jurídico da célula;
+   - `min-width` nas células, o contrapeso: sem ele, `anywhere` deixaria uma
+     coluna de rótulos curtos encolher a poucos caracteres. Três colunas de
+     5,5rem cabem folgadas na tela estreita mais comum. */
+.painel--comentarios .painel__corpo table {
+    width: 100%;
+    margin: 1rem 0 1.25rem;
+    border-collapse: collapse;
+    font-size: 0.94rem;
+}
+
+.painel--comentarios .painel__corpo th,
+.painel--comentarios .painel__corpo td {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid var(--hairline);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    min-width: 5.5rem;
+}
+
+.painel--comentarios .painel__corpo th {
+    background: var(--surface-tint);
+    font-weight: 600;
+}
+
 /* Links para dispositivos da lei: sublinhado pontilhado para se distinguirem
    dos links externos, que levam o leitor para fora da página. */
 .painel--comentarios a[href^="#art-"] {

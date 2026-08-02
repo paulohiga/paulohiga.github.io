@@ -58,8 +58,12 @@ estratégia de performance e os dados estruturados.
 
 ## Notas de legislação (`/notas`)
 
-Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital e o AI Act
-europeu), pública e indexável. É **isolada do restante do site**: layout, CSS, JS e includes
+Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital, o AI Act
+europeu e o Regimento Interno da ANPD), pública e indexável. Nem toda norma
+comentada é lei em sentido estrito — o Regimento Interno é ato do Conselho
+Diretor da ANPD, aprovado por portaria —, mas a estrutura da seção é a mesma:
+comentários de um lado, texto da norma do outro.
+É **isolada do restante do site**: layout, CSS, JS e includes
 próprios, sem passar pelo `default.html`, pelo `script.js` nem pelo
 `_data/pages.yml`. Uma mudança nas notas não pode afetar as quatro páginas de
 apresentação, e vice-versa.
