@@ -184,6 +184,7 @@
 
     /* --- Abas, quando os painéis não cabem lado a lado --- */
     var abas = Array.prototype.slice.call(document.querySelectorAll('[data-painel]'));
+    var scrollPositions = {};
 
     function mostrarPainel(nome) {
         document.body.setAttribute('data-painel-ativo', nome);
@@ -194,8 +195,17 @@
 
     abas.forEach(function (aba) {
         aba.addEventListener('click', function () {
+            var painelAtual = document.body.getAttribute('data-painel-ativo') || 'comentarios';
+            // Em mobile (uma coluna), guardar a posição de scroll do painel que estamos deixando
+            if (!duasColunas.matches && painelAtual !== aba.dataset.painel) {
+                scrollPositions[painelAtual] = window.scrollY;
+            }
             mostrarPainel(aba.dataset.painel);
-            window.scrollTo({ top: 0, behavior: 'auto' });
+            // Restaurar posição de scroll do novo painel
+            if (!duasColunas.matches) {
+                var posicao = scrollPositions[aba.dataset.painel] || 0;
+                window.scrollTo({ top: posicao, behavior: 'auto' });
+            }
         });
     });
 
