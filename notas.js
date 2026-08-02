@@ -195,7 +195,6 @@
     abas.forEach(function (aba) {
         aba.addEventListener('click', function () {
             mostrarPainel(aba.dataset.painel);
-            window.scrollTo({ top: 0, behavior: 'auto' });
         });
     });
 
