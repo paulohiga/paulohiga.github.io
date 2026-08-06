@@ -39,7 +39,7 @@ O RGPD não tem "decreto regulamentador". O detalhamento vem de três fontes dis
 
 ### Normas correlatas
 
-- [Diretiva (UE) 2016/680](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016L0680) — a "diretiva policial", gêmea do RGPD para o tratamento por autoridades penais. É o regime que o RGPD deixa de fora no [art. 2.º, n.º 2, alínea d)](#art-2-p2-d), e a lacuna que a [LGPD](/notas/lgpd) tem no [art. 4º, III](/notas/lgpd#art-4-iii) — no Brasil, a lei específica correspondente ainda não foi editada.
+- [Diretiva (UE) 2016/680](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016L0680) — a "diretiva policial", gêmea do RGPD para o tratamento por autoridades penais. Cobre exatamente o campo que o RGPD exclui no [art. 2.º, n.º 2, alínea d)](#art-2-p2-d) e que a [LGPD](/notas/lgpd) também exclui, no [art. 4º, III](/notas/lgpd#art-4-iii). A diferença está no instrumento e no calendário: a União tratou o tema numa diretiva editada no mesmo dia do RGPD; no Brasil, a legislação específica que o [art. 4º, § 1º](/notas/lgpd#art-4-p1) prevê ainda não foi editada.
 - [Regulamento (UE) 2018/1725](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1725) — o RGPD das próprias instituições da União, fiscalizado pela Autoridade Europeia para a Proteção de Dados (AEPD).
 - [Diretiva 2002/58/CE (ePrivacy)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32002L0058) — é ela, e não o RGPD, que exige consentimento para _cookies_ e para o acesso ao equipamento terminal do usuário. O [art. 95.º](#art-95) do RGPD preserva essa divisão, que o Digital Omnibus propõe desfazer.
 - [Regulamento (UE) 2022/2065 — Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
@@ -49,7 +49,7 @@ O RGPD não tem "decreto regulamentador". O detalhamento vem de três fontes dis
 
 ## Resumo geral
 
-O RGPD é a lei de proteção de dados mais copiada do mundo, e a [LGPD](/notas/lgpd) é uma de suas cópias — declarada, adaptada e, desde 2026, oficialmente reconhecida como equivalente. Entender o regulamento europeu é, para um leitor brasileiro, entender de onde vieram o controlador e o operador, as bases legais, o encarregado, o relatório de impacto e a multa proporcional ao faturamento.
+O RGPD e a [LGPD](/notas/lgpd) compartilham vocabulário e arquitetura: controlador e operador, bases legais para o tratamento, direitos do titular em capítulo próprio, encarregado, relatório de impacto, alcance extraterritorial e multa proporcional ao faturamento. As duas foram escritas na mesma década e no mesmo debate internacional, e desde janeiro de 2026 os dois regimes se reconhecem mutuamente como adequados. Para um leitor brasileiro, ler o regulamento europeu serve a duas coisas ao mesmo tempo: é a norma que alcança diretamente quem oferece bens ou serviços na Europa, e é o termo de comparação mais útil para enxergar onde a solução brasileira coincide com a europeia e onde segue caminho próprio.
 
 Três decisões estruturais explicam quase tudo o que vem depois.
 
@@ -88,7 +88,7 @@ Um regulamento europeu, em regra, não admite lei nacional no mesmo campo. O RGP
 - as **limitações** a direitos e princípios por razões de segurança, defesa e interesse público ([art. 23.º](#art-23));
 - as **coimas aplicáveis a autoridades e organismos públicos** ([art. 83.º, n.º 7](#art-83-p7)): cada país decide se o Estado paga multa — e vários decidiram que não.
 
-É por isso que, na prática, não existe "o RGPD" isolado: existe o RGPD mais a lei de proteção de dados de cada país. Comparações apressadas com a [LGPD](/notas/lgpd) costumam tropeçar aqui.
+É por isso que, na prática, não existe "o RGPD" isolado: existe o RGPD mais a lei de proteção de dados de cada país. Vale ter isso em conta ao comparar com a [LGPD](/notas/lgpd) — de um lado está uma lei nacional; do outro, um regulamento **mais** a lei do Estado-Membro que importa no caso.
 
 ### Terminologia: PT-PT × pt-BR
 
@@ -217,16 +217,16 @@ Todo tratamento precisa de **pelo menos uma** base, escolhida **antes** de o tra
 
 São **seis**, contra as **dez** hipóteses do [art. 7º da LGPD](/notas/lgpd#art-7). A lei brasileira criou bases que a europeia não tem — proteção do crédito ([inciso X](/notas/lgpd#art-7-x)), tutela da saúde ([inciso VIII](/notas/lgpd#art-7-viii)) e exercício regular de direitos em processo ([inciso VI](/notas/lgpd#art-7-vi)) — e recortou de forma diferente o que na Europa cabe numa base só.
 
-Duas regras europeias que a LGPD não repete:
+Duas regras do RGPD sem paralelo no texto da LGPD:
 
-- **O setor público não pode invocar interesse legítimo** no exercício de suas funções ([art. 6.º, n.º 1, último parágrafo](#art-6-p1)). No Brasil, nada equivalente: o [art. 7º, IX](/notas/lgpd#art-7-ix) não faz essa ressalva, embora o [art. 23](/notas/lgpd#art-23) dê ao Poder Público um regime próprio.
+- **O setor público não pode invocar interesse legítimo** no exercício de suas funções ([art. 6.º, n.º 1, último parágrafo](#art-6-p1)). A LGPD não traz vedação equivalente no [art. 7º, IX](/notas/lgpd#art-7-ix); a disciplina do Poder Público está concentrada, no Brasil, no capítulo próprio do [art. 23](/notas/lgpd#art-23).
 - **Bases dos incisos c) e e) exigem previsão em lei** da União ou do Estado-Membro ([art. 6.º, n.º 3](#art-6-p3)) — não basta o responsável achar que há obrigação ou interesse público.
 
-O [art. 6.º, n.º 4](#art-6-p4) traz o **teste de compatibilidade** para tratamento com finalidade nova: consideram-se o vínculo entre as finalidades, o contexto da coleta, a natureza dos dados, as consequências e a existência de salvaguardas como cifragem ou pseudonimização. Se passar no teste, não é preciso nova base — uma engrenagem que a LGPD não tem de forma explícita.
+O [art. 6.º, n.º 4](#art-6-p4) traz o **teste de compatibilidade** para tratamento com finalidade nova: consideram-se o vínculo entre as finalidades, o contexto da coleta, a natureza dos dados, as consequências e a existência de salvaguardas como cifragem ou pseudonimização. Se passar no teste, não é preciso nova base. A LGPD não escreve esse teste: o controle do uso posterior fica com os princípios da **finalidade** e da **adequação** ([art. 6º, I](/notas/lgpd#art-6-i) e [II](/notas/lgpd#art-6-ii)).
 
 ### Consentimento ([arts. 7.º](#art-7) e [8.º](#art-8))
 
-O RGPD é mais duro que a LGPD aqui, e é este o ponto em que mais se erra ao transpor um programa de conformidade europeu para o Brasil (ou vice-versa):
+O RGPD escreve quatro condições de validade do consentimento que a LGPD não detalha no mesmo grau — e é um dos pontos que costumam exigir ajuste quando um programa de conformidade passa de um regime para o outro:
 
 - o responsável tem de **poder demonstrar** que o titular consentiu ([n.º 1](#art-7-p1));
 - num documento que trate de outros assuntos, o pedido de consentimento tem de ser **claramente distinguível**, inteligível e em linguagem clara ([n.º 2](#art-7-p2));
@@ -243,7 +243,7 @@ A técnica é a mesma do [art. 11 da LGPD](/notas/lgpd#art-11) — proibição c
 
 Sobre a alínea e) — dados "manifestamente tornados públicos pelo titular" —, o Tribunal de Justiça a leu de forma **estrita** em 2024 (processo C-446/21): declarar publicamente a própria orientação sexual num evento não autoriza a plataforma a usar esse dado para publicidade personalizada. A regra brasileira do [art. 7º, § 4º](/notas/lgpd#art-7-p4), sobre dados tornados manifestamente públicos, guarda o mesmo espírito — dispensa a base, não dispensa a finalidade legítima.
 
-O [art. 10.º](#art-10) reserva o tratamento de **dados de condenações e infrações penais** ao controle de autoridade pública ou a autorização legal com garantias adequadas, e proíbe registros completos de condenações fora do controle estatal. Não há dispositivo equivalente na LGPD — o que, no Brasil, joga essa discussão para o Marco Civil, o sigilo processual e a Lei de Acesso à Informação.
+O [art. 10.º](#art-10) reserva o tratamento de **dados de condenações e infrações penais** ao controle de autoridade pública ou a autorização legal com garantias adequadas, e proíbe registros completos de condenações fora do controle estatal. A LGPD não tem dispositivo específico sobre esses dados; no Brasil, a matéria é regida pelo sigilo processual, pela Lei de Acesso à Informação e pelas regras de certidões e antecedentes.
 
 ## Direitos do titular (Capítulo III, [arts. 12.º a 23.º](#art-12))
 
@@ -259,13 +259,13 @@ Dois artigos densos, e a distinção entre eles é a origem do dado: [art. 13.º
 
 Em ambos entram: identidade e contato do responsável e do encarregado, finalidades **e a base jurídica**, os legítimos interesses invocados, destinatários, transferências internacionais e suas garantias, prazo de conservação, os direitos do titular, o direito de reclamar à autoridade e a existência de **decisões automatizadas**, com "informações úteis relativas à lógica subjacente" e as consequências previstas.
 
-É o dispositivo mais exigente do regulamento em matéria de transparência, e é bem mais detalhado que o [art. 9º da LGPD](/notas/lgpd#art-9). Não por acaso, a transparência foi escolhida pelo CEPD como tema de sua [ação coordenada de fiscalização de 2026](https://www.edpb.europa.eu/news/news/2025/coordinated-enforcement-framework-edpb-selects-topic-2026_en).
+São as listas mais longas do regulamento: somadas, passam de vinte itens entre os dois artigos, contra os seis incisos do [art. 9º da LGPD](/notas/lgpd#art-9) — que, em compensação, delega à ANPD a fixação de conteúdo adicional. Transparência é também o tema escolhido pelo CEPD para a sua [ação coordenada de fiscalização de 2026](https://www.edpb.europa.eu/news/news/2025/coordinated-enforcement-framework-edpb-selects-topic-2026_en).
 
 ### Acesso, retificação, apagamento, limitação e portabilidade ([arts. 15.º a 20.º](#art-15))
 
 - **Acesso** ([art. 15.º](#art-15)) — confirmação, cópia dos dados e um rol de metadados. O Tribunal de Justiça já decidiu que "destinatários" significa a **identidade** de quem recebeu os dados, salvo impossibilidade, e não apenas as categorias.
 - **Retificação** ([art. 16.º](#art-16)) — correção e completação, inclusive por declaração adicional.
-- **Apagamento**, o "**direito a ser esquecido**" ([art. 17.º](#art-17)) — em seis hipóteses ([n.º 1](#art-17-p1)), entre elas o fim da necessidade, a retirada do consentimento, a oposição procedente e o tratamento ilícito. O [n.º 2](#art-17-p2) manda o responsável que tornou os dados públicos avisar os demais responsáveis; o [n.º 3](#art-17-p3) exclui, entre outras, a liberdade de expressão e informação. A LGPD trata do tema como **eliminação** ([art. 18, VI](/notas/lgpd#art-18-vi)), sem a mesma engenharia de exceções.
+- **Apagamento**, o "**direito a ser esquecido**" ([art. 17.º](#art-17)) — em seis hipóteses ([n.º 1](#art-17-p1)), entre elas o fim da necessidade, a retirada do consentimento, a oposição procedente e o tratamento ilícito. O [n.º 2](#art-17-p2) manda o responsável que tornou os dados públicos avisar os demais responsáveis; o [n.º 3](#art-17-p3) exclui, entre outras, a liberdade de expressão e informação. A LGPD trata do tema como **eliminação** ([art. 18, VI](/notas/lgpd#art-18-vi)), que é direito do titular sem lista de hipóteses e exceções no próprio dispositivo — as ressalvas estão no [art. 16](/notas/lgpd#art-16), que fixa quando os dados podem ser conservados.
 - **Limitação do tratamento** ([art. 18.º](#art-18)) — o dado fica conservado, mas congelado. É o **bloqueio** do [art. 18, IV, da LGPD](/notas/lgpd#art-18-iv).
 - **Notificação a terceiros** ([art. 19.º](#art-19)) — o responsável comunica retificações, apagamentos e limitações a cada destinatário, e informa quem são, se o titular pedir. Espelha o [art. 18, § 6º, da LGPD](/notas/lgpd#art-18-p6).
 - **Portabilidade** ([art. 20.º](#art-20)) — em formato estruturado, de uso corrente e leitura automática, e com direito à transmissão **direta** entre responsáveis quando tecnicamente possível ([n.º 2](#art-20-p2)). O direito é mais estreito do que se costuma supor: só alcança dados **fornecidos pelo titular**, tratados por meios automatizados, e apenas quando a base for **consentimento ou contrato** ([n.º 1](#art-20-p1)). Nada de portabilidade sobre dado tratado por legítimo interesse.
@@ -276,7 +276,7 @@ O **direito de oposição** ([art. 21.º](#art-21)) vale contra tratamentos fund
 
 O [art. 22.º](#art-22) dá ao titular o direito de **não ficar sujeito** a decisão exclusivamente automatizada com efeitos jurídicos ou impacto significativo. As exceções ([n.º 2](#art-22-p2)) são necessidade contratual, autorização legal e consentimento explícito — e, mesmo nelas, o responsável deve assegurar **intervenção humana**, o direito de manifestar o ponto de vista e o de contestar a decisão ([n.º 3](#art-22-p3)). Decisão automatizada sobre **dados sensíveis** só nas condições do [n.º 4](#art-22-p4).
 
-Aqui está uma das divergências mais consequentes com a lei brasileira. O [art. 20 da LGPD](/notas/lgpd#art-20) garante o direito de **solicitar revisão** de decisões automatizadas — e o veto ao § 3º original derrubou justamente a exigência de que a revisão fosse feita por pessoa natural. A construção brasileira de um "envolvimento humano significativo" veio depois, por [interpretação da ANPD](/notas/lgpd#envolvimento-humano-significativo), enquanto na Europa a intervenção humana está no texto da lei desde 2016. E, no [processo C-634/21](https://curia.europa.eu/juris/liste.jsf?num=C-634/21), de 7 de dezembro de 2023, o Tribunal de Justiça foi além: a **produção do escore** por um birô de crédito já é, ela própria, decisão automatizada quando o banco decide com base determinante nele — a responsabilidade não é só de quem nega o crédito.
+Aqui está uma das divergências mais consequentes com a lei brasileira. O [art. 20 da LGPD](/notas/lgpd#art-20) garante o direito de **solicitar revisão** de decisões automatizadas, e o veto ao § 3º original retirou do texto a exigência de que a revisão fosse feita por pessoa natural. Os dois sistemas chegam ao mesmo requisito por caminhos diferentes: na Europa, a intervenção humana está no texto do [n.º 3](#art-22-p3); no Brasil, o **envolvimento humano significativo** foi firmado por [interpretação da ANPD](/notas/lgpd#envolvimento-humano-significativo) — via regulatória, e não legislativa. E, no [processo C-634/21](https://curia.europa.eu/juris/liste.jsf?num=C-634/21), de 7 de dezembro de 2023, o Tribunal de Justiça foi além: a **produção do escore** por um birô de crédito já é, ela própria, decisão automatizada quando o banco decide com base determinante nele — a responsabilidade não é só de quem nega o crédito.
 
 ### Limitações ([art. 23.º](#art-23))
 
@@ -287,14 +287,14 @@ Os Estados-Membros podem restringir direitos e princípios por medida legislativ
 ### Responsabilidade, proteção desde a conceção e por defeito ([arts. 24.º a 26.º](#art-24))
 
 - **Responsabilidade** ([art. 24.º](#art-24)) — medidas técnicas e organizativas adequadas, revistas e atualizadas, **capazes de comprovar** conformidade. Onde proporcional, políticas internas de proteção de dados.
-- **Proteção desde a conceção e por defeito** ([art. 25.º](#art-25)) — o _privacy by design_ e o _by default_ como obrigação legal, não como boa prática. O [n.º 2](#art-25-p2) é o mais concreto: **por padrão**, só devem ser tratados os dados necessários, e os dados pessoais não podem, **sem intervenção do titular**, ser disponibilizados a um número indeterminado de pessoas. Um perfil que nasce público viola esse dispositivo. A LGPD tem eco disso no [art. 46, § 2º](/notas/lgpd#art-46-p2), bem mais tímido.
+- **Proteção desde a conceção e por defeito** ([art. 25.º](#art-25)) — o _privacy by design_ e o _by default_ como obrigação legal, não como boa prática. O [n.º 2](#art-25-p2) é o mais concreto: **por padrão**, só devem ser tratados os dados necessários, e os dados pessoais não podem, **sem intervenção do titular**, ser disponibilizados a um número indeterminado de pessoas. Um perfil que nasce público viola esse dispositivo. Na LGPD, o correspondente é o [art. 46, § 2º](/notas/lgpd#art-46-p2), que manda observar as medidas de segurança "desde a fase de concepção do produto ou do serviço até a sua execução" — mesma ideia, formulada como princípio em vez de regra de configuração padrão.
 - **Responsáveis conjuntos** ([art. 26.º](#art-26)) — acordo que define quem cumpre o quê, cujo conteúdo essencial deve ser **disponibilizado ao titular**; e o titular pode exercer seus direitos **contra qualquer um** deles.
 
 ### Contrato com o subcontratante ([art. 28.º](#art-28))
 
 Um dos artigos mais operacionais do regulamento e, na prática, o que mais gerou papel no mundo: o tratamento por subcontratante é regido por **contrato escrito**. O [n.º 3](#art-28-p3) manda que o contrato descreva objeto, duração, natureza e finalidade do tratamento, tipo de dados e categorias de titulares — e, além disso, imponha ao subcontratante oito deveres, das alíneas a) a h): tratar apenas mediante instruções documentadas, garantir o sigilo de quem tem acesso, adotar as medidas de segurança do [art. 32.º](#art-32), não subcontratar sem autorização, ajudar o responsável a atender os direitos do titular, ajudá-lo nos deveres dos [arts. 32.º a 36.º](#art-32), apagar ou devolver os dados ao fim do contrato e disponibilizar tudo o que for preciso para auditoria.
 
-Um subcontratante que **determine finalidades e meios** por conta própria passa a ser **responsável** por esse tratamento ([n.º 10](#art-28-p10)). É a mesma lógica da equiparação do [art. 42 e seguintes da LGPD](/notas/lgpd#art-42), mas dita de forma direta.
+Um subcontratante que **determine finalidades e meios** por conta própria passa a ser **responsável** por esse tratamento ([n.º 10](#art-28-p10)). A LGPD resolve o mesmo problema pela via da responsabilidade: o operador responde solidariamente quando descumpre a lei ou deixa de seguir as instruções lícitas do controlador ([art. 42, § 1º, I](/notas/lgpd#art-42-p1-i)).
 
 ### Registro das atividades ([art. 30.º](#art-30))
 
@@ -304,7 +304,7 @@ A famosa dispensa para **empresas com menos de 250 trabalhadores** ([n.º 5](#ar
 
 ### Segurança e violação de dados ([arts. 32.º a 34.º](#art-32))
 
-O [art. 32.º](#art-32) exige medidas adequadas ao risco, e cita quatro exemplos: **pseudonimização e cifragem**, garantia de confidencialidade/integridade/disponibilidade/resiliência, capacidade de **restabelecer** o acesso depois de um incidente e **testar e avaliar regularmente** a eficácia das medidas. É mais concreto que o [art. 46 da LGPD](/notas/lgpd#art-46), que fala em medidas de segurança sem exemplificar.
+O [art. 32.º](#art-32) exige medidas adequadas ao risco, e cita quatro exemplos: **pseudonimização e cifragem**, garantia de confidencialidade/integridade/disponibilidade/resiliência, capacidade de **restabelecer** o acesso depois de um incidente e **testar e avaliar regularmente** a eficácia das medidas. O [art. 46 da LGPD](/notas/lgpd#art-46) impõe o mesmo dever — medidas técnicas e administrativas aptas a proteger os dados —, sem trazer exemplos no texto: no Brasil, o detalhamento vem dos regulamentos e das orientações da ANPD.
 
 O regime de **violação de dados** é o ponto em que o RGPD e a LGPD mais se distanciam na letra, e mais se aproximaram na prática:
 
@@ -325,7 +325,7 @@ A **AIPD** é obrigatória quando o tratamento for suscetível de implicar **ris
 
 Se a AIPD indicar risco elevado **residual** — que o responsável não consegue mitigar —, é obrigatório consultar a autoridade **antes** de tratar ([art. 36.º](#art-36)), que tem até oito semanas, prorrogáveis por seis, para se manifestar.
 
-Aqui a diferença com o Brasil é institucional, não conceitual: a LGPD prevê o **relatório de impacto** ([art. 5º, XVII](/notas/lgpd#art-5-xvii)), mas condiciona sua elaboração a **solicitação da ANPD** ([art. 38](/notas/lgpd#art-38)) em vez de defini-lo como obrigação autônoma disparada por critérios de risco. Na Europa, quem decide se o relatório é devido é o próprio responsável — e responde se errar.
+A diferença com o Brasil é de desenho institucional, não de conceito: os dois sistemas têm o instrumento — a LGPD define o **relatório de impacto** no [art. 5º, XVII](/notas/lgpd#art-5-xvii) —, mas alocam de forma diferente a decisão de elaborá-lo. Na Europa, quem avalia se o risco é elevado e produz a AIPD é o próprio responsável, sujeito a controle posterior; no Brasil, o [art. 38](/notas/lgpd#art-38) põe a **ANPD** no gatilho, ao prever que ela pode determinar a elaboração do relatório.
 
 ### Encarregado da proteção de dados ([arts. 37.º a 39.º](#art-37))
 
@@ -333,7 +333,7 @@ A designação é **obrigatória** em três casos ([art. 37.º, n.º 1](#art-37-
 
 O encarregado pode ser **empregado ou prestador de serviços** ([n.º 6](#art-37-p6)), e um grupo pode designar um só, desde que acessível a partir de cada estabelecimento ([n.º 2](#art-37-p2)). O [art. 38.º](#art-38) blinda a função: não recebe instruções sobre o exercício das suas atribuições, não pode ser destituído nem penalizado por exercê-las e reporta diretamente à direção de topo. O [art. 39.º](#art-39) lista suas funções — informar, aconselhar, controlar a conformidade, aconselhar quanto à AIPD e ser ponto de contato da autoridade.
 
-A LGPD chegou ao mesmo lugar por outro caminho: o [art. 41](/notas/lgpd#art-41) trata o encarregado como **canal de comunicação**, sem critérios de obrigatoriedade nem garantias de independência no texto — o que veio depois, pela [Resolução CD/ANPD nº 18/2024](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074).
+No Brasil, a repartição é outra: o [art. 41](/notas/lgpd#art-41) define o encarregado como **canal de comunicação** entre controlador, titulares e ANPD, e deixa para regulamento os critérios de obrigatoriedade e as condições de atuação — hoje na [Resolução CD/ANPD nº 18/2024](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074). O que na Europa está na lei, aqui está na norma da autoridade.
 
 ### Códigos de conduta e certificação ([arts. 40.º a 43.º](#art-40))
 
@@ -600,23 +600,23 @@ Esta é a fronteira atual, e é onde o RGPD encontra o [AI Act](/notas/ai-act) �
 - **ChatGPT** — a autoridade italiana **bloqueou temporariamente** o serviço na Itália em março de 2023, o primeiro caso do gênero num país ocidental, alegando falta de base legal para o treinamento, informação insuficiente e ausência de verificação de idade. O serviço voltou depois de mudanças, e em dezembro de 2024 veio uma coima de 15 milhões de euros — **anulada em março de 2026** por incompetência da autoridade italiana após a empresa se estabelecer na Irlanda. O saldo: quatro anos de litígio e **nenhuma decisão de mérito** sobre a licitude de treinar modelos com dados raspados da web.
 - **Chatbot de companhia virtual** — 5 milhões de euros, autoridade italiana, 2025: política de privacidade inadequada e ausência de mecanismo válido de verificação de idade, num serviço com conteúdo adulto acessível a menores.
 - **Modelo de linguagem chinês** — a mesma autoridade determinou, em janeiro de 2025, a **limitação do tratamento** de dados de usuários italianos por um assistente de IA cujos operadores sustentavam não estar sujeitos ao direito europeu. É o [art. 3.º, n.º 2](#art-3-p2) aplicado de forma sumária.
-- **Verificação de humanidade por escaneamento de íris** — projeto que oferecia criptomoeda em troca de leitura biométrica de íris foi objeto de restrições em vários países europeus, e no Brasil a **ANPD determinou, em janeiro de 2025, a suspensão** do oferecimento de compensação financeira pela coleta, por entender que o pagamento compromete a **liberdade** do consentimento — exigida, para dado biométrico, na forma qualificada do [art. 11, I, da LGPD](/notas/lgpd#art-11-i). A empresa recorreu, teve o recurso negado e suspendeu a operação no país. O raciocínio é rigorosamente o mesmo do [art. 7.º, n.º 4](#art-7-p4) do RGPD: consentimento condicionado ou comprado não é livre.
+- **Verificação de humanidade por escaneamento de íris** — o projeto que oferecia criptomoeda em troca de leitura biométrica de íris foi examinado por várias autoridades, com fundamentos diferentes. Em **março de 2024**, as autoridades da Espanha e de Portugal suspenderam a coleta, invocando transparência, dados de menores e ausência de mecanismo de retirada do consentimento; em **dezembro de 2024**, a autoridade da Baviera determinou o apagamento dos dados e a readequação do tratamento; e em **janeiro de 2025** a **ANPD** atacou um ponto próprio — a **compensação financeira** oferecida em troca da coleta, incompatível com a **liberdade** que o [art. 11, I, da LGPD](/notas/lgpd#art-11-i) exige do consentimento para dado sensível. A empresa recorreu, teve o recurso negado e suspendeu a operação no Brasil. O fundamento brasileiro tem paralelo direto no [art. 7.º, n.º 4](#art-7-p4) do RGPD: consentimento condicionado ou comprado não é livre.
 
 ### Ecos no Brasil
 
 Três episódios mostram como o repertório europeu chega à prática brasileira:
 
 - **A adequação de 2026** ([Decisão de Execução (UE) 2026/179](https://eur-lex.europa.eu/eli/dec_impl/2026/179/oj) e [Resolução CD/ANPD nº 32/2026](https://www.in.gov.br/web/dou/-/resolucao-n-32-de-26-de-janeiro-de-2026-683334547)) dispensou, na generalidade dos casos, cláusulas-padrão e garantias adicionais nos fluxos Brasil–União Europeia. Para uma empresa brasileira, isso significa que o vetor de risco deixou de ser o **instrumento** de transferência e passou a ser a **manutenção** da adequação — que a Comissão monitora continuamente e pode suspender.
-- **O caso do escaneamento de íris** mostrou a ANPD chegando, sozinha e antes de várias autoridades europeias, à mesma conclusão sobre liberdade do consentimento em troca de dado biométrico.
-- **A responsabilidade das plataformas**, no Brasil, não passou pela lei de dados: veio do STF, nos [Temas 987 e 533](/notas/mci#o-novo-regime-de-responsabilização-das-plataformas-stf-temas-987-e-533), e dos decretos de 2026 que regulamentaram o [Marco Civil](/notas/mci). Na Europa, esse debate está no DSA, não no RGPD. Confundir os dois é o erro mais comum ao comparar os sistemas.
+- **O caso do escaneamento de íris** mostra os dois repertórios operando sobre o mesmo fato com fundamentos distintos: as autoridades europeias trataram de transparência, menores e retirada do consentimento; a ANPD foi ao ponto da **contrapartida financeira**, que nenhuma delas havia enfrentado de frente. O raciocínio vale nos dois sistemas, porque a exigência de consentimento livre é comum aos dois.
+- **A responsabilidade das plataformas**, no Brasil, não passou pela lei de dados: veio do STF, nos [Temas 987 e 533](/notas/mci#o-novo-regime-de-responsabilização-das-plataformas-stf-temas-987-e-533), e dos decretos de 2026 que regulamentaram o [Marco Civil](/notas/mci). Na Europa, esse debate está no DSA, não no RGPD. São matérias alojadas em normas distintas nos dois sistemas, e vale não misturá-las ao comparar.
 
 ## Comparação com a LGPD
 
-### De onde veio a LGPD
+### Como as duas leis se relacionam
 
-A [LGPD](/notas/lgpd) é de **14 de agosto de 2018**, menos de três meses depois de o RGPD passar a ser aplicável, e a inspiração é declarada. Ela importou a arquitetura inteira: definição ampla de dado pessoal, papéis de controlador e operador, rol de bases legais, direitos do titular em capítulo próprio, encarregado, relatório de impacto, transferência internacional condicionada, autoridade independente e multa proporcional ao faturamento.
+A [LGPD](/notas/lgpd) foi sancionada em **14 de agosto de 2018**, menos de três meses depois de o RGPD passar a ser aplicável, ao fim de um debate legislativo que corria no Brasil desde 2010 — anteprojeto do Ministério da Justiça, consultas públicas e projetos que tramitaram em paralelo à negociação do regulamento europeu. As duas leis compartilham, por isso, boa parte do vocabulário e do desenho: definição ampla de dado pessoal, papéis de controlador e operador, rol de bases legais, direitos do titular em capítulo próprio, encarregado, relatório de impacto, transferência internacional condicionada, autoridade independente e multa proporcional ao faturamento.
 
-Mas importou **adaptando**, e é nas adaptações que mora o risco de erro. Um programa de conformidade desenhado para o RGPD **não** está automaticamente conforme à LGPD, e vice-versa.
+O que **não** compartilham é o detalhe — e é aí que está o trabalho de quem precisa cumprir as duas. Um programa de conformidade desenhado para o RGPD **não** está automaticamente conforme à LGPD, e vice-versa.
 
 ### Onde os dois convergem
 
@@ -654,7 +654,7 @@ Mas importou **adaptando**, e é nas adaptações que mora o risco de erro. Um p
 
 ### Três diferenças que mudam decisões práticas
 
-1. **O teto da multa não é comparável.** Quatro por cento do faturamento **mundial do grupo econômico** (processo C-383/23) contra dois por cento do faturamento **no Brasil**, com teto absoluto de R$ 50 milhões por infração. Para uma multinacional, a exposição europeia pode ser duas ordens de grandeza maior. Isso explica por que decisões globais de conformidade costumam ser calibradas pelo padrão europeu — e por que "estamos conformes ao RGPD" quase sempre significa estar conforme à LGPD, mas não o contrário.
+1. **O teto da multa não é comparável.** Quatro por cento do faturamento **mundial do grupo econômico** (processo C-383/23) contra dois por cento do faturamento **no Brasil**, com teto absoluto de R$ 50 milhões por infração. Para uma multinacional, a exposição europeia pode ser duas ordens de grandeza maior, e é por isso que decisões globais de conformidade costumam ser calibradas pelo teto europeu. O que essa calibragem **não** faz é dispensar a conferência item a item: há pontos em que a LGPD alcança tratamento que o RGPD não alcança — o registro em papel sem estrutura de ficheiro é um deles —, e outros em que a exigência brasileira é mais rápida, como o prazo de resposta ao titular.
 2. **Marketing direto.** Na Europa, a oposição a marketing direto é um direito absoluto: o titular diz "não" e acabou. No Brasil, o [art. 18, § 2º](/notas/lgpd#art-18-p2) condiciona a oposição à alegação de descumprimento da lei — e, quando o tratamento se apoia em legítimo interesse, o titular tem o direito de pedir informação e revisão, não um veto direto. Uma mesma campanha pode ser lícita aqui e ilícita lá.
 3. **Decisão automatizada.** O [art. 22.º](#art-22) parte de uma **proibição com exceções**; o [art. 20 da LGPD](/notas/lgpd#art-20), de um **direito de revisão**. Quem desenha um sistema de crédito, seleção ou precificação para os dois mercados precisa cumprir a regra europeia — que exige intervenção humana, contestação e explicação da lógica —, e não apenas oferecer um canal de reanálise.
 
@@ -671,7 +671,7 @@ Três leituras que essa decisão autoriza, e uma que ela não autoriza:
 
 ### Armadilhas de tradução
 
-Além do glossário PT-PT × pt-BR acima, três confusões recorrentes na literatura brasileira:
+Além do glossário PT-PT × pt-BR acima, três confusões recorrentes:
 
 - **"GDPR" e "RGPD" são a mesma norma.** A sigla oficial em português é RGPD; GDPR é a inglesa. Esta nota usa as duas, e o painel ao lado traz o texto oficial em português de Portugal.
 - **"Legítimo interesse" não é curinga em lugar nenhum.** Nos dois sistemas, exige finalidade concreta, teste de necessidade e ponderação documentada — e, na Europa, é vedado ao setor público no exercício de suas funções.
