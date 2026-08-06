@@ -58,8 +58,9 @@ estratégia de performance e os dados estruturados.
 
 ## Notas de legislação (`/notas`)
 
-Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital, o AI Act
-europeu e o Regimento Interno da ANPD), pública e indexável. Nem toda norma
+Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital, o Regimento
+Interno da ANPD e as normas europeias GDPR e AI Act), pública e indexável.
+Nem toda norma
 comentada é lei em sentido estrito — o Regimento Interno é ato do Conselho
 Diretor da ANPD, aprovado por portaria —, mas a estrutura da seção é a mesma:
 comentários de um lado, texto da norma do outro.
@@ -196,16 +197,38 @@ link menos preciso, nunca errado.
 
 #### Trazendo uma norma do EUR-Lex
 
-`scripts/converter_eurlex.py` converte o HTML oficial do Jornal Oficial para o
+`scripts/converter_eurlex.py` converte o HTML oficial do EUR-Lex para o
 Markdown de `_leis`, já nesse dialeto — ver o docstring do script para o uso.
 Ele depende de `beautifulsoup4` e `lxml`, ferramentas de autoria que não entram
 no site, como o `pyyaml` do script de ancoragem.
+
+O EUR-Lex publica o mesmo ato em **duas marcações diferentes**, e o script lê as
+duas: a do **Jornal Oficial** (classes `oj-*`), que traz o ato como publicado, e
+a do **texto consolidado** (folha `clg.css`), que traz o articulado em vigor.
+`normalizar_consolidado()` reescreve a segunda na primeira, para o resto do
+script não precisar saber de qual das duas veio o arquivo. Vale saber a
+diferença antes de escolher:
+
+- o texto do Jornal Oficial **não** tem as retificações posteriores. No RGPD
+  isso mudaria o alcance do art. 3.º, n.º 2, e a própria definição de
+  consentimento do art. 4.º, ponto 11;
+- o texto consolidado **não** tem preâmbulo nem considerandos — a própria
+  página avisa que "as versões dos atos relevantes que fazem fé, incluindo os
+  respetivos preâmbulos, são as publicadas no Jornal Oficial";
+- quando as duas coisas são necessárias, converta os dois arquivos e junte-os
+  por script, como faz `scripts/montar_rgpd.py` (considerandos do JO +
+  articulado consolidado, com a única retificação que atinge um considerando
+  aplicada a partir do texto da própria retificação). O arquivo gerado leva
+  "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter, e as duas fontes ficam
+  registradas nele.
 
 O ato entra **inteiro**: preâmbulo, considerandos, articulado e anexos. Os
 considerandos não são dispositivos e não recebem âncora, mas ficam no painel —
 num regulamento europeu são eles que dizem por que cada regra existe, e a
 Comissão e o Tribunal de Justiça os usam para interpretar o articulado. Fica de
-fora só o aparato de notas de rodapé do JO, que é referência bibliográfica.
+fora só o aparato de notas de rodapé do JO, que é referência bibliográfica, e —
+num texto consolidado — as **marcas de alteração** (▼B, ▼C1, ►C1 … ◄), que são
+aparato editorial da consolidação e não texto normativo.
 
 Quando a União Europeia **ainda não publicou a versão consolidada** de uma
 norma alterada — é o caso do AI Act com o Digital Omnibus —, publique **os dois
