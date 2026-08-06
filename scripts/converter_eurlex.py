@@ -25,12 +25,33 @@ no painel, pesquisáveis.
 Fica de fora só o **aparato de notas de rodapé** do JO, que é referência
 bibliográfica de publicação e não texto normativo.
 
+Dois HTML, uma saída
+--------------------
+
+O EUR-Lex publica o mesmo ato em duas marcações diferentes, e o script lê as
+duas:
+
+- o **Jornal Oficial** (folha de estilo `oj-*`), que traz o ato como publicado
+  — com preâmbulo e considerandos, e sem as retificações posteriores;
+- o **texto consolidado** (folha de estilo `clg.css`), que traz o articulado
+  em vigor, já com as retificações e alterações incorporadas, mas **sem o
+  preâmbulo nem os considerandos** — o próprio EUR-Lex avisa que "as versões
+  dos atos relevantes que fazem fé, incluindo os respetivos preâmbulos, são as
+  publicadas no Jornal Oficial".
+
+`normalizar_consolidado()` reescreve a segunda marcação na primeira, para o
+resto do script não precisar saber de qual das duas veio o arquivo. Quando as
+duas coisas são necessárias — considerandos *e* articulado corrigido —, é o
+caso de converter os dois arquivos e juntá-los por script (ver
+`scripts/montar_rgpd.py`).
+
 Uso:
     python3 scripts/converter_eurlex.py <arquivo.html> > _leis/<slug>.md
 
-O HTML de entrada é o "Texto integral" em português baixado do EUR-Lex. O
-script depende de `beautifulsoup4` e `lxml`, que são **ferramenta de autoria**
-— não entram no site, como o `pyyaml` de `ancorar_referencias.py`:
+O HTML de entrada é o "Texto integral" (ou o "Texto consolidado") em português
+baixado do EUR-Lex. O script depende de `beautifulsoup4` e `lxml`, que são
+**ferramenta de autoria** — não entram no site, como o `pyyaml` de
+`ancorar_referencias.py`:
 
     pip install beautifulsoup4 lxml
 
@@ -47,13 +68,34 @@ import sys
 import warnings
 from pathlib import Path
 
-from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
+from bs4 import BeautifulSoup, NavigableString, XMLParsedAsHTMLWarning
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 # Enumerador de lista do JO: "a)", "iii)", "12)", "14-B)", "1.", "—".
 ENUMERADOR = re.compile(r"^(?:[a-zA-Z]{1,5}|\d{1,3})(?:[-–][A-Za-z0-9]{1,3})?\)$|^[—–-]$|^\d{1,3}\.$")
 CABECALHO_JO = re.compile(r"^\d{4}/\d+ — \d|^Jornal Oficial da União")
+
+# Marca de alteração da consolidação: "▼B", "▼C1", "►C1" e o "◄" que fecha um
+# trecho corrigido no meio de uma frase.
+MARCA_ALTERACAO = re.compile(r"^[▼►◄]\s*[A-Z]?\d*$")
+
+# Marcação do texto consolidado (clg.css) → marcação do Jornal Oficial (oj-*).
+# O que muda de nome é só isto; o que muda de *forma* está em
+# normalizar_consolidado(), abaixo.
+CLASSES_CONSOLIDADO = {
+    "title-doc-first": "oj-doc-ti",
+    "title-doc-last": "oj-doc-ti",
+    "title-division-1": "oj-ti-section-1",
+    "title-division-2": "oj-ti-section-2",
+    "title-article-norm": "oj-ti-art",
+    "stitle-article-norm": "oj-sti-art",
+    "norm": "oj-normal",
+    "superscript": "oj-super",
+    "italics": "oj-italic",
+    "boldface": "oj-bold",
+    "expanded": "oj-expanded",
+}
 
 
 def texto(no) -> str:
@@ -233,8 +275,135 @@ def itens_de_tabela(tabela, nivel: int) -> list[str]:
     return blocos
 
 
+def _numerar_dispositivo(sopa, div) -> None:
+    """No texto consolidado, o número do dispositivo e o texto dele são irmãos:
+
+        <div class="norm">
+          <span class="no-parag">2.  </span>
+          <div class="norm inline-element">O responsável pelo tratamento…</div>
+        </div>
+
+    No Jornal Oficial os dois são um parágrafo só ("2.   O responsável…"), e é
+    dessa forma que o include reconhece o dispositivo e lhe dá a âncora
+    `art-5-p2`. Aqui o número volta para dentro do primeiro parágrafo do
+    dispositivo."""
+    marcador = div.find("span", class_="no-parag")
+    if marcador is None or marcador.parent is not div:
+        return
+    numero = marcador.get_text(" ", strip=True)
+    marcador.extract()
+
+    interno = div.find("div", class_="inline-element") or div
+    filhos = interno.find_all(["p", "div", "table"], recursive=False)
+
+    if not filhos:
+        # O texto está solto no contêiner: ele próprio é o parágrafo.
+        interno.name = "p"
+        interno["class"] = ["norm"]
+        interno.insert(0, NavigableString(numero + " "))
+        return
+
+    primeiro = interno.find("p", recursive=False)
+    if primeiro is not None and primeiro is filhos[0]:
+        primeiro.insert(0, NavigableString(numero + " "))
+        return
+
+    # Número que abre direto numa lista de alíneas, sem texto de chamada: ele
+    # fica sozinho no seu parágrafo, como no Jornal Oficial.
+    solto = sopa.new_tag("p")
+    solto["class"] = ["norm"]
+    solto.string = numero
+    interno.insert(0, solto)
+
+
+def _listas_do_consolidado(sopa, corpo) -> None:
+    """As listas do texto consolidado são <div>, e as do Jornal Oficial são
+    <table> de duas colunas (enumerador | texto) — que é o que
+    itens_de_tabela() sabe ler. Cada item vem no seu próprio contêiner:
+
+        <div class="grid-container grid-list">
+          <div class="list grid-list-column-1"><span>a) </span></div>
+          <div class="grid-list-column-2"><p class="norm">…</p></div>
+        </div>
+
+    Itens seguidos viram linhas de uma mesma tabela, para que a lista continue
+    sendo uma lista só — inclusive quando aninhada dentro de outra."""
+    for grade in corpo.find_all("div", class_="grid-container"):
+        anterior = grade.find_previous_sibling()
+        if anterior is not None and anterior.name == "table" and anterior.get("data-lista"):
+            tabela = anterior
+        else:
+            tabela = sopa.new_tag("table")
+            tabela["data-lista"] = "1"
+            grade.insert_before(tabela)
+
+        linha = sopa.new_tag("tr")
+        for classe in ("grid-list-column-1", "grid-list-column-2"):
+            celula = sopa.new_tag("td")
+            coluna = grade.find("div", class_=classe)
+            if coluna is not None:
+                for filho in list(coluna.contents):
+                    celula.append(filho.extract())
+            linha.append(celula)
+        tabela.append(linha)
+        grade.decompose()
+
+
+def normalizar_consolidado(sopa) -> bool:
+    """Reescreve o HTML de um *texto consolidado* do EUR-Lex na marcação do
+    Jornal Oficial que o resto do script já lê, e devolve True se o arquivo era
+    mesmo um consolidado.
+
+    Fora do ato ficam o cabeçalho da consolidação (a referência
+    "02016R0679 — PT — 04.05.2016 — 000.003", o aviso de que o documento não
+    tem efeito jurídico e a lista dos atos alteradores) e as **marcas de
+    alteração** (▼B, ▼C1, ►C1), que dizem de qual ato veio cada trecho. São
+    aparato editorial da consolidação, não texto normativo: sem legenda no
+    painel, só atrapalhariam a leitura — e a lista dos atos incorporados fica
+    melhor no front matter (`compilado_ate`) e na própria nota."""
+    corpo = sopa.find("div", class_="eli-container")
+    if corpo is None:
+        return False
+
+    for tag in corpo.select("p.modref, p.arrow, p.footnote, hr"):
+        tag.decompose()
+
+    # A marca de alteração também aparece no meio da frase, delimitando o
+    # trecho corrigido ("a) ►C1 Quando, num dos casos… ◄ A decisão vinculativa").
+    for tag in corpo.find_all(["a", "span"]):
+        if MARCA_ALTERACAO.match(tag.get_text(strip=True)):
+            tag.decompose()
+
+    # Chamada de nota de rodapé: "(1)" colado ao texto. Recebe a classe que
+    # texto() já descarta, e o parêntese vazio some junto.
+    for ref in corpo.select('a[href^="#"] span.superscript'):
+        ref["class"] = ["oj-super", "oj-note-tag"]
+
+    for tag in corpo.find_all(class_=True):
+        classes = [CLASSES_CONSOLIDADO.get(c, c) for c in tag.get("class")]
+        tag["class"] = classes
+
+    for div in corpo.find_all("div", class_="oj-normal"):
+        if "inline-element" not in (div.get("class") or []):
+            _numerar_dispositivo(sopa, div)
+
+    _listas_do_consolidado(sopa, corpo)
+
+    # Sobra o <div class="list"> do texto de um item cujo enumerador ("—", no
+    # art. 53.º, n.º 1) já foi para a primeira coluna da linha: aqui ele só
+    # precisa virar parágrafo.
+    for item in corpo.find_all("div", class_="list"):
+        item.name = "p"
+        item["class"] = ["oj-normal"]
+
+    sopa.body.clear()
+    sopa.body.append(corpo.extract())
+    return True
+
+
 def converter(caminho: Path) -> str:
     sopa = BeautifulSoup(caminho.read_text(encoding="utf-8", errors="replace"), "lxml")
+    normalizar_consolidado(sopa)
     for tag in sopa.select("p.oj-note, div.oj-doc-end, p.oj-doc-sep, div.oj-final,"
                            " p.oj-signatory, p.oj-separator"):
         tag.decompose()
@@ -306,7 +475,9 @@ def converter(caminho: Path) -> str:
     aguarda_epigrafe = False
     for b in blocos:
         anterior = saida[-1] if saida else ""
-        abre_unidade = re.match(r"^#{1,3} (CAPÍTULO|SECÇÃO|ANEXO)\b", b)
+        # Sem ignorar a caixa, o "Secção 1" do RGPD (que o JO grafa em caixa
+        # mista, ao contrário do "SECÇÃO 1" do AI Act) ficaria sem a epígrafe.
+        abre_unidade = re.match(r"^#{1,3} (CAPÍTULO|SECÇÃO|ANEXO)\b", b, re.I)
         eh_titulo = re.match(r"^#{1,3} ", b)
         if aguarda_epigrafe and eh_titulo and not abre_unidade:
             saida[-1] = anterior + " — " + re.sub(r"^#+ ", "", b)

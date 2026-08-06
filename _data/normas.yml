@@ -41,6 +41,21 @@ regulamento-2026-1744:
     - "Regulamento (UE) 2026/1744"
     - "Digital Omnibus sobre a IA"
 
+gdpr:
+  nota: gdpr
+  prefixo: ""
+  aliases:
+    - "RGPD"
+    - "GDPR"
+    - "Regulamento (UE) 2016/679"
+    - "Regulamento Geral sobre a Proteção de Dados"
+
+regulamento-2025-2518:
+  nota: gdpr
+  prefixo: "reg2518"
+  aliases:
+    - "Regulamento (UE) 2025/2518"
+
 eca-digital:
   nota: eca-digital
   prefixo: ""
