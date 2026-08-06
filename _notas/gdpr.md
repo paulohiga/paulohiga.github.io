@@ -35,7 +35,7 @@ O RGPD não tem "decreto regulamentador". O detalhamento vem de três fontes dis
 
 - **Decisões de adequação da Comissão Europeia** ([art. 45.º](#art-45)) — atos de execução que reconhecem que um país terceiro protege dados de forma "essencialmente equivalente" à europeia, dispensando garantias adicionais na transferência. Há cerca de quinze em vigor; as que mais interessam aqui são a [Decisão de Execução (UE) 2026/179, de 26 de janeiro de 2026](https://eur-lex.europa.eu/eli/dec_impl/2026/179/oj), sobre o **Brasil**, e a [Decisão de Execução (UE) 2023/1795, de 10 de julho de 2023](https://eur-lex.europa.eu/eli/dec_impl/2023/1795/oj), sobre o **Quadro de Privacidade de Dados UE-EUA**.
 - **Cláusulas-tipo de proteção de dados** ([art. 46.º, n.º 2, alínea c)](#art-46-p2-c)) — o formulário contratual padrão para transferir dados sem decisão de adequação, fixado pela [Decisão de Execução (UE) 2021/914](https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj). É o equivalente europeu das cláusulas-padrão da [Resolução CD/ANPD nº 19/2024](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-19-de-23-de-agosto-de-2024-580095396).
-- **Diretrizes, recomendações e melhores práticas do Comité Europeu para a Proteção de Dados** ([art. 70.º](#art-70)) — o CEPD (_European Data Protection Board_, EDPB) não legisla, mas é ele que uniformiza a interpretação, e na prática as autoridades nacionais seguem suas [diretrizes](https://www.edpb.europa.eu/our-work-tools/general-guidance/guidelines-recommendations-best-practices_pt). Suas **decisões vinculativas** do [art. 65.º](#art-65), essas sim, obrigam a autoridade nacional no caso concreto.
+- **Diretrizes, recomendações e melhores práticas do Comité Europeu para a Proteção de Dados** ([art. 70.º](#art-70)) — o CEPD (_European Data Protection Board_, EDPB) não legisla, mas é ele que uniformiza a interpretação, e na prática as autoridades nacionais seguem suas [diretrizes](https://www.edpb.europa.eu/documents_pt). Suas **decisões vinculativas** do [art. 65.º](#art-65), essas sim, obrigam a autoridade nacional no caso concreto.
 
 ### Normas correlatas
 
@@ -117,8 +117,8 @@ O texto oficial em português é o de Portugal; estes comentários são escritos
 | **definição de perfis** | perfilamento (_profiling_) |
 | **violação de dados pessoais** | incidente de segurança ([art. 48](/notas/lgpd#art-48)) |
 | **avaliação de impacto sobre a proteção de dados** (AIPD) | relatório de impacto à proteção de dados pessoais ([art. 5º, XVII](/notas/lgpd#art-5-xvii)) |
-| **regras vinculativas aplicáveis às empresas** (_BCR_) | normas corporativas globais ([art. 33, II, "d"](/notas/lgpd#art-33-ii-d)) |
-| **cláusulas-tipo de proteção de dados** | cláusulas-padrão contratuais |
+| **regras vinculativas aplicáveis às empresas** (_BCR_) | normas corporativas globais ([art. 33, II, "c"](/notas/lgpd#art-33-ii-c)) |
+| **cláusulas-tipo de proteção de dados** | cláusulas-padrão contratuais ([art. 33, II, "b"](/notas/lgpd#art-33-ii-b)) |
 | **decisão de adequação** | reconhecimento de grau de proteção adequado ([art. 33, I](/notas/lgpd#art-33-i)) |
 | **ficheiro** | banco de dados (com a diferença explicada abaixo) |
 | **coima** | multa administrativa |
@@ -680,7 +680,7 @@ Além do glossário PT-PT × pt-BR acima, três confusões recorrentes:
 ## Pontos em aberto
 
 - **O Digital Omnibus sobre dados.** Se o Conselho e o Parlamento chegarem a acordo, a definição de dado pessoal, o regime de _cookies_ e a base legal para treinar modelos de IA podem mudar. Se não chegarem — cenário plausível, dado o impasse de junho de 2026 —, o RGPD segue como está, e a pressão volta para a interpretação judicial.
-- **O que é dado pessoal depois do processo C-413/23 P.** O tribunal decidiu um caso concreto de transferência a um terceiro. Quanto dessa leitura relativa vale para o conceito em geral — e o que ela significa para dados pseudonimizados dentro da mesma organização — ainda não está resolvido. As [diretrizes do CEPD sobre anonimização](https://www.edpb.europa.eu/our-work-tools/general-guidance/guidelines-recommendations-best-practices_pt), em consulta pública com prazo até 30 de outubro de 2026, são o próximo capítulo.
+- **O que é dado pessoal depois do processo C-413/23 P.** O tribunal decidiu um caso concreto de transferência a um terceiro. Quanto dessa leitura relativa vale para o conceito em geral — e o que ela significa para dados pseudonimizados dentro da mesma organização — ainda não está resolvido. As [diretrizes do CEPD sobre anonimização](https://www.edpb.europa.eu/public-consultations/guidelines-022026-on-anonymisation_en), em consulta pública com prazo até 30 de outubro de 2026, são o próximo capítulo.
 - **Treinamento de modelos com dados raspados da web.** Nenhum tribunal europeu decidiu o mérito. A opinião 28/2024 do CEPD dá o método; a coima italiana que testaria a tese foi anulada por incompetência. A questão continua aberta em ambos os lados do Atlântico — e no Brasil, onde o [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233) fez escolhas próprias sobre o assunto (ver a [nota do AI Act](/notas/ai-act#comparação-com-o-pl-nº-23382023)).
 - **Execução contra quem não tem estabelecimento na União.** O [art. 3.º, n.º 2](#art-3-p2) alcança; cobrar é outra coisa. A tentativa neerlandesa de responsabilizar administradores pessoalmente é o experimento em curso.
 - **O balcão único depois de 2027.** O [Regulamento (UE) 2025/2518](#reg2518-art-1) impõe prazos e ritos, mas não muda quem decide. Se ele bastará para destravar casos que hoje levam anos é uma pergunta empírica, cuja resposta começará a aparecer nas [estatísticas de execução](#reg2518-art-34) que o próprio regulamento tornou obrigatórias.
