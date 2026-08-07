@@ -132,6 +132,15 @@ pré-carregar normas que ainda vão se multiplicar (resoluções da ANPD, outros
 decretos do MCI). Sem JavaScript, o seletor fica oculto e só a norma principal
 aparece.
 
+**O prefixo sozinho é uma âncora válida**: `/notas/mci#dec8771` abre a nota já
+exibindo o Decreto nº 8.771, sem apontar para dispositivo nenhum. É o que o
+seletor grava na URL quando o leitor troca de norma, para a escolha poder ser
+compartilhada e sobreviver a um recarregamento — a norma principal é o padrão e
+não leva marca. Um link escrito à mão pode usar a mesma forma quando o destino
+é a norma inteira, e não um artigo dela. A troca de norma também guarda,
+enquanto a aba estiver aberta, onde o leitor parou em cada norma, e devolve-o
+ao mesmo ponto quando ele volta.
+
 A norma extra é servida por um HTML solto em `_fragmentos/<slug>.html` (coleção
 `fragmentos`, ver `_config.yml`), sem link algum apontando para ele, fora do
 sitemap (`sitemap: false`) e bloqueado em `robots.txt`

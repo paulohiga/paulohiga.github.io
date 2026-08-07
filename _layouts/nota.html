@@ -92,7 +92,13 @@
     <!-- Sumários retráteis (table of contents) de cada painel. Ocultos por
          padrão; abrem por um botão fixo na borda da tela — o dos comentários à
          esquerda, o da lei seca à direita — e funcionam só com JavaScript
-         (dependem da rolagem programática do notas.js). -->
+         (dependem da rolagem programática do notas.js).
+
+         O campo de filtro existe porque o sumário dos comentários passa de 50
+         entradas nas notas maiores: percorrer a lista com o olho custa mais do
+         que digitar duas sílabas. Ele filtra os títulos já carregados, não
+         busca no texto — quem procura uma expressão no corpo da norma usa o
+         campo "Ir para" do painel da lei seca. -->
     <button type="button" id="toc-comentarios-btn" class="nota-toc-btn nota-toc-btn--esquerda" aria-controls="toc-comentarios" aria-label="Abrir sumário dos comentários">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
     </button>
@@ -103,7 +109,13 @@
                 <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
         </div>
-        <nav class="nota-toc__corpo" aria-label="Sumário dos comentários"><ul></ul></nav>
+        <div class="nota-toc__filtro">
+            <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário dos comentários">
+        </div>
+        <nav class="nota-toc__corpo" aria-label="Sumário dos comentários">
+            <ul></ul>
+            <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
+        </nav>
     </div>
 
     <button type="button" id="toc-lei-btn" class="nota-toc-btn nota-toc-btn--direita" aria-controls="toc-lei" aria-label="Abrir sumário da lei seca">
@@ -116,7 +128,13 @@
                 <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
         </div>
-        <nav class="nota-toc__corpo" aria-label="Sumário da lei seca"><ul></ul></nav>
+        <div class="nota-toc__filtro">
+            <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário da lei seca">
+        </div>
+        <nav class="nota-toc__corpo" aria-label="Sumário da lei seca">
+            <ul></ul>
+            <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
+        </nav>
     </div>
 
     <main class="nota-divisao">

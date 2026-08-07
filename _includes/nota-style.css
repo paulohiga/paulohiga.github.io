@@ -880,9 +880,38 @@ body:not(.js) .nota-toc-btn {
     color: var(--ink);
 }
 
+/* Filtro do sumário: o dos comentários passa de 50 entradas nas notas
+   maiores. `type="search"` para o navegador oferecer o botão de limpar
+   nativo; a aparência segue a do campo "Ir para" do painel da lei seca. */
+.nota-toc__filtro {
+    flex: none;
+    padding: 0.75rem 1rem 0;
+}
+
+.nota-toc__campo {
+    width: 100%;
+    padding: 0.3rem 0.55rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.35rem;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.85rem;
+}
+
+.nota-toc__vazio {
+    margin: 0.6rem 0.45rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+}
+
 .nota-toc__corpo {
     overflow-y: auto;
     padding: 0.75rem 1rem 2rem;
+}
+
+.nota-toc__corpo li[hidden] {
+    display: none;
 }
 
 .nota-toc__corpo ul {
@@ -919,6 +948,17 @@ body:not(.js) .nota-toc-btn {
 .nota-toc__corpo a:hover,
 .nota-toc__corpo a:focus-visible {
     background: var(--surface-tint);
+}
+
+/* Seção em que o leitor está. A barra à esquerda é o sinal principal (não
+   depende de o leitor distinguir dois tons de fundo) e o peso do texto
+   reforça; o `aria-current` posto junto pelo notas.js é o equivalente para
+   leitor de tela. */
+.nota-toc__corpo a.nota-toc__atual {
+    background: var(--surface-tint);
+    box-shadow: inset 0.18rem 0 0 var(--accent);
+    color: var(--accent);
+    font-weight: 600;
 }
 
 /* --- Barra de progresso de leitura, uma por painel. Some sem JavaScript
