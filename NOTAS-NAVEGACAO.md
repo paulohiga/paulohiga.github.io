@@ -15,6 +15,22 @@ como a seção já degrada hoje.
 Referências de linha apontam para o estado do código em 7/8/2026 (commit
 `17062a0`) e servem de ponto de partida, não de endereço exato.
 
+## Estado
+
+| Item | Situação |
+| --- | --- |
+| A1, A2, A3, A4, A5, A6 | pendente |
+| B7 | **feito** (7/8/2026) |
+| B8 | pendente |
+| B9 | **feito** (7/8/2026) |
+| B10 | **feito** (7/8/2026) |
+| B11, B12, B13 | pendente |
+| C14, C15, C16 | pendente |
+
+Os itens feitos ficam registrados abaixo com o que foi entregue, para que o
+histórico do diagnóstico não se perca e para que quem retomar a lista saiba o
+que já não precisa ser refeito.
+
 ## Como o levantamento foi feito
 
 Build local do Jekyll servido com URLs sem extensão, e roteiros de Playwright
@@ -117,7 +133,13 @@ custo é assimétrico: sem Voltar, reencontrar o parágrafo de origem é manual.
 **Proposta.** `pushState` nos saltos iniciados por clique (mantendo
 `replaceState` para o hash de chegada) e tratamento de `popstate` restaurando
 a posição anterior de cada painel. Guardar `{comentarios, lei, norma}` no
-`state` do history resolve **A4**, **A1** e **B10** com a mesma estrutura.
+`state` do history resolve **A4** e **A1** com a mesma estrutura.
+
+Parte do caminho já está andada: o **B10** guarda a posição de cada norma e
+põe a norma escolhida na URL, e o **B7** guarda a posição de cada painel no
+mobile. Falta virar isso em entradas de histórico — hoje as duas trocas usam
+`replaceState` de propósito, para o botão Voltar não passar a funcionar em
+umas navegações e não em outras.
 
 **Risco.** Mexe no histórico do navegador; pede teste explícito de
 Voltar/Avançar em sequência, inclusive alternando entre notas.
@@ -161,11 +183,11 @@ o mapa dispositivo → seção, basta um marcador clicável no dispositivo.
 
 ## B. Navegação dentro da nota
 
-### B7. No mobile, clicar numa referência apaga a posição de leitura
+### B7. No mobile, clicar numa referência apagava a posição de leitura — FEITO
 
-É um defeito, não uma limitação de projeto.
+Era um defeito, não uma limitação de projeto.
 
-**Hoje, medido:**
+**Como era, medido:**
 
 ```
 rolo os comentários até y=1979
@@ -173,20 +195,21 @@ clico numa referência   →  aba "Lei seca", y=37703    (esperado)
 toco em "Comentários"   →  y=0                        (era 1979)
 ```
 
-**Causa.** `irParaElemento()` chama `mostrarPainel()` direto (`notas.js`,
-~linha 321) sem passar pelo `scrollPositions[painelAtual] = window.scrollY`,
-que só existe no handler de clique das abas (~linhas 199-208). Com isso
-`scrollPositions['comentarios']` fica `undefined` e o `|| 0` manda o leitor
-para o topo.
+**Causa.** `irParaElemento()` chamava `mostrarPainel()` direto sem passar pelo
+`scrollPositions[painelAtual] = window.scrollY`, que só existia no handler de
+clique das abas. Com isso `scrollPositions['comentarios']` ficava `undefined`
+e o `|| 0` mandava o leitor para o topo.
 
-**Por que incomoda.** No mobile, **toda** consulta a um artigo custa o lugar
-do leitor — numa nota de dezenas de milhares de palavras, o bastante para
-desistir de conferir a referência.
+**O que foi feito.** O salvamento saiu do handler das abas para
+`guardarPosicaoDoPainel(nomeDoDestino)`, que decide sozinha se há o que
+guardar (só em uma coluna, e só quando o painel realmente muda), e passou a
+ser chamada também por `irParaElemento` antes da troca de painel.
 
-**Proposta.** Extrair o salvamento de posição para uma função e chamá-la
-também em `irParaElemento`. Poucas linhas, sem risco.
-
-**Onde mexe.** `notas.js`.
+**Como ficou:** ida e volta devolvem `y=1979`; voltar à lei seca devolve
+`y=37703`. Chegar por link de outra nota (`/notas/lgpd#art-55-j`) continua
+abrindo a aba de comentários no topo — o leitor nunca esteve neles, e o topo
+é o lugar certo. No desktop nada mudou: o painel de comentários fica onde
+estava e só a lei rola.
 
 ### B8. O sumário da lei seca só tem capítulos, nunca artigos
 
@@ -202,33 +225,62 @@ saber o número de cor.
 (para não virar uma lista de 65 itens na LGPD), ou uma faixa de atalhos
 numéricos no topo do painel.
 
-### B9. O sumário não mostra onde o leitor está, e não filtra
+### B9. O sumário não mostrava onde o leitor está, e não filtrava — FEITO
 
-**Hoje.** O sumário dos comentários da LGPD tem **53 itens** em lista plana
-rolável, sem seção ativa destacada e sem campo de filtro; abre sobreposto ao
-conteúdo.
+**Como era.** O sumário dos comentários da LGPD tem **53 itens** em lista
+plana rolável, sem seção ativa destacada e sem campo de filtro.
 
-**Proposta.** *Scroll-spy* com `IntersectionObserver` marcando a seção
-corrente, e um campo de filtro por texto no topo do sumário. No desktop, onde
-há largura sobrando, considerar o sumário fixo em coluna em vez de sobreposto.
+**O que foi feito.**
 
-### B10. Trocar de norma perde a posição e não entra na URL
+- **Filtro.** Campo `type="search"` no topo de cada sumário, filtrando os
+  títulos já listados. Compara sem acento e sem caixa (`normalize('NFD')`),
+  porque o teclado do celular não põe acento sozinho: "principios" acha
+  "Princípios". Um item que casa arrasta os ancestrais (o capítulo situa a
+  seção encontrada) e os descendentes ("Definições" traz Sujeitos, Ações,
+  Técnicas e Documentação). Sem resultado, aparece "Nenhuma seção com esse
+  termo." num `role="status"`.
+- **Seção atual.** O último título que já passou pela linha de leitura ganha
+  barra de destaque, negrito e `aria-current="true"`. Calculado no mesmo
+  quadro (`requestAnimationFrame`) da barra de progresso, que já lia a
+  rolagem, e só com o sumário aberto — fechado, o resultado não apareceria em
+  lugar nenhum. Ao abrir, o sumário rola até a seção marcada.
+- **Teclado.** No desktop o foco vai para o filtro ao abrir (dá para digitar
+  direto); no mobile continua no primeiro link, para não subir o teclado por
+  cima da lista. `Esc` limpa o filtro na primeira vez e só fecha o sumário na
+  segunda.
+- **Troca de norma.** O filtro do sumário da lei seca é limpo quando a norma
+  muda: um termo digitado para a norma anterior esconderia o sumário inteiro
+  da nova.
 
-**Hoje, medido:** rolar o Marco Civil até 4000px, selecionar o Decreto
-nº 8.771 e voltar ao Marco Civil devolve `scrollTop: 0`. A URL continua
-`/notas/mci`, sem fragmento — não dá para compartilhar nem recarregar "a nota
-mostrando o decreto".
+**Não foi feito, e continua valendo a pena:** no desktop, onde há largura
+sobrando, o sumário podia ser uma coluna fixa em vez de um painel sobreposto.
 
-**Causa.** `ativarNorma()` faz `corpoDaLei.scrollTop = 0` incondicionalmente
-(`notas.js`, ~linha 245).
+### B10. Trocar de norma perdia a posição e não entrava na URL — FEITO
 
-**Por que incomoda.** Comparar lei e decreto regulamentador — o motivo de
-existir o `normas_extra` — é exatamente ir e voltar, e cada volta custa a
-posição. O Marco Civil tem três decretos.
+**Como era, medido:** rolar o Marco Civil até 4000px, selecionar o Decreto
+nº 8.771 e voltar ao Marco Civil devolvia `scrollTop: 0`. A URL continuava
+`/notas/mci`, sem fragmento — não dava para compartilhar nem recarregar "a
+nota mostrando o decreto". A causa era o `corpoDaLei.scrollTop = 0`
+incondicional de `ativarNorma()`.
 
-**Proposta.** Guardar `scrollTop` por norma e restaurar ao reativar; refletir
-a norma escolhida na URL (`#dec8771` ou `?norma=`), o que também dá
-`pushState` para o Voltar funcionar entre normas (ver **A4**).
+**O que foi feito.**
+
+- **Posição por norma.** `ativarNorma()` guarda o `scrollTop` da norma que sai
+  e restaura o da que entra. Vale enquanto a aba estiver aberta; norma nunca
+  visitada começa no topo, como antes. Medido: 4000px no Marco Civil e 900px
+  no decreto sobrevivem a ir e voltar entre os dois.
+- **Norma na URL.** Trocar de norma grava o prefixo dos ids como âncora
+  (`/notas/mci#dec8771`); a norma principal é o padrão e não leva marca.
+  Abrir essa URL já mostra o decreto, com o seletor sincronizado e o fragmento
+  buscado. O prefixo sozinho passou a ser âncora válida — está documentado no
+  `AGENTS.md`, junto do esquema de ids.
+- Âncoras de dispositivo em norma extra (`#dec8771-art-5`) continuam
+  intactas: a URL não é reescrita para `#dec8771` ao abrir uma delas.
+
+**Ficou de fora, de propósito:** só `replaceState`. Fazer a troca de norma
+virar entrada no histórico é parte do **A4**, que ainda não existe para salto
+nenhum — meia implementação aqui deixaria o botão Voltar funcionando para
+normas e não para dispositivos, que é pior que não funcionar para nada.
 
 ### B11. Teclado: 453 tabulações até o painel da lei
 
@@ -325,13 +377,16 @@ alvo de uma vez.
 
 | Ordem | Item | Custo | Impacto |
 | --- | --- | --- | --- |
-| 1º | **B7** — mobile perde a posição ao clicar em referência | trivial (defeito) | alto |
-| 2º | **A1 + A6** — posicionar os dois painéis na chegada por âncora | médio | máximo |
-| 3º | **A4** — `pushState` e Voltar funcionando | médio | alto |
-| 4º | **A2** — faixa "voltar para ‹nota de origem›" | baixo | alto |
-| 5º | **C14** — índice com data e normas incluídas | trivial | médio |
-| 6º | **A5** — backlinks "também comentado em" | médio-alto | alto |
+| 1º | **A1 + A6** — posicionar os dois painéis na chegada por âncora | médio | máximo |
+| 2º | **A4** — `pushState` e Voltar funcionando | médio | alto |
+| 3º | **A2** — faixa "voltar para ‹nota de origem›" | baixo | alto |
+| 4º | **C14** — índice com data e normas incluídas | trivial | médio |
+| 5º | **A5** — backlinks "também comentado em" | médio-alto | alto |
+| 6º | **B8** — artigos no sumário da lei seca | baixo | médio |
 
-Os itens 1, 4 e 5 são independentes e podem sair em qualquer ordem. Os itens
-2, 3 e 6 compartilham a mesma infraestrutura (o mapa dispositivo ↔ seção de
+Os itens 3, 4 e 6 são independentes e podem sair em qualquer ordem. Os itens
+1, 2 e 5 compartilham a mesma infraestrutura (o mapa dispositivo ↔ seção de
 comentário): convém construir o mapa primeiro e depois os três sobre ele.
+
+**B7**, **B9** e **B10** saíram desta lista porque foram feitos — o que
+restou de cada um está anotado na seção do próprio item.

@@ -186,6 +186,21 @@
     var abas = Array.prototype.slice.call(document.querySelectorAll('[data-painel]'));
     var scrollPositions = {};
 
+    function painelAtivo() {
+        return document.body.getAttribute('data-painel-ativo') || 'comentarios';
+    }
+
+    /* Em uma coluna quem rola é a página, e trocar de painel troca o que está
+       na tela inteira: sem guardar onde o leitor estava no painel que sai, ele
+       volta para o topo ao retornar. Vale para toda saída de painel, não só a
+       feita pela aba — seguir uma referência do comentário também tira o
+       leitor do painel de comentários (ver `irParaElemento`). */
+    function guardarPosicaoDoPainel(nomeDoDestino) {
+        var atual = painelAtivo();
+        if (duasColunas.matches || atual === nomeDoDestino) return;
+        scrollPositions[atual] = window.scrollY;
+    }
+
     function mostrarPainel(nome) {
         document.body.setAttribute('data-painel-ativo', nome);
         abas.forEach(function (aba) {
@@ -195,11 +210,7 @@
 
     abas.forEach(function (aba) {
         aba.addEventListener('click', function () {
-            var painelAtual = document.body.getAttribute('data-painel-ativo') || 'comentarios';
-            // Em mobile (uma coluna), guardar a posição de scroll do painel que estamos deixando
-            if (!duasColunas.matches && painelAtual !== aba.dataset.painel) {
-                scrollPositions[painelAtual] = window.scrollY;
-            }
+            guardarPosicaoDoPainel(aba.dataset.painel);
             mostrarPainel(aba.dataset.painel);
             // Restaurar posição de scroll do novo painel
             if (!duasColunas.matches) {
@@ -236,13 +247,20 @@
     // outra norma selecionada.
     var normaAtiva = normas.length ? normas[0] : null;
 
+    /* Ir e voltar entre a lei e o decreto que a regulamenta é justamente o
+       motivo de uma nota exibir mais de uma norma — e o Marco Civil tem três
+       decretos. Guardar onde o leitor parou em cada uma faz a volta devolvê-lo
+       ao mesmo ponto, em vez de ao topo de um texto que ele já tinha rolado.
+       A posição vale enquanto a aba estiver aberta; norma nunca visitada
+       começa no topo, como antes. */
     function ativarNorma(normaAlvo) {
+        if (normaAtiva && normaAtiva !== normaAlvo) normaAtiva.scrollTop = corpoDaLei.scrollTop;
         normas.forEach(function (norma) {
             norma.doc.hidden = norma !== normaAlvo;
         });
         if (fonteLink) fonteLink.href = normaAlvo.fonte;
         if (seletorNorma.value !== normaAlvo.opcao.value) seletorNorma.value = normaAlvo.opcao.value;
-        corpoDaLei.scrollTop = 0;
+        corpoDaLei.scrollTop = normaAlvo.scrollTop || 0;
         normaAtiva = normaAlvo;
         reconstruirSumarioLei();
     }
@@ -271,6 +289,17 @@
             var normaAlvo = normas[seletorNorma.selectedIndex];
             ativarNorma(normaAlvo);
             carregarNorma(normaAlvo, function () {});
+            /* A norma escolhida entra na URL: sem isso, "a nota do Marco Civil
+               mostrando o Decreto nº 8.771" não é um endereço — não dá para
+               compartilhar nem para sobreviver a um F5. Marca-se pelo prefixo
+               dos ids da norma (`#dec8771`), o mesmo espaço de nomes das
+               âncoras de dispositivo (`#dec8771-art-5`), que já reativam a
+               norma certa ao abrir. A norma principal é o padrão e não leva
+               marca. Só `replaceState`: fazer a troca de norma virar entrada
+               no histórico é parte de rever a navegação do botão Voltar, que
+               hoje ainda não existe em salto nenhum. */
+            history.replaceState(null, '',
+                normaAlvo.prefixo ? '#' + normaAlvo.prefixo : location.pathname + location.search);
         });
     }
 
@@ -288,6 +317,12 @@
             return normas.filter(function (norma) { return !norma.prefixo; })[0];
         }
         return undefined;
+    }
+
+    // O prefixo sozinho (`#dec8771`) é a norma inteira, sem dispositivo: é o
+    // que o seletor grava na URL ao trocar de norma.
+    function normaDoPrefixo(id) {
+        return normas.filter(function (norma) { return norma.prefixo && norma.prefixo === id; })[0];
     }
 
     /* --- Ir até um dispositivo/título, em qualquer um dos dois painéis --- */
@@ -318,6 +353,7 @@
         } else {
             // Em uma coluna quem rola é a página, e as abas e o topo do painel
             // ficam fixos: o dispositivo precisa parar abaixo deles.
+            guardarPosicaoDoPainel(nomePainel);
             mostrarPainel(nomePainel);
             var fixos = alturaDosElementosFixos(painelEl);
             rolarJanela(alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
@@ -403,17 +439,26 @@
        Ocultos por padrão; abrem por um botão fixo na borda da tela (esquerda
        para os comentários, direita para a lei seca). O da lei seca é
        reconstruído sempre que a norma exibida muda (troca no seletor, ou
-       chegada de uma norma extra buscada por fetch). */
+       chegada de uma norma extra buscada por fetch). Cada um tem um campo de
+       filtro e marca a seção em que o leitor está. */
+
+    // Comparação sem acento e sem caixa: quem filtra por "principios" espera
+    // achar "Princípios", e o teclado do celular não põe acento sozinho.
+    function normalizar(texto) {
+        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
     function construirSumario(lista, raiz) {
         lista.innerHTML = '';
-        var titulos = raiz.querySelectorAll('h2[id], h3[id]');
+        var titulos = Array.prototype.slice.call(raiz.querySelectorAll('h2[id], h3[id]'));
         var ultimoItemH2 = null;
-        Array.prototype.forEach.call(titulos, function (titulo) {
+        titulos.forEach(function (titulo) {
             var item = document.createElement('li');
             var link = document.createElement('a');
             link.href = '#' + titulo.id;
             link.textContent = titulo.textContent;
             item.appendChild(link);
+            item.dataset.busca = normalizar(titulo.textContent);
 
             if (titulo.tagName === 'H2' || !ultimoItemH2) {
                 lista.appendChild(item);
@@ -427,20 +472,83 @@
                 sublista.appendChild(item);
             }
         });
+        return titulos;
     }
 
-    function configurarSumario(idBotao, idPainel, corpoEl, nomePainel) {
+    /* Filtra os títulos já listados. Um item que casa arrasta consigo os
+       ancestrais (sem o título do capítulo, a seção encontrada aparece sem o
+       contexto que a situa) e os descendentes (quem procura o capítulo quer as
+       seções dele). */
+    function filtrarSumario(lista, vazio, termo) {
+        var alvo = normalizar(termo).trim();
+        var itens = Array.prototype.slice.call(lista.querySelectorAll('li'));
+
+        if (!alvo) {
+            itens.forEach(function (item) { item.hidden = false; });
+            vazio.hidden = true;
+            return;
+        }
+
+        itens.forEach(function (item) { item.hidden = true; });
+        var encontrou = false;
+        itens.forEach(function (item) {
+            if (item.dataset.busca.indexOf(alvo) === -1) return;
+            encontrou = true;
+            item.hidden = false;
+            Array.prototype.forEach.call(item.querySelectorAll('li'), function (filho) {
+                filho.hidden = false;
+            });
+            for (var pai = item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
+                pai.hidden = false;
+            }
+        });
+        vazio.hidden = encontrou;
+    }
+
+    /* Seção em que o leitor está: o último título que já passou pela linha de
+       leitura (o topo útil do painel, abaixo do que estiver fixo ali). Sem
+       isso, abrir um sumário de 50 entradas não diz onde ele está — só para
+       onde pode ir. Só é recalculado com o sumário aberto: fechado, o
+       resultado não apareceria em lugar nenhum. */
+    function marcarSumarioAtivo(sumario, painelEl, corpoEl) {
+        if (!sumario || sumario.painel.hidden || !sumario.titulos.length) return;
+        var linha = (duasColunas.matches
+            ? corpoEl.getBoundingClientRect().top
+            : alturaDosElementosFixos(painelEl)) + 8;
+        var atual = sumario.titulos[0];
+        sumario.titulos.forEach(function (titulo) {
+            if (titulo.getBoundingClientRect().top <= linha) atual = titulo;
+        });
+        Array.prototype.forEach.call(sumario.lista.querySelectorAll('a'), function (link) {
+            var eOAtual = decodeURIComponent(link.getAttribute('href').slice(1)) === atual.id;
+            link.classList.toggle('nota-toc__atual', eOAtual);
+            if (eOAtual) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+        });
+    }
+
+    function configurarSumario(idBotao, idPainel, painelEl, corpoEl, nomePainel) {
         var botao = document.getElementById(idBotao);
         var painelSumario = document.getElementById(idPainel);
         if (!botao || !painelSumario) return null;
         var lista = painelSumario.querySelector('ul');
         var fechar = painelSumario.querySelector('.nota-toc__fechar');
+        var campo = painelSumario.querySelector('.nota-toc__campo');
+        var vazio = painelSumario.querySelector('.nota-toc__vazio');
+        var sumario = { painel: painelSumario, lista: lista, titulos: [] };
 
         function abrir() {
             painelSumario.hidden = false;
             botao.setAttribute('aria-expanded', 'true');
-            var primeiroLink = lista.querySelector('a');
-            if (primeiroLink) primeiroLink.focus();
+            marcarSumarioAtivo(sumario, painelEl, corpoEl);
+            /* No desktop o foco vai para o filtro: com o sumário aberto para
+               procurar uma seção, poder digitar direto poupa o percurso pela
+               lista. No mobile isso abriria o teclado por cima da própria
+               lista, então lá o foco continua no primeiro link. */
+            var primeiro = duasColunas.matches && campo ? campo : lista.querySelector('a');
+            if (primeiro) primeiro.focus();
+            var atual = lista.querySelector('.nota-toc__atual');
+            if (atual) atual.scrollIntoView({ block: 'nearest' });
         }
 
         function fecharSumario(devolverFoco) {
@@ -454,6 +562,19 @@
             if (painelSumario.hidden) abrir(); else fecharSumario(false);
         });
         if (fechar) fechar.addEventListener('click', function () { fecharSumario(true); });
+        if (campo) {
+            campo.addEventListener('input', function () {
+                filtrarSumario(lista, vazio, campo.value);
+            });
+            // Esc num campo de busca limpa o texto em vez de propagar: só
+            // fecha o sumário quando não há mais o que limpar.
+            campo.addEventListener('keydown', function (evento) {
+                if (evento.key !== 'Escape' || !campo.value) return;
+                campo.value = '';
+                filtrarSumario(lista, vazio, '');
+                evento.stopPropagation();
+            });
+        }
         painelSumario.addEventListener('keydown', function (evento) {
             if (evento.key === 'Escape') fecharSumario(true);
         });
@@ -484,18 +605,28 @@
             }
         });
 
-        return { lista: lista };
+        sumario.limparFiltro = function () {
+            if (!campo || !campo.value) return;
+            campo.value = '';
+            filtrarSumario(lista, vazio, '');
+        };
+        return sumario;
     }
 
-    var sumarioComentarios = configurarSumario('toc-comentarios-btn', 'toc-comentarios', corpoDosComentarios, 'comentarios');
-    var sumarioLei = configurarSumario('toc-lei-btn', 'toc-lei', corpoDaLei, 'lei');
+    var sumarioComentarios = configurarSumario('toc-comentarios-btn', 'toc-comentarios', comentarios, corpoDosComentarios, 'comentarios');
+    var sumarioLei = configurarSumario('toc-lei-btn', 'toc-lei', lei, corpoDaLei, 'lei');
 
-    if (sumarioComentarios) construirSumario(sumarioComentarios.lista, corpoDosComentarios);
+    if (sumarioComentarios) {
+        sumarioComentarios.titulos = construirSumario(sumarioComentarios.lista, corpoDosComentarios);
+    }
 
     function reconstruirSumarioLei() {
         if (!sumarioLei) return;
         var docAtivo = corpoDaLei.querySelector('.lei-doc:not([hidden])') || corpoDaLei;
-        construirSumario(sumarioLei.lista, docAtivo);
+        // A lista é outra: um filtro digitado para a norma anterior não diz
+        // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro.
+        sumarioLei.limparFiltro();
+        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo);
     }
     reconstruirSumarioLei();
 
@@ -532,6 +663,10 @@
             progressoPendente = false;
             atualizarProgressoComentarios();
             atualizarProgressoLei();
+            // Mesmo quadro da barra de progresso: as duas leem a rolagem, e o
+            // sumário fechado sai na primeira linha de marcarSumarioAtivo.
+            marcarSumarioAtivo(sumarioComentarios, comentarios, corpoDosComentarios);
+            marcarSumarioAtivo(sumarioLei, lei, corpoDaLei);
         });
     }
 
@@ -542,11 +677,16 @@
     if (duasColunas.addEventListener) duasColunas.addEventListener('change', atualizarProgressos);
     atualizarProgressos();
 
-    /* --- Link compartilhado com âncora (/notas/lgpd#art-5-v) --- */
+    /* --- Link compartilhado com âncora (/notas/lgpd#art-5-v) ou com norma
+       (/notas/mci#dec8771, sem dispositivo) --- */
     if (location.hash) {
         var idInicial = decodeURIComponent(location.hash.slice(1));
+        var soNorma = normaDoPrefixo(idInicial);
         var normaInicial = normaDoId(idInicial);
-        if (normaInicial) {
+        if (soNorma) {
+            ativarNorma(soNorma);
+            carregarNorma(soNorma, function () {});
+        } else if (normaInicial) {
             ativarNorma(normaInicial);
             carregarNorma(normaInicial, function () { irPara(idInicial); });
         } else {
