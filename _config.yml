@@ -38,6 +38,7 @@ last_modified_at:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - NOTAS-NAVEGACAO.md
   - README.md
   - vendor
 
