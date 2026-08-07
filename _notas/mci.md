@@ -8,6 +8,8 @@ normas_extra:
   - decreto-8771
   - decreto-12975
   - decreto-12976
+ordem: 2
+jurisdicao: Brasil
 atualizado_em: 2026-08-06
 ---
 

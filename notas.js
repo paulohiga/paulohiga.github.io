@@ -67,6 +67,13 @@
         });
     }
 
+    /* A faixa "voltar para ‹nota de origem›" (.nota-origem) não é montada
+       aqui: ela precisa estar decidida antes do primeiro paint, senão aparece
+       depois e empurra os painéis para baixo. Fica num script inline em
+       _layouts/nota.html, junto do tema e da divisão dos painéis, pelo mesmo
+       motivo que eles. O que este arquivo faz com ela é só medir a altura,
+       quando está presa no topo (ver alturaDosElementosFixos). */
+
     var comentarios = document.getElementById('comentarios');
     var lei = document.getElementById('lei');
     if (!comentarios || !lei) return;
@@ -325,12 +332,26 @@
         return normas.filter(function (norma) { return norma.prefixo && norma.prefixo === id; })[0];
     }
 
-    /* --- Ir até um dispositivo/título, em qualquer um dos dois painéis --- */
+    /* --- Ir até um dispositivo/título, em qualquer um dos dois painéis ---
+       Em uma coluna quem rola é a página, e o que está preso no topo cobre o
+       começo dela: o cabeçalho, a faixa de origem (quando existe), a barra de
+       abas e o topo do painel. É essa soma que o salto por âncora e a linha de
+       leitura do sumário descontam. Nem todos estão presos sempre — o
+       cabeçalho e a faixa só no mobile —, e quem diz isso é o estilo
+       calculado, para o ponto de corte de 900px não precisar ser repetido
+       aqui. */
+    var PRESOS_NO_TOPO = ['.nota-topo', '.nota-origem', '.nota-abas'];
+
     function alturaDosElementosFixos(painelEl) {
-        var barraDeAbas = document.querySelector('.nota-abas');
-        var topoDoPainel = painelEl.querySelector('.painel__topo');
         var altura = 0;
-        if (barraDeAbas && getComputedStyle(barraDeAbas).display !== 'none') altura += barraDeAbas.offsetHeight;
+        PRESOS_NO_TOPO.forEach(function (seletor) {
+            var el = document.querySelector(seletor);
+            if (!el) return;
+            var estilo = getComputedStyle(el);
+            if (estilo.position !== 'sticky' || estilo.display === 'none') return;
+            altura += el.offsetHeight;
+        });
+        var topoDoPainel = painelEl.querySelector('.painel__topo');
         if (topoDoPainel) altura += topoDoPainel.offsetHeight;
         return altura;
     }
@@ -448,29 +469,115 @@
         return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    function construirSumario(lista, raiz) {
+    /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e o
+       começo do texto, que é o que diz do que ele trata — numa norma europeia o
+       marcador já vem com a ementa ("Artigo 5.º — Princípios relativos ao
+       tratamento de dados pessoais"), numa brasileira o texto emenda no
+       marcador. O corte do resumo é feito aqui, e não só no CSS, porque o
+       filtro compara com o que está escrito no item: o que não aparece não
+       deve casar com a busca. */
+    var LIMITE_DO_RESUMO = 90;
+
+    function partesDoArtigo(paragrafo) {
+        var texto = paragrafo.textContent.replace(/\s+/g, ' ').trim();
+        var corte = texto.indexOf(' ', texto.indexOf(' ') + 1);
+        var marcador = corte === -1 ? texto : texto.slice(0, corte);
+        var resumo = corte === -1 ? '' : texto.slice(corte + 1);
+        // "Art. 64." vira "Art. 64"; "Artigo 64.º" e "Art. 6º" ficam como estão.
+        marcador = marcador.replace(/\.$/, '');
+        if (resumo.length > LIMITE_DO_RESUMO) {
+            resumo = resumo.slice(0, LIMITE_DO_RESUMO);
+            var ultimoEspaco = resumo.lastIndexOf(' ');
+            resumo = (ultimoEspaco > 0 ? resumo.slice(0, ultimoEspaco) : resumo) + '…';
+        }
+        return { marcador: marcador, resumo: resumo };
+    }
+
+    /* Os artigos entram recolhidos sob o título a que pertencem. Abertos de
+       saída eles afogariam os capítulos, que são o primeiro nível de
+       orientação: são 80 dispositivos de artigo na LGPD e 119 no AI Act.
+       `<details>` já traz o teclado, o estado aberto/fechado e o anúncio para
+       leitor de tela — nada disso precisa ser reescrito em ARIA. */
+    function criarGrupoDeArtigos(itemDoTitulo, lista) {
+        var dono = itemDoTitulo;
+        if (!dono) {
+            // Norma sem capítulo nenhum (é o caso dos decretos): os artigos
+            // ficam no primeiro nível, que sem eles seria um sumário vazio.
+            dono = document.createElement('li');
+            lista.appendChild(dono);
+        }
+        var grupo = document.createElement('details');
+        grupo.className = 'nota-toc__artigos';
+        var rotulo = document.createElement('summary');
+        var itens = document.createElement('ul');
+        grupo.appendChild(rotulo);
+        grupo.appendChild(itens);
+        dono.appendChild(grupo);
+        return { rotulo: rotulo, itens: itens, total: 0 };
+    }
+
+    function acrescentarArtigo(grupo, paragrafo) {
+        var partes = partesDoArtigo(paragrafo);
+        var item = document.createElement('li');
+        var link = document.createElement('a');
+        var marcador = document.createElement('span');
+        link.href = '#' + paragrafo.id;
+        marcador.className = 'nota-toc__marcador';
+        marcador.textContent = partes.marcador;
+        link.appendChild(marcador);
+        if (partes.resumo) link.appendChild(document.createTextNode(' ' + partes.resumo));
+        item.appendChild(link);
+        item.dataset.busca = normalizar(partes.marcador + ' ' + partes.resumo);
+        grupo.itens.appendChild(item);
+        grupo.total += 1;
+        grupo.rotulo.textContent = grupo.total + (grupo.total === 1 ? ' artigo' : ' artigos');
+    }
+
+    /* `comArtigos` só vale para o sumário da lei seca: no dos comentários os
+       títulos das seções já são o conteúdo. Devolve os títulos — e só eles —,
+       porque é sobre títulos que a marcação de "seção atual" trabalha: com os
+       artigos na conta, o capítulo em que o leitor está deixaria de ser
+       destacado, e é ele que situa a leitura. */
+    function construirSumario(lista, raiz, comArtigos) {
         lista.innerHTML = '';
-        var titulos = Array.prototype.slice.call(raiz.querySelectorAll('h2[id], h3[id]'));
+        var seletor = comArtigos ? 'h2[id], h3[id], p.lei-artigo[id]' : 'h2[id], h3[id]';
+        var nos = Array.prototype.slice.call(raiz.querySelectorAll(seletor));
+        var titulos = [];
         var ultimoItemH2 = null;
-        titulos.forEach(function (titulo) {
+        var itemDoTitulo = null;
+        var grupoDeArtigos = null;
+
+        nos.forEach(function (no) {
+            if (no.tagName === 'P') {
+                if (!grupoDeArtigos) grupoDeArtigos = criarGrupoDeArtigos(itemDoTitulo, lista);
+                acrescentarArtigo(grupoDeArtigos, no);
+                return;
+            }
+
             var item = document.createElement('li');
             var link = document.createElement('a');
-            link.href = '#' + titulo.id;
-            link.textContent = titulo.textContent;
+            link.href = '#' + no.id;
+            link.textContent = no.textContent;
             item.appendChild(link);
-            item.dataset.busca = normalizar(titulo.textContent);
+            item.dataset.busca = normalizar(no.textContent);
 
-            if (titulo.tagName === 'H2' || !ultimoItemH2) {
+            if (no.tagName === 'H2' || !ultimoItemH2) {
                 lista.appendChild(item);
-                if (titulo.tagName === 'H2') ultimoItemH2 = item;
+                if (no.tagName === 'H2') ultimoItemH2 = item;
             } else {
-                var sublista = ultimoItemH2.querySelector('ul');
+                // `:scope >` porque o item do h2 pode conter também a lista de
+                // artigos do próprio capítulo, que não é a sublista dos h3.
+                var sublista = ultimoItemH2.querySelector(':scope > ul');
                 if (!sublista) {
                     sublista = document.createElement('ul');
                     ultimoItemH2.appendChild(sublista);
                 }
                 sublista.appendChild(item);
             }
+
+            titulos.push(no);
+            itemDoTitulo = item;
+            grupoDeArtigos = null;
         });
         return titulos;
     }
@@ -503,6 +610,14 @@
             }
         });
         vazio.hidden = encontrou;
+
+        /* Artigo que casa não adianta nada dentro de um grupo recolhido — e
+           capítulo que casa traz os artigos dele junto, pela mesma regra que
+           já traz as seções. Limpar o filtro não recolhe de volta: o que foi
+           aberto (pelo leitor ou pela busca) continua aberto. */
+        Array.prototype.forEach.call(lista.querySelectorAll('details'), function (grupo) {
+            if (grupo.querySelector('li:not([hidden])')) grupo.open = true;
+        });
     }
 
     /* Seção em que o leitor está: o último título que já passou pela linha de
@@ -548,7 +663,14 @@
             var primeiro = duasColunas.matches && campo ? campo : lista.querySelector('a');
             if (primeiro) primeiro.focus();
             var atual = lista.querySelector('.nota-toc__atual');
-            if (atual) atual.scrollIntoView({ block: 'nearest' });
+            if (atual) {
+                // No sumário da lei seca, o capítulo em que o leitor está abre
+                // com os artigos à mostra: é ali que ele vai procurar o
+                // artigo vizinho ao que está lendo.
+                var grupoAtual = atual.closest('li').querySelector(':scope > details');
+                if (grupoAtual) grupoAtual.open = true;
+                atual.scrollIntoView({ block: 'nearest' });
+            }
         }
 
         function fecharSumario(devolverFoco) {
@@ -617,7 +739,7 @@
     var sumarioLei = configurarSumario('toc-lei-btn', 'toc-lei', lei, corpoDaLei, 'lei');
 
     if (sumarioComentarios) {
-        sumarioComentarios.titulos = construirSumario(sumarioComentarios.lista, corpoDosComentarios);
+        sumarioComentarios.titulos = construirSumario(sumarioComentarios.lista, corpoDosComentarios, false);
     }
 
     function reconstruirSumarioLei() {
@@ -626,7 +748,7 @@
         // A lista é outra: um filtro digitado para a norma anterior não diz
         // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro.
         sumarioLei.limparFiltro();
-        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo);
+        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo, true);
     }
     reconstruirSumarioLei();
 

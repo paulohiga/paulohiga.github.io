@@ -1,5 +1,7 @@
 {% assign url_canonica = site.url | append: page.url %}
-{% assign notas = site.notas | sort: "title" %}
+<!-- Mesma ordenação do corpo da página (ver notas-index.html): a ItemList do
+     JSON-LD descreve a lista que o leitor vê, e as duas precisam bater. -->
+{% assign notas = site.notas | sort: "ordem", "last" %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Paulo Higa</title>

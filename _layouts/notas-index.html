@@ -3,8 +3,23 @@
      se atualiza sozinha a cada nota criada ou removida — nenhuma edição
      manual aqui quando o conteúdo muda. Reaproveita o CSS e os tokens visuais
      de nota-style.css (mesma identidade das notas individuais), mas com um
-     layout mais simples: sem painéis, sem abas, sem lei ao lado. -->
-{% assign notas = site.notas | sort: "title" %}
+     layout mais simples: sem painéis, sem abas, sem lei ao lado.
+
+     Cada cartão mostra o que o front matter da nota já sabe e o índice antes
+     ignorava: a data da última atualização (`atualizado_em`) e as normas que
+     o painel "Lei seca" traz (a de `lei` mais as de `normas_extra`) — sem
+     isso não se descobre, daqui, que a nota do Marco Civil vem com três
+     decretos junto.
+
+     A ordem não é alfabética: `ordem` (front matter) é a relevância
+     editorial, e `jurisdicao` agrupa os cartões. Alfabética punia o leitor
+     brasileiro, pondo o AI Act em primeiro e a LGPD em quarto. Grupo novo não
+     pede edição aqui: o rótulo exibido é o próprio valor de `jurisdicao`, e
+     os grupos saem na ordem em que aparecem na lista já ordenada. Nota sem
+     `ordem` vai para o fim em vez de derrubar a página. -->
+{% assign notas = site.notas | sort: "ordem", "last" %}
+{% assign grupos = notas | group_by: "jurisdicao" %}
+{% assign meses = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: ',' %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -47,16 +62,40 @@
             e, quando ajuda a entender a brasileira, estrangeira —, com o texto da lei ao lado dos
             comentários.
         </p>
-        <ul class="notas-index__lista" id="lista-notas">
-{% for nota in notas %}
-            <li class="notas-index__item">
-                <a href="{{ nota.url }}">
-                    <h2>{{ nota.title }}</h2>
-                    <p>{{ nota.description }}</p>
-                </a>
-            </li>
+        <!-- Só o título é link, e não o cartão inteiro: assim o nome acessível
+             do link é o título da nota, e não o bloco de texto todo (título +
+             resumo + normas + data), que um leitor de tela leria por inteiro a
+             cada item da lista. O cartão continua clicável em qualquer ponto
+             por um pseudoelemento que cobre a área (ver nota-style.css). -->
+        <div id="lista-notas" tabindex="-1">
+{% for grupo in grupos %}
+{% if grupo.name != '' %}
+            <h2 class="notas-index__grupo">{{ grupo.name }}</h2>
+{% endif %}
+            <ul class="notas-index__lista">
+{% for nota in grupo.items %}
+{% assign norma = site.leis | where: 'slug', nota.lei | first %}
+{% assign dia = nota.atualizado_em | date: '%-d' %}
+{% assign mes = nota.atualizado_em | date: '%-m' | minus: 1 %}
+{% assign ano = nota.atualizado_em | date: '%Y' %}
+                <li class="notas-index__item">
+                    <h3 class="notas-index__titulo"><a href="{{ nota.url }}">{{ nota.title }}</a></h3>
+                    <p class="notas-index__resumo">{{ nota.description }}</p>
+                    <ul class="notas-index__normas" aria-label="Normas no painel desta nota">
+                        <li>{{ norma.apelido }}</li>
+{% for slug in nota.normas_extra %}
+{% assign extra = site.leis | where: 'slug', slug | first %}
+                        <li>{{ extra.apelido }}</li>
 {% endfor %}
-        </ul>
+                    </ul>
+                    <p class="notas-index__data">Atualizada em
+                        <time datetime="{{ nota.atualizado_em | date: '%Y-%m-%d' }}">{{ dia }} de {{ meses[mes] }} de {{ ano }}</time>
+                    </p>
+                </li>
+{% endfor %}
+            </ul>
+{% endfor %}
+        </div>
     </main>
 
     <script src="/notas.js" defer></script>

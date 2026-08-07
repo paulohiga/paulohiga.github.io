@@ -8,9 +8,9 @@ ANPD, GDPR e AI Act).
 indicado, e a ordem de execução é a de "Se eu tivesse que escolher", no fim.
 Nenhuma proposta aqui exige dependência nova, *build step* novo ou saída da
 arquitetura descrita em [`notas.md`](./notas.md) — tudo cabe em `notas.js`,
-`_includes/nota-style.css`, `_layouts/nota.html`,
-`_layouts/notas-index.html` e `scripts/`, e todas degradam sem JavaScript
-como a seção já degrada hoje.
+`_includes/nota-style.css`, os layouts e includes da seção, o front matter das
+notas e `scripts/`, e todas degradam sem JavaScript como a seção já degrada
+hoje.
 
 Referências de linha apontam para o estado do código em 7/8/2026 (commit
 `17062a0`) e servem de ponto de partida, não de endereço exato.
@@ -19,13 +19,17 @@ Referências de linha apontam para o estado do código em 7/8/2026 (commit
 
 | Item | Situação |
 | --- | --- |
-| A1, A2, A3, A4, A5, A6 | pendente |
+| A1 | pendente |
+| A2 | **feito** (7/8/2026) |
+| A3 | **feito** (7/8/2026) |
+| A4, A5, A6 | pendente |
 | B7 | **feito** (7/8/2026) |
-| B8 | pendente |
+| B8 | **feito** (7/8/2026) |
 | B9 | **feito** (7/8/2026) |
 | B10 | **feito** (7/8/2026) |
 | B11, B12, B13 | pendente |
-| C14, C15, C16 | pendente |
+| C14 | **feito** (7/8/2026) |
+| C15, C16 | pendente |
 
 Os itens feitos ficam registrados abaixo com o que foi entregue, para que o
 histórico do diagnóstico não se perca e para que quem retomar a lista saiba o
@@ -88,38 +92,83 @@ heurística erra.
 `_includes/lei-anotada.html`, opcionalmente
 `scripts/ancorar_referencias.py`.
 
-### A2. A chegada não diz de onde o leitor veio, nem oferece volta
+### A2. A chegada não dizia de onde o leitor veio, nem oferecia volta — FEITO
 
-**Hoje.** Nada na página de destino registra a origem; a trilha é sempre
-`higa.me / notas`, fixa.
+**Como era.** Nada na página de destino registrava a origem; a trilha era
+sempre `higa.me / notas`, fixa. "Marco Civil → art. 6º da LGPD → volto ao
+Marco Civil" — o percurso central de quem estuda normas que se citam — só
+existia pelo botão Voltar do navegador, que tem o problema do **A4**.
 
-**Por que incomoda.** "Marco Civil → art. 6º da LGPD → volto ao Marco Civil
-onde eu estava" é o percurso central de quem estuda normas que se citam. Hoje
-ele só existe pelo botão Voltar do navegador — que tem o problema do **A4**.
+**O que foi feito.** Uma faixa discreta, "← Voltar para Marco Civil da
+Internet", que aparece quando o `document.referrer` é outra nota da seção. Sem
+estado no servidor e sem cookie.
 
-**Proposta.** Faixa discreta no topo do painel de comentários quando o
-`document.referrer` for outra nota da seção: "← Voltar para Marco Civil da
-Internet". Sem estado no servidor e sem cookie: `referrer` mais
-`sessionStorage` para sobreviver a um recarregamento.
+- **De onde vem o nome.** O menu do título já lista todas as outras notas com
+  o título de cada uma: é o mapa de que a faixa precisa, sem marcação nova. Do
+  título fica só o apelido — os títulos seguem "‹apelido› — ‹nome formal›", e
+  numa faixa de uma linha o que serve é "Marco Civil da Internet", não "Marco
+  Civil da Internet — Lei nº 12.965/2014".
+- **O que conta como origem.** Só outra nota. Vir de `/notas` não acende a
+  faixa: para o índice já existe a trilha do cabeçalho. Vir de fora da seção
+  apaga o que estivesse guardado — a trilha anterior não vale mais.
+- **`sessionStorage`** guarda a origem por caminho de destino, para a faixa
+  sobreviver a uma abertura sem `referrer` (recarga pela barra de endereços).
+- **Roda antes do primeiro paint**, num script inline em `_layouts/nota.html`,
+  e não no `notas.js`, que é `defer`. Revelada depois, a faixa empurraria os
+  painéis para baixo: medido, **0,040 de CLS em 390px** e 0,025 em 1440px,
+  justamente na navegação que ela serve. Inline, o CLS da página com faixa
+  ficou igual ao da página sem (0,0012 em 390px). É a mesma estratégia já usada
+  para o tema e para a divisão dos painéis, e o motivo é o mesmo.
 
-**Onde mexe.** `notas.js` e um bloco novo em `_layouts/nota.html`.
+**Onde ela ficou, e por quê.** Fora dos dois painéis, entre o cabeçalho e a
+barra de abas — e não no topo do painel de comentários, como a proposta
+original dizia. Dentro do painel ela teria dois problemas: no mobile a chegada
+por âncora abre a aba "Lei seca", e a faixa nasceria escondida justamente na
+navegação que a justifica; e, em qualquer largura, sairia da tela na primeira
+rolagem. No mobile ela é `sticky` junto com o cabeçalho (ver **A3**): medido,
+chegando em `/notas/lgpd#art-55-j` a partir do Marco Civil, a faixa fica em
+`top: 50` com o texto já rolado 40.000px.
 
-### A3. No mobile o cabeçalho rola embora e a nota perde identidade
+**Ficou de fora, de propósito:** a volta leva ao topo da nota de origem, não ao
+parágrafo em que o leitor estava — o `referrer` não carrega fragmento, por
+especificação. Devolver a posição exata é trabalho do **A4**.
 
-**Hoje.** `.nota-topo` é `position: static` (medido: `top: -2000` depois de
-rolar). Ficam fixos só a barra de abas e o `.painel__topo` — e o `<h2>` do
-topo do painel é escondido de propósito no mobile
-(`_includes/nota-style.css`, ~linha 638, `clip-path: inset(50%)`).
+### A3. No mobile o cabeçalho rolava embora e a nota perdia identidade — FEITO
 
-**Por que incomoda.** Somado ao **A1**, quem chega do Marco Civil vê na tela
-apenas `[Comentários | Lei seca]` e texto de lei: **nada diz que ele está na
-LGPD agora**.
+**Como era.** `.nota-topo` era `position: static` (medido: `top: -2000` depois
+de rolar). Ficavam fixos só a barra de abas e o `.painel__topo` — e o `<h2>` do
+topo do painel é escondido de propósito no mobile. Somado ao **A1**, quem
+chegava do Marco Civil via na tela apenas `[Comentários | Lei seca]` e texto de
+lei: **nada dizia que ele estava na LGPD agora**.
 
-**Proposta.** Compactar o cabeçalho no mobile (título em uma linha, truncado,
-com o botão de menu) e torná-lo `sticky` acima das abas; ou, mais barato,
-incluir o apelido da norma na barra de abas ("Comentários | Lei seca · LGPD").
+**O que foi feito.** O cabeçalho foi compactado e preso no topo, com o título
+em uma linha só, cortado com reticências (`LGPD — Lei Geral de Proteç…`). O
+texto completo continua no DOM, para leitor de tela, e o menu logo abaixo
+mostra o nome inteiro das outras notas. Preso, o cabeçalho mantém à mão as três
+coisas que se procura ao chegar: em que norma se está, a volta para `/notas` e
+o menu para outra nota.
 
-**Onde mexe.** `_includes/nota-style.css`, media query `max-width: 899px`.
+**A pilha de elementos presos**, que agora tem quatro andares (cabeçalho →
+faixa de origem → abas → topo do painel), passou a ser descrita por variáveis
+CSS, e cada elemento recebe a sua altura como `height`/`min-height` — não como
+estimativa. Foi assim que apareceu um defeito antigo: o `top: 3.1rem` do
+`.painel__topo` era um número solto, e a barra de abas media **3.5rem**; o topo
+do painel nascia 6px por baixo dela, encoberto. A faixa do **A2** entra na
+conta por uma variável só, zerada quando ela não existe.
+
+O `notas.js` **não repete esses números**: `alturaDosElementosFixos()` percorre
+os elementos e soma os que o estilo calculado disser que estão presos
+(`position: sticky`), de modo que o ponto de corte de 900px vive só no CSS.
+
+**Medido em 390px:** cabeçalho 50px, faixa 38px (quando existe), abas 56px,
+topo do painel 43px — encostados um no outro, sem buraco nem sobreposição, e a
+âncora de chegada parando logo abaixo de tudo. Sem JavaScript o cabeçalho
+continua preso e a âncora nativa também para no lugar certo.
+
+**Ficou de fora, de propósito:** o `<h2>` com o apelido da norma continua
+oculto no mobile. Com o cabeçalho preso, a identidade já está na tela, e
+exibi-lo empurraria o topo do painel da lei para mais uma linha em telas
+estreitas — o campo "Ir para" e o link do texto oficial já dividem essa faixa.
 
 ### A4. Não há volta depois de um salto — o Voltar sai da nota
 
@@ -211,19 +260,38 @@ abrindo a aba de comentários no topo — o leitor nunca esteve neles, e o topo
 é o lugar certo. No desktop nada mudou: o painel de comentários fica onde
 estava e só a lei rola.
 
-### B8. O sumário da lei seca só tem capítulos, nunca artigos
+### B8. O sumário da lei seca só tinha capítulos, nunca artigos — FEITO
 
-**Hoje, contado:** LGPD **11 itens**, Marco Civil **6**, AI Act 43. O
-`construirSumario()` varre só `h2[id], h3[id]` (`notas.js`, ~linha 409), e os
-dispositivos são `<p>`.
+**Como era, contado:** LGPD **11 itens**, Marco Civil **6**, AI Act 43. O
+`construirSumario()` varria só `h2[id], h3[id]`, e os dispositivos são `<p>`.
+Seis entradas de sumário para os 32 artigos do Marco Civil; para chegar a um
+artigo específico só havia o campo "Ir para", que exige saber o número de cor.
 
-**Por que incomoda.** Seis entradas de sumário para os 32 artigos do Marco
-Civil. Para chegar a um artigo específico só há o campo "Ir para", que exige
-saber o número de cor.
+**O que foi feito.** Um nível de artigos sob o título a que pertencem,
+recolhido por padrão num `<details>` rotulado com a contagem ("15 artigos").
+`<details>` porque ele já traz o teclado, o estado aberto/fechado e o anúncio
+para leitor de tela prontos — nada disso precisou ser reescrito em ARIA.
 
-**Proposta.** Um nível de artigos sob cada capítulo, recolhido por padrão
-(para não virar uma lista de 65 itens na LGPD), ou uma faixa de atalhos
-numéricos no topo do painel.
+- **O rótulo do artigo** é o marcador em destaque mais o começo do texto, que é
+  o que diz do que ele trata: "**Art. 20** O titular dos dados tem direito a
+  solicitar a revisão de decisões tomadas…". Numa norma europeia o marcador já
+  vem com a ementa ("**Artigo 5.º** — Princípios relativos ao tratamento de
+  dados pessoais"). O corte do resumo é feito no JavaScript, e não só no CSS,
+  porque o filtro compara com o que está escrito no item: o que não aparece não
+  deve casar com a busca.
+- **O filtro do B9 passou a alcançar artigos**, e abre sozinho o grupo em que
+  achou — filtrar "20" no Marco Civil traz o art. 20 sem que se precise abrir
+  capítulo nenhum. Limpar o filtro não recolhe de volta.
+- **O capítulo em que o leitor está abre com os artigos à mostra** quando o
+  sumário é aberto: é ali que ele vai procurar o artigo vizinho ao que lê.
+- **A "seção atual" continua sendo o título**, e não o artigo. Com os artigos
+  na conta, o capítulo deixaria de ser destacado — e é ele que situa a leitura.
+- **Norma sem capítulo algum** (é o caso dos decretos) ganha os artigos no
+  primeiro nível: antes o sumário dela vinha vazio.
+
+**Medido:** LGPD 11 títulos + **80** dispositivos de artigo (os 65 numerados
+mais a série 55-A…55-L), Marco Civil 6 + 32, AI Act 43 + 119, GDPR 27 + 99,
+Regimento Interno 7 + 75. O sumário dos comentários não mudou.
 
 ### B9. O sumário não mostrava onde o leitor está, e não filtrava — FEITO
 
@@ -328,23 +396,36 @@ duplicada ou avaliar se o ganho compensa.
 
 ## C. Índice e descoberta
 
-### C14. O índice `/notas` mostra menos do que já sabe
+### C14. O índice `/notas` mostrava menos do que já sabia — FEITO
 
-**Hoje.** Seis cartões com título e `description`, em ordem alfabética — o que
-põe o **AI Act em primeiro** numa seção de público brasileiro, e a LGPD (o
-centro da rede, com 157 citações recebidas) em quarto.
+**Como era.** Seis cartões com título e `description`, em ordem alfabética — o
+que punha o **AI Act em primeiro** numa seção de público brasileiro, e a LGPD
+(o centro da rede, com 157 citações recebidas) em quarto. O *front matter* já
+tinha dados que o índice ignorava: `atualizado_em` e `normas_extra`.
 
-O *front matter* já tem dados que o índice ignora: `atualizado_em` (presente
-em todas as notas) e `normas_extra` — o leitor não descobre que a nota do
-Marco Civil traz **três decretos** junto, nem que a do ECA Digital traz o
-Decreto nº 12.880.
+**O que foi feito.**
 
-**Proposta.** Exibir "atualizada em ‹data›" e as normas incluídas em cada
-cartão; agrupar em **Brasil** e **União Europeia**; ordenar por relevância
-editorial (campo `ordem` no *front matter*) em vez de alfabética.
+- **Ordem editorial.** Dois campos novos no *front matter* da nota — `ordem`
+  (relevância) e `jurisdicao` (o grupo) —, documentados em
+  [`notas.md`](./notas.md#front-matter). A lista sai LGPD, Marco Civil, ECA
+  Digital, Regimento Interno, GDPR, AI Act, sob os títulos **Brasil** e **União
+  Europeia**. Grupo novo não pede edição no layout: o rótulo é o próprio valor
+  de `jurisdicao`, e os grupos saem na ordem em que aparecem na lista já
+  ordenada. Nota sem `ordem` vai para o fim em vez de derrubar a página.
+- **Normas no cartão.** A principal e as extras, em etiquetas — são 13 nos seis
+  cartões. É o que responde, do índice, "o que vem junto?": o Marco Civil abre
+  com três decretos, o AI Act com o texto original e o Omnibus ao lado.
+- **Data por extenso**, com `<time datetime>` legível por máquina.
+- **A `ItemList` do JSON-LD segue a mesma ordem** da página: as duas descrevem
+  a mesma lista, e não faria sentido divergirem.
 
-**Onde mexe.** Só `_layouts/notas-index.html` — a mudança de menor risco da
-lista inteira.
+**De quebra, um ganho de acessibilidade:** o cartão inteiro era um `<a>`, e o
+nome acessível do link virava o bloco de texto todo — que agora, com normas e
+data, seria bem maior. Só o título é link; o cartão continua clicável por um
+pseudoelemento que cobre a área.
+
+**Onde mexeu.** `_layouts/notas-index.html`, `_includes/notas-index-head.html`
+(a ordem do JSON-LD), o CSS do índice e o *front matter* das seis notas.
 
 ### C15. Não há busca em nenhum nível
 
@@ -379,14 +460,20 @@ alvo de uma vez.
 | --- | --- | --- | --- |
 | 1º | **A1 + A6** — posicionar os dois painéis na chegada por âncora | médio | máximo |
 | 2º | **A4** — `pushState` e Voltar funcionando | médio | alto |
-| 3º | **A2** — faixa "voltar para ‹nota de origem›" | baixo | alto |
-| 4º | **C14** — índice com data e normas incluídas | trivial | médio |
-| 5º | **A5** — backlinks "também comentado em" | médio-alto | alto |
-| 6º | **B8** — artigos no sumário da lei seca | baixo | médio |
+| 3º | **A5** — backlinks "também comentado em" | médio-alto | alto |
 
-Os itens 3, 4 e 6 são independentes e podem sair em qualquer ordem. Os itens
-1, 2 e 5 compartilham a mesma infraestrutura (o mapa dispositivo ↔ seção de
-comentário): convém construir o mapa primeiro e depois os três sobre ele.
+Os três compartilham a mesma infraestrutura (o mapa dispositivo ↔ seção de
+comentário): convém construir o mapa primeiro e depois os três sobre ele. O
+**A4** tem ainda a dívida registrada no **B10** — a troca de norma só grava
+`replaceState`, à espera de um tratamento de histórico que valha para todos os
+saltos.
 
-**B7**, **B9** e **B10** saíram desta lista porque foram feitos — o que
-restou de cada um está anotado na seção do próprio item.
+**A2**, **A3**, **B7**, **B8**, **B9**, **B10** e **C14** saíram desta lista
+porque foram feitos — o que restou de cada um está anotado na seção do próprio
+item.
+
+**Achado fora desta lista, ainda pendente:** em 390px a aba "Lei seca" da LGPD
+estoura 61px de rolagem horizontal, e o painel de comentários do GDPR, 82px. É
+conteúdo, não layout — uma sequência de "…………" inquebrável no bloco de citação
+do art. 60 da LGPD, e um trecho equivalente no comentário do art. 32.º do GDPR.
+Já era assim antes destas mudanças (medido nos dois builds).

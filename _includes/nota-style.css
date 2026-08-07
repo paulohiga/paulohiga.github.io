@@ -154,6 +154,43 @@ body.dark-theme .nota-tema .ico-moon {
     display: block;
 }
 
+/* --- Faixa "voltar para ‹nota de origem›" ---
+   Só existe quando o leitor chegou de outra nota da seção; quem a revela é o
+   notas.js, a partir do `document.referrer`. Fica entre o cabeçalho e as abas,
+   e não dentro de um painel: assim aparece nas duas larguras e nas duas abas
+   do mobile, inclusive na chegada por âncora, que abre a "Lei seca". */
+.nota-origem {
+    flex: none;
+    margin: 0;
+    padding: 0.3rem clamp(1rem, 3vw, 1.75rem);
+    background: var(--surface-tint);
+    border-bottom: 1px solid var(--hairline);
+    font-size: 0.82rem;
+}
+
+.nota-origem[hidden] {
+    display: none;
+}
+
+.nota-origem a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nota-origem a:hover,
+.nota-origem a:focus-visible {
+    text-decoration: underline;
+}
+
+.nota-origem .ico {
+    width: 1em;
+    height: 1em;
+}
+
 /* --- Abas (uma coluna) --- */
 .nota-abas {
     flex: none;
@@ -602,13 +639,106 @@ body:not(.js) .lei-ir {
 
 /* --- Uma coluna: as abas assumem, e a página rola normalmente --- */
 @media (max-width: 899px) {
+    /* Alturas do que fica preso no topo. São o deslocamento de `sticky` umas
+       das outras (cabeçalho → faixa de origem → abas → topo do painel), e por
+       isso precisam ser previsíveis: cada elemento recebe a sua como `height`,
+       e não como estimativa, para o número não poder mentir. O antecessor
+       deste bloco era um `top: 3.1rem` solto quando a barra de abas media
+       3.5rem, e o topo do painel nascia 6px por baixo dela. O notas.js não
+       repete esses números — mede os elementos para descontar a altura nos
+       saltos por âncora. */
+    :root {
+        --nota-topo-altura: 3.15rem;
+        --nota-origem-altura: 0rem;
+        --nota-abas-altura: 3.5rem;
+    }
+
+    /* A faixa de origem só existe em parte das visitas, e o que vem abaixo
+       dela precisa saber disso: uma variável só, zerada quando a faixa está
+       oculta, resolve os três deslocamentos de uma vez. */
+    body:has(.nota-origem:not([hidden])) {
+        --nota-origem-altura: 2.4rem;
+    }
+
     /* O divisor só faz sentido com os painéis lado a lado. */
     .nota-resizer {
         display: none;
     }
 
+    /* Cabeçalho preso no topo. Sem isso ele rolava embora e, somado à chegada
+       por âncora (que abre a aba "Lei seca"), a tela ficava só com
+       [Comentários | Lei seca] e texto de lei: nada dizia em que norma o
+       leitor estava. Preso, ele mantém à mão o nome da nota, a trilha de volta
+       para /notas e o menu das outras notas. */
+    .nota-topo {
+        position: sticky;
+        top: 0;
+        /* Abaixo dos sumários (7) e do botão que os abre (8), que são
+           sobreposições de tela inteira e precisam cobrir o cabeçalho; acima
+           das abas (5) e do topo dos painéis (4), que passam por baixo dele. */
+        z-index: 6;
+        height: var(--nota-topo-altura);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    /* Ocupa toda a altura do cabeçalho para que o menu do título (ancorado em
+       `top: 100%`) abra rente à borda de baixo, e não no meio dele. */
+    .nota-topo__texto {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nota-trilha {
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
+
+    .nota-topo h1,
+    .nota-titulo-btn {
+        font-size: 1rem;
+    }
+
+    .nota-titulo-btn {
+        max-width: 100%;
+    }
+
+    /* Título em uma linha, cortado com reticências: é o que mantém a altura do
+       cabeçalho igual a --nota-topo-altura. O texto completo continua no DOM,
+       para leitor de tela, e o menu abaixo mostra o nome inteiro das notas. */
+    .nota-titulo-btn__texto {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .nota-tema {
+        width: 2.15rem;
+        height: 2.15rem;
+    }
+
+    /* Presa junto com o cabeçalho. Em uma coluna quem rola é a página, e a
+       chegada por âncora já desce o texto milhares de pixels: solta, a faixa
+       nasceria fora da tela justamente na navegação que a justifica. */
+    .nota-origem {
+        position: sticky;
+        top: var(--nota-topo-altura);
+        z-index: 5;
+        /* `min-height`, e não `height`: onde `:has()` não for entendido a
+           variável fica em zero, e a faixa deve encolher para o conteúdo em
+           vez de recortá-lo. */
+        min-height: var(--nota-origem-altura);
+        display: flex;
+        align-items: center;
+    }
+
     body.js .nota-abas {
         display: flex;
+        top: calc(var(--nota-topo-altura) + var(--nota-origem-altura));
+        height: var(--nota-abas-altura);
     }
 
     body.js[data-painel-ativo="lei"] .painel--comentarios,
@@ -623,14 +753,14 @@ body:not(.js) .lei-ir {
 
     .painel__topo {
         position: sticky;
-        top: 0;
+        top: calc(var(--nota-topo-altura) + var(--nota-origem-altura));
         z-index: 4;
         padding-top: 0.45rem;
         padding-bottom: 0.45rem;
     }
 
     body.js .painel__topo {
-        top: 3.1rem;
+        top: calc(var(--nota-topo-altura) + var(--nota-origem-altura) + var(--nota-abas-altura));
     }
 
     /* Com as abas visíveis o título do painel vira repetição da aba ativa.
@@ -645,9 +775,11 @@ body:not(.js) .lei-ir {
     }
 
     /* Rede de segurança para saltos de âncora feitos pelo próprio navegador
-       (sem JavaScript): o dispositivo não pode parar sob o topo fixo. */
+       (sem JavaScript): o dispositivo não pode parar sob o topo fixo. Sem
+       JavaScript as abas não existem, e o que sobra preso é o cabeçalho mais o
+       topo do painel — daí a folga somada à altura do cabeçalho. */
     .painel__corpo [id] {
-        scroll-margin-top: 6rem;
+        scroll-margin-top: calc(var(--nota-topo-altura) + 3.2rem);
     }
 }
 
@@ -961,6 +1093,48 @@ body:not(.js) .nota-toc-btn {
     font-weight: 600;
 }
 
+/* Artigos sob cada título do sumário da lei seca (montados pelo notas.js).
+   Recolhidos por padrão — abertos de saída, os 65 artigos da LGPD (119 no AI
+   Act) afogariam os capítulos, que são o primeiro nível de orientação. O
+   `<details>` também é o que permite manter no sumário um capítulo inteiro sem
+   que a lista deixe de caber na tela. */
+.nota-toc__corpo .nota-toc__artigos {
+    margin: 0.15rem 0 0.35rem;
+}
+
+.nota-toc__corpo .nota-toc__artigos > summary {
+    padding: 0.3rem 0.45rem;
+    border-radius: 0.35rem;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.nota-toc__corpo .nota-toc__artigos > summary:hover,
+.nota-toc__corpo .nota-toc__artigos > summary:focus-visible {
+    background: var(--surface-tint);
+    color: var(--ink);
+}
+
+.nota-toc__corpo .nota-toc__artigos > ul {
+    margin-top: 0.1rem;
+    padding-left: 0.75rem;
+}
+
+/* Duas linhas, não três: o rótulo é o marcador do artigo mais o começo do
+   texto, e o marcador — que é o que se procura — está sempre na primeira. */
+.nota-toc__corpo .nota-toc__artigos a {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+}
+
+.nota-toc__corpo .nota-toc__marcador {
+    color: var(--ink);
+    font-weight: 600;
+}
+
 /* --- Barra de progresso de leitura, uma por painel. Some sem JavaScript
    (não há como mantê-la atualizada sem ele). --- */
 .nota-progresso {
@@ -999,6 +1173,22 @@ body:not(.js) .nota-progresso {
     color: var(--ink-soft);
 }
 
+/* Agrupamento por jurisdição (o valor de `jurisdicao` no front matter da
+   nota). O rótulo do grupo não é um cartão: é um título de seção da lista. */
+.notas-index__grupo {
+    margin: 2rem 0 0.85rem;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.notas-index__grupo:first-child {
+    margin-top: 0;
+}
+
 .notas-index__lista {
     display: grid;
     gap: 1rem;
@@ -1007,33 +1197,73 @@ body:not(.js) .nota-progresso {
     list-style: none;
 }
 
-.notas-index__item a {
-    display: block;
+/* O cartão inteiro é clicável, mas só o título é link (ver notas-index.html):
+   o pseudoelemento do link cobre o cartão, e o `position: relative` daqui é o
+   que o prende a esta caixa. O preço conhecido dessa técnica é a seleção de
+   texto dentro do cartão — que o cartão-link de antes também não tinha. */
+.notas-index__item {
+    position: relative;
     padding: 1.1rem 1.25rem;
     background: var(--surface);
     border: 1px solid var(--hairline);
     border-radius: 0.75rem;
-    text-decoration: none;
-    color: inherit;
     transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
-.notas-index__item a:hover,
-.notas-index__item a:focus-visible {
+.notas-index__item:has(a:hover),
+.notas-index__item:has(a:focus-visible) {
     border-color: var(--accent);
     background: var(--surface-tint);
 }
 
-.notas-index__item h2 {
+.notas-index__titulo {
     margin: 0 0 0.35rem;
     font-family: var(--font-serif);
     font-size: 1.15rem;
+}
+
+.notas-index__titulo a {
+    text-decoration: none;
     color: var(--link);
 }
 
-.notas-index__item p {
+.notas-index__titulo a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.notas-index__resumo {
     margin: 0;
     font-size: 0.9rem;
+    color: var(--ink-soft);
+}
+
+/* Normas que o painel "Lei seca" da nota traz — a principal e as extras. É o
+   que responde, daqui, "o que vem junto?": a nota do Marco Civil abre com três
+   decretos, a do AI Act com o texto original e o Omnibus ao lado. */
+.notas-index__normas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0.7rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notas-index__normas li {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.4rem;
+    background: var(--surface-tint);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.notas-index__data {
+    margin: 0.6rem 0 0;
+    font-size: 0.78rem;
     color: var(--ink-soft);
 }
 
@@ -1048,6 +1278,7 @@ body:not(.js) .nota-progresso {
     .nota-abas,
     .nota-tema,
     .lei-ir,
+    .nota-origem,
     .nota-resizer,
     .nota-toc-btn,
     .nota-toc,
@@ -1060,6 +1291,14 @@ body:not(.js) .nota-progresso {
     body {
         height: auto;
         overflow: visible;
+    }
+
+    /* Nada preso no topo: numa folha de papel o cabeçalho fixo do mobile só
+       repetiria a si mesmo ou cobriria o texto. */
+    .nota-topo,
+    .painel__topo {
+        position: static;
+        height: auto;
     }
 
     .nota-divisao {
