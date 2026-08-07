@@ -10,7 +10,7 @@ formato: ue
 # tratamento transfronteiriço, e é aplicável a partir de 2/4/2027.
 #
 # Convertido do HTML oficial do EUR-Lex por scripts/converter_eurlex.py; ver
-# `formato: ue` em AGENTS.md. O ato entra inteiro — preâmbulo, os 68
+# `formato: ue` em docs/notas.md. O ato entra inteiro — preâmbulo, os 68
 # considerandos e o articulado. Considerando não é dispositivo e não recebe
 # âncora, mas fica no painel: num regulamento europeu é ele que diz por que
 # cada regra existe. Fora do texto ficou só o aparato de notas de rodapé do

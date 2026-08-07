@@ -9,7 +9,7 @@ sitemap: false
     injetado no DOM, sem pré-carregar o documento no HTML da página principal.
     Não é uma página para navegação humana: não aparece em `_data/pages.yml`,
     não entra no sitemap.xml (`sitemap: false`) e é bloqueado em robots.txt.
-    Ver a seção "Múltiplas normas por nota" do AGENTS.md.
+    Ver "Múltiplas normas por nota" em docs/notas.md.
 {%- endcomment -%}
 {%- assign norma = site.leis | where: 'slug', 'decreto-8771' | first -%}
 {%- include lei-anotada.html lei=norma prefixo=norma.prefixo -%}

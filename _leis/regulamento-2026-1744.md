@@ -12,7 +12,7 @@ formato: ue
 # citação não recebe âncora: são dispositivos de outro ato, não deste.
 #
 # Convertido do HTML oficial do EUR-Lex por scripts/converter_eurlex.py; ver
-# `formato: ue` em AGENTS.md. O ato entra inteiro, com os considerandos — que
+# `formato: ue` em docs/notas.md. O ato entra inteiro, com os considerandos — que
 # aqui valem por si: são eles que explicam o motivo de cada adiamento e de
 # cada proibição nova. Fora do texto ficou só o aparato de notas de rodapé.
 ---

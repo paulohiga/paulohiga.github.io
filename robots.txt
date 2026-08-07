@@ -1,5 +1,5 @@
 # /notas/fragmentos/ não são páginas: são fragmentos HTML buscados via
-# fetch() pelo seletor de normas das notas de legislação (ver AGENTS.md), sem
+# fetch() pelo seletor de normas das notas de legislação (ver docs/notas.md), sem
 # link algum apontando para eles e sem entrada no sitemap. Bloqueados em todo
 # user-agent para não serem indexados como páginas soltas e incompletas.
 
