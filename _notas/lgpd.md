@@ -4,6 +4,8 @@ permalink: /notas/lgpd
 title: LGPD — Lei Geral de Proteção de Dados Pessoais
 description: Notas de estudo sobre a Lei nº 13.709/2018 — definições, princípios, bases legais, deveres dos agentes de tratamento, sanções e o papel da ANPD, com o texto da lei ao lado.
 lei: lgpd
+ordem: 1
+jurisdicao: Brasil
 atualizado_em: 2026-08-06
 ---
 

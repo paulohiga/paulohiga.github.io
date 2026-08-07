@@ -45,7 +45,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | Arquivo | Papel |
 | --- | --- |
 | `notas.md` | A página índice (`/notas`). Corpo vazio: só front matter |
-| `_layouts/notas-index.html` | Monta o índice a partir de `site.notas \| sort: "title"` |
+| `_layouts/notas-index.html` | Monta o índice a partir de `site.notas`, ordenado por `ordem` e agrupado por `jurisdicao` |
 | `_includes/notas-index-head.html` | `<head>` do índice |
 | `_notas/<slug>.md` | Os comentários — é o que vira página, em `/notas/<slug>` |
 | `_leis/<slug>.md` | O texto legal em Markdown puro. `output: false`: nunca vira página |
@@ -60,7 +60,8 @@ en-us, que continua valendo para as páginas de apresentação (ver
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
-`_layouts/notas-index.html`. O `sitemap.xml` também se ajusta sozinho.
+`_layouts/notas-index.html` — inclusive o grupo em que ela aparece, que sai do
+`jurisdicao` do próprio front matter. O `sitemap.xml` também se ajusta sozinho.
 
 ## Publicar uma nota nova
 
@@ -69,7 +70,8 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
    europeia, converta com
    [`converter_eurlex.py`](#trazendo-uma-norma-do-eur-lex) em vez de digitar.
 2. **`_notas/<slug>.md`** — os comentários, com `lei: <slug>` apontando para o
-   arquivo acima.
+   arquivo acima. É aqui que entram `ordem` e `jurisdicao`, que decidem onde a
+   nota aparece no índice — sem `ordem` ela cai no fim da lista.
 3. **`_fragmentos/<slug>.html`** — **só** para cada norma listada em
    `normas_extra`. Replique
    [`_fragmentos/decreto-12880.html`](../_fragmentos/decreto-12880.html)
@@ -94,6 +96,8 @@ no build. Excluir uma nota é apagar os arquivos correspondentes.
 | `title`, `description` | sim | Usados no `<head>`, no índice e no JSON-LD |
 | `lei` | sim | Slug da norma principal, pré-carregada no HTML |
 | `normas_extra` | não | Lista de slugs de `_leis/` com normas adicionais |
+| `ordem` | sim | Posição da nota no índice `/notas`, por relevância editorial (não alfabética). Sem ela a nota vai para o fim da lista |
+| `jurisdicao` | sim | Grupo do índice. O valor é o rótulo exibido — hoje `Brasil` e `União Europeia`. Um grupo novo é só um valor novo; o layout não precisa saber dele |
 | `atualizado_em` | sim | Data da última atualização de conteúdo (ver [`AGENTS.md`](../AGENTS.md#notas-de-legislação-regras-editoriais)) |
 
 **`_leis/<slug>.md`:**

@@ -5,6 +5,8 @@ title: GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia
 description: Notas de estudo sobre o Regulamento (UE) 2016/679 — princípios, bases legais, direitos do titular, transferências internacionais, autoridades e coimas —, com a jurisprudência histórica do Tribunal de Justiça, os casos emblemáticos de violação, o estado das alterações em negociação e a comparação com a LGPD.
 lei: gdpr
 normas_extra: [regulamento-2025-2518]
+ordem: 5
+jurisdicao: União Europeia
 atualizado_em: 2026-08-06
 ---
 

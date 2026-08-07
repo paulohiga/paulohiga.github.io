@@ -64,7 +64,12 @@
             </nav>
             <h1>
                 <button type="button" id="nota-titulo-btn" class="nota-titulo-btn" aria-controls="nota-titulo-menu">
-                    {{ page.title }}
+                    <!-- O título vai num elemento próprio para poder ser
+                         cortado com reticências no mobile, onde o cabeçalho
+                         fica preso no topo e precisa caber em uma linha (ver
+                         nota-style.css). O nome continua inteiro no DOM: quem
+                         usa leitor de tela ouve o título completo. -->
+                    <span class="nota-titulo-btn__texto">{{ page.title }}</span>
                     <svg class="ico nota-titulo-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
             </h1>
@@ -80,6 +85,88 @@
             <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
     </header>
+
+    <!-- Faixa de volta para a nota de origem. Aparece só quando o leitor chegou
+         aqui a partir de outra nota da seção — "Marco Civil → art. 6º da LGPD →
+         volto ao Marco Civil" é o percurso central de quem estuda normas que se
+         citam, e até agora ele só existia pelo botão Voltar do navegador. Quem
+         a preenche é o notas.js, a partir do `document.referrer` e do menu de
+         títulos logo acima (que já lista as outras notas com o nome de cada
+         uma); sem JavaScript ela nunca aparece, porque não há como saber de
+         onde o leitor veio.
+
+         Fica fora dos dois painéis, e não dentro do painel de comentários,
+         por duas razões: no mobile a chegada por âncora abre a aba "Lei seca",
+         e dentro dos comentários a faixa nasceria escondida justamente na
+         navegação que a justifica; e no painel ela sairia da tela na primeira
+         rolagem. -->
+    <p class="nota-origem" id="nota-origem" hidden>
+        <a href="/notas">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Voltar para <span class="nota-origem__nome"></span>
+        </a>
+    </p>
+
+    <!-- Preenche a faixa acima antes do primeiro paint, e não no notas.js
+         (que é `defer`): revelada depois, ela empurraria os painéis para baixo
+         — medido, 0,040 de CLS em 390px e 0,025 em 1440px, justamente na
+         navegação que a faixa serve. Fica aqui, logo depois do elemento e do
+         menu de títulos de onde tira o nome da origem, porque é o primeiro
+         ponto do documento em que os dois já existem. Mesma estratégia do
+         tema e da divisão dos painéis, inclusive o data-cfasync. -->
+    <script data-cfasync="false">
+        (function () {
+            var faixa = document.getElementById('nota-origem');
+            var menu = document.getElementById('nota-titulo-menu');
+            if (!faixa || !menu) return;
+
+            /* Compara caminhos, não URLs: `/notas/lgpd`, `/notas/lgpd/` e
+               `/notas/lgpd.html` são a mesma nota (o build local pode servir
+               com extensão, o site publicado serve sem). */
+            function caminho(url) {
+                return url.replace(/\.html$/, '').replace(/\/+$/, '');
+            }
+            var aqui = caminho(location.pathname);
+            var chave = 'notas-origem:' + aqui;
+
+            /* O menu do título já lista as outras notas da seção com o nome de
+               cada uma: é o mapa de que a faixa precisa, sem marcação nova. O
+               link "Ver todas as notas" fica de fora — para o índice já existe
+               a trilha do cabeçalho. */
+            var outras = {};
+            Array.prototype.forEach.call(menu.querySelectorAll('a'), function (link) {
+                var destino = caminho(new URL(link.href).pathname);
+                if (destino !== aqui && destino !== '/notas') outras[destino] = link.textContent;
+            });
+
+            var vim = null;
+            if (document.referrer) {
+                var de = null;
+                try { de = new URL(document.referrer); } catch (erro) { de = null; }
+                var origem = de && de.origin === location.origin ? caminho(de.pathname) : '';
+                if (outras[origem]) {
+                    vim = origem;
+                    sessionStorage.setItem(chave, vim);
+                } else {
+                    // Veio de fora da seção: a trilha guardada não vale mais.
+                    sessionStorage.removeItem(chave);
+                }
+            } else {
+                // Sem referrer (recarga pela barra de endereços, por exemplo).
+                vim = sessionStorage.getItem(chave);
+                if (vim && !outras[vim]) vim = null;
+            }
+            if (!vim) return;
+
+            /* Do título fica só o apelido: eles seguem "‹apelido› — ‹nome
+               formal›", e numa faixa de uma linha o que serve é "Marco Civil da
+               Internet", não "Marco Civil da Internet — Lei nº 12.965/2014".
+               Título sem travessão entra inteiro. */
+            faixa.querySelector('a').href = vim;
+            faixa.querySelector('.nota-origem__nome').textContent = outras[vim].split(' — ')[0].trim();
+            faixa.hidden = false;
+        }());
+    </script>
 
     <!-- Abas: só fazem sentido quando os painéis não cabem lado a lado. Ficam
          ocultas no desktop e sem JS (nesse caso os dois painéis são exibidos
