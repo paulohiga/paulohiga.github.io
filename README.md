@@ -12,15 +12,24 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 > leiam [`AGENTS.md`](./AGENTS.md) antes de qualquer alteração. Os arquivos
 > [`CLAUDE.md`](./CLAUDE.md) e [`GEMINI.md`](./GEMINI.md) apontam para lá.
 
+## Onde está cada coisa
+
+| Documento | Para quê |
+| --- | --- |
+| **`README.md`** (este) | O que é o projeto, como editar o texto, como rodar e como publicar |
+| [`docs/arquitetura.md`](./docs/arquitetura.md) | Como o site funciona por dentro: banding, navegação sem reload, tema pré-paint, fontes, performance, SEO, sitemap |
+| [`docs/notas.md`](./docs/notas.md) | A seção `/notas`: estrutura, esquema de âncoras, normas extras, EUR-Lex, scripts |
+| [`docs/notas-navegacao.md`](./docs/notas-navegacao.md) | Backlog de melhorias de navegação de `/notas`: o que foi medido, o que já foi feito e o que falta |
+| [`AGENTS.md`](./AGENTS.md) | Regras de contribuição para agentes de IA — inclusive as regras editoriais das notas |
+
 ## Índice
 
 - [Tecnologias](#tecnologias)
 - [Estrutura de diretórios](#estrutura-de-diretórios)
-- [Como o site funciona (arquitetura)](#como-o-site-funciona-arquitetura)
-- [Serviços externos](#serviços-externos)
 - [Como atualizar o conteúdo](#como-atualizar-o-conteúdo)
 - [Rodar localmente](#rodar-localmente)
 - [Publicação](#publicação)
+- [Serviços externos](#serviços-externos)
 
 ## Tecnologias
 
@@ -31,272 +40,59 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
   minificar CSS/JS no deploy.
 - **HTML/CSS/JS sem frameworks nem dependências de runtime.** Sem Font Awesome,
   sem jQuery, sem bundler: os ícones são SVG inline ou máscaras CSS, e o
-  JavaScript é um único `script.js` de _progressive enhancement_.
+  JavaScript é escrito à mão.
 - **Fontes Inter e Merriweather**, servidas pelo Cloudflare Fonts, com
   _fallbacks_ locais ajustados por métrica (Capsize) para não causar reflow.
+- **Python** só para os [scripts de autoria](#scripts-de-autoria), que não
+  entram no site.
 - Serviços externos: **Cloudflare**, **Netlify**, **Formspree** e
   **Microsoft Clarity** (ver [Serviços externos](#serviços-externos)).
+
+Os detalhes de cada decisão estão em
+[`docs/arquitetura.md`](./docs/arquitetura.md).
 
 ## Estrutura de diretórios
 
 ```
 .
-├── .github/workflows/
-│   └── pages.yml           # Build (Jekyll) + minificação + deploy no GitHub Pages
-├── _config.yml             # Configuração do Jekyll (permalink, plugins, exclude)
+├── .github/workflows/pages.yml  # Build + minificação + deploy no GitHub Pages
+├── _config.yml                  # Jekyll: coleções, plugins, exclude
+├── Gemfile                      # Gems (github-pages + jekyll-last-modified-at)
+│
+│   ## Conteúdo — as quatro páginas de apresentação
+├── index.md                     # Resumo em português           → /
+├── bio.md                       # Biografia completa (PT)       → /bio
+├── en/index.md                  # Resumo em inglês              → /en/
+├── en/bio.md                    # Biografia completa (EN)       → /en/bio
+│
+│   ## Notas de legislação — ver docs/notas.md
+├── notas.md                     # Página índice                 → /notas
+├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
+├── _leis/                       # 13 textos legais em Markdown puro (output: false)
+├── _fragmentos/                 #  7 fragmentos das normas extras (fetch, sem link)
+├── notas.js                     # Painéis, seletor de normas, referências e busca
+│
+│   ## Código compartilhado
+├── _layouts/                    # default.html · nota.html · notas-index.html
+├── _includes/                   # Partials + style.css e nota-style.css (inline no <head>)
 ├── _data/
-│   └── pages.yml           # Metadados de cada estado <lang>-<view> (fonte única)
-├── _layouts/
-│   └── default.html        # Casca da página (head, herói, conteúdo, rodapé, form)
-├── _includes/
-│   ├── head.html           # <head>: meta tags, Open Graph, JSON-LD, CSS inline
-│   ├── toolbar.html        # Seletor de idioma + tema (ícones SVG inline)
-│   ├── hero-compact.html   # Cabeçalho fixo compacto, revelado ao rolar
-│   ├── sidebar.html        # Herói: foto, nome, localização, ações
-│   ├── contact-form.html   # Formulário de contato (modal → Formspree)
-│   ├── ai-disclaimer.html  # Aviso de conteúdo gerado por IA (só na bio completa),
-│   │                       #   com a data-limite das fontes (last_modified)
-│   └── style.css           # Todo o CSS — inserido inline no <head> de cada página
+│   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
+│   └── normas.yml               # Aliases das normas, para ancorar_referencias.py
+├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
-├── _notas/                 # Notas de legislação (comentários)     → /notas/<assunto>
-│   ├── ai-act.md           #   Comentários sobre o AI Act europeu  → /notas/ai-act
-│   ├── gdpr.md             #   Comentários sobre o GDPR/RGPD       → /notas/gdpr
-│   ├── lgpd.md             #   Comentários sobre a LGPD            → /notas/lgpd
-│   ├── eca-digital.md      #   Comentários sobre o ECA Digital     → /notas/eca-digital
-│   ├── mci.md              #   Comentários sobre o Marco Civil     → /notas/mci
-│   └── regimento-interno-anpd.md  # Comentários sobre o Regimento
-│                           #     Interno da ANPD          → /notas/regimento-interno-anpd
-├── _leis/                  # Textos legais em Markdown puro (não viram página)
-│   ├── ai-act-consolidado.md     # AI Act + Omnibus, consolidação não oficial
-│   │                             #   (gerada; norma principal de /notas/ai-act)
-│   ├── ai-act.md           #   Regulamento (UE) 2024/1689, texto original
-│   ├── regulamento-2026-1744.md  # Digital Omnibus sobre a IA (norma extra)
-│   ├── gdpr.md             #   Regulamento (UE) 2016/679, texto oficial (gerado)
-│   ├── regulamento-2025-2518.md  # Normas processuais do RGPD (norma extra)
-│   ├── lgpd.md             #   Lei nº 13.709/2018, texto compilado
-│   ├── eca-digital.md      #   Lei nº 15.211/2025, texto compilado
-│   ├── mci.md              #   Lei nº 12.965/2014, texto compilado
-│   └── regimento-interno-anpd.md  # Regimento Interno da ANPD (Anexo da
-│                           #     Portaria nº 1/2021), como publicado no DOU
-├── _layouts/nota.html      # Casca das notas: dois painéis lado a lado
-├── _includes/
-│   ├── nota-head.html      # <head> das notas (canonical, OG, JSON-LD Article)
-│   ├── nota-aviso.html     # Aviso de IA + isenção institucional (toda nota)
-│   ├── nota-style.css      # CSS das notas — inline, isolado do style.css
-│   └── lei-anotada.html    # Renderiza o texto legal ancorando cada dispositivo
-├── notas.js                # Painéis, referências clicáveis e busca (só em /notas)
+│   ## Autoria — excluídos do site publicado
+├── scripts/                     # 4 scripts Python de autoria
+├── docs/                        # arquitetura.md · notas.md
+├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
-├── index.md                # Conteúdo: resumo em português        → /
-├── bio.md                  # Conteúdo: biografia completa (PT)     → /bio
-├── en/index.md             # Conteúdo: resumo em inglês            → /en/
-├── en/bio.md               # Conteúdo: biografia completa (EN)     → /en/bio
-│
-├── script.js               # Tema, navegação sem reload, banding, herói compacto,
-│                           #   scroll reveal, animações e formulário de contato
-├── sitemap.xml             # Template Liquid: gera o sitemap automaticamente
-├── robots.txt              # Política de crawlers (robôs de IA liberados)
-├── site.webmanifest        # Web App Manifest (PWA básico)
-├── CNAME                   # Domínio do GitHub Pages (higa.me)
-├── Gemfile                 # Gems (github-pages + jekyll-last-modified-at)
-├── AGENTS.md               # Guia para agentes de IA · CLAUDE.md/GEMINI.md apontam aqui
-├── img/                    # Imagens (foto do herói em AVIF/WebP/JPG, og-image, bg)
-└── favicon*, apple-touch-icon.png, android-chrome-*.png   # Ícones
+│   ## Estáticos
+├── img/                         # Foto do herói (AVIF/WebP/JPG), og-image, bg
+├── sitemap.xml                  # Template Liquid: gera o sitemap automaticamente
+├── robots.txt                   # Política de crawlers (robôs de IA liberados)
+├── site.webmanifest             # Web App Manifest (PWA básico)
+├── CNAME                        # Domínio do GitHub Pages (higa.me)
+└── favicon*, apple-touch-icon.png, android-chrome-*.png
 ```
-
-## Como o site funciona (arquitetura)
-
-Esta seção descreve **como as peças se encaixam** — útil para quem for mexer no
-código. Para só atualizar o texto, pule para
-[Como atualizar o conteúdo](#como-atualizar-o-conteúdo).
-
-### Páginas, estados e metadados
-
-O site tem **quatro páginas**, uma para cada combinação de idioma e visão:
-
-| Arquivo       | `lang` | `view`  | Chave (`<lang>-<view>`) | URL      |
-| ------------- | ------ | ------- | ----------------------- | -------- |
-| `index.md`    | `pt`   | `short` | `pt-short`              | `/`      |
-| `bio.md`      | `pt`   | `full`  | `pt-full`               | `/bio`   |
-| `en/index.md` | `en`   | `short` | `en-short`              | `/en/`   |
-| `en/bio.md`   | `en`   | `full`  | `en-full`               | `/en/bio`|
-
-Cada página declara no front matter `lang`, `view`, `permalink` e
-`last_modified`. A chave `<lang>-<view>` indexa os metadados em
-**`_data/pages.yml`** (título, descrição, URL canônica, locale). Esse arquivo é a
-**fonte única de verdade**: o Jekyll o consome ao renderizar (via
-`site.data.pages`) e o `script.js` recebe o mesmo objeto embutido como JSON no
-`<head>` (`<script id="page-meta">`), para reaproveitá-lo na navegação
-client-side. Ao alterar um título/descrição, mexa **apenas** em `_data/pages.yml`.
-
-### Layout, includes e conteúdo
-
-O `_layouts/default.html` é a **casca** compartilhada pelas quatro páginas:
-toolbar, herói, herói compacto, área de conteúdo, rodapé e modal de contato,
-montados a partir dos `_includes/`. As páginas `.md` contêm **apenas o texto**
-(mais algumas anotações de classe do kramdown — ver
-[Como atualizar o conteúdo](#como-atualizar-o-conteúdo)); o layout injeta esse
-texto em `<article class="content-area">`. Só a página do idioma/visão ativos é
-renderizada em cada URL — a troca para as outras é feita sem recarregar.
-
-> O layout remove, via filtros `replace`, os papéis DPUB-ARIA obsoletos
-> (`doc-endnote`/`doc-noteref`) que o kramdown injeta na marcação de notas de
-> rodapé, mantendo o HTML limpo para leitores de tela.
-
-### Faixas full-bleed (banding)
-
-O conteúdo é fatiado em **faixas de largura total** (`<section class="band">`)
-com fundos alternados. A função `window.bandContent` (definida inline no layout e
-reutilizada pelo `script.js`) percorre os elementos do conteúdo e inicia uma nova
-faixa a cada `##` (`<h2>`) ou dica de contato. Ela roda **antes do primeiro
-paint**, para o texto já nascer na coluna de leitura estreita e não "piscar" em
-largura total (evitando CLS). **Sem JavaScript**, o texto cai num fluxo simples e
-legível.
-
-### Navegação sem reload (client-side)
-
-Trocar de idioma (PT/EN) ou abrir/recolher a biografia **não recarrega a
-página**. O `script.js` intercepta cliques em links marcados com `data-nav`,
-busca o HTML da URL de destino (`fetch`), extrai o `.content-area` e o troca no
-lugar, atualizando `<title>`, meta tags, `<link rel=canonical>`, `lang`,
-`history` (pushState/popstate) e os controles da interface. Os fragmentos são
-**cacheados** e **pré-carregados no hover/focus**, então a troca é instantânea.
-Tudo é _progressive enhancement_: os links são reais (`href` para `/`, `/bio`,
-`/en/`, `/en/bio`), então sem JS a navegação funciona por recarga normal.
-
-### Tema claro/escuro
-
-O tema é aplicado **antes do primeiro paint** por um script inline no layout, que
-lê `localStorage.theme` (ou `prefers-color-scheme` na primeira visita) e define a
-classe `dark-theme`/`light-theme` no `<body>` — evitando o flash de tema errado.
-O `script.js` apenas alterna a classe e persiste a escolha quando o usuário clica
-no botão de tema (na toolbar ou no herói compacto). Os scripts que precisam rodar
-antes do paint levam `data-cfasync="false"` para o Cloudflare Rocket Loader não
-os adiar.
-
-### Herói compacto, scroll reveal e animação
-
-- **Herói compacto fixo:** ao rolar para fora do herói principal, um cabeçalho
-  compacto (foto, nome, controles de idioma/tema/contato) desliza no topo. A
-  detecção usa `IntersectionObserver`.
-- **Scroll reveal:** as faixas surgem com uma animação suave conforme entram na
-  viewport (também via `IntersectionObserver`). Respeita
-  `prefers-reduced-motion`.
-- **Gradiente animado do herói:** começa **na primeira interação** do visitante
-  (não no load), para não ficar repintando os frames de que o Speed Index é
-  calculado.
-
-### Formulário de contato
-
-O modal de contato (`_includes/contact-form.html`) envia via **Formspree**. O
-`script.js` cuida da abertura/fechamento, validação, mensagens de status,
-tradução PT/EN dos rótulos e _focus trap_ (acessibilidade). Paulo não usa redes
-sociais; o formulário e o LinkedIn são os canais de contato.
-
-### Ícones e fontes
-
-- **Ícones:** SVG inline (LinkedIn, alfinete, prédio, sol/lua, e-mail) ou
-  **máscaras CSS** (ícones de seção). **Não há Font Awesome** nem qualquer
-  dependência de ícones.
-- **Fontes:** Inter (texto) e Merriweather (títulos/nome), carregadas pelo
-  Cloudflare Fonts. `@font-face` com _fallbacks_ locais (Arial/Georgia)
-  ajustados por métrica (`size-adjust`, `ascent-override` etc., calculados com
-  Capsize) ocupam o mesmo espaço da fonte final — o _swap_ não move o layout
-  (CLS ~0) nem gera um LCP maior depois.
-
-### Performance (Core Web Vitals)
-
-O site é otimizado para nota alta de PageSpeed em mobile e desktop:
-
-- **CSS inline no `<head>`** de cada página (via `{% include style.css %}`),
-  removendo o request bloqueante de `style.css` do caminho crítico.
-- **Minificação no deploy:** o workflow minifica `_includes/style.css`
-  (lightningcss) e `script.js` (terser) **só na produção**; os previews do
-  Netlify usam os fontes legíveis.
-- **Imagens responsivas:** a foto do herói (LCP) é servida em **AVIF/WebP/JPG**
-  via `<picture>`, com `srcset`/`sizes`, `fetchpriority="high"`,
-  `decoding="sync"` e um `<link rel="preload">` responsivo em AVIF.
-- **Analytics adiado:** o Microsoft Clarity carrega só após o `load` + `idle`,
-  para não competir por rede/CPU durante o carregamento (TBT).
-- **Banding e tema antes do paint**, para não haver reflow após o load.
-
-### SEO e dados estruturados
-
-- **JSON-LD** (`schema.org/Person`) em `_includes/head.html`, com nome, datas,
-  formação, empregador, redes e `subjectOf` apontando para a biografia.
-- **Open Graph** e **Twitter Card** completos (com `og:image` 1200×630).
-- **`<link rel="canonical">`** por página e **`hreflang`** (`pt-BR`, `en`,
-  `x-default`) ligando as versões de idioma.
-- **`robots.txt`** libera explicitamente crawlers de IA (OAI-SearchBot,
-  ChatGPT-User, PerplexityBot, Google-Extended, ClaudeBot, GPTBot etc.), para o
-  site poder ser citado por assistentes e buscas com IA.
-- **`sitemap.xml`** gerado automaticamente (ver [Publicação](#publicação)).
-
-### Notas de legislação (`/notas`)
-
-Seção de estudo sobre legislação, pública e indexável, **isolada do restante do
-site**: `_layouts/nota.html` não usa o `default.html`, o `script.js` nem o
-`_data/pages.yml`, e o CSS (`_includes/nota-style.css`) e o JS (`notas.js`) são
-próprios. É uma seção só em pt-br — exceção consciente à regra de replicação em
-en-us.
-
-Cada nota junta duas fontes em Markdown:
-
-- **os comentários**, em `_notas/<assunto>.md`, que viram a página; e
-- **o texto legal**, em `_leis/<assunto>.md`, apontado pelo front matter `lei`.
-  A coleção tem `output: false`: o texto nunca vira página própria, só é
-  exibido dentro da nota que o cita.
-
-A página mostra os dois lado a lado, cada painel com rolagem independente. Em
-telas estreitas viram abas ("Comentários" / "Lei seca").
-
-**Referências clicáveis.** `_includes/lei-anotada.html` percorre o texto legal
-bloco a bloco e dá a cada dispositivo um id previsível (`art-5`, `art-5-v`,
-`art-3-p2`, `art-1-pu`, `art-52-p1-i`, `art-4-ii-b`), rebaixando os títulos em
-um nível e prefixando os ids deles com `lei-` para não colidirem com os do
-comentário. Assim os arquivos `.md` continuam limpos: os comentários citam a lei
-com links Markdown comuns, como `([art. 5º, inciso V](#art-5-v))`.
-
-Normas da União Europeia marcam o dispositivo de outro jeito, e por isso o
-arquivo em `_leis/` pode declarar `formato: ue` no front matter: aí o include
-reconhece `Artigo 5.º`, o número `1.` (o equivalente ao parágrafo) e a alínea
-`a)` pendurada nele. **Os ids não mudam** — continuam `art-5`, `art-5-p1`,
-`art-5-p1-a` —, de modo que os links dos comentários e o campo "Ir para" valem
-igual nos dois formatos. Dispositivo acrescentado por ato alterador leva o
-sufixo colado no id: o n.º 1-A é `art-5-p1a`, a alínea b-A) é `art-5-p1-ba`.
-
-`scripts/converter_eurlex.py` traz uma norma do EUR-Lex para `_leis/` — lendo
-tanto o HTML do Jornal Oficial quanto o do texto consolidado, que usam folhas
-de estilo diferentes. `scripts/consolidar_ai_act.py` gera a consolidação não
-oficial do AI Act aplicando as alterações do Digital Omnibus, e
-`scripts/montar_rgpd.py` monta o RGPD juntando os considerandos do Jornal
-Oficial ao articulado consolidado (a consolidação europeia não inclui
-considerandos). Os três dependem de `beautifulsoup4` e `lxml`, ferramentas de
-autoria que não entram no site.
-
-Dois casos ficam deliberadamente **sem âncora**, porque a âncora deve levar
-sempre ao texto desta lei e em vigor: os dispositivos citados dentro de blocos de
-citação (as alterações que a lei promove em *outras* leis, como no art. 60 da
-LGPD) e a redação superada, marcada com tachado no texto compilado. Esta última
-é também o que evita id duplicado quando o mesmo artigo aparece duas vezes — a
-redação antiga e a nova, como no art. 41-A do ECA Digital.
-
-O clique é interceptado pelo `notas.js`, que rola o painel da lei, destaca o
-dispositivo e leva o foco até ele. **Sem JavaScript nada quebra**: as âncoras
-existem no HTML e o navegador faz o salto sozinho, com o realce vindo do
-`:target`. A tabela completa de ids e as regras editoriais da seção estão no
-[`AGENTS.md`](./AGENTS.md).
-
-## Serviços externos
-
-Quatro serviços de terceiros participam do site. Os identificadores estão
-versionados no código-fonte (não são segredos), mas troque-os com cuidado.
-
-| Serviço               | Papel                                                                 | Onde vive no código |
-| --------------------- | --------------------------------------------------------------------- | ------------------- |
-| **Cloudflare**        | CDN/proxy do domínio. **Rocket Loader** adia scripts (por isso os que precisam rodar antes do paint levam `data-cfasync="false"`). **Cloudflare Fonts** reescreve o `<link>` do Google Fonts, inlina o CSS e serve os `woff2` a partir de `higa.me` (sem `preconnect` ao Google). | Configurado no painel da Cloudflare. No código: atributos `data-cfasync="false"` (`_layouts/default.html`, `_includes/head.html`) e o `<link>` de fontes em `_includes/head.html`. |
-| **Netlify**           | Publica uma **URL de preview** a cada push de branch (build com Jekyll), para validação manual antes do PR. | Configurado no painel do Netlify (não há `netlify.toml` no repositório). |
-| **Formspree**         | Recebe as mensagens do formulário de contato.                         | `action` do form em `_includes/contact-form.html` (endpoint `/f/xdklqqqg`). |
-| **Microsoft Clarity** | Analytics de comportamento (heatmaps, gravações).                     | Snippet em `_includes/head.html`, `_includes/nota-head.html` e `_includes/notas-index-head.html` (project id `x1sidv15u2`), carregado só no idle. |
 
 ## Como atualizar o conteúdo
 
@@ -306,8 +102,11 @@ Edite os arquivos `.md` — não é preciso mexer em HTML/CSS/JS.
 - **Biografia completa:** `bio.md` (PT) e `en/bio.md` (EN).
 
 Toda alteração de conteúdo deve ser **replicada nos dois idiomas** (ver
-`AGENTS.md`). O `sitemap.xml` é gerado automaticamente — basta commitar a
-alteração; não edite datas à mão (ver [Publicação](#publicação)).
+[`AGENTS.md`](./AGENTS.md#idiomas-pt-br-e-en-us)). O `sitemap.xml` é gerado
+automaticamente — basta commitar a alteração; não edite datas à mão.
+
+Para publicar ou editar uma **nota de legislação**, veja
+[`docs/notas.md`](./docs/notas.md).
 
 ### Anotações de classe (kramdown IAL)
 
@@ -326,8 +125,9 @@ nova, replique o padrão de uma existente:
 ### Títulos de seção e índice
 
 Os `##` / `###` viram seções; o índice da biografia é gerado automaticamente a
-partir deles (`{:toc}`). Cada `##` também inicia uma nova faixa full-bleed. Não
-há numeração ou âncoras para manter à mão.
+partir deles (`{:toc}`). Cada `##` também inicia uma nova
+[faixa full-bleed](./docs/arquitetura.md#faixas-full-bleed-banding). Não há
+numeração ou âncoras para manter à mão.
 
 ### Referências (notas de rodapé)
 
@@ -368,14 +168,38 @@ idiomas.
 
 ## Rodar localmente
 
+Requer **Ruby 3.3** — a mesma versão que o workflow usa, para o resultado local
+bater com o publicado.
+
 ```bash
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve   # http://localhost:4000
 ```
 
-O site fica em `http://localhost:4000`. Os mesmos gems do GitHub Pages são usados
-(ver `Gemfile`), então o resultado local é igual ao publicado — mas o CSS/JS
-**não** é minificado localmente (a minificação roda só no deploy de produção).
+Os mesmos gems do GitHub Pages são usados (ver `Gemfile`), mas o CSS/JS **não**
+é minificado localmente: a minificação roda só no deploy de produção.
+
+Antes de dar push, confirme que o site **compila**:
+
+```bash
+bundle exec jekyll build
+```
+
+Um erro de Liquid numa branch não aparece em lugar nenhum até o preview do
+Netlify — este comando o pega antes.
+
+### Scripts de autoria
+
+Os quatro scripts de `scripts/` são ferramentas de autoria das notas de
+legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
+build. O que cada um faz está em
+[`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r scripts/requirements.txt
+.venv/bin/python scripts/ancorar_referencias.py --check lgpd
+```
 
 ## Publicação
 
@@ -418,10 +242,35 @@ workflow do GitHub Actions em `.github/workflows/pages.yml` a cada push na branc
 (4) publica no GitHub Pages.
 
 Esse build próprio (em vez do build padrão do GitHub Pages) permite usar o plugin
-`jekyll-last-modified-at`, que preenche o `<lastmod>` do `sitemap.xml` com a data
+`jekyll-last-modified-at`, que preenche o
+[`<lastmod>` do `sitemap.xml`](./docs/arquitetura.md#sitemap-lastmod) com a data
 do último commit de cada página — por isso o histórico do git é buscado por
 completo e não é preciso editar datas manualmente.
 
 > **Configuração necessária no GitHub (uma vez):** em **Settings → Pages**,
 > defina **Source = GitHub Actions**. Sem isso, o workflow compila mas não
 > publica.
+
+### O que não vai para o site
+
+O `exclude` do `_config.yml` mantém fora do site publicado tudo o que só serve a
+quem trabalha no repositório: `README.md`, `AGENTS.md`, `CLAUDE.md`,
+`GEMINI.md`, `docs/`, `scripts/` e o `Gemfile`. Nada disso é alcançável por
+navegação humana, então não tem por que responder numa URL — quem precisa
+desses arquivos (inclusive os agentes de IA) os lê no repositório.
+
+Os fragmentos de `_fragmentos/` são a exceção deliberada: **precisam** estar
+publicados, porque o painel "Lei seca" os busca via `fetch()`. Por isso ficam
+fora do sitemap e bloqueados no `robots.txt`.
+
+## Serviços externos
+
+Quatro serviços de terceiros participam do site. Os identificadores estão
+versionados no código-fonte (não são segredos), mas troque-os com cuidado.
+
+| Serviço               | Papel                                                                 | Onde vive no código |
+| --------------------- | --------------------------------------------------------------------- | ------------------- |
+| **Cloudflare**        | CDN/proxy do domínio. **Rocket Loader** adia scripts (por isso os que precisam rodar antes do paint levam `data-cfasync="false"`). **Cloudflare Fonts** reescreve o `<link>` do Google Fonts, inlina o CSS e serve os `woff2` a partir de `higa.me` (sem `preconnect` ao Google). | Configurado no painel da Cloudflare. No código: atributos `data-cfasync="false"` (`_layouts/default.html`, `_includes/head.html`) e o `<link>` de fontes em `_includes/head.html`. |
+| **Netlify**           | Publica uma **URL de preview** a cada push de branch (build com Jekyll), para validação manual antes do PR. | Configurado no painel do Netlify (não há `netlify.toml` no repositório). |
+| **Formspree**         | Recebe as mensagens do formulário de contato.                         | `action` do form em `_includes/contact-form.html` (endpoint `/f/xdklqqqg`). |
+| **Microsoft Clarity** | Analytics de comportamento (heatmaps, gravações).                     | Snippet em `_includes/head.html`, `_includes/nota-head.html` e `_includes/notas-index-head.html` (project id `x1sidv15u2`), carregado só no idle. |

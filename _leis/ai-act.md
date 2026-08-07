@@ -12,7 +12,7 @@ formato: ue
 # art. 10.º, n.º 5, revogado pelo Omnibus.
 #
 # Convertido do HTML oficial do EUR-Lex por scripts/converter_eurlex.py; ver
-# `formato: ue` em AGENTS.md. O ato entra inteiro — preâmbulo, os 180
+# `formato: ue` em docs/notas.md. O ato entra inteiro — preâmbulo, os 180
 # considerandos, o articulado e os anexos. Considerando não é dispositivo e
 # não recebe âncora, mas fica no painel: num regulamento europeu é ele que diz
 # por que cada regra existe. Fora do texto ficou só o aparato de notas de

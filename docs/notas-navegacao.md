@@ -7,7 +7,7 @@ ANPD, GDPR e AI Act).
 É um **backlog**, não um plano fechado: os itens são independentes salvo onde
 indicado, e a ordem de execução é a de "Se eu tivesse que escolher", no fim.
 Nenhuma proposta aqui exige dependência nova, *build step* novo ou saída da
-arquitetura descrita no `AGENTS.md` — tudo cabe em `notas.js`,
+arquitetura descrita em [`notas.md`](./notas.md) — tudo cabe em `notas.js`,
 `_includes/nota-style.css`, `_layouts/nota.html`,
 `_layouts/notas-index.html` e `scripts/`, e todas degradam sem JavaScript
 como a seção já degrada hoje.
@@ -272,8 +272,8 @@ incondicional de `ativarNorma()`.
 - **Norma na URL.** Trocar de norma grava o prefixo dos ids como âncora
   (`/notas/mci#dec8771`); a norma principal é o padrão e não leva marca.
   Abrir essa URL já mostra o decreto, com o seletor sincronizado e o fragmento
-  buscado. O prefixo sozinho passou a ser âncora válida — está documentado no
-  `AGENTS.md`, junto do esquema de ids.
+  buscado. O prefixo sozinho passou a ser âncora válida — está documentado em
+  [`notas.md`](./notas.md#múltiplas-normas-por-nota), junto do esquema de ids.
 - Âncoras de dispositivo em norma extra (`#dec8771-art-5`) continuam
   intactas: a URL não é reescrita para `#dec8771` ao abrir uma delas.
 

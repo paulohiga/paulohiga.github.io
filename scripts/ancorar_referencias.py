@@ -42,7 +42,7 @@ Limitações conhecidas (por design — na dúvida, o script não cria o link):
 - listas/faixas de mais de dois itens, ou que misturam faixa ("a") com lista
   ("e"), não são reconhecidas;
 - ids inválidos (citação errada no comentário, ou dispositivo com redação
-  superada — ver "Redação superada não recebe âncora" no AGENTS.md) nunca
+  superada — ver "Redação superada não recebe âncora" em docs/notas.md) nunca
   geram link partido: o script tenta a âncora precisa e, se não existir, cai
   para o artigo seco; se nem esse existir, não linka nada.
 """

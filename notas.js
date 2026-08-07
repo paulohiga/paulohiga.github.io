@@ -226,7 +226,7 @@
        principal já vem pronta no HTML; as demais só são buscadas (fetch) na
        primeira vez em que o leitor as seleciona — o <select> em si funciona
        sem JavaScript, mas escolher uma norma diferente não tem efeito sem
-       ele. Ver a seção "Múltiplas normas por nota" do AGENTS.md. */
+       ele. Ver "Múltiplas normas por nota" em docs/notas.md. */
     var fonteLink = document.getElementById('lei-fonte');
     var seletorNorma = document.getElementById('lei-norma-select');
     var normas = seletorNorma
