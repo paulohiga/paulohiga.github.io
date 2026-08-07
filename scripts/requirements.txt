@@ -1,0 +1,19 @@
+# Dependências dos scripts de autoria das notas de legislação.
+#
+# São ferramentas que rodam na máquina de quem escreve, para converter e
+# ancorar textos legais — NÃO fazem parte do site nem do build. O workflow do
+# GitHub Actions não instala nada disto, e `scripts/` está no `exclude` do
+# `_config.yml`.
+#
+#     python3 -m venv .venv
+#     .venv/bin/pip install -r scripts/requirements.txt
+#
+# Ver `docs/notas.md`, seção "Scripts de autoria".
+
+# ancorar_referencias.py — lê o registro de normas em _data/normas.yml
+PyYAML>=6.0
+
+# converter_eurlex.py, montar_rgpd.py, consolidar_ai_act.py — leem o HTML
+# oficial do EUR-Lex. O lxml é o parser usado pelo BeautifulSoup.
+beautifulsoup4>=4.12
+lxml>=5.0

@@ -10,7 +10,7 @@ permalink: pretty
 # puro, renderizado dentro da nota que o cita — nunca como página própria;
 # `fragmentos` são os HTML soltos (sem link algum) buscados via fetch() pelo
 # seletor de normas de uma nota, para as normas que não vêm pré-carregadas no
-# HTML (ver `_fragmentos/` e a seção "Múltiplas normas por nota" do AGENTS.md).
+# HTML (ver `_fragmentos/` e "Múltiplas normas por nota" em `docs/notas.md`).
 #
 # Ordem importa: Jekyll renderiza as coleções na ordem declarada aqui, e
 # renderizar uma coleção reescreve o `.content` de cada documento dela para o
@@ -34,11 +34,24 @@ plugins:
 last_modified_at:
   date_format: "%Y-%m-%d"
 
-# Files that should not be copied into the built site.
+# Arquivos que não são copiados para o site publicado. A régua: se não é
+# alcançável por navegação humana, não tem por que responder numa URL — quem
+# precisa deles (inclusive os agentes de IA) os lê no repositório. Vale para a
+# documentação (README, AGENTS, CLAUDE, GEMINI, docs/) e para as ferramentas de
+# autoria (scripts/, Gemfile), que antes eram servidas como arquivo estático.
+#
+# Os fragmentos de `_fragmentos/` são a exceção deliberada: precisam estar
+# publicados, porque o painel "Lei seca" os busca via fetch(). Por isso ficam
+# fora do sitemap (`sitemap: false`) e bloqueados no robots.txt.
 exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - GEMINI.md
   - Gemfile
   - Gemfile.lock
   - README.md
+  - docs
+  - scripts
   - vendor
 
 # Keep emitted markup intact (no HTML minification surprises).
