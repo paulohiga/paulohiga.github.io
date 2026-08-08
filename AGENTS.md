@@ -94,6 +94,13 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   `scripts/ancorar_referencias.py --check` e revise o diff.
 - **O texto da norma não se altera**, e os arquivos gerados por script trazem
   "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter.
+- **A ementa do artigo é rótulo de navegação, não texto legal.** É a frase
+  curta de `_data/ementas/<norma>.yml` que o sumário da lei seca mostra no
+  lugar do começo do caput — ela não entra no painel da norma nem em `_leis/`.
+  Escreva-a com o núcleo do artigo nas primeiras palavras e dentro do limite de
+  tamanho; numa norma europeia, preserve a epígrafe oficial em PT-PT. Toda
+  norma precisa da sua, e `scripts/conferir_ementas.py` é quem confere (ver
+  [`docs/notas.md`](./docs/notas.md#ementas-dos-artigos)).
 - **Normas estrangeiras entram em português oficial.** No caso da União
   Europeia, o texto do EUR-Lex, que é PT-PT. Quando a terminologia oficial
   divergir da brasileira, explique a correspondência na própria nota em vez de
@@ -160,7 +167,10 @@ preview do Netlify, depois do push.
 - **Temas e idiomas:** teste claro/escuro e PT/EN, incluindo a troca sem reload.
 - **Movimento reduzido:** verifique com `prefers-reduced-motion` ativo.
 - **Notas:** rode `python3 scripts/ancorar_referencias.py --check <slug>` e
-  revise o diff; confira as remissões novas contra o texto legal.
+  revise o diff; confira as remissões novas contra o texto legal. Rode também
+  `python3 scripts/conferir_ementas.py` se mexeu em `_leis/` ou em
+  `_data/ementas/`, e abra o sumário da lei seca no navegador para ver se a
+  frase de cada artigo aparece inteira.
 
 ### Performance: Core Web Vitals
 
@@ -223,6 +233,7 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
 - [ ] Nas notas de legislação: aviso preservado, `ancorar_referencias.py --check`
       rodado e o diff revisado, remissões conferidas contra o texto legal e
       regras editoriais observadas.
+- [ ] `conferir_ementas.py` sem erro, se `_leis/` ou `_data/ementas/` mudaram.
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.

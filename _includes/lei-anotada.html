@@ -61,12 +61,19 @@
     (`#art-5-v` etc.) já usados nos comentários publicados; normas adicionais
     recebem o `prefixo` definido no próprio front matter de `_leis/<norma>.md`
     (ex.: `dec12880` → `dec12880-art-5`).
+
+    Cada artigo sai com a ementa editorial da norma no `data-ementa`, quando ela
+    existe em `_data/ementas/<slug>.yml` — a frase curta que o sumário do painel
+    da lei seca usa como rótulo do artigo, no lugar do começo do caput. É só
+    rótulo de navegação: não aparece no texto da norma, que continua intacto.
 {%- endcomment -%}
 
 {%- assign prefixo_id = '' -%}
 {%- if include.prefixo and include.prefixo != '' -%}
     {%- assign prefixo_id = include.prefixo | append: '-' -%}
 {%- endif -%}
+
+{%- assign ementas = site.data.ementas[include.lei.slug] -%}
 
 {%- capture quebra %}
 {% endcapture -%}
@@ -146,7 +153,8 @@
                 ("Artigo 5.o"), então os dois são removidos.
             {%- endcomment -%}
             {%- if marcador == 'Artigo' -%}
-                {%- assign artigo = palavras[1] | replace: 'º', '' | replace: 'o', '' | replace: '.', '' | downcase | prepend: 'art-' | prepend: prefixo_id -%}
+                {%- assign artigo_sem_prefixo = palavras[1] | replace: 'º', '' | replace: 'o', '' | replace: '.', '' | downcase | prepend: 'art-' -%}
+                {%- assign artigo = artigo_sem_prefixo | prepend: prefixo_id -%}
                 {%- assign subdivisao = '' -%}
                 {%- assign inciso = '' -%}
                 {%- assign id = artigo -%}
@@ -217,7 +225,8 @@
             {%- endif -%}
 
         {%- elsif marcador == 'Art.' -%}
-            {%- assign artigo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' | prepend: prefixo_id -%}
+            {%- assign artigo_sem_prefixo = palavras[1] | replace: 'º', '' | replace: '.', '' | downcase | prepend: 'art-' -%}
+            {%- assign artigo = artigo_sem_prefixo | prepend: prefixo_id -%}
             {%- assign subdivisao = '' -%}
             {%- assign inciso = '' -%}
             {%- assign id = artigo -%}
@@ -258,7 +267,17 @@
 
         {%- if id != '' and artigo != '' -%}
             {%- assign ids_usados = ids_usados | append: id | append: '|' -%}
-            {%- capture abertura -%}<p id="{{ id }}" class="lei-{{ tipo }}">{%- endcapture -%}
+            {%- comment -%}
+                A ementa é registrada por artigo, com a chave sem prefixo
+                (`art-5`), porque o arquivo de ementas já é o de uma norma só —
+                o prefixo existe para separar normas dentro de uma página, e
+                aqui não há o que separar.
+            {%- endcomment -%}
+            {%- assign ementa = '' -%}
+            {%- if tipo == 'artigo' and ementas -%}
+                {%- assign ementa = ementas[artigo_sem_prefixo] | default: '' -%}
+            {%- endif -%}
+            {%- capture abertura -%}<p id="{{ id }}" class="lei-{{ tipo }}"{% if ementa != '' %} data-ementa="{{ ementa | escape }}"{% endif %}>{%- endcapture -%}
             {{ texto | markdownify | replace_first: '<p>', abertura }}
         {%- else -%}
             {{ texto | markdownify }}

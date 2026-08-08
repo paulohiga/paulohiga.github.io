@@ -1121,11 +1121,14 @@ body:not(.js) .nota-toc-btn {
     padding-left: 0.75rem;
 }
 
-/* Duas linhas, não três: o rótulo é o marcador do artigo mais o começo do
-   texto, e o marcador — que é o que se procura — está sempre na primeira. */
+/* O rótulo é o marcador do artigo mais a ementa da norma, escrita curta o
+   bastante para caber em duas linhas na largura cheia do painel (20rem). As
+   três linhas são folga para a tela estreita, onde o painel encolhe para 85vw
+   e a mesma frase passa a ocupar mais uma linha: o que se quer é a frase
+   inteira à vista, não o corte. */
 .nota-toc__corpo .nota-toc__artigos a {
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     font-size: 0.82rem;
     color: var(--ink-soft);
 }

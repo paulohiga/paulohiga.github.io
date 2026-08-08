@@ -469,20 +469,31 @@
         return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e o
-       começo do texto, que é o que diz do que ele trata — numa norma europeia o
-       marcador já vem com a ementa ("Artigo 5.º — Princípios relativos ao
-       tratamento de dados pessoais"), numa brasileira o texto emenda no
-       marcador. O corte do resumo é feito aqui, e não só no CSS, porque o
-       filtro compara com o que está escrito no item: o que não aparece não
-       deve casar com a busca. */
+    /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e uma
+       frase que diz do que ele trata.
+
+       Essa frase é a ementa editorial da norma, escrita em `_data/ementas/` e
+       entregue no `data-ementa` que o lei-anotada.html põe no artigo. Ela é
+       curta e começa pelo núcleo do dispositivo ("Fundamentos do uso de
+       tecnologia por crianças"), que é o que faz uma lista de 80
+       artigos ser varrida com o olho — o começo do caput, que era o que
+       aparecia aqui antes, gasta as primeiras palavras em fórmula de redação
+       ("A utilização de produtos ou serviços de tecnologia da informação por
+       crianças e adolescentes tem como fundamentos:").
+
+       Sem ementa cadastrada vale o começo do próprio texto, como antes: numa
+       norma europeia isso é a epígrafe oficial ("Artigo 5.º — Princípios
+       relativos ao tratamento de dados pessoais"), numa brasileira é a abertura
+       do caput. O corte é feito aqui, e não só no CSS, porque o filtro compara
+       com o que está escrito no item: o que não aparece não deve casar com a
+       busca. */
     var LIMITE_DO_RESUMO = 90;
 
     function partesDoArtigo(paragrafo) {
         var texto = paragrafo.textContent.replace(/\s+/g, ' ').trim();
         var corte = texto.indexOf(' ', texto.indexOf(' ') + 1);
         var marcador = corte === -1 ? texto : texto.slice(0, corte);
-        var resumo = corte === -1 ? '' : texto.slice(corte + 1);
+        var resumo = paragrafo.dataset.ementa || (corte === -1 ? '' : texto.slice(corte + 1));
         // "Art. 64." vira "Art. 64"; "Artigo 64.º" e "Art. 6º" ficam como estão.
         marcador = marcador.replace(/\.$/, '');
         if (resumo.length > LIMITE_DO_RESUMO) {

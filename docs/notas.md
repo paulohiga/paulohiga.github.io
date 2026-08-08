@@ -16,6 +16,7 @@ fazer nada disso à mão.
 - [Publicar uma nota nova](#publicar-uma-nota-nova)
 - [Front matter](#front-matter)
 - [Múltiplas normas por nota](#múltiplas-normas-por-nota)
+- [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
@@ -57,6 +58,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/nota-style.css` | CSS da seção — inline, isolado do `style.css` |
 | `notas.js` | Painéis, seletor de normas, referências clicáveis e busca |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
+| `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -81,6 +83,9 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
    `nota`, `prefixo` e `aliases`. É o que permite ao
    [script de ancoragem](#ancorando-referências-automaticamente) reconhecer
    citações a ela em texto corrido.
+5. **`_data/ementas/<slug>.yml`** — uma [ementa](#ementas-dos-artigos) por
+   artigo, também uma entrada por norma. Confira com
+   `python3 scripts/conferir_ementas.py <slug>`.
 
 O índice `/notas`, os links entre notas e o `sitemap.xml` se ajustam sozinhos
 no build. Excluir uma nota é apagar os arquivos correspondentes.
@@ -166,6 +171,55 @@ receberia o `.content` da norma já convertido pelo Kramdown padrão, sem as
 âncoras por dispositivo. Colocar o fragmento numa coleção (`fragmentos`)
 declarada *antes* de `leis` garante que ele lê o Markdown ainda cru, do mesmo
 jeito que `_notas/*.md` já fazia.
+
+## Ementas dos artigos
+
+No sumário do painel "Lei seca", cada artigo aparece como o marcador mais uma
+frase curta que diz do que ele trata — a **ementa**. Ela mora em
+`_data/ementas/<slug>.yml`, um arquivo por norma, com uma linha por artigo:
+
+```yaml
+art-4: Fundamentos do uso de tecnologia por crianças
+art-5: Deveres de prevenção, proteção e segurança
+```
+
+A chave é o id do artigo **sem prefixo de norma** (`art-55-a`, e não
+`dec12880-art-5`): o arquivo já é o de uma norma só, e o prefixo existe para
+separar normas dentro de uma página. `lei-anotada.html` faz a busca e entrega o
+resultado num `data-ementa` no `<p>` do artigo, de onde o `notas.js` o lê ao
+montar o sumário. Artigo sem ementa cadastrada não quebra nada: o sumário volta
+a mostrar o começo do caput, que era o comportamento anterior.
+
+**A ementa é rótulo de navegação, não texto legal.** Ela não aparece no painel
+da norma, não entra em `_leis/` e não vira âncora — o texto da norma continua
+intacto, e é por isso que ela fica em arquivo separado.
+
+Três regras de escrita, todas a serviço de varrer a lista com o olho:
+
+- **O núcleo primeiro.** As primeiras palavras são as que o olho lê ao descer a
+  lista, e é nelas que tem de estar o assunto do artigo. O art. 4º do ECA
+  Digital abre com "A utilização de produtos ou serviços de tecnologia da
+  informação por crianças e adolescentes tem como fundamentos:" — nove palavras
+  de fórmula antes do assunto. A ementa é "Fundamentos do uso de tecnologia por
+  crianças".
+- **Até 52 caracteres.** É o que cabe em duas linhas do item, medido no
+  navegador, contando que o marcador ("Art. 55-A ") já ocupa a primeira. Frase
+  maior é cortada com reticências, e o filtro do sumário não casa com o que
+  ficou de fora. `conferir_ementas.py` reclama do que passar disso.
+- **Sem verbo conjugado, sem ponto final.** É rótulo, não resumo — "Sanções por
+  violação da guarda e do sigilo", não "Este artigo prevê as sanções…".
+
+**Numa norma europeia, o artigo já tem epígrafe oficial** ("Artigo 5.º —
+Princípios relativos ao tratamento de dados pessoais"), e ela é mantida palavra
+por palavra sempre que cabe nos 52 caracteres. As compridas demais — a do
+art. 89.º do RGPD tem 167 — entram encurtadas, na mesma terminologia oficial em
+PT-PT do EUR-Lex ("controlo", "conceção", "subcontratante", "coimas"). Não
+traduza para o vocabulário brasileiro: a ementa é rótulo do texto que está do
+lado, e ele é o do Jornal Oficial.
+
+`scripts/conferir_ementas.py` compara os dois lados e é o que avisa quando eles
+saem de sincronia — artigo novo sem ementa, ementa órfã de artigo que saiu da
+norma, frase longa demais. Rode-o ao mexer em `_leis/` ou em `_data/ementas/`.
 
 ## Referências clicáveis
 
@@ -359,7 +413,7 @@ dispositivo errado.
 
 ## Scripts de autoria
 
-Os quatro scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
+Os cinco scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
 máquina, não entram no site e não fazem parte do build. As dependências estão
 em [`scripts/requirements.txt`](../scripts/requirements.txt); para instalá-las,
 veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
@@ -370,3 +424,4 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `montar_rgpd.py` | Monta `_leis/gdpr.md` juntando os considerandos do Jornal Oficial ao articulado consolidado |
 | `consolidar_ai_act.py` | Gera a consolidação não oficial do AI Act aplicando as alterações do Digital Omnibus |
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
+| `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
