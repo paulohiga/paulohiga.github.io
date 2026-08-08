@@ -1,6 +1,7 @@
 ---
 titulo: Lei nº 15.211, de 17 de setembro de 2025
 apelido: ECA Digital
+prefixo: ecadigital
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
 compilado_ate: Lei nº 15.352, de 25 de fevereiro de 2026
 ---

@@ -1,6 +1,7 @@
 ---
 titulo: Regimento Interno da ANPD — Anexo da Portaria nº 1, de 8 de março de 2021
 apelido: Regimento Interno da ANPD
+prefixo: rianpd
 fonte: https://www.in.gov.br/en/web/dou/-/portaria-n-1-de-8-de-marco-de-2021-307463618
 tipo: portaria
 ---

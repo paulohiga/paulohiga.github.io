@@ -69,8 +69,8 @@ Os detalhes de cada decisão estão em
 ├── notas.md                     # Página índice                 → /notas
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 13 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 #  7 fragmentos das normas extras (fetch, sem link)
-├── notas.js                     # Painéis, seletor de normas, referências e busca
+├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
+├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas e busca
 │
 │   ## Código compartilhado
 ├── _layouts/                    # default.html · nota.html · notas-index.html

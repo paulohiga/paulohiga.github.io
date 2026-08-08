@@ -259,12 +259,20 @@ body.dark-theme .nota-tema .ico-moon {
     text-transform: uppercase;
 }
 
-/* --- Seletor de normas, quando a nota exibe mais de um texto legal ---
-   Um <select> nativo em vez de uma aba por norma: não degrada com o número
-   de normas (uma nota pode vir a referenciar dezenas de resoluções), é
-   utilizável sem JavaScript (só não troca de norma sem ele) e não precisa de
-   ARIA customizado — o próprio elemento já é acessível por teclado e leitor
-   de tela. Estilizado para ocupar o lugar do <h2> do painel. */
+/* --- Seletor de normas do painel da lei seca ---
+   Um <select> nativo em vez de uma aba por norma: não degrada com o número de
+   normas (são 13, em dois grupos — as desta nota e todas as outras) e não
+   precisa de ARIA customizado, porque o próprio elemento já é acessível por
+   teclado e leitor de tela. Estilizado para ocupar o lugar do <h2> do painel.
+
+   Trocar de norma depende do fetch, ou seja, de JavaScript. Sem ele o seletor
+   sai e quem fica é o <h2> com o nome da norma principal, a única exibida —
+   oferecer um controle que não faz nada seria pior do que não oferecê-lo. */
+body.js #titulo-lei,
+body:not(.js) .lei-norma-select {
+    display: none;
+}
+
 .lei-norma-select {
     max-width: 100%;
     margin: 0;
@@ -300,6 +308,59 @@ body.dark-theme .nota-tema .ico-moon {
 /* Espaço para o topo do painel ao saltar para uma âncora. */
 .painel__corpo [id] {
     scroll-margin-top: 1rem;
+}
+
+/* --- Botão de modo leitura, no canto da barra de título de cada painel ---
+   Discreto: fica em tom apagado até o ponteiro chegar nele ou o modo estar
+   ligado. Some em uma coluna (as abas já mostram um painel por vez) e sem
+   JavaScript, que é quem alterna o estado. */
+.painel__leitura {
+    display: grid;
+    place-items: center;
+    flex: none;
+    margin-left: auto;
+    padding: 0.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.35rem;
+    background: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+/* No painel da lei o botão vem depois do campo "Ir para", que já empurra tudo
+   para a direita: aqui o `margin-left: auto` viraria um vão entre os dois. */
+.lei-ir + .painel__leitura {
+    margin-left: 0;
+}
+
+.painel__leitura:hover,
+.painel__leitura:focus-visible {
+    border-color: var(--hairline);
+    color: var(--ink);
+}
+
+.painel__leitura[aria-pressed="true"] {
+    color: var(--accent);
+}
+
+.painel__leitura .ico {
+    width: 1.05rem;
+    height: 1.05rem;
+}
+
+/* Um ícone por estado: abrir para fora ao expandir, fechar para dentro ao
+   voltar à tela dividida. */
+.painel__leitura .ico-recolher,
+.painel__leitura[aria-pressed="true"] .ico-expandir {
+    display: none;
+}
+
+.painel__leitura[aria-pressed="true"] .ico-recolher {
+    display: block;
+}
+
+body:not(.js) .painel__leitura {
+    display: none;
 }
 
 /* --- Campo "ir para o dispositivo" --- */
@@ -634,6 +695,110 @@ body:not(.js) .lei-ir {
     .painel__corpo {
         overflow-y: auto;
         overscroll-behavior: contain;
+    }
+
+    /* --- Modo leitura: um painel só, na tela inteira ---
+       A tela dividida é ótima para conferir o comentário contra o dispositivo,
+       e ruim para simplesmente ler: metade de 1440px é uma coluna estreita, e
+       quem só quer percorrer a norma não precisa da outra metade. Um clique no
+       botão da barra de título expande o painel; o outro sai, o divisor some e
+       o sumário deixa de ser gaveta sobreposta para virar coluna fixa ao lado
+       do texto — com o painel inteiro à disposição, esconder o mapa da norma
+       atrás de um botão passa a ser desperdício.
+
+       A largura do texto tem teto próprio, maior que o da tela dividida e bem
+       menor que a tela: um parágrafo de ponta a ponta em 1440px não se lê. */
+    body[data-leitura] .nota-resizer,
+    body[data-leitura="comentarios"] .painel--lei,
+    body[data-leitura="comentarios"] #toc-lei,
+    body[data-leitura="comentarios"] #toc-lei-btn,
+    body[data-leitura="lei"] .painel--comentarios,
+    body[data-leitura="lei"] #toc-comentarios,
+    body[data-leitura="lei"] #toc-comentarios-btn {
+        display: none;
+    }
+
+    /* O botão da borda abre o sumário do painel expandido — e some enquanto
+       ele já está aberto, porque ali o sumário é coluna, não gaveta. Fechada a
+       coluna pelo X, o botão volta: é por ele que o leitor a traz de novo. */
+    body[data-leitura="comentarios"]:has(#toc-comentarios:not([hidden])) #toc-comentarios-btn,
+    body[data-leitura="lei"]:has(#toc-lei:not([hidden])) #toc-lei-btn {
+        display: none;
+    }
+
+    /* A coluna do sumário é `auto`, não uma medida fixa: fechado, ele sai do
+       fluxo (`hidden`), a trilha encolhe a zero e o texto ocupa a tela toda —
+       sem precisar de uma segunda regra para o caso. */
+    body[data-leitura] .nota-divisao {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    body[data-leitura="lei"] .nota-divisao {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    body[data-leitura="comentarios"] #toc-comentarios,
+    body[data-leitura="lei"] .painel--lei {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    body[data-leitura="comentarios"] .painel--comentarios,
+    body[data-leitura="lei"] #toc-lei {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* De gaveta sobreposta a coluna da grade. A borda de encosto (à direita no
+       sumário dos comentários, à esquerda no da lei) já vem das classes
+       --esquerda/--direita; o que sai é a sombra, que só existia para o
+       sumário parecer flutuar sobre o texto. */
+    body[data-leitura] .nota-toc {
+        position: static;
+        z-index: auto;
+        /* 20rem é a largura da gaveta, e é o teto aqui. Perto do limiar de 900px
+           ela comeria mais de um terço da tela, então a coluna cede: o texto é
+           o que o modo leitura existe para servir. */
+        width: min(20rem, 30vw);
+        /* Item de grade com altura de linha fixa: sem isto o `auto` do
+           min-height deixa a lista esticar a linha em vez de rolar dentro
+           dela, e o filtro no topo sai da tela. */
+        min-height: 0;
+        box-shadow: none;
+    }
+
+    /* Na tela dividida a lei seca fica à direita e a borda a separa dos
+       comentários. Expandida, ela encosta na borda esquerda da janela e a
+       linha vira um risco solto. */
+    body[data-leitura="lei"] .painel--lei {
+        border-left: 0;
+    }
+
+    /* A coluna de texto é mais larga do que na tela dividida, e bem mais
+       estreita do que a tela. E vem com o corpo do tipo maior: alargar a coluna
+       sem mexer no tipo alongaria a linha em número de caracteres, que é o que
+       de fato cansa a leitura — a lei seca, em 0,9rem serifado, já passa de 110
+       caracteres por linha na metade da tela. Com o tipo maior a linha fica
+       mais larga em pixels e mais curta em caracteres, que é o ponto do modo. */
+    body[data-leitura="comentarios"] .painel--comentarios .painel__corpo,
+    body[data-leitura="lei"] .painel--lei .painel__corpo {
+        max-width: min(100%, var(--nota-leitura-largura));
+        margin-inline: auto;
+        font-size: var(--nota-leitura-corpo);
+    }
+
+    body[data-leitura="comentarios"] {
+        --nota-leitura-largura: 50rem;
+        --nota-leitura-corpo: 1.05rem;
+    }
+
+    /* Coluna um pouco mais estreita e tipo um pouco maior que a dos
+       comentários: o texto legal é serifado, e a mesma medida em rem lhe daria
+       uma linha mais longa em caracteres. O alvo é a mesma linha nos dois
+       painéis, contada em caracteres — não em rem. */
+    body[data-leitura="lei"] {
+        --nota-leitura-largura: 48rem;
+        --nota-leitura-corpo: 1.2rem;
     }
 }
 

@@ -13,6 +13,13 @@
 #   prefixo   — prefixo dos ids dessa norma no HTML (ver lei-anotada.html).
 #               Vazio quando a norma é a principal (`lei:`) da nota indicada;
 #               preenchido quando é uma norma extra (`normas_extra:`).
+#               NÃO é o mesmo campo `prefixo` do front matter de `_leis/`:
+#               aquele é o namespace da norma quando ela é exibida em qualquer
+#               outra nota (o seletor do painel dá acesso a todas), e toda
+#               norma tem o seu. Aqui interessa só como a norma aparece na nota
+#               indicada em `nota:` — que é o alvo dos links gerados —, e lá a
+#               principal continua sem prefixo. Esvaziar este campo por engano
+#               quebraria os links já publicados.
 #   aliases   — formas como a norma é citada em texto corrido. Ordem não
 #               importa (o script ordena por tamanho antes de casar), mas
 #               evite aliases ambíguos ou curtos demais (ex.: não cadastre só

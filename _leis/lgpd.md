@@ -1,6 +1,7 @@
 ---
 titulo: Lei nº 13.709, de 14 de agosto de 2018
 apelido: LGPD
+prefixo: lgpd
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
 compilado_ate: Lei nº 15.352, de 25 de fevereiro de 2026
 ---

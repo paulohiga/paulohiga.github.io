@@ -11,14 +11,23 @@
      Uma nota pode exibir mais de uma norma no painel "Lei seca" (ex.: a lei e
      um decreto que a regulamenta), listada no front matter `normas_extra`
      (slugs de `_leis`). Só a norma principal (`lei`) é pré-carregada no HTML,
-     sem prefixo de id — para não quebrar as âncoras já publicadas. As normas
-     extras são buscadas via fetch() só quando o leitor as seleciona no
-     `<select>` de normas, ou ao abrir um link com âncora de outra norma (ver
-     `notas.js` e `_fragmentos/`). O `<select>` nativo funciona sem JavaScript
-     (é só um formulário), mas trocar de norma não tem efeito sem JS — a norma
-     principal permanece visível até o script rodar. Um `<select>` foi
-     escolhido em vez de botões (uma aba por norma) porque não degrada com o
-     número de normas: uma nota pode vir a referenciar dezenas de resoluções. -->
+     sem prefixo de id — para não quebrar as âncoras já publicadas. As demais
+     são buscadas via fetch() só quando o leitor as seleciona no `<select>` de
+     normas, ou ao abrir um link com âncora de outra norma (ver `notas.js` e
+     `_fragmentos/`).
+
+     O `<select>` tem dois grupos: as normas *desta* nota (a principal e as de
+     `normas_extra`) e todas as outras de `_leis`. Ler a LGPD ao lado dos
+     comentários do Marco Civil é legítimo — as normas da seção se citam o
+     tempo todo —, e não havia por que a única forma de chegar a um texto ser
+     abrir a nota dele. Toda norma tem `prefixo` no front matter justamente
+     para poder entrar em qualquer nota sem que os ids colidam com os da norma
+     principal dela. Um `<select>` foi escolhido em vez de botões (uma aba por
+     norma) porque não degrada com o número de normas.
+
+     Sem JavaScript o `<select>` não teria efeito nenhum (a troca de norma
+     depende do fetch), então ele fica oculto e o lugar dele é ocupado pelo
+     `<h2>` com o nome da norma principal, que é a única exibida. -->
 {% assign lei = site.leis | where: 'slug', page.lei | first %}
 {% assign normas_extra = "" | split: "," %}
 {% if page.normas_extra %}
@@ -27,6 +36,23 @@
         {% assign normas_extra = normas_extra | push: norma_extra %}
     {% endfor %}
 {% endif %}
+{% comment %}
+    As normas que não são desta nota, em ordem alfabética de apelido. É o
+    segundo grupo do seletor; a ordem é a do rótulo porque é por ele que o
+    leitor procura, e não há hierarquia editorial entre normas de notas
+    diferentes.
+{% endcomment %}
+{% assign outras_normas = "" | split: "," %}
+{% for norma in site.leis %}
+    {% unless norma.slug == lei.slug %}
+        {% assign e_desta_nota = false %}
+        {% for extra in normas_extra %}
+            {% if extra.slug == norma.slug %}{% assign e_desta_nota = true %}{% endif %}
+        {% endfor %}
+        {% unless e_desta_nota %}{% assign outras_normas = outras_normas | push: norma %}{% endunless %}
+    {% endunless %}
+{% endfor %}
+{% assign outras_normas = outras_normas | sort: 'apelido' %}
 {% assign outras_notas = site.notas | where_exp: "n", "n.url != page.url" | sort: "title" %}
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -176,59 +202,53 @@
         <button type="button" data-painel="lei" aria-controls="lei" aria-pressed="false">Lei seca</button>
     </div>
 
-    <!-- Sumários retráteis (table of contents) de cada painel. Ocultos por
-         padrão; abrem por um botão fixo na borda da tela — o dos comentários à
-         esquerda, o da lei seca à direita — e funcionam só com JavaScript
-         (dependem da rolagem programática do notas.js).
+    <!-- Botões que abrem os sumários, presos à borda da tela — o dos
+         comentários à esquerda, o da lei seca à direita. Ficam fora do <main>
+         porque são sobreposições da janela, não parte do conteúdo, e somem no
+         modo leitura (lá o sumário é coluna fixa, não gaveta) e sem
+         JavaScript, de que o sumário depende. -->
+    <button type="button" id="toc-comentarios-btn" class="nota-toc-btn nota-toc-btn--esquerda" aria-controls="toc-comentarios" aria-label="Abrir sumário dos comentários">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    </button>
+    <button type="button" id="toc-lei-btn" class="nota-toc-btn nota-toc-btn--direita" aria-controls="toc-lei" aria-label="Abrir sumário da lei seca">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+    </button>
+
+    <!-- Os dois painéis, com o sumário de cada um ao lado de fora dele.
+         Os sumários ficam dentro do <main>, e não soltos no <body>, porque no
+         modo leitura eles deixam de ser gaveta sobreposta e viram uma coluna
+         da mesma grade do painel — sem isso, uma coluna `position: fixed`
+         cobriria o cabeçalho e o painel teria de adivinhar a largura dela.
+         Fora do modo leitura continuam `position: fixed` e ocultos, e a
+         posição no DOM não os afeta.
 
          O campo de filtro existe porque o sumário dos comentários passa de 50
          entradas nas notas maiores: percorrer a lista com o olho custa mais do
          que digitar duas sílabas. Ele filtra os títulos já carregados, não
          busca no texto — quem procura uma expressão no corpo da norma usa o
          campo "Ir para" do painel da lei seca. -->
-    <button type="button" id="toc-comentarios-btn" class="nota-toc-btn nota-toc-btn--esquerda" aria-controls="toc-comentarios" aria-label="Abrir sumário dos comentários">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-    </button>
-    <div id="toc-comentarios" class="nota-toc nota-toc--esquerda" hidden>
-        <div class="nota-toc__topo">
-            <h2>Sumário dos comentários</h2>
-            <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-            </button>
-        </div>
-        <div class="nota-toc__filtro">
-            <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário dos comentários">
-        </div>
-        <nav class="nota-toc__corpo" aria-label="Sumário dos comentários">
-            <ul></ul>
-            <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
-        </nav>
-    </div>
-
-    <button type="button" id="toc-lei-btn" class="nota-toc-btn nota-toc-btn--direita" aria-controls="toc-lei" aria-label="Abrir sumário da lei seca">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-    </button>
-    <div id="toc-lei" class="nota-toc nota-toc--direita" hidden>
-        <div class="nota-toc__topo">
-            <h2>Sumário da lei seca</h2>
-            <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
-                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-            </button>
-        </div>
-        <div class="nota-toc__filtro">
-            <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário da lei seca">
-        </div>
-        <nav class="nota-toc__corpo" aria-label="Sumário da lei seca">
-            <ul></ul>
-            <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
-        </nav>
-    </div>
-
     <main class="nota-divisao">
+        <div id="toc-comentarios" class="nota-toc nota-toc--esquerda" hidden>
+            <div class="nota-toc__topo">
+                <h2>Sumário dos comentários</h2>
+                <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="nota-toc__filtro">
+                <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário dos comentários">
+            </div>
+            <nav class="nota-toc__corpo" aria-label="Sumário dos comentários">
+                <ul></ul>
+                <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
+            </nav>
+        </div>
+
         <section class="painel painel--comentarios" id="comentarios" aria-labelledby="titulo-comentarios">
             <div class="painel__topo">
                 <h2 id="titulo-comentarios">Comentários</h2>
                 <p class="painel__nota">Notas pessoais de estudo</p>
+{% include painel-leitura.html painel="comentarios" nome="dos comentários" %}
                 <div class="nota-progresso" id="progresso-comentarios" aria-hidden="true"><div class="nota-progresso__barra"></div></div>
             </div>
             <div class="painel__corpo">
@@ -241,16 +261,22 @@
 
         <section class="painel painel--lei" id="lei" aria-label="Lei seca">
             <div class="painel__topo">
-{% if normas_extra.size > 0 %}
-                <select id="lei-norma-select" class="lei-norma-select" aria-label="Escolher norma exibida">
-                    <option value="lei-doc-{{ lei.slug }}" data-norma-fonte="{{ lei.fonte }}">{{ lei.apelido }}</option>
-{% for norma in normas_extra %}
-                    <option value="lei-doc-{{ norma.slug }}" data-norma-fonte="{{ norma.fonte }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" data-norma-prefixo="{{ norma.prefixo }}">{{ norma.apelido }}</option>
-{% endfor %}
-                </select>
-{% else %}
                 <h2 id="titulo-lei">{{ lei.apelido }}</h2>
+                <select id="lei-norma-select" class="lei-norma-select" aria-label="Escolher norma exibida">
+                    <optgroup label="Normas desta nota">
+                        <option value="lei-doc-{{ lei.slug }}" data-norma-fonte="{{ lei.fonte }}">{{ lei.apelido }}</option>
+{% for norma in normas_extra %}
+                        <option value="lei-doc-{{ norma.slug }}" data-norma-fonte="{{ norma.fonte }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" data-norma-prefixo="{{ norma.prefixo }}">{{ norma.apelido }}</option>
+{% endfor %}
+                    </optgroup>
+{% if outras_normas.size > 0 %}
+                    <optgroup label="Outras normas de /notas">
+{% for norma in outras_normas %}
+                        <option value="lei-doc-{{ norma.slug }}" data-norma-fonte="{{ norma.fonte }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" data-norma-prefixo="{{ norma.prefixo }}">{{ norma.apelido }}</option>
+{% endfor %}
+                    </optgroup>
 {% endif %}
+                </select>
                 <p class="painel__nota">
                     <a href="{{ lei.fonte }}" target="_blank" rel="noopener" id="lei-fonte">Texto oficial</a>
                 </p>
@@ -260,6 +286,7 @@
                     <button type="submit">Ir</button>
                     <span id="lei-ir-ajuda" class="visualmente-oculto">Digite o artigo e, opcionalmente, o parágrafo (p2, ou único) e o inciso em algarismo romano. A busca vale para a norma exibida no momento.</span>
                 </form>
+{% include painel-leitura.html painel="lei" nome="da lei seca" %}
                 <div class="nota-progresso" id="progresso-lei" aria-hidden="true"><div class="nota-progresso__barra"></div></div>
             </div>
             <div class="painel__corpo">
@@ -269,9 +296,49 @@
 {% for norma in normas_extra %}
                 <div class="lei-doc" id="lei-doc-{{ norma.slug }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" hidden></div>
 {% endfor %}
+{% for norma in outras_normas %}
+                <div class="lei-doc" id="lei-doc-{{ norma.slug }}" data-norma-fragmento="/notas/fragmentos/{{ norma.slug }}.html" hidden></div>
+{% endfor %}
             </div>
         </section>
+
+        <div id="toc-lei" class="nota-toc nota-toc--direita" hidden>
+            <div class="nota-toc__topo">
+                <h2>Sumário da lei seca</h2>
+                <button type="button" class="nota-toc__fechar" aria-label="Fechar sumário">
+                    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="nota-toc__filtro">
+                <input type="search" class="nota-toc__campo" autocomplete="off" placeholder="Filtrar seções" aria-label="Filtrar seções do sumário da lei seca">
+            </div>
+            <nav class="nota-toc__corpo" aria-label="Sumário da lei seca">
+                <ul></ul>
+                <p class="nota-toc__vazio" role="status" hidden>Nenhuma seção com esse termo.</p>
+            </nav>
+        </div>
     </main>
+
+    <!-- Restaura o modo leitura antes do primeiro paint, junto com o sumário
+         que ele mantém aberto. Fica aqui, e não no notas.js (que é `defer`),
+         pelo mesmo motivo do tema e da divisão dos painéis: aplicado depois, o
+         leitor veria a tela dividida saltar para a coluna única. A grade já
+         reserva a coluna do sumário, então o texto nasce na largura final
+         mesmo antes de a lista ser montada. -->
+    <script data-cfasync="false">
+        (function () {
+            // Modo leitura é de tela larga: em uma coluna já se lê um painel
+            // por vez, e a coluna do sumário não caberia.
+            if (!matchMedia('(min-width: 900px)').matches) return;
+            var painel = sessionStorage.getItem('notas-leitura');
+            if (painel !== 'comentarios' && painel !== 'lei') return;
+            document.body.setAttribute('data-leitura', painel);
+            var sumario = document.getElementById('toc-' + painel);
+            var botao = document.getElementById('toc-' + painel + '-btn');
+            if (sumario) sumario.hidden = false;
+            if (botao) botao.setAttribute('aria-expanded', 'true');
+        }());
+    </script>
 
     <script src="/notas.js" defer></script>
 </body>

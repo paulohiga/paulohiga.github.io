@@ -159,9 +159,9 @@ preview do Netlify, depois do push.
   Core Web Vitals abaixo. Lembre que a minificação de CSS/JS só ocorre no build
   de produção — o preview do Netlify é o ambiente mais fiel ao publicado.
 - **Sem JavaScript:** desative o JS e confirme que o texto, a navegação por links
-  e o layout continuam legíveis. Exceção conhecida e aceita: nas notas com mais
-  de uma norma (`normas_extra`), o seletor de normas some e só a norma principal
-  fica visível.
+  e o layout continuam legíveis. Exceção conhecida e aceita: nas notas, o
+  seletor de normas e o botão de modo leitura somem — fica a norma principal, na
+  tela dividida, com o nome dela num `<h2>` no lugar do seletor.
 - **Teclado e leitores de tela:** navegue só com o teclado (skip link, foco
   visível, _focus trap_ do modal, `aria-current` no idioma ativo).
 - **Temas e idiomas:** teste claro/escuro e PT/EN, incluindo a troca sem reload.
@@ -171,6 +171,10 @@ preview do Netlify, depois do push.
   `python3 scripts/conferir_ementas.py` se mexeu em `_leis/` ou em
   `_data/ementas/`, e abra o sumário da lei seca no navegador para ver se a
   frase de cada artigo aparece inteira.
+- **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
+  barra de título e confira que o outro sai, que o sumário vira coluna aberta ao
+  lado do texto e que a coluna de texto não chega às bordas da tela. Teste
+  também perto de 900px, onde o modo se desliga.
 
 ### Performance: Core Web Vitals
 
