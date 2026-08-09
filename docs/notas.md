@@ -16,6 +16,8 @@ fazer nada disso à mão.
 - [Publicar uma nota nova](#publicar-uma-nota-nova)
 - [Front matter](#front-matter)
 - [Múltiplas normas por nota](#múltiplas-normas-por-nota)
+- [Modo leitura](#modo-leitura)
+- [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
@@ -29,7 +31,9 @@ Interno da ANPD e as normas europeias GDPR e AI Act), pública e indexável. Nem
 toda norma comentada é lei em sentido estrito — o Regimento Interno é ato do
 Conselho Diretor da ANPD, aprovado por portaria —, mas a estrutura é sempre a
 mesma: comentários de um lado, texto da norma do outro, cada painel com rolagem
-independente. Em telas estreitas viram abas ("Comentários" / "Lei seca").
+independente. Em telas estreitas viram abas ("Comentários" / "Lei seca"); em
+telas largas, um deles pode ocupar a tela inteira (ver
+[Modo leitura](#modo-leitura)).
 
 A seção é **isolada do restante do site**: `_layouts/nota.html` não usa o
 `default.html`, o `script.js` nem o `_data/pages.yml`, e o CSS
@@ -49,14 +53,16 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/notas-index-head.html` | `<head>` do índice |
 | `_notas/<slug>.md` | Os comentários — é o que vira página, em `/notas/<slug>` |
 | `_leis/<slug>.md` | O texto legal em Markdown puro. `output: false`: nunca vira página |
-| `_fragmentos/<slug>.html` | Fragmento de uma norma extra, buscado via `fetch()` |
+| `_fragmentos/<slug>.html` | Fragmento da norma, buscado via `fetch()`. Um por norma de `_leis` |
 | `_layouts/nota.html` | Monta os dois painéis |
 | `_includes/lei-anotada.html` | Renderiza o texto legal dando um id a cada dispositivo |
 | `_includes/nota-head.html` | `<head>` das notas (canonical, OG, JSON-LD `Article`) |
 | `_includes/nota-aviso.html` | Aviso de IA + isenção institucional, em toda nota |
+| `_includes/painel-leitura.html` | Botão de [modo leitura](#modo-leitura) da barra de título de cada painel |
 | `_includes/nota-style.css` | CSS da seção — inline, isolado do `style.css` |
-| `notas.js` | Painéis, seletor de normas, referências clicáveis e busca |
+| `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis e busca |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
+| `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -72,8 +78,9 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
 2. **`_notas/<slug>.md`** — os comentários, com `lei: <slug>` apontando para o
    arquivo acima. É aqui que entram `ordem` e `jurisdicao`, que decidem onde a
    nota aparece no índice — sem `ordem` ela cai no fim da lista.
-3. **`_fragmentos/<slug>.html`** — **só** para cada norma listada em
-   `normas_extra`. Replique
+3. **`_fragmentos/<slug>.html`** — um por norma de `_leis`, inclusive a
+   principal desta nota: é assim que ela pode ser aberta ao lado dos
+   comentários de outra. Replique
    [`_fragmentos/decreto-12880.html`](../_fragmentos/decreto-12880.html)
    trocando o slug; não crie uma página solta fora de coleção (ver
    [Múltiplas normas por nota](#múltiplas-normas-por-nota)).
@@ -81,6 +88,9 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
    `nota`, `prefixo` e `aliases`. É o que permite ao
    [script de ancoragem](#ancorando-referências-automaticamente) reconhecer
    citações a ela em texto corrido.
+5. **`_data/ementas/<slug>.yml`** — uma [ementa](#ementas-dos-artigos) por
+   artigo, também uma entrada por norma. Confira com
+   `python3 scripts/conferir_ementas.py <slug>`.
 
 O índice `/notas`, os links entre notas e o `sitemap.xml` se ajustam sozinhos
 no build. Excluir uma nota é apagar os arquivos correspondentes.
@@ -110,7 +120,7 @@ no build. Excluir uma nota é apagar os arquivos correspondentes.
 | `compilado_ate` | não | Até que alteração o texto está compilado |
 | `formato` | não | `br` (padrão) ou `ue` — ver [Normas estrangeiras](#normas-estrangeiras-formato-ue) |
 | `tipo` | só em norma extra | Espécie normativa. Em uso hoje: `decreto`, `regulamento`, `portaria`. Vocabulário aberto — acrescente o que a norma for (`resolucao`, `lei`, `instrucao-normativa`…). É documental: não altera o comportamento, mas evita ambiguidade se o rótulo do link de fonte vier a depender da espécie |
-| `prefixo` | só em norma extra | Namespace curto e estável dos ids dessa norma |
+| `prefixo` | sim | Namespace curto e estável dos ids dessa norma quando ela é exibida numa nota que não é a dela. Toda norma precisa do seu, porque o seletor do painel dá acesso a todas — mas a norma **principal** de cada nota continua renderizada sem prefixo na página dela, e é por isso que as âncoras publicadas (`#art-5-v`) não mudam |
 
 **O texto da lei não se altera.** Os arquivos gerados por script trazem
 "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter — respeite.
@@ -121,20 +131,36 @@ Uma nota pode exibir, no painel "Lei seca", mais de um texto legal — por
 exemplo a lei e um decreto que a regulamenta. A norma indicada em `lei` é a
 principal: fica pré-carregada no HTML, sem prefixo de id, exatamente como antes
 desse recurso existir (as âncoras já publicadas, tipo `#art-5-v`, não mudam).
-Normas adicionais entram em `normas_extra`, e o arquivo delas em `_leis/`
-precisa de `tipo` e `prefixo` no front matter. O prefixo vira `dec12880-art-5`,
-`lei-dec12880-capitulo-i-…` etc. — `lei-anotada.html` o recebe como parâmetro
-opcional.
 
-Uma norma extra **não é pré-carregada**: é buscada via `fetch()` só quando o
-leitor a seleciona no seletor de normas (ou ao abrir um link com âncora
-prefixada, tipo `/notas/eca-digital#dec12880-art-24`), e o resultado fica em
-cache na aba enquanto ela estiver aberta. Isso significa que **o seletor de
-normas e a navegação para uma norma extra exigem JavaScript** — exceção
+O seletor do painel tem **dois grupos**. O primeiro é o das normas *desta* nota:
+a principal e as de `normas_extra`. O segundo é o de **todas as outras normas de
+`_leis`** — ler a LGPD ao lado dos comentários do Marco Civil é legítimo, porque
+as normas da seção se citam o tempo todo, e não havia por que a única forma de
+chegar a um texto ser abrir a nota dele. Os dois grupos funcionam igual: a norma
+é buscada e exibida ali mesmo, sem sair da página.
+
+O que `normas_extra` decide, então, não é mais *se* uma norma pode ser exibida,
+e sim **em que grupo do seletor ela aparece** — isto é, quais normas a nota
+declara como suas. Ela também continua decidindo o que o `ancorar_referencias.py`
+pode transformar em link nos comentários daquela nota (ver
+[`_data/normas.yml`](#ancorando-referências-automaticamente)).
+
+Por isso **toda norma de `_leis` precisa de `prefixo` no front matter**, e não
+só as extras: o prefixo vira `dec12880-art-5`, `rgpd-art-17`,
+`lei-dec12880-capitulo-i-…` etc., e é ele que evita a colisão de ids quando uma
+norma é exibida numa nota que não é a dela. `lei-anotada.html` o recebe como
+parâmetro opcional, e a norma principal de cada nota continua sendo renderizada
+**sem** ele.
+
+Norma que não é a principal **não é pré-carregada**: é buscada via `fetch()` só
+quando o leitor a seleciona (ou ao abrir um link com âncora prefixada, tipo
+`/notas/eca-digital#dec12880-art-24`), e o resultado fica em cache na aba
+enquanto ela estiver aberta. Isso significa que **o seletor de normas e a
+navegação para qualquer norma que não a principal exigem JavaScript** — exceção
 consciente à regra geral de "funciona sem JS" das notas, decidida para não
-pré-carregar normas que ainda vão se multiplicar (resoluções da ANPD, outros
-decretos do MCI). Sem JavaScript, o seletor fica oculto e só a norma principal
-aparece.
+pré-carregar 13 textos legais em toda página. Sem JavaScript o seletor fica
+oculto e o lugar dele, na barra de título do painel, é ocupado por um `<h2>` com
+o nome da norma principal, que é a única exibida.
 
 **O prefixo sozinho é uma âncora válida**: `/notas/mci#dec8771` abre a nota já
 exibindo o Decreto nº 8.771, sem apontar para dispositivo nenhum. É o que o
@@ -145,10 +171,12 @@ não leva marca. Um link escrito à mão pode usar a mesma forma quando o destin
 enquanto a aba estiver aberta, onde o leitor parou em cada norma, e devolve-o
 ao mesmo ponto quando ele volta.
 
-A norma extra é servida por um HTML solto em `_fragmentos/<slug>.html` (coleção
+Cada norma é servida por um HTML solto em `_fragmentos/<slug>.html` (coleção
 `fragmentos`, ver `_config.yml`), sem link algum apontando para ele, fora do
 sitemap (`sitemap: false`) e bloqueado em `robots.txt`
-(`/notas/fragmentos/`) — não é uma página para navegação humana. Ele só chama
+(`/notas/fragmentos/`) — não é uma página para navegação humana. **Toda norma
+de `_leis` tem o seu**, inclusive a que é principal de alguma nota: é assim que
+ela pode ser aberta ao lado dos comentários de outra. O fragmento só chama
 `lei-anotada.html` com o `prefixo` da norma:
 
 ```liquid
@@ -166,6 +194,134 @@ receberia o `.content` da norma já convertido pelo Kramdown padrão, sem as
 âncoras por dispositivo. Colocar o fragmento numa coleção (`fragmentos`)
 declarada *antes* de `leis` garante que ele lê o Markdown ainda cru, do mesmo
 jeito que `_notas/*.md` já fazia.
+
+## Modo leitura
+
+A tela dividida existe para conferir o comentário contra o dispositivo. Só
+**ler** é outra coisa, e para isso metade de 1440px é uma coluna estreita. O
+botão no canto da barra de título de cada painel expande aquele painel para a
+tela inteira; o mesmo botão volta à divisão.
+
+Quatro coisas mudam ao entrar:
+
+- **O outro painel e o divisor sumem.** O painel que fica ocupa a largura toda.
+- **A coluna de texto tem teto**, e o corpo do tipo cresce. Um parágrafo de
+  ponta a ponta em 1440px não se lê, e alargar a coluna sem mexer no tipo só
+  alongaria a linha em número de caracteres — que é o que de fato cansa. Com o
+  tipo maior a linha fica mais larga em pixels e mais curta em caracteres: na
+  lei seca, de ~116 caracteres por linha na tela dividida para ~94.
+- **O sumário deixa de ser gaveta e vira coluna** fixa ao lado do texto, aberta,
+  e na lei seca com os artigos à mostra. Com o painel inteiro à disposição,
+  esconder o mapa da norma atrás de um botão passa a ser desperdício. A coluna
+  não fecha ao clicar fora nem com `Esc`, que são gestos de dispensar
+  sobreposição; fecha pelo X, e o botão da borda volta para reabri-la.
+- **Na lei seca, o cabeçalho da nota sai junto** — trilha para `/notas`, título,
+  menu das outras notas, botão de tema e a faixa de volta para a nota de origem.
+  Ele identifica a *nota*, e o seletor do painel dá acesso a qualquer norma da
+  seção: lendo o Marco Civil dentro da nota do ECA Digital, "ECA Digital — Lei
+  nº 15.211/2025" no alto da tela é informação errada. Quem identifica o que
+  está na tela passa a ser o seletor, na barra do próprio painel, e o botão ao
+  lado dele devolve a nota inteira num clique. O `.skip-link` sai pela mesma
+  razão: aponta para os comentários, que estão fora da tela. Na leitura dos
+  comentários nada disso vale — ali o cabeçalho é a identidade do que se lê.
+
+**É de tela larga.** Abaixo de 900px as abas já mostram um painel por vez, e
+expandir um deles não teria efeito nenhum. O botão **nasce oculto** no CSS e só
+é ligado no bloco de duas colunas, com `body.js .painel__leitura` — mesma
+mecânica da barra de abas, que nasce `display: none` e é ligada no bloco de uma
+coluna. É o default que protege: o botão só aparece onde alguém o ligou. O
+`aplicarLeitura` do notas.js também recusa o modo em uma coluna, e estreitar a
+janela com ele ligado o desliga.
+
+O estado dura a sessão (`sessionStorage`), como a proporção da tela dividida, e
+vale para as outras notas abertas na mesma aba. Quem o aplica é um **script
+inline no layout**, não o `notas.js`: este é `defer`, e aplicar o modo depois do
+primeiro paint faria a tela dividida saltar para a coluna única já desenhada. A
+grade reserva a coluna do sumário desde o início, então o texto nasce na largura
+final mesmo antes de a lista ser montada.
+
+Uma exceção que vale conhecer: **seguir uma remissão do comentário devolve a
+tela dividida**. Ir do comentário ao dispositivo é justamente o que a divisão
+existe para fazer, e o painel de destino está escondido — o salto seria para um
+`display: none`.
+
+### O sumário acompanha a leitura
+
+Marcar a seção corrente não basta: numa norma de 119 artigos a marca sai da
+parte visível da lista nas primeiras rolagens, e um sumário parado no topo não
+responde "em que capítulo está este artigo?". Por isso a lista rola junto,
+levando a seção corrente para o meio dela — no meio, e não na borda de onde
+entrou, porque ali ela leva junto o que vem antes e o que vem depois, e demora
+mais para sair de novo.
+
+Quatro limites, para acompanhar não virar atrapalhar: só quando a seção
+**muda**; nunca com o foco dentro do sumário, que é quando o leitor está
+percorrendo a lista por conta própria; nunca quando a seção já está à vista; e
+nunca durante um **salto programático** — clicar numa remissão ou num artigo do
+sumário já decide o destino, e seguir as seções do caminho até ele eram onze
+paradas da lista num salto só. Silenciado, o sumário se posiciona uma vez, no
+fim do salto.
+
+A rolagem é aplicada na lista, não com `scrollIntoView` — este sobe pelos
+contêineres roláveis acima dela, e no mobile o sumário é sobreposição de tela
+cheia, onde quem está acima é a página. Vale nos dois sumários e nos dois modos.
+
+O salto em si é o `scrollTo({ behavior: 'smooth' })` do navegador. Houve aqui
+uma animação própria em `requestAnimationFrame`, escrita só para durar 300ms em
+vez dos ~500 do navegador, já que o `behavior` não deixa escolher a duração:
+trinta linhas e uma segunda implementação de rolagem para manter em pé ao lado
+da nativa, em troca de dois décimos de segundo. O fim do salto é medido por um
+prazo de 900ms, e não pelo evento `scrollend`, que ainda não está em todo
+navegador.
+
+## Ementas dos artigos
+
+No sumário do painel "Lei seca", cada artigo aparece como o marcador mais uma
+frase curta que diz do que ele trata — a **ementa**. Ela mora em
+`_data/ementas/<slug>.yml`, um arquivo por norma, com uma linha por artigo:
+
+```yaml
+art-4: Fundamentos do uso de tecnologia por crianças
+art-5: Deveres de prevenção, proteção e segurança
+```
+
+A chave é o id do artigo **sem prefixo de norma** (`art-55-a`, e não
+`dec12880-art-5`): o arquivo já é o de uma norma só, e o prefixo existe para
+separar normas dentro de uma página. `lei-anotada.html` faz a busca e entrega o
+resultado num `data-ementa` no `<p>` do artigo, de onde o `notas.js` o lê ao
+montar o sumário. Artigo sem ementa cadastrada não quebra nada: o sumário volta
+a mostrar o começo do caput, que era o comportamento anterior.
+
+**A ementa é rótulo de navegação, não texto legal.** Ela não aparece no painel
+da norma, não entra em `_leis/` e não vira âncora — o texto da norma continua
+intacto, e é por isso que ela fica em arquivo separado.
+
+Três regras de escrita, todas a serviço de varrer a lista com o olho:
+
+- **O núcleo primeiro.** As primeiras palavras são as que o olho lê ao descer a
+  lista, e é nelas que tem de estar o assunto do artigo. O art. 4º do ECA
+  Digital abre com "A utilização de produtos ou serviços de tecnologia da
+  informação por crianças e adolescentes tem como fundamentos:" — nove palavras
+  de fórmula antes do assunto. A ementa é "Fundamentos do uso de tecnologia por
+  crianças".
+- **Até 52 caracteres.** É o que cabe em duas linhas do item, medido no
+  navegador, contando que o marcador ("Art. 55-A ") já ocupa a primeira. Frase
+  maior é cortada com reticências, e o filtro do sumário não casa com o que
+  ficou de fora. `conferir_ementas.py` reclama do que passar disso.
+- **Sem verbo conjugado, sem ponto final.** É rótulo, não resumo — "Sanções por
+  violação da guarda e do sigilo", não "Este artigo prevê as sanções…".
+
+**Numa norma europeia, o artigo já tem epígrafe oficial** ("Artigo 5.º —
+Princípios relativos ao tratamento de dados pessoais"), e ela é mantida palavra
+por palavra sempre que cabe nos 52 caracteres. As compridas demais — a do
+art. 89.º do RGPD tem 167 — entram encurtadas, na mesma terminologia oficial em
+PT-PT do EUR-Lex ("controlo", "conceção", "subcontratante", "coimas"). Não
+traduza para o vocabulário brasileiro: a ementa é rótulo do texto que está do
+lado, e ele é o do Jornal Oficial.
+
+`scripts/conferir_ementas.py` compara os dois lados e é o que avisa quando eles
+saem de sincronia — artigo novo sem ementa, ementa órfã de artigo que saiu da
+norma, frase longa demais. Rode-o ao mexer em `_leis/` ou em `_data/ementas/`.
 
 ## Referências clicáveis
 
@@ -359,7 +515,7 @@ dispositivo errado.
 
 ## Scripts de autoria
 
-Os quatro scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
+Os cinco scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
 máquina, não entram no site e não fazem parte do build. As dependências estão
 em [`scripts/requirements.txt`](../scripts/requirements.txt); para instalá-las,
 veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
@@ -370,3 +526,4 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `montar_rgpd.py` | Monta `_leis/gdpr.md` juntando os considerandos do Jornal Oficial ao articulado consolidado |
 | `consolidar_ai_act.py` | Gera a consolidação não oficial do AI Act aplicando as alterações do Digital Omnibus |
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
+| `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |

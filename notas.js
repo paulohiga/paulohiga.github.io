@@ -100,38 +100,42 @@
     travarRolagemDaPagina();
     window.addEventListener('scroll', travarRolagemDaPagina, { passive: true });
 
-    /* --- Rolagem suave própria, com metade da duração da rolagem suave
-       nativa dos navegadores — a "rolagem" usada tanto pelos links âncora
-       quanto pela busca "ir para o dispositivo". `behavior: 'smooth'` nativo
-       não permite controlar a duração; uma animação própria permite. */
-    var DURACAO_ROLAGEM = 300;
+    /* --- Rolagem até um ponto: a do navegador ---
+       Serve tanto os links âncora quanto a busca "ir para o dispositivo", e vale
+       para os dois contêineres que rolam nesta página: o corpo de um painel (em
+       duas colunas) e a janela (em uma).
 
-    function suavizar(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
+       Aqui houve uma animação própria, em `requestAnimationFrame`, escrita só
+       para durar 300ms em vez dos ~500 do navegador — o `behavior: 'smooth'`
+       não deixa escolher a duração. Não pagou o que custou: eram trinta linhas
+       de animação para ganhar dois décimos de segundo, e uma segunda
+       implementação de rolagem para manter em pé ao lado da nativa.
 
-    function animarRolagem(lerPosicao, aplicarPosicao, destino) {
-        var inicio = lerPosicao();
-        var distancia = destino - inicio;
-        if (distancia === 0) return;
-        var t0 = null;
-        function passo(agora) {
-            if (t0 === null) t0 = agora;
-            var progresso = Math.min(1, (agora - t0) / DURACAO_ROLAGEM);
-            aplicarPosicao(inicio + distancia * suavizar(progresso));
-            if (progresso < 1) requestAnimationFrame(passo);
-        }
-        requestAnimationFrame(passo);
-    }
+       Enquanto o salto corre, o sumário para de acompanhar a leitura (ver
+       `marcarSumarioAtivo`): o destino já está decidido pelo clique, e seguir as
+       seções do caminho até ele eram onze paradas da lista num salto só,
+       piscando capítulos que o leitor não pediu. Calado, o sumário se posiciona
+       uma vez, no fim. O fim é medido por um prazo, e não pelo evento
+       `scrollend`, que ainda não está em todo navegador: 900ms cobre com folga a
+       rolagem suave nativa mais longa, e a lista assentar um instante depois não
+       custa nada — o texto já chegou. */
+    var saltoEmCurso = false;
+    var fimDoSalto = null;
 
-    function rolarElemento(el, destino) {
-        if (semMovimento.matches) { el.scrollTop = destino; return; }
-        animarRolagem(function () { return el.scrollTop; }, function (v) { el.scrollTop = v; }, destino);
-    }
-
-    function rolarJanela(destino) {
-        if (semMovimento.matches) { window.scrollTo(0, destino); return; }
-        animarRolagem(function () { return window.scrollY; }, function (v) { window.scrollTo(0, v); }, destino);
+    function rolarAte(caixa, destino) {
+        saltoEmCurso = true;
+        clearTimeout(fimDoSalto);
+        fimDoSalto = setTimeout(function () {
+            saltoEmCurso = false;
+            atualizarProgressos();
+        }, 900);
+        caixa.scrollTo({
+            top: destino,
+            // O navegador honra `prefers-reduced-motion` na rolagem suave
+            // declarada em CSS, mas não neste `behavior`: quem pediu menos
+            // movimento continua tendo de ser atendido à mão.
+            behavior: semMovimento.matches ? 'auto' : 'smooth'
+        });
     }
 
     /* --- Painel redimensionável ---
@@ -261,7 +265,15 @@
        A posição vale enquanto a aba estiver aberta; norma nunca visitada
        começa no topo, como antes. */
     function ativarNorma(normaAlvo) {
-        if (normaAtiva && normaAtiva !== normaAlvo) normaAtiva.scrollTop = corpoDaLei.scrollTop;
+        /* Trocar uma norma pela que já está exposta não é troca nenhuma, e
+           tratá-la como troca destruía a leitura: a linha que devolve a posição
+           guardada (logo abaixo) lia `normaAlvo.scrollTop`, que só é gravado ao
+           *sair* de uma norma — na própria, ele nunca foi gravado, e o painel
+           voltava ao topo. Como toda remissão do comentário passa por aqui (o
+           `normaDoId` resolve `#art-6` para a norma principal), o efeito era
+           todo salto começar do artigo 1º e rolar dali até o destino. */
+        if (normaAtiva === normaAlvo) return;
+        if (normaAtiva) normaAtiva.scrollTop = corpoDaLei.scrollTop;
         normas.forEach(function (norma) {
             norma.doc.hidden = norma !== normaAlvo;
         });
@@ -365,19 +377,25 @@
     function irParaElemento(painelEl, corpoEl, nomePainel, alvo) {
         if (!alvo || !painelEl.contains(alvo)) return false;
 
+        /* Seguir uma referência do comentário até o dispositivo é justamente o
+           que a tela dividida existe para fazer: se o modo leitura escondeu o
+           painel de destino, o salto seria para um painel com `display: none`.
+           Volta-se à divisão, e o leitor vê os dois lados da remissão. */
+        if (leituraAtiva() && leituraAtiva() !== nomePainel) aplicarLeitura('');
+
         if (duasColunas.matches) {
             // O painel é o container de rolagem: posicionar o dispositivo no
             // topo dele, sem mexer na rolagem da página.
             var deslocamento = alvo.getBoundingClientRect().top -
                 corpoEl.getBoundingClientRect().top + corpoEl.scrollTop - 12;
-            rolarElemento(corpoEl, deslocamento);
+            rolarAte(corpoEl, deslocamento);
         } else {
             // Em uma coluna quem rola é a página, e as abas e o topo do painel
             // ficam fixos: o dispositivo precisa parar abaixo deles.
             guardarPosicaoDoPainel(nomePainel);
             mostrarPainel(nomePainel);
             var fixos = alturaDosElementosFixos(painelEl);
-            rolarJanela(alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
+            rolarAte(window, alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
         }
 
         destacar(alvo);
@@ -469,20 +487,31 @@
         return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e o
-       começo do texto, que é o que diz do que ele trata — numa norma europeia o
-       marcador já vem com a ementa ("Artigo 5.º — Princípios relativos ao
-       tratamento de dados pessoais"), numa brasileira o texto emenda no
-       marcador. O corte do resumo é feito aqui, e não só no CSS, porque o
-       filtro compara com o que está escrito no item: o que não aparece não
-       deve casar com a busca. */
+    /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e uma
+       frase que diz do que ele trata.
+
+       Essa frase é a ementa editorial da norma, escrita em `_data/ementas/` e
+       entregue no `data-ementa` que o lei-anotada.html põe no artigo. Ela é
+       curta e começa pelo núcleo do dispositivo ("Fundamentos do uso de
+       tecnologia por crianças"), que é o que faz uma lista de 80
+       artigos ser varrida com o olho — o começo do caput, que era o que
+       aparecia aqui antes, gasta as primeiras palavras em fórmula de redação
+       ("A utilização de produtos ou serviços de tecnologia da informação por
+       crianças e adolescentes tem como fundamentos:").
+
+       Sem ementa cadastrada vale o começo do próprio texto, como antes: numa
+       norma europeia isso é a epígrafe oficial ("Artigo 5.º — Princípios
+       relativos ao tratamento de dados pessoais"), numa brasileira é a abertura
+       do caput. O corte é feito aqui, e não só no CSS, porque o filtro compara
+       com o que está escrito no item: o que não aparece não deve casar com a
+       busca. */
     var LIMITE_DO_RESUMO = 90;
 
     function partesDoArtigo(paragrafo) {
         var texto = paragrafo.textContent.replace(/\s+/g, ' ').trim();
         var corte = texto.indexOf(' ', texto.indexOf(' ') + 1);
         var marcador = corte === -1 ? texto : texto.slice(0, corte);
-        var resumo = corte === -1 ? '' : texto.slice(corte + 1);
+        var resumo = paragrafo.dataset.ementa || (corte === -1 ? '' : texto.slice(corte + 1));
         // "Art. 64." vira "Art. 64"; "Artigo 64.º" e "Art. 6º" ficam como estão.
         marcador = marcador.replace(/\.$/, '');
         if (resumo.length > LIMITE_DO_RESUMO) {
@@ -493,12 +522,15 @@
         return { marcador: marcador, resumo: resumo };
     }
 
-    /* Os artigos entram recolhidos sob o título a que pertencem. Abertos de
-       saída eles afogariam os capítulos, que são o primeiro nível de
-       orientação: são 80 dispositivos de artigo na LGPD e 119 no AI Act.
-       `<details>` já traz o teclado, o estado aberto/fechado e o anúncio para
-       leitor de tela — nada disso precisa ser reescrito em ARIA. */
-    function criarGrupoDeArtigos(itemDoTitulo, lista) {
+    /* Na gaveta, os artigos entram recolhidos sob o título a que pertencem:
+       abertos de saída eles afogariam os capítulos, que são o primeiro nível
+       de orientação, e são 80 dispositivos de artigo na LGPD e 119 no AI Act.
+       No modo leitura o sumário é uma coluna de altura inteira, e a conta se
+       inverte — ali cabe a lista aberta, e é ela que faz o mapa da norma valer
+       a coluna que ocupa. `<details>` já traz o teclado, o estado
+       aberto/fechado e o anúncio para leitor de tela: nada disso precisa ser
+       reescrito em ARIA. */
+    function criarGrupoDeArtigos(itemDoTitulo, lista, aberto) {
         var dono = itemDoTitulo;
         if (!dono) {
             // Norma sem capítulo nenhum (é o caso dos decretos): os artigos
@@ -508,6 +540,7 @@
         }
         var grupo = document.createElement('details');
         grupo.className = 'nota-toc__artigos';
+        grupo.open = !!aberto;
         var rotulo = document.createElement('summary');
         var itens = document.createElement('ul');
         grupo.appendChild(rotulo);
@@ -534,22 +567,28 @@
     }
 
     /* `comArtigos` só vale para o sumário da lei seca: no dos comentários os
-       títulos das seções já são o conteúdo. Devolve os títulos — e só eles —,
-       porque é sobre títulos que a marcação de "seção atual" trabalha: com os
-       artigos na conta, o capítulo em que o leitor está deixaria de ser
-       destacado, e é ele que situa a leitura. */
-    function construirSumario(lista, raiz, comArtigos) {
+       títulos das seções já são o conteúdo — e lá o sumário desce até o h4,
+       para uma subseção longa ("Envolvimento humano significativo", dentro da
+       seção sobre decisões automatizadas da LGPD) não ficar invisível no mapa
+       do texto. Na lei seca o nível a mais é o artigo, que tem tratamento
+       próprio (grupo recolhível), e h4/h5 lá são subdivisões de capítulo que
+       só alongariam a lista.
+
+       Devolve os títulos — e só eles —, porque é sobre títulos que a marcação
+       de "seção atual" trabalha: com os artigos na conta, o capítulo em que o
+       leitor está deixaria de ser destacado, e é ele que situa a leitura. */
+    function construirSumario(lista, raiz, comArtigos, artigosAbertos) {
         lista.innerHTML = '';
-        var seletor = comArtigos ? 'h2[id], h3[id], p.lei-artigo[id]' : 'h2[id], h3[id]';
+        var seletor = comArtigos ? 'h2[id], h3[id], p.lei-artigo[id]' : 'h2[id], h3[id], h4[id]';
         var nos = Array.prototype.slice.call(raiz.querySelectorAll(seletor));
         var titulos = [];
-        var ultimoItemH2 = null;
+        var ultimoPorNivel = {};
         var itemDoTitulo = null;
         var grupoDeArtigos = null;
 
         nos.forEach(function (no) {
             if (no.tagName === 'P') {
-                if (!grupoDeArtigos) grupoDeArtigos = criarGrupoDeArtigos(itemDoTitulo, lista);
+                if (!grupoDeArtigos) grupoDeArtigos = criarGrupoDeArtigos(itemDoTitulo, lista, artigosAbertos);
                 acrescentarArtigo(grupoDeArtigos, no);
                 return;
             }
@@ -561,19 +600,34 @@
             item.appendChild(link);
             item.dataset.busca = normalizar(no.textContent);
 
-            if (no.tagName === 'H2' || !ultimoItemH2) {
-                lista.appendChild(item);
-                if (no.tagName === 'H2') ultimoItemH2 = item;
-            } else {
-                // `:scope >` porque o item do h2 pode conter também a lista de
-                // artigos do próprio capítulo, que não é a sublista dos h3.
-                var sublista = ultimoItemH2.querySelector(':scope > ul');
+            /* Cada título entra sob o ancestral mais próximo já visto: o h4 sob
+               o h3 anterior, o h3 sob o h2. O laço sobe nível a nível porque o
+               texto pode pular um (h2 direto para h4) ou começar por h3 — nos
+               dois casos ele acha o pai certo, ou nenhum, e aí o título fica no
+               primeiro nível da lista. */
+            var nivel = +no.tagName.slice(1);
+            var pai = null;
+            for (var acima = nivel - 1; acima >= 2 && !pai; acima--) {
+                pai = ultimoPorNivel[acima] || null;
+            }
+
+            if (pai) {
+                // `:scope >` porque o item do pai pode conter também a lista de
+                // artigos do próprio capítulo, que não é a sublista dos títulos.
+                var sublista = pai.querySelector(':scope > ul');
                 if (!sublista) {
                     sublista = document.createElement('ul');
-                    ultimoItemH2.appendChild(sublista);
+                    pai.appendChild(sublista);
                 }
                 sublista.appendChild(item);
+            } else {
+                lista.appendChild(item);
             }
+
+            ultimoPorNivel[nivel] = item;
+            // Um título fecha os níveis abaixo dele: a próxima subseção
+            // pertence a esta seção, não à subseção anterior.
+            for (var abaixo = nivel + 1; abaixo <= 6; abaixo++) delete ultimoPorNivel[abaixo];
 
             titulos.push(no);
             itemDoTitulo = item;
@@ -620,11 +674,37 @@
         });
     }
 
+    /* Rola a lista do sumário até um item, e só quando ele não está à vista —
+       mexer numa lista que já mostra o que precisa mostrar é movimento gratuito.
+       Fora de vista, o item vai para o meio da lista, e não para a borda de onde
+       entrou: no meio ele leva junto o que vem antes e o que vem depois, que é o
+       que situa a leitura, e demora mais para sair de novo.
+
+       A rolagem é feita na lista, e não com `scrollIntoView`, que sobe pelos
+       contêineres roláveis acima dela — no mobile o sumário é sobreposição de
+       tela cheia, e ali quem está acima é a página. */
+    function trazerParaAVista(sumario, alvo) {
+        var corpo = sumario.painel.querySelector('.nota-toc__corpo');
+        if (!corpo || !alvo) return;
+        var area = corpo.getBoundingClientRect();
+        var item = alvo.getBoundingClientRect();
+        if (item.top >= area.top && item.bottom <= area.bottom) return;
+        corpo.scrollTop = Math.max(0, corpo.scrollTop + (item.top - area.top) -
+            (area.height - item.height) / 2);
+    }
+
     /* Seção em que o leitor está: o último título que já passou pela linha de
        leitura (o topo útil do painel, abaixo do que estiver fixo ali). Sem
        isso, abrir um sumário de 50 entradas não diz onde ele está — só para
        onde pode ir. Só é recalculado com o sumário aberto: fechado, o
-       resultado não apareceria em lugar nenhum. */
+       resultado não apareceria em lugar nenhum.
+
+       Marcar não basta: numa norma de 119 artigos a marca sai da parte visível
+       da lista nas primeiras rolagens, e um sumário parado no topo não responde
+       "em que capítulo está este artigo?". Por isso a lista **acompanha** a
+       leitura — mas só quando a seção corrente muda, e nunca com o foco dentro
+       do sumário, que é quando o leitor está percorrendo a lista por conta
+       própria e puxá-la sob os dedos dele seria hostil. */
     function marcarSumarioAtivo(sumario, painelEl, corpoEl) {
         if (!sumario || sumario.painel.hidden || !sumario.titulos.length) return;
         var linha = (duasColunas.matches
@@ -634,12 +714,25 @@
         sumario.titulos.forEach(function (titulo) {
             if (titulo.getBoundingClientRect().top <= linha) atual = titulo;
         });
+        var linkAtual = null;
         Array.prototype.forEach.call(sumario.lista.querySelectorAll('a'), function (link) {
             var eOAtual = decodeURIComponent(link.getAttribute('href').slice(1)) === atual.id;
             link.classList.toggle('nota-toc__atual', eOAtual);
-            if (eOAtual) link.setAttribute('aria-current', 'true');
-            else link.removeAttribute('aria-current');
+            if (eOAtual) {
+                link.setAttribute('aria-current', 'true');
+                linkAtual = link;
+            } else {
+                link.removeAttribute('aria-current');
+            }
         });
+
+        /* `saltoEmCurso` sai antes de `ultimoAtivo` ser atualizado, de
+           propósito: a seção continua "não tratada", e a passada final que o
+           fim do salto dispara é que leva a lista até ela. */
+        if (!linkAtual || saltoEmCurso || linkAtual === sumario.ultimoAtivo) return;
+        sumario.ultimoAtivo = linkAtual;
+        if (sumario.painel.contains(document.activeElement)) return;
+        trazerParaAVista(sumario, linkAtual);
     }
 
     function configurarSumario(idBotao, idPainel, painelEl, corpoEl, nomePainel) {
@@ -652,7 +745,16 @@
         var vazio = painelSumario.querySelector('.nota-toc__vazio');
         var sumario = { painel: painelSumario, lista: lista, titulos: [] };
 
-        function abrir() {
+        /* Ancorado = o sumário deste painel virou coluna fixa da grade, ao lado
+           do texto, porque o painel está expandido no modo leitura. Coluna não
+           é gaveta: não se fecha ao clicar fora nem com Esc, que são gestos de
+           dispensar sobreposição. Fechar, o leitor ainda pode — pelo X, que
+           devolve a largura ao texto e traz de volta o botão da borda. */
+        function ancorado() {
+            return duasColunas.matches && document.body.getAttribute('data-leitura') === nomePainel;
+        }
+
+        function abrir(comFoco) {
             painelSumario.hidden = false;
             botao.setAttribute('aria-expanded', 'true');
             marcarSumarioAtivo(sumario, painelEl, corpoEl);
@@ -660,8 +762,10 @@
                procurar uma seção, poder digitar direto poupa o percurso pela
                lista. No mobile isso abriria o teclado por cima da própria
                lista, então lá o foco continua no primeiro link. */
-            var primeiro = duasColunas.matches && campo ? campo : lista.querySelector('a');
-            if (primeiro) primeiro.focus();
+            if (comFoco !== false) {
+                var primeiro = duasColunas.matches && campo ? campo : lista.querySelector('a');
+                if (primeiro) primeiro.focus();
+            }
             var atual = lista.querySelector('.nota-toc__atual');
             if (atual) {
                 // No sumário da lei seca, o capítulo em que o leitor está abre
@@ -669,7 +773,7 @@
                 // artigo vizinho ao que está lendo.
                 var grupoAtual = atual.closest('li').querySelector(':scope > details');
                 if (grupoAtual) grupoAtual.open = true;
-                atual.scrollIntoView({ block: 'nearest' });
+                trazerParaAVista(sumario, atual);
             }
         }
 
@@ -679,7 +783,7 @@
             if (devolverFoco) botao.focus();
         }
 
-        botao.setAttribute('aria-expanded', 'false');
+        botao.setAttribute('aria-expanded', String(!painelSumario.hidden));
         botao.addEventListener('click', function () {
             if (painelSumario.hidden) abrir(); else fecharSumario(false);
         });
@@ -698,10 +802,10 @@
             });
         }
         painelSumario.addEventListener('keydown', function (evento) {
-            if (evento.key === 'Escape') fecharSumario(true);
+            if (evento.key === 'Escape' && !ancorado()) fecharSumario(true);
         });
         document.addEventListener('click', function (evento) {
-            if (!painelSumario.hidden && !painelSumario.contains(evento.target) &&
+            if (!painelSumario.hidden && !ancorado() && !painelSumario.contains(evento.target) &&
                 evento.target !== botao && !botao.contains(evento.target)) {
                 fecharSumario(false);
             }
@@ -711,7 +815,10 @@
             if (!link) return;
             evento.preventDefault();
             var id = decodeURIComponent(link.getAttribute('href').slice(1));
-            fecharSumario(false);
+            // Coluna ancorada continua onde está: ela é o mapa que o leitor
+            // usa para ir de um artigo a outro, e sumir a cada clique
+            // obrigaria a reabri-la para o salto seguinte.
+            if (!ancorado()) fecharSumario(false);
             if (nomePainel === 'lei') {
                 var normaAlvo = normaDoId(id);
                 if (normaAlvo) {
@@ -732,6 +839,8 @@
             campo.value = '';
             filtrarSumario(lista, vazio, '');
         };
+        sumario.abrir = abrir;
+        sumario.fechar = fecharSumario;
         return sumario;
     }
 
@@ -746,11 +855,116 @@
         if (!sumarioLei) return;
         var docAtivo = corpoDaLei.querySelector('.lei-doc:not([hidden])') || corpoDaLei;
         // A lista é outra: um filtro digitado para a norma anterior não diz
-        // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro.
+        // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro. A
+        // marca de seção corrente também é da lista antiga, e guardá-la só
+        // seguraria na memória um trecho de DOM que já saiu.
         sumarioLei.limparFiltro();
-        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo, true);
+        sumarioLei.ultimoAtivo = null;
+        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo, true, leituraAtiva() === 'lei');
     }
     reconstruirSumarioLei();
+
+    /* --- Modo leitura: um painel só, na tela inteira ---
+       A tela dividida serve para conferir o comentário contra o dispositivo. Só
+       ler é outra coisa, e para isso metade de 1440px é pouco: um clique no
+       botão da barra de título dá a tela inteira ao painel, com teto de largura
+       para o parágrafo não virar uma linha de ponta a ponta (o teto está no
+       CSS), e promove o sumário dele de gaveta a coluna fixa ao lado do texto.
+
+       O estado dura a sessão, como a proporção da tela dividida, e é aplicado
+       antes do primeiro paint por um script inline no layout — este arquivo é
+       `defer`, e aplicar aqui faria a tela dividida saltar para coluna única
+       depois de já desenhada. */
+    var CHAVE_LEITURA = 'notas-leitura';
+    var PAINEIS = {
+        comentarios: { secao: comentarios, corpo: corpoDosComentarios, sumario: sumarioComentarios },
+        lei: { secao: lei, corpo: corpoDaLei, sumario: sumarioLei }
+    };
+    var botoesLeitura = Array.prototype.slice.call(document.querySelectorAll('[data-leitura-painel]'));
+    var rolagemDoPainel = {};
+
+    function leituraAtiva() {
+        return document.body.getAttribute('data-leitura') || '';
+    }
+
+    function abrirTodosOsGrupos(sumario) {
+        if (!sumario) return;
+        Array.prototype.forEach.call(sumario.lista.querySelectorAll('details'), function (grupo) {
+            grupo.open = true;
+        });
+    }
+
+    /* `display: none` zera o scrollTop do painel que sai, e o leitor voltaria
+       ao topo de um texto que já tinha percorrido. Guardar antes e devolver
+       depois é o mesmo cuidado que a troca de norma já toma. */
+    function aplicarLeitura(nome, comFoco) {
+        if (!duasColunas.matches) nome = '';
+        var anterior = leituraAtiva();
+        if (nome === anterior) return;
+
+        Object.keys(PAINEIS).forEach(function (chave) {
+            // Só o que está à vista: um painel em `display: none` lê scrollTop
+            // 0, e guardar esse zero apagaria a posição real — que já está
+            // guardada desde o momento em que ele saiu da tela.
+            if (anterior && anterior !== chave) return;
+            rolagemDoPainel[chave] = PAINEIS[chave].corpo.scrollTop;
+        });
+
+        if (nome) document.body.setAttribute('data-leitura', nome);
+        else document.body.removeAttribute('data-leitura');
+
+        botoesLeitura.forEach(function (botao) {
+            botao.setAttribute('aria-pressed', String(botao.dataset.leituraPainel === nome));
+        });
+
+        Object.keys(PAINEIS).forEach(function (chave) {
+            var painel = PAINEIS[chave];
+            if (nome && nome !== chave) {
+                // Painel que saiu: o sumário dele iria junto, e reaparecer
+                // sozinho ao voltar da leitura confundiria mais do que ajuda.
+                if (painel.sumario) painel.sumario.fechar(false);
+                return;
+            }
+            painel.corpo.scrollTop = rolagemDoPainel[chave] || 0;
+            if (!painel.sumario) return;
+            if (nome) {
+                painel.sumario.abrir(comFoco === true);
+                abrirTodosOsGrupos(painel.sumario);
+            } else {
+                painel.sumario.fechar(false);
+            }
+        });
+
+        try { sessionStorage.setItem(CHAVE_LEITURA, nome); } catch (erro) { /* modo privado */ }
+        atualizarProgressos();
+    }
+
+    botoesLeitura.forEach(function (botao) {
+        botao.addEventListener('click', function () {
+            var alvo = botao.dataset.leituraPainel;
+            aplicarLeitura(leituraAtiva() === alvo ? '' : alvo);
+        });
+    });
+
+    // O estado restaurado pelo script inline não passou por aqui: os botões
+    // ainda estão em `aria-pressed="false"` e os grupos de artigos do sumário
+    // da lei foram montados antes de a norma ser reconstruída.
+    if (leituraAtiva()) {
+        var restaurado = leituraAtiva();
+        botoesLeitura.forEach(function (botao) {
+            botao.setAttribute('aria-pressed', String(botao.dataset.leituraPainel === restaurado));
+        });
+        abrirTodosOsGrupos(PAINEIS[restaurado].sumario);
+    }
+
+    // Estreitou a janela: a coluna única já mostra um painel por vez, e o modo
+    // leitura deixa de fazer sentido — inclusive o sumário aberto, que ali é
+    // sobreposição de tela cheia.
+    if (duasColunas.addEventListener) {
+        duasColunas.addEventListener('change', function (evento) {
+            if (!evento.matches && leituraAtiva()) aplicarLeitura('');
+        });
+    }
 
     /* --- Barra de progresso de leitura, uma por painel --- */
     function configurarProgresso(painelEl, corpoEl, barraEl) {

@@ -1,6 +1,7 @@
 ---
 titulo: Lei nº 12.965, de 23 de abril de 2014
 apelido: Marco Civil da Internet
+prefixo: mci
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
 compilado_ate: Lei nº 13.709, de 14 de agosto de 2018
 ---

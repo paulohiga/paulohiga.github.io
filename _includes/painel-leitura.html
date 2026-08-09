@@ -1,0 +1,24 @@
+{%- comment -%}
+    Botão de modo leitura de um painel, no canto da barra de título dele.
+
+    Um clique expande aquele painel para a tela inteira (o outro sai, o divisor
+    some e o sumário do painel vira coluna fixa ao lado do texto); outro clique
+    volta à tela dividida. É um alternador, e é o `aria-pressed` que diz em
+    qual dos dois estados ele está — por isso o rótulo não muda: um nome que
+    troca junto com o estado faz o leitor de tela anunciar a mesma informação
+    duas vezes, com palavras diferentes.
+
+    Só faz sentido com os painéis lado a lado: em uma coluna as abas já mostram
+    um painel por vez, e expandir um deles não teria efeito nenhum. Por isso o
+    botão nasce oculto no CSS e só é ligado acima de 900px e com JavaScript
+    (`body.js .painel__leitura`, no bloco de duas colunas do nota-style.css) —
+    o `aplicarLeitura` do notas.js recusa o modo em uma coluna de qualquer
+    jeito, mas oferecer o controle já seria a promessa errada.
+
+    Parâmetros: `painel` — `comentarios` ou `lei`; `nome` — como o painel é
+    chamado no rótulo ("dos comentários", "da lei seca").
+{%- endcomment -%}
+                <button type="button" class="painel__leitura" data-leitura-painel="{{ include.painel }}" aria-pressed="false" aria-label="Modo leitura {{ include.nome }}" title="Modo leitura: expandir este painel para a tela inteira">
+                    <svg class="ico ico-expandir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/></svg>
+                    <svg class="ico ico-recolher" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M16 21v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>
+                </button>

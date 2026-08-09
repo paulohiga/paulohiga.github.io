@@ -43,6 +43,7 @@ DESTINO = RAIZ / "_leis/gdpr.md"
 FRENTE = """---
 titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
 apelido: RGPD (GDPR)
+prefixo: rgpd
 fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
 formato: ue
 compilado_ate: Retificações publicadas no JO L 127, de 23/5/2018, e no JO L 74, de 4/3/2021

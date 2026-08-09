@@ -94,6 +94,13 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   `scripts/ancorar_referencias.py --check` e revise o diff.
 - **O texto da norma não se altera**, e os arquivos gerados por script trazem
   "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter.
+- **A ementa do artigo é rótulo de navegação, não texto legal.** É a frase
+  curta de `_data/ementas/<norma>.yml` que o sumário da lei seca mostra no
+  lugar do começo do caput — ela não entra no painel da norma nem em `_leis/`.
+  Escreva-a com o núcleo do artigo nas primeiras palavras e dentro do limite de
+  tamanho; numa norma europeia, preserve a epígrafe oficial em PT-PT. Toda
+  norma precisa da sua, e `scripts/conferir_ementas.py` é quem confere (ver
+  [`docs/notas.md`](./docs/notas.md#ementas-dos-artigos)).
 - **Normas estrangeiras entram em português oficial.** No caso da União
   Europeia, o texto do EUR-Lex, que é PT-PT. Quando a terminologia oficial
   divergir da brasileira, explique a correspondência na própria nota em vez de
@@ -152,15 +159,30 @@ preview do Netlify, depois do push.
   Core Web Vitals abaixo. Lembre que a minificação de CSS/JS só ocorre no build
   de produção — o preview do Netlify é o ambiente mais fiel ao publicado.
 - **Sem JavaScript:** desative o JS e confirme que o texto, a navegação por links
-  e o layout continuam legíveis. Exceção conhecida e aceita: nas notas com mais
-  de uma norma (`normas_extra`), o seletor de normas some e só a norma principal
-  fica visível.
+  e o layout continuam legíveis. Exceção conhecida e aceita: nas notas, o
+  seletor de normas e o botão de modo leitura somem — fica a norma principal, na
+  tela dividida, com o nome dela num `<h2>` no lugar do seletor.
 - **Teclado e leitores de tela:** navegue só com o teclado (skip link, foco
   visível, _focus trap_ do modal, `aria-current` no idioma ativo).
 - **Temas e idiomas:** teste claro/escuro e PT/EN, incluindo a troca sem reload.
 - **Movimento reduzido:** verifique com `prefers-reduced-motion` ativo.
 - **Notas:** rode `python3 scripts/ancorar_referencias.py --check <slug>` e
-  revise o diff; confira as remissões novas contra o texto legal.
+  revise o diff; confira as remissões novas contra o texto legal. Rode também
+  `python3 scripts/conferir_ementas.py` se mexeu em `_leis/` ou em
+  `_data/ementas/`, e abra o sumário da lei seca no navegador para ver se a
+  frase de cada artigo aparece inteira.
+- **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
+  barra de título e confira que o outro sai, que o sumário vira coluna aberta ao
+  lado do texto e que a coluna de texto não chega às bordas da tela. Na lei seca
+  o cabeçalho da nota também sai; nos comentários, fica. Abaixo de 900px o botão
+  não deve aparecer em nenhuma das duas abas — e medir só a aba ativa não basta,
+  porque tudo dentro da inativa já mede zero.
+- **Barra de título do painel da lei:** confira que ela cabe em uma linha num
+  1440x900, e que, quando quebrar em telas menores, a segunda linha leve o campo
+  "Ir para" e o botão de modo leitura juntos — nunca o botão sozinho.
+- **Sumários:** role um painel até o fim e confira que a seção marcada continua
+  à vista na lista, e que ela para de se mexer enquanto o foco está dentro do
+  sumário.
 
 ### Performance: Core Web Vitals
 
@@ -223,6 +245,7 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
 - [ ] Nas notas de legislação: aviso preservado, `ancorar_referencias.py --check`
       rodado e o diff revisado, remissões conferidas contra o texto legal e
       regras editoriais observadas.
+- [ ] `conferir_ementas.py` sem erro, se `_leis/` ou `_data/ementas/` mudaram.
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.

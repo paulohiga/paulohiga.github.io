@@ -1,6 +1,7 @@
 ---
 titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
 apelido: AI Act consolidado (não oficial)
+prefixo: aiact
 fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
 formato: ue
 # CONSOLIDAÇÃO NÃO OFICIAL. O EUR-Lex ainda não publicou a versão consolidada

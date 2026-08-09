@@ -69,19 +69,20 @@ Os detalhes de cada decisão estão em
 ├── notas.md                     # Página índice                 → /notas
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 13 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 #  7 fragmentos das normas extras (fetch, sem link)
-├── notas.js                     # Painéis, seletor de normas, referências e busca
+├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
+├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas e busca
 │
 │   ## Código compartilhado
 ├── _layouts/                    # default.html · nota.html · notas-index.html
 ├── _includes/                   # Partials + style.css e nota-style.css (inline no <head>)
 ├── _data/
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
-│   └── normas.yml               # Aliases das normas, para ancorar_referencias.py
+│   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
+│   └── ementas/                 # 13 arquivos: a ementa de cada artigo, rótulo do sumário
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # 4 scripts Python de autoria
+├── scripts/                     # 5 scripts Python de autoria
 ├── docs/                        # arquitetura.md · notas.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -190,7 +191,7 @@ Netlify — este comando o pega antes.
 
 ### Scripts de autoria
 
-Os quatro scripts de `scripts/` são ferramentas de autoria das notas de
+Os cinco scripts de `scripts/` são ferramentas de autoria das notas de
 legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
 build. O que cada um faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
@@ -199,6 +200,7 @@ build. O que cada um faz está em
 python3 -m venv .venv
 .venv/bin/pip install -r scripts/requirements.txt
 .venv/bin/python scripts/ancorar_referencias.py --check lgpd
+.venv/bin/python scripts/conferir_ementas.py
 ```
 
 ## Publicação
