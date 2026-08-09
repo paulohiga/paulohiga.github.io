@@ -173,9 +173,16 @@ preview do Netlify, depois do push.
   frase de cada artigo aparece inteira.
 - **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
   barra de título e confira que o outro sai, que o sumário vira coluna aberta ao
-  lado do texto e que a coluna de texto não chega às bordas da tela. Abaixo de
-  900px o botão não deve aparecer em nenhuma das duas abas — e medir só a aba
-  ativa não basta, porque tudo dentro da inativa já mede zero.
+  lado do texto e que a coluna de texto não chega às bordas da tela. Na lei seca
+  o cabeçalho da nota também sai; nos comentários, fica. Abaixo de 900px o botão
+  não deve aparecer em nenhuma das duas abas — e medir só a aba ativa não basta,
+  porque tudo dentro da inativa já mede zero.
+- **Barra de título do painel da lei:** confira que ela cabe em uma linha num
+  1440x900, e que, quando quebrar em telas menores, a segunda linha leve o campo
+  "Ir para" e o botão de modo leitura juntos — nunca o botão sozinho.
+- **Sumários:** role um painel até o fim e confira que a seção marcada continua
+  à vista na lista, e que ela para de se mexer enquanto o foco está dentro do
+  sumário.
 
 ### Performance: Core Web Vitals
 

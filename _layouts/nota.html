@@ -280,13 +280,21 @@
                 <p class="painel__nota">
                     <a href="{{ lei.fonte }}" target="_blank" rel="noopener" id="lei-fonte">Texto oficial</a>
                 </p>
-                <form class="lei-ir" role="search">
-                    <label for="lei-ir-campo">Ir para</label>
-                    <input id="lei-ir-campo" type="text" autocomplete="off" placeholder="art. 3º, p2" aria-describedby="lei-ir-ajuda">
-                    <button type="submit">Ir</button>
-                    <span id="lei-ir-ajuda" class="visualmente-oculto">Digite o artigo e, opcionalmente, o parágrafo (p2, ou único) e o inciso em algarismo romano. A busca vale para a norma exibida no momento.</span>
-                </form>
+                <!-- O campo "Ir para" e o botão de modo leitura vão juntos num
+                     grupo, e não soltos na barra: soltos, eles quebram de linha
+                     um de cada vez, e há uma faixa de larguras em que o campo
+                     ainda cabe na primeira linha e o botão não — sobrando uma
+                     segunda linha inteira para um ícone de 27px. Em grupo, ou os
+                     dois cabem, ou os dois descem. -->
+                <div class="painel__ferramentas">
+                    <form class="lei-ir" role="search">
+                        <label for="lei-ir-campo">Ir para</label>
+                        <input id="lei-ir-campo" type="text" autocomplete="off" placeholder="art. 3º, p2" aria-describedby="lei-ir-ajuda">
+                        <button type="submit">Ir</button>
+                        <span id="lei-ir-ajuda" class="visualmente-oculto">Digite o artigo e, opcionalmente, o parágrafo (p2, ou único) e o inciso em algarismo romano. A busca vale para a norma exibida no momento.</span>
+                    </form>
 {% include painel-leitura.html painel="lei" nome="da lei seca" %}
+                </div>
                 <div class="nota-progresso" id="progresso-lei" aria-hidden="true"><div class="nota-progresso__barra"></div></div>
             </div>
             <div class="painel__corpo">

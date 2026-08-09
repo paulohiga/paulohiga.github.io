@@ -273,8 +273,29 @@ body:not(.js) .lei-norma-select {
     display: none;
 }
 
+/* O `<select>` se dimensiona pela opção mais longa da *lista*, não pela
+   escolhida: com todas as normas nela, "AI ACT CONSOLIDADO (NÃO OFICIAL)" em
+   negrito e caixa alta reservava 372px em toda nota, e a barra de título
+   quebrava em duas linhas num painel de 714px — o que sobra num 1440x900.
+
+   O seletor passa a ocupar a sobra da barra em vez de reservar o tamanho da
+   opção mais longa: `flex: 1 1 0` zera a base, o `min-width` diz até onde ele
+   pode ceder e o `max-width` até onde vale crescer. Um teto fixo resolveria a
+   quebra, mas cortaria "MARCO CIVIL DA INTERNET" também nos painéis com folga;
+   assim o rótulo aparece inteiro sempre que couber.
+
+   `flex-shrink` sozinho não bastaria: com `flex-wrap`, a quebra de linha é
+   decidida *antes* do encolhimento, e os 372px da base já empurravam o grupo
+   de ferramentas para a segunda linha antes de qualquer encolher acontecer.
+   Abaixo de 9rem o seletor para de ceder e é o grupo que desce — um seletor
+   espremido a três letras não seria um controle, seria um enfeite.
+
+   O que passar do espaço disponível sai com reticências; o nome inteiro
+   continua na lista aberta e no nome acessível do controle. */
 .lei-norma-select {
-    max-width: 100%;
+    flex: 1 1 0;
+    min-width: 9rem;
+    max-width: 24rem;
     margin: 0;
     padding: 0.15rem 0.1rem;
     border: none;
@@ -287,6 +308,7 @@ body:not(.js) .lei-norma-select {
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    text-overflow: ellipsis;
     cursor: pointer;
 }
 
@@ -333,9 +355,9 @@ body:not(.js) .lei-norma-select {
     cursor: pointer;
 }
 
-/* No painel da lei o botão vem depois do campo "Ir para", que já empurra tudo
-   para a direita: aqui o `margin-left: auto` viraria um vão entre os dois. */
-.lei-ir + .painel__leitura {
+/* No painel da lei o botão está no grupo de ferramentas, encostado no campo
+   "Ir para": ali o `margin-left: auto` viraria um vão entre os dois. */
+.painel__ferramentas .painel__leitura {
     margin-left: 0;
 }
 
@@ -365,12 +387,22 @@ body:not(.js) .lei-norma-select {
     display: block;
 }
 
+/* Campo "ir para" + botão de modo leitura, encostados na direita da barra de
+   título. O grupo existe para que os dois quebrem de linha juntos (ver o
+   comentário no _layouts/nota.html); é ele que carrega a margem automática que
+   antes era do campo. */
+.painel__ferramentas {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
 /* --- Campo "ir para o dispositivo" --- */
 .lei-ir {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    margin-left: auto;
     font-size: 0.8rem;
 }
 
@@ -382,8 +414,10 @@ body:not(.js) .lei-ir {
     color: var(--ink-soft);
 }
 
+/* Estreito de propósito: o que se digita aqui é "3º, p2, I", nunca uma frase,
+   e cada rem a mais empurra a barra de título para a segunda linha. */
 .lei-ir input {
-    width: 7.5rem;
+    width: 6rem;
     padding: 0.15rem 0.5rem;
     border: 1px solid var(--hairline);
     border-radius: 0.35rem;
@@ -718,6 +752,22 @@ body:not(.js) .lei-ir {
         display: grid;
     }
 
+    /* Na leitura da lei seca o cabeçalho da nota sai junto com o painel de
+       comentários. Ele identifica a *nota* — trilha para /notas, título, menu
+       das outras, faixa de volta para a nota de origem —, e o seletor do painel
+       dá acesso a qualquer norma da seção: lendo o Marco Civil dentro da nota
+       do ECA Digital, "ECA Digital — Lei nº 15.211/2025" no alto da tela é
+       informação errada. O que identifica o que está na tela passa a ser o
+       seletor, na barra do próprio painel, e o botão ao lado dele devolve a
+       nota inteira num clique.
+
+       O `.skip-link` vai junto porque aponta para os comentários, que estão
+       fora da tela: seria o primeiro alvo do Tab levando a um `display: none`.
+       Na leitura dos comentários nada disso vale — o cabeçalho é justamente a
+       identidade do que se está lendo. */
+    body[data-leitura="lei"] .nota-topo,
+    body[data-leitura="lei"] .nota-origem,
+    body[data-leitura="lei"] .skip-link,
     body[data-leitura] .nota-resizer,
     body[data-leitura="comentarios"] .painel--lei,
     body[data-leitura="comentarios"] #toc-lei,

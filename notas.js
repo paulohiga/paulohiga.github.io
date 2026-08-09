@@ -662,11 +662,37 @@
         });
     }
 
+    /* Rola a lista do sumário até um item, e só quando ele não está à vista —
+       mexer numa lista que já mostra o que precisa mostrar é movimento gratuito.
+       Fora de vista, o item vai para o meio da lista, e não para a borda de onde
+       entrou: no meio ele leva junto o que vem antes e o que vem depois, que é o
+       que situa a leitura, e demora mais para sair de novo.
+
+       A rolagem é feita na lista, e não com `scrollIntoView`, que sobe pelos
+       contêineres roláveis acima dela — no mobile o sumário é sobreposição de
+       tela cheia, e ali quem está acima é a página. */
+    function trazerParaAVista(sumario, alvo) {
+        var corpo = sumario.painel.querySelector('.nota-toc__corpo');
+        if (!corpo || !alvo) return;
+        var area = corpo.getBoundingClientRect();
+        var item = alvo.getBoundingClientRect();
+        if (item.top >= area.top && item.bottom <= area.bottom) return;
+        corpo.scrollTop = Math.max(0, corpo.scrollTop + (item.top - area.top) -
+            (area.height - item.height) / 2);
+    }
+
     /* Seção em que o leitor está: o último título que já passou pela linha de
        leitura (o topo útil do painel, abaixo do que estiver fixo ali). Sem
        isso, abrir um sumário de 50 entradas não diz onde ele está — só para
        onde pode ir. Só é recalculado com o sumário aberto: fechado, o
-       resultado não apareceria em lugar nenhum. */
+       resultado não apareceria em lugar nenhum.
+
+       Marcar não basta: numa norma de 119 artigos a marca sai da parte visível
+       da lista nas primeiras rolagens, e um sumário parado no topo não responde
+       "em que capítulo está este artigo?". Por isso a lista **acompanha** a
+       leitura — mas só quando a seção corrente muda, e nunca com o foco dentro
+       do sumário, que é quando o leitor está percorrendo a lista por conta
+       própria e puxá-la sob os dedos dele seria hostil. */
     function marcarSumarioAtivo(sumario, painelEl, corpoEl) {
         if (!sumario || sumario.painel.hidden || !sumario.titulos.length) return;
         var linha = (duasColunas.matches
@@ -676,12 +702,22 @@
         sumario.titulos.forEach(function (titulo) {
             if (titulo.getBoundingClientRect().top <= linha) atual = titulo;
         });
+        var linkAtual = null;
         Array.prototype.forEach.call(sumario.lista.querySelectorAll('a'), function (link) {
             var eOAtual = decodeURIComponent(link.getAttribute('href').slice(1)) === atual.id;
             link.classList.toggle('nota-toc__atual', eOAtual);
-            if (eOAtual) link.setAttribute('aria-current', 'true');
-            else link.removeAttribute('aria-current');
+            if (eOAtual) {
+                link.setAttribute('aria-current', 'true');
+                linkAtual = link;
+            } else {
+                link.removeAttribute('aria-current');
+            }
         });
+
+        if (!linkAtual || linkAtual === sumario.ultimoAtivo) return;
+        sumario.ultimoAtivo = linkAtual;
+        if (sumario.painel.contains(document.activeElement)) return;
+        trazerParaAVista(sumario, linkAtual);
     }
 
     function configurarSumario(idBotao, idPainel, painelEl, corpoEl, nomePainel) {
@@ -722,7 +758,7 @@
                 // artigo vizinho ao que está lendo.
                 var grupoAtual = atual.closest('li').querySelector(':scope > details');
                 if (grupoAtual) grupoAtual.open = true;
-                atual.scrollIntoView({ block: 'nearest' });
+                trazerParaAVista(sumario, atual);
             }
         }
 
@@ -804,8 +840,11 @@
         if (!sumarioLei) return;
         var docAtivo = corpoDaLei.querySelector('.lei-doc:not([hidden])') || corpoDaLei;
         // A lista é outra: um filtro digitado para a norma anterior não diz
-        // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro.
+        // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro. A
+        // marca de seção corrente também é da lista antiga, e guardá-la só
+        // seguraria na memória um trecho de DOM que já saiu.
         sumarioLei.limparFiltro();
+        sumarioLei.ultimoAtivo = null;
         sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo, true, leituraAtiva() === 'lei');
     }
     reconstruirSumarioLei();

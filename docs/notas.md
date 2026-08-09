@@ -202,7 +202,7 @@ A tela dividida existe para conferir o comentário contra o dispositivo. Só
 botão no canto da barra de título de cada painel expande aquele painel para a
 tela inteira; o mesmo botão volta à divisão.
 
-Três coisas mudam ao entrar:
+Quatro coisas mudam ao entrar:
 
 - **O outro painel e o divisor sumem.** O painel que fica ocupa a largura toda.
 - **A coluna de texto tem teto**, e o corpo do tipo cresce. Um parágrafo de
@@ -215,6 +215,15 @@ Três coisas mudam ao entrar:
   esconder o mapa da norma atrás de um botão passa a ser desperdício. A coluna
   não fecha ao clicar fora nem com `Esc`, que são gestos de dispensar
   sobreposição; fecha pelo X, e o botão da borda volta para reabri-la.
+- **Na lei seca, o cabeçalho da nota sai junto** — trilha para `/notas`, título,
+  menu das outras notas, botão de tema e a faixa de volta para a nota de origem.
+  Ele identifica a *nota*, e o seletor do painel dá acesso a qualquer norma da
+  seção: lendo o Marco Civil dentro da nota do ECA Digital, "ECA Digital — Lei
+  nº 15.211/2025" no alto da tela é informação errada. Quem identifica o que
+  está na tela passa a ser o seletor, na barra do próprio painel, e o botão ao
+  lado dele devolve a nota inteira num clique. O `.skip-link` sai pela mesma
+  razão: aponta para os comentários, que estão fora da tela. Na leitura dos
+  comentários nada disso vale — ali o cabeçalho é a identidade do que se lê.
 
 **É de tela larga.** Abaixo de 900px as abas já mostram um painel por vez, e
 expandir um deles não teria efeito nenhum. O botão **nasce oculto** no CSS e só
@@ -235,6 +244,22 @@ Uma exceção que vale conhecer: **seguir uma remissão do comentário devolve a
 tela dividida**. Ir do comentário ao dispositivo é justamente o que a divisão
 existe para fazer, e o painel de destino está escondido — o salto seria para um
 `display: none`.
+
+### O sumário acompanha a leitura
+
+Marcar a seção corrente não basta: numa norma de 119 artigos a marca sai da
+parte visível da lista nas primeiras rolagens, e um sumário parado no topo não
+responde "em que capítulo está este artigo?". Por isso a lista rola junto,
+levando a seção corrente para o meio dela — no meio, e não na borda de onde
+entrou, porque ali ela leva junto o que vem antes e o que vem depois, e demora
+mais para sair de novo.
+
+Três limites, para acompanhar não virar atrapalhar: só quando a seção **muda**;
+nunca com o foco dentro do sumário, que é quando o leitor está percorrendo a
+lista por conta própria; e nunca quando a seção já está à vista. A rolagem é
+aplicada na lista, não com `scrollIntoView` — este sobe pelos contêineres
+roláveis acima dela, e no mobile o sumário é sobreposição de tela cheia, onde
+quem está acima é a página. Vale nos dois sumários e nos dois modos.
 
 ## Ementas dos artigos
 
