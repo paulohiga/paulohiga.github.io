@@ -254,12 +254,25 @@ levando a seção corrente para o meio dela — no meio, e não na borda de onde
 entrou, porque ali ela leva junto o que vem antes e o que vem depois, e demora
 mais para sair de novo.
 
-Três limites, para acompanhar não virar atrapalhar: só quando a seção **muda**;
-nunca com o foco dentro do sumário, que é quando o leitor está percorrendo a
-lista por conta própria; e nunca quando a seção já está à vista. A rolagem é
-aplicada na lista, não com `scrollIntoView` — este sobe pelos contêineres
-roláveis acima dela, e no mobile o sumário é sobreposição de tela cheia, onde
-quem está acima é a página. Vale nos dois sumários e nos dois modos.
+Quatro limites, para acompanhar não virar atrapalhar: só quando a seção
+**muda**; nunca com o foco dentro do sumário, que é quando o leitor está
+percorrendo a lista por conta própria; nunca quando a seção já está à vista; e
+nunca durante um **salto programático** — clicar numa remissão ou num artigo do
+sumário já decide o destino, e seguir as seções do caminho até ele eram onze
+paradas da lista num salto só. Silenciado, o sumário se posiciona uma vez, no
+fim do salto.
+
+A rolagem é aplicada na lista, não com `scrollIntoView` — este sobe pelos
+contêineres roláveis acima dela, e no mobile o sumário é sobreposição de tela
+cheia, onde quem está acima é a página. Vale nos dois sumários e nos dois modos.
+
+O salto em si é o `scrollTo({ behavior: 'smooth' })` do navegador. Houve aqui
+uma animação própria em `requestAnimationFrame`, escrita só para durar 300ms em
+vez dos ~500 do navegador, já que o `behavior` não deixa escolher a duração:
+trinta linhas e uma segunda implementação de rolagem para manter em pé ao lado
+da nativa, em troca de dois décimos de segundo. O fim do salto é medido por um
+prazo de 900ms, e não pelo evento `scrollend`, que ainda não está em todo
+navegador.
 
 ## Ementas dos artigos
 

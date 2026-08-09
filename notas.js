@@ -100,38 +100,42 @@
     travarRolagemDaPagina();
     window.addEventListener('scroll', travarRolagemDaPagina, { passive: true });
 
-    /* --- Rolagem suave própria, com metade da duração da rolagem suave
-       nativa dos navegadores — a "rolagem" usada tanto pelos links âncora
-       quanto pela busca "ir para o dispositivo". `behavior: 'smooth'` nativo
-       não permite controlar a duração; uma animação própria permite. */
-    var DURACAO_ROLAGEM = 300;
+    /* --- Rolagem até um ponto: a do navegador ---
+       Serve tanto os links âncora quanto a busca "ir para o dispositivo", e vale
+       para os dois contêineres que rolam nesta página: o corpo de um painel (em
+       duas colunas) e a janela (em uma).
 
-    function suavizar(t) {
-        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
+       Aqui houve uma animação própria, em `requestAnimationFrame`, escrita só
+       para durar 300ms em vez dos ~500 do navegador — o `behavior: 'smooth'`
+       não deixa escolher a duração. Não pagou o que custou: eram trinta linhas
+       de animação para ganhar dois décimos de segundo, e uma segunda
+       implementação de rolagem para manter em pé ao lado da nativa.
 
-    function animarRolagem(lerPosicao, aplicarPosicao, destino) {
-        var inicio = lerPosicao();
-        var distancia = destino - inicio;
-        if (distancia === 0) return;
-        var t0 = null;
-        function passo(agora) {
-            if (t0 === null) t0 = agora;
-            var progresso = Math.min(1, (agora - t0) / DURACAO_ROLAGEM);
-            aplicarPosicao(inicio + distancia * suavizar(progresso));
-            if (progresso < 1) requestAnimationFrame(passo);
-        }
-        requestAnimationFrame(passo);
-    }
+       Enquanto o salto corre, o sumário para de acompanhar a leitura (ver
+       `marcarSumarioAtivo`): o destino já está decidido pelo clique, e seguir as
+       seções do caminho até ele eram onze paradas da lista num salto só,
+       piscando capítulos que o leitor não pediu. Calado, o sumário se posiciona
+       uma vez, no fim. O fim é medido por um prazo, e não pelo evento
+       `scrollend`, que ainda não está em todo navegador: 900ms cobre com folga a
+       rolagem suave nativa mais longa, e a lista assentar um instante depois não
+       custa nada — o texto já chegou. */
+    var saltoEmCurso = false;
+    var fimDoSalto = null;
 
-    function rolarElemento(el, destino) {
-        if (semMovimento.matches) { el.scrollTop = destino; return; }
-        animarRolagem(function () { return el.scrollTop; }, function (v) { el.scrollTop = v; }, destino);
-    }
-
-    function rolarJanela(destino) {
-        if (semMovimento.matches) { window.scrollTo(0, destino); return; }
-        animarRolagem(function () { return window.scrollY; }, function (v) { window.scrollTo(0, v); }, destino);
+    function rolarAte(caixa, destino) {
+        saltoEmCurso = true;
+        clearTimeout(fimDoSalto);
+        fimDoSalto = setTimeout(function () {
+            saltoEmCurso = false;
+            atualizarProgressos();
+        }, 900);
+        caixa.scrollTo({
+            top: destino,
+            // O navegador honra `prefers-reduced-motion` na rolagem suave
+            // declarada em CSS, mas não neste `behavior`: quem pediu menos
+            // movimento continua tendo de ser atendido à mão.
+            behavior: semMovimento.matches ? 'auto' : 'smooth'
+        });
     }
 
     /* --- Painel redimensionável ---
@@ -261,7 +265,15 @@
        A posição vale enquanto a aba estiver aberta; norma nunca visitada
        começa no topo, como antes. */
     function ativarNorma(normaAlvo) {
-        if (normaAtiva && normaAtiva !== normaAlvo) normaAtiva.scrollTop = corpoDaLei.scrollTop;
+        /* Trocar uma norma pela que já está exposta não é troca nenhuma, e
+           tratá-la como troca destruía a leitura: a linha que devolve a posição
+           guardada (logo abaixo) lia `normaAlvo.scrollTop`, que só é gravado ao
+           *sair* de uma norma — na própria, ele nunca foi gravado, e o painel
+           voltava ao topo. Como toda remissão do comentário passa por aqui (o
+           `normaDoId` resolve `#art-6` para a norma principal), o efeito era
+           todo salto começar do artigo 1º e rolar dali até o destino. */
+        if (normaAtiva === normaAlvo) return;
+        if (normaAtiva) normaAtiva.scrollTop = corpoDaLei.scrollTop;
         normas.forEach(function (norma) {
             norma.doc.hidden = norma !== normaAlvo;
         });
@@ -376,14 +388,14 @@
             // topo dele, sem mexer na rolagem da página.
             var deslocamento = alvo.getBoundingClientRect().top -
                 corpoEl.getBoundingClientRect().top + corpoEl.scrollTop - 12;
-            rolarElemento(corpoEl, deslocamento);
+            rolarAte(corpoEl, deslocamento);
         } else {
             // Em uma coluna quem rola é a página, e as abas e o topo do painel
             // ficam fixos: o dispositivo precisa parar abaixo deles.
             guardarPosicaoDoPainel(nomePainel);
             mostrarPainel(nomePainel);
             var fixos = alturaDosElementosFixos(painelEl);
-            rolarJanela(alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
+            rolarAte(window, alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
         }
 
         destacar(alvo);
@@ -714,7 +726,10 @@
             }
         });
 
-        if (!linkAtual || linkAtual === sumario.ultimoAtivo) return;
+        /* `saltoEmCurso` sai antes de `ultimoAtivo` ser atualizado, de
+           propósito: a seção continua "não tratada", e a passada final que o
+           fim do salto dispara é que leva a lista até ela. */
+        if (!linkAtual || saltoEmCurso || linkAtual === sumario.ultimoAtivo) return;
         sumario.ultimoAtivo = linkAtual;
         if (sumario.painel.contains(document.activeElement)) return;
         trazerParaAVista(sumario, linkAtual);
