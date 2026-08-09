@@ -173,8 +173,9 @@ preview do Netlify, depois do push.
   frase de cada artigo aparece inteira.
 - **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
   barra de título e confira que o outro sai, que o sumário vira coluna aberta ao
-  lado do texto e que a coluna de texto não chega às bordas da tela. Teste
-  também perto de 900px, onde o modo se desliga.
+  lado do texto e que a coluna de texto não chega às bordas da tela. Abaixo de
+  900px o botão não deve aparecer em nenhuma das duas abas — e medir só a aba
+  ativa não basta, porque tudo dentro da inativa já mede zero.
 
 ### Performance: Core Web Vitals
 

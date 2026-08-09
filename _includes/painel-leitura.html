@@ -9,8 +9,11 @@
     duas vezes, com palavras diferentes.
 
     Só faz sentido com os painéis lado a lado: em uma coluna as abas já mostram
-    um painel por vez, e é por isso que o botão some abaixo de 900px. Também
-    some sem JavaScript, que é quem alterna o estado.
+    um painel por vez, e expandir um deles não teria efeito nenhum. Por isso o
+    botão nasce oculto no CSS e só é ligado acima de 900px e com JavaScript
+    (`body.js .painel__leitura`, no bloco de duas colunas do nota-style.css) —
+    o `aplicarLeitura` do notas.js recusa o modo em uma coluna de qualquer
+    jeito, mas oferecer o controle já seria a promessa errada.
 
     Parâmetros: `painel` — `comentarios` ou `lei`; `nome` — como o painel é
     chamado no rótulo ("dos comentários", "da lei seca").

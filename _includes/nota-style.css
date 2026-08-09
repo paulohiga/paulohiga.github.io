@@ -312,10 +312,16 @@ body:not(.js) .lei-norma-select {
 
 /* --- Botão de modo leitura, no canto da barra de título de cada painel ---
    Discreto: fica em tom apagado até o ponteiro chegar nele ou o modo estar
-   ligado. Some em uma coluna (as abas já mostram um painel por vez) e sem
-   JavaScript, que é quem alterna o estado. */
+   ligado.
+
+   Nasce oculto e só é ligado onde tem função — em duas colunas e com
+   JavaScript (ver `body.js .painel__leitura` no bloco de 900px). Em uma coluna
+   as abas já mostram um painel por vez, então expandir um deles não faria
+   nada; sem JavaScript não há o que alterne o estado. Mesma mecânica da barra
+   de abas, que nasce `display: none` e é ligada no bloco de uma coluna: o
+   default é não aparecer, e cada modo liga o que lhe serve. */
 .painel__leitura {
-    display: grid;
+    display: none;
     place-items: center;
     flex: none;
     margin-left: auto;
@@ -357,10 +363,6 @@ body:not(.js) .lei-norma-select {
 
 .painel__leitura[aria-pressed="true"] .ico-recolher {
     display: block;
-}
-
-body:not(.js) .painel__leitura {
-    display: none;
 }
 
 /* --- Campo "ir para o dispositivo" --- */
@@ -698,6 +700,10 @@ body:not(.js) .lei-ir {
     }
 
     /* --- Modo leitura: um painel só, na tela inteira ---
+       O botão que o liga só existe aqui: em uma coluna as abas já mostram um
+       painel por vez, e expandir um deles não teria efeito nenhum. `body.js`
+       porque quem alterna o estado é o notas.js.
+
        A tela dividida é ótima para conferir o comentário contra o dispositivo,
        e ruim para simplesmente ler: metade de 1440px é uma coluna estreita, e
        quem só quer percorrer a norma não precisa da outra metade. Um clique no
@@ -708,6 +714,10 @@ body:not(.js) .lei-ir {
 
        A largura do texto tem teto próprio, maior que o da tela dividida e bem
        menor que a tela: um parágrafo de ponta a ponta em 1440px não se lê. */
+    body.js .painel__leitura {
+        display: grid;
+    }
+
     body[data-leitura] .nota-resizer,
     body[data-leitura="comentarios"] .painel--lei,
     body[data-leitura="comentarios"] #toc-lei,

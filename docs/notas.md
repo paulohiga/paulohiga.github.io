@@ -216,9 +216,13 @@ Três coisas mudam ao entrar:
   não fecha ao clicar fora nem com `Esc`, que são gestos de dispensar
   sobreposição; fecha pelo X, e o botão da borda volta para reabri-la.
 
-**É de tela larga.** Abaixo de 900px as abas já mostram um painel por vez, e a
-coluna do sumário não caberia: o botão some, e estreitar a janela com o modo
-ligado o desliga. Sem JavaScript o botão também some.
+**É de tela larga.** Abaixo de 900px as abas já mostram um painel por vez, e
+expandir um deles não teria efeito nenhum. O botão **nasce oculto** no CSS e só
+é ligado no bloco de duas colunas, com `body.js .painel__leitura` — mesma
+mecânica da barra de abas, que nasce `display: none` e é ligada no bloco de uma
+coluna. É o default que protege: o botão só aparece onde alguém o ligou. O
+`aplicarLeitura` do notas.js também recusa o modo em uma coluna, e estreitar a
+janela com ele ligado o desliga.
 
 O estado dura a sessão (`sessionStorage`), como a proporção da tela dividida, e
 vale para as outras notas abertas na mesma aba. Quem o aplica é um **script
