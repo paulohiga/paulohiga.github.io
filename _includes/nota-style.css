@@ -834,12 +834,13 @@ body:not(.js) .lei-ir {
         border-left: 0;
     }
 
-    /* A coluna de texto é mais larga do que na tela dividida, e bem mais
-       estreita do que a tela. E vem com o corpo do tipo maior: alargar a coluna
-       sem mexer no tipo alongaria a linha em número de caracteres, que é o que
-       de fato cansa a leitura — a lei seca, em 0,9rem serifado, já passa de 110
-       caracteres por linha na metade da tela. Com o tipo maior a linha fica
-       mais larga em pixels e mais curta em caracteres, que é o ponto do modo. */
+    /* A coluna de texto tem teto próprio, e nos dois painéis vem com o corpo do
+       tipo maior — o modo existe para ler, e ler a 0,9rem numa tela de 27" é o
+       que ele veio consertar. O teto é dado em rem, mas pensado em caracteres
+       por linha, que é a unidade que diz se a linha cansa: em rem o mesmo
+       número significa uma linha para o Inter dos comentários e outra, bem mais
+       curta, para o Merriweather da lei seca. Na tela dividida a linha depende
+       da largura da janela; aqui ela é fixa. */
     body[data-leitura="comentarios"] .painel--comentarios .painel__corpo,
     body[data-leitura="lei"] .painel--lei .painel__corpo {
         max-width: min(100%, var(--nota-leitura-largura));
@@ -847,17 +848,26 @@ body:not(.js) .lei-ir {
         font-size: var(--nota-leitura-corpo);
     }
 
+    /* Comentário é prosa corrida, e prosa se lê em linha curta: ~85 caracteres
+       (medido), contra os 80 de um 1440px e os 109 de um 1920px na tela
+       dividida. */
     body[data-leitura="comentarios"] {
         --nota-leitura-largura: 50rem;
         --nota-leitura-corpo: 1.05rem;
     }
 
-    /* Coluna um pouco mais estreita e tipo um pouco maior que a dos
-       comentários: o texto legal é serifado, e a mesma medida em rem lhe daria
-       uma linha mais longa em caracteres. O alvo é a mesma linha nos dois
-       painéis, contada em caracteres — não em rem. */
+    /* A lei seca vai para o outro lado, até ~120 caracteres por linha (48rem
+       davam ~75; a tela dividida dá 95 num 1440px). O teto só cabe inteiro a
+       partir de ~1150px de janela — com a coluna do sumário aberta, de ~1470px
+       —, e abaixo disso quem manda é o `100%` do painel.
+       Texto legal não é prosa corrida: lê-se em bloco, comparando
+       dispositivo com dispositivo, e a hierarquia come 1rem a 3rem à esquerda
+       de cada parágrafo, inciso e alínea — a linha útil de um inciso é bem mais
+       curta que a do caput ao lado dele. Com a coluna estreita, o texto virava
+       uma tira no meio da tela e o artigo que cabia numa tela passava a ocupar
+       duas, o que atrapalha justamente a leitura seguida que o modo serve. */
     body[data-leitura="lei"] {
-        --nota-leitura-largura: 48rem;
+        --nota-leitura-largura: 72rem;
         --nota-leitura-corpo: 1.2rem;
     }
 }
@@ -1307,7 +1317,8 @@ body:not(.js) .nota-toc-btn {
     background: var(--surface-tint);
 }
 
-/* Seção em que o leitor está. A barra à esquerda é o sinal principal (não
+/* Onde o leitor está — o artigo, quando os artigos estão à mostra; o título
+   que os guarda, quando não. A barra à esquerda é o sinal principal (não
    depende de o leitor distinguir dois tons de fundo) e o peso do texto
    reforça; o `aria-current` posto junto pelo notas.js é o equivalente para
    leitor de tela. */
@@ -1315,6 +1326,18 @@ body:not(.js) .nota-toc-btn {
     background: var(--surface-tint);
     box-shadow: inset 0.18rem 0 0 var(--accent);
     color: var(--accent);
+    font-weight: 600;
+}
+
+/* O caminho até o item corrente: o capítulo (e a seção, quando há) em que ele
+   está. Com o destaque num artigo, é esta marca que continua respondendo "em
+   que parte da norma estou?" — o que antes se resolvia destacando o capítulo,
+   quando o sumário só sabia acompanhar títulos. Deliberadamente mais fraca que
+   a do item corrente: mesma barra em tom de traço, sem fundo e sem cor de
+   destaque, para os dois sinais não competirem. */
+.nota-toc__corpo a.nota-toc__ramo {
+    box-shadow: inset 0.18rem 0 0 var(--hairline);
+    color: var(--ink);
     font-weight: 600;
 }
 
@@ -1356,6 +1379,13 @@ body:not(.js) .nota-toc-btn {
     line-clamp: 3;
     font-size: 0.82rem;
     color: var(--ink-soft);
+}
+
+/* O artigo em que o leitor está tem a mesma especificidade da regra acima e
+   perderia a cor de destaque pela ordem no arquivo. Repetida aqui, e não
+   movida para lá, porque o lugar de descrever o destaque é junto do destaque. */
+.nota-toc__corpo .nota-toc__artigos a.nota-toc__atual {
+    color: var(--accent);
 }
 
 .nota-toc__corpo .nota-toc__marcador {

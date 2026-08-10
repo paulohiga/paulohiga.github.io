@@ -30,6 +30,7 @@ Referências de linha apontam para o estado do código em 7/8/2026 (commit
 | B11, B12, B13 | pendente |
 | C14 | **feito** (7/8/2026) |
 | C15, C16 | pendente |
+| B17 | **feito** (10/8/2026) |
 
 Os itens feitos ficam registrados abaixo com o que foi entregue, para que o
 histórico do diagnóstico não se perca e para que quem retomar a lista saiba o
@@ -284,8 +285,10 @@ para leitor de tela prontos — nada disso precisou ser reescrito em ARIA.
   capítulo nenhum. Limpar o filtro não recolhe de volta.
 - **O capítulo em que o leitor está abre com os artigos à mostra** quando o
   sumário é aberto: é ali que ele vai procurar o artigo vizinho ao que lê.
-- **A "seção atual" continua sendo o título**, e não o artigo. Com os artigos
-  na conta, o capítulo deixaria de ser destacado — e é ele que situa a leitura.
+- **A "seção atual" continuava sendo o título**, e não o artigo, para o capítulo
+  não deixar de ser destacado — é ele que situa a leitura. Isso valeu até o
+  **B17**, que pôs os artigos na conta sem perder o capítulo: o destaque desce
+  para o artigo e o capítulo fica marcado como ramo.
 - **Norma sem capítulo algum** (é o caso dos decretos) ganha os artigos no
   primeiro nível: antes o sumário dela vinha vazio.
 
@@ -311,7 +314,8 @@ plana rolável, sem seção ativa destacada e sem campo de filtro.
   barra de destaque, negrito e `aria-current="true"`. Calculado no mesmo
   quadro (`requestAnimationFrame`) da barra de progresso, que já lia a
   rolagem, e só com o sumário aberto — fechado, o resultado não apareceria em
-  lugar nenhum. Ao abrir, o sumário rola até a seção marcada.
+  lugar nenhum. Ao abrir, o sumário rola até a seção marcada. (O **B17** depois
+  pôs os artigos na conta e passou a marcar o destino do salto já no clique.)
 - **Teclado.** No desktop o foco vai para o filtro ao abrir (dá para digitar
   direto); no mobile continua no primeiro link, para não subir o teclado por
   cima da lista. `Esc` limpa o filtro na primeira vez e só fecha o sumário na
@@ -391,6 +395,55 @@ absoluto. Vale junto limpar os ids acentuados gerados pelo Kramdown
 *percent-encoded* ao colar — **atenção:** mudar id publicado quebra link
 externo já compartilhado, então convém manter o id antigo como âncora
 duplicada ou avaliar se o ganho compensa.
+
+### B17. O destaque do sumário chegava atrasado e ignorava os artigos — FEITO
+
+*Não estava no levantamento de 7/8/2026: apareceu no uso, depois do **B8**.*
+
+**Como era, medido em 1440×900.** Clicar num item do sumário não o destacava:
+a marca só se mexia quando o leitor rolava mais um pouco. A causa era uma
+diferença de 4px entre dois números que precisavam andar juntos — em duas
+colunas a âncora parava 12px abaixo do topo útil do painel, e a linha de
+leitura que decide o item corrente ficava a 8px. O item recém-saltado nascia
+**abaixo** da linha, isto é, ainda "não alcançado", e o sumário continuava
+marcando o trecho anterior. Valia nos dois sumários. Em uma coluna os dois
+números coincidiam (8 e 8) — sem folga nenhuma para o subpixel com que a
+rolagem suave termina.
+
+Somava-se a isso o **B8**, que pôs os artigos na lista mas os deixou fora da
+conta do destaque: clicar num artigo nunca o marcava (a marca ia para o
+capítulo dele), e percorrer a LGPD inteira movia a marca onze vezes, uma por
+título, para 80 artigos.
+
+**O que foi feito.**
+
+- **Os artigos entram na conta.** Os alvos que o sumário acompanha passaram a
+  ser títulos **e** artigos, em ordem de documento. O que se perderia com isso
+  — o capítulo destacado, que situa a leitura — volta como marca de **ramo**:
+  o item corrente leva a barra de destaque e o `aria-current`, e o título que o
+  contém, uma barra em tom de traço e o negrito. Um `aria-current` só, no item
+  mais fundo: dois no mesmo caminho seriam anunciados como duas posições.
+- **Marca só o que está à mostra.** Artigo dentro de um grupo recolhido, ou
+  escondido pelo filtro, devolve o destaque ao título que o guarda — é o que
+  faz a gaveta de grupos fechados continuar marcando o capítulo, exatamente
+  como antes. Abrir o grupo desce a marca até o artigo, e fechá-lo a sobe de
+  volta; como `<details>` não borbulha o `toggle`, o sumário o escuta na
+  captura.
+- **O salto fixa o destino.** O item clicado é marcado no ato do clique e fica
+  fixo até o leitor rolar por conta própria, em vez de esperar a geometria. Com
+  isso o destaque também acerta a âncora perto do fim da norma, onde a rolagem
+  para onde alcança e não onde a linha de leitura a encontraria.
+- **A linha de leitura virou constante**, derivada da parada da âncora mais uma
+  folga para o subpixel da rolagem suave. Eram dois números soltos, e é assim
+  que a diferença de 4px tinha aparecido.
+- **As escritas no DOM saem só quando o item muda.** Antes cada quadro de
+  rolagem repintava a lista inteira; com os artigos são até 162 links por norma.
+  Medido: rolagem contínua da LGPD em quadros de 16,7ms, sem quadro longo.
+
+**Medido depois:** clicar em capítulo, em artigo e em seção de comentário marca
+o item no quadro seguinte ao clique (~20ms) e o mantém durante toda a rolagem;
+seis paradas de rolagem na LGPD dão seis marcas distintas, todas em artigos, com
+o capítulo em ramo.
 
 ---
 
