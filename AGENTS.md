@@ -172,17 +172,26 @@ preview do Netlify, depois do push.
   `_data/ementas/`, e abra o sumário da lei seca no navegador para ver se a
   frase de cada artigo aparece inteira.
 - **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
-  barra de título e confira que o outro sai, que o sumário vira coluna aberta ao
-  lado do texto e que a coluna de texto não chega às bordas da tela. Na lei seca
-  o cabeçalho da nota também sai; nos comentários, fica. Abaixo de 900px o botão
-  não deve aparecer em nenhuma das duas abas — e medir só a aba ativa não basta,
-  porque tudo dentro da inativa já mede zero.
+  barra de título e confira que o outro sai e que o sumário vira coluna aberta
+  ao lado do texto. A coluna de texto tem teto, e ele é medido em **caracteres
+  por linha**: ~85 nos comentários, até ~120 na lei seca (ver
+  [`docs/notas.md`](./docs/notas.md#modo-leitura)). O teto da lei só cabe
+  inteiro a partir de ~1150px de janela — com a coluna do sumário aberta, de
+  ~1470px —, e abaixo disso a coluna ocupa o painel todo, com a mesma folga das
+  bordas que os painéis já usam. Na lei seca o cabeçalho da nota também sai; nos
+  comentários, fica. Abaixo de 900px o botão não deve aparecer em nenhuma das
+  duas abas — e medir só a aba ativa não basta, porque tudo dentro da inativa já
+  mede zero.
 - **Barra de título do painel da lei:** confira que ela cabe em uma linha num
   1440x900, e que, quando quebrar em telas menores, a segunda linha leve o campo
   "Ir para" e o botão de modo leitura juntos — nunca o botão sozinho.
-- **Sumários:** role um painel até o fim e confira que a seção marcada continua
+- **Sumários:** role um painel até o fim e confira que o item marcado continua
   à vista na lista, e que ela para de se mexer enquanto o foco está dentro do
-  sumário.
+  sumário. Clique num item — capítulo, artigo ou seção de comentário — e
+  confira que ele é destacado **no clique**, não depois de mais uma rolagem, e
+  que o título que o contém fica marcado como ramo. Na lei seca, role o painel e
+  confira que a marca anda de artigo em artigo com os grupos abertos, e que ela
+  volta para o capítulo quando os grupos estão recolhidos.
 
 ### Performance: Core Web Vitals
 

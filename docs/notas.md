@@ -206,10 +206,29 @@ Quatro coisas mudam ao entrar:
 
 - **O outro painel e o divisor sumem.** O painel que fica ocupa a largura toda.
 - **A coluna de texto tem teto**, e o corpo do tipo cresce. Um parágrafo de
-  ponta a ponta em 1440px não se lê, e alargar a coluna sem mexer no tipo só
-  alongaria a linha em número de caracteres — que é o que de fato cansa. Com o
-  tipo maior a linha fica mais larga em pixels e mais curta em caracteres: na
-  lei seca, de ~116 caracteres por linha na tela dividida para ~94.
+  ponta a ponta em 1920px não se lê. O teto é escrito em `rem`
+  (`--nota-leitura-largura`) mas **pensado em caracteres por linha**, que é a
+  unidade que diz se a linha cansa — a mesma medida em `rem` dá uma linha para
+  o Inter dos comentários e outra, bem mais curta, para o Merriweather da lei
+  seca. Na tela dividida a linha depende da janela; o modo leitura a fixa, e os
+  dois painéis miram em números diferentes de propósito:
+
+  | Painel | Tela dividida (1440 · 1920) | Modo leitura |
+  | --- | --- | --- |
+  | Comentários | ~80 · ~109 caracteres, 1rem | ~85 caracteres, 1,05rem |
+  | Lei seca | ~95 · ~131 caracteres, 0,9rem | **até ~120 caracteres**, 1,2rem |
+
+  O comentário é prosa corrida, e prosa se lê em linha curta. A lei seca vai
+  para o outro lado: texto legal não é lido de ponta a ponta como prosa — lê-se
+  em bloco, comparando dispositivo com dispositivo —, e a hierarquia come de
+  1rem a 3rem à esquerda de cada parágrafo, inciso e alínea, de modo que a linha
+  útil de um inciso é bem mais curta que a do caput ao lado dele. Com a coluna
+  estreita (eram 48rem, ~75 caracteres) o texto virava uma tira no meio da tela
+  e o artigo que cabia numa tela passava a ocupar duas. O teto de 72rem entrega
+  os ~120 caracteres a partir de ~1150px de janela com o sumário fechado, e de
+  ~1470px com a coluna do sumário aberta — abaixo disso quem manda é a largura
+  do painel (num 1440 com o sumário aberto, ~117). Números medidos em
+  1440×900 e 1920×1080, com a Merriweather carregada.
 - **O sumário deixa de ser gaveta e vira coluna** fixa ao lado do texto, aberta,
   e na lei seca com os artigos à mostra. Com o painel inteiro à disposição,
   esconder o mapa da norma atrás de um botão passa a ser desperdício. A coluna
@@ -247,20 +266,49 @@ existe para fazer, e o painel de destino está escondido — o salto seria para 
 
 ### O sumário acompanha a leitura
 
-Marcar a seção corrente não basta: numa norma de 119 artigos a marca sai da
-parte visível da lista nas primeiras rolagens, e um sumário parado no topo não
-responde "em que capítulo está este artigo?". Por isso a lista rola junto,
-levando a seção corrente para o meio dela — no meio, e não na borda de onde
-entrou, porque ali ela leva junto o que vem antes e o que vem depois, e demora
-mais para sair de novo.
+**O que é marcado.** O último alvo que passou pela linha de leitura — o topo
+útil do painel, abaixo do que estiver preso ali. São alvos os títulos dos dois
+sumários e, no da lei seca, também **cada artigo**: com só os títulos na conta,
+percorrer uma norma de 80 artigos movia a marca onze vezes, e um artigo clicado
+na lista nunca era o item marcado. O item corrente leva a barra de destaque e o
+`aria-current`; o título que o contém leva a marca discreta de *ramo*, que é o
+que continua respondendo "em que parte da norma estou?" quando o destaque está
+num artigo.
 
-Quatro limites, para acompanhar não virar atrapalhar: só quando a seção
+Marca só o que está à mostra: artigo dentro de um grupo recolhido (ou escondido
+pelo filtro) devolve o destaque ao título que o guarda — é assim que a gaveta,
+com os grupos fechados, continua marcando o capítulo, como antes de os artigos
+existirem no sumário. Abrir o grupo faz a marca descer até o artigo; fechá-lo, a
+faz subir de volta. O `<details>` não borbulha o `toggle`, então o sumário o
+escuta **na captura**.
+
+**Quando muda.** Num salto — clique numa remissão, num item do sumário ou no
+campo "Ir para" —, o destino é marcado no ato do clique e fica fixo até o leitor
+rolar por conta própria. Antes isso era deixado para a geometria, e o destaque
+chegava atrasado: a âncora para 12px abaixo do topo útil, ou seja, *abaixo* da
+linha de leitura, e o item recém-saltado só era reconhecido depois de mais uma
+rolagem. Hoje os dois números vêm da mesma constante (`PARADA_DA_ANCORA` e a
+folga de `LINHA_DE_LEITURA`, no `notas.js`) — mexer num sem o outro traz o
+atraso de volta. Fixar o destino também resolve a âncora perto do fim da norma,
+onde a rolagem para onde alcança e não onde a linha de leitura a encontraria.
+
+**A lista rola junto.** Marcar não basta: numa norma de 119 artigos a marca sai
+da parte visível da lista nas primeiras rolagens, e um sumário parado no topo
+não responde "em que capítulo está este artigo?". Por isso a lista leva o item
+corrente para o meio dela — no meio, e não na borda de onde entrou, porque ali
+ele leva junto o que vem antes e o que vem depois, e demora mais para sair de
+novo.
+
+Quatro limites, para acompanhar não virar atrapalhar: só quando o item
 **muda**; nunca com o foco dentro do sumário, que é quando o leitor está
-percorrendo a lista por conta própria; nunca quando a seção já está à vista; e
-nunca durante um **salto programático** — clicar numa remissão ou num artigo do
-sumário já decide o destino, e seguir as seções do caminho até ele eram onze
-paradas da lista num salto só. Silenciado, o sumário se posiciona uma vez, no
-fim do salto.
+percorrendo a lista por conta própria; nunca quando o item já está à vista; e
+nunca durante um **salto programático** — o destino já está decidido, e seguir
+as seções do caminho até ele eram onze paradas da lista num salto só.
+Silenciado, o sumário se posiciona uma vez, no fim do salto.
+
+As escritas no DOM saem só quando o item corrente muda: são até 162 links por
+norma, e repintar todos a cada quadro de rolagem seria trabalho jogado fora
+(medido: rolagem contínua da LGPD em 1440×900 fica em quadros de 16,7ms).
 
 A rolagem é aplicada na lista, não com `scrollIntoView` — este sobe pelos
 contêineres roláveis acima dela, e no mobile o sumário é sobreposição de tela

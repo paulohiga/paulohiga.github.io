@@ -354,6 +354,16 @@
        aqui. */
     var PRESOS_NO_TOPO = ['.nota-topo', '.nota-origem', '.nota-abas'];
 
+    /* Onde o salto por âncora deixa o alvo, contado do topo útil do painel, e a
+       linha de leitura que o sumário usa para decidir em que trecho o leitor
+       está. Os dois números andam juntos, e é por isso que são um só mais uma
+       folga: com a linha *acima* do ponto de parada, o item recém-saltado
+       nascia abaixo dela e o sumário continuava marcando o trecho anterior até
+       o leitor rolar mais um pouco — o destaque só chegava depois. A folga
+       absorve o arredondamento de subpixel com que a rolagem suave termina. */
+    var PARADA_DA_ANCORA = 12;
+    var LINHA_DE_LEITURA = PARADA_DA_ANCORA + 8;
+
     function alturaDosElementosFixos(painelEl) {
         var altura = 0;
         PRESOS_NO_TOPO.forEach(function (seletor) {
@@ -383,11 +393,17 @@
            Volta-se à divisão, e o leitor vê os dois lados da remissão. */
         if (leituraAtiva() && leituraAtiva() !== nomePainel) aplicarLeitura('');
 
+        /* O sumário aponta o destino agora, no clique, e não quando a rolagem
+           chegar lá: o trecho já está decidido, e esperar a geometria era o que
+           deixava um item clicado no sumário sem destaque até o leitor rolar
+           mais um pouco. */
+        fixarNoSumario(nomePainel, alvo);
+
         if (duasColunas.matches) {
             // O painel é o container de rolagem: posicionar o dispositivo no
             // topo dele, sem mexer na rolagem da página.
             var deslocamento = alvo.getBoundingClientRect().top -
-                corpoEl.getBoundingClientRect().top + corpoEl.scrollTop - 12;
+                corpoEl.getBoundingClientRect().top + corpoEl.scrollTop - PARADA_DA_ANCORA;
             rolarAte(corpoEl, deslocamento);
         } else {
             // Em uma coluna quem rola é a página, e as abas e o topo do painel
@@ -395,7 +411,7 @@
             guardarPosicaoDoPainel(nomePainel);
             mostrarPainel(nomePainel);
             var fixos = alturaDosElementosFixos(painelEl);
-            rolarAte(window, alvo.getBoundingClientRect().top + window.scrollY - fixos - 8);
+            rolarAte(window, alvo.getBoundingClientRect().top + window.scrollY - fixos - PARADA_DA_ANCORA);
         }
 
         destacar(alvo);
@@ -403,6 +419,7 @@
         // leitor de tela chegar ao dispositivo, e não continuar no comentário.
         alvo.setAttribute('tabindex', '-1');
         alvo.focus({ preventScroll: true });
+        atualizarProgressos();
         return true;
     }
 
@@ -564,6 +581,7 @@
         grupo.itens.appendChild(item);
         grupo.total += 1;
         grupo.rotulo.textContent = grupo.total + (grupo.total === 1 ? ' artigo' : ' artigos');
+        return link;
     }
 
     /* `comArtigos` só vale para o sumário da lei seca: no dos comentários os
@@ -574,14 +592,21 @@
        próprio (grupo recolhível), e h4/h5 lá são subdivisões de capítulo que
        só alongariam a lista.
 
-       Devolve os títulos — e só eles —, porque é sobre títulos que a marcação
-       de "seção atual" trabalha: com os artigos na conta, o capítulo em que o
-       leitor está deixaria de ser destacado, e é ele que situa a leitura. */
+       Devolve, além da lista montada, os elementos que a marcação de "onde o
+       leitor está" acompanha (`alvos`, em ordem de documento) e o link de cada
+       um deles (`links`, por id). Os artigos entram nessa conta junto com os
+       títulos: sem eles, percorrer uma norma de 80 artigos só movia a marca
+       onze vezes, e o item clicado no sumário nunca era o marcado. Quem situa
+       a leitura continua aparecendo — o capítulo do item corrente recebe a
+       marca discreta de ramo (ver `aplicarMarcas`). */
     function construirSumario(lista, raiz, comArtigos, artigosAbertos) {
         lista.innerHTML = '';
         var seletor = comArtigos ? 'h2[id], h3[id], p.lei-artigo[id]' : 'h2[id], h3[id], h4[id]';
         var nos = Array.prototype.slice.call(raiz.querySelectorAll(seletor));
-        var titulos = [];
+        var alvos = [];
+        // Sem protótipo: as chaves são ids vindos do texto da norma, e um id
+        // chamado "constructor" devolveria uma função no lugar de um link.
+        var links = Object.create(null);
         var ultimoPorNivel = {};
         var itemDoTitulo = null;
         var grupoDeArtigos = null;
@@ -589,7 +614,8 @@
         nos.forEach(function (no) {
             if (no.tagName === 'P') {
                 if (!grupoDeArtigos) grupoDeArtigos = criarGrupoDeArtigos(itemDoTitulo, lista, artigosAbertos);
-                acrescentarArtigo(grupoDeArtigos, no);
+                links[no.id] = acrescentarArtigo(grupoDeArtigos, no);
+                alvos.push(no);
                 return;
             }
 
@@ -629,11 +655,26 @@
             // pertence a esta seção, não à subseção anterior.
             for (var abaixo = nivel + 1; abaixo <= 6; abaixo++) delete ultimoPorNivel[abaixo];
 
-            titulos.push(no);
+            links[no.id] = link;
+            alvos.push(no);
             itemDoTitulo = item;
             grupoDeArtigos = null;
         });
-        return titulos;
+        return { alvos: alvos, links: links };
+    }
+
+    /* Monta a lista de um sumário e zera o que era da lista anterior: as marcas
+       apontam elementos que saíram do DOM, e o alvo fixado por um salto também
+       morre com eles. */
+    function montarSumario(sumario, raiz, comArtigos, artigosAbertos) {
+        var montado = construirSumario(sumario.lista, raiz, comArtigos, artigosAbertos);
+        sumario.alvos = montado.alvos;
+        sumario.links = montado.links;
+        sumario.marcado = null;
+        sumario.marcados = [];
+        sumario.aVista = null;
+        sumario.fixado = null;
+        sumario.ultimoAtivo = null;
     }
 
     /* Filtra os títulos já listados. Um item que casa arrasta consigo os
@@ -693,46 +734,134 @@
             (area.height - item.height) / 2);
     }
 
-    /* Seção em que o leitor está: o último título que já passou pela linha de
-       leitura (o topo útil do painel, abaixo do que estiver fixo ali). Sem
-       isso, abrir um sumário de 50 entradas não diz onde ele está — só para
-       onde pode ir. Só é recalculado com o sumário aberto: fechado, o
+    /* Um item do sumário sai da tela por dois caminhos: o grupo de artigos que
+       o guarda está recolhido, ou o filtro o escondeu. Os dois são lidos do
+       DOM, e não da geometria: dentro de um `<details>` fechado o navegador
+       ainda devolve um retângulo (o conteúdo é pulado por
+       `content-visibility`, não removido do layout), e o `checkVisibility`,
+       que acertaria, é recente demais para ser a única defesa. */
+    function foraDaTela(link) {
+        var grupo = link.closest('details');
+        return (grupo && !grupo.open) || !!link.closest('li[hidden]');
+    }
+
+    /* O link que representa uma posição na lista: o do próprio item, quando ele
+       está à mostra, ou o do título que o contém, quando não. Marcar o que não
+       aparece apagaria o "você está aqui" do sumário e mandaria a lista rolar
+       até um retângulo vazio — é assim que o capítulo continua sendo o item
+       marcado enquanto os artigos estão recolhidos, como era antes de eles
+       existirem no sumário. */
+    function linkAVista(link) {
+        if (!link) return null;
+        if (!foraDaTela(link)) return link;
+        var grupo = link.closest('details');
+        var dono = grupo && grupo.closest('li');
+        var acima = dono && dono.querySelector(':scope > a');
+        return acima && !foraDaTela(acima) ? acima : null;
+    }
+
+    /* Marca o item corrente e o caminho até ele. Só o item mais fundo que está
+       à vista leva `nota-toc__atual` e `aria-current`; o capítulo (e a seção,
+       quando há) ficam com a marca discreta de ramo, que é o que responde "em
+       que parte da norma estou?" quando o destaque está num artigo. Dois
+       `aria-current` no mesmo caminho seriam anunciados como duas posições, e
+       por isso o ramo não leva nenhum.
+
+       As escritas no DOM acontecem só quando o item corrente muda: com os
+       artigos na conta são até 162 links por norma, e repintar todos a cada
+       quadro de rolagem é trabalho jogado fora. */
+    function aplicarMarcas(sumario, atual) {
+        (sumario.marcados || []).forEach(function (link) {
+            link.classList.remove('nota-toc__atual', 'nota-toc__ramo');
+            link.removeAttribute('aria-current');
+        });
+        var marcados = [];
+        var link = linkAVista(sumario.links[atual.id]);
+        if (link) {
+            link.classList.add('nota-toc__atual');
+            link.setAttribute('aria-current', 'true');
+            marcados.push(link);
+            var item = link.closest('li');
+            for (var pai = item && item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
+                var acima = pai.querySelector(':scope > a');
+                if (!acima) continue;
+                acima.classList.add('nota-toc__ramo');
+                marcados.push(acima);
+            }
+        }
+        sumario.marcados = marcados;
+        sumario.aVista = link;
+    }
+
+    /* Onde o leitor está: o último alvo — título ou artigo — que já passou pela
+       linha de leitura (o topo útil do painel, abaixo do que estiver fixo
+       ali). */
+    function alvoNaLinhaDeLeitura(sumario, painelEl, corpoEl) {
+        var linha = (duasColunas.matches
+            ? corpoEl.getBoundingClientRect().top
+            : alturaDosElementosFixos(painelEl)) + LINHA_DE_LEITURA;
+        var atual = sumario.alvos[0];
+        sumario.alvos.forEach(function (alvo) {
+            if (alvo.getBoundingClientRect().top <= linha) atual = alvo;
+        });
+        return atual;
+    }
+
+    /* Sem isso, abrir um sumário de 50 entradas não diz onde o leitor está — só
+       para onde ele pode ir. Só é recalculado com o sumário aberto: fechado, o
        resultado não apareceria em lugar nenhum.
+
+       Depois de um salto, quem manda é o alvo fixado, e não a geometria: o
+       destino foi decidido pelo clique, e uma âncora perto do fim da norma para
+       onde a rolagem alcança, não onde a linha de leitura a encontraria.
 
        Marcar não basta: numa norma de 119 artigos a marca sai da parte visível
        da lista nas primeiras rolagens, e um sumário parado no topo não responde
        "em que capítulo está este artigo?". Por isso a lista **acompanha** a
-       leitura — mas só quando a seção corrente muda, e nunca com o foco dentro
+       leitura — mas só quando o item corrente muda, e nunca com o foco dentro
        do sumário, que é quando o leitor está percorrendo a lista por conta
        própria e puxá-la sob os dedos dele seria hostil. */
     function marcarSumarioAtivo(sumario, painelEl, corpoEl) {
-        if (!sumario || sumario.painel.hidden || !sumario.titulos.length) return;
-        var linha = (duasColunas.matches
-            ? corpoEl.getBoundingClientRect().top
-            : alturaDosElementosFixos(painelEl)) + 8;
-        var atual = sumario.titulos[0];
-        sumario.titulos.forEach(function (titulo) {
-            if (titulo.getBoundingClientRect().top <= linha) atual = titulo;
-        });
-        var linkAtual = null;
-        Array.prototype.forEach.call(sumario.lista.querySelectorAll('a'), function (link) {
-            var eOAtual = decodeURIComponent(link.getAttribute('href').slice(1)) === atual.id;
-            link.classList.toggle('nota-toc__atual', eOAtual);
-            if (eOAtual) {
-                link.setAttribute('aria-current', 'true');
-                linkAtual = link;
-            } else {
-                link.removeAttribute('aria-current');
-            }
-        });
+        if (!sumario || sumario.painel.hidden || !sumario.alvos.length) return;
+        var atual = sumario.fixado || alvoNaLinhaDeLeitura(sumario, painelEl, corpoEl);
+        if (atual !== sumario.marcado) {
+            sumario.marcado = atual;
+            aplicarMarcas(sumario, atual);
+        }
 
         /* `saltoEmCurso` sai antes de `ultimoAtivo` ser atualizado, de
-           propósito: a seção continua "não tratada", e a passada final que o
-           fim do salto dispara é que leva a lista até ela. */
-        if (!linkAtual || saltoEmCurso || linkAtual === sumario.ultimoAtivo) return;
-        sumario.ultimoAtivo = linkAtual;
+           propósito: o item continua "não tratado", e a passada final que o
+           fim do salto dispara é que leva a lista até ele. */
+        if (!sumario.aVista || saltoEmCurso || sumario.aVista === sumario.ultimoAtivo) return;
+        sumario.ultimoAtivo = sumario.aVista;
         if (sumario.painel.contains(document.activeElement)) return;
-        trazerParaAVista(sumario, linkAtual);
+        trazerParaAVista(sumario, sumario.aVista);
+    }
+
+    /* O salto fixa o seu destino no sumário do painel de destino, para o
+       destaque aparecer no clique e não mudar enquanto a rolagem corre. Alvo
+       que não está no sumário (um inciso, um parágrafo) fixa o artigo a que
+       pertence — o último alvo antes dele. */
+    function fixarNoSumario(nomePainel, alvo) {
+        var sumario = PAINEIS[nomePainel] && PAINEIS[nomePainel].sumario;
+        if (!sumario || !sumario.alvos.length) return;
+        var escolhido = null;
+        sumario.alvos.forEach(function (candidato) {
+            if (candidato === alvo || (candidato.compareDocumentPosition(alvo) &
+                Node.DOCUMENT_POSITION_FOLLOWING)) {
+                escolhido = candidato;
+            }
+        });
+        sumario.fixado = escolhido;
+    }
+
+    /* O alvo fixado vale até o leitor rolar por conta própria: aí ele saiu do
+       ponto para onde pediu para ir, e o sumário volta a seguir a leitura.
+       Enquanto o salto corre, as rolagens são do próprio salto. */
+    function soltarFixados() {
+        [sumarioComentarios, sumarioLei].forEach(function (sumario) {
+            if (sumario) sumario.fixado = null;
+        });
     }
 
     function configurarSumario(idBotao, idPainel, painelEl, corpoEl, nomePainel) {
@@ -743,7 +872,7 @@
         var fechar = painelSumario.querySelector('.nota-toc__fechar');
         var campo = painelSumario.querySelector('.nota-toc__campo');
         var vazio = painelSumario.querySelector('.nota-toc__vazio');
-        var sumario = { painel: painelSumario, lista: lista, titulos: [] };
+        var sumario = { painel: painelSumario, lista: lista, alvos: [], links: Object.create(null) };
 
         /* Ancorado = o sumário deste painel virou coluna fixa da grade, ao lado
            do texto, porque o painel está expandido no modo leitura. Coluna não
@@ -766,15 +895,19 @@
                 var primeiro = duasColunas.matches && campo ? campo : lista.querySelector('a');
                 if (primeiro) primeiro.focus();
             }
-            var atual = lista.querySelector('.nota-toc__atual');
-            if (atual) {
-                // No sumário da lei seca, o capítulo em que o leitor está abre
-                // com os artigos à mostra: é ali que ele vai procurar o
-                // artigo vizinho ao que está lendo.
-                var grupoAtual = atual.closest('li').querySelector(':scope > details');
-                if (grupoAtual) grupoAtual.open = true;
-                trazerParaAVista(sumario, atual);
+            /* No sumário da lei seca, o capítulo em que o leitor está abre com
+               os artigos à mostra: é ali que ele vai procurar o artigo vizinho
+               ao que está lendo. Aberto o grupo, o artigo corrente passa a
+               estar na tela e a marca desce do capítulo para ele — daí a
+               segunda passada. */
+            var link = sumario.marcado ? sumario.links[sumario.marcado.id] : null;
+            var grupo = link && (link.closest('details') ||
+                link.closest('li').querySelector(':scope > details'));
+            if (grupo && !grupo.open) {
+                grupo.open = true;
+                sumario.remarcar();
             }
+            if (sumario.aVista) trazerParaAVista(sumario, sumario.aVista);
         }
 
         function fecharSumario(devolverFoco) {
@@ -791,6 +924,9 @@
         if (campo) {
             campo.addEventListener('input', function () {
                 filtrarSumario(lista, vazio, campo.value);
+                // O filtro esconde itens e abre grupos: o item marcado pode ter
+                // saído da tela, e o que o representa passa a ser outro.
+                sumario.remarcar();
             });
             // Esc num campo de busca limpa o texto em vez de propagar: só
             // fecha o sumário quando não há mais o que limpar.
@@ -798,9 +934,20 @@
                 if (evento.key !== 'Escape' || !campo.value) return;
                 campo.value = '';
                 filtrarSumario(lista, vazio, '');
+                sumario.remarcar();
                 evento.stopPropagation();
             });
         }
+        /* `<details>` não borbulha o `toggle`, e a captura é como o sumário fica
+           sabendo que o leitor abriu ou fechou um grupo de artigos à mão:
+           aberto, a marca desce do capítulo para o artigo corrente; fechado,
+           ela volta para o capítulo. Passa pelo quadro do progresso para que
+           abrir os grupos todos de uma vez (modo leitura) custe uma remarcação
+           só. */
+        lista.addEventListener('toggle', function () {
+            sumario.marcado = null;
+            atualizarProgressos();
+        }, true);
         painelSumario.addEventListener('keydown', function (evento) {
             if (evento.key === 'Escape' && !ancorado()) fecharSumario(true);
         });
@@ -839,6 +986,13 @@
             campo.value = '';
             filtrarSumario(lista, vazio, '');
         };
+        // Refaz a marca do zero: o item corrente pode ser o mesmo e ainda assim
+        // ser representado por outro link, quando o que muda é o que está à
+        // vista na lista (um grupo que abriu, o filtro que escondeu itens).
+        sumario.remarcar = function () {
+            sumario.marcado = null;
+            marcarSumarioAtivo(sumario, painelEl, corpoEl);
+        };
         sumario.abrir = abrir;
         sumario.fechar = fecharSumario;
         return sumario;
@@ -848,7 +1002,7 @@
     var sumarioLei = configurarSumario('toc-lei-btn', 'toc-lei', lei, corpoDaLei, 'lei');
 
     if (sumarioComentarios) {
-        sumarioComentarios.titulos = construirSumario(sumarioComentarios.lista, corpoDosComentarios, false);
+        montarSumario(sumarioComentarios, corpoDosComentarios, false);
     }
 
     function reconstruirSumarioLei() {
@@ -856,11 +1010,10 @@
         var docAtivo = corpoDaLei.querySelector('.lei-doc:not([hidden])') || corpoDaLei;
         // A lista é outra: um filtro digitado para a norma anterior não diz
         // nada sobre esta, e deixá-lo ligado esconderia o sumário inteiro. A
-        // marca de seção corrente também é da lista antiga, e guardá-la só
+        // marca de item corrente também é da lista antiga, e guardá-la só
         // seguraria na memória um trecho de DOM que já saiu.
         sumarioLei.limparFiltro();
-        sumarioLei.ultimoAtivo = null;
-        sumarioLei.titulos = construirSumario(sumarioLei.lista, docAtivo, true, leituraAtiva() === 'lei');
+        montarSumario(sumarioLei, docAtivo, true, leituraAtiva() === 'lei');
     }
     reconstruirSumarioLei();
 
@@ -892,6 +1045,9 @@
         Array.prototype.forEach.call(sumario.lista.querySelectorAll('details'), function (grupo) {
             grupo.open = true;
         });
+        // Com a lista inteira à mostra, quem representa a posição do leitor
+        // passa a ser o artigo, e não mais o capítulo que o guardava.
+        sumario.remarcar();
     }
 
     /* `display: none` zera o scrollTop do painel que sai, e o leitor voltaria
@@ -1006,9 +1162,14 @@
         });
     }
 
-    corpoDosComentarios.addEventListener('scroll', atualizarProgressos, { passive: true });
-    corpoDaLei.addEventListener('scroll', atualizarProgressos, { passive: true });
-    window.addEventListener('scroll', atualizarProgressos, { passive: true });
+    function aoRolar() {
+        if (!saltoEmCurso) soltarFixados();
+        atualizarProgressos();
+    }
+
+    corpoDosComentarios.addEventListener('scroll', aoRolar, { passive: true });
+    corpoDaLei.addEventListener('scroll', aoRolar, { passive: true });
+    window.addEventListener('scroll', aoRolar, { passive: true });
     window.addEventListener('resize', atualizarProgressos);
     if (duasColunas.addEventListener) duasColunas.addEventListener('change', atualizarProgressos);
     atualizarProgressos();
