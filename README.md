@@ -70,7 +70,7 @@ Os detalhes de cada decisão estão em
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 13 textos legais em Markdown puro (output: false)
 ├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
-├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas e busca
+├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca e atalhos
 │
 │   ## Código compartilhado
 ├── _layouts/                    # default.html · nota.html · notas-index.html

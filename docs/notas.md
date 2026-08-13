@@ -17,6 +17,7 @@ fazer nada disso à mão.
 - [Front matter](#front-matter)
 - [Múltiplas normas por nota](#múltiplas-normas-por-nota)
 - [Modo leitura](#modo-leitura)
+- [Atalhos de teclado](#atalhos-de-teclado)
 - [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
@@ -59,8 +60,9 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/nota-head.html` | `<head>` das notas (canonical, OG, JSON-LD `Article`) |
 | `_includes/nota-aviso.html` | Aviso de IA + isenção institucional, em toda nota |
 | `_includes/painel-leitura.html` | Botão de [modo leitura](#modo-leitura) da barra de título de cada painel |
+| `_includes/nota-atalhos.html` | A lista de [atalhos de teclado](#atalhos-de-teclado) que o botão do cabeçalho revela |
 | `_includes/nota-style.css` | CSS da seção — inline, isolado do `style.css` |
-| `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis e busca |
+| `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
 | `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
 
@@ -321,6 +323,80 @@ trinta linhas e uma segunda implementação de rolagem para manter em pé ao lad
 da nativa, em troca de dois décimos de segundo. O fim do salto é medido por um
 prazo de 900ms, e não pelo evento `scrollend`, que ainda não está em todo
 navegador.
+
+## Atalhos de teclado
+
+Todo controle da nota que só existia no ponteiro tem uma tecla. Não é conforto:
+o painel de comentários tem **453 elementos focáveis** e vem antes da lei seca
+no DOM, de modo que chegar ao campo "Ir para" pelo Tab custa a nota inteira.
+
+| Tecla | O que faz |
+| --- | --- |
+| `c` · `l` | Abre/fecha o sumário dos comentários · o da lei seca |
+| `Shift+C` · `Shift+L` | Expande aquele painel para a tela inteira ([modo leitura](#modo-leitura)); de novo, devolve a tela dividida |
+| `n` | Menu de notas, com `↑` `↓`, `Home`/`End` e `Enter` percorrendo os itens |
+| `e` | Abre o seletor de normas do painel da lei seca |
+| `/` ou `i` | Foca o campo "Ir para", com o termo anterior selecionado |
+| `?` | Abre/fecha a própria lista de atalhos |
+| `Esc` | Desfaz uma camada: lista, menu, gaveta do sumário e, por fim, o modo leitura |
+
+**Duas letras dizem o painel** — `c` de comentários, `l` de lei seca — e a
+maiúscula troca a gaveta pela tela inteira. É a única regra a decorar; o resto
+está na lista, a um `?` de distância.
+
+Três regras valem para todas as teclas:
+
+- **Nada dispara com o foco num campo.** Filtrar o sumário por "leitura" não
+  pode expandir painel a cada letra. Vale para `input`, `textarea`, `select` e
+  qualquer coisa editável.
+- **Nada dispara com Ctrl/Alt/Meta.** Os atalhos do navegador continuam sendo
+  dele.
+- **Atalho que aponta para o que está fora da tela traz a tela de volta**, em
+  vez de não fazer nada: `/` durante a leitura dos comentários devolve a tela
+  dividida antes de focar o campo, e em uma coluna troca para a aba da lei
+  seca. É o mesmo que seguir uma remissão já fazia (ver
+  [Modo leitura](#modo-leitura)).
+
+O `Esc` desfaz **uma** camada por toque, da mais volátil para a mais duradoura,
+e quem estiver mais perto do foco resolve primeiro: o filtro do sumário limpa o
+texto (e só fecha a gaveta no segundo `Esc`), e um `Esc` dentro de um campo
+devolve o teclado à página e para por aí. A coluna do sumário do modo leitura
+fica de fora de propósito — ela não é sobreposição, e some junto com o modo,
+uma camada depois.
+
+### O botão e a lista
+
+Um botão discreto ao lado do de tema revela a lista no ponteiro, no foco ou
+preso pelo clique (e pelo `?`). O conteúdo está em
+`_includes/nota-atalhos.html`, e **essa lista é a documentação das teclas que o
+`notas.js` escuta**: mexeu numa, mexa na outra. Tecla que o leitor não descobre
+é tecla que não existe; tecla listada que não funciona é pior.
+
+Quatro decisões que a mantêm em pé:
+
+- **A lista fica fora do cabeçalho.** Na leitura da lei seca o cabeçalho inteiro
+  sai da tela: filha dele, ela sumiria junto, e o `?` não teria o que mostrar
+  justamente onde o leitor está lendo. Solta e `position: fixed`, quem a
+  posiciona é o `notas.js`, medindo o botão — a altura do cabeçalho no desktop
+  depende do título e da fonte carregada, e escrevê-la no CSS seria o número
+  que mente. Sem o botão na tela, a lista encosta no canto da janela.
+- **Ela encosta no botão, e o `Esc` a dispensa.** Conteúdo revelado no hover
+  tem três obrigações no WCAG 1.4.13 (AA): dar para levar o ponteiro até ele —
+  daí a folga zero entre o botão e a lista, e o `:hover` que também vale sobre
+  ela; dar para dispensá-lo sem tirar o ponteiro dali — daí a marca que o `Esc`
+  põe no `body` e que o ponteiro tira ao sair e voltar, e que é também o que faz
+  um clique no botão aberto fechar de verdade; e durar o quanto o leitor quiser
+  — quem manda é o `:hover`.
+- **Só acima de 900px.** Atalho de teclado pressupõe teclado, e no cabeçalho
+  preso do mobile o botão gastaria espaço para explicar o que ninguém ali pode
+  usar. Ele **nasce oculto** no CSS e só é ligado no bloco de duas colunas —
+  mesmo default protetor do botão de modo leitura.
+- **As teclas podem ser desligadas**, por um interruptor no pé da lista, e a
+  escolha vale para todas as notas (`localStorage`). Não é preferência de
+  gosto: atalho de uma tecla só precisa poder ser desligado (WCAG 2.1.4, nível
+  A), porque quem digita por voz ou com teclado adaptado os dispara sem querer.
+  O `Esc` continua valendo desligado — não é tecla de caractere, e é a saída de
+  emergência.
 
 ## Ementas dos artigos
 

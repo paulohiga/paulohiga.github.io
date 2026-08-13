@@ -42,8 +42,14 @@
        recolhível preso ao título. */
     var botaoTitulo = document.getElementById('nota-titulo-btn');
     var menuTitulo = document.getElementById('nota-titulo-menu');
+    /* Preenchido quando o menu existe. As funções abaixo são locais ao bloco
+       (`'use strict'` faz de `function` dentro de `if` uma declaração de
+       bloco), e é por este objeto que o atalho de teclado e o Esc global, lá
+       no fim do arquivo, chegam até elas. */
+    var menuDeNotas = null;
     if (botaoTitulo && menuTitulo) {
         menuTitulo.hidden = true;
+        var itensDoMenu = Array.prototype.slice.call(menuTitulo.querySelectorAll('a'));
 
         function fecharMenuTitulo(devolverFoco) {
             menuTitulo.hidden = true;
@@ -51,20 +57,59 @@
             if (devolverFoco) botaoTitulo.focus();
         }
 
+        function abrirMenuTitulo(comFoco) {
+            menuTitulo.hidden = false;
+            botaoTitulo.setAttribute('aria-expanded', 'true');
+            if (comFoco) focarItemDoMenu(0);
+        }
+
+        /* Índice negativo dá a volta pelo fim (-1 é o último item), e é assim
+           que a seta para cima no botão abre o menu já no fim da lista. */
+        function focarItemDoMenu(indice) {
+            if (!itensDoMenu.length) return;
+            itensDoMenu[(indice + itensDoMenu.length) % itensDoMenu.length].focus();
+        }
+
         botaoTitulo.setAttribute('aria-expanded', 'false');
         botaoTitulo.addEventListener('click', function () {
-            var abrir = menuTitulo.hidden;
-            menuTitulo.hidden = !abrir;
-            botaoTitulo.setAttribute('aria-expanded', String(abrir));
+            /* Clique não leva o foco para dentro: quem aponta continua
+               apontando, e quem usa teclado entra na lista pelas setas (ou já
+               entrou, se abriu o menu por elas ou pelo atalho). */
+            if (menuTitulo.hidden) abrirMenuTitulo(false); else fecharMenuTitulo(false);
+        });
+        botaoTitulo.addEventListener('keydown', function (evento) {
+            if (evento.key !== 'ArrowDown' && evento.key !== 'ArrowUp') return;
+            evento.preventDefault();
+            if (menuTitulo.hidden) abrirMenuTitulo(false);
+            focarItemDoMenu(evento.key === 'ArrowDown' ? 0 : -1);
         });
         menuTitulo.addEventListener('keydown', function (evento) {
-            if (evento.key === 'Escape') fecharMenuTitulo(true);
+            if (evento.key === 'Escape') {
+                // O Esc global não repete o serviço de quem estava mais perto
+                // do foco: um Esc desfaz uma camada só (ver `aoTeclar`).
+                evento.preventDefault();
+                fecharMenuTitulo(true);
+                return;
+            }
+            var atual = itensDoMenu.indexOf(document.activeElement);
+            if (evento.key === 'ArrowDown') focarItemDoMenu(atual + 1);
+            else if (evento.key === 'ArrowUp') focarItemDoMenu(atual - 1);
+            else if (evento.key === 'Home') focarItemDoMenu(0);
+            else if (evento.key === 'End') focarItemDoMenu(-1);
+            else return;
+            evento.preventDefault();
         });
         document.addEventListener('click', function (evento) {
             if (!menuTitulo.hidden && !menuTitulo.contains(evento.target) && evento.target !== botaoTitulo && !botaoTitulo.contains(evento.target)) {
                 fecharMenuTitulo(false);
             }
         });
+
+        menuDeNotas = {
+            aberto: function () { return !menuTitulo.hidden; },
+            abrir: abrirMenuTitulo,
+            fechar: fecharMenuTitulo
+        };
     }
 
     /* A faixa "voltar para ‹nota de origem›" (.nota-origem) não é montada
@@ -219,15 +264,21 @@
         });
     }
 
+    /* Trocar de painel guardando onde o leitor estava no que sai e devolvendo
+       onde ele parou no que entra. É o que a aba faz, e também o que um atalho
+       de teclado da lei seca precisa fazer antes de falar com um campo que
+       está na aba inativa (ver `revelarPainelDaLei`). */
+    function trocarPainel(nome) {
+        guardarPosicaoDoPainel(nome);
+        mostrarPainel(nome);
+        if (!duasColunas.matches) {
+            window.scrollTo({ top: scrollPositions[nome] || 0, behavior: 'auto' });
+        }
+    }
+
     abas.forEach(function (aba) {
         aba.addEventListener('click', function () {
-            guardarPosicaoDoPainel(aba.dataset.painel);
-            mostrarPainel(aba.dataset.painel);
-            // Restaurar posição de scroll do novo painel
-            if (!duasColunas.matches) {
-                var posicao = scrollPositions[aba.dataset.painel] || 0;
-                window.scrollTo({ top: posicao, behavior: 'auto' });
-            }
+            trocarPainel(aba.dataset.painel);
         });
     });
 
@@ -949,7 +1000,11 @@
             atualizarProgressos();
         }, true);
         painelSumario.addEventListener('keydown', function (evento) {
-            if (evento.key === 'Escape' && !ancorado()) fecharSumario(true);
+            if (evento.key !== 'Escape' || ancorado()) return;
+            // Tratado aqui, o Esc não segue para o handler global, que
+            // desfaria uma segunda camada no mesmo toque (ver `aoTeclar`).
+            evento.preventDefault();
+            fecharSumario(true);
         });
         document.addEventListener('click', function (evento) {
             if (!painelSumario.hidden && !ancorado() && !painelSumario.contains(evento.target) &&
@@ -995,6 +1050,9 @@
         };
         sumario.abrir = abrir;
         sumario.fechar = fecharSumario;
+        // Coluna do modo leitura, e não gaveta: o Esc global a deixa em paz
+        // (ver `fecharOQueEstiverAberto`), como o Esc de dentro dela já fazia.
+        sumario.ancorado = ancorado;
         return sumario;
     }
 
@@ -1092,13 +1150,22 @@
         });
 
         try { sessionStorage.setItem(CHAVE_LEITURA, nome); } catch (erro) { /* modo privado */ }
+        // Entrar na leitura da lei seca tira o cabeçalho da tela, e com ele o
+        // botão em que a lista de atalhos se ancora; sair traz os dois de
+        // volta. A lista é `position: fixed` e não se recoloca sozinha.
+        posicionarAtalhos();
         atualizarProgressos();
+    }
+
+    // O mesmo alternador para o botão da barra de título e para o atalho de
+    // teclado: a segunda chamada com o painel já expandido devolve a divisão.
+    function alternarLeitura(nome) {
+        aplicarLeitura(leituraAtiva() === nome ? '' : nome);
     }
 
     botoesLeitura.forEach(function (botao) {
         botao.addEventListener('click', function () {
-            var alvo = botao.dataset.leituraPainel;
-            aplicarLeitura(leituraAtiva() === alvo ? '' : alvo);
+            alternarLeitura(botao.dataset.leituraPainel);
         });
     });
 
@@ -1173,6 +1240,263 @@
     window.addEventListener('resize', atualizarProgressos);
     if (duasColunas.addEventListener) duasColunas.addEventListener('change', atualizarProgressos);
     atualizarProgressos();
+
+    /* --- Atalhos de teclado ---
+       Uma tecla para cada controle que hoje só existe no ponteiro: os dois
+       sumários, o modo leitura de cada painel, o menu de notas, o seletor de
+       normas e o campo "Ir para". Não é conforto: o painel de comentários tem
+       centenas de elementos focáveis e vem antes da lei seca no DOM, de modo
+       que chegar ao campo "Ir para" pelo Tab custa a nota inteira.
+
+       Duas letras dizem o painel — `c` de comentários, `l` de lei seca — e a
+       maiúscula troca a gaveta pela tela inteira. `_includes/nota-atalhos.html`
+       é a lista que o leitor vê: **é a documentação destas teclas, e as duas
+       precisam andar juntas.**
+
+       Três regras valem para todas elas:
+
+       - **Nada dispara com o foco num campo.** Filtrar o sumário por "leitura"
+         não pode expandir painel a cada letra.
+       - **Nada dispara com Ctrl/Alt/Meta.** Os atalhos do navegador continuam
+         sendo dele.
+       - **Atalho que aponta para o que está fora da tela traz a tela de
+         volta** em vez de não fazer nada — é o mesmo que `irParaElemento` já
+         faz ao seguir uma remissão para o painel escondido pelo modo leitura.
+
+       O interruptor da lista não é enfeite: atalho de uma tecla só precisa
+       poder ser desligado (WCAG 2.1.4, nível A), porque quem digita por voz ou
+       com teclado adaptado os dispara sem querer. A escolha fica no
+       localStorage e vale para todas as notas. O `Esc` continua valendo mesmo
+       desligado: não é tecla de caractere, e é a saída de emergência. */
+    var CHAVE_ATALHOS = 'notas-atalhos';
+    var CLASSE_PRESA = 'nota-atalhos--preso';
+    var CLASSE_DISPENSADA = 'nota-dica-dispensada';
+    var botaoAtalhos = document.getElementById('nota-atalhos-btn');
+    var painelAtalhos = document.getElementById('nota-atalhos');
+    var chaveDosAtalhos = document.getElementById('nota-atalhos-ligados');
+    var atalhosLigados = true;
+    try { atalhosLigados = localStorage.getItem(CHAVE_ATALHOS) !== 'off'; } catch (erro) { /* modo privado */ }
+
+    function atalhosPresos() {
+        return !!painelAtalhos && painelAtalhos.classList.contains(CLASSE_PRESA);
+    }
+
+    // Na tela de verdade: presa pelo clique/`?`, ou revelada pelo ponteiro ou
+    // pelo foco. É o que o Esc precisa saber para dispensar a dica.
+    function atalhosAVista() {
+        return !!painelAtalhos && painelAtalhos.getClientRects().length > 0;
+    }
+
+    /* A lista é `position: fixed` e vive fora do cabeçalho (ver
+       `_includes/nota-atalhos.html`): não há pai a que se ancorar, e a altura
+       do cabeçalho no desktop depende do título e da fonte carregada — escrita
+       no CSS, seria o número que mente. Sem o botão na tela (modo leitura da
+       lei seca, ou mobile) fica valendo o canto da janela, que é o padrão. */
+    function posicionarAtalhos() {
+        if (!botaoAtalhos || !painelAtalhos) return;
+        var caixa = botaoAtalhos.getBoundingClientRect();
+        if (!caixa.width) {
+            ['top', 'right', 'max-height'].forEach(function (propriedade) {
+                painelAtalhos.style.removeProperty(propriedade);
+            });
+            return;
+        }
+        /* Encostada no botão, sem folga: com um vão entre os dois, o ponteiro
+           que desce do botão para a lista passa por um ponto em que nenhum dos
+           dois está sob ele, e a lista some no caminho — o WCAG 1.4.13 pede
+           justamente que dê para levar o ponteiro até ela. */
+        painelAtalhos.style.top = caixa.bottom + 'px';
+        painelAtalhos.style.right =
+            Math.max(8, document.documentElement.clientWidth - caixa.right) + 'px';
+        // O teto do CSS conta da borda da janela; descida para baixo do botão,
+        // a lista precisa descontar o que ficou acima dela.
+        painelAtalhos.style.maxHeight = 'calc(100dvh - ' + (caixa.bottom + 12) + 'px)';
+    }
+
+    function mostrarAtalhos(mostrar) {
+        if (!botaoAtalhos || !painelAtalhos) return;
+        if (mostrar) posicionarAtalhos();
+        painelAtalhos.classList.toggle(CLASSE_PRESA, mostrar);
+        botaoAtalhos.setAttribute('aria-expanded', String(mostrar));
+        /* Fechar é gesto explícito, e precisa valer também com o ponteiro
+           ainda sobre o botão (ou o foco nele): sem a marca, a revelação por
+           hover reacenderia a lista no mesmo instante, e um clique no botão
+           aberto pareceria não fazer nada. A marca sai quando o ponteiro (ou o
+           foco) vai embora e volta — ver a regra no nota-style.css. */
+        document.body.classList.toggle(CLASSE_DISPENSADA, !mostrar);
+        // Fechada com o foco dentro dela, o foco volta para o botão; fora, ele
+        // fica onde estava — o leitor não pediu para sair de onde lia.
+        if (!mostrar && painelAtalhos.contains(document.activeElement)) botaoAtalhos.focus();
+    }
+
+    if (botaoAtalhos && painelAtalhos) {
+        botaoAtalhos.addEventListener('click', function () {
+            mostrarAtalhos(!atalhosPresos());
+        });
+        /* A dica aparece sozinha no hover e no foco (é regra de CSS). Aqui só
+           se desfaz a marca de dispensada — chegar de novo ao botão é o gesto
+           que pede a dica de volta — e se remede a posição, porque entre o
+           carregamento e o primeiro hover a fonte pode ter chegado e mudado a
+           altura do cabeçalho. */
+        ['pointerenter', 'focus'].forEach(function (nomeEvento) {
+            botaoAtalhos.addEventListener(nomeEvento, function () {
+                document.body.classList.remove(CLASSE_DISPENSADA);
+                posicionarAtalhos();
+            });
+        });
+        document.addEventListener('click', function (evento) {
+            if (!atalhosPresos() || painelAtalhos.contains(evento.target) ||
+                botaoAtalhos.contains(evento.target)) return;
+            mostrarAtalhos(false);
+        });
+        window.addEventListener('resize', posicionarAtalhos);
+        posicionarAtalhos();
+    }
+
+    if (chaveDosAtalhos) {
+        chaveDosAtalhos.checked = atalhosLigados;
+        chaveDosAtalhos.addEventListener('change', function () {
+            atalhosLigados = chaveDosAtalhos.checked;
+            try {
+                localStorage.setItem(CHAVE_ATALHOS, atalhosLigados ? 'on' : 'off');
+            } catch (erro) { /* modo privado */ }
+        });
+    }
+
+    function revelarPainel(nome) {
+        if (leituraAtiva() && leituraAtiva() !== nome) aplicarLeitura('');
+    }
+
+    // Os controles da lei seca moram na barra de título dela: em uma coluna,
+    // ela pode estar na aba inativa, e focar um campo em `display: none` não
+    // acontece.
+    function revelarPainelDaLei() {
+        revelarPainel('lei');
+        if (!duasColunas.matches && painelAtivo() !== 'lei') trocarPainel('lei');
+    }
+
+    function alternarSumario(sumario, nomePainel) {
+        if (!sumario) return;
+        if (!sumario.painel.hidden) {
+            sumario.fechar(true);
+            return;
+        }
+        revelarPainel(nomePainel);
+        // Sem argumento, `abrir` leva o foco junto (o filtro no desktop, o
+        // primeiro item no mobile) — que é o que um atalho de teclado pede.
+        sumario.abrir();
+    }
+
+    function focarCampoIrPara() {
+        if (!busca) return;
+        var campoIr = busca.querySelector('input');
+        if (!campoIr) return;
+        revelarPainelDaLei();
+        campoIr.focus();
+        // Seleciona o que estiver escrito: a busca anterior fica à vista e o
+        // leitor digita por cima dela sem precisar apagar.
+        campoIr.select();
+    }
+
+    function abrirSeletorDeNormas() {
+        if (!seletorNorma) return;
+        revelarPainelDaLei();
+        seletorNorma.focus();
+        /* `showPicker` abre a lista do próprio navegador. Onde ele não existe
+           (ou recusa), fica o foco no seletor — de onde as setas percorrem as
+           normas do mesmo jeito, que é o comportamento nativo do <select>. */
+        try { seletorNorma.showPicker(); } catch (erro) { /* navegador sem showPicker */ }
+    }
+
+    var ATALHOS = {
+        c: function () { alternarSumario(sumarioComentarios, 'comentarios'); },
+        l: function () { alternarSumario(sumarioLei, 'lei'); },
+        C: function () { alternarLeitura('comentarios'); },
+        L: function () { alternarLeitura('lei'); },
+        n: function () {
+            if (!menuDeNotas) return;
+            if (menuDeNotas.aberto()) {
+                menuDeNotas.fechar(true);
+                return;
+            }
+            // Na leitura da lei seca o cabeçalho sai da tela, e o menu com ele.
+            revelarPainel('comentarios');
+            menuDeNotas.abrir(true);
+        },
+        e: abrirSeletorDeNormas,
+        i: focarCampoIrPara,
+        '/': focarCampoIrPara,
+        '?': function () { mostrarAtalhos(!atalhosPresos()); }
+    };
+
+    /* O Esc desfaz uma camada por vez, da mais volátil para a mais duradoura:
+       a lista de atalhos, o menu de notas, um sumário em gaveta e, por fim, o
+       modo leitura, que devolve a tela dividida. A coluna do sumário do modo
+       leitura fica de fora de propósito — ela não é sobreposição, e quem a
+       fecha é o X (ou o próprio Esc, uma camada depois, junto com o modo). */
+    function fecharOQueEstiverAberto() {
+        // `aVista`, e não só `presos`: revelada pelo ponteiro, a dica também
+        // precisa sair pelo Esc, sem o leitor ter de mexer o ponteiro.
+        if (atalhosAVista()) {
+            mostrarAtalhos(false);
+            return true;
+        }
+        if (menuDeNotas && menuDeNotas.aberto()) {
+            menuDeNotas.fechar(true);
+            return true;
+        }
+        var gaveta = [sumarioComentarios, sumarioLei].filter(function (sumario) {
+            return sumario && !sumario.painel.hidden && !sumario.ancorado();
+        })[0];
+        if (gaveta) {
+            gaveta.fechar(true);
+            return true;
+        }
+        if (leituraAtiva()) {
+            aplicarLeitura('');
+            return true;
+        }
+        return false;
+    }
+
+    function digitando(alvo) {
+        if (!alvo || !alvo.tagName) return false;
+        var tag = alvo.tagName;
+        return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || alvo.isContentEditable;
+    }
+
+    document.addEventListener('keydown', function (evento) {
+        if (evento.ctrlKey || evento.metaKey || evento.altKey) return;
+
+        if (evento.key === 'Escape') {
+            // Já tratado por quem estava mais perto do foco (o filtro do
+            // sumário limpa o texto; a gaveta e o menu se fecham).
+            if (evento.defaultPrevented) return;
+            // Com o foco num campo, o Esc devolve o teclado à página e para
+            // por aí: fechar uma camada por baixo seria uma segunda coisa, que
+            // o leitor não pediu.
+            if (digitando(evento.target)) {
+                evento.target.blur();
+                return;
+            }
+            if (fecharOQueEstiverAberto()) evento.preventDefault();
+            return;
+        }
+
+        if (!atalhosLigados || digitando(evento.target)) return;
+        if (evento.key.length !== 1) return;
+
+        /* A maiúscula é outro atalho: `c` abre o sumário do painel, `Shift+C`
+           dá a tela inteira a ele. Quem decide é o `shiftKey`, e não a caixa da
+           letra, para o Caps Lock ligado não trocar um pelo outro. */
+        var tecla = /[a-z]/i.test(evento.key)
+            ? (evento.shiftKey ? evento.key.toUpperCase() : evento.key.toLowerCase())
+            : evento.key;
+        var acao = ATALHOS[tecla];
+        if (!acao) return;
+        evento.preventDefault();
+        acao();
+    });
 
     /* --- Link compartilhado com âncora (/notas/lgpd#art-5-v) ou com norma
        (/notas/mci#dec8771, sem dispositivo) --- */
