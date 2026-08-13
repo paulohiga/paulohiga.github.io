@@ -4,6 +4,14 @@ permalink: /notas/regimento-interno-anpd
 title: Regimento Interno da ANPD — Portaria nº 1/2021
 description: Notas de estudo sobre o Regimento Interno da ANPD — quem decide o quê na Agência, como funcionam as reuniões e os circuitos deliberativos, relatoria, pedido de vista, diligência, e os instrumentos pelos quais a ANPD fala (resolução, enunciado, despacho decisório, consulta e audiência pública), com o texto do regimento ao lado.
 lei: regimento-interno-anpd
+normas_extra:
+  - resolucao-anpd-1
+  - resolucao-anpd-2
+  - resolucao-anpd-4
+  - resolucao-anpd-15
+  - resolucao-anpd-18
+  - resolucao-anpd-19
+  - resolucao-anpd-32
 ordem: 4
 jurisdicao: Brasil
 atualizado_em: 2026-08-02

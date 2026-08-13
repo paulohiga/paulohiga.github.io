@@ -91,6 +91,56 @@ regimento-interno-anpd:
     - "Portaria ANPD nº 1/2021"
     - "Portaria ANPD nº 1"
 
+resolucao-anpd-1:
+  nota: regimento-interno-anpd
+  prefixo: "res1"
+  aliases:
+    - "Resolução CD/ANPD nº 1, de 28 de outubro de 2021"
+    - "Resolução CD/ANPD nº 1/2021"
+
+resolucao-anpd-2:
+  nota: regimento-interno-anpd
+  prefixo: "res2"
+  aliases:
+    - "Resolução CD/ANPD nº 2, de 27 de janeiro de 2022"
+    - "Resolução CD/ANPD nº 2/2022"
+
+resolucao-anpd-4:
+  nota: regimento-interno-anpd
+  prefixo: "res4"
+  aliases:
+    - "Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023"
+    - "Resolução CD/ANPD nº 4/2023"
+
+resolucao-anpd-15:
+  nota: regimento-interno-anpd
+  prefixo: "res15"
+  aliases:
+    - "Resolução CD/ANPD nº 15, de 24 de abril de 2024"
+    - "Resolução CD/ANPD nº 15/2024"
+
+resolucao-anpd-18:
+  nota: regimento-interno-anpd
+  prefixo: "res18"
+  aliases:
+    - "Resolução CD/ANPD nº 18, de 16 de julho de 2024"
+    - "Resolução CD/ANPD nº 18/2024"
+
+resolucao-anpd-19:
+  nota: regimento-interno-anpd
+  prefixo: "res19"
+  aliases:
+    - "Resolução CD/ANPD nº 19, de 23 de agosto de 2024"
+    - "Resolução CD/ANPD nº 19/2024"
+
+resolucao-anpd-32:
+  nota: regimento-interno-anpd
+  prefixo: "res32"
+  aliases:
+    - "Resolução CD/ANPD nº 32, de 26 de janeiro de 2026"
+    - "Resolução CD/ANPD nº 32/2026"
+    - "Resolução nº 32/2026"
+
 lgpd:
   nota: lgpd
   prefixo: ""
