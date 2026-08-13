@@ -1,6 +1,6 @@
 ---
 titulo: Resolução nº 32, de 26 de janeiro de 2026
-apelido: Resolução CD/ANPD nº 32/2026
+apelido: Res. CD/ANPD nº 32/2026 — Adequação da UE
 fonte: https://www.in.gov.br/web/dou/-/resolucao-n-32-de-26-de-janeiro-de-2026-683334547
 tipo: resolucao
 prefixo: res32

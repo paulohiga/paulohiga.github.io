@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
-apelido: Resolução CD/ANPD nº 19/2024
+apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
 fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
 compilado_ate: Retificação de 18 de agosto de 2025
 tipo: resolucao

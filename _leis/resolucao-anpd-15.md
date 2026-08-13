@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
-apelido: Resolução CD/ANPD nº 15/2024
+apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
 fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
 tipo: resolucao
 prefixo: res15

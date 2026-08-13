@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
-apelido: Resolução CD/ANPD nº 4/2023
+apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
 fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
 tipo: resolucao
 prefixo: res4

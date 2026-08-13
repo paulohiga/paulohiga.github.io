@@ -1,6 +1,6 @@
 ---
 titulo: Decreto nº 12.975, de 20 de maio de 2026
-apelido: Decreto nº 12.975/2026
+apelido: Dec. nº 12.975/2026 — Atualização do Marco Civil
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12975.htm
 tipo: decreto
 prefixo: dec12975

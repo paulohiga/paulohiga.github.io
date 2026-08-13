@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
-apelido: Resolução CD/ANPD nº 18/2024
+apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
 fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
 tipo: resolucao
 prefixo: res18

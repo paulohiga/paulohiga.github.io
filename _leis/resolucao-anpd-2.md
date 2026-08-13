@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
-apelido: Resolução CD/ANPD nº 2/2022
+apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
 fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
 compilado_ate: Resolução CD/ANPD nº 15, de 24 de abril de 2024
 tipo: resolucao

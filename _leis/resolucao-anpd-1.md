@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
-apelido: Resolução CD/ANPD nº 1/2021
+apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
 fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
 compilado_ate: Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
 tipo: resolucao

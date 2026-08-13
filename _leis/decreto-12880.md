@@ -1,6 +1,6 @@
 ---
 titulo: Decreto nº 12.880, de 18 de março de 2026
-apelido: Decreto nº 12.880/2026
+apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
 tipo: decreto
 prefixo: dec12880
