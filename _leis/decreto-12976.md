@@ -1,6 +1,6 @@
 ---
 titulo: Decreto nº 12.976, de 20 de maio de 2026
-apelido: Decreto nº 12.976/2026
+apelido: Dec. nº 12.976/2026 — Proteção de Mulheres na Internet
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12976.htm
 tipo: decreto
 prefixo: dec12976

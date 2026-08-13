@@ -100,6 +100,15 @@
 {%- endcomment -%}
 {%- assign ids_usados = '|' -%}
 
+{%- comment -%}
+    Título de seção repetido entre capítulos diferentes ("Seção I —
+    Disposições Gerais" aparece mais de uma vez em algumas resoluções da
+    ANPD) geraria o mesmo id de título duas vezes — inválido em HTML. Como o
+    id do título não é usado em remissão nenhuma (só o de dispositivo é),
+    desambiguar com um sufixo numérico não quebra link algum.
+{%- endcomment -%}
+{%- assign titulos_usados = '|' -%}
+
 {%- for bloco in blocos -%}
     {%- assign texto = bloco | strip -%}
     {%- if texto == '' -%}{%- continue -%}{%- endif -%}
@@ -125,7 +134,23 @@
             {%- assign subdivisao = '' -%}
             {%- assign inciso = '' -%}
         {%- endif -%}
-        <h{{ nivel }} id="lei-{{ prefixo_id }}{{ titulo | slugify }}">{{ titulo }}</h{{ nivel }}>
+        {%- assign titulo_id = 'lei-' | append: prefixo_id | append: titulo | slugify -%}
+        {%- assign titulo_chave = '|' | append: titulo_id | append: '|' -%}
+        {%- if titulos_usados contains titulo_chave -%}
+            {%- assign sufixo = 2 -%}
+            {%- for tentativa in (2..20) -%}
+                {%- capture titulo_id_tentativa -%}{{ titulo_id }}-{{ sufixo }}{%- endcapture -%}
+                {%- capture titulo_chave_tentativa -%}|{{ titulo_id_tentativa }}|{%- endcapture -%}
+                {%- unless titulos_usados contains titulo_chave_tentativa -%}
+                    {%- assign titulo_id = titulo_id_tentativa -%}
+                    {%- assign titulo_chave = titulo_chave_tentativa -%}
+                    {%- break -%}
+                {%- endunless -%}
+                {%- assign sufixo = sufixo | plus: 1 -%}
+            {%- endfor -%}
+        {%- endif -%}
+        {%- assign titulos_usados = titulos_usados | append: titulo_id | append: '|' -%}
+        <h{{ nivel }} id="{{ titulo_id }}">{{ titulo }}</h{{ nivel }}>
 
     {%- elsif texto contains '~~' -%}
         {%- comment -%}

@@ -1,6 +1,6 @@
 ---
 titulo: Decreto nº 8.771, de 11 de maio de 2016
-apelido: Decreto nº 8.771/2016
+apelido: Dec. nº 8.771/2016 — Regulamento do Marco Civil
 fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8771.htm
 tipo: decreto
 prefixo: dec8771
