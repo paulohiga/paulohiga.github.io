@@ -1123,6 +1123,188 @@ body.js .nota-titulo-menu {
     color: var(--accent);
 }
 
+/* --- Botões do canto direito do cabeçalho (atalhos e tema) ---
+   O `margin-left: auto` que empurra o botão de tema para a direita passa a ser
+   do grupo. Ele continua no próprio botão para o índice /notas, onde o tema
+   está sozinho no cabeçalho e não há grupo nenhum. */
+.nota-topo__acoes {
+    margin-left: auto;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.nota-topo__acoes .nota-tema {
+    margin-left: 0;
+}
+
+/* --- Lista de atalhos de teclado ---
+   O botão nasce oculto e só é ligado acima de 900px (bloco no fim desta
+   seção): atalho de teclado pressupõe teclado, e no cabeçalho preso do mobile
+   ele gastaria espaço para explicar o que ninguém ali pode usar. É o mesmo
+   default protetor do botão de modo leitura — o controle só aparece onde
+   alguém o ligou.
+
+   Sem borda nem fundo: ao lado do botão de tema, que é um círculo desenhado,
+   dois círculos iguais disputariam a mesma atenção, e este é o mais discreto
+   dos dois. O contorno só aparece no hover/foco e enquanto a lista está
+   presa. */
+.nota-atalhos-btn {
+    display: none;
+    flex: none;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.nota-atalhos-btn:hover,
+.nota-atalhos-btn[aria-expanded="true"] {
+    border-color: var(--hairline);
+    background: var(--page-bg);
+    color: var(--accent);
+}
+
+/* `position: fixed` e fora do cabeçalho: no modo leitura da lei seca o
+   cabeçalho sai da tela, e a lista precisa continuar aparecendo para o `?`
+   valer ali também. Sem pai a que se ancorar, quem mede a posição a partir do
+   botão é o notas.js (`posicionarAtalhos`) — o cabeçalho não tem altura fixa
+   no desktop, e repeti-la aqui seria o número que mente. O canto da janela,
+   abaixo, é o padrão de quando o botão não está na tela. */
+.nota-atalhos {
+    display: none;
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    /* Acima dos sumários (7) e dos botões que os abrem (8): é sobreposição de
+       leitura rápida, e ficar por baixo de uma gaveta a esconderia. */
+    z-index: 9;
+    width: min(22rem, 90vw);
+    /* A lista tem altura fixa (443px, medidos) e cabe inteira em qualquer
+       janela a partir de 600px de altura. O teto é para a janela baixa e larga
+       — ali ela rola dentro de si em vez de sair pela borda de baixo. */
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.18);
+    font-size: 0.85rem;
+}
+
+.nota-atalhos__titulo {
+    margin: 0 0 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Duas colunas: a tecla e o que ela faz. Sem `<div>` por linha — a grade põe
+   cada `dt` na primeira coluna e cada `dd` na segunda pela ordem do documento,
+   e a lista continua sendo uma lista de definições para quem usa leitor de
+   tela. */
+.nota-atalhos__lista {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.4rem 0.7rem;
+    margin: 0;
+}
+
+.nota-atalhos__lista dd {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.nota-atalhos kbd {
+    display: inline-block;
+    min-width: 1.55rem;
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--hairline);
+    border-bottom-width: 2px;
+    border-radius: 0.3rem;
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.nota-atalhos__ou {
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+}
+
+/* O interruptor não é enfeite: um atalho de uma tecla só precisa poder ser
+   desligado (WCAG 2.1.4, nível A) — quem digita por voz ou por teclado
+   adaptado dispara essas teclas sem querer. A escolha vale para o navegador
+   inteiro (localStorage), não só para esta nota. */
+.nota-atalhos__pe {
+    margin: 0.8rem 0 0;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--hairline);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.nota-atalhos__chave {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.nota-atalhos__aviso {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+body:not(.js) .nota-atalhos-btn,
+body:not(.js) .nota-atalhos {
+    display: none;
+}
+
+/* Revelada de três jeitos: o ponteiro sobre o botão e o foco nele (é o
+   comportamento de dica que o botão promete) e, presa pelo clique ou pelo
+   `?`, até que outra coisa a feche. Presa, ela sobrevive ao ponteiro sair —
+   é o que permite ler a lista inteira e experimentar as teclas.
+
+   Conteúdo revelado no hover tem três obrigações no WCAG 1.4.13 (AA), e as
+   três estão aqui:
+
+   - **acessível ao ponteiro** — a lista encosta no botão (a folga é zero, e é
+     o notas.js que a posiciona), e o `.nota-atalhos:hover` a segura enquanto o
+     ponteiro estiver sobre ela: descer do botão até a lista não a apaga no
+     caminho;
+   - **dispensável sem tirar o ponteiro** — o `Esc` marca o `body`, e a marca
+     desliga as revelações por hover e por foco até o ponteiro (ou o foco) sair
+     e voltar ao botão. É ela também que faz um clique no botão aberto fechar
+     de verdade, em vez de o hover reacender a lista no mesmo instante;
+   - **persistente** — quem manda é o `:hover`, que dura o tempo que o leitor
+     quiser. */
+@media (min-width: 900px) {
+    .nota-atalhos-btn {
+        display: grid;
+    }
+
+    body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:hover) .nota-atalhos,
+    body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:focus-visible) .nota-atalhos,
+    body:not(.nota-dica-dispensada) .nota-atalhos:hover,
+    .nota-atalhos--preso {
+        display: block;
+    }
+}
+
 /* --- Painel redimensionável: divisor arrastável entre comentários e lei
    seca. Só existe visualmente lado a lado (ver a media query de 900px
    acima); em telas estreitas os painéis viram abas e o divisor não aparece. */
@@ -1535,6 +1717,8 @@ body:not(.js) .nota-progresso {
 @media print {
     .nota-abas,
     .nota-tema,
+    .nota-atalhos-btn,
+    .nota-atalhos,
     .lei-ir,
     .nota-origem,
     .nota-resizer,

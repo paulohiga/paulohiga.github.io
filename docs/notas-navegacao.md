@@ -27,7 +27,8 @@ Referências de linha apontam para o estado do código em 7/8/2026 (commit
 | B8 | **feito** (7/8/2026) |
 | B9 | **feito** (7/8/2026) |
 | B10 | **feito** (7/8/2026) |
-| B11, B12, B13 | pendente |
+| B11 | **feito em parte** (13/8/2026) |
+| B12, B13 | pendente |
 | C14 | **feito** (7/8/2026) |
 | C15, C16 | pendente |
 | B17 | **feito** (10/8/2026) |
@@ -354,17 +355,36 @@ virar entrada no histórico é parte do **A4**, que ainda não existe para salto
 nenhum — meia implementação aqui deixaria o botão Voltar funcionando para
 normas e não para dispositivos, que é pior que não funcionar para nada.
 
-### B11. Teclado: 453 tabulações até o painel da lei
+### B11. Teclado: 453 tabulações até o painel da lei — FEITO EM PARTE
 
-**Hoje, contado:** painel de comentários com **453 elementos focáveis**,
+**Como era, contado:** painel de comentários com **453 elementos focáveis**,
 painel da lei com **3**, e um único *skip link* ("Pular para os comentários").
 Como o painel da lei vem depois no DOM, o campo "Ir para", o seletor de normas
 e o link "Texto oficial" ficam atrás de 453 paradas de Tab.
 
-**Proposta.** Um segundo *skip link* ("Pular para a lei seca") e/ou um atalho
-de teclado para focar o campo "Ir para" (`/` ou `g`, anunciado no
-`aria-describedby` que já existe). É também conformidade com o WCAG 2.4.1,
-que o `AGENTS.md` exige em AA.
+**O que foi feito.** Um atalho por controle, e não só para o campo "Ir para":
+`c` e `l` abrem os sumários, `Shift+C` e `Shift+L` dão a tela inteira a cada
+painel, `n` abre o menu de notas (agora percorrido por `↑` `↓`), `e` abre o
+seletor de normas, `/` (ou `i`) vai ao campo "Ir para", `?` mostra a lista
+inteira e `Esc` desfaz uma camada por toque. O esquema, as três regras que
+valem para todas as teclas e as decisões do painel de ajuda estão em
+[`notas.md`](./notas.md#atalhos-de-teclado).
+
+- **A lista é visível**, num botão discreto ao lado do de tema: atalho que só
+  existe no código é atalho que ninguém usa. Ela é a documentação das teclas —
+  as duas andam juntas.
+- **As teclas podem ser desligadas**, o que não é luxo: atalho de uma tecla só
+  precisa disso pelo WCAG 2.1.4, nível **A** (quem digita por voz dispara essas
+  teclas sem querer). O `Esc` continua valendo desligado.
+- **Nada dispara com o foco num campo nem com Ctrl/Alt/Meta**, e atalho que
+  aponta para painel escondido pelo modo leitura devolve a tela dividida antes
+  de agir, como as remissões já faziam.
+
+**Falta o *skip link*.** O segundo salto ("Pular para a lei seca") é o que
+atende o **WCAG 2.4.1** para quem não conhece os atalhos — e é a única parte
+deste item que vale sem teclado físico, já que a lista de atalhos é de tela
+larga. Fica pendente com o `aria-describedby` do campo "Ir para", que também
+podia anunciar a tecla.
 
 ### B12. "Ir para" não busca texto, e o erro não fala
 

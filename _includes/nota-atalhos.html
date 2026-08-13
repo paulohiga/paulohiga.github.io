@@ -1,0 +1,58 @@
+{%- comment -%}
+    Lista dos atalhos de teclado da nota, revelada pelo botão discreto ao lado
+    do botão de tema (hover, foco ou clique — ver nota-style.css).
+
+    **Esta lista é a documentação do que o notas.js escuta.** Mexeu numa tecla
+    lá, mexa aqui: uma tecla que o leitor não descobre é uma tecla que não
+    existe, e uma tecla listada que não funciona é pior ainda.
+
+    Fica fora do cabeçalho, e não dentro do grupo de botões, porque no modo
+    leitura da lei seca o cabeçalho inteiro sai da tela (ver docs/notas.md):
+    filha dele, a lista sumiria junto e o `?` não teria o que mostrar
+    justamente onde o leitor está lendo. Solta e `position: fixed`, ela se
+    ancora no botão quando ele existe e no canto da janela quando não (a medida
+    é do notas.js — o cabeçalho não tem altura fixa no desktop).
+
+    Só aparece acima de 900px: atalho de teclado pressupõe teclado, e no
+    cabeçalho preso do mobile o botão gastaria espaço para explicar o que
+    ninguém ali pode usar. Sem JavaScript não aparece em lugar nenhum, porque
+    é o notas.js que escuta as teclas.
+{%- endcomment -%}
+    <section id="nota-atalhos" class="nota-atalhos" aria-labelledby="nota-atalhos-titulo">
+        <h2 class="nota-atalhos__titulo" id="nota-atalhos-titulo">Atalhos de teclado</h2>
+        <dl class="nota-atalhos__lista">
+            <dt><kbd>c</kbd></dt>
+            <dd>Sumário dos comentários</dd>
+
+            <dt><kbd>l</kbd></dt>
+            <dd>Sumário da lei seca</dd>
+
+            <dt><kbd>Shift</kbd> <kbd>C</kbd></dt>
+            <dd>Modo leitura dos comentários</dd>
+
+            <dt><kbd>Shift</kbd> <kbd>L</kbd></dt>
+            <dd>Modo leitura da lei seca</dd>
+
+            <dt><kbd>n</kbd></dt>
+            <dd>Menu de notas <span aria-hidden="true">(↑↓ percorre)</span><span class="visualmente-oculto">(as setas para cima e para baixo percorrem os itens)</span></dd>
+
+            <dt><kbd>e</kbd></dt>
+            <dd>Escolher a norma exibida</dd>
+
+            <dt><kbd>/</kbd> <span class="nota-atalhos__ou">ou</span> <kbd>i</kbd></dt>
+            <dd>Campo “Ir para” da lei seca</dd>
+
+            <dt><kbd>?</kbd></dt>
+            <dd>Esta lista</dd>
+
+            <dt><kbd>Esc</kbd></dt>
+            <dd>Fecha o que estiver aberto e volta da tela cheia</dd>
+        </dl>
+        <p class="nota-atalhos__pe">
+            <label class="nota-atalhos__chave">
+                <input type="checkbox" id="nota-atalhos-ligados" checked>
+                Atalhos ativos
+            </label>
+            <span class="nota-atalhos__aviso">Nenhum deles dispara enquanto você digita num campo.</span>
+        </p>
+    </section>

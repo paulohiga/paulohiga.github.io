@@ -106,11 +106,26 @@
                 <li class="nota-titulo-menu__separador"><a href="/notas">Ver todas as notas</a></li>
             </ul>
         </div>
-        <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
-            <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
+        <!-- Os dois botões do canto direito num grupo só: o de atalhos vem
+             antes do de tema porque é o mais discreto dos dois, e quem empurra
+             ambos para a direita passa a ser o grupo (o `margin-left: auto` do
+             botão de tema continua valendo no índice /notas, onde ele está
+             sozinho no cabeçalho). -->
+        <div class="nota-topo__acoes">
+            <!-- Botão da lista de atalhos. A lista em si fica fora do
+                 cabeçalho (logo abaixo), porque no modo leitura da lei seca o
+                 cabeçalho inteiro sai da tela e o `?` continua valendo. -->
+            <button id="nota-atalhos-btn" type="button" class="nota-atalhos-btn" aria-controls="nota-atalhos" aria-expanded="false" aria-label="Atalhos de teclado">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+            </button>
+            <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+        </div>
     </header>
+
+{% include nota-atalhos.html %}
 
     <!-- Faixa de volta para a nota de origem. Aparece só quando o leitor chegou
          aqui a partir de outra nota da seção — "Marco Civil → art. 6º da LGPD →
