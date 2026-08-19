@@ -100,7 +100,7 @@ O quórum tem duas partes, fáceis de embaralhar:
 - **quórum de instalação**: maioria **absoluta** — três dos cinco diretores precisam estar presentes para a reunião existir ([art. 27](#art-27));
 - **quórum de decisão**: maioria **simples** — decide-se pela maioria dos votos ([art. 19](#art-19)).
 
-E há quatro regras de contagem que convém destacar:
+E há quatro regras de contagem:
 
 - **Voto proferido não caduca.** O cômputo leva em conta os votos já dados por diretores que estejam ausentes **ou cujo mandato já tenha se encerrado** ([§ 1º](#art-19-p1)). Um voto proferido em março continua contando em julho, mesmo que quem o proferiu já tenha deixado a Agência.
 - **Quem sucede não revota.** O diretor substituto ou sucessor daquele que já votou não participa da deliberação ([§ 2º](#art-19-p2)) — o voto do antecessor permanece no cômputo, e o sucessor não o substitui.
@@ -321,7 +321,7 @@ O capítulo dos enunciados monta um sistema com a mesma mecânica de uma súmula
 ## Quando ainda dá para recorrer
 
 - O **recurso administrativo** segue, no que couber, a Lei nº 9.784/1999, a legislação especial e os regulamentos da ANPD ([art. 73](#art-73)). A **instância máxima** da Agência é o Conselho Diretor ([parágrafo único](#art-73-pu)) — combinado com o [art. 5º, VIII](#art-5-viii), fecha o desenho: a **SFI** decide em primeira instância, o colegiado reexamina.
-- Quando o Conselho Diretor funciona como **instância única** — decidindo originariamente, sem decisão anterior a rever —, não há a quem recorrer acima. Nesse caso cabe **pedido de reconsideração**, devidamente fundamentado ([art. 74](#art-74)), distribuído a um **diretor distinto** daquele que proferiu o voto condutor da decisão recorrida ([parágrafo único](#art-74-pu)). Não é recurso a outra instância: é um pedido para que o mesmo colegiado reveja o que decidiu, com a relatoria trocada.
+- Quando o Conselho Diretor funciona como **instância única** — decidindo originariamente, sem decisão anterior a rever —, não há a quem recorrer acima. Nesse caso cabe **pedido de reconsideração**, devidamente fundamentado ([art. 74](#art-74)), distribuído a um **diretor distinto** daquele que proferiu o voto condutor da decisão recorrida ([parágrafo único](#art-74-pu)). É um pedido para que o mesmo colegiado reveja o que decidiu, com a relatoria trocada.
 - Esgotada a via administrativa, resta o **Judiciário**: "terminativo" ([art. 5º, IX](#art-5-ix)) qualifica o encerramento da discussão **dentro** da Agência, e nada mais.
 - Casos omissos do próprio Regimento são resolvidos pelo Conselho Diretor ([art. 75](#art-75)).
 
