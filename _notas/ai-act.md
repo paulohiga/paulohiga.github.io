@@ -7,7 +7,7 @@ lei: ai-act-consolidado
 normas_extra: [ai-act, regulamento-2026-1744]
 ordem: 6
 jurisdicao: União Europeia
-atualizado_em: 2026-08-02
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -369,6 +369,18 @@ A informação deve ser prestada **na primeira interação ou exposição**, de 
 
 Vale o contraste com o Brasil: não há dever geral equivalente de identificação de conteúdo sintético. O [ECA Digital](/notas/eca-digital) impõe obrigações a serviços de IA generativa apenas na proteção de crianças e adolescentes (Decreto nº 12.880/2026, [art. 11](/notas/eca-digital#dec12880-art-11)), e a Justiça Eleitoral disciplina o tema só no período eleitoral. Um dever transversal de marcação é uma das novidades do [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233).
 
+### O art. 50.º visto do Brasil: o Radar Tecnológico nº 6
+
+O [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (ANPD, 2026) dedica um capítulo à comparação de regimes e cita o [art. 50.º](#art-50) como o exemplo do padrão que chama de **transparência** — dever de marcar e divulgar conteúdo sintético, independentemente do contexto de uso. O documento é didático e não firma posicionamento institucional, mas é a leitura brasileira mais recente e mais detalhada desse artigo. Três contribuições dele valem o registro aqui.
+
+**Os três padrões regulatórios em uso no mundo.** O Radar identifica que as leis vigentes sobre _deepfakes_ se distribuem em três modelos, frequentemente combinados: (i) **transparência**, obrigando a sinalização de conteúdo sintético — de que o art. 50.º é o caso mais amplo; (ii) **vedações eleitorais**, com proibições em janela temporal próxima ao pleito — a Coreia do Sul veda produção, edição, distribuição e publicação de vídeos _deepfake_ para campanha nos 90 dias anteriores à eleição, e o Brasil, pelas Resoluções nºs 23.732/2024 e 23.755/2026 do TSE, veda conteúdo sintético que substitua ou altere imagem ou voz de pessoa viva, falecida ou fictícia, exige rotulagem quando o uso é admitido e proíbe publicação, republicação e impulsionamento de novos conteúdos sintéticos com imagem, voz ou manifestação de candidato ou pessoa pública entre 72 horas antes e 24 horas depois do fim do pleito, **ainda que rotulados**; e (iii) **criminalização** de abusos, sobretudo sexuais — Coreia do Sul, Reino Unido, França, Austrália e o _Take It Down Act_ norte-americano de 2025.
+
+O contraste com o AI Act é de arquitetura. O regulamento europeu escolheu o primeiro padrão e o fez **transversal**: qualquer conteúdo sintético, em qualquer contexto, deve ser marcado e detetável. O Brasil escolheu os outros dois, e de forma **setorial** — a regra eleitoral só vale em campanha; a criminal, só depois do dano; e não há tipo penal específico para _deepfake_, de modo que a conduta é enquadrada no art. 218-C do Código Penal ou, quando a vítima é mulher, no art. 147-B, com a agravante que a Lei nº 15.123/2025 acrescentou para o uso de inteligência artificial. É esse o vazio registrado acima, quando esta nota observa que não há, no Brasil, dever geral equivalente de identificação de conteúdo sintético.
+
+**Cinco desafios que o Radar atribui à regulação de _deepfakes_**, e que ajudam a ler as ressalvas do próprio art. 50.º: **ambiguidade conceitual** (não há definição uniforme, o que dificulta delimitar o objeto); **defasagem regulatória** (a norma envelhece mais rápido do que se aprova); **equilíbrio entre direitos fundamentais** (conter o abuso sem sufocar expressão legítima — a ressalva do uso artístico, criativo, satírico ou ficcional do art. 50.º é exatamente isso); **identificação e responsabilização** (anonimato e natureza transfronteiriça); e **opacidade tecnológica** (a dificuldade de detectar, auditar e provar). O documento conclui que regulações centradas no **risco** e nos usos, e não na tecnologia empregada, tendem a envelhecer melhor — que é a escolha declarada do AI Act.
+
+**A marcação é mais confiável do que a detecção.** O Radar analisou comparativamente três ferramentas comerciais de detecção de _deepfakes_ e registra que nenhuma identificou com segurança os casos testados, dando respostas incertas tanto para material sintético quanto para material original de baixa resolução ou produzido em ambiente controlado — daí a recomendação de combinar ferramenta e avaliação humana. Do outro lado, lista os mecanismos de **proveniência**: assinaturas criptográficas, marcas d'água visíveis e invisíveis e padrões de rastreabilidade como o [C2PA](https://c2pa.org/), que registram origem, autoria e histórico de edição. O dado explica a opção do legislador europeu: exigir marcação **na origem** ([art. 50.º, n.º 2](#art-50-p2)), por soluções interoperáveis e sólidas, é aposta em proveniência, não em detecção _a posteriori_ — porque a detecção, hoje, não entrega o que seria preciso.
+
 ## Direitos das pessoas afetadas
 
 O AI Act não é uma lei de direitos individuais, e isso se nota na quantidade e na posição dos dispositivos. Ainda assim, há um núcleo:
@@ -662,6 +674,13 @@ Diferentemente da [LGPD](/notas/lgpd) e do [ECA Digital](/notas/eca-digital), o 
 - [Orientações da Comissão sobre práticas de IA proibidas](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act) e sobre a [definição de sistema de IA](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application) — ambas de fevereiro de 2025.
 - [Orientações e Código de Práticas sobre transparência de conteúdos gerados por IA](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) — detalham a marcação e a divulgação exigidas pelo [art. 50.º](#art-50).
 - [Serviço de Apoio ao AI Act (_AI Act Service Desk_)](https://ai-act-service-desk.ec.europa.eu/) — canal oficial de orientação da Comissão, com o cronograma de aplicação atualizado.
+
+### Estudos técnicos da ANPD
+
+Não são normas nem se aplicam ao regulamento europeu — entram aqui porque são a fonte pública do que esta nota afirma sobre o debate brasileiro. A série **Radar Tecnológico** se apresenta como abordagem didática de tecnologias emergentes, "sem a intenção de esgotar as temáticas ou firmar posicionamentos institucionais"; os documentos estão na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência.
+
+- [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (2026) — conceitos, funcionamento, riscos à proteção de dados, comparação de regimes regulatórios (inclusive o [art. 50.º](#art-50)) e limites das ferramentas de detecção.
+- [Radar Tecnológico nº 3 — Inteligência artificial generativa](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf) (novembro de 2024) — ciclo de tratamento de dados pessoais em sistemas generativos, da raspagem para treinamento à eliminação.
 
 ### Normas correlatas
 

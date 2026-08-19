@@ -10,7 +10,7 @@ normas_extra:
   - decreto-12976
 ordem: 2
 jurisdicao: Brasil
-atualizado_em: 2026-08-06
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -235,6 +235,19 @@ Editado na mesma data do Decreto nº 12.975/2026 e com a mesma _vacatio legis_ d
 
 Vale contrastar com o Decreto nº 12.975/2026, que **não fixou prazo algum** e remeteu o ponto à regulamentação da Agência ([art. 16-D, parágrafo único, II](#dec8771-art-16-d-pu-ii)). Na prática, hoje, a única remoção com relógio correndo é a de conteúdo íntimo não consentido.
 
+### _Deepfakes_ e o dever de cuidado, no levantamento da ANPD
+
+O [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (ANPD, 2026) é o documento público que melhor descreve o fenômeno que o [art. 9º do Decreto nº 12.976/2026](#dec12976-art-9) tenta conter. Como os demais volumes da série, é didático e não firma posicionamento institucional.
+
+O capítulo brasileiro do estudo reúne, a partir de levantamento da SaferNet Brasil, **16 casos documentados em instituições de ensino de 10 unidades federativas entre 2023 e 2025, com 72 vítimas e 57 agressores** — imagens de nudez ou de conteúdo sexual em que rostos reais, quase sempre extraídos de redes sociais, são sobrepostos a corpos nus. As vítimas identificadas são, em sua ampla maioria, meninas e mulheres, o que sustenta a leitura do decreto: _deepfake_ pornográfico não é um problema genérico de desinformação, é violência de gênero praticada por meio digital.
+
+O Radar também documenta o **caso Grok**, que interessa a esta nota porque foi construído sobre o regime de responsabilidade discutido acima:
+
+- **20 de janeiro de 2026** — ANPD, Ministério Público Federal e Senacon expedem [Recomendação Conjunta](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/recomendacao_conjunta_anpd_mpf_senacon_caso_grok.pdf) à empresa responsável pela plataforma X, por permitir que a ferramenta de IA generativa integrada ao serviço editasse imagens de terceiros sem verificação de consentimento, gerando conteúdo sexualizado de mulheres e de crianças e adolescentes. O documento sustenta duas teses relevantes: que a empresa, ao **oferecer e estruturar** a ferramenta, não atua como mero intermediário de conteúdo de terceiro; e que, mesmo à luz do Marco Civil, há **dever de cuidado reforçado**, especialmente depois de o STF ter relativizado a imunidade do [art. 19](#art-19).
+- **11 de fevereiro de 2026** — consideradas insuficientes as providências informadas, a ANPD expede **medida preventiva** — instrumento dos [arts. 32, III](/notas/regimento-interno-anpd#res1-art-32-iii) e [35 do Regulamento de Fiscalização](/notas/regimento-interno-anpd#res1-art-35) — para impedir a geração desses conteúdos, documentada na [Nota Técnica nº 1/2026/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nota-tecnica-no-1-2026-fis-cgf-anpd.pdf).
+
+O caso é anterior à vigência dos dois decretos de 2026 — a recomendação e a medida preventiva se apoiaram na [LGPD](/notas/lgpd), no [ECA Digital](/notas/eca-digital), no ECA, no Código de Defesa do Consumidor e no Marco Civil tal como reinterpretado pelo STF. Serve, por isso, como demonstração do argumento que percorre esta nota: o novo regime não criou o dever de cuidado, deu-lhe contorno normativo escrito.
+
 ## Da atuação do poder público (Capítulo IV, [arts. 24 a 29](#art-24))
 
 - **Diretrizes gerais** para União, Estados, Distrito Federal e Municípios no desenvolvimento da internet no Brasil ([art. 24](#art-24)): governança multiparticipativa (com participação do CGI.br); racionalização da gestão da internet; interoperabilidade tecnológica entre serviços de governo eletrônico; adoção preferencial de padrões abertos e livres; publicidade e disseminação de dados públicos; otimização de infraestrutura e estímulo a centros de dados no País; capacitação para o uso da internet; promoção da cultura e da cidadania; e prestação de serviços públicos integrada e multicanal.
@@ -375,6 +388,12 @@ Aplica-se o **mesmo rol de sanções** do Marco Civil — advertência, multa de
 - [Tomada de Subsídios sobre o Marco Civil da Internet](https://brasilparticipativo.presidencia.gov.br/processes/Tomada-Subsidios-Marco-Civil-da-Internet) (ANPD, via Brasil Participativo) — aberta em 30/6/2026, contribuições até **17/8/2026**, para mapear dúvidas, temas sensíveis e prioridades regulatórias. A tomada de subsídios é o procedimento **simplificado** de coleta de contribuições previsto no [art. 58 do regimento interno da ANPD](/notas/regimento-interno-anpd#art-58), sem as formalidades da [consulta pública](/notas/regimento-interno-anpd#art-62).
 - **Cronograma da ANPD para o Marco Civil** (Etapas I a III, 2026-2027) — ver seção "Implementação e cronograma da ANPD" acima.
 - [Nota Pública do CGI.br sobre os Decretos nºs 12.975/2026 e 12.976/2026](https://cgi.br/esclarecimento/nota-publica-sobre-os-decretos-nos-12-975-2026-e-12-976-2026-regulamentacao-do-marco-civil-da-internet/) (21/5/2026) — manifestação institucional de apoio às novas regras e à atribuição de competências à ANPD, com ressalva de que o STF ainda apreciaria, a partir de 29/5/2026, os embargos de declaração do Tema 987, o que poderia exigir ajustes nos decretos.
+
+### Estudos técnicos da ANPD
+
+Não são normas, e a série **Radar Tecnológico** traz ressalva expressa de que não firma posicionamento institucional. Estão na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência.
+
+- [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (2026) — inclui o levantamento sobre _deepfakes_ pornográficos contra meninas e mulheres e o caso Grok, com a [Recomendação Conjunta ANPD/MPF/Senacon](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/recomendacao_conjunta_anpd_mpf_senacon_caso_grok.pdf) e a [Nota Técnica nº 1/2026/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nota-tecnica-no-1-2026-fis-cgf-anpd.pdf).
 
 ### Normas correlatas
 

@@ -7,7 +7,7 @@ lei: gdpr
 normas_extra: [regulamento-2025-2518]
 ordem: 5
 jurisdicao: União Europeia
-atualizado_em: 2026-08-06
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -197,6 +197,18 @@ O RGPD escreve quatro condições de validade do consentimento que a LGPD não d
 - o consentimento **não é livre** se a execução de um contrato estiver condicionada a consentir num tratamento **não necessário** a esse contrato ([n.º 4](#art-7-p4)). É a proibição do "consentimento agrupado", e é a norma que sustenta boa parte das decisões contra publicidade comportamental.
 
 Para **crianças**, o [art. 8.º](#art-8) exige consentimento (ou autorização) de quem exerce as responsabilidades parentais quando o serviço da sociedade da informação é oferecido diretamente a menores de **16 anos**, permitindo que cada Estado-Membro baixe esse limite até **13**. Compare com o [art. 14 da LGPD](/notas/lgpd#art-14), que fixa o melhor interesse como critério e exige consentimento específico de **um dos pais ou responsável** para dados de crianças (até 12 anos incompletos), e com o [ECA Digital](/notas/eca-digital), que foi muito além dos dois ao desenhar verificação de idade e supervisão parental.
+
+#### Como se comprova a idade sem identificar o usuário
+
+O [art. 8.º](#art-8) fixa o limiar etário, mas não diz como o responsável deve saber que idade tem quem está do outro lado — e é aí que a discussão europeia se concentrou. O [Radar Tecnológico nº 5 da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025), que a nota do [ECA Digital](/notas/eca-digital) detalha, reúne o estado dessa discussão do lado europeu, e três peças interessam a quem lê o RGPD:
+
+- **Declaração 1/2025 do CEPD sobre garantia de idade** — dez princípios para o tratamento de dados nesse contexto, entre eles limitar a coleta ao mínimo necessário, avaliar riscos previamente, aplicar proteção de dados desde a concepção e assegurar licitude, transparência e responsabilização dos provedores. O comité já havia registrado, em documento anterior, que mecanismos de aferição de idade podem, eles próprios, afetar direitos fundamentais.
+- **_EU Age Verification Solution_** — a "mini carteira" lançada em piloto pela Comissão Europeia em julho de 2025, que permite comprovar a maioridade sem partilhar qualquer outro dado pessoal, com emissão e apresentação da prova feitas por **entidades separadas**, para impedir o rastreamento entre serviços. É interoperável com a _EU Digital Identity Wallet_ prevista pelo eIDAS.
+- **A crítica de exclusão** — a European Digital Rights (EDRi) estima que uma carteira de identidade eletrônica poderia deixar de fora **20% dos usuários**, o que faz da acessibilidade um problema de direitos, e não de implementação.
+
+Duas peças dão suporte a esse desenho, e costumam ser confundidas. As **provas de conhecimento zero** (_zero-knowledge proofs_) permitem demonstrar matematicamente o atendimento ao critério etário sem revelar a data de nascimento — o serviço recebe "sim" ou "não". O **modelo duplo-cego** é o arranjo de confiança que rege a circulação da credencial: nem o emissor sabe onde ela será usada, nem o serviço sabe quem está por trás dela. Uma é método criptográfico, o outro é arquitetura — e podem ser combinados.
+
+O ponto de contato com o RGPD é direto: minimização ([art. 5.º, n.º 1, alínea c)](#art-5-p1-c)) e proteção de dados desde a conceção e por defeito ([art. 25.º](#art-25)) são exatamente o que essas arquiteturas tentam operacionalizar. E é útil ler esse conjunto ao lado do [ECA Digital](/notas/eca-digital) brasileiro, que positivou requisitos equivalentes — minimização, vedação de finalidade secundária, vedação de rastreabilidade — num nível de detalhe que o RGPD deixou para o intérprete.
 
 ### Categorias especiais ([art. 9.º](#art-9)) e dados penais ([art. 10.º](#art-10))
 
@@ -677,6 +689,12 @@ O RGPD não tem "decreto regulamentador". O detalhamento vem de três fontes dis
 - **Decisões de adequação da Comissão Europeia** ([art. 45.º](#art-45)) — atos de execução que reconhecem que um país terceiro protege dados de forma "essencialmente equivalente" à europeia, dispensando garantias adicionais na transferência. Há cerca de quinze em vigor; as que mais interessam aqui são a [Decisão de Execução (UE) 2026/179, de 26 de janeiro de 2026](https://eur-lex.europa.eu/eli/dec_impl/2026/179/oj), sobre o **Brasil**, e a [Decisão de Execução (UE) 2023/1795, de 10 de julho de 2023](https://eur-lex.europa.eu/eli/dec_impl/2023/1795/oj), sobre o **Quadro de Privacidade de Dados UE-EUA**.
 - **Cláusulas-tipo de proteção de dados** ([art. 46.º, n.º 2, alínea c)](#art-46-p2-c)) — o formulário contratual padrão para transferir dados sem decisão de adequação, fixado pela [Decisão de Execução (UE) 2021/914](https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj). É o equivalente europeu das cláusulas-padrão da [Resolução CD/ANPD nº 19/2024](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-19-de-23-de-agosto-de-2024-580095396).
 - **Diretrizes, recomendações e melhores práticas do Comité Europeu para a Proteção de Dados** ([art. 70.º](#art-70)) — o CEPD (_European Data Protection Board_, EDPB) não legisla, mas é ele que uniformiza a interpretação, e na prática as autoridades nacionais seguem suas [diretrizes](https://www.edpb.europa.eu/documents_pt). Suas **decisões vinculativas** do [art. 65.º](#art-65), essas sim, obrigam a autoridade nacional no caso concreto.
+
+### Estudos técnicos da ANPD
+
+Não são normas europeias nem brasileiras — são levantamentos da autoridade brasileira, publicados na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência, com ressalva expressa de que a série **Radar Tecnológico** não firma posicionamento institucional. Entram aqui como fonte do que esta nota afirma sobre o estado da técnica.
+
+- [Radar Tecnológico nº 5 — Mecanismos de aferição de idade](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025) — reúne a Declaração 1/2025 do CEPD, a _EU Age Verification Solution_ e a discussão sobre provas de conhecimento zero e modelo duplo-cego. Detalhado na nota do [ECA Digital](/notas/eca-digital).
 
 ### Normas correlatas
 
