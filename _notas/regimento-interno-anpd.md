@@ -39,7 +39,7 @@ Três documentos diferentes, três autores diferentes, três funções diferente
 
 Repare na assimetria: o decreto **organiza**, o regimento **procedimentaliza**, a resolução **regula**. Um decreto de estrutura regimental não pode inovar em direito material de proteção de dados; um regimento interno não cria obrigação para empresa nenhuma; e uma resolução não pode contrariar a lei que a autoriza.
 
-Há ainda um quarto documento, de uso interno: a **portaria** ([art. 51, VI](#art-51-vi)), que dispõe sobre gestão administrativa e funcionamento das unidades. É por isso que o Regimento Interno, que trata justamente do funcionamento da casa, veio por portaria e não por resolução.
+Há ainda um quarto documento, de uso interno: a **portaria** ([art. 51, VI](#art-51-vi)), que dispõe sobre gestão administrativa e funcionamento das unidades. É por isso que o Regimento Interno, que trata do funcionamento da casa, veio por portaria e não por resolução.
 
 ## Quem é quem na ANPD
 
@@ -223,7 +223,7 @@ A diferença em relação ao pedido de vista: **vista** é tempo para o diretor 
 
 ### 6. A ata ([arts. 44](#art-44) a [47](#art-47))
 
-Quem registra é a **SE**, e a ata é assinada pelos diretores presentes ([art. 44](#art-44)). O conteúdo mínimo ([art. 45](#art-45)): dia, hora, local e quem presidiu; presentes e ausentes, com justificativas; identificação dos interessados e participantes; os fatos ocorridos; e a síntese da deliberação, **com indicação dos votos favoráveis e contrários ao voto do relator** ([inciso V](#art-45-v)) — ou seja, a ata mostra as divergências, não só o resultado.
+Quem registra é a **SE**, e a ata é assinada pelos diretores presentes ([art. 44](#art-44)). O conteúdo mínimo ([art. 45](#art-45)): dia, hora, local e quem presidiu; presentes e ausentes, com justificativas; identificação dos interessados e participantes; os fatos ocorridos; e a síntese da deliberação, **com indicação dos votos favoráveis e contrários ao voto do relator** ([inciso V](#art-45-v)) — a ata mostra as divergências, não só o resultado.
 
 A ata é aprovada até a reunião seguinte e divulgada em até **5 dias** da aprovação ([art. 46](#art-46)). Há ainda uma regra de prevalência: havendo divergência, prevalecem sobre o teor da ata, **nesta ordem**, as gravações, os votos escritos e os demais documentos de suporte ([art. 47](#art-47)).
 
@@ -235,7 +235,7 @@ A ata é aprovada até a reunião seguinte e divulgada em até **5 dias** da apr
 | **Maioria absoluta** | Mais da metade do total de membros — três dos cinco. É o quórum para instalar a reunião ([art. 27](#art-27)) |
 | **Maioria simples** | Mais da metade dos votos na deliberação. É o quórum para decidir ([art. 19](#art-19)) |
 | **Voto de qualidade** | Voto adicional do Diretor-Presidente para desempatar ([art. 20](#art-20)) |
-| **Destaque** | Pedido de um diretor para que a matéria seja efetivamente relatada e debatida, em vez de aprovada em bloco ([art. 31](#art-31)) |
+| **Destaque** | Pedido de um diretor para que a matéria seja relatada e debatida, em vez de aprovada em bloco ([art. 31](#art-31)) |
 | **Retirada de pauta** | Anúncio, pelo relator ou por quem esteja com vista, de que a matéria não será apreciada naquela sessão ([art. 31](#art-31)) |
 | **Pedido de vista** | Suspensão da deliberação para que um diretor estude a matéria, por até 30 dias corridos ([art. 34](#art-34)) |
 | **Vista coletiva** | Vista concedida a todos os diretores ao mesmo tempo ([art. 34, § 2º](#art-34-p2)) |

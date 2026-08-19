@@ -116,6 +116,21 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   foi trocado — ele prometia uma revisão humana que nem sempre houve. Não
   reintroduza essa leitura no aviso nem no nome do campo.
 
+## Estilo: diga e siga
+
+O texto do site é direto. Três hábitos de escrita de IA que não entram:
+
+- **Negar antes de afirmar.** "Não é X, é Y", "não é X, e sim Y", "X, mas não
+  Y". Afirme Y. A negação fica quando ela é o conteúdo — delimitar o que a regra
+  não alcança, o que uma base legal não ampara, o que um órgão não pode fazer.
+- **Anunciar antes de dizer.** "Vale registrar", "merece destaque", "note-se",
+  "a conclusão é dura", "o ponto que mais gera confusão". Corte o anúncio e
+  comece pela frase que importa.
+- **Intensificar sem acrescentar.** "exatamente", "justamente", "efetivamente",
+  "simplesmente", "na verdade". Saem quando a frase fica igual sem eles.
+
+A régua final é o número de palavras: dito o mesmo, vence a versão mais curta.
+
 ## Changelog: registro histórico das atualizações
 
 **Toda alteração de conteúdo entra no [`docs/changelog.md`](./docs/changelog.md),
@@ -298,6 +313,8 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
 - [ ] [`docs/changelog.md`](./docs/changelog.md) atualizado, no mesmo commit, se o
       conteúdo do site mudou — e escrito como texto público.
+- [ ] Texto sem as muletas da seção [Estilo](#estilo-diga-e-siga): negação antes
+      da afirmação, anúncio antes da frase, intensificador que não acrescenta.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.
 - [ ] `last_modified` de `bio.md` e `en/bio.md` atualizado (mesma data) se o
