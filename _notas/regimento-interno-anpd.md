@@ -17,36 +17,6 @@ jurisdicao: Brasil
 atualizado_em: 2026-08-02
 ---
 
-## Normas
-
-### Norma principal
-
-- [Portaria nº 1, de 8 de março de 2021](https://www.in.gov.br/en/web/dou/-/portaria-n-1-de-8-de-marco-de-2021-307463618) — do **Conselho Diretor** da ANPD, publicada no DOU de 9/3/2021 (edição 45, seção 1, página 3). Tem só dois artigos: o primeiro aprova o Regimento Interno "na forma do Anexo desta Portaria", o segundo manda a portaria valer da publicação em diante. O que interessa está no Anexo — e é ele, com seus 75 artigos, que o painel "Lei seca" exibe ao lado destes comentários. Foi a **primeira portaria** editada pela ANPD.
-- [Lei nº 13.709, de 14 de agosto de 2018 (LGPD)](/notas/lgpd) — a lei que criou a Agência. Dois dispositivos explicam a existência deste regimento: a estrutura regimental da ANPD cabe a **ato do Presidente da República** ([art. 55-G](/notas/lgpd#art-55-g)), mas o **regimento interno** é do próprio [Conselho Diretor](/notas/lgpd#art-55-g-p2). São documentos diferentes, escritos por autoridades diferentes — ver "Decreto, regimento, resolução: quem escreve o quê", abaixo.
-- [Lei nº 9.784, de 29 de janeiro de 1999](https://www.planalto.gov.br/ccivil_03/leis/l9784.htm) — lei geral do processo administrativo federal, aplicada subsidiariamente a tudo o que a ANPD faz ([art. 49](#art-49)) e ao rito dos recursos ([art. 73](#art-73)).
-- [Decreto-Lei nº 4.657, de 4 de setembro de 1942 (LINDB)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del4657compilado.htm) — base do compromisso que a Agência pode celebrar com um agente de tratamento para encerrar uma situação contenciosa ([art. 5º, XIII](#art-5-xiii)).
-
-### O Regimento é de 2021 — e o mundo dele mudou
-
-O texto ao lado descreve uma ANPD que, no papel, não existe mais com esse desenho. Entre 2021 e 2026 a Agência trocou de natureza jurídica, de nome e de organograma, e nada disso passou pelo Regimento:
-
-- [Lei nº 14.460, de 25 de outubro de 2022](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14460.htm) — transformou a ANPD, que era **órgão da Presidência da República** (como diz o [art. 1º](#art-1) do Regimento), em **autarquia de natureza especial**.
-- [Lei nº 15.352, de 25 de fevereiro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm) — trocou **Autoridade** por **Agência** Nacional de Proteção de Dados, incluiu-a no regime das agências reguladoras da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm), criou carreira própria e acrescentou **Procuradoria** e **Auditoria** à composição legal da Agência ([LGPD, art. 55-C](/notas/lgpd#art-55-c)). A sigla ficou; o "A" mudou de significado.
-- [Decreto nº 12.881, de 18 de março de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm) — nova **estrutura regimental**; revogou o Decreto nº 10.474/2020, citado no preâmbulo da portaria de 2021. Em vigor desde 8 de abril de 2026. É dele que vêm as seis superintendências de hoje.
-- [Resolução CD/ANPD nº 33, de 6 de abril de 2026](https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-33-de-6-de-abril-de-2026-698041971) — aprova os quantitativos e a **distribuição dos cargos e funções comissionados** dentro dessa estrutura. É o documento público que mostra, unidade por unidade, como a ANPD está organizada hoje: o Anexo II é, na prática, o organograma da Agência. Editada com base no [art. 55-C, I, da LGPD](/notas/lgpd#art-55-c-i), no art. 3º, parágrafo único, do Anexo I do Decreto nº 12.881/2026 e nos arts. 4º e 14 da [Lei nº 9.986/2000](https://www.planalto.gov.br/ccivil_03/leis/l9986.htm).
-
-O painel ao lado traz o texto **como publicado no DOU em 9 de março de 2021**. A ANPD mantém o Regimento em sua [central de conteúdo](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/regimento-interno) — é lá que se confere a versão vigente antes de citá-lo em qualquer peça que importe.
-
-Uma convenção destes comentários, para evitar confusão na leitura: **as unidades são chamadas pelo nome e pela sigla de hoje**, ainda que o dispositivo ao lado use o nome de 2021. Onde o Regimento diz "Secretaria-Geral", por exemplo, estes comentários dizem **SE** — e é a SE que hoje faz aquele trabalho. A tabela de correspondência entre os dois vocabulários está em "A estrutura de hoje", logo abaixo.
-
-### Normas correlatas
-
-- [Lei nº 13.709 — Lei Geral de Proteção de Dados Pessoais (LGPD)](/notas/lgpd) — a lei que a ANPD aplica, e onde estão as competências da Agência ([art. 55-J](/notas/lgpd#art-55-j)), as sanções ([art. 52](/notas/lgpd#art-52)) e o processo sancionador ([art. 53](/notas/lgpd#art-53)).
-- [Lei nº 15.211 — Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital) — segunda frente de atuação da Agência; aparece no organograma de 2026 em coordenações próprias de fiscalização e de sanções.
-- [Lei nº 12.965 — Marco Civil da Internet](/notas/mci) — terceira frente, atribuída à ANPD pelos Decretos nºs 12.975/2026 e 12.976/2026.
-- [Lei Complementar nº 95, de 26 de fevereiro de 1998](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp95.htm) — regras de elaboração e redação das leis, que o [art. 66](#art-66) manda aplicar às resoluções da ANPD.
-- [Lei nº 13.460, de 26 de junho de 2017](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm) — direitos do usuário de serviços públicos; base das atribuições da Ouvidoria ([art. 14](#art-14)).
-
 ## Resumo geral
 
 Toda organização precisa de duas coisas: uma lista de quem pode decidir o quê e um combinado sobre **como** as decisões são tomadas. Num órgão público, essas duas coisas viram texto normativo — e, no caso da ANPD, viram este Regimento Interno.
@@ -404,3 +374,33 @@ Para consulta rápida, as siglas usadas nestes comentários:
 - **O processo sancionador.** O Regimento remete essa disciplina a regulamento próprio ([art. 49, parágrafo único](#art-49-pu)), na forma dos [arts. 52](/notas/lgpd#art-52) e [53](/notas/lgpd#art-53) da LGPD. Prazos de defesa, dosimetria de multa e rito de apuração estão nos regulamentos de fiscalização e de dosimetria, não neste texto.
 - **O regime das agências reguladoras.** Desde a Lei nº 15.352/2026 a ANPD está sob a [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm), que tem exigências próprias de processo decisório, agenda regulatória, análise de impacto regulatório, consulta pública e prestação de contas. O Regimento de 2021 é anterior a essa mudança e não faz remissão a ela.
 - **O funcionamento do CNPD**, que tem regimento interno próprio ([art. 9º](#art-9)), e o das unidades administrativas, hoje regidas pela estrutura regimental do Decreto nº 12.881/2026.
+
+## Normas
+
+### Norma principal
+
+- [Portaria nº 1, de 8 de março de 2021](https://www.in.gov.br/en/web/dou/-/portaria-n-1-de-8-de-marco-de-2021-307463618) — do **Conselho Diretor** da ANPD, publicada no DOU de 9/3/2021 (edição 45, seção 1, página 3). Tem só dois artigos: o primeiro aprova o Regimento Interno "na forma do Anexo desta Portaria", o segundo manda a portaria valer da publicação em diante. O que interessa está no Anexo — e é ele, com seus 75 artigos, que o painel "Lei seca" exibe ao lado destes comentários. Foi a **primeira portaria** editada pela ANPD.
+- [Lei nº 13.709, de 14 de agosto de 2018 (LGPD)](/notas/lgpd) — a lei que criou a Agência. Dois dispositivos explicam a existência deste regimento: a estrutura regimental da ANPD cabe a **ato do Presidente da República** ([art. 55-G](/notas/lgpd#art-55-g)), mas o **regimento interno** é do próprio [Conselho Diretor](/notas/lgpd#art-55-g-p2). São documentos diferentes, escritos por autoridades diferentes — ver "Decreto, regimento, resolução: quem escreve o quê", acima.
+- [Lei nº 9.784, de 29 de janeiro de 1999](https://www.planalto.gov.br/ccivil_03/leis/l9784.htm) — lei geral do processo administrativo federal, aplicada subsidiariamente a tudo o que a ANPD faz ([art. 49](#art-49)) e ao rito dos recursos ([art. 73](#art-73)).
+- [Decreto-Lei nº 4.657, de 4 de setembro de 1942 (LINDB)](https://www.planalto.gov.br/ccivil_03/decreto-lei/del4657compilado.htm) — base do compromisso que a Agência pode celebrar com um agente de tratamento para encerrar uma situação contenciosa ([art. 5º, XIII](#art-5-xiii)).
+
+### O Regimento é de 2021 — e o mundo dele mudou
+
+O texto ao lado descreve uma ANPD que, no papel, não existe mais com esse desenho. Entre 2021 e 2026 a Agência trocou de natureza jurídica, de nome e de organograma, e nada disso passou pelo Regimento:
+
+- [Lei nº 14.460, de 25 de outubro de 2022](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14460.htm) — transformou a ANPD, que era **órgão da Presidência da República** (como diz o [art. 1º](#art-1) do Regimento), em **autarquia de natureza especial**.
+- [Lei nº 15.352, de 25 de fevereiro de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm) — trocou **Autoridade** por **Agência** Nacional de Proteção de Dados, incluiu-a no regime das agências reguladoras da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm), criou carreira própria e acrescentou **Procuradoria** e **Auditoria** à composição legal da Agência ([LGPD, art. 55-C](/notas/lgpd#art-55-c)). A sigla ficou; o "A" mudou de significado.
+- [Decreto nº 12.881, de 18 de março de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm) — nova **estrutura regimental**; revogou o Decreto nº 10.474/2020, citado no preâmbulo da portaria de 2021. Em vigor desde 8 de abril de 2026. É dele que vêm as seis superintendências de hoje.
+- [Resolução CD/ANPD nº 33, de 6 de abril de 2026](https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-33-de-6-de-abril-de-2026-698041971) — aprova os quantitativos e a **distribuição dos cargos e funções comissionados** dentro dessa estrutura. É o documento público que mostra, unidade por unidade, como a ANPD está organizada hoje: o Anexo II é, na prática, o organograma da Agência. Editada com base no [art. 55-C, I, da LGPD](/notas/lgpd#art-55-c-i), no art. 3º, parágrafo único, do Anexo I do Decreto nº 12.881/2026 e nos arts. 4º e 14 da [Lei nº 9.986/2000](https://www.planalto.gov.br/ccivil_03/leis/l9986.htm).
+
+O painel ao lado traz o texto **como publicado no DOU em 9 de março de 2021**. A ANPD mantém o Regimento em sua [central de conteúdo](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/regimento-interno) — é lá que se confere a versão vigente antes de citá-lo em qualquer peça que importe.
+
+Uma convenção destes comentários, para evitar confusão na leitura: **as unidades são chamadas pelo nome e pela sigla de hoje**, ainda que o dispositivo ao lado use o nome de 2021. Onde o Regimento diz "Secretaria-Geral", por exemplo, estes comentários dizem **SE** — e é a SE que hoje faz aquele trabalho. A tabela de correspondência entre os dois vocabulários está em "A estrutura de hoje", acima.
+
+### Normas correlatas
+
+- [Lei nº 13.709 — Lei Geral de Proteção de Dados Pessoais (LGPD)](/notas/lgpd) — a lei que a ANPD aplica, e onde estão as competências da Agência ([art. 55-J](/notas/lgpd#art-55-j)), as sanções ([art. 52](/notas/lgpd#art-52)) e o processo sancionador ([art. 53](/notas/lgpd#art-53)).
+- [Lei nº 15.211 — Estatuto Digital da Criança e do Adolescente (ECA Digital)](/notas/eca-digital) — segunda frente de atuação da Agência; aparece no organograma de 2026 em coordenações próprias de fiscalização e de sanções.
+- [Lei nº 12.965 — Marco Civil da Internet](/notas/mci) — terceira frente, atribuída à ANPD pelos Decretos nºs 12.975/2026 e 12.976/2026.
+- [Lei Complementar nº 95, de 26 de fevereiro de 1998](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp95.htm) — regras de elaboração e redação das leis, que o [art. 66](#art-66) manda aplicar às resoluções da ANPD.
+- [Lei nº 13.460, de 26 de junho de 2017](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm) — direitos do usuário de serviços públicos; base das atribuições da Ouvidoria ([art. 14](#art-14)).

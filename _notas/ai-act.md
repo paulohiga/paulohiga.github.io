@@ -10,45 +10,6 @@ jurisdicao: União Europeia
 atualizado_em: 2026-08-02
 ---
 
-## Normas
-
-### Legislação principal
-
-- [Regulamento (UE) 2024/1689, de 13 de junho de 2024](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689) — estabelece regras harmonizadas em matéria de inteligência artificial (Regulamento da Inteligência Artificial, ou **AI Act**). Publicado no Jornal Oficial da União Europeia em 12 de julho de 2024 e **em vigor desde 1º de agosto de 2024**, com aplicação escalonada até 2028 (ver "Cronograma de aplicação", abaixo).
-- [Tratado sobre o Funcionamento da União Europeia (TFUE)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:12012E/TXT), especialmente os arts. 16 (proteção de dados pessoais) e 114 (aproximação de legislações para o mercado interno) — as bases jurídicas do regulamento.
-- [Carta dos Direitos Fundamentais da União Europeia](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:12012P/TXT) — parâmetro material de boa parte das proibições e dos requisitos de alto risco, e objeto direto da avaliação de impacto do [art. 27.º](#art-27).
-
-### Alterações posteriores ao AI Act
-
-- [Regulamento (UE) 2026/1744, de 8 de julho de 2026](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — **Digital Omnibus sobre a IA**. Altera o Regulamento (UE) 2024/1689, o Regulamento de Base da Aviação (UE) 2018/1139 e o Regulamento Máquinas (UE) 2023/1230 quanto à simplificação da execução das regras harmonizadas de IA. Publicado no JOUE de 24 de julho de 2026 e **em vigor desde 27 de julho de 2026**. É a primeira alteração de fundo do AI Act, e está sinalizada ao longo desta nota como **Digital Omnibus**.
-
-> **Sobre o painel "Lei seca".** O EUR-Lex ainda **não publicou a versão consolidada** do AI Act com as alterações do Omnibus. O painel traz, então, **três textos**, selecionáveis no alto:
->
-> 1. **AI Act consolidado (não oficial)** — o que abre por padrão, e o alvo dos links destes comentários. É o Regulamento (UE) 2024/1689 com as 43 alterações do art. 1.º do Omnibus já aplicadas, geradas por script a partir dos dois textos oficiais: nenhuma palavra foi redigitada, e o script para se um dispositivo alvo não for encontrado. **Não é fonte oficial** — serve para ler o regulamento como ele vigora hoje, mas em caso de divergência prevalece o Jornal Oficial.
-> 2. **AI Act (texto original)** — o Regulamento (UE) 2024/1689 como publicado em 12/7/2024, para quem precise da redação anterior de um dispositivo alterado. É para onde aponta, por exemplo, o link do art. 10.º, n.º 5, que a consolidação não tem porque foi revogado.
-> 3. **Digital Omnibus sobre a IA** — o Regulamento (UE) 2026/1744, o ato alterador em si.
->
-> Os três estão ali **na íntegra**, com os considerandos — os 180 do AI Act e os 47 do Omnibus. Considerando não é dispositivo e não recebe âncora, mas num regulamento europeu é neles que está o *porquê* de cada regra, e tanto a Comissão quanto o Tribunal de Justiça os usam para interpretar o articulado.
-
-### Regulamentos e atos aplicáveis
-
-Diferentemente da [LGPD](/notas/lgpd) e do [ECA Digital](/notas/eca-digital), o AI Act não tem "decreto regulamentador": o detalhamento vem por **atos delegados e de execução** da Comissão Europeia, por **normas harmonizadas** europeias e por **códigos de práticas** de adesão voluntária (ver "Quem pode o quê", abaixo).
-
-- [Código de Práticas para a IA de finalidade geral](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) — publicado em julho de 2025; instrumento voluntário pelo qual os prestadores de modelos de finalidade geral podem demonstrar o cumprimento dos [arts. 53.º](#art-53) e [55.º](#art-55).
-- [Modelo de sumário público do conteúdo usado no treino](https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models) — formulário obrigatório previsto no [art. 53.º](#art-53).
-- [Orientações da Comissão sobre práticas de IA proibidas](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act) e sobre a [definição de sistema de IA](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application) — ambas de fevereiro de 2025.
-- [Orientações e Código de Práticas sobre transparência de conteúdos gerados por IA](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) — detalham a marcação e a divulgação exigidas pelo [art. 50.º](#art-50).
-- [Serviço de Apoio ao AI Act (_AI Act Service Desk_)](https://ai-act-service-desk.ec.europa.eu/) — canal oficial de orientação da Comissão, com o cronograma de aplicação atualizado.
-
-### Normas correlatas
-
-- [Regulamento (UE) 2016/679 — RGPD](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679), a que o AI Act expressamente não derroga ([art. 2.º](#art-2)); é a norma de referência da [LGPD](/notas/lgpd).
-- [Regulamento (UE) 2022/2065 — Regulamento dos Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Regulamento dos Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
-- [Regulamento (UE) 2023/2854 — Regulamento dos Dados (_Data Act_)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R2854).
-- [Regulamento (UE) 2023/1230 — Regulamento Máquinas](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R1230) e [Regulamento (UE) 2018/1139 — Regulamento de Base da Aviação](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1139), ambos alterados pelo Digital Omnibus para alinhar prazos e avaliações de conformidade.
-- [Diretiva (UE) 2019/1937](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32019L1937) — proteção de denunciantes, aplicável às denúncias do [art. 87.º](#art-87).
-- No Brasil: [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233) (ver "Comparação com o PL nº 2338/2023", abaixo), a [LGPD](/notas/lgpd), o [ECA Digital](/notas/eca-digital) e o [Marco Civil da Internet](/notas/mci).
-
 ## Resumo geral
 
 O AI Act é a primeira lei geral de inteligência artificial de um grande bloco econômico. Em vez de regular uma tecnologia, ele regula **usos**: o mesmo modelo pode ser irrelevante para a lei num contexto e altamente regulado em outro, conforme a função que exerce e o dano que pode causar. Essa é a chamada **abordagem baseada no risco**, organizada em quatro degraus — risco inaceitável (práticas proibidas), alto risco, risco de transparência e risco mínimo —, aos quais se soma um regime próprio, transversal, para os **modelos de IA de finalidade geral**.
@@ -671,3 +632,42 @@ Questões que o texto vigente não fecha, e que condicionam como o regulamento s
 - **A cláusula de equivalência.** O [art. 2.º, n.º 13](#art-2-p13) autoriza limitar requisitos dos [arts. 9.º a 15.º](#art-9) e [17.º a 25.º](#art-17) quando a legislação setorial já proteger de forma equivalente — mas nada disso opera antes dos atos delegados devidos até 2 de agosto de 2027. Quanto do alto risco embarcado será efetivamente aliviado por essa via é a incógnita mais relevante para os setores do Anexo I.
 - **A IA agêntica.** O Anexo XIV nomeia-a, no código residual AIH 0401, sem definir, classificar ou regular. Não há definição, não há obrigações próprias e não há critério que a distinga dos sistemas construídos sobre modelos de finalidade geral. É a lacuna mais provável da próxima rodada de revisão — e um tema em que o Brasil, se legislar depois, poderá chegar com o problema já desenhado.
 - **A repercussão internacional.** O AI Act é a primeira lei geral de IA de um grande bloco, e o RGPD é precedente de difusão de modelo regulatório europeu. Até aqui os caminhos divergiram: os Estados Unidos regulam por ordens executivas federais e leis estaduais, o Reino Unido optou por abordagem setorial sem lei geral, e o Brasil, apesar da inspiração declarada, ainda não converteu o PL nº 2338/2023 em lei e diverge do modelo europeu nos pontos listados acima.
+
+## Normas
+
+### Legislação principal
+
+- [Regulamento (UE) 2024/1689, de 13 de junho de 2024](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689) — estabelece regras harmonizadas em matéria de inteligência artificial (Regulamento da Inteligência Artificial, ou **AI Act**). Publicado no Jornal Oficial da União Europeia em 12 de julho de 2024 e **em vigor desde 1º de agosto de 2024**, com aplicação escalonada até 2028 (ver "Cronograma de aplicação", acima).
+- [Tratado sobre o Funcionamento da União Europeia (TFUE)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:12012E/TXT), especialmente os arts. 16 (proteção de dados pessoais) e 114 (aproximação de legislações para o mercado interno) — as bases jurídicas do regulamento.
+- [Carta dos Direitos Fundamentais da União Europeia](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:12012P/TXT) — parâmetro material de boa parte das proibições e dos requisitos de alto risco, e objeto direto da avaliação de impacto do [art. 27.º](#art-27).
+
+### Alterações posteriores ao AI Act
+
+- [Regulamento (UE) 2026/1744, de 8 de julho de 2026](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — **Digital Omnibus sobre a IA**. Altera o Regulamento (UE) 2024/1689, o Regulamento de Base da Aviação (UE) 2018/1139 e o Regulamento Máquinas (UE) 2023/1230 quanto à simplificação da execução das regras harmonizadas de IA. Publicado no JOUE de 24 de julho de 2026 e **em vigor desde 27 de julho de 2026**. É a primeira alteração de fundo do AI Act, e está sinalizada ao longo desta nota como **Digital Omnibus**.
+
+> **Sobre o painel "Lei seca".** O EUR-Lex ainda **não publicou a versão consolidada** do AI Act com as alterações do Omnibus. O painel traz, então, **três textos**, selecionáveis no alto:
+>
+> 1. **AI Act consolidado (não oficial)** — o que abre por padrão, e o alvo dos links destes comentários. É o Regulamento (UE) 2024/1689 com as 43 alterações do art. 1.º do Omnibus já aplicadas, geradas por script a partir dos dois textos oficiais: nenhuma palavra foi redigitada, e o script para se um dispositivo alvo não for encontrado. **Não é fonte oficial** — serve para ler o regulamento como ele vigora hoje, mas em caso de divergência prevalece o Jornal Oficial.
+> 2. **AI Act (texto original)** — o Regulamento (UE) 2024/1689 como publicado em 12/7/2024, para quem precise da redação anterior de um dispositivo alterado. É para onde aponta, por exemplo, o link do art. 10.º, n.º 5, que a consolidação não tem porque foi revogado.
+> 3. **Digital Omnibus sobre a IA** — o Regulamento (UE) 2026/1744, o ato alterador em si.
+>
+> Os três estão ali **na íntegra**, com os considerandos — os 180 do AI Act e os 47 do Omnibus. Considerando não é dispositivo e não recebe âncora, mas num regulamento europeu é neles que está o *porquê* de cada regra, e tanto a Comissão quanto o Tribunal de Justiça os usam para interpretar o articulado.
+
+### Regulamentos e atos aplicáveis
+
+Diferentemente da [LGPD](/notas/lgpd) e do [ECA Digital](/notas/eca-digital), o AI Act não tem "decreto regulamentador": o detalhamento vem por **atos delegados e de execução** da Comissão Europeia, por **normas harmonizadas** europeias e por **códigos de práticas** de adesão voluntária (ver "Quem pode o quê", acima).
+
+- [Código de Práticas para a IA de finalidade geral](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) — publicado em julho de 2025; instrumento voluntário pelo qual os prestadores de modelos de finalidade geral podem demonstrar o cumprimento dos [arts. 53.º](#art-53) e [55.º](#art-55).
+- [Modelo de sumário público do conteúdo usado no treino](https://digital-strategy.ec.europa.eu/en/library/explanatory-notice-and-template-public-summary-training-content-general-purpose-ai-models) — formulário obrigatório previsto no [art. 53.º](#art-53).
+- [Orientações da Comissão sobre práticas de IA proibidas](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act) e sobre a [definição de sistema de IA](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application) — ambas de fevereiro de 2025.
+- [Orientações e Código de Práticas sobre transparência de conteúdos gerados por IA](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) — detalham a marcação e a divulgação exigidas pelo [art. 50.º](#art-50).
+- [Serviço de Apoio ao AI Act (_AI Act Service Desk_)](https://ai-act-service-desk.ec.europa.eu/) — canal oficial de orientação da Comissão, com o cronograma de aplicação atualizado.
+
+### Normas correlatas
+
+- [Regulamento (UE) 2016/679 — RGPD](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679), a que o AI Act expressamente não derroga ([art. 2.º](#art-2)); é a norma de referência da [LGPD](/notas/lgpd).
+- [Regulamento (UE) 2022/2065 — Regulamento dos Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Regulamento dos Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
+- [Regulamento (UE) 2023/2854 — Regulamento dos Dados (_Data Act_)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R2854).
+- [Regulamento (UE) 2023/1230 — Regulamento Máquinas](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R1230) e [Regulamento (UE) 2018/1139 — Regulamento de Base da Aviação](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1139), ambos alterados pelo Digital Omnibus para alinhar prazos e avaliações de conformidade.
+- [Diretiva (UE) 2019/1937](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32019L1937) — proteção de denunciantes, aplicável às denúncias do [art. 87.º](#art-87).
+- No Brasil: [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233) (ver "Comparação com o PL nº 2338/2023", acima), a [LGPD](/notas/lgpd), o [ECA Digital](/notas/eca-digital) e o [Marco Civil da Internet](/notas/mci).
