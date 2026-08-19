@@ -7,7 +7,7 @@ lei: eca-digital
 normas_extra: [decreto-12880]
 ordem: 3
 jurisdicao: Brasil
-atualizado_em: 2026-08-06
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -70,7 +70,7 @@ Considera-se **acesso provável** ([art. 1º, parágrafo único](#art-1-pu)):
 - [II](#art-1-pu-ii) — considerável **facilidade ao acesso e utilização** do produto ou serviço de tecnologia da informação por crianças e adolescentes; e
 - [III](#art-1-pu-iii) — significativo **grau de risco** à privacidade, à segurança ou ao desenvolvimento biopsicossocial de crianças e de adolescentes, especialmente no caso de produtos ou serviços que tenham por finalidade permitir a interação social e o compartilhamento de informações em larga escala entre usuários em ambiente digital.
 
-Pelo caput do [art. 1º](#art-1), a Lei alcança tanto o produto ou serviço direcionado a crianças e adolescentes quanto o de acesso provável por eles. O alcance concreto desse conceito é justamente o objeto do guia orientativo sobre escopo e obrigações gerais, submetido pela ANPD a tomada de subsídios em 2026: na prática, é ele que dirá se um serviço corporativo, uma ferramenta educacional ou uma aplicação de nicho entram ou não no regime.
+Pelo caput do [art. 1º](#art-1), a Lei alcança tanto o produto ou serviço direcionado a crianças e adolescentes quanto o de acesso provável por eles. O alcance concreto desse conceito é o objeto do guia orientativo sobre escopo e obrigações gerais, submetido pela ANPD a tomada de subsídios em 2026: na prática, é ele que dirá se um serviço corporativo, uma ferramenta educacional ou uma aplicação de nicho entram ou não no regime.
 
 ## Não aplicação e dispensas
 
@@ -265,11 +265,11 @@ Aqui está a diferença mais marcante em relação à LGPD, em que todas as san�
 
 A opção faz sentido pelo efeito das medidas: suspender ou proibir a atividade implica, quando não cumprida diretamente pelo infrator, **ordem de bloqueio** dirigida a prestadoras de conexão, gestoras de pontos de troca de tráfego, provedores de DNS e demais agentes que viabilizam a conexão ([art. 35, § 6º](#art-35-p6)) — medida que atinge a comunicação de terceiros e cuja gravidade a lei quis submeter a **reserva de jurisdição**, isto é, à decisão exclusiva de um juiz. Na execução, a ordem passa pela Anatel (conexão) e pelo CGI.br (domínios ".br"), nos termos do Decreto nº 12.622/2025.
 
-Também depende de decisão judicial a **autorização do art. 149 do ECA** para conteúdo monetizado ou impulsionado que explore de forma habitual a imagem ou a rotina de criança ou adolescente (Decreto nº 12.880/2026, [art. 34](#dec12880-art-34)) — nenhum ato administrativo dispensa esse alvará. Note-se que o decreto encarrega o MJSP de atuar **em articulação** com o CNJ e o CNMP para operacionalizar o dispositivo ([dec. art. 34, § 3º](#dec12880-art-34-p3)): um decreto do Executivo não comanda o Judiciário nem o Ministério Público, cujos atos normativos próprios cabem aos respectivos conselhos (CF, arts. 103-B, § 4º, e 130-A, § 2º).
+Também depende de decisão judicial a **autorização do art. 149 do ECA** para conteúdo monetizado ou impulsionado que explore de forma habitual a imagem ou a rotina de criança ou adolescente (Decreto nº 12.880/2026, [art. 34](#dec12880-art-34)) — nenhum ato administrativo dispensa esse alvará. O decreto encarrega o MJSP de atuar **em articulação** com o CNJ e o CNMP para operacionalizar o dispositivo ([dec. art. 34, § 3º](#dec12880-art-34-p3)): um decreto do Executivo não comanda o Judiciário nem o Ministério Público, cujos atos normativos próprios cabem aos respectivos conselhos (CF, arts. 103-B, § 4º, e 130-A, § 2º).
 
 ### Os outros órgãos
 
-Ao contrário da LGPD, aqui a ANPD está longe de concentrar tudo. A repartição, fixada sobretudo pelo Decreto nº 12.880/2026, é:
+Ao contrário da LGPD, aqui a ANPD divide a competência com vários órgãos. A repartição, fixada sobretudo pelo Decreto nº 12.880/2026, é:
 
 - **MJSP** — classificação indicativa ([dec. arts. 12](#dec12880-art-12) e [13](#dec12880-art-13)), estrutura e funcionamento do Centro Nacional de Triagem de Notificações e normas sobre os alvarás de atividade artística;
 - **Polícia Federal** — recebimento centralizado, triagem e distribuição dos relatórios de violações graves ([dec. arts. 36](#dec12880-art-36) e [37](#dec12880-art-37));
@@ -394,13 +394,89 @@ Havendo conflito entre as duas camadas, prevalece a alternativa **mais protetiva
 
 O ponto de comparação mais próximo são as _App Store Accountability Acts_ norte-americanas — [Utah](https://le.utah.gov/~2025/bills/static/SB0142.html) (SB 142), [Texas](https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02420F.HTM) (SB 2420) e [Louisiana](https://www.legis.la.gov/legis/BillInfo.aspx?s=25RS&b=HB570) (HB 570). As três distribuem obrigações entre loja e desenvolvedor, mas em lógica inversa quanto à responsabilidade: preveem **porto seguro** (_safe harbor_) para o desenvolvedor que atue de boa-fé confiando nos dados de idade e de consentimento recebidos da loja.
 
-A lei texana rendeu, de quebra, o litígio mais instrutivo sobre o tema: sua vigência, prevista para 1º de janeiro de 2026, foi barrada por liminar federal em dezembro de 2025, por alegada violação à Primeira Emenda; a lei só passou a valer em **4 de junho de 2026**, quando o [Quinto Circuito suspendeu a liminar](https://www.pearlcohen.com/fifth-circuit-stays-injunctions-against-texas-app-store-accountability-act/) enquanto julga o recurso, e em 6 de julho de 2026 a Suprema Corte **negou os pedidos de urgência** para cassar essa suspensão. A lei segue em vigor com o mérito pendente. O contraste com o Brasil é de desenho constitucional, não de mérito: lá a discussão é se exigir verificação de idade restringe a liberdade de expressão de adultos; aqui, o art. 227 da Constituição dá à proteção da criança prioridade absoluta expressa, e o debate se deslocou para *como* verificar sem criar vigilância — a preocupação que o [art. 34, § 1º](#art-34-p1), transformou em vedação escrita.
+A lei texana ainda rendeu litígio: sua vigência, prevista para 1º de janeiro de 2026, foi barrada por liminar federal em dezembro de 2025, por alegada violação à Primeira Emenda; a lei só passou a valer em **4 de junho de 2026**, quando o [Quinto Circuito suspendeu a liminar](https://www.pearlcohen.com/fifth-circuit-stays-injunctions-against-texas-app-store-accountability-act/) enquanto julga o recurso, e em 6 de julho de 2026 a Suprema Corte **negou os pedidos de urgência** para cassar essa suspensão. A lei segue em vigor com o mérito pendente. O contraste com o Brasil é de desenho constitucional, não de mérito: lá a discussão é se exigir verificação de idade restringe a liberdade de expressão de adultos; aqui, o art. 227 da Constituição dá à proteção da criança prioridade absoluta expressa, e o debate se deslocou para *como* verificar sem criar vigilância — a preocupação que o [art. 34, § 1º](#art-34-p1), transformou em vedação escrita.
 
 A [Digital Age Assurance Act](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1043) da Califórnia (AB 1043) concentra o dever de emissão do sinal etário nos provedores de sistema operacional.
 
 Já o **Reino Unido** (dever de _highly effective age assurance_ do serviço regulado, sob o [Online Safety Act 2023](https://www.legislation.gov.uk/ukpga/2023/50/section/82)) e a **Austrália** ([Social Media Minimum Age](https://www.legislation.gov.au/C2024A00127/asmade), Parte 4A do [Online Safety Act 2021](https://www.legislation.gov.au/C2021A00076/latest/text), com dever de _reasonable steps_ da plataforma desde dezembro de 2025) alocam a obrigação **à camada do serviço**, sem dever equivalente para lojas e sistemas operacionais.
 
 A combinação brasileira — dever em ambas as camadas, vedação expressa de exoneração pelo sinal recebido e solidariedade — não encontra correspondência direta nesses regimes.
+
+### O mapa técnico da ANPD: o Radar Tecnológico nº 5
+
+A Lei e o Decreto dizem **o que** a aferição de idade tem de garantir, e deixam as tecnologias de fora. Elas estão no [Radar Tecnológico nº 5 — Mecanismos de aferição de idade](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (ANPD, outubro de 2025), publicado meses antes do Decreto. O documento é **não normativo**: a série se apresenta como abordagem didática, "sem a intenção de esgotar as temáticas ou firmar posicionamentos institucionais", e o capítulo sobre proteção de dados avisa que não é exaustivo. Serve como mapa do terreno; as decisões da Agência estão nos atos listados em "Normas", abaixo.
+
+#### Aferição é o guarda-chuva; verificação, estimativa e inferência são os métodos
+
+O primeiro serviço do Radar é terminológico: a Lei usa "aferição" e "verificação" sem defini-las, e a literatura internacional usa quatro ou cinco palavras para coisas parecidas. O documento adota **aferição de idade** como termo guarda-chuva — equivalente ao _age assurance_ da [ISO/IEC 27566-1](https://www.iso.org/standard/88143.html), que o Radar ainda citava como proposta em fase final de aprovação (FDIS) e que veio a ser **publicada em dezembro de 2025**, já depois dele — e organiza sob ele três métodos:
+
+- **Verificação** — determina a idade com alto grau de acurácia, por prova documental ou por consulta a base oficial. Subdivide-se em verificação por **documento** (envio de imagem ou vídeo, leitura por OCR, comparação da selfie com a foto do documento); por **cartão de crédito**; por **ato de terceiro** (consentimento parental, conta familiar, reconhecimento social por usuários já verificados); e como **serviço** (_verification as a service_ — VaaS), em que um terceiro confiável confronta os dados com bases oficiais e devolve um atestado, eventualmente na forma de _token_.
+- **Estimativa** — calcula a idade *provável*, sem documento. Por **biometria** (face, voz), por **análise de comportamento** (histórico de navegação, cadência de digitação, tempo de resposta) ou por **teste de capacidade** (perguntas-desafio que situam o usuário numa faixa etária).
+- **Inferência** — conclusão indireta a partir de informações já verificadas ou de sinais contextuais, sem pedir documento nem coletar biometria.
+
+O segundo serviço decide a leitura do [art. 9º](#art-9): **a autodeclaração vale como característica que acompanha outro método, jamais como método isolado**. O Radar segue nisso o Ofcom e o ICO britânicos, e a própria fiscalização brasileira, no caso descrito adiante. A vedação escrita no [art. 9º, § 1º](#art-9-p1), da Lei ratificou o estado da técnica.
+
+#### Como o mecanismo funciona por dentro
+
+Qualquer que seja o método, o Radar descreve o funcionamento como uma sequência de cinco etapas — útil porque é nela que se localizam os pontos de risco que os requisitos do [art. 24 do Decreto](#dec12880-art-24) tentam endereçar:
+
+1. **Coleta** — fotografia, vídeo, áudio, documento oficial ou sinais indiretos.
+2. **Pré-processamento** — leitura por OCR, normalização de imagem ou áudio, extração das características relevantes.
+3. **Processamento principal** — comparação com base oficial, estimativa algorítmica ou classificação em faixa ("menor de 13", "18+"). É aqui que os desenhos mais recentes deixam de revelar identidade e passam a gerar apenas uma credencial de atributo etário.
+4. **Controles de integridade** — prova de vivacidade (_liveness_), detecção de apresentações falsas como fotos estáticas e _deepfakes_, limitação de tentativas, revisão humana quando necessária.
+5. **Emissão da evidência** — a prova final de que o critério etário foi cumprido, idealmente reduzida ao atributo essencial, com prazo de validade e proteção criptográfica.
+
+#### Cinco gerações, da autodeclaração ao teste em ecossistema
+
+O documento organiza a evolução das soluções em cinco gerações. A classificação é do próprio Radar, que ressalva a sobreposição entre elas: as gerações convivem, e a sequência serve para ver por que o desenho brasileiro chegou onde chegou:
+
+| Geração | Período | O que é | Limite reconhecido |
+| --- | --- | --- | --- |
+| 1ª — **autodeclaração** | 2000–2010 | Data de nascimento digitada, caixa "tenho mais de 18 anos", às vezes reforçada por SMS ou e-mail validado | Baixa intrusão e baixa confiabilidade; data de nascimento é dado facilmente falsificável, e estudos regulatórios registram altas taxas de falsificação etária por crianças (_lying up_) |
+| 2ª — **documento e biometria** | 2010–2018 | Captura de documento oficial, OCR, comparação facial com a foto do documento, prova de vivacidade | Exige infraestrutura segura para grandes volumes de dados; exclui quem não tem documento |
+| 3ª — **estimativa e inferência** | 2018–2022 | Redes neurais estimam idade a partir de face, voz, escrita ou padrões de interação, com saída numérica ou por faixa | Acurácia varia com tom de pele, sexo e idade, e cai perto do limiar (18 anos); a estimativa comportamental coleta muito mais do que idade |
+| 4ª — **tokens e provas criptográficas** | 2022–2025 | Credenciais mínimas que atestam só o atributo ("18+"), sob modelo duplo-cego ou provas de conhecimento zero | Depende de carteiras digitais e emissores confiáveis amplamente distribuídos |
+| 5ª — **testes e integração no ecossistema** | 2025 em diante | APIs nativas de sistema operacional e navegador, credenciais interoperáveis, ambientes de teste (_testbeds_) comparando soluções sob os mesmos critérios | Padronização global complexa; resultados de teste nem sempre transferíveis entre contextos culturais e jurídicos |
+
+Três peças da quarta geração operam em planos diferentes:
+
+- O **_token_ de idade** é a credencial: um atestado assinado por entidade de confiança que carrega apenas "maior de 18" ou "entre 16 e 18", sem nome, CPF ou data de nascimento. Emitido após uma validação inicial robusta, guardado pelo usuário (carteira digital ou armazenamento local) e apresentado ao serviço, que o valida pela chave pública do emissor.
+- O **modelo duplo-cego** (_double-blind_) é o protocolo que rege a circulação desse _token_: nem o emissor sabe em que serviço a credencial será apresentada, nem o serviço sabe quem está por trás dela. É essa separação que impede o rastreamento cruzado.
+- As **provas de conhecimento zero** (_zero-knowledge proofs_) são a técnica criptográfica que permite demonstrar matematicamente o atendimento ao critério etário sem revelar o dado subjacente — a plataforma recebe "sim" ou "não", nunca a data de nascimento. Podem ser combinadas com o duplo-cego: uma é método criptográfico, o outro é arranjo de confiança.
+
+É esse conjunto — credencial mínima, não vinculação, não rastreabilidade — que dá conteúdo técnico aos incisos VI e VIII do [art. 24 do Decreto](#dec12880-art-24) e ao "sinal de idade" do [art. 12, III, da Lei](#art-12-iii). O Radar registra ainda dois desenvolvimentos concretos nessa linha: a **_EU Age Verification Solution_** ("mini carteira"), lançada em piloto pela Comissão Europeia em julho de 2025 e destinada a interoperar com a _EU Digital Identity Wallet_, e a possibilidade de uso do **gov.br** como emissor de atributo derivado no Brasil — o que corresponde, no Decreto, à solução tecnológica pública facultada ao MGI ([arts. 20](#dec12880-art-20) e [28](#dec12880-art-28)).
+
+#### O que cada método custa em dados pessoais
+
+**Verificar idade exige tratar dados pessoais**, às vezes sensíveis. Nenhum método sai ileso:
+
+| Método | Risco que o Radar destaca |
+| --- | --- |
+| Autodeclaração | Expõe pouco dado, mas não oferece garantia efetiva e é trivialmente burlável |
+| Documento oficial | Alta acurácia, mas exige infraestrutura robusta para grandes volumes; pode revelar mais do que a idade e excluir quem não tem documento |
+| Cartão de crédito | Coleta dado financeiro, permite perfilamento, tem baixa fidelidade (a criança usa o cartão do adulto) e acessibilidade restrita |
+| Identidade digital nacional (gov.br, eID) | Reduz exposição ao compartilhar só o atributo derivado, mas concentra identidade em poucos servidores e, se o serviço pedir mais do que precisa, viabiliza rastreamento de alta confiabilidade. Estimativa citada da EDRi: uma carteira eID poderia excluir 20% dos usuários |
+| Consentimento parental e reconhecimento social | Depende de verificar antes a idade do responsável e o vínculo familiar; a garantia dada por terceiros não é verificável; e a pesquisa citada mostra pais criando perfis de filhos contra as próprias regras das plataformas |
+| Verificação como serviço (VaaS) | Se o provedor de serviço souber a identidade, o verificador souber qual serviço foi acessado e os dois se conhecerem, as três informações somadas viabilizam vigilância e perfilamento |
+| Estimativa biométrica | Coleta de biometria em massa levanta proporcionalidade; a acurácia cai no limiar dos 18 anos; e o usuário pode exibir a foto de outra pessoa |
+| Estimativa comportamental | Precisa de muito mais dado do que idade e, agregado, esse dado pode reidentificar e perfilar |
+| Teste de capacidade | Quase não coleta dado pessoal, mas é impreciso e enviesado — capacidade cognitiva varia, e a exclusão é risco real |
+
+**Não existe método infalível que ao mesmo tempo proteja os direitos fundamentais de adultos e crianças**, e a acurácia anda junto com a intrusão. Outro efeito colateral: verificação que revela identidade permite associar a pessoa ao conteúdo acessado, o que ameaça quem depende de anonimato por segurança física ou profissional, atinge grupos marginalizados e vítimas de violência, e inibe atividade legítima. É a preocupação que o [art. 34, § 1º](#art-34-p1) transformou em vedação escrita.
+
+#### Os princípios em que os reguladores convergem
+
+O Radar reuniu os princípios de autoridades e organizações de várias jurisdições — CNIL (França), Comissão Europeia, CEPD/EDPB, ARCOM, AEPD (Espanha), _eSafety Commissioner_ (Austrália), Ofcom (Reino Unido), o _Global Age Assurance Standards Summit_ e a 5Rights Foundation, cujos princípios embasaram a norma [IEEE 2089.1-2024](https://standards.ieee.org/ieee/2089.1/10933/) — e identificou convergência em oito pontos: privacidade e proteção de dados **desde a concepção e por padrão**; **proporcionalidade** ao risco do serviço; **minimização e limitação da finalidade**; **transparência e responsabilização**; **gestão de riscos e segurança**; **inclusão e acessibilidade**; **direitos humanos, não discriminação e equidade**; e **interoperabilidade e robustez técnica**.
+
+Comparado a esse rol, o [art. 24 do Decreto nº 12.880/2026](#dec12880-art-24) positiva, quase item a item, um consenso regulatório internacional já formado quando a norma brasileira foi escrita — com um acréscimo que os documentos estrangeiros tratam de passagem, a **vedação à rastreabilidade** do inciso VIII.
+
+Dois marcos estrangeiros de 2025 situam o desenho brasileiro. O primeiro é o ensaio australiano [_Age Assurance Technology Trial_](https://ageassurance.com.au/report/), que testou 48 fornecedores em ambiente controlado e concluiu pela viabilidade técnica da aferição de idade — conclusão **contestada publicamente** pela Electronic Frontiers Australia, que participou do conselho consultivo do estudo e classificou como _privacy washing_ a avaliação de conformidade baseada apenas na leitura de políticas de privacidade. O segundo é o guia regulatório australiano sobre idade mínima em redes sociais, que introduziu a **validação sucessiva** (uso combinado e sequencial de métodos, para reduzir falhas e vieses) e **proibiu exigir exclusivamente documento estatal ou credencial de identidade digital nacional**, obrigando a oferta de alternativas proporcionais. Nesse ponto o Brasil ficou aquém: nem a Lei nem o Decreto vedam que o fornecedor aceite só o documento oficial.
+
+#### O caso TikTok: o que a fiscalização já disse sobre autodeclaração
+
+O Radar registra o único processo de fiscalização brasileiro publicamente documentado sobre aferição de idade, e ele antecede o ECA Digital. Em março de 2021 a ANPD abriu ação de fiscalização sobre a coleta e o tratamento de dados pela plataforma TikTok, a partir de questionamentos sobre o "feed sem cadastro" — que permitia navegar sem criar conta — e sobre o compartilhamento previsto na política de privacidade. A [Nota Técnica nº 6/2023/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/tiktok-nota_tecnica_6_versao_publica_ret-1.pdf) concluiu que o mecanismo de verificação de idade era frágil e que o **_age gate_ por autodeclaração, usado isoladamente, não é suficiente** para impedir o acesso de crianças e adolescentes.
+
+O desdobramento veio na [Nota Técnica nº 50/2024/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nt-50-pub.pdf): a Agência entendeu haver indícios suficientes de infração à LGPD para instaurar processo administrativo sancionador, determinou a **suspensão integral do "feed sem cadastro"** enquanto não houvesse mecanismos adequados de verificação de idade e exigiu **plano de conformidade** — objeto, prazos, ações de reversão, critérios de acompanhamento e trajetória de alcance dos resultados, na forma do [art. 36 do Regulamento de Fiscalização](/notas/regimento-interno-anpd#res1-art-36) (Resolução CD/ANPD nº 1/2021; o artigo de mesmo número da [LGPD](/notas/lgpd#art-36) trata de transferência internacional). É o precedente mais próximo do que hoje é dever expresso: a autoridade já tratava a autodeclaração isolada como insuficiente **antes** de a Lei nº 15.211/2025 vedá-la.
 
 ## Supervisão parental ([arts. 16 a 18](#art-16))
 
@@ -419,7 +495,7 @@ Devem garantir a **inviolabilidade** das imagens, sons e informações captadas,
 
 - **Vedação das caixas de recompensa** em jogos direcionados a crianças e adolescentes ou de acesso provável, conforme a classificação indicativa. O Decreto nº 12.880/2026 ([art. 23](#dec12880-art-23)) admite duas saídas: oferecer versões sem _loot boxes_ ou restringir totalmente a funcionalidade por padrão — casos em que a verificação de idade é dispensada; caso contrário, verificação obrigatória.
 - Jogos com **interação entre usuários** devem observar integralmente as salvaguardas do art. 16 da Lei nº 14.852/2024 (moderação, proteção contra contatos prejudiciais, atuação parental) e limitar, por padrão, as funcionalidades de interação, assegurando o consentimento dos responsáveis ([art. 21, parágrafo único](#art-21-pu)).
-- **Competência nova**: o [art. 23, § 2º, do Decreto](#dec12880-art-23-p2) atribui à **ANPD** a fiscalização dos arts. 16 e 17 da Lei nº 14.852/2024 — ou seja, a Agência passa a fiscalizar dispositivos do marco legal dos jogos eletrônicos, e não apenas do ECA Digital.
+- **Competência nova**: o [art. 23, § 2º, do Decreto](#dec12880-art-23-p2) atribui à **ANPD** a fiscalização dos arts. 16 e 17 da Lei nº 14.852/2024 — a Agência passa a fiscalizar dispositivos do marco legal dos jogos eletrônicos, além do ECA Digital.
 
 ## Publicidade em meio digital ([arts. 22](#art-22) e [23](#art-23); Decreto nº 12.880/2026, [arts. 31 a 35](#dec12880-art-31))
 
@@ -454,7 +530,7 @@ O ECA Digital não proíbe o acesso de adolescentes a redes sociais — exige **
 
 Duas observações que a tabela não comporta. A lei francesa **saiu do parlamento sem o mecanismo de verificação de idade**: os dispositivos que o detalhavam foram suprimidos na votação final, de modo que a execução depende da regulação europeia já existente — contraste instrutivo com o Brasil, que optou por especificar o mecanismo em lei e em decreto. E a União Europeia trabalha com um corte que não se confunde com idade mínima de acesso: o [art. 8.º do RGPD](/notas/gdpr#art-8) fixa a idade a partir da qual a própria criança pode consentir com o tratamento de seus dados, e não a idade para ter conta.
 
-**O que a experiência australiana já mostra.** Por ser o regime mais antigo em vigor, a Austrália é hoje a única fonte de dados sobre o que uma proibição etária produz na prática — e o resultado é ambíguo, o que interessa diretamente a quem avalia a escolha brasileira. De um lado, as plataformas removeram milhões de contas de menores de 16 nos primeiros meses. De outro, o regulador abriu investigação contra cinco grandes plataformas em março de 2026 por suspeita de descumprimento, um estudo publicado no _BMJ_ apontou que mais de 85% dos adolescentes pesquisados continuavam usando redes sociais três meses depois da proibição, e o governo anunciou, em junho de 2026, o reforço dos poderes do regulador e a duplicação do teto das multas. A lição que se extrai não é que proibir não funciona, e sim que **o gargalo de qualquer desses modelos — proibição ou vinculação — é o mesmo: a aferição de idade**. É exatamente o ponto em que o Brasil concentrou lei, decreto e a primeira etapa de fiscalização da ANPD.
+**O que a experiência australiana já mostra.** Por ser o regime mais antigo em vigor, a Austrália é hoje a única fonte de dados sobre o que uma proibição etária produz na prática — e o resultado é ambíguo, o que interessa diretamente a quem avalia a escolha brasileira. De um lado, as plataformas removeram milhões de contas de menores de 16 nos primeiros meses. De outro, o regulador abriu investigação contra cinco grandes plataformas em março de 2026 por suspeita de descumprimento, um estudo publicado no _BMJ_ apontou que mais de 85% dos adolescentes pesquisados continuavam usando redes sociais três meses depois da proibição, e o governo anunciou, em junho de 2026, o reforço dos poderes do regulador e a duplicação do teto das multas. A lição que se extrai é que **o gargalo de qualquer desses modelos — proibição ou vinculação — é o mesmo: a aferição de idade**. É o ponto em que o Brasil concentrou lei, decreto e a primeira etapa de fiscalização da ANPD.
 
 ## Prevenção e combate a violações graves ([art. 27](#art-27); Decreto nº 12.880/2026, [arts. 36 a 40](#dec12880-art-36))
 
@@ -467,6 +543,20 @@ Fornecedores disponíveis no território nacional devem **remover e comunicar** 
 - Hipóteses de comunicação obrigatória (art. 39): exploração, abuso ou aliciamento sexual; sequestro e cárcere privado; e aliciamento, recrutamento ou cooptação para práticas com risco crível, iminente ou em andamento de lesão grave ou morte, incluído o tráfico e atos preparatórios de **violência extrema preordenada contra comunidade escolar ou grupos vulnerabilizados**.
 - Após remoção imediata e confirmação de recebimento, o material deve ser excluído dos servidores, preservados demais dados da conta, informações do usuário e metadados (art. 39, §§ 1º e 2º). O mesmo canal pode ser usado, facultativamente, para outras situações de risco crível à integridade ou à vida (§ 3º).
 - **Sanção por falha reincidente** (art. 40): o descumprimento sujeita às penalidades do [art. 35](#art-35) quando houver falha **reincidente** — negligência ou insuficiência dos mecanismos de resposta —, não se aplicando a falhas isoladas ou residuais inerentes ao estado da técnica.
+
+### _Deepfakes_ sexuais: o levantamento do Radar Tecnológico nº 6
+
+O [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (ANPD, 2026) dedica um capítulo ao uso dessas mídias contra meninas e mulheres, e o retrato brasileiro que ele reúne interessa diretamente a este artigo, porque a escola é o principal local de incidência. Como os demais volumes da série, não firma posicionamento institucional.
+
+Com base em levantamento da SaferNet Brasil, o Radar registra, **entre 2023 e 2025, ao menos 16 casos documentados em instituições de ensino de 10 unidades federativas, envolvendo 72 vítimas e 57 agressores** — imagens de nudez ou de conteúdo sexual em que rostos reais, quase sempre extraídos de redes sociais, são sobrepostos a corpos nus por ferramentas de IA generativa de acesso público. Os episódios descritos envolvem estudantes produzindo material sobre colegas e professoras, inseridos em dinâmicas de _bullying_ e humilhação pública, com circulação em redes sociais, aplicativos de mensagem e fóruns.
+
+O documento também reconstrói o **caso Grok**, que é o precedente mais recente de atuação da ANPD sobre conteúdo sintético envolvendo crianças e adolescentes:
+
+- **14 de janeiro de 2026** — representação apresentada à ANPD contra o sistema de inteligência artificial Grok, integrado à plataforma X, por permitir a edição automatizada de imagens de terceiros sem verificação de consentimento ou finalidade legítima.
+- **20 de janeiro de 2026** — ANPD, Ministério Público Federal e Senacon expedem [Recomendação Conjunta](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/recomendacao_conjunta_anpd_mpf_senacon_caso_grok.pdf) à empresa responsável pela plataforma, fundamentada na Constituição, no ECA, na [LGPD](/notas/lgpd), no [Marco Civil](/notas/mci), no Código de Defesa do Consumidor e neste ECA Digital. O documento sustenta que, ao oferecer e estruturar a ferramenta, a empresa **não atua como mero intermediário**, e cobra: bloqueio da geração de conteúdo sexualizado sem consentimento, remoção do que já circulava, aplicação das próprias políticas internas, canais acessíveis de denúncia e elaboração de relatório de impacto.
+- **11 de fevereiro de 2026** — consideradas insuficientes as providências informadas, a ANPD expede **medida preventiva** (arts. [32, III](/notas/regimento-interno-anpd#res1-art-32-iii) e [35](/notas/regimento-interno-anpd#res1-art-35) do Regulamento de Fiscalização) para impedir que a ferramenta gere conteúdos que representem crianças e adolescentes, ou pessoas identificadas e identificáveis, em contextos sexualizados sem autorização. O caso está documentado na [Nota Técnica nº 1/2026/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nota-tecnica-no-1-2026-fis-cgf-anpd.pdf).
+
+Duas consequências. O [art. 11 do Decreto nº 12.880/2026](#dec12880-art-11) — transparência, prevenção de manipulação, avaliação de risco algorítmico e salvaguardas — somado à equiparação do [art. 16, § 4º](#dec12880-art-16-p4), que trata como conteúdo pornográfico a interação com sistemas que produzam material sexualmente explícito de forma automatizada, deixou de ser hipótese teórica antes mesmo de a Agência regulamentá-lo. E **o Brasil não tem tipo penal específico para _deepfake_**: a conduta é enquadrada no art. 218-C do Código Penal e, quando a vítima é mulher, no art. 147-B, cuja pena foi agravada pela Lei nº 15.123/2025 quando a violência psicológica é praticada com uso de inteligência artificial. O dever de remover e comunicar deste artigo é resposta **civil e administrativa**, e corre em paralelo à persecução penal.
 
 ## Reporte de violações e retirada de conteúdo ([arts. 28 a 30](#art-28); Decreto nº 12.880/2026, [arts. 41 a 46](#dec12880-art-41))
 
@@ -540,7 +630,7 @@ Como a ANPD aplica hoje as três normas comentadas nestas notas, vale ver de que
 | Quem aplica | ANPD, integralmente | O órgão competente conforme a matéria — Anatel, Senacon, SBDC ou ANPD | **Dividido**: advertência e multa com a ANPD; suspensão e proibição com o Judiciário |
 | Destino da arrecadação | Fundo de Defesa de Direitos Difusos ([art. 52, § 5º](/notas/lgpd#art-52-p5)) | sem previsão específica | sem previsão em vigor (ver acima) |
 
-Três diferenças merecem atenção. O **percentual quintuplica** da LGPD para as outras duas, o que reflete o objeto: proteger criança e adolescente e disciplinar plataformas foram tratados pelo legislador como mais graves do que o descumprimento genérico de dever de proteção de dados. A ausência da cláusula "excluídos os tributos" no ECA Digital **amplia a base de cálculo** em relação às outras duas — provavelmente por lapso redacional, mas é o que o texto diz. E, ao contrário do [art. 52 da LGPD](/notas/lgpd#art-52), cuja aplicação é integralmente da Agência, aqui as sanções mais graves ficam sob **reserva de jurisdição**.
+Três diferenças pesam. O **percentual quintuplica** da LGPD para as outras duas, o que reflete o objeto: proteger criança e adolescente e disciplinar plataformas foram tratados pelo legislador como mais graves do que o descumprimento genérico de dever de proteção de dados. A ausência da cláusula "excluídos os tributos" no ECA Digital **amplia a base de cálculo** em relação às outras duas — provavelmente por lapso redacional, mas é o que o texto diz. E, ao contrário do [art. 52 da LGPD](/notas/lgpd#art-52), cuja aplicação é integralmente da Agência, aqui as sanções mais graves ficam sob **reserva de jurisdição**.
 
 ## Disposições finais ([arts. 37 a 40](#art-37))
 
@@ -621,6 +711,14 @@ O caminho da lei entre a sanção e a vigência foi acidentado, e entender esse 
 - **Atos ainda não editados** por outros órgãos:
     - **MJSP** — forma de apresentação da faixa etária (Decreto nº 12.880/2026, [art. 12, § 3º](#dec12880-art-12-p3)); Comitê de Acompanhamento pela Sociedade Civil para a Classificação Indicativa (art. 13); funcionamento do Centro Nacional de Triagem de Notificações, protocolos, fluxos, requisitos e prazos dos relatórios de notificação (arts. 37, § 4º, e 39, §§ 1º e 2º); e normas sobre os alvarás de atividade artística, em articulação com CNJ e CNMP (art. 34, § 3º);
     - **MGI** — implementação e uso da solução de vinculação de crianças e adolescentes a responsáveis legais (Decreto nº 12.880/2026, [art. 20, II](#dec12880-art-20-ii)) e das soluções públicas de verificação de idade (art. 28).
+
+### Estudos técnicos e radares tecnológicos da ANPD
+
+Estudos publicados na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência, sem efeito vinculante e, no caso da série Radar Tecnológico, com ressalva expressa de que não firmam posicionamento institucional. Entram aqui porque são a fonte pública do que esta nota afirma sobre o estado da técnica.
+
+- [Radar Tecnológico nº 5 — Mecanismos de aferição de idade](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025) — taxonomia dos métodos, cinco gerações de soluções, riscos de proteção de dados de cada uma e convergência de princípios entre reguladores. Há também [versão em inglês](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade-em-lingua-inglesa.pdf).
+- [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (2026) — conceitos, funcionamento, riscos à proteção de dados e o capítulo sobre _deepfakes_ pornográficos contra meninas e mulheres, com o caso Grok.
+- Notas técnicas de fiscalização citadas acima: [nº 6/2023/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/tiktok-nota_tecnica_6_versao_publica_ret-1.pdf) e [nº 50/2024/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nt-50-pub.pdf) (aferição de idade em plataforma de vídeos curtos) e [nº 1/2026/FIS/CGF/ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/nota-tecnica-no-1-2026-fis-cgf-anpd.pdf), com a [Recomendação Conjunta ANPD/MPF/Senacon](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/recomendacao_conjunta_anpd_mpf_senacon_caso_grok.pdf) (caso Grok).
 
 ### Normas correlatas
 

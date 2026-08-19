@@ -14,6 +14,7 @@ lado, e você vai precisar deles:
 | [`README.md`](./README.md) | Editar o texto das páginas, rodar o site, publicar |
 | [`docs/arquitetura.md`](./docs/arquitetura.md) | Mexer em HTML, CSS ou JS |
 | [`docs/notas.md`](./docs/notas.md) | Mexer em `_notas/`, `_leis/` ou `_fragmentos/` |
+| [`docs/changelog.md`](./docs/changelog.md) | Fechar qualquer alteração de conteúdo — é onde ela é registrada |
 
 ## Visão geral do projeto
 
@@ -114,6 +115,60 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   atualização, não de revisão. Era por isso que o nome antigo (`revisado_em`)
   foi trocado — ele prometia uma revisão humana que nem sempre houve. Não
   reintroduza essa leitura no aviso nem no nome do campo.
+
+## Estilo: diga e siga
+
+O texto do site é direto. Três hábitos de escrita de IA que não entram:
+
+- **Negar antes de afirmar.** "Não é X, é Y", "não é X, e sim Y", "X, mas não
+  Y". Afirme Y. A negação fica quando ela é o conteúdo — delimitar o que a regra
+  não alcança, o que uma base legal não ampara, o que um órgão não pode fazer.
+- **Anunciar antes de dizer.** "Vale registrar", "merece destaque", "note-se",
+  "a conclusão é dura", "o ponto que mais gera confusão". Corte o anúncio e
+  comece pela frase que importa.
+- **Intensificar sem acrescentar.** "exatamente", "justamente", "efetivamente",
+  "simplesmente", "na verdade". Saem quando a frase fica igual sem eles.
+
+A régua final é o número de palavras: dito o mesmo, vence a versão mais curta.
+
+## Changelog: registro histórico das atualizações
+
+**Toda alteração de conteúdo entra no [`docs/changelog.md`](./docs/changelog.md),
+no mesmo commit que a faz.** Vale para as notas de legislação e para as
+biografias. O objetivo é ter um registro histórico do que o site passou a
+afirmar, e desde quando — pergunta que o histórico do git responde mal, porque
+mistura mudança de conteúdo com ajuste de marcação e porque uma mensagem de
+commit não diz *de onde* veio a informação.
+
+**Escreva pensando em leitor externo.** O arquivo hoje só existe no repositório
+(`docs/` está no `exclude` do `_config.yml`), mas a intenção é publicá-lo. Isso
+impõe limites que valem desde a primeira linha:
+
+- **Nada de informação sensível.** As mesmas regras editoriais das notas se
+  aplicam: só fontes públicas, nada de processo, minuta ou entendimento interno
+  de órgão público, nada de dado pessoal de terceiros, nenhuma menção a
+  concursos ou certames.
+- **Nada de polêmica.** Registre o que o site passou a dizer e com base em que
+  fonte. Não é lugar para opinião sobre a fonte, sobre quem a publicou nem sobre
+  o debate em torno dela — se a controvérsia é relevante, ela é conteúdo da
+  nota, com as duas versões e as referências, não item de changelog.
+- **Nada de detalhe interno de processo.** Quem pediu, quantas tentativas, qual
+  agente rodou, o que deu errado no caminho — nada disso interessa ao registro.
+
+**A régua do que entra é a mesma do `atualizado_em`:** só o que muda o que o
+site *afirma*. Entram seções e subseções novas, fontes incorporadas, revisões
+que alteram uma conclusão, notas publicadas ou removidas, e mudanças de estrutura
+que alteram o que o leitor encontra. **Não entram** correções de digitação,
+conserto de link, ajuste de marcação, mudança de CSS/JS/HTML que não altera
+texto, nem refatoração interna. Alteração muito pontual não vira entrada — se
+não daria uma linha legível para quem não acompanhou o trabalho, fica fora.
+
+**Formato:** uma seção por data (`AAAA-MM-DD`), da mais recente para a mais
+antiga, agrupada por área (notas, biografias, documentação). Cada item diz o que
+passou a constar e, quando a mudança vem de uma fonte externa, traz o link dela —
+a mesma exigência de verificabilidade que vale no corpo das notas. Datas passadas
+não se reescrevem: corrija uma entrada antiga apenas se ela estiver factualmente
+errada.
 
 ## Padrões técnicos a preservar
 
@@ -256,6 +311,10 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
       regras editoriais observadas.
 - [ ] `conferir_ementas.py` sem erro, se `_leis/` ou `_data/ementas/` mudaram.
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
+- [ ] [`docs/changelog.md`](./docs/changelog.md) atualizado, no mesmo commit, se o
+      conteúdo do site mudou — e escrito como texto público.
+- [ ] Texto sem as muletas da seção [Estilo](#estilo-diga-e-siga): negação antes
+      da afirmação, anúncio antes da frase, intensificador que não acrescenta.
 - [ ] Biografia gerada por IA segue NPOV, com afirmações verificáveis e
       referências citadas após cada afirmação.
 - [ ] `last_modified` de `bio.md` e `en/bio.md` atualizado (mesma data) se o

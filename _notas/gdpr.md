@@ -7,7 +7,7 @@ lei: gdpr
 normas_extra: [regulamento-2025-2518]
 ordem: 5
 jurisdicao: União Europeia
-atualizado_em: 2026-08-06
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -20,7 +20,7 @@ A primeira é **o instrumento**: é um regulamento, não uma diretiva. Vale dire
 
 A segunda é **o alcance**. O [art. 3.º](#art-3) aplica o regulamento a quem esteja estabelecido na União, mas também a quem, de fora dela, ofereça bens ou serviços a pessoas que se encontrem na União, ou monitore o comportamento delas. Uma empresa brasileira sem escritório, servidor ou cliente pagante na Europa pode estar sujeita ao RGPD por causa de um formulário de _newsletter_ ou de um _pixel_ de rastreamento. Foi essa cláusula que fez a lei europeia virar padrão de fato global — o chamado "efeito Bruxelas" —, e é ela que a [LGPD](/notas/lgpd) copiou no [art. 3º](/notas/lgpd#art-3).
 
-A terceira é **o sistema de aplicação**. O RGPD não criou um regulador europeu: manteve uma autoridade por Estado-Membro ([art. 51.º](#art-51)) e inventou o **balcão único** ([art. 56.º](#art-56)), pelo qual uma empresa com estabelecimento principal na Irlanda responde perante a autoridade irlandesa por tudo o que faz na União. A ideia era simplificar a vida das empresas; o efeito colateral foi concentrar a fiscalização das maiores plataformas do mundo numa autoridade pequena, com filas de anos, e transferir a resolução dos conflitos para o CEPD. Boa parte da história da execução do RGPD é a história dessa tensão — e é exatamente ela que o [Regulamento (UE) 2025/2518](#reg2518-art-1) veio tentar destravar, com prazos e ritos processuais que passam a valer em abril de 2027.
+A terceira é **o sistema de aplicação**. O RGPD não criou um regulador europeu: manteve uma autoridade por Estado-Membro ([art. 51.º](#art-51)) e inventou o **balcão único** ([art. 56.º](#art-56)), pelo qual uma empresa com estabelecimento principal na Irlanda responde perante a autoridade irlandesa por tudo o que faz na União. A ideia era simplificar a vida das empresas; o efeito colateral foi concentrar a fiscalização das maiores plataformas do mundo numa autoridade pequena, com filas de anos, e transferir a resolução dos conflitos para o CEPD. Boa parte da história da execução do RGPD é a história dessa tensão — e é ela que o [Regulamento (UE) 2025/2518](#reg2518-art-1) veio destravar, com prazos e ritos processuais que passam a valer em abril de 2027.
 
 Passados oito anos da aplicação, o balanço tem duas metades. De um lado, o regulamento produziu um corpo de jurisprudência que fixou coisas que o texto não dizia: que dano moral indenizável exige dano concreto, mas não exige gravidade mínima; que coima exige culpa; que "empresa", para calcular a multa, é o grupo econômico inteiro; que dado pseudonimizado pode ser pessoal para quem o gerou e não ser para quem o recebe. De outro, acumulou-se a percepção — dentro e fora da Comissão — de que o custo de conformidade ficou desproporcional para quem é pequeno, e de que a lei escrita antes do ChatGPT não responde bem ao treinamento de modelos.
 
@@ -32,11 +32,11 @@ Daí o **Digital Omnibus**, proposto pela Comissão em 19 de novembro de 2025 e 
 
 O regulamento declara dois objetivos que puxam para lados diferentes, e a tensão entre eles explica boa parte de suas soluções de compromisso: **proteger os direitos e liberdades fundamentais** das pessoas singulares, em especial o direito à proteção de dados, e **assegurar a livre circulação** desses dados dentro da União. O [n.º 3](#art-1-p3) é explícito: a livre circulação "não é restringida nem proibida" por motivos de proteção de dados.
 
-Isso não é retórica de preâmbulo, é a estrutura da lei. Proteção de dados, no direito europeu, **não é sinônimo de sigilo**: é um regime que autoriza o tratamento sob condições, não um regime que o proíbe. A [LGPD](/notas/lgpd) diz a mesma coisa quando põe, no mesmo [art. 2º](/notas/lgpd#art-2), a privacidade e o desenvolvimento econômico e a inovação.
+Isso é a estrutura da lei: no direito europeu, proteção de dados é **um regime que autoriza o tratamento sob condições**. A [LGPD](/notas/lgpd) diz a mesma coisa quando põe, no mesmo [art. 2º](/notas/lgpd#art-2), a privacidade e o desenvolvimento econômico e a inovação.
 
 ### Uma lei de direitos, não de produto
 
-Vale contrastar com o [AI Act](/notas/ai-act), que é a outra grande norma digital europeia e funciona de um jeito completamente diferente. O AI Act é uma **norma de produto**: fala em colocação no mercado, avaliação da conformidade, marcação CE, organismos notificados. O RGPD é uma **norma de conduta e de direitos**: fala em princípios, bases de licitude, direitos exercíveis pelo titular e responsabilidade do agente. Um se cumpre antes de o produto chegar ao mercado; o outro se cumpre continuamente, em cada operação, e se comprova depois.
+O contraste com o [AI Act](/notas/ai-act) ajuda: é a outra grande norma digital europeia e funciona de um jeito completamente diferente. O AI Act é uma **norma de produto**: fala em colocação no mercado, avaliação da conformidade, marcação CE, organismos notificados. O RGPD é uma **norma de conduta e de direitos**: fala em princípios, bases de licitude, direitos exercíveis pelo titular e responsabilidade do agente. Um se cumpre antes de o produto chegar ao mercado; o outro se cumpre continuamente, em cada operação, e se comprova depois.
 
 A consequência prática é que o RGPD não tem uma lista de "sistemas proibidos". Ele tem princípios abertos ([art. 5.º](#art-5)) e um dever de demonstrar cumprimento — a **responsabilidade proativa**, ou _accountability_ ([art. 5.º, n.º 2](#art-5-p2) e [art. 24.º](#art-24)). Quem trata dados não precisa só cumprir a lei: precisa poder provar que cumpre.
 
@@ -126,7 +126,7 @@ O RGPD **não se aplica** ao tratamento:
 
 A exceção doméstica é mais estreita do que parece, e a jurisprudência a apertou desde cedo: publicar dados de terceiros numa página aberta na internet **não** é atividade puramente pessoal, decidiu o Tribunal de Justiça já em 2003 (processo C-101/01), e uma câmera doméstica que filma também a via pública sai da exceção (processo C-212/13, de 2014). Como na [LGPD](/notas/lgpd#art-4), a palavra dura é "exclusivamente".
 
-Note-se o que **não** está na lista: não há exceção para dados de pessoas falecidas (o considerando 27 deixa isso ao direito nacional), nem para pessoas jurídicas — o RGPD, como a [LGPD](/notas/lgpd), protege apenas a **pessoa singular** ([art. 1.º, n.º 1](#art-1-p1)).
+Repare no que **não** está na lista: não há exceção para dados de pessoas falecidas (o considerando 27 deixa isso ao direito nacional), nem para pessoas jurídicas — o RGPD, como a [LGPD](/notas/lgpd), protege apenas a **pessoa singular** ([art. 1.º, n.º 1](#art-1-p1)).
 
 ## Definições ([art. 4.º](#art-4))
 
@@ -136,7 +136,7 @@ São 26 definições. As que estruturam o resto do texto:
 
 - **Dados pessoais**: informação relativa a uma pessoa singular **identificada ou identificável**, direta ou indiretamente, em especial por referência a um identificador. A definição é deliberadamente ampla, e o considerando 26 fixa o teste: para saber se alguém é identificável, consideram-se "todos os meios suscetíveis de ser **razoavelmente** utilizados" — pelo responsável **ou por outra pessoa** —, à luz do custo, do tempo e da tecnologia disponível.
 - **Pseudonimização**: tratamento que impede atribuir os dados a um titular sem recorrer a informação suplementar guardada separadamente. Atenção: dado pseudonimizado **continua sendo dado pessoal** para quem tem a chave; a discussão sobre o que ele é para quem **não** tem a chave é hoje o ponto mais quente do direito europeu de dados (ver "Jurisprudências históricas", abaixo).
-- **Dados anonimizados**: não aparecem no articulado, e sim no considerando 26 — dado anônimo está **fora** do regulamento. É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12), inclusive na ressalva de que a anonimização reversível por esforços razoáveis não é anonimização.
+- **Dados anonimizados**: aparecem no considerando 26, fora do articulado — dado anônimo está **fora** do regulamento. É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12), inclusive na ressalva de que a anonimização reversível por esforços razoáveis não é anonimização.
 - **Categorias especiais** ([art. 9.º](#art-9)): origem racial ou étnica, opiniões políticas, convicções religiosas ou filosóficas, filiação sindical, dados genéticos, dados biométricos usados para identificar univocamente uma pessoa, dados relativos à saúde, à vida sexual ou à orientação sexual. São os "dados sensíveis" do [art. 5º, II, da LGPD](/notas/lgpd#art-5-ii). As duas listas quase coincidem, mas não são idênticas: onde o RGPD fala apenas em **filiação sindical**, a lei brasileira alcança também a filiação a **organização de caráter religioso, filosófico ou político**.
 
 ### Ações e sujeitos
@@ -197,6 +197,18 @@ O RGPD escreve quatro condições de validade do consentimento que a LGPD não d
 - o consentimento **não é livre** se a execução de um contrato estiver condicionada a consentir num tratamento **não necessário** a esse contrato ([n.º 4](#art-7-p4)). É a proibição do "consentimento agrupado", e é a norma que sustenta boa parte das decisões contra publicidade comportamental.
 
 Para **crianças**, o [art. 8.º](#art-8) exige consentimento (ou autorização) de quem exerce as responsabilidades parentais quando o serviço da sociedade da informação é oferecido diretamente a menores de **16 anos**, permitindo que cada Estado-Membro baixe esse limite até **13**. Compare com o [art. 14 da LGPD](/notas/lgpd#art-14), que fixa o melhor interesse como critério e exige consentimento específico de **um dos pais ou responsável** para dados de crianças (até 12 anos incompletos), e com o [ECA Digital](/notas/eca-digital), que foi muito além dos dois ao desenhar verificação de idade e supervisão parental.
+
+#### Como se comprova a idade sem identificar o usuário
+
+O [art. 8.º](#art-8) fixa o limiar etário e cala sobre como aferi-lo. É aí que a discussão europeia se concentrou, e o [Radar Tecnológico nº 5 da ANPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025), detalhado na nota do [ECA Digital](/notas/eca-digital), reúne três peças que interessam a quem lê o RGPD:
+
+- **Declaração 1/2025 do CEPD sobre garantia de idade** — dez princípios para o tratamento de dados nesse contexto, entre eles limitar a coleta ao mínimo necessário, avaliar riscos previamente, aplicar proteção de dados desde a concepção e assegurar licitude, transparência e responsabilização dos provedores. O comité já havia registrado, em documento anterior, que mecanismos de aferição de idade podem, eles próprios, afetar direitos fundamentais.
+- **_EU Age Verification Solution_** — a "mini carteira" lançada em piloto pela Comissão Europeia em julho de 2025, que permite comprovar a maioridade sem partilhar qualquer outro dado pessoal, com emissão e apresentação da prova feitas por **entidades separadas**, para impedir o rastreamento entre serviços. É interoperável com a _EU Digital Identity Wallet_ prevista pelo eIDAS.
+- **A crítica de exclusão** — a European Digital Rights (EDRi) estima que uma carteira de identidade eletrônica poderia deixar de fora **20% dos usuários**, o que põe a acessibilidade no plano dos direitos.
+
+Duas peças dão suporte a esse desenho. As **provas de conhecimento zero** (_zero-knowledge proofs_) permitem demonstrar matematicamente o atendimento ao critério etário sem revelar a data de nascimento — o serviço recebe "sim" ou "não". O **modelo duplo-cego** é o arranjo de confiança que rege a circulação da credencial: nem o emissor sabe onde ela será usada, nem o serviço sabe quem está por trás dela. Uma é método criptográfico, o outro é arquitetura — e podem ser combinados.
+
+O ponto de contato com o RGPD é direto: minimização ([art. 5.º, n.º 1, alínea c)](#art-5-p1-c)) e proteção de dados desde a conceção e por defeito ([art. 25.º](#art-25)) são o que essas arquiteturas tentam operacionalizar. E é útil ler esse conjunto ao lado do [ECA Digital](/notas/eca-digital) brasileiro, que positivou requisitos equivalentes — minimização, vedação de finalidade secundária, vedação de rastreabilidade — num nível de detalhe que o RGPD deixou para o intérprete.
 
 ### Categorias especiais ([art. 9.º](#art-9)) e dados penais ([art. 10.º](#art-10))
 
@@ -390,7 +402,7 @@ Este capítulo é o que sobra da harmonização: sete artigos que mandam ou perm
 
 ### O que só o regulamento pode fazer
 
-Definir o que é dado pessoal, quais são as bases de licitude, quais direitos o titular tem e quais os tetos das coimas. Nada disso é delegável — nem à Comissão, nem ao CEPD, nem às autoridades nacionais. É exatamente esse limite que o CEPD e a AEPD invocaram, na [opinião conjunta 2/2026](https://www.edpb.europa.eu/documents/legislative-opinion/edpb-edps-joint-opinion-22026-on-the-proposal-for-a-regulation-as_en), contra a proposta de deixar a Comissão decidir por ato de execução quando um dado pseudonimizado deixa de ser pessoal: seria definir por ato administrativo o **alcance** da própria lei.
+Definir o que é dado pessoal, quais são as bases de licitude, quais direitos o titular tem e quais os tetos das coimas. Nada disso é delegável — nem à Comissão, nem ao CEPD, nem às autoridades nacionais. É esse limite que o CEPD e a AEPD invocaram, na [opinião conjunta 2/2026](https://www.edpb.europa.eu/documents/legislative-opinion/edpb-edps-joint-opinion-22026-on-the-proposal-for-a-regulation-as_en), contra a proposta de deixar a Comissão decidir por ato de execução quando um dado pseudonimizado deixa de ser pessoal: seria definir por ato administrativo o **alcance** da própria lei.
 
 ### O que a Comissão Europeia pode fazer
 
@@ -447,7 +459,7 @@ A diferença estrutural em relação ao Brasil é essa: o modelo europeu é **pl
 
 ### O que já mudou: o Regulamento (UE) 2025/2518
 
-É a única alteração legislativa **concluída** no entorno do RGPD, e vale repetir o que ela não é: não altera o articulado do regulamento, não cria nem suprime direitos, não muda bases legais nem coimas. Dá **procedimento** ao balcão único, com prazos, direito de audiência e um conceito operacional de objeção pertinente e fundamentada, a partir de **2 de abril de 2027**. O texto está no painel ao lado.
+É a única alteração legislativa **concluída** no entorno do RGPD, e o alcance dela é estreito: preserva o articulado do regulamento, os direitos, as bases legais e as coimas, e dá **procedimento** ao balcão único, com prazos, direito de audiência e um conceito operacional de objeção pertinente e fundamentada, a partir de **2 de abril de 2027**. O texto está no painel ao lado.
 
 Para quem opera no Brasil, o efeito prático é indireto mas real: uma empresa brasileira com estabelecimento na União passa a ter, a partir de 2027, um rito previsível — e prazos — na apuração de reclamações transfronteiriças.
 
@@ -475,11 +487,11 @@ As alterações propostas ao RGPD, e por que cada uma é polêmica:
 - no **Conselho**, a presidência cipriota retirou seu texto de compromisso do Coreper ao fim de junho de 2026, por não reunir maioria qualificada. Vários governos consideraram a simplificação insuficiente; o texto que circulava já havia **suprimido** do articulado a base de legítimo interesse para IA e as regras de _cookies_. A presidência irlandesa, que assumiu em 1º de julho de 2026, reabriu a discussão por questionário aos Estados-Membros;
 - no **Parlamento Europeu**, o relatório de projeto de junho de 2026 evitou os pontos mais contenciosos, e mais de mil emendas foram apresentadas até o prazo de 15 de julho de 2026. A posição negocial do Parlamento não é esperada antes de 2027.
 
-Em resumo: **nada do Digital Omnibus sobre dados está em vigor**, o desenho final é incerto e as três alterações mais estruturais do RGPD são justamente as que perderam apoio no Conselho. Para quem estuda a norma hoje, o RGPD relevante é o de 2016, com as duas retificações.
+Em resumo: **nada do Digital Omnibus sobre dados está em vigor**, o desenho final é incerto e as três alterações mais estruturais do RGPD são as que perderam apoio no Conselho. Para quem estuda a norma hoje, o RGPD relevante é o de 2016, com as duas retificações.
 
 ### O que não foi adiante: o Regulamento ePrivacy
 
-Vale registrar, porque explica uma anomalia. A União tentou, de 2017 a 2025, substituir a Diretiva ePrivacy por um **regulamento** que modernizasse as regras de comunicações eletrônicas e _cookies_. Nunca houve acordo, e em **11 de fevereiro de 2025** a Comissão anunciou a **retirada da proposta**. O resultado é que o consentimento de _cookies_ continua regido por uma **diretiva de 2002**, transposta de 27 maneiras diferentes, enquanto os dados que os _cookies_ produzem são regidos por um regulamento de 2016. É essa incoerência que o Digital Omnibus tenta resolver movendo a matéria para dentro do RGPD — e é um dos pontos em que o Conselho recuou.
+O episódio explica uma anomalia. A União tentou, de 2017 a 2025, substituir a Diretiva ePrivacy por um **regulamento** que modernizasse as regras de comunicações eletrônicas e _cookies_. Nunca houve acordo, e em **11 de fevereiro de 2025** a Comissão anunciou a **retirada da proposta**. O resultado é que o consentimento de _cookies_ continua regido por uma **diretiva de 2002**, transposta de 27 maneiras diferentes, enquanto os dados que os _cookies_ produzem são regidos por um regulamento de 2016. É essa incoerência que o Digital Omnibus tenta resolver movendo a matéria para dentro do RGPD — e é um dos pontos em que o Conselho recuou.
 
 ## Jurisprudências históricas
 
@@ -509,7 +521,7 @@ O RGPD é um texto curto para o que regula, e boa parte do seu sentido foi fixad
 - **[C-446/21](https://curia.europa.eu/juris/liste.jsf?num=C-446/21)** (4/10/2024) — a **minimização** impede acumular dados para publicidade **sem limite de tempo**; e o fato de alguém ter revelado publicamente a própria orientação sexual não autoriza o uso desse dado sensível para personalizar anúncios.
 - **[C-21/23](https://curia.europa.eu/juris/liste.jsf?num=C-21/23)** (4/10/2024) — o RGPD **não impede** que a lei nacional dê a **concorrentes** legitimidade para acionar quem o viola, por concorrência desleal; e os dados de pedidos de medicamentos, mesmo os sem receita, são **dados de saúde**.
 - **[C-383/23](https://curia.europa.eu/juris/liste.jsf?num=C-383/23)** (13/2/2025) — "empresa", para calcular o teto percentual da coima, é a **unidade econômica** do direito da concorrência: vale o volume de negócios do **grupo inteiro**. Multiplicou o risco sancionatório de subsidiárias pequenas de grupos grandes.
-- **[C-413/23 P](https://curia.europa.eu/juris/liste.jsf?num=C-413/23%20P)** (Grande Secção, 4/9/2025) — o acórdão mais importante do período, e o que está no centro do debate legislativo atual. Decidiu que dado **pseudonimizado** transferido a um terceiro pode **não ser dado pessoal para esse terceiro**, se ele não dispuser de meios razoáveis de reidentificação; a avaliação é **relativa**, feita da perspectiva de quem detém os dados, e não absoluta. Foi um afastamento explícito da posição de décadas das autoridades de proteção de dados, e é a decisão que a Comissão invoca para propor mudar o [art. 4.º](#art-4) — enquanto o CEPD sustenta que codificá-la na definição geral vai além do que o tribunal decidiu.
+- **[C-413/23 P](https://curia.europa.eu/juris/liste.jsf?num=C-413/23%20P)** (Grande Secção, 4/9/2025) — o acórdão no centro do debate legislativo atual. Decidiu que dado **pseudonimizado** transferido a um terceiro pode **não ser dado pessoal para esse terceiro**, se ele não dispuser de meios razoáveis de reidentificação; a avaliação é **relativa**, feita da perspectiva de quem detém os dados, e não absoluta. Foi um afastamento explícito da posição de décadas das autoridades de proteção de dados, e é a decisão que a Comissão invoca para propor mudar o [art. 4.º](#art-4) — enquanto o CEPD sustenta que codificá-la na definição geral vai além do que o tribunal decidiu.
 - **[T-553/23](https://curia.europa.eu/juris/liste.jsf?num=T-553/23)** (Tribunal Geral, 3/9/2025) — julgou improcedente o pedido de anulação da adequação do **Quadro de Privacidade de Dados UE-EUA**, reconhecendo proteção essencialmente equivalente e independência suficiente do tribunal de revisão americano. Diferentemente dos dois acordos anteriores, este sobreviveu ao primeiro exame judicial — o que não impede recurso nem revisão futura.
 
 ### Tribunais e autoridades nacionais
@@ -529,7 +541,7 @@ Sem ser tribunal, o Comité produziu três documentos que mudaram práticas de m
 
 ## Casos emblemáticos de violações
 
-Os números impressionam, mas não são o que interessa: cada um destes casos fixou uma leitura do regulamento. É por isso que estão aqui, agrupados pelo dispositivo que puseram à prova — e não por valor.
+Cada um destes casos fixou uma leitura do regulamento, e é por isso que estão aqui, agrupados pelo dispositivo que puseram à prova — e não por valor.
 
 ### Transferências internacionais ([arts. 44.º a 49.º](#art-44))
 
@@ -539,9 +551,9 @@ Os números impressionam, mas não são o que interessa: cada um destes casos fi
 
 ### Bases legais e publicidade comportamental ([arts. 6.º](#art-6) e [7.º](#art-7))
 
-- **50 milhões de euros, janeiro de 2019** — a primeira coima realmente grande do RGPD, aplicada pela autoridade francesa a um provedor de sistema operacional móvel: informação dispersa por várias telas, consentimento nem específico nem inequívoco para personalização de anúncios, com opções pré-marcadas. Fixou o padrão de que consentimento válido é consentimento **granular** e **encontrável**.
+- **50 milhões de euros, janeiro de 2019** — a primeira grande coima do RGPD, aplicada pela autoridade francesa a um provedor de sistema operacional móvel: informação dispersa por várias telas, consentimento nem específico nem inequívoco para personalização de anúncios, com opções pré-marcadas. Fixou o padrão de que consentimento válido é consentimento **granular** e **encontrável**.
 - **390 milhões de euros, janeiro de 2023** — aplicada à operação europeia de duas redes sociais por, às vésperas da aplicação do RGPD em 2018, trocar a base do consentimento pela **execução de contrato** para publicidade personalizada. A autoridade principal tendia a aceitar a manobra; o CEPD, por decisão vinculativa, a rejeitou. Meses depois, o processo C-252/21 confirmou judicialmente a rejeição.
-- **746 milhões de euros, julho de 2021 — anulados em março de 2026** — a coima luxemburguesa contra uma plataforma de comércio eletrônico por publicidade comportamental sem base válida. Continua sendo o caso mais instrutivo do regulamento: a infração foi reconhecida em juízo, a sanção caiu por vício de procedimento, e o processo voltou à autoridade. Mostra que, no RGPD, **a dosimetria é tão exigível quanto a conduta**.
+- **746 milhões de euros, julho de 2021 — anulados em março de 2026** — a coima luxemburguesa contra uma plataforma de comércio eletrônico por publicidade comportamental sem base válida. A infração foi reconhecida em juízo, a sanção caiu por vício de procedimento, e o processo voltou à autoridade. Mostra que, no RGPD, **a dosimetria é tão exigível quanto a conduta**.
 - **310 milhões de euros, outubro de 2024** — aplicada pela autoridade irlandesa a uma rede social profissional por publicidade comportamental sem base legal válida, discutindo simultaneamente consentimento, contrato e legítimo interesse. É o caso que mostra que as três bases não são intercambiáveis: falhar em todas as três é um resultado possível.
 
 ### Crianças e adolescentes ([art. 8.º](#art-8))
@@ -551,7 +563,7 @@ Os números impressionam, mas não são o que interessa: cada um destes casos fi
 
 ### Incidentes de segurança ([arts. 32.º a 34.º](#art-32))
 
-- **20 milhões de libras (companhia aérea) e 18,4 milhões (rede hoteleira), outubro de 2020** — as duas coimas mais didáticas em matéria de segurança, ambas da autoridade britânica, quando o Reino Unido ainda aplicava o RGPD. As duas foram anunciadas em 2019 com valores muito maiores (183,4 milhões e 99 milhões de libras) e reduzidas em cerca de 90% e 80% depois da defesa, das medidas de mitigação e da consideração do impacto econômico da pandemia. A lição não é sobre o valor: é sobre o [art. 83.º, n.º 2](#art-83-p2) — a dosimetria é um procedimento real, com contraditório, e não uma tabela.
+- **20 milhões de libras (companhia aérea) e 18,4 milhões (rede hoteleira), outubro de 2020** — as duas coimas mais didáticas em matéria de segurança, ambas da autoridade britânica, quando o Reino Unido ainda aplicava o RGPD. As duas foram anunciadas em 2019 com valores muito maiores (183,4 milhões e 99 milhões de libras) e reduzidas em cerca de 90% e 80% depois da defesa, das medidas de mitigação e da consideração do impacto econômico da pandemia. A lição está no [art. 83.º, n.º 2](#art-83-p2): a dosimetria é um procedimento real, com contraditório.
 - **265 milhões de euros, novembro de 2022, e 251 milhões, dezembro de 2024** — dois casos contra a mesma rede social: o primeiro por raspagem em massa de perfis explorando uma funcionalidade de importação de contatos; o segundo por uma falha de 2018 que expôs cerca de 29 milhões de contas no mundo, das quais 3 milhões na União. Fixaram que **proteção desde a conceção** ([art. 25.º](#art-25)) é obrigação exigível, e que a notificação tardia ou incompleta é infração autônoma.
 - **35,3 milhões de euros, outubro de 2020** — aplicada pela autoridade de Hamburgo a uma rede de varejo de moda que mantinha registros detalhados sobre doenças, crenças e vida familiar de funcionários, acessíveis a dezenas de gestores. É o caso de referência sobre o [art. 88.º](#art-88): monitoramento no trabalho não é território livre.
 
@@ -668,7 +680,7 @@ Em oito anos de aplicação, o articulado do RGPD **nunca foi alterado**. O que 
 
 > **Sobre o painel "Lei seca".** O painel traz **dois textos**, selecionáveis no alto: o **RGPD**, que abre por padrão e é o alvo dos links destes comentários, e o **Regulamento (UE) 2025/2518**.
 >
-> O texto do RGPD aqui é o **oficial em português**, montado das duas metades em que o EUR-Lex o publica: o articulado vem da **versão consolidada** (que é a que traz as duas retificações), e o cabeçalho, o preâmbulo e os **173 considerandos** vêm do Jornal Oficial de 4/5/2016 — porque a consolidação europeia, por desenho, não inclui considerandos. Nada foi redigitado: a junção é feita por script (`scripts/montar_rgpd.py`), que também aplica a única retificação que atinge um considerando (o 71) com o texto da própria retificação. Considerando não é dispositivo e não recebe âncora, mas fica no painel, pesquisável: num regulamento europeu é nele que está o *porquê* de cada regra, e é a ele que a Comissão e o Tribunal de Justiça recorrem quando o artigo é aberto demais.
+> O texto do RGPD aqui é o **oficial em português**, montado das duas metades em que o EUR-Lex o publica: o articulado vem da **versão consolidada** (que é a que traz as duas retificações), e o cabeçalho, o preâmbulo e os **173 considerandos** vêm do Jornal Oficial de 4/5/2016 — porque a consolidação europeia, por desenho, não inclui considerandos. Nada foi redigitado: a junção é feita por script (`scripts/montar_rgpd.py`), que também aplica a única retificação que atinge um considerando (o 71) com o texto da própria retificação. Considerandos ficam fora do esquema de âncoras, mas entram no painel, pesquisáveis: num regulamento europeu é neles que está o *porquê* de cada regra, e é a ele que a Comissão e o Tribunal de Justiça recorrem quando o artigo é aberto demais.
 
 ### Atos e instrumentos aplicáveis
 
@@ -678,9 +690,15 @@ O RGPD não tem "decreto regulamentador". O detalhamento vem de três fontes dis
 - **Cláusulas-tipo de proteção de dados** ([art. 46.º, n.º 2, alínea c)](#art-46-p2-c)) — o formulário contratual padrão para transferir dados sem decisão de adequação, fixado pela [Decisão de Execução (UE) 2021/914](https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj). É o equivalente europeu das cláusulas-padrão da [Resolução CD/ANPD nº 19/2024](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-19-de-23-de-agosto-de-2024-580095396).
 - **Diretrizes, recomendações e melhores práticas do Comité Europeu para a Proteção de Dados** ([art. 70.º](#art-70)) — o CEPD (_European Data Protection Board_, EDPB) não legisla, mas é ele que uniformiza a interpretação, e na prática as autoridades nacionais seguem suas [diretrizes](https://www.edpb.europa.eu/documents_pt). Suas **decisões vinculativas** do [art. 65.º](#art-65), essas sim, obrigam a autoridade nacional no caso concreto.
 
+### Estudos técnicos da ANPD
+
+Levantamentos da autoridade brasileira, publicados na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência, com ressalva expressa de que a série **Radar Tecnológico** não firma posicionamento institucional. Entram aqui como fonte do que esta nota afirma sobre o estado da técnica.
+
+- [Radar Tecnológico nº 5 — Mecanismos de aferição de idade](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025) — reúne a Declaração 1/2025 do CEPD, a _EU Age Verification Solution_ e a discussão sobre provas de conhecimento zero e modelo duplo-cego. Detalhado na nota do [ECA Digital](/notas/eca-digital).
+
 ### Normas correlatas
 
-- [Diretiva (UE) 2016/680](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016L0680) — a "diretiva policial", gêmea do RGPD para o tratamento por autoridades penais. Cobre exatamente o campo que o RGPD exclui no [art. 2.º, n.º 2, alínea d)](#art-2-p2-d) e que a [LGPD](/notas/lgpd) também exclui, no [art. 4º, III](/notas/lgpd#art-4-iii). A diferença está no instrumento e no calendário: a União tratou o tema numa diretiva editada no mesmo dia do RGPD; no Brasil, a legislação específica que o [art. 4º, § 1º](/notas/lgpd#art-4-p1) prevê ainda não foi editada.
+- [Diretiva (UE) 2016/680](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016L0680) — a "diretiva policial", gêmea do RGPD para o tratamento por autoridades penais. Cobre o campo que o RGPD exclui no [art. 2.º, n.º 2, alínea d)](#art-2-p2-d) e que a [LGPD](/notas/lgpd) também exclui, no [art. 4º, III](/notas/lgpd#art-4-iii). A diferença está no instrumento e no calendário: a União tratou o tema numa diretiva editada no mesmo dia do RGPD; no Brasil, a legislação específica que o [art. 4º, § 1º](/notas/lgpd#art-4-p1) prevê ainda não foi editada.
 - [Regulamento (UE) 2018/1725](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1725) — o RGPD das próprias instituições da União, fiscalizado pela Autoridade Europeia para a Proteção de Dados (AEPD).
 - [Diretiva 2002/58/CE (ePrivacy)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32002L0058) — é ela, e não o RGPD, que exige consentimento para _cookies_ e para o acesso ao equipamento terminal do usuário. O [art. 95.º](#art-95) do RGPD preserva essa divisão, que o Digital Omnibus propõe desfazer.
 - [Regulamento (UE) 2022/2065 — Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).

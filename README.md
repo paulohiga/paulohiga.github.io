@@ -20,6 +20,7 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 | [`docs/arquitetura.md`](./docs/arquitetura.md) | Como o site funciona por dentro: banding, navegação sem reload, tema pré-paint, fontes, performance, SEO, sitemap |
 | [`docs/notas.md`](./docs/notas.md) | A seção `/notas`: estrutura, esquema de âncoras, normas extras, EUR-Lex, scripts |
 | [`docs/notas-navegacao.md`](./docs/notas-navegacao.md) | Backlog de melhorias de navegação de `/notas`: o que foi medido, o que já foi feito e o que falta |
+| [`docs/changelog.md`](./docs/changelog.md) | Registro histórico das atualizações de conteúdo — o que mudou, quando e com base em quê |
 | [`AGENTS.md`](./AGENTS.md) | Regras de contribuição para agentes de IA — inclusive as regras editoriais das notas |
 
 ## Índice
@@ -83,7 +84,7 @@ Os detalhes de cada decisão estão em
 │
 │   ## Autoria — excluídos do site publicado
 ├── scripts/                     # 5 scripts Python de autoria
-├── docs/                        # arquitetura.md · notas.md
+├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
 │   ## Estáticos

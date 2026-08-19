@@ -6,7 +6,7 @@ description: Notas de estudo sobre a Lei nº 13.709/2018 — definições, princ
 lei: lgpd
 ordem: 1
 jurisdicao: Brasil
-atualizado_em: 2026-08-06
+atualizado_em: 2026-08-19
 ---
 
 ## Resumo geral
@@ -42,7 +42,7 @@ A LGPD protege os direitos fundamentais de liberdade, privacidade e livre desenv
 - Livre iniciativa, livre concorrência e defesa do consumidor ([inciso VI](#art-2-vi))
 - Direitos humanos, livre desenvolvimento da personalidade, dignidade e exercício da cidadania pelas pessoas naturais ([inciso VII](#art-2-vii))
 
-Esses fundamentos não são enfeite de abertura: é neles que a lei firma que proteção de dados **não é sinônimo de sigilo**. Privacidade e liberdade de expressão, proteção do titular e inovação econômica convivem no mesmo artigo, e boa parte das controvérsias sobre a LGPD é, no fundo, uma discussão sobre como equilibrá-los num caso concreto.
+É nesses fundamentos que a lei firma o alcance da proteção de dados, para além do sigilo. Privacidade e liberdade de expressão, proteção do titular e inovação econômica convivem no mesmo artigo, e boa parte das controvérsias sobre a LGPD é, no fundo, uma discussão sobre como equilibrá-los num caso concreto.
 
 ## Quando a LGPD se aplica ([art. 3º](#art-3))
 
@@ -56,7 +56,7 @@ Consideram-se coletados no território nacional os dados cujo titular nele se en
 
 Os três incisos são alternativos — basta um. É o que dá à lei alcance **extraterritorial**: uma empresa sem escritório, servidor ou CNPJ no Brasil está sujeita à LGPD se oferece produtos ou serviços a pessoas aqui. A lei ainda fecha o circuito processual: a empresa estrangeira é notificada e intimada na pessoa de seu agente, representante ou responsável por filial, agência ou escritório instalado no Brasil, independentemente de procuração ([art. 61](#art-61)).
 
-Também vale reparar em quem a lei alcança e em quem ela protege. **Alcança** pessoas naturais e jurídicas, públicas e privadas, com ou sem fins lucrativos, em meio digital ou em papel — uma ficha de cadastro em fichário de aço é banco de dados como qualquer planilha. E **protege** apenas a **pessoa natural**: dados de empresas não são dados pessoais, salvo quando identificam alguém por trás delas — é o caso do cadastro de um microempreendedor individual, que aponta para uma pessoa determinada.
+Repare também em quem a lei alcança e em quem ela protege. **Alcança** pessoas naturais e jurídicas, públicas e privadas, com ou sem fins lucrativos, em meio digital ou em papel — uma ficha de cadastro em fichário de aço é banco de dados como qualquer planilha. E **protege** apenas a **pessoa natural**: dados de empresas não são dados pessoais, salvo quando identificam alguém por trás delas — é o caso do cadastro de um microempreendedor individual, que aponta para uma pessoa determinada.
 
 ## Quando a LGPD não se aplica ([art. 4º](#art-4))
 
@@ -123,7 +123,26 @@ Três consequências práticas dessas definições:
 - **Pseudonimizar não é anonimizar.** Trocar o nome por um código mantém o dado como dado pessoal — a chave existe em algum lugar. Só o dado verdadeiramente anonimizado sai do alcance da lei, e sai **enquanto** a anonimização resistir.
 - **Perfil comportamental pode ser dado pessoal.** Dados usados para formar o perfil de comportamento de uma pessoa determinada, se ela estiver identificada, contam como dados pessoais ([art. 12, § 2º](#art-12-p2)). A ANPD pode, ouvido o CNPD, dispor sobre padrões e técnicas de anonimização e verificar sua segurança ([art. 12, § 3º](#art-12-p3)).
 
-Sobre os **sensíveis**: a etiqueta não depende de o dado parecer íntimo, e sim do que ele **revela**. A regra alcança qualquer tratamento que revele dado sensível e possa causar dano ao titular ([art. 11, § 1º](#art-11-p1)) — a foto do rosto usada para reconhecimento facial é dado biométrico; a lista de presença de um culto revela convicção religiosa.
+Sobre os **sensíveis**: a etiqueta segue o que o dado **revela**. A regra alcança qualquer tratamento que revele dado sensível e possa causar dano ao titular ([art. 11, § 1º](#art-11-p1)) — a foto do rosto usada para reconhecimento facial é dado biométrico; a lista de presença de um culto revela convicção religiosa.
+
+#### Anonimização é um processo contínuo
+
+O [art. 12](#art-12) escreve a consequência da anonimização e deixa o método em aberto — e a lacuna foi preenchida por uma trinca de estudos técnicos publicados pela ANPD em novembro de 2023, que se leem juntos: o [Estudo Técnico sobre a anonimização de dados na LGPD: análise jurídica](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd___analise_juridica.pdf), o [Estudo Técnico sobre anonimização de dados na LGPD: uma visão de processo baseado em risco e técnicas computacionais](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd_uma_visao_de_processo_baseado_em_risco_e_tecnicas_computacionais.pdf) e o [Estudo de casos sobre anonimização de dados na LGPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_de_casos_sobre_anonimizacao_de_dados_na_lgpd_.pdf). Nenhum tem força de norma: o regulamento do [art. 12, § 3º](#art-12-p3) segue pendente (ver "O que ainda falta regulamentar", abaixo), e o primeiro se apresenta como base para futuras orientações. São o material público mais próximo de um método.
+
+O que os três firmam:
+
+- **Anonimizar é um processo contínuo.** Uma sequência de atos sobre identificadores diretos (nome, CPF) e indiretos, ou **quase-identificadores** (CEP, idade, sexo, características fenotípicas, endereço IP), cuja combinação pode ser única. O estudo jurídico lembra o achado clássico de Latanya Sweeney: em 2000, CEP de cinco dígitos, gênero e data de nascimento bastavam para singularizar 87% da população dos Estados Unidos.
+- **O primeiro ato do processo é tratamento de dado pessoal.** Enquanto anonimiza, o agente está sob a LGPD inteira — inclusive finalidade e adequação. A lei alcança o processo desde o primeiro registro tocado.
+- **Sempre resta risco de reidentificação.** Os estudos registram consenso científico sobre a impraticabilidade de um cenário de risco zero, dado o volume de dados auxiliares públicos e a capacidade de processamento disponível. Daí a conclusão: a avaliação tem de seguir um **modelo baseado em risco**, e ser **iterativa**, não episódica — o que era anônimo em 2023 pode não ser em 2028.
+- **Os riscos têm nomes.** Distinção (_singling out_), possibilidade de ligação (_linkability_) e inferência. E dois cenários de ataque: o **do promotor**, em que o atacante sabe que determinada pessoa está na base e quer o registro dela; e o **do jornalista**, em que ele só quer reidentificar alguém, qualquer um.
+- **"Esforços razoáveis" e "meios próprios" medem coisas diferentes.** O estudo jurídico trata "esforços razoáveis" como conceito indeterminado, a ser preenchido no caso concreto pelos fatores objetivos do [art. 12, § 1º](#art-12-p1) — custo, tempo, tecnologias disponíveis. Já "meios próprios" tem conteúdo delimitado: são as habilidades, dados, instrumentos e técnicas de que o próprio agente dispõe. E, como o _caput_ manda considerar também a reversão por terceiros, a LGPD aponta para a **teoria objetiva** do conceito de dado pessoal.
+- **A ilicitude do meio conta.** Seguindo jurisprudência do Tribunal de Justiça da União Europeia (casos C-582/14 e T-557/20), o estudo sustenta que meios ilegais — crime cibernético, violação de contrato ou de política interna — são meios **não razoáveis**, e portanto não descaracterizam a anonimização.
+
+O estudo computacional descreve a gestão do risco de reidentificação em quatro etapas: fixar um **Risco de Reidentificação Aceitável (RRA)**, que é o teto acima do qual a base deixa de ser considerada anonimizada; aplicar o conjunto de técnicas escolhido; medir o **Risco de Reidentificação Mensurado (RRM)**, expresso como probabilidade e calculado a partir da equivalência de classe (e das métricas dela derivadas, como _k_-anonimidade, _l_-diversidade e _t_-proximidade), ponderado por variáveis de contexto; e repetir. Sublinha ainda o dilema estrutural — **utilidade e grau de anonimização são grandezas em conflito** — e a necessidade de documentar o processo, inclusive as propriedades estatísticas da base original, para saber quanta qualidade se perdeu.
+
+O estudo de casos aplica isso a três cenários: dados agregados de localização de telefonia móvel para vigilância epidemiológica (supressão de IMSI e IMEI mais agregação por estação rádio-base); dados clínicos de pressão arterial para pesquisa acadêmica (supressão e pseudonimização); e compartilhamento de dados escolares entre secretarias municipais (supressão, generalização, mascaramento, adição de ruído e permutação). No terceiro, por envolver **dados de crianças e adolescentes**, o RRA é mais estrito — a vulnerabilidade do titular baixa o teto de risco tolerável, mesmo sem dado sensível na base.
+
+**Pseudonimização é outra coisa.** A LGPD a define no [art. 13, § 4º](#art-13-p4), no contexto de estudos em saúde pública: é o tratamento em que o dado perde a associação ao indivíduo **exceto** pelo uso de informação adicional mantida separadamente, em ambiente controlado e seguro. Como a chave existe, o dado pseudonimizado continua sendo dado pessoal, e a técnica opera como medida de segurança.
 
 ### Documentação
 
@@ -145,7 +164,7 @@ Sobre os **sensíveis**: a etiqueta não depende de o dado parecer íntimo, e si
 
 Os princípios valem **sempre**, inclusive quando o tratamento dispensa consentimento ([art. 7º, § 6º](#art-7-p6)). Ter base legal não é autorização em branco: a finalidade tem de ser específica desde o início, e a quantidade de dados precisa caber nela.
 
-> _Exemplo._ Uma loja pede CPF, telefone e endereço para emitir a nota fiscal — finalidade legítima e informada. Se depois usar a mesma base para disparar campanhas de outra empresa do grupo, sai da finalidade original (inciso I) e trata dado além do necessário para a nota (inciso III). Não é a coleta que vira ilícita: é o uso posterior incompatível.
+> _Exemplo._ Uma loja pede CPF, telefone e endereço para emitir a nota fiscal — finalidade legítima e informada. Se depois usar a mesma base para disparar campanhas de outra empresa do grupo, sai da finalidade original (inciso I) e trata dado além do necessário para a nota (inciso III). A coleta original segue válida; o que vira ilícito é o uso posterior incompatível.
 
 ## Deveres e vedações essenciais
 
@@ -205,7 +224,7 @@ O poder normativo da ANPD é exercido por **resolução do Conselho Diretor** �
 - **agentes de pequeno porte** ([art. 55-J, XVIII](#art-55-j-xviii)) — [Resolução nº 2/2022](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-2-de-27-de-janeiro-de-2022-376562019);
 - **prazos e termos de atendimento ao titular** ([art. 18, § 5º](#art-18-p5)), **portabilidade** ([art. 18, V](#art-18-v)), **cópia eletrônica** dos dados ([art. 19, § 3º](#art-19-p3)), **prazos diferenciados por setor** ([art. 19, § 4º](#art-19-p4)), **padrões técnicos mínimos de segurança** ([art. 46, § 1º](#art-46-p1)) e **relatório de impacto** ([art. 38](#art-38)) — ainda sem regulamento próprio.
 
-Há um caso peculiar, em que a lei autorizou a Agência não só a detalhar, mas a **proibir**: o compartilhamento de dados sensíveis entre controladores para obter vantagem econômica pode ser objeto de vedação ou de regulamentação pela ANPD, ouvidos os órgãos setoriais ([art. 11, § 3º](#art-11-p3)).
+Há um caso peculiar, em que a lei autorizou a Agência a ir além do detalhamento e **proibir**: o compartilhamento de dados sensíveis entre controladores para obter vantagem econômica pode ser objeto de vedação ou de regulamentação pela ANPD, ouvidos os órgãos setoriais ([art. 11, § 3º](#art-11-p3)).
 
 Esse poder tem limites de conteúdo e de forma:
 
@@ -217,7 +236,7 @@ Esse poder tem limites de conteúdo e de forma:
 
 O decreto entra aqui em papel estreito: **organização administrativa**, não disciplina material. A LGPD reserva a **ato do Presidente da República** a estrutura regimental da ANPD ([art. 55-G](#art-55-g)) — hoje o [Decreto nº 12.881/2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm), que revogou o Decreto nº 10.474/2020. É competência do art. 84, VI, "a", da Constituição, que autoriza dispor por decreto sobre organização e funcionamento da administração federal **desde que não haja aumento de despesa nem criação ou extinção de órgãos públicos**.
 
-Essa restrição não é teórica: é justamente por causa dela que os cargos em comissão e as funções de confiança da ANPD tiveram de ser **remanejados de outros órgãos** do Executivo federal, e não criados pelo decreto ([art. 55-H](#art-55-h)). Criar cargo novo exigiria lei — foi o que fez, em 2026, a Lei nº 15.352, ao instituir a carreira própria da Agência.
+Essa restrição tem efeito prático: é por causa dela que os cargos em comissão e as funções de confiança da ANPD tiveram de ser **remanejados de outros órgãos** do Executivo federal, em vez de criados pelo decreto ([art. 55-H](#art-55-h)). Criar cargo novo exigiria lei — foi o que fez, em 2026, a Lei nº 15.352, ao instituir a carreira própria da Agência.
 
 Abaixo do decreto ainda há um terceiro degrau: o **[regimento interno](/notas/regimento-interno-anpd)**, editado pelo próprio Conselho Diretor ([art. 55-G, § 2º](#art-55-g-p2)) — hoje a Portaria nº 1/2021, que disciplina os ritos de deliberação, o procedimento normativo e a participação social na Agência. A escada completa é lei → decreto → regimento interno, cada um com objeto mais estreito que o anterior.
 
@@ -234,13 +253,13 @@ Exclusividade quanto às sanções *da LGPD* também não significa monopólio s
 
 ### O CNPD: consultivo, sem poder normativo
 
-O **Conselho Nacional de Proteção de Dados Pessoais e da Privacidade** é órgão da estrutura da ANPD ([art. 55-C, II](#art-55-c-ii)), com 23 representantes do Poder Público, do Congresso, do CNJ, do CNMP, do CGI.br, da sociedade civil, da academia e dos setores produtivo e laboral ([art. 58-A](#art-58-a)). Sua competência é inteiramente **propositiva**: propor diretrizes, elaborar relatórios e estudos, sugerir ações e disseminar conhecimento ([art. 58-B](#art-58-b)). Não edita normas, não fiscaliza e não sanciona — é canal de participação social, não instância decisória.
+O **Conselho Nacional de Proteção de Dados Pessoais e da Privacidade** é órgão da estrutura da ANPD ([art. 55-C, II](#art-55-c-ii)), com 23 representantes do Poder Público, do Congresso, do CNJ, do CNMP, do CGI.br, da sociedade civil, da academia e dos setores produtivo e laboral ([art. 58-A](#art-58-a)). Sua competência é inteiramente **propositiva**: propor diretrizes, elaborar relatórios e estudos, sugerir ações e disseminar conhecimento ([art. 58-B](#art-58-b)). Não edita normas, não fiscaliza e não sanciona: funciona como canal de participação social.
 
 ## Detalhamento de bases legais e requisitos de tratamento
 
 ### Hipóteses de tratamento de dados ([arts. 7º a 10](#art-7))
 
-Antes da lista, o essencial: **base legal é a autorização que a lei dá para tratar um dado com determinada finalidade**. Sem ela, o tratamento é ilícito, por mais bem-intencionado que seja. E as dez hipóteses estão em pé de igualdade — **consentimento não é a base preferencial**, nem a mais segura. É, na verdade, a mais frágil, porque pode ser revogada a qualquer tempo. Quem tem obrigação legal a cumprir ou contrato a executar não deve pedir consentimento para isso: pedir autorização para algo que não se pode deixar de fazer é enganar o titular.
+Antes da lista, o essencial: **base legal é a autorização que a lei dá para tratar um dado com determinada finalidade**. Sem ela, o tratamento é ilícito, por mais bem-intencionado que seja. E as dez hipóteses estão em pé de igualdade — **consentimento não é a base preferencial**, nem a mais segura. É a mais frágil, porque pode ser revogada a qualquer tempo. Quem tem obrigação legal a cumprir ou contrato a executar não deve pedir consentimento para isso: pedir autorização para algo que não se pode deixar de fazer é enganar o titular.
 
 O tratamento somente pode ocorrer em uma das seguintes hipóteses do [art. 7º](#art-7):
 
@@ -266,7 +285,34 @@ O tratamento somente pode ocorrer em uma das seguintes hipóteses do [art. 7º](
 
 Dados cujo acesso é público continuam sujeitos à finalidade, boa-fé e interesse público que justificaram a disponibilização ([art. 7º, § 3º](#art-7-p3)), e dados tornados manifestamente públicos pelo próprio titular dispensam consentimento, sem que isso afaste seus direitos ([art. 7º, § 4º](#art-7-p4)). Em qualquer caso, a dispensa de consentimento **não dispensa os demais deveres** da LGPD ([art. 7º, § 6º](#art-7-p6)), e o tratamento posterior desses dados para novas finalidades exige propósitos legítimos e específicos ([art. 7º, § 7º](#art-7-p7)).
 
-> **Legítimo interesse não é curinga.** É a base mais discutida justamente porque depende de um juízo de ponderação, feito e documentado pelo próprio controlador, entre o interesse dele e os direitos do titular — e o próprio [art. 7º, IX](#art-7-ix), ressalva que ela cai quando prevalecerem direitos e liberdades fundamentais que exijam a proteção dos dados. Também não serve para dado sensível, cujo rol do [art. 11](#art-11) não a inclui.
+> **Legítimo interesse não é curinga.** É a base mais discutida porque depende de um juízo de ponderação, feito e documentado pelo próprio controlador, entre o interesse dele e os direitos do titular — e o próprio [art. 7º, IX](#art-7-ix), ressalva que ela cai quando prevalecerem direitos e liberdades fundamentais que exijam a proteção dos dados. Também não serve para dado sensível, cujo rol do [art. 11](#art-11) não a inclui.
+
+#### Fins acadêmicos e estudos por órgão de pesquisa: duas portas diferentes
+
+A LGPD trata pesquisa em dois lugares que se confundem com facilidade — o [art. 4º, II, "b"](#art-4-ii-b), que afasta parcialmente a lei do tratamento "para fins exclusivamente acadêmicos", e as bases dos [arts. 7º, IV](#art-7-iv), e [11, II, "c"](#art-11-ii-c), que autorizam o tratamento para realização de estudos por **órgão de pesquisa**. O [Texto para Discussão nº 1/2022 — A LGPD e o tratamento de dados pessoais para fins acadêmicos e para a realização de estudos por órgão de pesquisa](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo-tecnico-a-lgpd-e-o-tratamento-de-dados-pessoais-para-fins-academicos-e-para-a-realizacao-de-estudos-por-orgao-de-pesquisa.pdf) (ANPD, abril de 2022) nasceu de cerca de quinze consultas reais sobre isso, várias delas de órgãos do Judiciário e universidades que passaram a **negar pedidos de acesso** por insegurança jurídica. É análise preliminar, publicada para discussão e sem representar necessariamente a opinião final da Agência.
+
+O que o estudo delimita:
+
+- **A derrogação do [art. 4º, II, "b"](#art-4-ii-b), é restritiva.** Só alcança o tratamento vinculado **estritamente** ao exercício da liberdade de expressão no ambiente acadêmico. O tratamento que uma instituição de ensino faz para fins **administrativos** — matrícula, folha, cobrança — está sob a LGPD inteira.
+- **E a derrogação é parcial.** A parte final do dispositivo remete aos [arts. 7º](#art-7) e [11](#art-11): mesmo no tratamento exclusivamente acadêmico é preciso base legal, e continuam aplicáveis, no que couber, os princípios do [art. 6º](#art-6) e dispositivos como os [arts. 8º](#art-8), [10](#art-10), [12](#art-12) e [13](#art-13).
+- **"Órgão de pesquisa" é conceito fechado.** O [art. 5º, XVIII](#art-5-xviii), exige órgão ou entidade da administração pública, direta ou indireta, ou pessoa jurídica de direito privado **sem fins lucrativos** constituída sob as leis brasileiras, com sede e foro no País, cuja missão institucional ou objeto social inclua pesquisa básica ou aplicada. **Pessoas naturais** e **pessoas jurídicas com fins lucrativos** ficam de fora, e com elas o acesso a essas bases.
+- **A responsabilidade é institucional.** Quem responde pelo tratamento nas hipóteses dos [arts. 7º, IV](#art-7-iv), e [11, II, "c"](#art-11-ii-c), é o **órgão de pesquisa** — a lei atribui o encargo à instituição, e ele permanece com ela quando o tratamento é executado por pesquisador, bolsista ou estudante a ela vinculado.
+- **Anonimização é preferência legal.** O "sempre que possível" dos [arts. 7º, IV](#art-7-iv), [11, II, "c"](#art-11-ii-c), [13](#art-13) e [16, II](#art-16-ii), é regime flexível: em algumas pesquisas a identificação do titular é indispensável ao objetivo do estudo. Cabe ao agente definir e documentar as medidas de prevenção e segurança adequadas ao caso, considerando a natureza da pesquisa, os riscos e os padrões éticos.
+- **A dispensa legal convive com a exigência ética.** O estudo registra que é plenamente possível o consentimento ser dispensável pela LGPD e, ao mesmo tempo, exigível pelas normas éticas de pesquisa — os dois campos são complementares, e cumprir um não substitui o outro.
+
+#### Raspagem de dados e treinamento de modelos de IA
+
+O [Radar Tecnológico nº 3 — Inteligência artificial generativa](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf) (ANPD, novembro de 2024) percorre o ciclo de tratamento em sistemas generativos — coleta, processamento, compartilhamento e eliminação — e é onde a discussão sobre [art. 7º, §§ 3º e 4º](#art-7-p3) deixa de ser abstrata. O documento é didático e não firma posicionamento institucional; escrito em 2023 como insumo interno, avisa que parte do conteúdo pode não refletir o estado mais recente do campo. O [Radar Tecnológico nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (ANPD, 2026) retoma o mesmo eixo e o organiza princípio a princípio.
+
+O que isso muda na leitura das bases legais:
+
+- **Raspagem da web é operação de tratamento e precisa de base legal.** Quem raspa dados de sites públicos ou de repositórios agregados tem de apontar uma hipótese dos [arts. 7º](#art-7) ou [11](#art-11), e o [art. 7º, § 3º](#art-7-p3), mantém a finalidade, a boa-fé e o interesse público que justificaram a disponibilização original.
+- **"Manifestamente público" é a leitura mais abusada da lei.** O [art. 7º, § 4º](#art-7-p4), dispensa apenas o consentimento; os demais deveres seguem de pé ([§ 6º](#art-7-p6)). E o Radar nº 6 sustenta que dados compartilhados em contextos comunicacionais específicos — uma rede social, um currículo enviado a um empregador — continuam presos ao contexto em que foram expostos. O tratamento posterior para nova finalidade exige propósito legítimo e específico ([§ 7º](#art-7-p7)).
+- **Dado sensível fecha a porta do legítimo interesse.** Imagem facial e registro de voz vinculados a pessoa natural são dado biométrico, e o rol do [art. 11](#art-11) se fecha sem essa base — o que torna o treinamento em larga escala com esse material um problema de fundamento, antes de ser de dosagem.
+- **O consentimento esbarra no mesmo problema.** Coleta massiva e indeterminada é incompatível com a exigência de manifestação **livre, informada e inequívoca para finalidade determinada** ([art. 5º, XII](#art-5-xii)).
+- **Conteúdo sintético pode ser dado pessoal.** O modelo pode gerar, sobre pessoa real, afirmação falsa — as chamadas alucinações —, com efeito sobre imagem, honra e reputação. E pode gerar dado pessoal sem ter sido treinado para isso.
+- **O fim do tratamento fica difícil de definir.** Refinamento contínuo do modelo, dados fornecidos pelo usuário via _prompt_ e reuso das saídas como base de treinamento formam um ciclo em que a eliminação do [art. 16](#art-16) e a revogação do consentimento perdem contorno prático. Daí a ênfase dos dois documentos no princípio da **responsabilização e prestação de contas** ([art. 6º, X](#art-6-x)) ao longo de toda a cadeia.
+- **Quem cola dado de terceiro no _prompt_ pode virar agente de tratamento.** O usuário que compartilha dados pessoais de outras pessoas com o sistema pode, conforme o contexto, ser enquadrado como controlador ou operador — e o Radar nº 3 registra que transferir ao usuário a responsabilidade pela conformidade deixa as consequências desse compartilhamento sem resposta.
 
 ### Transparência ([art. 9º](#art-9))
 
@@ -283,7 +329,7 @@ O tratamento exige:
 - consentimento do titular ou de seu responsável legal, de forma **específica e destacada**, para finalidades específicas ([art. 11, I](#art-11-i)); **ou**
 - sem consentimento, indispensabilidade para: obrigação legal/regulatória; políticas públicas; estudos por órgão de pesquisa; exercício regular de direitos; proteção da vida; tutela da saúde; ou prevenção à fraude e segurança do titular em identificação/autenticação, observados os direitos do [art. 9º](#art-9) ([art. 11, II](#art-11-ii)).
 
-Lado a lado, fica claro que o rol dos sensíveis é mais curto de propósito:
+O rol dos sensíveis é mais curto de propósito:
 
 | Finalidade | Dados comuns | Dados sensíveis |
 | --- | --- | --- |
@@ -305,6 +351,30 @@ Também é vedado comunicar ou usar compartilhadamente, entre controladores, dad
 
 Para estudos de saúde pública, há requisitos reforçados de ambiente controlado e seguro, finalidade exclusiva, vedação de transferência a terceiro e proibição de que a divulgação dos resultados revele dados pessoais ([art. 13](#art-13)).
 
+#### Biometria e reconhecimento facial: onde o dado sensível costuma escapar
+
+Dado biométrico é sensível por definição legal ([art. 5º, II](#art-5-ii)) e é o mais fácil de coletar sem que o titular perceba. É sobre esse descompasso que trata o [Radar Tecnológico nº 2 — Biometria e reconhecimento facial](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-biometria-anpd-1.pdf) (ANPD, junho de 2024), publicado como estudo preliminar e sem firmar posicionamento institucional. Os pontos de atenção que ele lista servem de roteiro:
+
+- **Uso secundário.** Dado biométrico coletado para uma finalidade e reaproveitado para outra só é lícito se a nova finalidade for **compatível** com a original ([art. 6º, I e II](#art-6)) e continuar limitada ao mínimo necessário ([art. 6º, III](#art-6-iii)). O estudo usa como exemplo a extração da base do RENACH, de titularidade da Senatran, para uso pela Polícia Rodoviária Federal.
+- **O dado bruto revela mais do que a identidade.** Guardar a imagem facial original, além do _template_, pode expor informação de saúde ou características que o titular não forneceu nem consentiu — dado sensível a mais, sem base legal para ele.
+- **Coleta não informada invalida o consentimento.** Se a captura não é transparente, o titular não tem como consentir de forma **específica e destacada**, e a base do [art. 11, I](#art-11-i), não se forma. Fotografias tiradas à distância, sem que a pessoa saiba, são o caso óbvio.
+- **Consentimento nem sempre é a base adequada.** Quando não couber, a saída é uma das alíneas do [art. 11, II](#art-11-ii), rol que se fecha sem o legítimo interesse.
+- **Acurácia varia com as condições.** Depende do método, da qualidade da imagem, da iluminação, da oclusão e da similaridade populacional da base de treinamento. Falso positivo e falso negativo têm consequência concreta: o estudo cita o caso de identificação errônea ocorrido no Rio de Janeiro.
+- **Efeito discriminatório e naturalização da vigilância.** Vieses do ambiente e da base de treinamento se reproduzem no modelo, e o uso difuso de monitoramento desloca as **legítimas expectativas** do titular — que são o parâmetro do [art. 10](#art-10) para o legítimo interesse em tratamentos de dados comuns.
+- **Concentração de _templates_ amplia a superfície de ataque.** Vazamento de biometria não se resolve trocando a senha.
+
+Dois recortes reaparecem. O primeiro é o **ambiente escolar**: além de envolver dado sensível, a maioria dos titulares é criança ou adolescente, o que traz o [art. 14](#art-14) e o melhor interesse para dentro da análise; o estudo cita levantamento que contabilizou mais de quinze políticas de adoção de reconhecimento facial em escolas públicas brasileiras. O segundo é a **segurança pública**: o [art. 4º, III](#art-4-iii), afasta a aplicação geral da LGPD, mas os parágrafos do mesmo artigo continuam valendo — devido processo legal, princípios gerais e direitos do titular ([§ 1º](#art-4-p1)), restrições ao tratamento por pessoa jurídica de direito privado ([§§ 2º](#art-4-p2) e [4º](#art-4-p4)) e competência da Agência para emitir opiniões, recomendações e solicitar relatório de impacto ([§ 3º](#art-4-p3)). A exclusão do inciso III é parcial, e o que sobra dela obriga.
+
+#### Dados neurais: sensíveis pelo que revelam
+
+A LGPD não menciona dados cerebrais, e o [Radar Tecnológico nº 4 — Neurotecnologias](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-4-neurotecnologias.pdf) (ANPD, junho de 2025) mostra por que isso não os deixa de fora. Também é documento didático, sem posicionamento institucional.
+
+O raciocínio tem dois degraus. O primeiro: **dado neural é dado pessoal**. O conceito amplo do [art. 5º, I](#art-5-i), alcança tanto o dado que individualiza quanto o que permite chegar a alguém com meios razoavelmente disponíveis — e o estudo reúne pesquisas indicando que sinais neurais são difíceis de dissociar da identidade que os produziu, a ponto de permitirem reidentificação por "impressões de conectividade" e por eletroencefalograma. Vale também para o que se **infere** deles: estados mentais e condições neurofisiológicas derivados do processamento são igualmente dados pessoais.
+
+O segundo degrau interessa mais a este artigo: **o dado neural será sensível pelo que revelar**. O rol do [art. 5º, II](#art-5-ii), descreve categorias de informação, e é por elas que se decide: o dado neural que revela doença neurológica atual, passada ou futura é dado referente à **saúde**; o coletado como característica biométrica vinculada a pessoa natural é **dado biométrico**. Em qualquer dos dois casos, incide o [art. 11](#art-11), e a análise segue o que a operação de tratamento revela. É a mesma lógica que o [art. 11, § 1º](#art-11-p1), já aplica a qualquer tratamento que **revele** dado sensível.
+
+O estudo registra ainda que o Brasil não tem definição legal de dado neural, ao contrário de estados norte-americanos como Califórnia e Colorado, e lista propostas em tramitação no Congresso — inclusive de alteração do [art. 11](#art-11) da LGPD — e o anteprojeto de reforma do Código Civil, que trata de privacidade mental no capítulo de direito civil digital. Enquanto nada disso avança, a proteção depende da leitura acima.
+
 ### Crianças e adolescentes ([art. 14](#art-14))
 
 - O tratamento deve observar o **melhor interesse** da criança e do adolescente, além da legislação pertinente.
@@ -317,6 +387,29 @@ Para estudos de saúde pública, há requisitos reforçados de ambiente controla
 Por muito tempo se leu o § 1º como se o consentimento parental fosse a **única** base legal possível para dados de criança. A ANPD firmou entendimento diverso no [Enunciado CD/ANPD nº 1, de 22 de maio de 2023](https://www.in.gov.br/web/dou/-/enunciado-cd/anpd-n-1-de-22-de-maio-de-2023-485306934): o tratamento de dados de crianças e adolescentes pode se fundar em qualquer das hipóteses dos [arts. 7º](#art-7) ou [11](#art-11), **desde que observado e prevalente o melhor interesse**, avaliado no caso concreto. Na prática, o melhor interesse deixa de ser um requisito extra ao lado da base legal e passa a funcionar como filtro sobre ela.
 
 Desde 2026, esse artigo também não se lê sozinho: o [ECA Digital](/notas/eca-digital) acrescentou deveres de _design_, aferição de idade e supervisão parental para produtos e serviços digitais destinados ou de acesso provável por crianças e adolescentes, com a ANPD como autoridade também naquela lei.
+
+#### As três interpretações do art. 14, e por que a terceira venceu
+
+O Enunciado nº 1 é a resposta; a pergunta e o raciocínio estão no estudo que o antecedeu, o [Estudo Preliminar sobre hipóteses legais aplicáveis ao tratamento de dados pessoais de crianças e adolescentes](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo-preliminar-tratamento-de-dados-crianca-e-adolescente.pdf) (ANPD, setembro de 2022), publicado como texto para discussão e submetido a contribuições na plataforma Participa + Brasil. O documento adverte que é preliminar e **não representa necessariamente a opinião final da Agência**: o que prevaleceu ali passou a valer por força do Enunciado, não do estudo. É raro ver, num documento público, as três leituras possíveis de um artigo expostas com os argumentos de cada lado.
+
+O problema está numa assimetria de redação: o _caput_ do [art. 14](#art-14) fala em crianças **e** adolescentes, mas o § 1º, que exige consentimento parental, fala só em **crianças**; e o § 3º dispensa esse consentimento em duas hipóteses, ambas ligadas à proteção da própria criança. Dela nasceram três interpretações concorrentes, com consequências práticas opostas.
+
+**Interpretação 1 — o consentimento parental é a única base legal para dados de criança.**
+
+- **A favor**: maior controle sobre o tratamento, com consentimento sempre específico e destacado; e o histórico legislativo aponta nessa direção, já que o parecer da comissão especial do PL nº 4060/2012 invocou expressamente a COPPA norte-americana e propôs tornar ilegal a coleta sem autorização parental.
+- **Contra**: inviabilizaria tratamentos legítimos e às vezes obrigatórios — cumprimento de obrigação legal, execução de políticas públicas, tutela da saúde, proteção da vida; criaria uma **hierarquia entre bases legais** que a LGPD não prevê; transferiria aos pais o ônus exclusivo de avaliar o melhor interesse; e apostaria numa "ilusória ideia de controle", já que o consentimento parental muitas vezes é dado sem leitura e sem compreensão do que se autoriza. O estudo cita ainda o caso-limite que desmonta a tese: quando **o agressor é o próprio responsável legal**, exigir o consentimento dele para identificar e proteger a criança inviabiliza a ação protetiva do Estado.
+
+**Interpretação 2 — dados de crianças e adolescentes equivalem a dados sensíveis, e só o [art. 11](#art-11) os ampara.**
+
+- **A favor**: eleva o padrão de proteção ao restringir o tratamento a um rol mais estreito, e explicaria por que o § 1º exige consentimento "específico e em destaque", fórmula idêntica à do [art. 11, I](#art-11-i).
+- **Contra**: o texto não ampara a equiparação. A definição de dado sensível do [art. 5º, II](#art-5-ii), é fechada e olha para a **natureza da informação**: o rol lista categorias de dado, e categoria de titular ficou de fora. E a consequência prática seria perversa: bloquearia, em abstrato, execução de contrato, proteção ao crédito e legítimo interesse mesmo quando o tratamento atendesse ao melhor interesse. O exemplo que o estudo usa é o Wi-Fi da escola, cujo gerenciamento e segurança podem se apoiar no legítimo interesse em benefício dos próprios estudantes.
+
+**Interpretação 3 — valem as hipóteses dos [arts. 7º](#art-7) e [11](#art-11), desde que observado o melhor interesse.** É a que prevaleceu, e o raciocínio tem três apoios: o § 1º define os **contornos** do consentimento quando essa for a base escolhida, deixando as demais de pé; o § 3º já admite tratamento sem consentimento para proteger a criança, o que prova que a lei não hierarquizou; e o _caput_, ao fixar o melhor interesse como regra geral, exige avaliação **no caso concreto** — o Comentário Geral nº 25 do Comitê dos Direitos da Criança da ONU descreve o melhor interesse como conceito dinâmico e contextual. No mesmo sentido corre o [Enunciado nº 684 da IX Jornada de Direito Civil](https://www.cjf.jus.br/enunciados/enunciado/1823) do Conselho da Justiça Federal: "o [art. 14 da LGPD](#art-14) não exclui a aplicação das demais bases legais, se cabíveis, observado o melhor interesse da criança".
+
+O estudo faz duas ressalvas que costumam sumir na citação apressada do Enunciado, e que mudam o resultado prático:
+
+- **A abertura vem com cautela reforçada.** Bases mais abertas, como o legítimo interesse, exigem "dose adicional de cautela" quando o titular é criança ou adolescente — e a Agência pode, no caso concreto, **restringir o uso de determinadas hipóteses legais** sempre que necessário para garantir o melhor interesse. A leitura vencedora ampliou o rol de bases disponíveis e manteve o padrão de proteção.
+- **A vulnerabilidade já está precificada no regulamento.** O [Regulamento de aplicação da LGPD para agentes de tratamento de pequeno porte](https://www.in.gov.br/web/dou/-/resolucao-cd/anpd-n-2-de-27-de-janeiro-de-2022-376562019) (Resolução CD/ANPD nº 2/2022, art. 4º, II, "d") elege o tratamento de dados de crianças e adolescentes como critério de **alto risco** — inclusive para agentes de pequeno porte. E, quando o tratamento envolver dados sensíveis, o [art. 11](#art-11) continua incidindo cumulativamente.
 
 ### Término, eliminação e conservação ([arts. 15](#art-15) e [16](#art-16))
 
@@ -385,7 +478,15 @@ Dados pessoais referentes ao exercício regular de direitos pelo titular não po
 - A comunicação ou uso compartilhado de pessoa jurídica de direito público para pessoa de direito privado deve ser informado à ANPD e, em regra, depende de consentimento, salvo as exceções legais ([art. 27](#art-27)).
 - A ANPD pode requisitar informações e emitir parecer técnico complementar ([art. 29](#art-29)), estabelecer normas complementares de comunicação e uso compartilhado ([art. 30](#art-30)), enviar informe com medidas para fazer cessar a violação ([art. 31](#art-31)) e solicitar RIPD ou sugerir boas práticas ([art. 32](#art-32)).
 
-O ponto que mais gera confusão aqui é o da **transparência pública**. LGPD e Lei de Acesso à Informação não se anulam: o órgão continua obrigado a dar publicidade a suas atividades, e a LGPD não serve de escudo genérico para negar informação. Os prazos e procedimentos do exercício de direitos perante o Poder Público seguem, aliás, a legislação própria — LAI, Habeas Data e Lei do Processo Administrativo ([art. 23, § 3º](#art-23-p3)).
+A confusão mais frequente é com a **transparência pública**. LGPD e Lei de Acesso à Informação não se anulam: o órgão continua obrigado a dar publicidade a suas atividades, e a LGPD não serve de escudo genérico para negar informação. Os prazos e procedimentos do exercício de direitos perante o Poder Público seguem, aliás, a legislação própria — LAI, Habeas Data e Lei do Processo Administrativo ([art. 23, § 3º](#art-23-p3)).
+
+### Cidades inteligentes: o uso compartilhado no caso concreto
+
+O Capítulo IV é escrito em termos de órgãos e competências, e por isso costuma parecer distante de decisões operacionais. O [Radar Tecnológico nº 1 — Cidades inteligentes](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/publicacao_radar_tecnologico_jan_2024.pdf) (ANPD, janeiro de 2024) — primeiro da série, também didático e sem posicionamento institucional — usa um cenário concreto para mostrar como esses artigos se aplicam: a cidade que coleta dados em tempo real sobre trânsito, iluminação, saúde, segurança e transporte, quase sempre por meio de fornecedores privados.
+
+As preocupações que o estudo lista mapeiam quase uma a uma os dispositivos deste capítulo: **vigilância e controle** (assimetria de informação e poder entre poder público e residente); **uso comercial dos dados** por fornecedores que se capitalizam com os dados a que têm acesso, às vezes oferecendo o serviço gratuitamente ao município — que é o risco que o [art. 26, § 1º](#art-26-p1), tenta conter ao vedar, em regra, a transferência de bases públicas a entidades privadas; **usos secundários**; **compartilhamento inadequado** entre entes e entre estes e o setor privado ([arts. 26](#art-26) e [27](#art-27)); **vazamento**, agravado pela superfície de ataque de dispositivos de internet das coisas; **discriminação** por algoritmos que reforçam vieses existentes; e **perda de qualidade do dado**, que contamina a decisão pública.
+
+As medidas de mitigação propostas são igualmente reconhecíveis: programa de privacidade consistente, segurança cibernética exigida já nas especificações técnicas da **contratação**, transparência, processamento local no dispositivo com envio apenas de dados agregados, minimização, gestão diligente de fornecedores com cláusulas contratuais de proteção de dados, privacidade desde a concepção, anonimização e pseudonimização, e medidas antidiscriminatórias na escolha da solução. Duas delas decidem o resultado antes de o sistema existir: **o que se exige no edital** e **o que se escreve no contrato com o fornecedor** — é ali que a conformidade do [art. 26](#art-26) se define.
 
 ## Transferência internacional de dados (Capítulo V, [arts. 33 a 36](#art-33))
 
@@ -478,7 +579,7 @@ As duas condições são cumulativas. Uma lista com o e-mail de poucas dezenas d
 
 Recebida a comunicação, a Agência **verifica a gravidade** do incidente e pode determinar providências ao controlador, como a ampla divulgação do fato em meios de comunicação e medidas para reverter ou mitigar seus efeitos ([art. 48, § 2º](#art-48-p2)). Nessa avaliação pesa a favor do controlador ter adotado medidas técnicas que tornem os dados atingidos **ininteligíveis** a terceiros não autorizados — criptografia, tipicamente ([art. 48, § 3º](#art-48-p3)).
 
-Comunicar não é confessar infração, e o incidente comunicado não vira sanção automática: a ANPD só sanciona depois de processo administrativo próprio (ver a seção seguinte). O caminho inverso é que costuma sair caro. **Deixar de comunicar quando havia dever é, em si, descumprimento do [art. 48](#art-48)**, e a conduta posterior ao incidente entra na dosimetria da eventual multa por duas portas: a pronta adoção de medidas corretivas e a cooperação do infrator atenuam; o descumprimento de determinação da Agência agrava.
+Comunicar não é confessar infração, e o incidente comunicado não vira sanção automática: a ANPD só sanciona depois de processo administrativo próprio (ver a seção seguinte). **Deixar de comunicar quando havia dever é, em si, descumprimento do [art. 48](#art-48)**, e a conduta posterior ao incidente entra na dosimetria da eventual multa por duas portas: a pronta adoção de medidas corretivas e a cooperação do infrator atenuam; o descumprimento de determinação da Agência agrava.
 
 Vale ainda lembrar duas peças que se encaixam aqui: o vazamento que atinge **um titular individualmente** pode ser resolvido por conciliação direta entre ele e o controlador, e só se não houver acordo é que as penalidades incidem ([art. 52, § 7º](#art-52-p7)); e a responsabilidade **civil** por dano segue caminho próprio, no Judiciário, independentemente do que a ANPD decidir ([arts. 42](#art-42) a [44](#art-44)).
 
@@ -486,7 +587,19 @@ Vale ainda lembrar duas peças que se encaixam aqui: o vazamento que atinge **um
 
 Controladores e operadores podem instituir regras de boas práticas e programa de governança em privacidade. Para ser efetivo, o programa deve ser proporcional à estrutura, escala, volume e riscos; aplicar-se ao conjunto dos dados sob controle; prever políticas, salvaguardas, supervisão interna e externa, ações educativas, mecanismos de mitigação, plano de resposta a incidentes e atualização contínua. Suas regras devem ser publicadas e atualizadas periodicamente, e podem ser reconhecidas e divulgadas pela ANPD ([art. 50](#art-50)).
 
-O programa é **facultativo**, mas não inútil: sua adoção é critério expresso de dosimetria da sanção ([art. 52, § 1º, IX](#art-52-p1-ix)) e é a forma prática de cumprir o princípio da responsabilização e prestação de contas ([art. 6º, X](#art-6-x)) — que exige demonstrar, e não apenas afirmar, a conformidade.
+O programa é **facultativo**: sua adoção é critério expresso de dosimetria da sanção ([art. 52, § 1º, IX](#art-52-p1-ix)) e a forma prática de cumprir o princípio da responsabilização e prestação de contas ([art. 6º, X](#art-6-x)), que exige demonstrar a conformidade.
+
+### Sandbox regulatório: o instrumento que a ANPD estudou antes de usar
+
+Governança em privacidade é um lado da moeda; o outro é como o regulador aprende sobre uma tecnologia antes de escrever a regra sobre ela. O [Estudo Técnico sobre Sandbox Regulatório](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sandbox_regulatorio_versao_publica.pdf) (ANPD, versão pública de setembro de 2023) é o levantamento que a Agência fez sobre esse instrumento — expressamente apresentado como manual de referência para o planejamento de um projeto-piloto, e não como programa já instituído.
+
+**Sandbox regulatório** é um ambiente de experimentação delimitado: um número restrito de participantes testa produto, serviço ou modelo de negócio inovador, por prazo determinado, sob supervisão do regulador e com salvaguardas acordadas. O estudo o situa dentro da estratégia que a OCDE chama de "testar e aprender", entre dois extremos — o "esperar e observar", que adia a regulação até a tecnologia amadurecer, e a proibição por moratória. Quando necessário, o programa pode **suspender temporariamente** requisitos regulatórios para os participantes, em troca de salvaguardas reforçadas — e o estudo frisa que o instrumento existe com ou sem essa suspensão.
+
+Três leituras interessam aqui:
+
+- **_Hub_ de inovação é outro instrumento.** O estudo lista as alternativas ao sandbox dentro do guarda-chuva da regulação experimental — bancadas de teste (_test beds_), centros de inovação (_innovation hubs_, canal de dúvidas e orientação **não vinculante**, como o Lift do Banco Central) e cláusulas de caducidade. São instrumentos distintos, com graus distintos de compromisso do regulador.
+- **A base legal para participar continua sendo a mesma.** Quem entra num programa segue precisando de fundamento nos [arts. 7º](#art-7) ou [11](#art-11) e de observar os princípios do [art. 6º](#art-6). O que muda é o acompanhamento; a regra material permanece.
+- **Conecta-se ao que a LGPD já prevê.** O incentivo à adoção de padrões e boas práticas ([art. 50](#art-50)), o estímulo à inovação como fundamento da disciplina ([art. 2º, V](#art-2-v)) e a competência da Agência para promover estudos e ouvir agentes de tratamento e sociedade ([art. 55-J, VII e XIV](#art-55-j)) são o lastro doméstico do instrumento. Fora daqui, o exemplo mais citado é o sandbox da autoridade britânica (ICO).
 
 ## Fiscalização e sanções (Capítulo VIII, [arts. 52 a 54](#art-52))
 
@@ -576,7 +689,7 @@ A esses se soma uma pendência de outra natureza, criada pela própria reforma d
 
 O roteiro público desse trabalho é a **[Agenda Regulatória](https://www.gov.br/anpd/pt-br/assuntos/processo_regulatorio/agenda-regulatoria-1)**, aprovada pelo Conselho Diretor ([Regimento Interno, art. 5º, XI](/notas/regimento-interno-anpd#art-5-xi)) e revisada periodicamente. A do biênio 2025-2026 veio pela Resolução nº 23/2024 e foi atualizada pela Resolução nº 31/2025; ela organiza as iniciativas em quatro fases, conforme o prazo em que o processo regulatório deve começar. Direitos dos titulares e relatório de impacto estão na primeira fase, ao lado de temas novos como agregadores de dados pessoais, dados de saúde, inteligência artificial e as bases legais de consentimento e de proteção ao crédito. Em paralelo, o **Mapa de Temas Prioritários** para 2026-2027 (Resolução nº 30/2025) indica onde a fiscalização deve concentrar esforço — que é a outra metade da pergunta "o que vem agora".
 
-Enquanto o regulamento não vem, valem a lei e os princípios — e é bom lembrar que a ausência de norma detalhada **não suspende o dever**: quem trata dados continua obrigado a atender o titular, a manter segurança e a responder por dano, com ou sem resolução dizendo exatamente como.
+Enquanto o regulamento não vem, valem a lei e os princípios — e é bom lembrar que a ausência de norma detalhada **não suspende o dever**: quem trata dados continua obrigado a atender o titular, a manter segurança e a responder por dano, com ou sem resolução dizendo como.
 
 ## Normas
 
@@ -607,6 +720,26 @@ Enquanto o regulamento não vem, valem a lei e os princípios — e é bom lembr
 - **Resolução CD/ANPD nº 33, de 6 de abril de 2026** — aprova a nova estrutura interna da Agência, em vigor junto com o Decreto nº 12.881/2026: seis superintendências (Executiva, Inovação Tecnológica, Regulação, Fiscalização, Relações Institucionais e Internacionais e Gestão Interna) e uma unidade de Auditoria. É norma de organização, não de conteúdo — mas é ela que diz, hoje, qual unidade instaura processo sancionador e qual conduz o processo regulatório. A **atualização do regimento interno** e o **planejamento de adequação de toda a regulamentação** à Lei nº 15.352/2026 (exigido pelo art. 16 dessa lei) seguem pendentes.
 - [Enunciado CD/ANPD nº 1, de 22 de maio de 2023](https://www.in.gov.br/web/dou/-/enunciado-cd/anpd-n-1-de-22-de-maio-de-2023-485306934) — o **enunciado** é o instrumento pelo qual o Conselho Diretor fixa interpretação, com efeito vinculativo à própria Agência ([Regimento Interno, art. 51, II](/notas/regimento-interno-anpd#art-51-ii)). Este firma o entendimento da Agência sobre dados de crianças e adolescentes: o tratamento pode se apoiar em qualquer das hipóteses dos [arts. 7º](#art-7) ou [11](#art-11), desde que observado e prevalente o melhor interesse, avaliado no caso concreto ([art. 14](#art-14)).
 - [Decreto nº 12.881, de 18 de março de 2026](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12881.htm) — estrutura regimental da ANPD; revogou o Decreto nº 10.474/2020 e extinguiu a antiga Autoridade Nacional, sucedida pela Agência. Em vigor desde 8 de abril de 2026.
+
+### Estudos técnicos e radares tecnológicos da ANPD
+
+Estudos sem força de norma, e vários trazem ressalva expressa nesse sentido: a série **Radar Tecnológico** se apresenta como abordagem didática de tecnologias emergentes, "sem a intenção de esgotar as temáticas ou firmar posicionamentos institucionais", e os textos para discussão são preliminares, publicados para colher contribuições. Estão reunidos na [central de documentos técnicos e orientativos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos) da Agência e entram aqui porque são a fonte pública do que esta nota afirma sobre técnica e sobre o percurso de algumas interpretações.
+
+**Estudos técnicos e textos para discussão:**
+
+- [Hipóteses legais aplicáveis ao tratamento de dados pessoais de crianças e adolescentes](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo-preliminar-tratamento-de-dados-crianca-e-adolescente.pdf) (setembro de 2022) — as três interpretações do [art. 14](#art-14) e os argumentos de cada uma; antecede o Enunciado CD/ANPD nº 1/2023.
+- [A LGPD e o tratamento de dados pessoais para fins acadêmicos e para a realização de estudos por órgão de pesquisa](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo-tecnico-a-lgpd-e-o-tratamento-de-dados-pessoais-para-fins-academicos-e-para-a-realizacao-de-estudos-por-orgao-de-pesquisa.pdf) — Texto para Discussão nº 1/2022 (abril de 2022).
+- [Sandbox Regulatório](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sandbox_regulatorio_versao_publica.pdf) (versão pública, setembro de 2023) — o instrumento, os casos estudados e um roteiro de implementação.
+- Anonimização, em três volumes complementares (novembro de 2023): [análise jurídica](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd___analise_juridica.pdf), [processo baseado em risco e técnicas computacionais](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd_uma_visao_de_processo_baseado_em_risco_e_tecnicas_computacionais.pdf) e [estudo de casos](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_de_casos_sobre_anonimizacao_de_dados_na_lgpd_.pdf).
+
+**Série Radar Tecnológico:**
+
+- [nº 1 — Cidades inteligentes](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/publicacao_radar_tecnologico_jan_2024.pdf) (janeiro de 2024).
+- [nº 2 — Biometria e reconhecimento facial](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-biometria-anpd-1.pdf) (junho de 2024).
+- [nº 3 — Inteligência artificial generativa](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf) (novembro de 2024).
+- [nº 4 — Neurotecnologias](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-4-neurotecnologias.pdf) (junho de 2025).
+- [nº 5 — Mecanismos de aferição de idade](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar-tecnologico-5-mecanismos-de-afericao-de-idade.pdf) (outubro de 2025) — detalhado na nota do [ECA Digital](/notas/eca-digital).
+- [nº 6 — _Deepfakes_](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/rt_deepfakes_anpd.pdf) (2026).
 
 ### Normas correlatas
 
