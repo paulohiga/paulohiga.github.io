@@ -1,224 +1,721 @@
-# Definições do AI Act (Regulamento (UE) 2024/1689), reunidas em
-# /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
-# (docs/notas.md). Confira com
-# `python3 scripts/conferir_definicoes.py ai-act-consolidado`.
-#
-# O art. 3.º tem 68 definições numeradas, e os itens numerados de um artigo
-# europeu abertos por "1)" não recebem âncora própria (ver "Normas estrangeiras"
-# em docs/notas.md): a base traz o número do item, e a âncora leva ao artigo.
-#
-# O texto é PT-PT, do EUR-Lex. Onde a terminologia oficial diverge da
-# brasileira, o verbete usa a forma da nota e registra a oficial nos `aliases`
-# ou na observação — ver "Terminologia: PT-PT × pt-BR", na nota do AI Act.
-
+- termo: Sistema de IA
+  slug: sistema-de-ia
+  tema: ia
+  bases:
+  - texto: art. 3.º, 1)
+    ancora: art-3
+  aliases:
+  - sistemas de IA
+  definicao: um sistema baseado em máquinas concebido para funcionar com níveis
+    de autonomia variáveis, e que pode apresentar capacidade de adaptação após a
+    implantação e que, para objetivos explícitos ou implícitos, e com base nos dados
+    de entrada que recebe, infere a forma de gerar resultados, tais como previsões,
+    conteúdos, recomendações ou decisões que podem influenciar ambientes físicos
+    ou virtuais
+  nota: 'A palavra decisiva é **inferir**: é ela que separa um sistema de IA de
+    um software determinístico de regras, e a Comissão dedicou [orientações próprias](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application)
+    ao ponto.'
+- termo: Risco
+  slug: risco
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 2)
+    ancora: art-3
+  definicao: a combinação da probabilidade de ocorrência de danos com a gravidade
+    desses danos
 - termo: Prestador
   slug: prestador
   tema: sujeitos
-  bases: [{ texto: "art. 3.º, 3)", ancora: art-3 }]
-  aliases: [prestadores]
-  definicao: >-
-    quem desenvolve — ou manda desenvolver — um sistema de IA ou um modelo de
-    finalidade geral e o coloca no mercado ou em serviço **sob nome ou marca
-    próprios**, a título oneroso ou gratuito.
-
+  bases:
+  - texto: art. 3.º, 3)
+    ancora: art-3
+  aliases:
+  - prestadores
+  definicao: uma pessoa singular ou coletiva, autoridade pública, agência ou outro
+    organismo que desenvolva, ou mande desenvolver, um sistema de IA ou um modelo
+    de IA de finalidade geral e o coloque no mercado, ou coloque o sistema de IA
+    em serviço sob o seu próprio nome ou a sua própria marca, a título oneroso ou
+    gratuito
 - termo: Responsável pela implantação
   slug: responsavel-pela-implantacao
   tema: sujeitos
-  bases: [{ texto: "art. 3.º, 4)", ancora: art-3 }]
-  aliases: [responsáveis pela implantação]
-  definicao: >-
-    quem utiliza um sistema de IA sob a sua autoridade, no exercício de
-    atividade profissional.
-
+  bases:
+  - texto: art. 3.º, 4)
+    ancora: art-3
+  aliases:
+  - responsáveis pela implantação
+  definicao: uma pessoa singular ou coletiva, autoridade pública, agência ou outro
+    organismo que utilize um sistema de IA sob a sua própria autoridade, salvo se
+    o sistema de IA for utilizado no âmbito de uma atividade pessoal de caráter
+    não profissional
 - termo: Mandatário
   slug: mandatario
   tema: sujeitos
   bases:
-    - { texto: "art. 3.º, 5)", ancora: art-3 }
-    - { texto: "art. 22.º", ancora: art-22 }
-  definicao: >-
-    pessoa estabelecida na União que recebe mandato escrito de prestador de país
-    terceiro.
-
+  - texto: art. 3.º, 5)
+    ancora: art-3
+  definicao: uma pessoa singular ou coletiva localizada ou estabelecida na União
+    que tenha recebido e aceitado um mandato escrito de um prestador de um sistema
+    de IA ou de um modelo de IA de finalidade geral para cumprir e executar em seu
+    nome, respetivamente, as obrigações e os procedimentos previstos no presente
+    regulamento
 - termo: Importador
   slug: importador
   tema: sujeitos
-  bases: [{ texto: "art. 3.º, 6)", ancora: art-3 }]
-  definicao: >-
-    quem, localizado ou estabelecido na União, coloca no mercado um sistema de
-    IA que ostenta o nome ou a marca de pessoa estabelecida em país terceiro.
-
+  bases:
+  - texto: art. 3.º, 6)
+    ancora: art-3
+  definicao: uma pessoa singular ou coletiva localizada ou estabelecida na União
+    que coloca no mercado um sistema de IA que ostenta o nome ou a marca de uma
+    pessoa singular ou coletiva estabelecida num país terceiro
 - termo: Distribuidor
   slug: distribuidor
   tema: sujeitos
-  bases: [{ texto: "art. 3.º, 7)", ancora: art-3 }]
-  definicao: >-
-    quem, na cadeia de distribuição e sem ser o prestador nem o importador,
-    disponibiliza um sistema de IA no mercado da União.
-
+  bases:
+  - texto: art. 3.º, 7)
+    ancora: art-3
+  definicao: uma pessoa singular ou coletiva inserida na cadeia de distribuição,
+    distinta do prestador e do importador, que disponibiliza um sistema de IA no
+    mercado da União
 - termo: Operador
   slug: operador
   tema: sujeitos
-  bases: [{ texto: "art. 3.º, 8)", ancora: art-3 }]
-  aliases: [operadores]
-  definicao: >-
-    o gênero que reúne prestador, fabricante de produtos, responsável pela
-    implantação, mandatário, importador e distribuidor.
-
-- termo: Pessoa afetada
-  slug: pessoa-afetada
-  tema: sujeitos
   bases:
-    - { texto: "art. 85.º", ancora: art-85 }
-    - { texto: "art. 86.º", ancora: art-86 }
-  aliases: [pessoas afetadas]
-  definicao: >-
-    quem sofre os efeitos do sistema, sem necessariamente operá-lo — categoria a
-    que se ligam os direitos de apresentar queixa e de obter explicação sobre a
-    decisão tomada.
-
-- termo: Sistema de IA
-  slug: sistema-de-ia
-  tema: ia
-  bases: [{ texto: "art. 3.º, 1)", ancora: art-3 }]
-  aliases: [sistemas de IA]
-  definicao: >-
-    sistema baseado em máquinas concebido para funcionar com **níveis de
-    autonomia variáveis**, que pode revelar **capacidade de adaptação** após a
-    implantação e que, com base nos dados de entrada que recebe, **infere** como
-    gerar resultados — previsões, conteúdos, recomendações ou decisões — capazes
-    de influenciar ambientes físicos ou virtuais.
-  nota: >-
-    A palavra decisiva é **inferir**: é ela que separa um sistema de IA de um
-    software determinístico de regras, e a Comissão dedicou
-    [orientações próprias](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application)
-    ao ponto.
-
-- termo: Modelo de IA de finalidade geral
-  slug: modelo-de-ia-de-finalidade-geral
-  tema: ia
-  bases: [{ texto: "art. 3.º, 63)", ancora: art-3 }]
-  aliases: [modelos de IA de finalidade geral, modelo de finalidade geral, modelos de finalidade geral]
-  definicao: >-
-    modelo treinado com grande volume de dados em autossupervisão e em larga
-    escala, que revela **generalidade significativa** e é capaz de executar
-    competentemente uma vasta gama de tarefas distintas, podendo ser integrado a
-    diversos sistemas ou aplicações a jusante.
-
-- termo: Sistema de IA de finalidade geral
-  slug: sistema-de-ia-de-finalidade-geral
-  tema: ia
-  bases: [{ texto: "art. 3.º, 66)", ancora: art-3 }]
-  aliases: [sistemas de IA de finalidade geral]
-  definicao: >-
-    sistema baseado num modelo de IA de finalidade geral, com capacidade de
-    servir a diversas finalidades.
-
-- termo: Risco sistêmico
-  slug: risco-sistemico
-  tema: ia
-  bases:
-    - { texto: "art. 3.º, 65)", ancora: art-3 }
-    - { texto: "art. 51.º", ancora: art-51 }
-  aliases: [risco sistémico]
-  definicao: >-
-    risco específico das capacidades de maior impacto dos modelos de finalidade
-    geral, com efeitos negativos significativos e razoavelmente previsíveis
-    sobre saúde pública, segurança, direitos fundamentais ou a sociedade em
-    geral, propagáveis em escala.
-
-- termo: Ultrafalsificação
-  slug: ultrafalsificacao
-  tema: ia
-  bases: [{ texto: "art. 3.º, 60)", ancora: art-3 }]
-  aliases: [ultrafalsificações, falsificação profunda, falsificações profundas]
-  definicao: >-
-    conteúdo de imagem, áudio ou vídeo gerado ou manipulado por IA que se
-    assemelha a pessoas, objetos, locais ou acontecimentos reais e que
-    **pareceria autêntico** a uma pessoa — o _deep fake_.
-  nota: >-
-    O texto do EUR-Lex traz a definição sob o rótulo «falsificações profundas».
-
-- termo: Literacia em IA
-  slug: literacia-em-ia
-  tema: ia
-  bases:
-    - { texto: "art. 3.º, 56)", ancora: art-3 }
-    - { texto: "art. 4.º", ancora: art-4 }
-  aliases: [literacia no domínio da IA]
-  definicao: >-
-    competências e conhecimentos que permitem implantar sistemas de IA com
-    conhecimento de causa e tomar consciência de suas oportunidades, riscos e
-    possíveis danos.
-
+  - texto: art. 3.º, 8)
+    ancora: art-3
+  aliases:
+  - operadores
+  definicao: um prestador, fabricante de produtos, responsável pela implantação,
+    mandatário, importador ou distribuidor
 - termo: Colocação no mercado
   slug: colocacao-no-mercado
   tema: governanca
-  bases: [{ texto: "art. 3.º, 9)", ancora: art-3 }]
-  definicao: >-
-    a primeira disponibilização de um sistema de IA ou de um modelo de finalidade
-    geral no mercado da União.
-
+  bases:
+  - texto: art. 3.º, 9)
+    ancora: art-3
+  definicao: a primeira disponibilização de um sistema de IA ou de um modelo de
+    IA de finalidade geral no mercado da União
 - termo: Disponibilização no mercado
   slug: disponibilizacao-no-mercado
   tema: governanca
-  bases: [{ texto: "art. 3.º, 10)", ancora: art-3 }]
-  definicao: >-
-    o fornecimento de um sistema de IA ou de um modelo de finalidade geral para
-    distribuição ou utilização no mercado da União, no âmbito de atividade
-    comercial, a título oneroso ou gratuito.
-
+  bases:
+  - texto: art. 3.º, 10)
+    ancora: art-3
+  definicao: o fornecimento de um sistema de IA ou de um modelo de IA de finalidade
+    geral para distribuição ou utilização no mercado da União no âmbito de uma atividade
+    comercial, a título oneroso ou gratuito
 - termo: Colocação em serviço
   slug: colocacao-em-servico
   tema: governanca
-  bases: [{ texto: "art. 3.º, 11)", ancora: art-3 }]
-  definicao: >-
-    o fornecimento de um sistema de IA diretamente ao responsável pela
-    implantação, ou para utilização própria, para a primeira utilização na União
-    com a finalidade prevista.
-
+  bases:
+  - texto: art. 3.º, 11)
+    ancora: art-3
+  definicao: o fornecimento, diretamente ao responsável pela implantação ou para
+    utilização própria, de um sistema de IA para a primeira utilização na União
+    com a finalidade prevista
 - termo: Finalidade prevista
   slug: finalidade-prevista
   tema: governanca
-  bases: [{ texto: "art. 3.º, 12)", ancora: art-3 }]
-  definicao: >-
-    a utilização a que o prestador destina o sistema, incluindo contexto e
-    condições de uso, conforme as instruções, os materiais promocionais e a
-    documentação técnica.
-  nota: >-
-    Com a **utilização indevida razoavelmente previsível**, é o par que delimita
+  bases:
+  - texto: art. 3.º, 12)
+    ancora: art-3
+  definicao: a utilização a que o prestador destina o sistema de IA, incluindo o
+    contexto específico e as condições de utilização, conforme especificado nas
+    informações facultadas pelo prestador nas instruções de utilização, nos materiais
+    e declarações promocionais ou de venda, bem como na documentação técnica
+  nota: Com a **utilização indevida razoavelmente previsível**, é o par que delimita
     até onde vai o dever de antecipação do prestador.
-
 - termo: Utilização indevida razoavelmente previsível
   slug: utilizacao-indevida-razoavelmente-previsivel
   tema: governanca
-  bases: [{ texto: "art. 3.º, 13)", ancora: art-3 }]
-  definicao: >-
-    uso do sistema fora da finalidade prevista que ainda assim decorre de
-    comportamento humano razoavelmente previsível, ou de interação
-    razoavelmente previsível com outros sistemas.
-
+  bases:
+  - texto: art. 3.º, 13)
+    ancora: art-3
+  definicao: a utilização de um sistema de IA de uma forma não conforme com a sua
+    finalidade prevista, mas que pode resultar de um comportamento humano razoavelmente
+    previsível ou de uma interação razoavelmente previsível com outros sistemas,
+    incluindo outros sistemas de IA
+- termo: Componente de segurança
+  slug: componente-de-seguranca
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 14)
+    ancora: art-3
+  definicao: um componente de um produto ou sistema de IA que cumpre uma função
+    de segurança nesse produto ou sistema de IA, ou cuja falha ou anomalia põe em
+    risco a saúde e a segurança de pessoas ou bens; para efeitos da presente definição,
+    um componente cumpre uma função de segurança quando o seu objetivo é prevenir
+    ou atenuar riscos para a saúde e a segurança de pessoas ou bens
+- termo: Micro, pequena ou média empresa
+  slug: micro-pequena-ou-media-empresa
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 14-A)
+    ancora: art-3
+  aliases:
+  - PME
+  definicao: uma micro, pequena ou média empresa na aceção do artigo 2.º do anexo
+    da Recomendação 2003/361/CE
+- termo: Pequena empresa de média capitalização
+  slug: pequena-empresa-de-media-capitalizacao
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 14-B)
+    ancora: art-3
+  definicao: uma pequena empresa de média capitalização na aceção do ponto 2 do
+    anexo da Recomendação (UE) 2025/1099
+- termo: Instruções de utilização
+  slug: instrucoes-de-utilizacao
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 15)
+    ancora: art-3
+  definicao: as informações facultadas pelo prestador para esclarecer responsável
+    pela implantação, em especial, sobre a finalidade prevista e a utilização correta
+    de um sistema de IA
+- termo: Recolha de um sistema de IA
+  slug: recolha-de-um-sistema-de-ia
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 16)
+    ancora: art-3
+  definicao: qualquer medida destinada a obter a devolução ao prestador de um sistema
+    de IA disponibilizado aos responsáveis pela implantação ou a colocar esse sistema
+    fora de serviço ou a desativá-lo
+- termo: Retirada de um sistema de IA
+  slug: retirada-de-um-sistema-de-ia
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 17)
+    ancora: art-3
+  definicao: qualquer medida destinada a impedir a disponibilização no mercado de
+    um sistema de IA presente na cadeia de distribuição
+- termo: Desempenho de um sistema de IA
+  slug: desempenho-de-um-sistema-de-ia
+  tema: ia
+  bases:
+  - texto: art. 3.º, 18)
+    ancora: art-3
+  definicao: a capacidade de um sistema de IA para alcançar a sua finalidade prevista
+- termo: Autoridade notificadora
+  slug: autoridade-notificadora
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 19)
+    ancora: art-3
+  definicao: a autoridade nacional responsável por estabelecer e executar os procedimentos
+    necessários para a avaliação, designação e notificação de organismos de avaliação
+    da conformidade e pela fiscalização destes
+- termo: Avaliação da conformidade
+  slug: avaliacao-da-conformidade
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 20)
+    ancora: art-3
+  definicao: o processo de demonstrar se estão preenchidos os requisitos relacionados
+    com um sistema de IA de risco elevado estabelecidos no capítulo III, secção
+    2
+- termo: Organismo de avaliação da conformidade
+  slug: organismo-de-avaliacao-da-conformidade
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 21)
+    ancora: art-3
+  definicao: um organismo que realiza atividades de avaliação da conformidade por
+    terceiros, nomeadamente testagem, certificação e inspeção
+- termo: Organismo notificado
+  slug: organismo-notificado
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 22)
+    ancora: art-3
+  definicao: um organismo de avaliação da conformidade notificado nos termos do
+    presente regulamento ou de outra legislação de harmonização da União pertinente
 - termo: Modificação substancial
   slug: modificacao-substancial
   tema: governanca
   bases:
-    - { texto: "art. 3.º, 23)", ancora: art-3 }
-    - { texto: "art. 25.º", ancora: art-25 }
-  definicao: >-
-    alteração posterior à colocação no mercado, não prevista na avaliação de
-    conformidade inicial, que afete a conformidade ou modifique a finalidade
-    prevista.
-  nota: "É o gatilho que **transforma quem modifica em prestador** ([art. 25.º](#art-25))."
+  - texto: art. 3.º, 23)
+    ancora: art-3
+  definicao: uma alteração do sistema de IA após a sua colocação no mercado ou colocação
+    em serviço, que não tenha sido prevista ou planeada pelo prestador na avaliação
+    da conformidade inicial e que, consequentemente, afete a conformidade do sistema
+    de IA com os requisitos estabelecidos no capítulo III, secção 2, do presente
+    regulamento, ou modifique a finalidade prevista relativamente à qual o sistema
+    de IA foi avaliado
+  nota: É o gatilho que **transforma quem modifica em prestador** ([art. 25.º](#art-25)).
+- termo: Marcação CE
+  slug: marcacao-ce
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 24)
+    ancora: art-3
+  definicao: a marcação pela qual um prestador atesta que um sistema de IA está
+    em conformidade com os requisitos estabelecidos no capítulo III, secção 2, e
+    noutros atos aplicáveis enumerados na lista da legislação de harmonização da
+    União que prevejam a aposição dessa marcação
+- termo: Sistema de acompanhamento pós-comercialização
+  slug: sistema-de-acompanhamento-pos-comercializacao
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 25)
+    ancora: art-3
+  definicao: todas as atividades empreendidas pelos prestadores de sistemas de IA
+    para recolher e analisar dados sobre a experiência adquirida com a utilização
+    de sistemas de IA por eles colocados no mercado ou colocados em serviço, com
+    vista a identificar a eventual necessidade de aplicar imediatamente as eventuais
+    medidas corretivas ou preventivas necessárias
+- termo: Autoridade de fiscalização do mercado
+  slug: autoridade-de-fiscalizacao-do-mercado
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 26)
+    ancora: art-3
+  definicao: a autoridade nacional que realiza as atividades e toma as medidas previstas
+    no Regulamento (UE) 2019/1020
+- termo: Norma harmonizada
+  slug: norma-harmonizada
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 27)
+    ancora: art-3
+  definicao: uma norma europeia na aceção do artigo 2.º, n.º 1, alínea c), do Regulamento
+    (UE) n.º 1025/2012
+- termo: Especificação comum
+  slug: especificacao-comum
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 28)
+    ancora: art-3
+  definicao: um conjunto de especificações técnicas, definidas no artigo 2.º, ponto
+    4, do Regulamento (UE) n.º 1025/2012, que proporcionam os meios para cumprir
+    certos requisitos estabelecidos no presente regulamento
+- termo: Dados de treino
+  slug: dados-de-treino
+  tema: dados
+  bases:
+  - texto: art. 3.º, 29)
+    ancora: art-3
+  definicao: os dados usados para treinar um sistema de IA mediante o ajustamento
+    dos seus parâmetros passíveis de serem aprendidos
+- termo: Dados de validação
+  slug: dados-de-validacao
+  tema: dados
+  bases:
+  - texto: art. 3.º, 30)
+    ancora: art-3
+  definicao: os dados utilizados para realizar uma avaliação do sistema de IA treinado
+    e ajustar os seus parâmetros não passíveis de serem aprendidos e o seu processo
+    de aprendizagem, a fim de, entre outras coisas, evitar um subajustamento ou
+    um sobreajustamento
+- termo: Conjunto de dados de validação
+  slug: conjunto-de-dados-de-validacao
+  tema: dados
+  bases:
+  - texto: art. 3.º, 31)
+    ancora: art-3
+  definicao: um conjunto de dados separado ou parte de um conjunto de dados de treino,
+    sob forma de uma divisão fixa ou variável
+- termo: Dados de teste
+  slug: dados-de-teste
+  tema: dados
+  bases:
+  - texto: art. 3.º, 32)
+    ancora: art-3
+  definicao: os dados utilizados para realizar uma avaliação independente do sistema
+    de IA, a fim de confirmar o desempenho esperado desse sistema antes da sua colocação
+    no mercado ou colocação em serviço
+- termo: Dados de entrada
+  slug: dados-de-entrada
+  tema: dados
+  bases:
+  - texto: art. 3.º, 33)
+    ancora: art-3
+  definicao: os dados disponibilizados a um sistema de IA, ou por ele obtidos diretamente,
+    com base nos quais o sistema produz um resultado
+- termo: Dados biométricos
+  slug: dados-biometricos
+  tema: dados
+  bases:
+  - texto: art. 3.º, 34)
+    ancora: art-3
+  definicao: dados pessoais resultantes de um tratamento técnico específico relativo
+    às características físicas, fisiológicas ou comportamentais de uma pessoa singular,
+    nomeadamente imagens faciais ou dados dactiloscópicos
+- termo: Identificação biométrica
+  slug: identificacao-biometrica
+  tema: ia
+  bases:
+  - texto: art. 3.º, 35)
+    ancora: art-3
+  definicao: o reconhecimento automatizado de características humanas físicas, fisiológicas,
+    comportamentais ou psicológicas para efeitos de determinação da identidade de
+    uma pessoa singular, comparando os dados biométricos dessa pessoa com os dados
+    biométricos de pessoas armazenados numa base de dados
+- termo: Verificação biométrica
+  slug: verificacao-biometrica
+  tema: ia
+  bases:
+  - texto: art. 3.º, 36)
+    ancora: art-3
+  definicao: a verificação automatizada, «um para um», incluindo a autenticação,
+    da identidade de pessoas singulares por meio da comparação dos seus dados biométricos
+    com dados biométricos previamente facultados
+- termo: Categorias especiais de dados pessoais
+  slug: categorias-especiais-de-dados-pessoais
+  tema: dados
+  bases:
+  - texto: art. 3.º, 37)
+    ancora: art-3
+  definicao: as categorias de dados pessoais a que se referem o artigo 9.º, n.º
+    1, do Regulamento (UE) 2016/679, o artigo 10.º da Diretiva (UE) 2016/680 e o
+    artigo 10.º, n.º 1, do Regulamento (UE) 2018/1725
+- termo: Dados operacionais sensíveis
+  slug: dados-operacionais-sensiveis
+  tema: dados
+  bases:
+  - texto: art. 3.º, 38)
+    ancora: art-3
+  definicao: dados operacionais relacionados com atividades de prevenção, deteção,
+    investigação ou repressão de infrações penais, cuja divulgação possa comprometer
+    a integridade de processos penais
+- termo: Sistema de reconhecimento de emoções
+  slug: sistema-de-reconhecimento-de-emocoes
+  tema: ia
+  bases:
+  - texto: art. 3.º, 39)
+    ancora: art-3
+  definicao: um sistema de IA concebido para identificar ou inferir emoções ou intenções
+    de pessoas singulares com base nos seus dados biométricos
+- termo: Sistema de categorização biométrica
+  slug: sistema-de-categorizacao-biometrica
+  tema: ia
+  bases:
+  - texto: art. 3.º, 40)
+    ancora: art-3
+  definicao: um sistema de IA destinado a afetar pessoas singulares a categorias
+    específicas com base nos seus dados biométricos, a menos que seja acessório
+    a outro serviço comercial e estritamente necessário por razões técnicas objetivas
+- termo: Sistema de identificação biométrica à distância
+  slug: sistema-de-identificacao-biometrica-a-distancia
+  tema: ia
+  bases:
+  - texto: art. 3.º, 41)
+    ancora: art-3
+  definicao: um sistema de IA concebido para identificar pessoas singulares, sem
+    a sua participação ativa, normalmente à distância, por meio da comparação dos
+    dados biométricos de uma pessoa com os dados biométricos contidos numa base
+    de dados de referência
+- termo: Sistema de identificação biométrica à distância em tempo real
+  slug: sistema-de-identificacao-biometrica-a-distancia-em-tempo-real
+  tema: ia
+  bases:
+  - texto: art. 3.º, 42)
+    ancora: art-3
+  definicao: um sistema de identificação biométrica à distância em que a recolha
+    de dados biométricos, a comparação e a identificação ocorrem sem atraso significativo,
+    que engloba não apenas a identificação instantânea, mas também a identificação
+    com ligeiro atraso, a fim de evitar que as regras sejam contornadas
+- termo: Sistema de identificação biométrica à distância em diferido
+  slug: sistema-de-identificacao-biometrica-a-distancia-em-diferido
+  tema: ia
+  bases:
+  - texto: art. 3.º, 43)
+    ancora: art-3
+  definicao: um sistema de identificação biométrica à distância que não seja um
+    sistema de identificação biométrica à distância em tempo real
+- termo: Espaço acessível ao público
+  slug: espaco-acessivel-ao-publico
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 44)
+    ancora: art-3
+  definicao: qualquer espaço físico, público ou privado, acessível a um número indeterminado
+    de pessoas singulares, independentemente da eventual aplicação de condições
+    de acesso específicas e independentemente das eventuais restrições de capacidade
+- termo: Autoridade responsável pela aplicação da lei
+  slug: autoridade-responsavel-pela-aplicacao-da-lei
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 45)
+    ancora: art-3
+  definicao: '- a) Uma autoridade pública competente para efeitos de prevenção,
+    investigação, deteção ou repressão de infrações penais ou execução de sanções
+    penais, incluindo a proteção contra ameaças à segurança pública e a prevenção
+    das mesmas, ou
 
+
+    - b) Qualquer outro organismo ou entidade designado pelo direito de um Estado-Membro
+    para exercer autoridade pública e poderes públicos para efeitos de prevenção,
+    investigação, deteção ou pelo exercício da ação penal relativo a infrações penais
+    ou execução de sanções penais, incluindo a proteção contra ameaças à segurança
+    pública e a prevenção das mesmas;'
+- termo: Aplicação da lei
+  slug: aplicacao-da-lei
+  tema: fiscalizacao
+  bases:
+  - texto: art. 3.º, 46)
+    ancora: art-3
+  definicao: as atividades realizadas por autoridades responsáveis pela aplicação
+    da lei ou em nome destas para efeitos de prevenção, investigação, deteção ou
+    repressão de infrações penais ou execução de sanções penais, incluindo a proteção
+    contra ameaças à segurança pública e a prevenção das mesmas
+- termo: Serviço para a IA
+  slug: servico-para-a-ia
+  tema: ia
+  bases:
+  - texto: art. 3.º, 47)
+    ancora: art-3
+  definicao: a atribuição da Comissão de contribuir para a aplicação, o acompanhamento
+    e a supervisão dos sistemas de IA, dos modelos de IA de finalidade geral, e
+    da governação da IA prevista na Decisão da Comissão de 24 de janeiro de 2024;
+    as referências ao Serviço para a IA no presente regulamento devem ser entendidas
+    como referências à Comissão
+- termo: Autoridade nacional competente
+  slug: autoridade-nacional-competente
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 48)
+    ancora: art-3
+  definicao: uma autoridade notificadora ou uma autoridade de fiscalização do mercado;
+    no que diz respeito aos sistemas de IA colocados em serviço ou utilizados pelas
+    instituições, agências, serviços e organismos da União, quaisquer referências
+    às autoridades nacionais competentes ou às autoridades de fiscalização do mercado
+    no presente regulamento devem ser entendidas como referências à Autoridade Europeia
+    para a Proteção de Dados
 - termo: Incidente grave
   slug: incidente-grave
   tema: governanca
-  aliases: [incidentes graves]
   bases:
-    - { texto: "art. 3.º, 49)", ancora: art-3 }
-    - { texto: "art. 73.º", ancora: art-73 }
-  definicao: >-
-    incidente ou mau funcionamento que direta ou indiretamente cause morte ou
-    danos graves à saúde, perturbação grave e irreversível de infraestrutura
-    crítica, violação de obrigações do direito da União destinadas a proteger
-    direitos fundamentais, ou danos graves a bens ou ao ambiente.
+  - texto: art. 3.º, 49)
+    ancora: art-3
+  aliases:
+  - incidentes graves
+  definicao: 'qualquer incidente ou anomalia num sistema de IA que, direta ou indiretamente,
+    tenha alguma das seguintes consequências:
+
+
+    - a) A morte de uma pessoa ou danos graves para a saúde de uma pessoa,
+
+
+    - b) Uma perturbação grave e irreversível da gestão ou do funcionamento de uma
+    infraestrutura crítica,
+
+
+    - c) A infração das obrigações decorrentes do direito da União destinadas a
+    proteger os direitos fundamentais,
+
+
+    - d) Danos graves a bens ou ao ambiente;'
+- termo: Dados pessoais
+  slug: dados-pessoais
+  tema: dados
+  bases:
+  - texto: art. 3.º, 50)
+    ancora: art-3
+  definicao: os dados pessoais na aceção do artigo 4.º, ponto 1, do Regulamento
+    (UE) 2016/679
+- termo: Dados não pessoais
+  slug: dados-nao-pessoais
+  tema: dados
+  bases:
+  - texto: art. 3.º, 51)
+    ancora: art-3
+  definicao: os dados que não sejam dados pessoais na aceção do artigo 4.º, ponto
+    1), do Regulamento (UE) 2016/679
+- termo: Definição de perfis
+  slug: definicao-de-perfis
+  tema: operacoes
+  bases:
+  - texto: art. 3.º, 52)
+    ancora: art-3
+  definicao: a definição de perfis na aceção do artigo 4.º, ponto 4), do Regulamento
+    (UE) 2016/679
+- termo: Plano de testagem em condições reais
+  slug: plano-de-testagem-em-condicoes-reais
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 53)
+    ancora: art-3
+  definicao: um documento que descreve os objetivos, a metodologia, o âmbito geográfico,
+    populacional e temporal, o acompanhamento, a organização e a realização dos
+    testes em condições reais
+- termo: Plano do ambiente de testagem
+  slug: plano-do-ambiente-de-testagem
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 54)
+    ancora: art-3
+  definicao: um documento acordado entre o prestador participante e a autoridade
+    competente, que descreve os objetivos, as condições, o calendário, a metodologia
+    e os requisitos aplicáveis às atividades realizadas no ambiente de testagem
+- termo: Ambiente de testagem da regulamentação da IA
+  slug: ambiente-de-testagem-da-regulamentacao-da-ia
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 55)
+    ancora: art-3
+  definicao: um modelo controlado, criado por uma autoridade competente, que oferece
+    aos prestadores ou potenciais prestadores de sistemas de IA a possibilidade
+    de desenvolver, treinar, validar e testar, se for caso disso em condições reais,
+    um sistema de IA inovador, de acordo com um plano do ambiente de testagem, durante
+    um período limitado sob supervisão regulamentar
+- termo: Literacia no domínio da IA
+  slug: literacia-no-dominio-da-ia
+  tema: ia
+  bases:
+  - texto: art. 3.º, 56)
+    ancora: art-3
+  definicao: as competências, os conhecimentos e a compreensão que permitem que
+    os prestadores, os responsáveis pela implantação e as pessoas afetadas, tendo
+    em conta os respetivos direitos e obrigações no contexto do presente regulamento,
+    procedam à implantação dos sistemas de IA com conhecimento de causa e tomem
+    consciência das oportunidades e dos riscos inerentes à IA, bem como dos eventuais
+    danos que a IA pode causar
+  aliases:
+  - literacia em IA
+  nota: O [art. 4.º](#art-4) faz dela um dever transversal, de prestadores e de
+    responsáveis pela implantação.
+- termo: Testagem em condições reais
+  slug: testagem-em-condicoes-reais
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 57)
+    ancora: art-3
+  definicao: a testagem temporária de um sistema de IA para a sua finalidade prevista
+    em condições reais, fora de um laboratório ou de outro ambiente simulado, com
+    vista a recolher dados fiáveis e sólidos e a avaliar e verificar a conformidade
+    do sistema de IA com os requisitos do presente regulamento e não se considera
+    como colocação do sistema de IA no mercado nem colocação do sistema de IA em
+    serviço na aceção do presente regulamento, desde que estejam preenchidas todas
+    as condições estabelecidas no artigo 57.º ou no artigo 60.º
+- termo: Participante
+  slug: participante
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 58)
+    ancora: art-3
+  definicao: para efeitos de testagem em condições reais, uma pessoa singular que
+    participa na testagem em condições reais
+- termo: Consentimento informado
+  slug: consentimento-informado
+  tema: operacoes
+  bases:
+  - texto: art. 3.º, 59)
+    ancora: art-3
+  definicao: a expressão livre, específica, inequívoca e voluntária, por parte do
+    participante, da sua vontade de participar numa dada testagem em condições reais,
+    depois de ter sido informado de todos os aspetos da testagem que sejam relevantes
+    para a sua decisão de participar
+- termo: Falsificações profundas
+  slug: falsificacoes-profundas
+  tema: ia
+  bases:
+  - texto: art. 3.º, 60)
+    ancora: art-3
+  definicao: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA,
+    que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos
+    reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos
+    ou verdadeiros
+  aliases:
+  - ultrafalsificação
+  - ultrafalsificações
+  - falsificação profunda
+  - deep fake
+  nota: É o _deep fake_. A nota usa **ultrafalsificação**, a forma da tradução anterior
+    do regulamento; o texto do EUR-Lex hoje traz «falsificações profundas».
+- termo: Infração generalizada
+  slug: infracao-generalizada
+  tema: fiscalizacao
+  bases:
+  - texto: art. 3.º, 61)
+    ancora: art-3
+  definicao: "uma ação ou omissão contrária à legislação da União que protege os\
+    \ interesses das pessoas, e que:\n\n- a) Tenha prejudicado, ou seja suscetível\
+    \ de prejudicar, os interesses coletivos de pessoas que residam em, pelo menos,\
+    \ dois Estados-Membros que não o Estado-Membro no qual:\n  - i) o ato ou omissão\
+    \ tenha tido origem ou sido cometido,\n  - ii) o prestador em causa ou, se aplicável,\
+    \ o seu mandatário esteja estabelecido, ou\n  - iii) o responsável pela implantação\
+    \ esteja estabelecido, caso a violação seja cometida por este;\n\n- b) Tenha\
+    \ prejudicado, ou seja suscetível de prejudicar, os interesses coletivos das\
+    \ pessoas e tenha características comuns, inclusive a mesma prática ilegal ou\
+    \ a violação de um mesmo interesse, e que seja cometida pelo mesmo operador\
+    \ em, pelo menos, três Estados-Membros em simultâneo;"
+- termo: Infraestrutura crítica
+  slug: infraestrutura-critica
+  tema: governanca
+  bases:
+  - texto: art. 3.º, 62)
+    ancora: art-3
+  definicao: uma infraestrutura crítica na aceção do artigo 2.º, ponto 4), da Diretiva
+    (UE) 2022/2557
+- termo: Modelo de IA de finalidade geral
+  slug: modelo-de-ia-de-finalidade-geral
+  tema: ia
+  bases:
+  - texto: art. 3.º, 63)
+    ancora: art-3
+  aliases:
+  - modelos de IA de finalidade geral
+  - modelo de finalidade geral
+  - modelos de finalidade geral
+  definicao: um modelo de IA, inclusive se for treinado com uma grande quantidade
+    de dados utilizando a autossupervisão em escala, que apresenta uma generalidade
+    significativa e é capaz de executar de forma competente uma vasta gama de tarefas
+    distintas, independentemente da forma como o modelo é colocado no mercado, e
+    que pode ser integrado numa variedade de sistemas ou aplicações a jusante, exceto
+    os modelos de IA que são utilizados para atividades de investigação, desenvolvimento
+    ou criação de protótipos antes de serem colocados no mercado
+- termo: Capacidades de elevado impacto
+  slug: capacidades-de-elevado-impacto
+  tema: ia
+  bases:
+  - texto: art. 3.º, 64)
+    ancora: art-3
+  definicao: capacidades que correspondem ou excedem as capacidades registadas nos
+    modelos de IA de finalidade geral mais avançados
+- termo: Risco sistémico
+  slug: risco-sistemico
+  tema: ia
+  bases:
+  - texto: art. 3.º, 65)
+    ancora: art-3
+  aliases:
+  - risco sistêmico
+  definicao: um risco específico das capacidades de elevado impacto dos modelos
+    de IA de finalidade geral que têm um impacto significativo no mercado da União
+    devido ao seu alcance ou devido a efeitos negativos reais ou razoavelmente previsíveis
+    na saúde pública, na segurança, na segurança pública, nos direitos fundamentais
+    ou na sociedade no seu conjunto, que se pode propagar em escala ao longo da
+    cadeia de valor
+- termo: Sistema de IA de finalidade geral
+  slug: sistema-de-ia-de-finalidade-geral
+  tema: ia
+  bases:
+  - texto: art. 3.º, 66)
+    ancora: art-3
+  aliases:
+  - sistemas de IA de finalidade geral
+  definicao: um sistema de IA baseado num modelo de IA de finalidade geral, e com
+    a capacidade de servir para diversas finalidades, tanto para utilização direta
+    como para integração noutros sistemas de IA
+- termo: Operação de vírgula flutuante
+  slug: operacao-de-virgula-flutuante
+  tema: ia
+  bases:
+  - texto: art. 3.º, 67)
+    ancora: art-3
+  definicao: qualquer operação matemática ou atribuição que envolva números em vírgula
+    flutuante, que são um subconjunto dos números reais normalmente representados
+    em computadores por um número inteiro de precisão fixa escalado por um expoente
+    inteiro de uma base fixa
+- termo: Prestador a jusante
+  slug: prestador-a-jusante
+  tema: sujeitos
+  bases:
+  - texto: art. 3.º, 68)
+    ancora: art-3
+  definicao: um prestador de um sistema de IA, incluindo um sistema de IA de finalidade
+    geral, que integra um modelo de IA, independentemente de o modelo de IA ser
+    disponibilizado por si próprio e verticalmente integrado ou ser disponibilizado
+    por outra entidade com base em relações contratuais

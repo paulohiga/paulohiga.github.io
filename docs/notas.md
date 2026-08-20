@@ -71,6 +71,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/definicoes-head.html` | `<head>` da página de definições (JSON-LD `DefinedTermSet`) |
 | `_data/definicoes/temas.yml` | Os temas, a segunda forma de organizar a página |
 | `_data/definicoes/verbetes/<slug>.yml` | Os [verbetes](#definições-legais) de cada norma |
+| `_includes/definicoes-jsonld.html` | O `DefinedTermSet` da página, no fim do `<body>` |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -100,8 +101,10 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
    artigo, também uma entrada por norma. Confira com
    `python3 scripts/conferir_ementas.py <slug>`.
 6. **`_data/definicoes/verbetes/<slug>.yml`** — os termos que a norma define,
-   se ela tiver artigo de definições (ver [Definições legais](#definições-legais)).
-   Confira com `python3 scripts/conferir_definicoes.py <slug>`.
+   se ela tiver artigo de definições. Não escreva à mão: rode
+   `python3 scripts/extrair_definicoes.py <slug> --gravar`, preencha os `tema`
+   e confira com `python3 scripts/conferir_definicoes.py <slug>` (ver
+   [Definições legais](#definições-legais)).
 
 O índice `/notas`, os links entre notas e o `sitemap.xml` se ajustam sozinhos
 no build. Excluir uma nota é apagar os arquivos correspondentes.
@@ -468,6 +471,11 @@ Hoje elas vivem num lugar só, `_data/definicoes/verbetes/<norma>.yml`, e chegam
 ao leitor por dois caminhos: a página **[`/notas/definicoes`](https://higa.me/notas/definicoes)**
 e o **balão** que abre ao clicar num termo marcado no corpo do comentário.
 
+O acervo é o de **todas** as normas de `_leis/` que têm artigo de definições —
+não só as seis principais. As resoluções da ANPD definem quase cem termos que o
+comentário usa o tempo todo (incidente de segurança, reincidência específica,
+exportador, conflito de interesse), e eles valem tanto quanto os da lei.
+
 ### O verbete
 
 Um arquivo por norma, com o slug da norma no nome — é dele que a montagem
@@ -484,12 +492,26 @@ tem âncora (`_data/normas.yml`).
 | `nota` | não | Comentário **sobre** a definição, em Markdown. Aparece atrás de uma barra, num corpo menor |
 | `aliases` | não | Outras formas escritas do termo (plural, sigla, sinônimo usado na nota). Servem à marcação e ao filtro |
 
-Três regras de escrita:
+Cinco regras de escrita:
 
+- **A definição é a letra da norma.** O campo `definicao` é transcrição, não
+  resumo: o que a norma escreve no dispositivo, com a pontuação dela, apenas
+  sem o marcador do inciso e sem o ponto-e-vírgula do fim. Interpretação,
+  comparação e ressalva vão para `nota`. Não é preferência de estilo — uma
+  paráfrase numa página de definições legais afirma que a lei diz o que ela não
+  diz. O `conferir_definicoes.py` recusa uma definição cujo começo não apareça,
+  tal e qual, no texto de `_leis/`.
+- **Verbete é definição, não descrição.** Termo que a norma usa sem definir não
+  entra: os termos do rito do Conselho Diretor (relator, destaque, vista
+  coletiva) ficam na nota do Regimento Interno, em "O vocabulário do rito", e
+  só os que o [art. 51](https://higa.me/notas/regimento-interno-anpd#art-51)
+  define de fato viraram verbete.
+- **Repetição literal de norma superior não entra.** A Resolução CD/ANPD nº
+  18/2024 recopia sete definições do art. 5º da LGPD; elas apareceriam duas
+  vezes na página sem acrescentar nada, e ficaram de fora. Definição própria da
+  resolução, ainda que sobre o mesmo termo, entra.
 - **A base legal não é opcional.** É ela que separa um verbete de uma
-  paráfrase, e é o que o leitor precisa para conferir. Norma que não tem artigo
-  de definições — o Regimento Interno é o caso — aponta para o dispositivo que
-  cria e disciplina o termo.
+  paráfrase, e é o que o leitor precisa para conferir.
 - **A âncora vai crua**, sem prefixo: quem acrescenta `dec12880-` é a montagem,
   a partir de `_data/normas.yml`. Escrever o prefixo aqui quebraria o verbete
   no dia em que a norma mudasse de nota.
@@ -500,14 +522,50 @@ Três regras de escrita:
   dentro da nota daquela norma. Para apontar para **outra** norma, escreva o
   caminho inteiro (`/notas/eca-digital#art-9-p2`).
 
-`scripts/conferir_definicoes.py` é quem confere tudo isso: campos obrigatórios,
+### Extrair e conferir
+
+Transcrever duzentas definições à mão é caro e, pior, é o tipo de trabalho em
+que um erro não aparece — a página mostraria uma definição que a norma não tem.
+Dois scripts cuidam disso.
+
+**`scripts/extrair_definicoes.py`** lê o artigo de definições da norma e emite
+o esqueleto do YAML com o texto literal já separado em termo e definição.
+Reconhece o inciso brasileiro nas duas pontuações do acervo (`I - termo:
+texto`, das leis, e `I - termo - texto`, dos decretos) e o item numerado
+europeu (`1) «Termo», texto`), com alíneas e sufixo de ato alterador. Ele **não
+decide nada além do texto**: `tema` sai como `TODO`, e `aliases` e `nota` ficam
+em branco — é onde entra quem escreve.
+
+```bash
+python3 scripts/extrair_definicoes.py --listar         # normas com artigo de definições
+python3 scripts/extrair_definicoes.py lgpd             # imprime o YAML
+python3 scripts/extrair_definicoes.py lgpd --gravar    # escreve o arquivo
+```
+
+É **re-executável**: quando o arquivo já existe, preserva o `slug`, o `tema`,
+os `aliases` e a `nota` de cada verbete cujo termo (ou âncora única) coincida, e
+atualiza só o texto. Uma alteração da norma se propaga sem desfazer a curadoria.
+
+Definição que não está num inciso do artigo de definições — a pseudonimização
+do [art. 13, § 4º](https://higa.me/notas/lgpd#art-13-p4) da LGPD, as práticas
+manipulativas do parágrafo único do art. 10 do Decreto nº 12.880/2026, as
+informações anónimas do considerando 26 do RGPD — o extrator não alcança, e
+entra à mão, com o mesmo cuidado de literalidade.
+
+**`scripts/conferir_definicoes.py`** confere o resto: campos obrigatórios,
 formato e unicidade do slug, tema existente, **âncora que existe de fato no
-texto da norma** e termos que colidiriam dentro de uma mesma nota.
+texto da norma** e **definição que é a letra dela**.
 
 ```bash
 python3 scripts/conferir_definicoes.py            # todas as normas
 python3 scripts/conferir_definicoes.py lgpd mci   # só estas
 ```
+
+Ele também **avisa** (sem reprovar) quando duas normas da mesma nota definem o
+mesmo termo — hoje "medidas de segurança" e "grupo ou conglomerado de empresas",
+entre resoluções da ANPD. Esses termos ficam sem marcação no comentário, porque
+marcar seria escolher no escuro; continuam na página, com um verbete para cada
+norma.
 
 ### A página
 
@@ -520,14 +578,34 @@ tela lê o DOM, e uma lista reordenada só visualmente seria lida em ordem
 alfabética com títulos de tema espalhados no meio. Voltar para A–Z devolve cada
 verbete à seção da letra dele.
 
+Cada verbete traz uma **etiqueta de jurisdição** antes da norma, e ela não é
+enfeite: "dados pessoais" tem uma definição na LGPD e outra no RGPD, e só uma
+obriga no Brasil. A jurisdição sai do `jurisdicao` da nota que hospeda a norma —
+nenhum dado novo —, e a etiqueta muda de matiz (não de intensidade) quando o
+verbete é de fora do Brasil.
+
+O **filtro** casa por começo de palavra, e não por trecho solto: "idade" acha
+"aferição de idade" sem arrastar "disponibilidade" e "confidencialidade" junto.
+Ele compara termo, apelidos, tema, jurisdição e os **apelidos da norma em
+`_data/normas.yml`** — é por "RGPD" e por "Lei nº 13.709" que o leitor procura,
+e não pelo rótulo que o painel exibe. Duas palavras filtram por duas condições
+("dado ue").
+
 O filtro e a troca de organização dependem de JavaScript e ficam ocultos sem
 ele, como o seletor de normas das notas. O que sobra é a lista inteira, em
 ordem alfabética, com a barra de letras funcionando.
 
-O `<head>` publica um **`DefinedTermSet`** em JSON-LD, com um `DefinedTerm` por
+A página publica um **`DefinedTermSet`** em JSON-LD, com um `DefinedTerm` por
 verbete: é o tipo que o schema.org tem para exatamente isto, e é o que permite
 a um buscador ou a um agente responder "o que a LGPD chama de operador?"
-citando a página em vez da nota inteira.
+citando a página em vez da nota inteira. Ele fica **no fim do `<body>`**, e não
+no `<head>` como nas outras páginas da seção: com duzentos verbetes o bloco
+passa de 90 KB, e no `<head>` ele se poria entre o navegador e o conteúdo.
+
+> A ordenação alfabética usa uma **quebra de linha** como separador da chave de
+> ordenação (`termo\nnorma\níndice`). O `sort` do Liquid compara ponto de
+> código, e qualquer separador imprimível vem depois do espaço — o que punha
+> "Autoridade de controlo interessada" antes de "Autoridade de controlo".
 
 ### O termo marcado no comentário
 
@@ -759,7 +837,7 @@ dispositivo errado.
 
 ## Scripts de autoria
 
-Os seis scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
+Os sete scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
 máquina, não entram no site e não fazem parte do build. As dependências estão
 em [`scripts/requirements.txt`](../scripts/requirements.txt); para instalá-las,
 veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
@@ -771,4 +849,5 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `consolidar_ai_act.py` | Gera a consolidação não oficial do AI Act aplicando as alterações do Digital Omnibus |
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
-| `conferir_definicoes.py` | Confere os [verbetes](#definições-legais) de `_data/definicoes/verbetes/` contra o texto das normas |
+| `extrair_definicoes.py` | Extrai o texto literal das [definições](#definições-legais) de uma norma para `_data/definicoes/verbetes/` |
+| `conferir_definicoes.py` | Confere os [verbetes](#definições-legais) contra o texto das normas — âncora e literalidade |

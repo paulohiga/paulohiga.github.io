@@ -1,0 +1,54 @@
+- termo: Agentes regulados
+  slug: agentes-regulados
+  tema: sujeitos
+  bases:
+  - texto: art. 4, I
+    ancora: art-4-i
+  definicao: agentes de tratamento e demais integrantes ou interessados no tratamento
+    de dados pessoais
+- termo: Autuado
+  slug: autuado
+  tema: fiscalizacao
+  bases:
+  - texto: art. 4, II
+    ancora: art-4-ii
+  definicao: agente regulado que, uma vez identificados indícios suficientes de
+    conduta infrativa, tem instaurado processo administrativo sancionador contra
+    si, por meio de auto de infração
+- termo: Denúncia
+  slug: denuncia
+  tema: fiscalizacao
+  bases:
+  - texto: art. 4, III
+    ancora: art-4-iii
+  definicao: comunicação feita à ANPD por qualquer pessoa, natural ou jurídica,
+    de suposta infração cometida contra a legislação de proteção de dados pessoais
+    do País, que não seja uma petição de titular
+- termo: Obstrução à atividade de fiscalização
+  slug: obstrucao-a-atividade-de-fiscalizacao
+  tema: fiscalizacao
+  bases:
+  - texto: art. 4, IV
+    ancora: art-4-iv
+  definicao: ato, comissivo ou omissivo, direto ou indireto, da fiscalização ou
+    de seus pressupostos, que impeça, dificulte ou embarace a atividade de fiscalização
+    exercida pela ANPD, mediante o oferecimento de entrave à situação dos agentes,
+    a recusa no atendimento, e o não envio ou envio intempestivo de quaisquer dados
+    e informações pertinentes à obrigação do agente regulado
+- termo: Petição de titular
+  slug: peticao-de-titular
+  tema: fiscalizacao
+  bases:
+  - texto: art. 4, V
+    ancora: art-4-v
+  definicao: comunicação feita à ANPD pelo titular de dados pessoais de uma solicitação
+    apresentada ao controlador e não solucionada no prazo estabelecido em regulamentação,
+    nos termos do inciso V do art. 55-J da LGPD
+- termo: Requerimento
+  slug: requerimento
+  tema: fiscalizacao
+  bases:
+  - texto: art. 4, VI
+    ancora: art-4-vi
+  definicao: conjunto de tipos de comunicação, compreendendo a petição de titular
+    e a denúncia

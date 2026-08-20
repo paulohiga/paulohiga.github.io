@@ -1,120 +1,134 @@
-# Definições do Decreto nº 12.880/2026 (regulamento do ECA Digital), reunidas
-# em /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
-# (docs/notas.md). Confira com
-# `python3 scripts/conferir_definicoes.py decreto-12880`.
-#
-# A âncora é escrita sem o prefixo da norma: quem o acrescenta é a página, a
-# partir de `_data/normas.yml` — na nota do ECA Digital o decreto entra como
-# norma extra, com ids `dec12880-...`.
-
 - termo: Conteúdo, produto ou serviço impróprio ou inadequado
   slug: conteudo-improprio
   tema: infancia
-  bases: [{ texto: "art. 2º, I", ancora: art-2-i }]
-  aliases: [conteúdo impróprio, conteúdos impróprios, impróprio ou inadequado]
-  definicao: >-
-    o que traz risco à privacidade, à segurança, ao desenvolvimento
-    psicossocial, à saúde mental e física ou ao bem-estar da criança e do
-    adolescente, nos termos da classificação indicativa, quando aplicável.
-  nota: >-
-    A Lei também considera impróprio ou inadequado o que contenha material
-    pornográfico ou seja vedado pela legislação vigente
-    ([art. 9º, § 2º](/notas/eca-digital#art-9-p2)).
-
+  bases:
+  - texto: art. 2, I
+    ancora: art-2-i
+  aliases:
+  - conteúdo impróprio
+  - conteúdos impróprios
+  - impróprio ou inadequado
+  definicao: aquele que possa apresentar risco à privacidade, à segurança, ao desenvolvimento
+    psicossocial, à saúde mental e física e ao bem-estar da criança e do adolescente,
+    nos termos estabelecidos na classificação indicativa, quando aplicável
+  nota: A Lei também considera impróprio ou inadequado o que contenha material pornográfico
+    ou seja vedado pela legislação vigente ([art. 9º, § 2º](/notas/eca-digital#art-9-p2)).
 - termo: Conteúdo, produto ou serviço proibido para crianças e adolescentes
   slug: conteudo-proibido
   tema: infancia
-  bases: [{ texto: "art. 2º, II", ancora: art-2-ii }]
-  aliases: [conteúdo proibido, conteúdos proibidos]
-  definicao: >-
-    aquele cujo acesso, disponibilização, aquisição ou consumo é expressamente
-    vedado por determinação legal específica.
-  nota: "O rol está no art. 15, § 1º, do mesmo decreto."
-
+  bases:
+  - texto: art. 2, II
+    ancora: art-2-ii
+  aliases:
+  - conteúdo proibido
+  - conteúdos proibidos
+  definicao: aquele cujo acesso, cuja disponibilização, cuja aquisição ou cujo consumo
+    seja expressamente vedado para crianças e adolescentes por determinação legal
+    específica
+  nota: O rol está no art. 15, § 1º, do mesmo decreto.
 - termo: Conteúdo pornográfico
   slug: conteudo-pornografico
   tema: infancia
-  bases: [{ texto: "art. 2º, III", ancora: art-2-iii }]
-  aliases: [material pornográfico]
-  definicao: >-
-    aquele com finalidade predominantemente voltada à representação de atos
-    sexualmente explícitos ou à exibição de nudez com conotação ou finalidade
-    sexual, ressalvadas as exceções do art. 16 do decreto.
-
+  bases:
+  - texto: art. 2, III
+    ancora: art-2-iii
+  aliases:
+  - material pornográfico
+  definicao: aquele cuja finalidade predominante seja a representação de atos sexualmente
+    explícitos ou a exibição de nudez com conotação ou finalidade sexual, observadas
+    as especificações e as exceções previstas no art. 16
 - termo: Aferição de idade
   slug: afericao-de-idade
   tema: infancia
-  bases: [{ texto: "art. 2º, IV", ancora: art-2-iv }]
-  aliases: [aferir a idade]
-  definicao: >-
-    termo geral para os procedimentos que verificam, estimam ou inferem a idade
-    ou a faixa etária de um usuário, por métodos como análise documental,
-    biométrica, de padrões de uso ou outros meios tecnicamente idôneos.
-  nota: >-
-    É o guarda-chuva sob o qual ficam a **verificação de idade**, o **sinal de
-    idade** e a **autodeclaração de idade**.
-
+  bases:
+  - texto: art. 2, IV
+    ancora: art-2-iv
+  aliases:
+  - aferir a idade
+  definicao: termo geral referente aos procedimentos destinados a verificar, estimar
+    ou inferir, direta ou indiretamente, a idade ou a faixa etária de um usuário,
+    por meio de um conjunto de métodos, tecnologias e processos, incluídos análise
+    documental, biométrica e de padrões de uso, e outros meios tecnicamente idôneos
+  nota: É o guarda-chuva sob o qual ficam a **verificação de idade**, o **sinal
+    de idade** e a **autodeclaração de idade**.
 - termo: Verificação de idade
   slug: verificacao-de-idade
   tema: infancia
-  bases: [{ texto: "art. 2º, V", ancora: art-2-v }]
-  definicao: >-
-    aferição de alto grau de confiabilidade, nos termos da ANPD, que comprova a
-    exatidão da idade ou faixa etária declarada mediante mecanismos técnicos ou
-    documentais.
-
+  bases:
+  - texto: art. 2, V
+    ancora: art-2-v
+  definicao: procedimento específico de aferição de idade de alto grau de confiabilidade,
+    nos termos estabelecidos pela ANPD, baseado na conferência da veracidade do
+    atributo etário, com a finalidade de comprovar a exatidão da idade declarada
+    ou a faixa etária, mediante o emprego de mecanismos técnicos ou documentais
 - termo: Sinal de idade
   slug: sinal-de-idade
   tema: infancia
-  bases: [{ texto: "art. 2º, VI", ancora: art-2-vi }]
-  aliases: [sinais de idade]
-  definicao: >-
-    credencial que atesta a idade ou faixa etária de um usuário a fornecedores
-    de produtos ou serviços direcionados a crianças e adolescentes ou de acesso
-    provável por eles, sem revelar dados pessoais adicionais.
-  nota: >-
-    Na prática, é o "sim/não" que a loja ou o sistema operacional envia ao
-    aplicativo ("este usuário tem mais de 18 anos"), sem entregar documento nem
-    data de nascimento.
-
+  bases:
+  - texto: art. 2, VI
+    ancora: art-2-vi
+  aliases:
+  - sinais de idade
+  definicao: informação ou credencial indicativa que atesta a idade ou a faixa etária
+    de um usuário aos fornecedores de produtos ou serviços de tecnologia da informação
+    direcionados a crianças e adolescentes ou de acesso provável por eles, sem revelar
+    dados pessoais adicionais
+  nota: Na prática, é o "sim/não" que a loja ou o sistema operacional envia ao aplicativo
+    ("este usuário tem mais de 18 anos"), sem entregar documento nem data de nascimento.
 - termo: Autodeclaração de idade
   slug: autodeclaracao-de-idade
   tema: infancia
-  bases: [{ texto: "art. 2º, VII", ancora: art-2-vii }]
-  aliases: [autodeclaração]
-  definicao: >-
-    indicação da idade, faixa etária ou outro dado pelo próprio usuário, sem
-    evidências que confirmem sua veracidade ou titularidade.
-  nota: >-
-    **Vedada** como mecanismo de verificação pelo
-    [art. 9º, § 1º, da Lei](/notas/eca-digital#art-9-p1).
-
+  bases:
+  - texto: art. 2, VII
+    ancora: art-2-vii
+  aliases:
+  - autodeclaração
+  definicao: método limitado à indicação da idade, da faixa etária ou de outro dado
+    pessoal fornecido pelo próprio usuário, sem evidências adicionais para confirmar
+    a veracidade ou a titularidade da informação
+  nota: '**Vedada** como mecanismo de verificação pelo [art. 9º, § 1º, da Lei](/notas/eca-digital#art-9-p1).'
 - termo: Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
   slug: incentivo-ao-uso-excessivo
   tema: infancia
-  bases: [{ texto: "art. 9º, parágrafo único", ancora: art-9-pu }]
-  aliases: [uso excessivo, problemático ou compulsivo, incentivo ao uso excessivo]
-  definicao: |
-    ocultação de pontos naturais de parada; novos conteúdos acionados sem
-    solicitação; recompensas pelo tempo de uso; e notificações excessivas.
+  bases:
+  - texto: art. 9º, parágrafo único
+    ancora: art-9-pu
+  aliases:
+  - uso excessivo, problemático ou compulsivo
+  definicao: 'I - a ocultação de pontos naturais de parada;
 
+
+    II - o acionamento de novos conteúdos sem solicitação;
+
+
+    III - a oferta de recompensas pelo tempo de uso; e
+
+
+    IV - o aparecimento de notificações excessivas.'
 - termo: Práticas manipulativas, enganosas ou coercitivas
   slug: praticas-manipulativas
   tema: infancia
-  bases: [{ texto: "art. 10, parágrafo único", ancora: art-10-pu }]
-  aliases: [práticas manipulativas]
-  definicao: |
-    arquiteturas de escolha, fluxos de interação ou funcionalidades que, por
-    objetivo ou efeito, interferem na autonomia decisória do usuário ou exploram
-    suas vulnerabilidades — em especial as cognitivas e etárias:
+  bases:
+  - texto: art. 10, parágrafo único
+    ancora: art-10-pu
+  aliases:
+  - práticas manipulativas
+  definicao: 'quaisquer arquiteturas de escolha, fluxos de interação ou funcionalidades
+    que tenham por objetivo ou efeito empregar táticas que interfiram na autonomia
+    decisória do usuário ou que explorem as suas vulnerabilidades, em particular
+    as cognitivas e etárias, incluídas, entre outras, as práticas de:
 
-    - **obstrução** — caminhos excessivamente complexos ou confusos que
-      dificultam ações como interromper o uso, cancelar serviços ou mudar
-      preferências;
-    - **exploração de vulnerabilidades cognitivas** — pressões emocionais,
-      urgências fabricadas, escolhas enviesadas, inferências emocionais ou
-      estímulos inadequados à idade, para induzir decisões contrárias ao melhor
-      interesse da criança ou do adolescente; ou
-    - **prejuízo ao exercício de direitos** — ocultar, fragmentar ou dificultar
-      o acesso a controles de privacidade, supervisão parental, consentimento ou
-      revogação de permissões.
+
+    - I - obstrução, ao dificultar ou impedir o fluxo de tarefas do usuário, de
+    modo a dissuadi-lo de realizar determinada ação, inclusive a interrupção do
+    uso, o cancelamento de serviços ou a modificação de preferências, por meio de
+    caminhos excessivamente complexos, confusos ou desproporcionais;
+
+    - II - exploração de vulnerabilidades cognitivas, ao utilizar pressões emocionais,
+    urgências fabricadas, escolhas enviesadas, inferências emocionais ou estímulos
+    inadequados à idade para induzir decisões contrárias ao melhor interesse da
+    criança ou do adolescente; ou
+
+    - III - prejuízo ao exercício de direitos, ao ocultar, fragmentar ou dificultar
+    o acesso a controles de privacidade, supervisão parental, consentimento ou revogação
+    de permissões.'

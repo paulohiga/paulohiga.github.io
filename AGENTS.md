@@ -95,10 +95,17 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   `_data/definicoes/verbetes/<norma>.yml`, publicado em `/notas/definicoes` e
   aberto no balão que o comentário mostra ao clique. Não recrie uma seção
   "Definições" numa nota: o mesmo termo escrito em dois lugares envelhece em
-  um deles. **Todo verbete precisa da base legal**, e ela se confere com
-  `scripts/conferir_definicoes.py` (ver
-  [`docs/notas.md`](./docs/notas.md#definições-legais)). Comentário *sobre* a
-  definição é outra coisa e continua na nota, ou no campo `nota` do verbete.
+  um deles. Comentário *sobre* a definição é outra coisa e continua na nota, ou
+  no campo `nota` do verbete.
+- **A definição do verbete é a letra da norma.** O campo `definicao` é
+  transcrição do dispositivo, não resumo nem paráfrase — numa página pública de
+  definições legais, uma paráfrase afirma que a lei diz o que ela não diz.
+  Interpretação, comparação e ressalva vão para `nota`. **Todo verbete precisa
+  da base legal**, e termo que a norma usa sem definir não vira verbete. Use
+  `scripts/extrair_definicoes.py` para transcrever e
+  `scripts/conferir_definicoes.py` para conferir — ele recusa âncora inexistente
+  e definição que não apareça, tal e qual, no texto de `_leis/` (ver
+  [`docs/notas.md`](./docs/notas.md#definições-legais)).
 - **Confira toda remissão nova contra o texto legal antes de publicar.** Link
   errado numa página pública de legislação é um defeito, não um detalhe. Use
   `scripts/ancorar_referencias.py --check` e revise o diff.
@@ -325,7 +332,7 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
       regras editoriais observadas.
 - [ ] `conferir_ementas.py` sem erro, se `_leis/` ou `_data/ementas/` mudaram.
 - [ ] `conferir_definicoes.py` sem erro, se `_data/definicoes/` mudou — e toda
-      definição nova com base legal, fora do corpo da nota.
+      definição nova transcrita da norma, com base legal, fora do corpo da nota.
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
 - [ ] [`docs/changelog.md`](./docs/changelog.md) atualizado, no mesmo commit, se o
       conteúdo do site mudou — e escrito como texto público.

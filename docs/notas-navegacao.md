@@ -544,7 +544,8 @@ invisível no diagnóstico original:
 **O que foi feito.**
 
 - **Página `/notas/definicoes`**, montada de dados
-  (`_data/definicoes/verbetes/<norma>.yml`), com os 97 termos das seis notas.
+  (`_data/definicoes/verbetes/<norma>.yml`), com os 210 termos que as normas do
+  acervo definem — as seis principais e as resoluções da ANPD.
   Ordem alfabética no DOM, organização por tema montada pelo `notas.js`
   movendo os verbetes (e não reordenando por CSS, que mentiria para o leitor
   de tela), filtro por termo, norma ou tema, e barra de letras que funciona
@@ -553,7 +554,7 @@ invisível no diagnóstico original:
   `##`, abrindo um balão com a definição e a base legal. A base volta para o
   painel da lei: clicar em "art. 2º, IV" no balão de um verbete do decreto,
   dentro da nota do ECA Digital, troca a norma exibida e para no dispositivo.
-  Densidade medida: de 1,6 a 6,6 marcas por seção.
+  Densidade medida: de 1,8 a 7,3 marcas por seção.
 - **As seções de definições saíram das notas.** O comentário *sobre* a
   definição ficou — na nota, quando é análise (a anonimização na LGPD), ou no
   campo `nota` do verbete.

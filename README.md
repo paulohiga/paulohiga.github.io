@@ -85,7 +85,7 @@ Os detalhes de cada decisão estão em
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # 6 scripts Python de autoria
+├── scripts/                     # 7 scripts Python de autoria
 ├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -194,7 +194,7 @@ Netlify — este comando o pega antes.
 
 ### Scripts de autoria
 
-Os seis scripts de `scripts/` são ferramentas de autoria das notas de
+Os sete scripts de `scripts/` são ferramentas de autoria das notas de
 legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
 build. O que cada um faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
@@ -204,6 +204,7 @@ python3 -m venv .venv
 .venv/bin/pip install -r scripts/requirements.txt
 .venv/bin/python scripts/ancorar_referencias.py --check lgpd
 .venv/bin/python scripts/conferir_ementas.py
+.venv/bin/python scripts/extrair_definicoes.py --listar
 .venv/bin/python scripts/conferir_definicoes.py
 ```
 

@@ -1,0 +1,167 @@
+- termo: Ampla divulgação do incidente em meios de comunicação
+  slug: ampla-divulgacao-do-incidente-em-meios-de-comunicacao
+  tema: seguranca
+  bases:
+  - texto: art. 3, I
+    ancora: art-3-i
+  definicao: providência que pode ser determinada pela ANPD ao controlador, nos
+    termos do art. 48, § 2º, I, da LGPD, no âmbito do processo de comunicação de
+    incidente de segurança, como a publicação no sítio eletrônico, nas redes sociais
+    do controlador ou em outros meios de comunicação
+- termo: Autenticidade
+  slug: autenticidade
+  tema: seguranca
+  bases:
+  - texto: art. 3, II
+    ancora: art-3-ii
+  definicao: propriedade pela qual se assegura que a informação foi produzida, expedida,
+    modificada ou destruída por uma determinada pessoa física, equipamento, sistema,
+    órgão ou entidade
+- termo: Categoria de dados pessoais
+  slug: categoria-de-dados-pessoais
+  tema: dados
+  bases:
+  - texto: art. 3, III
+    ancora: art-3-iii
+  definicao: classificação dos dados pessoais de acordo com o contexto de sua utilização,
+    tais como dados de identificação pessoal, dados de autenticação em sistemas,
+    dados financeiros
+- termo: Comunicação de incidente de segurança
+  slug: comunicacao-de-incidente-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, IV
+    ancora: art-3-iv
+  definicao: ato do controlador que comunica à ANPD e ao titular de dados a ocorrência
+    de incidente de segurança que possa acarretar risco ou dano relevante aos titulares
+- termo: Confidencialidade
+  slug: confidencialidade
+  tema: seguranca
+  bases:
+  - texto: art. 3, V
+    ancora: art-3-v
+  definicao: propriedade pela qual se assegura que o dado pessoal não esteja disponível
+    ou não seja revelado a pessoas, empresas, sistemas, órgãos ou entidades não
+    autorizados
+- termo: Dado de autenticação em sistemas
+  slug: dado-de-autenticacao-em-sistemas
+  tema: dados
+  bases:
+  - texto: art. 3, VI
+    ancora: art-3-vi
+  definicao: qualquer dado pessoal utilizado como credencial para determinar o acesso
+    a um sistema ou para confirmar a identificação de um usuário, como contas de
+    login, tokens e senhas
+- termo: Dado financeiro
+  slug: dado-financeiro
+  tema: dados
+  bases:
+  - texto: art. 3, VII
+    ancora: art-3-vii
+  definicao: dado pessoal relacionado às transações financeiras do titular, inclusive
+    para contratação de serviços e aquisição de produtos
+- termo: Dado pessoal afetado
+  slug: dado-pessoal-afetado
+  tema: dados
+  bases:
+  - texto: art. 3, VIII
+    ancora: art-3-viii
+  definicao: dado pessoal cuja confidencialidade, integridade, disponibilidade ou
+    autenticidade tenha sido comprometida em um incidente de segurança
+- termo: Dado protegido por sigilo legal ou judicial
+  slug: dado-protegido-por-sigilo-legal-ou-judicial
+  tema: dados
+  bases:
+  - texto: art. 3, IX
+    ancora: art-3-ix
+  definicao: dado pessoal cujo sigilo decorra de norma jurídica ou decisão judicial
+- termo: Dado protegido por sigilo profissional
+  slug: dado-protegido-por-sigilo-profissional
+  tema: dados
+  bases:
+  - texto: art. 3, X
+    ancora: art-3-x
+  definicao: dado pessoal cujo sigilo decorra do exercício de função, ministério,
+    ofício ou profissão, e cuja revelação possa produzir dano a outrem
+- termo: Disponibilidade
+  slug: disponibilidade
+  tema: seguranca
+  bases:
+  - texto: art. 3, XI
+    ancora: art-3-xi
+  definicao: propriedade pela qual se assegura que o dado pessoal esteja acessível
+    e utilizável, sob demanda, por uma pessoa natural ou determinado sistema, órgão
+    ou entidade devidamente autorizados
+- termo: Incidente de segurança
+  slug: incidente-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, XII
+    ancora: art-3-xii
+  definicao: qualquer evento adverso confirmado, relacionado à violação das propriedades
+    de confidencialidade, integridade, disponibilidade e autenticidade da segurança
+    de dados pessoais
+- termo: Integridade
+  slug: integridade
+  tema: seguranca
+  bases:
+  - texto: art. 3, XIII
+    ancora: art-3-xiii
+  definicao: propriedade pela qual se assegura que o dado pessoal não foi modificado
+    ou destruído de maneira não autorizada ou acidental
+- termo: Medidas de segurança
+  slug: medidas-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, XIV
+    ancora: art-3
+  definicao: medidas técnicas e/ou administrativas adotadas para proteger os dados
+    pessoais de acessos não autorizados e de situações acidentais ou ilícitas de
+    destruição, perda, alteração, comunicação ou difusão
+  nota: 'O marcador deste inciso vem sem espaço no texto publicado ("XIV- ", "XVI-
+    "), e por isso ele não recebe âncora própria: o link da base para no artigo
+    de definições.'
+- termo: Natureza dos dados pessoais
+  slug: natureza-dos-dados-pessoais
+  tema: dados
+  bases:
+  - texto: art. 3, XV
+    ancora: art-3-xv
+  definicao: classificação de dados pessoais em gerais ou sensíveis
+- termo: Procedimento de apuração de incidente de segurança
+  slug: procedimento-de-apuracao-de-incidente-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, XVI
+    ancora: art-3
+  definicao: procedimento instaurado pela ANPD para apurar a ocorrência de incidente
+    de segurança que não tenha sido comunicado pelo controlador
+  nota: 'O marcador deste inciso vem sem espaço no texto publicado ("XIV- ", "XVI-
+    "), e por isso ele não recebe âncora própria: o link da base para no artigo
+    de definições.'
+- termo: Procedimento de comunicação de incidente de segurança
+  slug: procedimento-de-comunicacao-de-incidente-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, XVII
+    ancora: art-3-xvii
+  definicao: procedimento instaurado no âmbito da ANPD após o recebimento de comunicação
+    de incidente de segurança
+- termo: Processo de comunicação de incidente de segurança
+  slug: processo-de-comunicacao-de-incidente-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, XVIII
+    ancora: art-3-xviii
+  definicao: processo administrativo instaurado no âmbito da ANPD que abrange o
+    procedimento de apuração incidente de segurança e o procedimento de comunicação
+    de incidente de segurança
+- termo: Relatório de tratamento de incidente
+  slug: relatorio-de-tratamento-de-incidente
+  tema: seguranca
+  bases:
+  - texto: art. 3, XIX
+    ancora: art-3-xix
+  definicao: documento fornecido pelo controlador que contém cópias, em meio físico
+    ou digital, de dados e informações relevantes para descrever o incidente e as
+    providências adotadas para reverter ou mitigar os seus efeitos

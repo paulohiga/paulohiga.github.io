@@ -1,0 +1,98 @@
+- termo: Grupo ou conglomerado de empresas
+  slug: grupo-ou-conglomerado-de-empresas
+  tema: sujeitos
+  bases:
+  - texto: art. 2, I
+    ancora: art-2-i
+  definicao: conjunto de empresas de fato ou de direito com personalidades jurídicas
+    próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica
+    ou ainda grupo de pessoas que detêm, isolada ou conjuntamente, poder de controle
+    sobre as demais, desde que demonstrado interesse integrado, efetiva comunhão
+    de interesses e atuação conjunta das empresas dele integrantes
+- termo: Infração
+  slug: infracao
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, II
+    ancora: art-2-ii
+  definicao: descumprimento de obrigação estabelecida na Lei nº 13.709, de 14 de
+    agosto de 2018 (LGPD), e nos regulamentos expedidos pela ANPD
+- termo: Infração permanente
+  slug: infracao-permanente
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, III
+    ancora: art-2-iii
+  definicao: conduta infrativa que se prolonga no tempo, mediante ação ou omissão
+    do infrator referente ao mesmo dispositivo normativo
+- termo: Infrator
+  slug: infrator
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, IV
+    ancora: art-2-iv
+  definicao: agente de tratamento que comete infração
+- termo: Medidas corretivas
+  slug: medidas-corretivas
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, V
+    ancora: art-2-v
+  definicao: medidas determinadas pela ANPD com a finalidade de corrigir a infração
+    e reconduzir o infrator à plena conformidade à LGPD e aos regulamentos expedidos
+    pela ANPD, devendo ser aplicadas conjuntamente com a sanção de advertência,
+    nos termos deste Regulamento
+- termo: Política de boas práticas e de governança
+  slug: politica-de-boas-praticas-e-de-governanca
+  tema: governanca
+  bases:
+  - texto: art. 2, VI
+    ancora: art-2-vi
+  definicao: 'normas e processos internos que assegurem o cumprimento abrangente
+    da legislação de proteção de dados pessoais, estabelecidos e implementados pelo
+    agente de tratamento mediante a adoção de:
+
+
+    a) regras de boas práticas e de governança, nos termos do art. 50, caput e §
+    1º, da LGPD; ou
+
+
+    b) programa de governança em privacidade, nos termos do § 2º do art. 50 da LGPD;'
+- termo: Ramo de atividade empresarial
+  slug: ramo-de-atividade-empresarial
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, VII
+    ancora: art-2-vii
+  definicao: área de atuação de empresa, grupo ou conglomerado de empresas, conforme
+    definido pela ANPD e verificado no caso concreto, podendo ser comprovada mediante
+    objeto social, código de Classificação Nacional de Atividades Econômicas (CNAE),
+    código de serviço diretamente relacionado, ou instrumentos congêneres
+- termo: Reincidência específica
+  slug: reincidencia-especifica
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, VIII
+    ancora: art-2-viii
+  definicao: repetição de infração pelo mesmo infrator ao mesmo dispositivo legal
+    ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado
+    do processo administrativo sancionador, até a data do cometimento da nova infração
+- termo: Reincidência genérica
+  slug: reincidencia-generica
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, IX
+    ancora: art-2-ix
+  definicao: cometimento de infração pelo mesmo infrator, independentemente do dispositivo
+    legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em
+    julgado do processo administrativo sancionador até a data do cometimento da
+    nova infração, excluído o disposto no inciso VIII do caput
+- termo: Trânsito em julgado
+  slug: transito-em-julgado
+  tema: fiscalizacao
+  bases:
+  - texto: art. 2, X
+    ancora: art-2-x
+  definicao: atributo de decisão definitiva proferida em processo administrativo
+    sancionador, no âmbito da ANPD, tornando-a imutável e indiscutível dentro do
+    processo em que foi proferida

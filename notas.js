@@ -112,11 +112,24 @@
             medirBarra();
         }
 
+        /* Casa por *começo de palavra*, e não por trecho solto: "idade" tem de
+           achar "aferição de idade" sem arrastar "disponibilidade",
+           "confidencialidade" e "autenticidade" junto. Cada palavra digitada
+           precisa começar alguma palavra do verbete, o que também faz "dado ue"
+           funcionar como filtro de duas condições. */
+        function cabeNoFiltro(verbete, palavras) {
+            var alvo = ' ' + verbete.dataset.busca;
+            for (var i = 0; i < palavras.length; i++) {
+                if (alvo.indexOf(' ' + palavras[i]) === -1) return false;
+            }
+            return true;
+        }
+
         function filtrar(termo) {
-            var busca = normalizar(termo).trim();
+            var palavras = normalizar(termo).trim().split(/\s+/).filter(Boolean);
             var achou = 0;
             verbetes.forEach(function (verbete) {
-                var cabe = !busca || verbete.dataset.busca.indexOf(busca) !== -1;
+                var cabe = !palavras.length || cabeNoFiltro(verbete, palavras);
                 verbete.hidden = !cabe;
                 if (cabe) achou++;
             });
@@ -1522,16 +1535,28 @@
            capturada em vez de olhada para trás: `lookbehind` ainda não é
            universal. */
         var formaParaId = {};
+        var ambiguas = {};
         var formas = [];
         verbetesDaNota.forEach(function (verbete) {
             for (var i = 1; i < verbete.length; i++) {
                 var forma = verbete[i];
                 var chave = forma.toLowerCase();
-                if (formaParaId[chave]) continue;
+                if (formaParaId[chave]) {
+                    /* Duas normas desta nota definem o mesmo termo (acontece
+                       entre resoluções da ANPD). Marcar abriria uma delas por
+                       sorteio, o que numa página de legislação é pior do que
+                       não marcar: o termo fica sem marca, e a página de
+                       definições mostra os dois verbetes, um por norma. O
+                       `conferir_definicoes.py` avisa quais são. */
+                    if (formaParaId[chave] !== verbete[0]) ambiguas[chave] = true;
+                    continue;
+                }
                 formaParaId[chave] = verbete[0];
                 formas.push(forma);
             }
         });
+        Object.keys(ambiguas).forEach(function (chave) { delete formaParaId[chave]; });
+        formas = formas.filter(function (forma) { return !ambiguas[forma.toLowerCase()]; });
         formas.sort(function (a, b) { return b.length - a.length; });
         var escapadas = formas.map(function (forma) {
             return forma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

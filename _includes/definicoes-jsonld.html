@@ -1,0 +1,48 @@
+{%- assign url_canonica = site.url | append: page.url -%}
+    <!-- DefinedTermSet: é o tipo que o schema.org tem para exatamente isto —
+         um conjunto de termos definidos, cada um com nome, definição e o
+         endereço em que está. Vale a repetição do texto no JSON-LD porque é o
+         que permite a um buscador ou a um agente responder "o que a LGPD chama
+         de operador?" citando a página, em vez de citar a nota inteira. A
+         descrição vai cortada: o corpo do verbete já está no HTML. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "inLanguage": "pt-BR",
+      "url": "{{ url_canonica }}",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Paulo Higa",
+        "url": "https://higa.me/"
+      },
+      "hasDefinedTerm": [
+{%- assign primeiro = true -%}
+{%- for arquivo in site.data.definicoes.verbetes -%}
+{%- assign norma_slug = arquivo[0] -%}
+{%- assign norma = site.leis | where: 'slug', norma_slug | first -%}
+{%- for verbete in arquivo[1] %}
+        {%- unless primeiro %},{% endunless %}{% assign primeiro = false %}
+        {
+          "@type": "DefinedTerm",
+          "name": {{ verbete.termo | jsonify }},
+          "description": {{ verbete.definicao | markdownify | strip_html | normalize_whitespace | strip | truncate: 200 | jsonify }},
+          "inDefinedTermSet": "{{ url_canonica }}",
+          "url": "{{ url_canonica }}#v-{{ norma.prefixo }}-{{ verbete.slug }}"
+        }
+{%- endfor -%}
+{%- endfor %}
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "higa.me", "item": "https://higa.me/" },
+          { "@type": "ListItem", "position": 2, "name": "Notas de legislação", "item": "https://higa.me/notas" },
+          { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ url_canonica }}" }
+        ]
+      }
+    }
+    </script>

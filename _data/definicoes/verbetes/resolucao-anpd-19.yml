@@ -1,0 +1,78 @@
+- termo: Exportador
+  slug: exportador
+  tema: transferencia
+  bases:
+  - texto: art. 3, I
+    ancora: art-3-i
+  definicao: agente de tratamento, localizado no território nacional ou em país
+    estrangeiro, que transfere dados pessoais para importador
+- termo: Importador
+  slug: importador
+  tema: transferencia
+  bases:
+  - texto: art. 3, II
+    ancora: art-3-ii
+  definicao: agente de tratamento, localizado em país estrangeiro ou que seja organismo
+    internacional, que recebe dados pessoais transferidos por exportador
+- termo: Transferência
+  slug: transferencia
+  tema: transferencia
+  bases:
+  - texto: art. 3, III
+    ancora: art-3-iii
+  definicao: operação de tratamento por meio da qual um agente de tratamento transmite,
+    compartilha ou disponibiliza acesso a dados pessoais a outro agente de tratamento
+- termo: Coleta internacional de dados
+  slug: coleta-internacional-de-dados
+  tema: transferencia
+  bases:
+  - texto: art. 3, V
+    ancora: art-3-v
+  definicao: coleta de dados pessoais do titular efetuada diretamente pelo agente
+    de tratamento localizado no exterior
+- termo: Grupo ou conglomerado de empresas
+  slug: grupo-ou-conglomerado-de-empresas
+  tema: sujeitos
+  bases:
+  - texto: art. 3, VI
+    ancora: art-3-vi
+  definicao: conjunto de empresas de fato ou de direito com personalidades jurídicas
+    próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica
+    ou ainda grupo de pessoas que detém, isolada ou conjuntamente, poder de controle
+    sobre as demais, desde que demonstrado interesse integrado, efetiva comunhão
+    de interesses e atuação conjunta das empresas dele integrantes
+- termo: Entidade responsável
+  slug: entidade-responsavel
+  tema: transferencia
+  bases:
+  - texto: art. 3, VII
+    ancora: art-3-vii
+  definicao: sociedade empresária, com sede no Brasil, que responde por qualquer
+    violação de norma corporativa global, ainda que decorrente de ato praticado
+    por um membro do grupo ou conglomerado de empresas com sede em outro país
+- termo: Mecanismos de transferência internacional de dados
+  slug: mecanismos-de-transferencia-internacional-de-dados
+  tema: transferencia
+  bases:
+  - texto: art. 3, VIII
+    ancora: art-3-viii
+  definicao: hipóteses previstas nos incisos I a IX do art. 33 da Lei nº 13.709,
+    de 14 de agosto de 2018, que autorizam uma transferência internacional de dados
+- termo: Organismo internacional
+  slug: organismo-internacional
+  tema: sujeitos
+  bases:
+  - texto: art. 3, IX
+    ancora: art-3-ix
+  definicao: organização regida pelo direito internacional público, incluindo seus
+    órgãos subordinados ou qualquer outro órgão criado mediante acordo firmado entre
+    dois ou mais países
+- termo: Medidas de segurança
+  slug: medidas-de-seguranca
+  tema: seguranca
+  bases:
+  - texto: art. 3, X
+    ancora: art-3-x
+  definicao: medidas técnicas e administrativas adotadas para proteger os dados
+    pessoais de acessos não autorizados e de situações acidentais ou ilícitas de
+    destruição, perda, alteração, comunicação ou difusão

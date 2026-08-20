@@ -17,6 +17,13 @@
     --surface-tint: #eef4ff;
     --hairline: rgba(15, 23, 42, 0.12);
     --realce: rgba(29, 78, 216, 0.16);
+
+    /* Etiqueta da norma estrangeira, na página de definições. Outro matiz, e
+       não outro tom do mesmo azul: o que ela precisa dizer é "outro
+       ordenamento", e isso não se lê numa variação de intensidade. */
+    --estrangeira-bg: #fef3c7;
+    --estrangeira-ink: #92400e;
+    --estrangeira-linha: rgba(146, 64, 14, 0.3);
 }
 
 body.dark-theme {
@@ -30,6 +37,10 @@ body.dark-theme {
     --surface-tint: #131f38;
     --hairline: rgba(255, 255, 255, 0.12);
     --realce: rgba(125, 211, 252, 0.22);
+
+    --estrangeira-bg: #2a2113;
+    --estrangeira-ink: #fbbf24;
+    --estrangeira-linha: rgba(251, 191, 36, 0.35);
 }
 
 * {
@@ -1923,6 +1934,7 @@ body.js .definicoes__controles {
     margin: 0.4rem 0 0.65rem;
 }
 
+.verbete__jurisdicao,
 .verbete__norma,
 .verbete__base {
     padding: 0.1rem 0.5rem;
@@ -1930,6 +1942,23 @@ body.js .definicoes__controles {
     border-radius: 0.4rem;
     font-size: 0.78rem;
     text-decoration: none;
+}
+
+/* Brasil é a etiqueta discreta; a de fora do Brasil muda de matiz. O leitor
+   precisa saber, antes da definição, se o verbete é do ordenamento dele — "dados
+   pessoais" tem uma definição na LGPD e outra no RGPD, e só uma vale aqui. */
+.verbete__jurisdicao {
+    display: inline-block;
+    color: var(--ink-soft);
+    white-space: nowrap;
+}
+
+.verbete[data-jurisdicao]:not([data-jurisdicao="brasil"]) .verbete__jurisdicao,
+.verbete__jurisdicao--exemplo {
+    background: var(--estrangeira-bg);
+    border-color: var(--estrangeira-linha);
+    color: var(--estrangeira-ink);
+    font-weight: 600;
 }
 
 .verbete__norma {

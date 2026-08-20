@@ -23,15 +23,27 @@ no site, não o caminho até lá.
 
 As **definições legais** das normas comentadas passaram a viver numa página
 própria, **[`/notas/definicoes`](https://higa.me/notas/definicoes)**, e saíram
-do começo das notas. São 97 termos, cada um com o dispositivo em que a norma o
-define: 20 da LGPD, 8 do Marco Civil da Internet, 13 do ECA Digital e 9 do
-Decreto nº 12.880/2026, 11 do RGPD, 20 do AI Act e os 16 termos do rito do
-Conselho Diretor da ANPD, definidos pelo Regimento Interno.
+do começo das notas. São 210 termos, cada um com o dispositivo em que a norma o
+define — e com **o texto da norma**, transcrito, e não resumido: 20 da LGPD, 8
+do Marco Civil da Internet e 2 do Decreto nº 8.771/2016, 13 do ECA Digital e 9
+do Decreto nº 12.880/2026, 2 do Decreto nº 12.976/2026, 29 do RGPD, 70 do AI
+Act, 1 do Regulamento (UE) 2025/2518, 7 do Regimento Interno da ANPD e 49 das
+resoluções do Conselho Diretor da ANPD sobre fiscalização e sanções, dosimetria,
+agentes de pequeno porte, incidente de segurança, encarregado e transferência
+internacional.
 
 A página organiza a lista de duas maneiras — **em ordem alfabética** e **por
 tema** (sujeitos e papéis, dados e informação, operações e técnicas, rede e
-plataformas, inteligência artificial, infância e adolescência, governança e
-conformidade, rito e deliberação) — e traz um filtro por termo, norma ou tema.
+plataformas, conteúdo e moderação, inteligência artificial, infância e
+adolescência, segurança e incidentes, transferência internacional, governança e
+conformidade, fiscalização e sanções, rito e deliberação) — e traz um filtro por
+termo, norma, tema ou jurisdição.
+
+**Cada verbete diz de qual ordenamento fala.** Uma etiqueta separa o direito
+brasileiro do direito da União Europeia, que não obriga no Brasil: "dados
+pessoais" tem uma definição no [art. 5º, I, da LGPD](https://higa.me/notas/lgpd#art-5-i)
+e outra no [art. 4.º, 1), do RGPD](https://higa.me/notas/gdpr#art-4), e ler as
+duas na mesma lista sem essa distinção seria confundi-las.
 
 **Nos comentários, os mesmos termos ficam marcados no corpo do texto** — o
 primeiro uso de cada um em cada seção — e o clique abre a definição ali mesmo,
@@ -40,7 +52,7 @@ trocando a norma exibida quando for o caso.
 
 O que saiu das notas foi a **lista de definições**, que agora estaria repetida
 em dois lugares — o "tratamento" da LGPD e o do RGPD eram o mesmo verbete
-escrito duas vezes. O comentário *sobre* as definições ficou, e em dois casos
+escrito duas vezes. O comentário *sobre* as definições ficou, e em três casos
 mudou de lugar:
 
 - **[LGPD](../_notas/lgpd.md)** (`/notas/lgpd`) — a análise dos três estudos
@@ -55,6 +67,18 @@ mudou de lugar:
   existiram na redação da MPV nº 1.068/2021, rejeitada. A nota passou a apontar
   que quem define rede social é o [ECA Digital](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/L15211.htm),
   e só para os fins daquela lei.
+- **[Regimento Interno da ANPD](../_notas/regimento-interno-anpd.md)**
+  (`/notas/regimento-interno-anpd`) — o antigo "Glossário do rito" virou **"O
+  vocabulário do rito"**, com a ressalva de que o Regimento não tem artigo de
+  definições: relator, destaque, vista coletiva e os demais termos aparecem no
+  dispositivo que os cria, e é dele que vem o sentido. Os que a norma define de
+  fato — os instrumentos do [art. 51](https://higa.me/notas/regimento-interno-anpd#art-51)
+  e o Circuito Deliberativo do [art. 40](https://higa.me/notas/regimento-interno-anpd#art-40)
+  — passaram para a página de definições.
+
+O apelido do RGPD no seletor de normas do painel "Lei seca" passou de "RGPD
+(GDPR)" para **"General Data Protection Regulation (GDPR) da UE"**, mais fácil
+de encontrar numa lista de vinte normas.
 
 A observação de que o texto do EUR-Lex traz a "ultrafalsificação" do AI Act sob
 o rótulo **«falsificações profundas»** passou a constar do verbete
@@ -63,11 +87,13 @@ correspondente.
 ### Documentação
 
 - [`docs/notas.md`](./notas.md) ganhou a seção **Definições legais**: o formato
-  do verbete, as regras de escrita da base legal, como a página monta as duas
-  organizações e como o termo marcado no comentário funciona.
+  do verbete, a regra de que a definição é a letra da norma, como extrair e
+  conferir, como a página monta as duas organizações e como o termo marcado no
+  comentário funciona.
 - [`AGENTS.md`](../AGENTS.md) passou a trazer a regra de que **definição de
-  termo não se escreve na nota**, e o `conferir_definicoes.py` entrou na lista
-  de conferências antes de fechar uma alteração.
+  termo não se escreve na nota** e de que **o verbete traz a transcrição do
+  dispositivo**, não uma paráfrase. `conferir_definicoes.py` entrou na lista de
+  conferências antes de fechar uma alteração.
 
 ---
 

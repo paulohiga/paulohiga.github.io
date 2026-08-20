@@ -30,18 +30,34 @@
   nome: Rede, serviços e plataformas
   descricao: A infraestrutura da internet e os serviços que rodam sobre ela.
 
+- id: conteudo
+  nome: Conteúdo e moderação
+  descricao: O que circula nas plataformas, e como circula.
+
 - id: ia
   nome: Inteligência artificial
-  descricao: Sistemas, modelos e os riscos próprios deles.
+  descricao: Sistemas, modelos, biometria e os riscos próprios deles.
 
 - id: infancia
   nome: Infância e adolescência
   descricao: Idade, adequação de conteúdo e supervisão.
 
+- id: seguranca
+  nome: Segurança e incidentes
+  descricao: As propriedades que se protegem, e o que se faz quando falham.
+
+- id: transferencia
+  nome: Transferência internacional
+  descricao: Dado que sai do país, e por qual mecanismo.
+
 - id: governanca
   nome: Governança e conformidade
-  descricao: Documentos, incidentes e o que se deve ao mercado e ao regulador.
+  descricao: Documentos, conformidade e o que se deve ao mercado e ao regulador.
+
+- id: fiscalizacao
+  nome: Fiscalização e sanções
+  descricao: Infração, processo sancionador e dosimetria.
 
 - id: rito
   nome: Rito e deliberação
-  descricao: Como um colegiado de agência decide.
+  descricao: Como um colegiado de agência decide, e por quais instrumentos fala.

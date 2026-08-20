@@ -227,6 +227,27 @@ Quem registra é a **SE**, e a ata é assinada pelos diretores presentes ([art. 
 
 A ata é aprovada até a reunião seguinte e divulgada em até **5 dias** da aprovação ([art. 46](#art-46)). Há ainda uma regra de prevalência: havendo divergência, prevalecem sobre o teor da ata, **nesta ordem**, as gravações, os votos escritos e os demais documentos de suporte ([art. 47](#art-47)).
 
+## O vocabulário do rito
+
+O Regimento não tem artigo de definições: os termos abaixo aparecem no dispositivo que os cria, e é dele que vem o sentido. Os que a norma **define** de fato — os instrumentos do [art. 51](#art-51) e o Circuito Deliberativo do [art. 40](#art-40) — estão em [Definições legais](/notas/definicoes), com o texto da norma.
+
+| Termo | O que significa aqui |
+| --- | --- |
+| **Relator** | Diretor sorteado para estudar a matéria, instruí-la e apresentar o voto que abre a deliberação ([art. 7º, II](#art-7-ii)) |
+| **Maioria absoluta** | Mais da metade do total de membros — três dos cinco. É o quórum para instalar a reunião ([art. 27](#art-27)) |
+| **Maioria simples** | Mais da metade dos votos na deliberação. É o quórum para decidir ([art. 19](#art-19)) |
+| **Voto de qualidade** | Voto adicional do Diretor-Presidente para desempatar ([art. 20](#art-20)) |
+| **Destaque** | Pedido de um diretor para que a matéria seja relatada e debatida, em vez de aprovada em bloco ([art. 31](#art-31)) |
+| **Retirada de pauta** | Anúncio, pelo relator ou por quem esteja com vista, de que a matéria não será apreciada naquela sessão ([art. 31](#art-31)) |
+| **Pedido de vista** | Suspensão da deliberação para que um diretor estude a matéria, por até 30 dias corridos ([art. 34](#art-34)) |
+| **Vista coletiva** | Vista concedida a todos os diretores ao mesmo tempo ([art. 34, § 2º](#art-34-p2)) |
+| **Conversão em diligência** | Adiamento aprovado pelo colegiado para produzir instrução adicional ([art. 37](#art-37)) |
+| **Manifestação oral** | Fala do interessado ou de seu procurador na reunião, por até 15 minutos ([art. 32](#art-32)) |
+| **Impedimento e suspeição** | Situações em que o diretor não pode atuar, por vínculo com o caso ou risco de parcialidade; geram novo sorteio ([art. 23, § 6º](#art-23-p6)) |
+| **Terminativo** | Decisão que encerra a discussão na esfera administrativa ([art. 5º, IX](#art-5-ix)); não impede a via judicial |
+| **Medida preventiva** | Providência cautelar para evitar dano grave e de difícil reparação, adotada antes da decisão final ([art. 55](#art-55)) |
+| **Informe** | Manifestação da área técnica que instrui o processo e sobe com ele à deliberação superior ([art. 52, III](#art-52-iii)) |
+
 ## Os instrumentos: como a ANPD fala ([art. 51](#art-51))
 
 A Agência não se manifesta "por comunicado". Cada tipo de manifestação tem forma própria, e o [art. 51](#art-51) as lista:

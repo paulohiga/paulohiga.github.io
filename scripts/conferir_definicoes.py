@@ -15,10 +15,16 @@ O que ele confere, por norma:
   - o `tema` é um dos declarados em `_data/definicoes/temas.yml`;
   - toda `ancora` de base existe de fato no texto da norma, com a mesma regra de
     `_includes/lei-anotada.html` (via `ids_da_lei`, de `ancorar_referencias`);
-  - nenhum termo ou apelido colide com outro **dentro da mesma nota** — é a
-    colisão que importa, porque o índice que marca os termos no comentário é
-    montado com as normas daquela nota, e duas entradas com o mesmo texto
-    deixariam a marcação escolher no escuro.
+  - **a definição é a letra da norma**: o começo dela tem de aparecer, tal e
+    qual, no texto de `_leis/<norma>.md`. É a conferência que impede uma
+    paráfrase de se passar por definição legal — interpretação e comentário vão
+    no campo `nota`.
+
+E avisa (sem reprovar) quando um termo ou apelido colide com outro **dentro da
+mesma nota**: o índice que marca os termos no comentário é montado com as
+normas daquela nota, e um termo que duas delas definem não tem como ser
+marcado sem escolher no escuro — o `notas.js` deixa esse termo sem marca, e ele
+continua na página, com um verbete para cada norma.
 
     python3 scripts/conferir_definicoes.py            # todas as normas
     python3 scripts/conferir_definicoes.py lgpd mci   # só estas
@@ -47,6 +53,11 @@ LEIS_DIR = RAIZ / "_leis"
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 OBRIGATORIOS = ("termo", "slug", "tema", "definicao")
 
+# Quanto do começo da definição é conferido contra o texto da norma. Curto o
+# bastante para não tropeçar na pontuação de fim que o extrator apara, longo o
+# bastante para uma paráfrase não passar por acaso.
+PREFIXO_LITERAL = 60
+
 
 def _yaml(caminho: Path):
     return yaml.safe_load(caminho.read_text(encoding="utf-8"))
@@ -58,6 +69,14 @@ def _front_matter(caminho: Path) -> dict:
         return {}
     partes = texto.split("---\n", 2)
     return yaml.safe_load(partes[1]) if len(partes) >= 3 else {}
+
+
+def texto_corrido(texto: str) -> str:
+    """O texto sem a marcação que só existe no verbete: ênfase do Markdown e
+    rótulo de link. É nesse espaço que a definição é comparada com a norma."""
+    texto = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", texto)
+    texto = texto.replace("**", "").replace("*", "").replace("_", "")
+    return re.sub(r"\s+", " ", texto).strip()
 
 
 def normalizar(texto: str) -> str:
@@ -82,6 +101,7 @@ def conferir(slug: str, temas: set[str], registro: dict) -> list[str]:
         return [f"{slug}: o arquivo precisa ser uma lista de verbetes"]
 
     validos = ids_da_lei(slug, "")
+    corpo_da_norma = texto_corrido((LEIS_DIR / f"{slug}.md").read_text(encoding="utf-8"))
     vistos: set[str] = set()
 
     for i, verbete in enumerate(verbetes, start=1):
@@ -117,6 +137,15 @@ def conferir(slug: str, temas: set[str], registro: dict) -> list[str]:
             if ancora and ancora not in validos:
                 problemas.append(f"{onde}: âncora `{ancora}` não existe em _leis/{slug}.md")
 
+        definicao = texto_corrido(str(verbete.get("definicao") or ""))
+        prefixo = definicao[:PREFIXO_LITERAL]
+        if prefixo and prefixo not in corpo_da_norma:
+            problemas.append(
+                f"{onde}: a definição não é a letra da norma — "
+                f"\"{prefixo}…\" não está em _leis/{slug}.md "
+                f"(interpretação vai no campo `nota`)"
+            )
+
     return problemas
 
 
@@ -140,7 +169,8 @@ def conferir_colisoes(por_norma: dict[str, list]) -> list[str]:
                     dono = f"{norma}/{verbete.get('slug')}"
                     if chave in formas and formas[chave] != dono:
                         problemas.append(
-                            f"{nota.stem}: \"{texto}\" está em {formas[chave]} e em {dono}"
+                            f"{nota.stem}: \"{texto}\" é definido por {formas[chave]} "
+                            f"e por {dono} — fica sem marca no comentário"
                         )
                     formas[chave] = dono
     return problemas
@@ -161,18 +191,25 @@ def main() -> int:
         problemas.extend(conferir(slug, temas, registro))
         por_norma[slug] = _yaml(arquivo) or []
 
+    avisos: list[str] = []
     if not sys.argv[1:]:
         for arquivo in VERBETES_DIR.glob("*.yml"):
             por_norma.setdefault(arquivo.stem, _yaml(arquivo) or [])
-        problemas.extend(conferir_colisoes(por_norma))
+        avisos = conferir_colisoes(por_norma)
 
     for p in problemas:
         print(p)
     if problemas:
         print(f"\n{len(problemas)} problema(s).")
         return 1
+    for a in avisos:
+        print(f"aviso — {a}")
     total = sum(len(v) for v in por_norma.values())
-    print(f"{len(slugs)} norma(s) conferida(s), {total} verbete(s): toda base no lugar.")
+    if avisos:
+        print(f"\n{len(avisos)} termo(s) sem marcação por ambiguidade "
+              f"(continuam na página, um verbete por norma).")
+    print(f"{len(slugs)} norma(s) conferida(s), {total} verbete(s): "
+          f"toda base no lugar e toda definição na letra da norma.")
     return 0
 
 

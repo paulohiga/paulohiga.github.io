@@ -57,9 +57,14 @@
     <main class="definicoes">
         <p class="definicoes__intro">
             Os {{ definicoes_total }} termos que as normas comentadas em <a href="/notas">/notas</a>
-            definem elas próprias, cada um com o dispositivo em que está escrito. O link da base
-            legal abre a nota da norma já posicionada no texto. Nos comentários, os mesmos termos
-            ficam marcados no corpo do texto: um clique abre a definição sem sair da leitura.
+            definem elas próprias — leis, decretos, resoluções da ANPD e os regulamentos europeus.
+            <strong>A definição é a letra da norma</strong>, transcrita do dispositivo indicado;
+            o que vem depois dela, em corpo menor, é comentário. A etiqueta separa o direito
+            <span class="verbete__jurisdicao">Brasil</span> do direito da
+            <span class="verbete__jurisdicao verbete__jurisdicao--exemplo">União Europeia</span>,
+            que não obriga no Brasil. O link da base legal abre a nota da norma já posicionada no
+            texto; nos comentários, os mesmos termos ficam marcados no corpo do texto, e um clique
+            abre a definição sem sair da leitura.
         </p>
 
         <!-- Presa no topo enquanto a lista rola: com 97 verbetes, ter de
@@ -102,6 +107,8 @@
             <p class="definicoes__vazio" role="status" hidden>Nenhum termo com esse filtro.</p>
         </div>
     </main>
+
+{% include definicoes-jsonld.html %}
 
     <script src="/notas.js" defer></script>
 </body>

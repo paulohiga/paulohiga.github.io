@@ -1,147 +1,367 @@
-# Definições do RGPD (Regulamento (UE) 2016/679), reunidas em
-# /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
-# (docs/notas.md). Confira com `python3 scripts/conferir_definicoes.py gdpr`.
-#
-# O art. 4.º tem 26 definições numeradas, e os itens numerados de um artigo
-# europeu abertos por "1)" não recebem âncora própria (ver "Normas estrangeiras"
-# em docs/notas.md): a base traz o número do item, e a âncora leva ao artigo.
-#
-# O texto é PT-PT, do EUR-Lex — "subcontratante" é o operador, "responsável
-# pelo tratamento" é o controlador. A correspondência com a terminologia
-# brasileira está em "Terminologia: PT-PT × pt-BR", na nota do RGPD.
-
 - termo: Dados pessoais
   slug: dados-pessoais
   tema: dados
-  bases: [{ texto: "art. 4.º, 1)", ancora: art-4 }]
-  aliases: [dado pessoal]
-  definicao: >-
-    informação relativa a uma pessoa singular **identificada ou identificável**,
-    direta ou indiretamente, em especial por referência a um identificador.
-  nota: >-
-    A definição é deliberadamente ampla, e o considerando 26 fixa o teste: para
-    saber se alguém é identificável, consideram-se "todos os meios suscetíveis
-    de ser **razoavelmente** utilizados" — pelo responsável **ou por outra
-    pessoa** —, à luz do custo, do tempo e da tecnologia disponível.
-
-- termo: Pseudonimização
-  slug: pseudonimizacao
-  tema: operacoes
-  bases: [{ texto: "art. 4.º, 5)", ancora: art-4 }]
-  aliases: [pseudonimizado, dado pseudonimizado, dados pseudonimizados]
-  definicao: >-
-    tratamento que impede atribuir os dados a um titular sem recorrer a
-    informação suplementar guardada separadamente.
-  nota: >-
-    Dado pseudonimizado **continua sendo dado pessoal** para quem tem a chave; a
-    discussão sobre o que ele é para quem **não** tem a chave é hoje o ponto
-    mais quente do direito europeu de dados (ver "Jurisprudências históricas",
-    na nota do RGPD).
-
-- termo: Dados anonimizados
-  slug: dados-anonimizados
-  tema: dados
-  bases: [{ texto: "considerando 26" }]
-  aliases: [dado anonimizado]
-  definicao: >-
-    dados que não digam respeito a pessoa identificada ou identificável. Dado
-    anônimo está **fora** do regulamento — o conceito aparece no considerando
-    26, fora do articulado.
-  nota: >-
-    É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12), inclusive na
-    ressalva de que a anonimização reversível por esforços razoáveis não é
-    anonimização.
-
-- termo: Categorias especiais de dados pessoais
-  slug: categorias-especiais
-  tema: dados
-  bases: [{ texto: "art. 9.º", ancora: art-9 }]
-  aliases: [categorias especiais, dados sensíveis, dado sensível]
-  definicao: >-
-    origem racial ou étnica, opiniões políticas, convicções religiosas ou
-    filosóficas, filiação sindical, dados genéticos, dados biométricos usados
-    para identificar univocamente uma pessoa, dados relativos à saúde, à vida
-    sexual ou à orientação sexual.
-  nota: >-
-    São os "dados sensíveis" do [art. 5º, II, da LGPD](/notas/lgpd#art-5-ii). As
-    duas listas quase coincidem, mas não são idênticas: onde o RGPD fala apenas
-    em **filiação sindical**, a lei brasileira alcança também a filiação a
-    **organização de caráter religioso, filosófico ou político**.
-
+  bases:
+  - texto: art. 4.º, 1)
+    ancora: art-4
+  aliases:
+  - dado pessoal
+  definicao: informação relativa a uma pessoa singular identificada ou identificável
+    («titular dos dados»); é considerada identificável uma pessoa singular que possa
+    ser identificada, direta ou indiretamente, em especial por referência a um identificador,
+    como por exemplo um nome, um número de identificação, dados de localização,
+    identificadores por via eletrónica ou a um ou mais elementos específicos da
+    identidade física, fisiológica, genética, mental, económica, cultural ou social
+    dessa pessoa singular
+  nota: 'A definição é deliberadamente ampla, e o considerando 26 fixa o teste:
+    para saber se alguém é identificável, consideram-se "todos os meios suscetíveis
+    de ser **razoavelmente** utilizados" — pelo responsável **ou por outra pessoa**
+    —, à luz do custo, do tempo e da tecnologia disponível.'
 - termo: Tratamento
   slug: tratamento
   tema: operacoes
-  bases: [{ texto: "art. 4.º, 2)", ancora: art-4 }]
-  definicao: >-
-    qualquer operação sobre dados pessoais — recolha, registro, organização,
-    conservação, consulta, divulgação, apagamento.
-  nota: "Coincide com o [art. 5º, X, da LGPD](/notas/lgpd#art-5-x)."
-
-- termo: Responsável pelo tratamento
-  slug: responsavel-pelo-tratamento
-  tema: sujeitos
-  bases: [{ texto: "art. 4.º, 7)", ancora: art-4 }]
-  aliases: [responsáveis pelo tratamento]
-  definicao: >-
-    quem determina as **finalidades e os meios** do tratamento. É a decisão, não
-    a posse dos dados, que define o papel.
-  nota: "Corresponde ao **controlador** da LGPD."
-
-- termo: Subcontratante
-  slug: subcontratante
-  tema: sujeitos
-  bases: [{ texto: "art. 4.º, 8)", ancora: art-4 }]
-  aliases: [subcontratantes]
-  definicao: quem trata dados **por conta** do responsável pelo tratamento.
-  nota: "Corresponde ao **operador** da LGPD."
-
-- termo: Responsáveis conjuntos pelo tratamento
-  slug: responsaveis-conjuntos
-  tema: sujeitos
-  bases: [{ texto: "art. 26.º", ancora: art-26 }]
-  aliases: [responsáveis conjuntos]
-  definicao: >-
-    dois ou mais responsáveis que determinam conjuntamente finalidades e meios,
-    e devem repartir responsabilidades por acordo transparente.
-  nota: >-
-    A figura não tem equivalente expresso na LGPD, e o Tribunal de Justiça a
-    interpretou de forma ampla — quem se beneficia e influencia a definição de
-    finalidades pode ser corresponsável mesmo sem jamais tocar nos dados.
-
-- termo: Consentimento
-  slug: consentimento
+  bases:
+  - texto: art. 4.º, 2)
+    ancora: art-4
+  definicao: uma operação ou um conjunto de operações efetuadas sobre dados pessoais
+    ou sobre conjuntos de dados pessoais, por meios automatizados ou não automatizados,
+    tais como a recolha, o registo, a organização, a estruturação, a conservação,
+    a adaptação ou alteração, a recuperação, a consulta, a utilização, a divulgação
+    por transmissão, difusão ou qualquer outra forma de disponibilização, a comparação
+    ou interconexão, a limitação, o apagamento ou a destruição
+  nota: Coincide com o [art. 5º, X, da LGPD](/notas/lgpd#art-5-x).
+- termo: Limitação do tratamento
+  slug: limitacao-do-tratamento
   tema: operacoes
-  bases: [{ texto: "art. 4.º, 11)", ancora: art-4 }]
-  definicao: >-
-    manifestação de vontade **livre, específica, informada e inequívoca**, por
-    declaração ou ato positivo inequívoco.
-  nota: >-
-    Silêncio, opções pré-marcadas e inércia não servem (considerando 32).
-
-- termo: Violação de dados pessoais
-  slug: violacao-de-dados-pessoais
-  tema: governanca
-  bases: [{ texto: "art. 4.º, 12)", ancora: art-4 }]
-  aliases: [violação de dados]
-  definicao: >-
-    violação da segurança que provoque, de modo acidental ou ilícito,
-    destruição, perda, alteração, divulgação ou acesso não autorizado a dados
-    pessoais.
-  nota: >-
-    **Não é sinônimo de vazamento**: perder um _notebook_ criptografado, apagar
-    um banco sem cópia ou sofrer um _ransomware_ são violações, ainda que
-    ninguém veja o dado.
-
+  bases:
+  - texto: art. 4.º, 3)
+    ancora: art-4
+  definicao: a inserção de uma marca nos dados pessoais conservados com o objetivo
+    de limitar o seu tratamento no futuro
 - termo: Definição de perfis
   slug: definicao-de-perfis
   tema: operacoes
-  bases: [{ texto: "art. 4.º, 4)", ancora: art-4 }]
-  definicao: >-
-    tratamento automatizado que usa dados pessoais para **avaliar** aspectos
-    pessoais — desempenho profissional, situação econômica, saúde, preferências,
-    fiabilidade, comportamento, localização.
-  nota: >-
-    Perfilar é avaliar; agrupar sem avaliar não é. O [art. 22.º](#art-22) não
+  bases:
+  - texto: art. 4.º, 4)
+    ancora: art-4
+  definicao: qualquer forma de tratamento automatizado de dados pessoais que consista
+    em utilizar esses dados pessoais para avaliar certos aspetos pessoais de uma
+    pessoa singular, nomeadamente para analisar ou prever aspetos relacionados com
+    o seu desempenho profissional, a sua situação económica, saúde, preferências
+    pessoais, interesses, fiabilidade, comportamento, localização ou deslocações
+  nota: 'Perfilar é avaliar; agrupar sem avaliar não é. O [art. 22.º](#art-22) não
     proíbe perfilar: proíbe que a pessoa fique **sujeita a decisão exclusivamente
-    automatizada** que produza efeitos jurídicos ou a afete significativamente
-    de modo similar.
+    automatizada** que produza efeitos jurídicos ou a afete significativamente de
+    modo similar.'
+- termo: Pseudonimização
+  slug: pseudonimizacao
+  tema: operacoes
+  bases:
+  - texto: art. 4.º, 5)
+    ancora: art-4
+  aliases:
+  - pseudonimizado
+  - dado pseudonimizado
+  - dados pseudonimizados
+  definicao: o tratamento de dados pessoais de forma que deixem de poder ser atribuídos
+    a um titular de dados específico sem recorrer a informações suplementares, desde
+    que essas informações suplementares sejam mantidas separadamente e sujeitas
+    a medidas técnicas e organizativas para assegurar que os dados pessoais não
+    possam ser atribuídos a uma pessoa singular identificada ou identificável
+  nota: Dado pseudonimizado **continua sendo dado pessoal** para quem tem a chave;
+    a discussão sobre o que ele é para quem **não** tem a chave é hoje o ponto mais
+    quente do direito europeu de dados (ver "Jurisprudências históricas", na nota
+    do RGPD).
+- termo: Ficheiro
+  slug: ficheiro
+  tema: dados
+  bases:
+  - texto: art. 4.º, 6)
+    ancora: art-4
+  definicao: qualquer conjunto estruturado de dados pessoais, acessível segundo
+    critérios específicos, quer seja centralizado, descentralizado ou repartido
+    de modo funcional ou geográfico
+- termo: Responsável pelo tratamento
+  slug: responsavel-pelo-tratamento
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 7)
+    ancora: art-4
+  aliases:
+  - responsáveis pelo tratamento
+  definicao: a pessoa singular ou coletiva, a autoridade pública, a agência ou outro
+    organismo que, individualmente ou em conjunto com outras, determina as finalidades
+    e os meios de tratamento de dados pessoais; sempre que as finalidades e os meios
+    desse tratamento sejam determinados pelo direito da União ou de um Estado-Membro,
+    o responsável pelo tratamento ou os critérios específicos aplicáveis à sua nomeação
+    podem ser previstos pelo direito da União ou de um Estado-Membro
+  nota: Corresponde ao **controlador** da LGPD.
+- termo: Subcontratante
+  slug: subcontratante
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 8)
+    ancora: art-4
+  aliases:
+  - subcontratantes
+  definicao: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro
+    organismo que trate os dados pessoais por conta do responsável pelo tratamento
+    destes
+  nota: Corresponde ao **operador** da LGPD.
+- termo: Destinatário
+  slug: destinatario
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 9)
+    ancora: art-4
+  definicao: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro
+    organismo que recebem comunicações de dados pessoais, independentemente de se
+    tratar ou não de um terceiro. Contudo, as autoridades públicas que possam receber
+    dados pessoais no âmbito de inquéritos específicos nos termos do direito da
+    União ou dos Estados-Membros não são consideradas destinatários; o tratamento
+    desses dados por essas autoridades públicas deve cumprir as regras de proteção
+    de dados aplicáveis em função das finalidades do tratamento
+- termo: Terceiro
+  slug: terceiro
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 10)
+    ancora: art-4
+  definicao: a pessoa singular ou coletiva, a autoridade pública, o serviço ou organismo
+    que não seja o titular dos dados, o responsável pelo tratamento, o subcontratante
+    e as pessoas que, sob a autoridade direta do responsável pelo tratamento ou
+    do subcontratante, estão autorizadas a tratar os dados pessoais
+- termo: Consentimento
+  slug: consentimento
+  tema: operacoes
+  bases:
+  - texto: art. 4.º, 11)
+    ancora: art-4
+  definicao: uma manifestação de vontade, livre, específica, informada e inequívoca,
+    pela qual o titular dos dados aceita, mediante declaração ou ato positivo inequívoco,
+    que os dados pessoais que lhe dizem respeito sejam objeto de tratamento
+  nota: Silêncio, opções pré-marcadas e inércia não servem (considerando 32).
+- termo: Violação de dados pessoais
+  slug: violacao-de-dados-pessoais
+  tema: seguranca
+  bases:
+  - texto: art. 4.º, 12)
+    ancora: art-4
+  aliases:
+  - violação de dados
+  definicao: uma violação da segurança que provoque, de modo acidental ou ilícito,
+    a destruição, a perda, a alteração, a divulgação ou o acesso, não autorizados,
+    a dados pessoais transmitidos, conservados ou sujeitos a qualquer outro tipo
+    de tratamento
+  nota: '**Não é sinônimo de vazamento**: perder um _notebook_ criptografado, apagar
+    um banco sem cópia ou sofrer um _ransomware_ são violações, ainda que ninguém
+    veja o dado.'
+- termo: Dados genéticos
+  slug: dados-geneticos
+  tema: dados
+  bases:
+  - texto: art. 4.º, 13)
+    ancora: art-4
+  definicao: os dados pessoais relativos às características genéticas, hereditárias
+    ou adquiridas, de uma pessoa singular que deem informações únicas sobre a fisiologia
+    ou a saúde dessa pessoa singular e que resulta designadamente de uma análise
+    de uma amostra biológica proveniente da pessoa singular em causa
+- termo: Dados biométricos
+  slug: dados-biometricos
+  tema: dados
+  bases:
+  - texto: art. 4.º, 14)
+    ancora: art-4
+  definicao: dados pessoais resultantes de um tratamento técnico específico relativo
+    às características físicas, fisiológicas ou comportamentais de uma pessoa singular
+    que permitam ou confirmem a identificação única dessa pessoa singular, nomeadamente
+    imagens faciais ou dados dactiloscópicos
+- termo: Dados relativos à saúde
+  slug: dados-relativos-a-saude
+  tema: dados
+  bases:
+  - texto: art. 4.º, 15)
+    ancora: art-4
+  definicao: dados pessoais relacionados com a saúde física ou mental de uma pessoa
+    singular, incluindo a prestação de serviços de saúde, que revelem informações
+    sobre o seu estado de saúde
+- termo: Estabelecimento principal
+  slug: estabelecimento-principal
+  tema: governanca
+  bases:
+  - texto: art. 4.º, 16)
+    ancora: art-4
+  definicao: '- a) No que se refere a um responsável pelo tratamento com estabelecimentos
+    em vários Estados-Membros, o local onde se encontra a sua administração central
+    na União, a menos que as decisões sobre as finalidades e os meios de tratamento
+    dos dados pessoais sejam tomadas noutro estabelecimento do responsável pelo
+    tratamento na União e este último estabelecimento tenha competência para mandar
+    executar tais decisões, sendo neste caso o estabelecimento que tiver tomado
+    as referidas decisões considerado estabelecimento principal;
+
+    - b) No que se refere a um subcontratante com estabelecimentos em vários Estados-Membros,
+    o local onde se encontra a sua administração central na União ou, caso o subcontratante
+    não tenha administração central na União, o estabelecimento do subcontratante
+    na União onde são exercidas as principais atividades de tratamento no contexto
+    das atividades de um estabelecimento do subcontratante, na medida em que se
+    encontre sujeito a obrigações específicas nos termos do presente regulamento;'
+- termo: Representante
+  slug: representante
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 17)
+    ancora: art-4
+  definicao: uma pessoa singular ou coletiva estabelecida na União que, designada
+    por escrito pelo responsável pelo tratamento ou subcontratante, nos termos do
+    artigo 27.º, representa o responsável pelo tratamento ou o subcontratante no
+    que se refere às suas obrigações respetivas nos termos do presente regulamento
+- termo: Empresa
+  slug: empresa
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 18)
+    ancora: art-4
+  definicao: uma pessoa singular ou coletiva que, independentemente da sua forma
+    jurídica, exerce uma atividade económica, incluindo as sociedades ou associações
+    que exercem regularmente uma atividade económica
+- termo: Grupo empresarial
+  slug: grupo-empresarial
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 19)
+    ancora: art-4
+  definicao: um grupo composto pela empresa que exerce o controlo e pelas empresas
+    controladas
+- termo: Regras vinculativas aplicáveis às empresas
+  slug: regras-vinculativas-aplicaveis-as-empresas
+  tema: transferencia
+  bases:
+  - texto: art. 4.º, 20)
+    ancora: art-4
+  definicao: as regras internas de proteção de dados pessoais aplicadas por um responsável
+    pelo tratamento ou um subcontratante estabelecido no território de um Estado-Membro
+    para as transferências ou conjuntos de transferências de dados pessoais para
+    um responsável ou subcontratante num ou mais países terceiros, dentro de um
+    grupo empresarial ou de um grupo de empresas envolvidas numa atividade económica
+    conjunta
+- termo: Autoridade de controlo
+  slug: autoridade-de-controlo
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 21)
+    ancora: art-4
+  definicao: uma autoridade pública independente criada por um Estado-Membro nos
+    termos do artigo 51.º
+- termo: Autoridade de controlo interessada
+  slug: autoridade-de-controlo-interessada
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 22)
+    ancora: art-4
+  definicao: 'uma autoridade de controlo afetada pelo tratamento de dados pessoais
+    pelo facto de:
+
+
+    - a) O responsável pelo tratamento ou o subcontratante estar estabelecido no
+    território do Estado-Membro dessa autoridade de controlo;
+
+    - b) Os titulares de dados que residem no Estado-Membro dessa autoridade de
+    controlo serem substancialmente afetados, ou suscetíveis de o ser, pelo tratamento
+    dos dados; ou
+
+    - c) Ter sido apresentada uma reclamação junto dessa autoridade de controlo;'
+- termo: Tratamento transfronteiriço
+  slug: tratamento-transfronteirico
+  tema: operacoes
+  bases:
+  - texto: art. 4.º, 23)
+    ancora: art-4
+  definicao: '- a) O tratamento de dados pessoais que ocorre no contexto das atividades
+    de estabelecimentos em mais do que um Estado-Membro de um responsável pelo tratamento
+    ou um subcontratante na União, caso o responsável pelo tratamento ou o subcontratante
+    esteja estabelecido em mais do que um Estado-Membro; ou
+
+    - b) O tratamento de dados pessoais que ocorre no contexto das atividades de
+    um único estabelecimento de um responsável pelo tratamento ou de um subcontratante,
+    mas que afeta substancialmente, ou é suscetível de afetar substancialmente,
+    titulares de dados em mais do que um Estados-Membro;'
+- termo: Objeção pertinente e fundamentada
+  slug: objecao-pertinente-e-fundamentada
+  tema: governanca
+  bases:
+  - texto: art. 4.º, 24)
+    ancora: art-4
+  definicao: uma objeção a um projeto de decisão que visa determinar se há violação
+    do presente regulamento ou se a ação prevista relativamente ao responsável pelo
+    tratamento ou ao subcontratante está em conformidade com o presente regulamento,
+    demonstrando claramente a gravidade dos riscos que advêm do projeto de decisão
+    para os direitos e liberdades fundamentais dos titulares dos dados e, eventualmente,
+    para a livre circulação de dados pessoais no território da União
+- termo: Serviços da sociedade da informação
+  slug: servicos-da-sociedade-da-informacao
+  tema: rede
+  bases:
+  - texto: art. 4.º, 25)
+    ancora: art-4
+  definicao: um serviço definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE)
+    2015/1535 do Parlamento Europeu e do Conselho
+- termo: Organização internacional
+  slug: organizacao-internacional
+  tema: sujeitos
+  bases:
+  - texto: art. 4.º, 26)
+    ancora: art-4
+  definicao: uma organização e os organismos de direito internacional público por
+    ela tutelados, ou outro organismo criado por um acordo celebrado entre dois
+    ou mais países ou com base num acordo dessa natureza
+- termo: Informações anónimas
+  slug: informacoes-anonimas
+  tema: dados
+  bases:
+  - texto: considerando 26
+  aliases:
+  - dados anonimizados
+  - dado anonimizado
+  - informações anônimas
+  definicao: informações que não digam respeito a uma pessoa singular identificada
+    ou identificável nem a dados pessoais tornados de tal modo anónimos que o seu
+    titular não seja ou já não possa ser identificado.
+  nota: 'O conceito fica no considerando, fora do articulado: dado anônimo está
+    **fora** do regulamento. É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12),
+    inclusive na ressalva de que a anonimização reversível por esforços razoáveis
+    não é anonimização.'
+- termo: Categorias especiais de dados pessoais
+  slug: categorias-especiais
+  tema: dados
+  bases:
+  - texto: art. 9.º, n.º 1
+    ancora: art-9-p1
+  aliases:
+  - categorias especiais
+  - dados sensíveis
+  - dado sensível
+  definicao: dados pessoais que revelem a origem racial ou étnica, as opiniões políticas,
+    as convicções religiosas ou filosóficas, ou a filiação sindical, bem como o
+    tratamento de dados genéticos, dados biométricos para identificar uma pessoa
+    de forma inequívoca, dados relativos à saúde ou dados relativos à vida sexual
+    ou orientação sexual de uma pessoa.
+  nota: 'O [art. 9.º](#art-9) não define a categoria num inciso: ele **proíbe**
+    o tratamento desses dados, e é a lista da proibição que delimita o conceito.
+    São os "dados sensíveis" do [art. 5º, II, da LGPD](/notas/lgpd#art-5-ii) — as
+    duas listas quase coincidem, mas onde o RGPD fala apenas em **filiação sindical**,
+    a lei brasileira alcança também a filiação a **organização de caráter religioso,
+    filosófico ou político**.'
+- termo: Responsáveis conjuntos pelo tratamento
+  slug: responsaveis-conjuntos
+  tema: sujeitos
+  bases:
+  - texto: art. 26.º, n.º 1
+    ancora: art-26-p1
+  aliases:
+  - responsáveis conjuntos
+  definicao: Quando dois ou mais responsáveis pelo tratamento determinem conjuntamente
+    as finalidades e os meios desse tratamento, ambos são responsáveis conjuntos
+    pelo tratamento.
+  nota: A figura não tem equivalente expresso na LGPD, e o Tribunal de Justiça a
+    interpretou de forma ampla — quem se beneficia e influencia a definição de finalidades
+    pode ser corresponsável mesmo sem jamais tocar nos dados.

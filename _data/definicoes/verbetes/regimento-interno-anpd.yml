@@ -1,129 +1,58 @@
-# Termos do rito do Conselho Diretor da ANPD, definidos pelo Regimento Interno
-# (Portaria nº 1, de 8 de março de 2021) e reunidos em /notas/definicoes.
-# Campos e regras de escrita estão em "Definições legais" (docs/notas.md).
-# Confira com
-# `python3 scripts/conferir_definicoes.py regimento-interno-anpd`.
-#
-# Aqui a norma não tem artigo de definições: cada termo é nomeado e disciplinado
-# no dispositivo que o cria, e é para ele que a base aponta.
-
-- termo: Relator
-  slug: relator
+- termo: Resolução
+  slug: resolucao
   tema: rito
-  bases: [{ texto: "art. 7º, II", ancora: art-7-ii }]
-  definicao: >-
-    diretor sorteado para estudar a matéria, instruí-la e apresentar o voto que
-    abre a deliberação.
-
-- termo: Maioria absoluta
-  slug: maioria-absoluta
+  bases:
+  - texto: art. 51, I
+    ancora: art-51-i
+  definicao: expressa decisão quanto ao provimento normativo de competência da ANPD
+- termo: Enunciado
+  slug: enunciado
   tema: rito
-  bases: [{ texto: "art. 27", ancora: art-27 }]
-  definicao: >-
-    mais da metade do total de membros — três dos cinco. É o quórum para
-    instalar a reunião.
-
-- termo: Maioria simples
-  slug: maioria-simples
+  bases:
+  - texto: art. 51, II
+    ancora: art-51-ii
+  definicao: expressa decisão quanto à interpretação da legislação de proteção de
+    dados pessoais e fixa entendimento sobre matérias de competência da ANPD, com
+    efeito vinculativo à Autoridade
+- termo: Despacho Decisório
+  slug: despacho-decisorio
   tema: rito
-  bases: [{ texto: "art. 19", ancora: art-19 }]
-  definicao: >-
-    mais da metade dos votos na deliberação. É o quórum para decidir.
-
-- termo: Voto de qualidade
-  slug: voto-de-qualidade
+  bases:
+  - texto: art. 51, III
+    ancora: art-51-iii
+  definicao: expressa decisão sobre matérias não abrangidas pelos demais instrumentos
+    deliberativos previstos neste artigo
+- termo: Ata de Deliberação
+  slug: ata-de-deliberacao
   tema: rito
-  bases: [{ texto: "art. 20", ancora: art-20 }]
-  definicao: voto adicional do Diretor-Presidente para desempatar.
-
-- termo: Destaque
-  slug: destaque
+  bases:
+  - texto: art. 51, IV
+    ancora: art-51-iv
+  definicao: registra as deliberações tomadas pelo Conselho Diretor, a partir dos
+    votos de seus Diretores, em Reuniões e Circuitos Deliberativos
+- termo: Consulta Pública
+  slug: consulta-publica
   tema: rito
-  bases: [{ texto: "art. 31", ancora: art-31 }]
-  definicao: >-
-    pedido de um diretor para que a matéria seja relatada e debatida, em vez de
-    aprovada em bloco.
-
-- termo: Retirada de pauta
-  slug: retirada-de-pauta
+  bases:
+  - texto: art. 51, V
+    ancora: art-51-v
+  definicao: expressa decisão que submete proposta de ato normativo, documento ou
+    assunto a críticas e sugestões do público em geral
+- termo: Portaria
+  slug: portaria
   tema: rito
-  bases: [{ texto: "art. 31", ancora: art-31 }]
-  definicao: >-
-    anúncio, pelo relator ou por quem esteja com vista, de que a matéria não
-    será apreciada naquela sessão.
-
-- termo: Pedido de vista
-  slug: pedido-de-vista
-  tema: rito
-  bases: [{ texto: "art. 34", ancora: art-34 }]
-  aliases: [pedidos de vista]
-  definicao: >-
-    suspensão da deliberação para que um diretor estude a matéria, por até 30
-    dias corridos.
-
-- termo: Vista coletiva
-  slug: vista-coletiva
-  tema: rito
-  bases: [{ texto: "art. 34, § 2º", ancora: art-34-p2 }]
-  definicao: vista concedida a todos os diretores ao mesmo tempo.
-
-- termo: Conversão em diligência
-  slug: conversao-em-diligencia
-  tema: rito
-  bases: [{ texto: "art. 37", ancora: art-37 }]
-  definicao: >-
-    adiamento aprovado pelo colegiado para produzir instrução adicional.
-
-- termo: Manifestação oral
-  slug: manifestacao-oral
-  tema: rito
-  bases: [{ texto: "art. 32", ancora: art-32 }]
-  definicao: >-
-    fala do interessado ou de seu procurador na reunião, por até 15 minutos.
-
+  bases:
+  - texto: art. 51, VI
+    ancora: art-51-vi
+  definicao: é o ato administrativo que dispõe sobre matéria relativa à gestão administrativa
+    e ao funcionamento das unidades da ANPD
 - termo: Circuito Deliberativo
   slug: circuito-deliberativo
   tema: rito
-  bases: [{ texto: "art. 40", ancora: art-40 }]
-  definicao: votação eletrônica sem reunião, de 7 a 30 dias.
-
-- termo: Impedimento e suspeição
-  slug: impedimento-e-suspeicao
-  tema: rito
-  bases: [{ texto: "art. 23, § 6º", ancora: art-23-p6 }]
-  aliases: [impedimento, suspeição]
-  definicao: >-
-    situações em que o diretor não pode atuar, por vínculo com o caso ou risco
-    de parcialidade; geram novo sorteio.
-
-- termo: Despacho decisório
-  slug: despacho-decisorio
-  tema: rito
-  bases: [{ texto: "art. 51, III", ancora: art-51-iii }]
-  definicao: >-
-    decisão sobre matéria que não se enquadra nos demais instrumentos.
-
-- termo: Terminativo
-  slug: terminativo
-  tema: rito
-  bases: [{ texto: "art. 5º, IX", ancora: art-5-ix }]
-  definicao: >-
-    decisão que encerra a discussão na esfera administrativa; não impede a via
-    judicial.
-
-- termo: Medida preventiva
-  slug: medida-preventiva
-  tema: rito
-  bases: [{ texto: "art. 55", ancora: art-55 }]
-  aliases: [medidas preventivas]
-  definicao: >-
-    providência cautelar para evitar dano grave e de difícil reparação, adotada
-    antes da decisão final.
-
-- termo: Informe
-  slug: informe
-  tema: rito
-  bases: [{ texto: "art. 52, III", ancora: art-52-iii }]
-  definicao: >-
-    manifestação da área técnica que instrui o processo e sobe com ele à
-    deliberação superior.
+  bases:
+  - texto: art. 40
+    ancora: art-40
+  aliases:
+  - Circuitos Deliberativos
+  definicao: o procedimento decisório do Conselho Diretor caracterizado pela coleta
+    de votos, em meio eletrônico, sem a necessidade da realização de Reunião Deliberativa.

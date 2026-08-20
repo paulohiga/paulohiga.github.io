@@ -24,12 +24,22 @@
         não há painel de lei nenhum, e o `notas.js` a devolve para o painel
         quando o balão abre dentro da nota daquela norma.
 {%- endcomment -%}
+{%- comment -%}
+    O separador da chave de ordenação é uma quebra de linha, e não um caractere
+    visível: o `sort` do Liquid compara ponto de código, e qualquer separador
+    imprimível (`|`, `!`, espaço) vem *depois* das letras ou do espaço — o que
+    punha "Autoridade de controlo interessada" antes de "Autoridade de
+    controlo". Abaixo de 0x20 não há caractere que se escreva no template; a
+    quebra de linha se captura.
+{%- endcomment -%}
+{%- capture separador %}
+{% endcapture -%}
 {%- assign chaves = "" | split: "," -%}
 {%- for arquivo in site.data.definicoes.verbetes -%}
     {%- assign norma_slug = arquivo[0] -%}
     {%- for verbete in arquivo[1] -%}
         {%- capture chave %}{% include definicoes-chave.html texto=verbete.termo %}{% endcapture -%}
-        {%- assign chave = chave | append: '|' | append: norma_slug | append: '|' | append: forloop.index0 -%}
+        {%- assign chave = chave | append: separador | append: norma_slug | append: separador | append: forloop.index0 -%}
         {%- assign chaves = chaves | push: chave -%}
     {%- endfor -%}
 {%- endfor -%}
@@ -45,7 +55,7 @@
 {%- assign definicoes_iniciais = "" | split: "," -%}
 {%- assign inicial_aberta = '' -%}
 {%- for chave in chaves -%}
-    {%- assign partes = chave | split: '|' -%}
+    {%- assign partes = chave | split: separador -%}
     {%- assign norma_slug = partes[1] -%}
     {%- assign posicao = partes[2] | plus: 0 -%}
     {%- assign verbete = site.data.definicoes.verbetes[norma_slug][posicao] -%}
@@ -56,6 +66,18 @@
         {%- assign base_url = base_url | append: registro.prefixo | append: '-' -%}
     {%- endif -%}
     {%- assign para_ancora = 'href="' | append: base_url -%}
+    {%- comment -%}
+        A jurisdição sai da nota que hospeda a norma (`jurisdicao`, no front
+        matter dela): as definições do RGPD e do AI Act são direito da União
+        Europeia, e ler "dados pessoais" numa lista misturada sem saber de qual
+        ordenamento o verbete fala é o tipo de confusão que uma página de
+        definições legais não pode produzir. Ela vira etiqueta no verbete, entra
+        no `data-busca` (dá para filtrar por "união europeia") e fica no
+        `data-jurisdicao` para o CSS distinguir as duas.
+    {%- endcomment -%}
+    {%- assign nota_da_norma = site.notas | where: 'slug', registro.nota | first -%}
+    {%- assign jurisdicao = nota_da_norma.jurisdicao | default: 'Brasil' -%}
+    {%- capture jurisdicao_chave %}{% include definicoes-chave.html texto=jurisdicao %}{% endcapture -%}
     {%- assign inicial = partes[0] | slice: 0, 1 | upcase -%}
     {%- capture busca %}{% include definicoes-chave.html texto=verbete.termo %}{% endcapture -%}
     {%- for apelido in verbete.aliases -%}
@@ -63,7 +85,17 @@
         {%- assign busca = busca | append: ' ' | append: apelido_chave -%}
     {%- endfor -%}
     {%- capture norma_chave %}{% include definicoes-chave.html texto=norma.apelido %}{% endcapture -%}
-    {%- assign busca = busca | append: ' ' | append: norma_chave -%}
+    {%- assign busca = busca | append: ' ' | append: norma_chave | append: ' ' | append: jurisdicao_chave -%}
+    {%- comment -%}
+        Os apelidos da norma em `_data/normas.yml` entram na busca: são as
+        formas pelas quais ela é citada em texto corrido ("RGPD", "Lei nº
+        13.709", "Marco Civil"), e é por elas que o leitor procura — não pelo
+        rótulo que o painel exibe.
+    {%- endcomment -%}
+    {%- for apelido_norma in registro.aliases -%}
+        {%- capture apelido_norma_chave %}{% include definicoes-chave.html texto=apelido_norma %}{% endcapture -%}
+        {%- assign busca = busca | append: ' ' | append: apelido_norma_chave -%}
+    {%- endfor -%}
     {%- for tema in site.data.definicoes.temas -%}
         {%- if tema.id == verbete.tema -%}
             {%- capture tema_chave %}{% include definicoes-chave.html texto=tema.nome %}{% endcapture -%}
@@ -81,9 +113,10 @@
 {%- assign inicial_aberta = inicial -%}
 {%- assign definicoes_iniciais = definicoes_iniciais | push: inicial %}
 {%- endif %}
-                <article class="verbete" id="v-{{ norma.prefixo }}-{{ verbete.slug }}" data-tema="{{ verbete.tema }}" data-inicial="{{ inicial }}" data-busca="{{ busca | strip }}">
+                <article class="verbete" id="v-{{ norma.prefixo }}-{{ verbete.slug }}" data-tema="{{ verbete.tema }}" data-inicial="{{ inicial }}" data-jurisdicao="{{ jurisdicao_chave | strip | replace: ' ', '-' }}" data-busca="{{ busca | strip }}">
                     <h3 class="verbete__termo">{{ verbete.termo }}</h3>
                     <p class="verbete__origem">
+                        <span class="verbete__jurisdicao">{{ jurisdicao }}</span>
                         <a class="verbete__norma" href="/notas/{{ registro.nota }}">{{ norma.apelido | split: ' — ' | first }}</a>
 {%- for base in verbete.bases %}
 {%- if base.ancora %}
