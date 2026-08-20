@@ -19,7 +19,7 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 | **`README.md`** (este) | O que é o projeto, como editar o texto, como rodar e como publicar |
 | [`docs/arquitetura.md`](./docs/arquitetura.md) | Como o site funciona por dentro: banding, navegação sem reload, tema pré-paint, fontes, performance, SEO, sitemap |
 | [`docs/notas.md`](./docs/notas.md) | A seção `/notas`: estrutura, esquema de âncoras, normas extras, EUR-Lex, scripts |
-| [`docs/notas-navegacao.md`](./docs/notas-navegacao.md) | Backlog de melhorias de navegação de `/notas`: o que foi medido, o que já foi feito e o que falta |
+| [`docs/notas-roadmap.md`](./docs/notas-roadmap.md) | Roadmap de produto, código e conteúdo de `/notas`: o que foi feito, o que precisa de atenção e o que vem depois |
 | [`docs/changelog.md`](./docs/changelog.md) | Registro histórico das atualizações de conteúdo — o que mudou, quando e com base em quê |
 | [`AGENTS.md`](./AGENTS.md) | Regras de contribuição para agentes de IA — inclusive as regras editoriais das notas |
 
