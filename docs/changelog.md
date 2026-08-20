@@ -44,6 +44,10 @@ no site, não o caminho até lá.
 
 ### Documentação
 
+- O antigo backlog de navegação foi reorganizado como
+  [`docs/notas-roadmap.md`](./notas-roadmap.md), com a auditoria da página
+  `/notas/definicoes`, o backlog residual e critérios editoriais para aumentar
+  a utilidade das notas sem ampliar seu volume de texto.
 - Documentados o banco gerado a partir de `_leis/`, a página consolidada, o
   acesso contextual nas notas e a conversão direta de textos consolidados do
   EUR-Lex.
