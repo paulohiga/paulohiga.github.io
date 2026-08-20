@@ -7,7 +7,7 @@ lei: gdpr
 normas_extra: [regulamento-2025-2518]
 ordem: 5
 jurisdicao: União Europeia
-atualizado_em: 2026-08-19
+atualizado_em: 2026-08-20
 ---
 
 ## Resumo geral
@@ -127,31 +127,6 @@ O RGPD **não se aplica** ao tratamento:
 A exceção doméstica é mais estreita do que parece, e a jurisprudência a apertou desde cedo: publicar dados de terceiros numa página aberta na internet **não** é atividade puramente pessoal, decidiu o Tribunal de Justiça já em 2003 (processo C-101/01), e uma câmera doméstica que filma também a via pública sai da exceção (processo C-212/13, de 2014). Como na [LGPD](/notas/lgpd#art-4), a palavra dura é "exclusivamente".
 
 Repare no que **não** está na lista: não há exceção para dados de pessoas falecidas (o considerando 27 deixa isso ao direito nacional), nem para pessoas jurídicas — o RGPD, como a [LGPD](/notas/lgpd), protege apenas a **pessoa singular** ([art. 1.º, n.º 1](#art-1-p1)).
-
-## Definições ([art. 4.º](#art-4))
-
-São 26 definições. As que estruturam o resto do texto:
-
-### Dados
-
-- **Dados pessoais**: informação relativa a uma pessoa singular **identificada ou identificável**, direta ou indiretamente, em especial por referência a um identificador. A definição é deliberadamente ampla, e o considerando 26 fixa o teste: para saber se alguém é identificável, consideram-se "todos os meios suscetíveis de ser **razoavelmente** utilizados" — pelo responsável **ou por outra pessoa** —, à luz do custo, do tempo e da tecnologia disponível.
-- **Pseudonimização**: tratamento que impede atribuir os dados a um titular sem recorrer a informação suplementar guardada separadamente. Atenção: dado pseudonimizado **continua sendo dado pessoal** para quem tem a chave; a discussão sobre o que ele é para quem **não** tem a chave é hoje o ponto mais quente do direito europeu de dados (ver "Jurisprudências históricas", abaixo).
-- **Dados anonimizados**: aparecem no considerando 26, fora do articulado — dado anônimo está **fora** do regulamento. É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12), inclusive na ressalva de que a anonimização reversível por esforços razoáveis não é anonimização.
-- **Categorias especiais** ([art. 9.º](#art-9)): origem racial ou étnica, opiniões políticas, convicções religiosas ou filosóficas, filiação sindical, dados genéticos, dados biométricos usados para identificar univocamente uma pessoa, dados relativos à saúde, à vida sexual ou à orientação sexual. São os "dados sensíveis" do [art. 5º, II, da LGPD](/notas/lgpd#art-5-ii). As duas listas quase coincidem, mas não são idênticas: onde o RGPD fala apenas em **filiação sindical**, a lei brasileira alcança também a filiação a **organização de caráter religioso, filosófico ou político**.
-
-### Ações e sujeitos
-
-- **Tratamento**: qualquer operação sobre dados pessoais — recolha, registro, organização, conservação, consulta, divulgação, apagamento. Coincide com o [art. 5º, X, da LGPD](/notas/lgpd#art-5-x).
-- **Responsável pelo tratamento**: quem determina as **finalidades e os meios** do tratamento. É a decisão, não a posse dos dados, que define o papel.
-- **Subcontratante**: quem trata dados **por conta** do responsável.
-- **Responsáveis conjuntos** ([art. 26.º](#art-26)): dois ou mais responsáveis que determinam conjuntamente finalidades e meios, e devem repartir responsabilidades por acordo transparente. A figura não tem equivalente expresso na LGPD, e o Tribunal de Justiça a interpretou de forma ampla — quem se beneficia e influencia a definição de finalidades pode ser corresponsável mesmo sem jamais tocar nos dados.
-- **Consentimento**: manifestação de vontade **livre, específica, informada e inequívoca**, por declaração ou ato positivo inequívoco. Silêncio, opções pré-marcadas e inércia não servem (considerando 32).
-- **Violação de dados pessoais**: violação da segurança que provoque, de modo acidental ou ilícito, destruição, perda, alteração, divulgação ou acesso não autorizado. Repare que **não é sinônimo de vazamento**: perder um _notebook_ criptografado, apagar um banco sem cópia ou sofrer um _ransomware_ são violações, ainda que ninguém veja o dado.
-
-### Definição de perfis e decisão automatizada
-
-- **Definição de perfis**: tratamento automatizado que usa dados pessoais para **avaliar** aspectos pessoais — desempenho profissional, situação econômica, saúde, preferências, fiabilidade, comportamento, localização. Perfilar é avaliar; agrupar sem avaliar não é.
-- O [art. 22.º](#art-22) não proíbe perfilar: proíbe que a pessoa fique **sujeita a decisão exclusivamente automatizada** que produza efeitos jurídicos ou a afete significativamente de modo similar, fora das três exceções do [n.º 2](#art-22-p2).
 
 ## Princípios ([art. 5.º](#art-5))
 

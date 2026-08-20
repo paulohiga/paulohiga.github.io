@@ -68,6 +68,8 @@ Os detalhes de cada decisão estão em
 │
 │   ## Notas de legislação — ver docs/notas.md
 ├── notas.md                     # Página índice                 → /notas
+├── definicoes.md                # Definições normativas         → /notas/definicoes
+├── definicoes.json              # Banco para abertura contextual nas notas
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 13 textos legais em Markdown puro (output: false)
 ├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
@@ -79,6 +81,7 @@ Os detalhes de cada decisão estão em
 ├── _data/
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
 │   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
+│   ├── definicoes.yml           # Banco gerado de definições normativas
 │   └── ementas/                 # 13 arquivos: a ementa de cada artigo, rótulo do sumário
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │

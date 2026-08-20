@@ -7,7 +7,7 @@ lei: eca-digital
 normas_extra: [decreto-12880]
 ordem: 3
 jurisdicao: Brasil
-atualizado_em: 2026-08-19
+atualizado_em: 2026-08-20
 ---
 
 ## Resumo geral
@@ -92,46 +92,6 @@ Pelo caput do [art. 1º](#art-1), a Lei alcança tanto o produto ou serviço dir
 - **Retirada de conteúdo**: conteúdos jornalísticos e submetidos a controle editorial não se sujeitam ao procedimento do [art. 29](#art-29) ([art. 29, § 4º](#art-29-p4)).
 
 Atenção ao alcance dessas dispensas: elas afastam obrigações específicas, não a incidência da Lei. Um serviço dispensado de aferir idade continua sujeito, por exemplo, aos deveres de _design_ do [art. 7º](#art-7) e à vedação de perfilamento publicitário do [art. 22](#art-22).
-
-## Definições
-
-### Sujeitos e serviços ([art. 2º](#art-2))
-
-- **Produto ou serviço de tecnologia da informação**: fornecido a distância, por meio eletrônico, mediante requisição individual — ex.: aplicações de internet, _softwares_, sistemas operacionais de terminais, lojas de aplicações e jogos eletrônicos conectados à internet ou a outra rede _([inciso I](#art-2-i))_.
-- **Produto ou serviço de monitoramento infantil**: destinado ao acompanhamento, por pais ou responsáveis legais, das ações de crianças e adolescentes em ambientes digitais, via registro ou transmissão de imagens, sons, localização, atividade ou outros dados _([inciso II](#art-2-ii))_.
-- **Rede social**: aplicação de internet cuja finalidade principal é o compartilhamento e a disseminação, pelos usuários, de opiniões e informações (texto, imagem, som ou audiovisual) em uma única plataforma, por meio de contas conectadas ou acessíveis de forma articulada, com conexão permitida entre usuários _([inciso III](#art-2-iii))_.
-- **Loja de aplicações de internet**: aplicação que distribui e facilita o _download_, para usuários de terminais, de outras aplicações disponibilizadas por meio de sua plataforma _([inciso VI](#art-2-vi))_.
-- **Sistema operacional**: _software_ de sistema que controla as funções básicas de um _hardware_ ou _software_ e permite a execução de outras aplicações, programas ou _softwares_ _([inciso VII](#art-2-vii))_.
-- **Serviço com controle editorial**: aplicação cuja finalidade principal é disponibilizar conteúdos previamente selecionados por agente econômico responsável, sem meios automatizados de seleção _([inciso IX](#art-2-ix))_.
-- **Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital**: entidade pública criada por lei, responsável por aplicar e fiscalizar a Lei e por editar regulamentos, observado o Capítulo I da Lei nº 13.848/2019 no processo decisório _([inciso X](#art-2-x))_ — papel atribuído à **ANPD** pelo Decreto nº 12.622/2025.
-
-Aplicam-se ainda os conceitos de **criança e adolescente** do art. 2º do ECA e os de **internet, aplicações de internet e terminal** do [art. 5º do Marco Civil da Internet](/notas/mci#art-5) _([art. 2º, § 1º](#art-2-p1))_.
-
-### Conteúdos, produtos e serviços impróprios ou proibidos (Decreto nº 12.880/2026, [art. 2º](#dec12880-art-2))
-
-- **Conteúdo, produto ou serviço impróprio ou inadequado**: risco à privacidade, à segurança, ao desenvolvimento psicossocial, à saúde mental e física ou ao bem-estar da criança e do adolescente, nos termos da classificação indicativa, quando aplicável _(inciso I)_. A Lei também considera impróprio ou inadequado o que contenha material pornográfico ou seja vedado pela legislação vigente _([art. 9º, § 2º](#art-9-p2))_.
-- **Conteúdo, produto ou serviço proibido para crianças e adolescentes**: acesso, disponibilização, aquisição ou consumo expressamente vedado por determinação legal específica _(inciso II)_ — rol no art. 15, § 1º, do mesmo Decreto.
-- **Conteúdo pornográfico**: finalidade predominantemente voltada à representação de atos sexualmente explícitos ou à exibição de nudez com conotação ou finalidade sexual, ressalvadas as exceções do art. 16 _(inciso III)_.
-
-### Aferição de idade (Decreto nº 12.880/2026, [art. 2º](#dec12880-art-2))
-
-- **Aferição de idade**: termo geral para os procedimentos que verificam, estimam ou inferem a idade ou a faixa etária de um usuário, por métodos como análise documental, biométrica, de padrões de uso ou outros meios tecnicamente idôneos _(inciso IV)_. Mecanismos:
-    - **Verificação de idade**: aferição de alto grau de confiabilidade, nos termos da ANPD, que comprova a exatidão da idade ou faixa etária declarada mediante mecanismos técnicos ou documentais _(inciso V)_.
-    - **Sinal de idade**: credencial que atesta a idade ou faixa etária de um usuário a fornecedores de produtos ou serviços direcionados a crianças e adolescentes ou de acesso provável por eles, sem revelar dados pessoais adicionais _(inciso VI)_. Na prática, é o "sim/não" que a loja ou o sistema operacional envia ao aplicativo ("este usuário tem mais de 18 anos"), sem entregar documento nem data de nascimento.
-    - **Autodeclaração de idade**: indicação da idade, faixa etária ou outro dado pelo próprio usuário, sem evidências que confirmem sua veracidade ou titularidade _(inciso VII)_ — **vedada** como mecanismo de verificação _(Lei, [art. 9º, § 1º](#art-9-p1))_.
-
-### Práticas e funcionalidades
-
-- **Caixa de recompensa**: funcionalidade de jogos eletrônicos que permite adquirir, mediante pagamento, itens virtuais ou vantagens aleatórias, sem conhecimento prévio do conteúdo ou garantia de utilidade _([art. 2º, IV](#art-2-iv))_.
-- **Perfilamento**: tratamento de dados pessoais, automatizado ou não, para classificar uma pessoa em grupo ou perfil e inferir comportamento, situação econômica, saúde, preferências, interesses, localização, deslocamentos, posições políticas ou características assemelhadas _([art. 2º, V](#art-2-v))_.
-- **Mecanismo de supervisão parental**: configurações, ferramentas e salvaguardas que permitem a pais ou responsáveis supervisionar, limitar e gerenciar o uso do serviço, o conteúdo acessado e o tratamento de dados pessoais _([art. 2º, VIII](#art-2-viii))_.
-- **Monetização**: remuneração, direta ou indireta, de usuário pela publicação ou distribuição de conteúdo, incluída receita por visualizações, assinaturas, doações, patrocínios, publicidade ou venda de produtos e serviços vinculados _([art. 2º, XI](#art-2-xi))_.
-- **Impulsionamento**: ampliação artificial do alcance, da visibilidade ou da priorização de conteúdo mediante pagamento pecuniário ou valor estimável em dinheiro _([art. 2º, XII](#art-2-xii))_.
-- **Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo** _(Decreto nº 12.880/2026, [art. 9º, parágrafo único](#dec12880-art-9-pu))_: ocultação de pontos naturais de parada; novos conteúdos acionados sem solicitação; recompensas pelo tempo de uso; e notificações excessivas.
-- **Práticas manipulativas, enganosas ou coercitivas** _(Decreto nº 12.880/2026, [art. 10, parágrafo único](#dec12880-art-10-pu))_: arquiteturas de escolha, fluxos de interação ou funcionalidades que, por objetivo ou efeito, interferem na autonomia decisória do usuário ou exploram suas vulnerabilidades — em especial as cognitivas e etárias:
-    - **obstrução** — caminhos excessivamente complexos ou confusos que dificultam ações como interromper o uso, cancelar serviços ou mudar preferências;
-    - **exploração de vulnerabilidades cognitivas** — pressões emocionais, urgências fabricadas, escolhas enviesadas, inferências emocionais ou estímulos inadequados à idade, para induzir decisões contrárias ao melhor interesse da criança ou do adolescente; ou
-    - **prejuízo ao exercício de direitos** — ocultar, fragmentar ou dificultar o acesso a controles de privacidade, supervisão parental, consentimento ou revogação de permissões.
 
 ## Deveres e vedações essenciais
 

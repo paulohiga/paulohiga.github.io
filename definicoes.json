@@ -1,0 +1,6 @@
+---
+permalink: /notas/definicoes.json
+layout: null
+sitemap: false
+---
+{{ site.data.definicoes | jsonify }}

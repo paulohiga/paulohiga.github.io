@@ -6,7 +6,7 @@ description: Notas de estudo sobre a Lei nº 13.709/2018 — definições, princ
 lei: lgpd
 ordem: 1
 jurisdicao: Brasil
-atualizado_em: 2026-08-19
+atualizado_em: 2026-08-20
 ---
 
 ## Resumo geral
@@ -75,57 +75,7 @@ Duas ressalvas que costumam passar batido:
 - **"Exclusivamente" é palavra dura.** Um blog pessoal que vende publicidade deixa de ser uso "não econômico"; um projeto acadêmico que vira produto deixa de ser "exclusivamente acadêmico". Basta a finalidade misturada para a exceção cair.
 - **Não aplicação não é terra sem lei.** Mesmo na zona do inciso III, a Agência emite opiniões técnicas e recomendações e **deve** solicitar aos responsáveis relatórios de impacto à proteção de dados ([art. 4º, § 3º](#art-4-p3)) — o que ela não faz ali é regulamentar nem sancionar.
 
-## Definições
-
-### Sujeitos
-
-- **Titular**: pessoa natural a quem se referem os dados pessoais objeto de tratamento _([art. 5º, inciso V](#art-5-v))_.
-- **Controlador**: pessoa natural ou jurídica, pública ou privada, a quem competem as **decisões** referentes ao tratamento _([art. 5º, inciso VI](#art-5-vi))_.
-- **Operador**: pessoa natural ou jurídica, pública ou privada, que **realiza o tratamento** em nome do controlador _([art. 5º, inciso VII](#art-5-vii))_.
-- **Encarregado**: pessoa indicada pelo controlador e operador para atuar como **canal de comunicação** entre o controlador, os titulares e a ANPD _([art. 5º, inciso VIII](#art-5-viii))_.
-    - **Agentes de tratamento**: controlador e operador _([art. 5º, inciso IX](#art-5-ix))_.
-- **Órgão de pesquisa**: órgão ou entidade da administração pública direta ou indireta, ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada, de caráter histórico, científico, tecnológico ou estatístico _([art. 5º, inciso XVIII](#art-5-xviii))_.
-- **Autoridade nacional**: entidade da administração pública responsável por zelar, implementar e fiscalizar o cumprimento da LGPD em todo o território nacional _([art. 5º, inciso XIX](#art-5-xix))_ — hoje, a Agência Nacional de Proteção de Dados.
-
-A distinção **controlador × operador** é a que mais decide caso concreto, e o rótulo escrito no contrato não resolve: quem decide *por que* e *como* os dados são tratados é controlador, ainda que terceirize a execução inteira. A empresa que contrata um serviço de folha de pagamento é controladora; a empresa de folha é operadora — até o dia em que resolver usar aqueles dados para uma finalidade própria, quando vira controladora daquele tratamento e responde como tal ([art. 42, § 1º, I](#art-42-p1-i)).
-
-### Ações
-
-- **Tratamento**: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração _([art. 5º, inciso X](#art-5-x))_.
-- **Anonimização**: uso de meios técnicos razoáveis e disponíveis pelos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo _([art. 5º, inciso XI](#art-5-xi))_.
-- **Pseudonimização**: tratamento por meio do qual um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, senão pelo uso de informação adicional mantida separadamente pelo controlador em ambiente controlado e seguro _([art. 13, § 4º](#art-13-p4))_.
-- **Consentimento**: manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento para finalidade determinada _([art. 5º, inciso XII](#art-5-xii))_.
-- **Bloqueio**: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados _([art. 5º, inciso XIII](#art-5-xiii))_.
-- **Eliminação**: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado _([art. 5º, inciso XIV](#art-5-xiv))_.
-- **Transferência internacional de dados**: transferência para país estrangeiro ou organismo internacional do qual o Brasil seja membro _([art. 5º, inciso XV](#art-5-xv))_.
-- **Uso compartilhado de dados**: comunicação, difusão, transferência internacional, interconexão ou tratamento compartilhado de bancos de dados por órgãos e entidades públicos no cumprimento de suas competências legais; entre esses e entes privados, reciprocamente, com autorização específica, para uma ou mais modalidades de tratamento permitidas; ou entre entes privados _([art. 5º, inciso XVI](#art-5-xvi))_.
-
-O conceito de **tratamento** é propositalmente amplo: a lista do inciso X é exemplificativa ("como as que se referem a"), e simplesmente *guardar* um dado, sem nunca abrir o arquivo, já é tratamento — armazenamento está lá. Não existe base de dados "parada" fora do alcance da lei.
-
-### Técnicas
-
-- **Dado pessoal**: informação relacionada a pessoa natural identificada ou identificável _([art. 5º, inciso I](#art-5-i))_.
-- **Dado pessoal sensível**: dado sobre
-    - origem racial ou étnica
-    - convicção religiosa
-    - opinião política
-    - filiação a sindicato ou a organização de caráter religioso, filosófico ou político
-    - saúde ou vida sexual
-    - genético ou biométrico
-    - **quando vinculado** a pessoa natural _([art. 5º, inciso II](#art-5-ii))_.
-- **Dado anonimizado**: dado relativo a titular que não possa ser identificado, considerando meios técnicos razoáveis e disponíveis na ocasião de seu tratamento _([art. 5º, inciso III](#art-5-iii))_.
-    - **Dado anonimizado não é considerado dado pessoal**, salvo quando o processo de anonimização for revertido utilizando exclusivamente meios próprios, ou quando, com esforços razoáveis, puder ser revertido ([art. 12](#art-12)). O que é "razoável" leva em conta custo e tempo da reversão, diante das tecnologias disponíveis ([art. 12, § 1º](#art-12-p1)).
-- **Banco de dados**: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico _([art. 5º, inciso IV](#art-5-iv))_.
-
-Três consequências práticas dessas definições:
-
-- **"Identificável" puxa muita coisa para dentro da lei.** Não é preciso ter o nome: basta que a informação, sozinha ou combinada com outras, permita chegar a uma pessoa.
-- **Pseudonimizar não é anonimizar.** Trocar o nome por um código mantém o dado como dado pessoal — a chave existe em algum lugar. Só o dado verdadeiramente anonimizado sai do alcance da lei, e sai **enquanto** a anonimização resistir.
-- **Perfil comportamental pode ser dado pessoal.** Dados usados para formar o perfil de comportamento de uma pessoa determinada, se ela estiver identificada, contam como dados pessoais ([art. 12, § 2º](#art-12-p2)). A ANPD pode, ouvido o CNPD, dispor sobre padrões e técnicas de anonimização e verificar sua segurança ([art. 12, § 3º](#art-12-p3)).
-
-Sobre os **sensíveis**: a etiqueta segue o que o dado **revela**. A regra alcança qualquer tratamento que revele dado sensível e possa causar dano ao titular ([art. 11, § 1º](#art-11-p1)) — a foto do rosto usada para reconhecimento facial é dado biométrico; a lista de presença de um culto revela convicção religiosa.
-
-#### Anonimização é um processo contínuo
+## Anonimização na prática
 
 O [art. 12](#art-12) escreve a consequência da anonimização e deixa o método em aberto — e a lacuna foi preenchida por uma trinca de estudos técnicos publicados pela ANPD em novembro de 2023, que se leem juntos: o [Estudo Técnico sobre a anonimização de dados na LGPD: análise jurídica](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd___analise_juridica.pdf), o [Estudo Técnico sobre anonimização de dados na LGPD: uma visão de processo baseado em risco e técnicas computacionais](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_tecnico_sobre_anonimizacao_de_dados_na_lgpd_uma_visao_de_processo_baseado_em_risco_e_tecnicas_computacionais.pdf) e o [Estudo de casos sobre anonimização de dados na LGPD](https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/estudo_de_casos_sobre_anonimizacao_de_dados_na_lgpd_.pdf). Nenhum tem força de norma: o regulamento do [art. 12, § 3º](#art-12-p3) segue pendente (ver "O que ainda falta regulamentar", abaixo), e o primeiro se apresenta como base para futuras orientações. São o material público mais próximo de um método.
 
@@ -143,10 +93,6 @@ O estudo computacional descreve a gestão do risco de reidentificação em quatr
 O estudo de casos aplica isso a três cenários: dados agregados de localização de telefonia móvel para vigilância epidemiológica (supressão de IMSI e IMEI mais agregação por estação rádio-base); dados clínicos de pressão arterial para pesquisa acadêmica (supressão e pseudonimização); e compartilhamento de dados escolares entre secretarias municipais (supressão, generalização, mascaramento, adição de ruído e permutação). No terceiro, por envolver **dados de crianças e adolescentes**, o RRA é mais estrito — a vulnerabilidade do titular baixa o teto de risco tolerável, mesmo sem dado sensível na base.
 
 **Pseudonimização é outra coisa.** A LGPD a define no [art. 13, § 4º](#art-13-p4), no contexto de estudos em saúde pública: é o tratamento em que o dado perde a associação ao indivíduo **exceto** pelo uso de informação adicional mantida separadamente, em ambiente controlado e seguro. Como a chave existe, o dado pseudonimizado continua sendo dado pessoal, e a técnica opera como medida de segurança.
-
-### Documentação
-
-- **Relatório de impacto à proteção de dados pessoais (RIPD)**: documentação do controlador que contém descrição dos processos de tratamento capazes de gerar risco às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação _([art. 5º, inciso XVII](#art-5-xvii))_.
 
 ## Princípios ([art. 6º](#art-6))
 

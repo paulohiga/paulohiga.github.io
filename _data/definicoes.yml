@@ -1,0 +1,4085 @@
+# GERADO POR scripts/gerar_definicoes.py. NÃO EDITE À MÃO.
+# A literalidade vem de _leis/; equivalências e temas ficam no script.
+- id: br-acesso-provavel-por-criancas-e-adolescentes
+  titulo: acesso provável por crianças e adolescentes
+  termos:
+  - acesso provável por crianças e adolescentes
+  busca:
+  - acesso provável por crianças e adolescentes
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: acesso provável por crianças e adolescentes
+    texto: 'as seguintes situações:
+
+
+      I – suficiente probabilidade de uso e atratividade do produto ou serviço de tecnologia da informação por crianças e adolescentes;
+
+
+      II – considerável facilidade ao acesso e utilização do produto ou serviço de tecnologia da informação por crianças e adolescentes; e
+
+
+      III – significativo grau de risco à privacidade, à segurança ou ao desenvolvimento biopsicossocial de crianças e de adolescentes, especialmente no caso de produtos ou serviços que tenham por finalidade permitir a interação social e o compartilhamento de informações em larga escala entre usuários em ambiente digital.'
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 1º, parágrafo único
+    url: /notas/eca-digital#art-1-pu
+- id: br-administrador-de-sistema-autonomo
+  titulo: administrador de sistema autônomo
+  termos:
+  - administrador de sistema autônomo
+  busca:
+  - administrador de sistema autônomo
+  letra: A
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: administrador de sistema autônomo
+    texto: a pessoa física ou jurídica que administra blocos de endereço IP específicos e o respectivo sistema autônomo de roteamento, devidamente cadastrada no ente nacional responsável pelo registro e distribuição de endereços IP geograficamente referentes ao País;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, IV
+    url: /notas/mci#art-5-iv
+- id: br-afericao-de-idade
+  titulo: aferição de idade
+  termos:
+  - aferição de idade
+  busca:
+  - aferição de idade
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: aferição de idade
+    texto: termo geral referente aos procedimentos destinados a verificar, estimar ou inferir, direta ou indiretamente, a idade ou a faixa etária de um usuário, por meio de um conjunto de métodos, tecnologias e processos, incluídos análise documental, biométrica e de padrões de uso, e outros meios tecnicamente idôneos;
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, IV
+    url: /notas/eca-digital#dec12880-art-2-iv
+- id: br-agente-de-tratamento
+  titulo: agentes de tratamento
+  termos:
+  - agentes de tratamento
+  busca:
+  - agentes de tratamento
+  letra: A
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: agentes de tratamento
+    texto: o controlador e o operador;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, IX
+    url: /notas/lgpd#art-5-ix
+  - termo: agentes de tratamento
+    texto: o controlador e o operador;
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, I
+    url: /notas/regimento-interno-anpd#res18-art-2-i
+- id: br-agentes-de-tratamento-de-pequeno-porte
+  titulo: agentes de tratamento de pequeno porte
+  termos:
+  - agentes de tratamento de pequeno porte
+  busca:
+  - agentes de tratamento de pequeno porte
+  letra: A
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: agentes de tratamento de pequeno porte
+    texto: microempresas, empresas de pequeno porte, startups, pessoas jurídicas de direito privado, inclusive sem fins lucrativos, nos termos da legislação vigente, bem como pessoas naturais e entes privados despersonalizados que realizam tratamento de dados pessoais, assumindo obrigações típicas de controlador ou de operador;
+    jurisdicao: BR
+    norma: resolucao-anpd-2
+    norma_apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
+    norma_titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
+    dispositivo: art. 2º, I
+    url: /notas/regimento-interno-anpd#res2-art-2-i
+- id: br-agentes-regulados
+  titulo: agentes regulados
+  termos:
+  - agentes regulados
+  busca:
+  - agentes regulados
+  letra: A
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: agentes regulados
+    texto: agentes de tratamento e demais integrantes ou interessados no tratamento de dados pessoais;
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, I
+    url: /notas/regimento-interno-anpd#res1-art-4-i
+- id: ue-ambiente-de-testagem-da-regulamentacao-da-ia
+  titulo: Ambiente de testagem da regulamentação da IA
+  termos:
+  - Ambiente de testagem da regulamentação da IA
+  busca:
+  - Ambiente de testagem da regulamentação da IA
+  letra: A
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Ambiente de testagem da regulamentação da IA
+    texto: um modelo controlado, criado por uma autoridade competente, que oferece aos prestadores ou potenciais prestadores de sistemas de IA a possibilidade de desenvolver, treinar, validar e testar, se for caso disso em condições reais, um sistema de IA inovador, de acordo com um plano do ambiente de testagem, durante um período limitado sob supervisão regulamentar;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 55
+    url: /notas/ai-act#art-3
+- id: br-ampla-divulgacao-do-incidente-em-meios-de-comunicacao
+  titulo: ampla divulgação do incidente em meios de comunicação
+  termos:
+  - ampla divulgação do incidente em meios de comunicação
+  busca:
+  - ampla divulgação do incidente em meios de comunicação
+  letra: A
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: ampla divulgação do incidente em meios de comunicação
+    texto: providência que pode ser determinada pela ANPD ao controlador, nos termos do art. 48, § 2º, I, da LGPD, no âmbito do processo de comunicação de incidente de segurança, como a publicação no sítio eletrônico, nas redes sociais do controlador ou em outros meios de comunicação;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, I
+    url: /notas/regimento-interno-anpd#res15-art-3-i
+- id: br-anonimizacao
+  titulo: anonimização
+  termos:
+  - anonimização
+  busca:
+  - anonimização
+  letra: A
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: anonimização
+    texto: utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XI
+    url: /notas/lgpd#art-5-xi
+- id: ue-aplicacao-da-lei
+  titulo: Aplicação da lei
+  termos:
+  - Aplicação da lei
+  busca:
+  - Aplicação da lei
+  letra: A
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - termo: Aplicação da lei
+    texto: as atividades realizadas por autoridades responsáveis pela aplicação da lei ou em nome destas para efeitos de prevenção, investigação, deteção ou repressão de infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 46
+    url: /notas/ai-act#art-3
+- id: br-aplicacoes-de-internet
+  titulo: aplicações de internet
+  termos:
+  - aplicações de internet
+  busca:
+  - aplicações de internet
+  letra: A
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: aplicações de internet
+    texto: o conjunto de funcionalidades que podem ser acessadas por meio de um terminal conectado à internet; e
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, VII
+    url: /notas/mci#art-5-vii
+- id: br-autenticidade
+  titulo: autenticidade
+  termos:
+  - autenticidade
+  busca:
+  - autenticidade
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: autenticidade
+    texto: propriedade pela qual se assegura que a informação foi produzida, expedida, modificada ou destruída por uma determinada pessoa física, equipamento, sistema, órgão ou entidade;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, II
+    url: /notas/regimento-interno-anpd#res15-art-3-ii
+- id: br-autodeclaracao-de-idade
+  titulo: autodeclaração de idade
+  termos:
+  - autodeclaração de idade
+  busca:
+  - autodeclaração de idade
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: autodeclaração de idade
+    texto: 'método limitado à indicação da idade, da faixa etária ou de outro dado pessoal fornecido pelo próprio usuário, sem evidências adicionais para confirmar a veracidade ou a titularidade da informação.
+
+
+      ## CAPÍTULO III — DA POLÍTICA NACIONAL DE PROMOÇÃO E PROTEÇÃO DOS DIREITOS DA CRIANÇA E DO ADOLESCENTE NO AMBIENTE DIGITAL'
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, VII
+    url: /notas/eca-digital#dec12880-art-2-vii
+- id: br-autoridade-administrativa-autonoma-de-protecao-dos-direitos-de-criancas-e-de-adolescentes-no-ambiente-digital
+  titulo: autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+  termos:
+  - autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+  busca:
+  - autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+    texto: entidade da administração pública criada por lei, responsável por zelar pela aplicação desta Lei e fiscalizar o seu cumprimento em todo o território nacional e por editar regulamentos e procedimentos para sua execução, a qual deve observar no processo decisório as normas previstas no Capítulo I da Lei nº 13.848, de 25 de junho de 2019;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, X
+    url: /notas/eca-digital#art-2-x
+- id: ue-autoridade-de-controlo
+  titulo: Autoridade de controlo
+  termos:
+  - Autoridade de controlo
+  busca:
+  - Autoridade de controlo
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade de controlo
+    texto: uma autoridade pública independente criada por um Estado-Membro nos termos do artigo 51.º;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 21
+    url: /notas/gdpr#art-4
+- id: ue-autoridade-de-controlo-interessada
+  titulo: Autoridade de controlo interessada
+  termos:
+  - Autoridade de controlo interessada
+  busca:
+  - Autoridade de controlo interessada
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade de controlo interessada
+    texto: 'uma autoridade de controlo afetada pelo tratamento de dados pessoais pelo facto de:
+
+
+      - a) O responsável pelo tratamento ou o subcontratante estar estabelecido no território do Estado-Membro dessa autoridade de controlo;
+
+
+      - b) Os titulares de dados que residem no Estado-Membro dessa autoridade de controlo serem substancialmente afetados, ou suscetíveis de o ser, pelo tratamento dos dados; ou
+
+
+      - c) Ter sido apresentada uma reclamação junto dessa autoridade de controlo;'
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 22
+    url: /notas/gdpr#art-4
+- id: ue-autoridade-de-fiscalizacao-do-mercado
+  titulo: Autoridade de fiscalização do mercado
+  termos:
+  - Autoridade de fiscalização do mercado
+  busca:
+  - Autoridade de fiscalização do mercado
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade de fiscalização do mercado
+    texto: a autoridade nacional que realiza as atividades e toma as medidas previstas no Regulamento (UE) 2019/1020;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 26
+    url: /notas/ai-act#art-3
+- id: br-autoridade-nacional
+  titulo: autoridade nacional
+  termos:
+  - autoridade nacional
+  busca:
+  - autoridade nacional
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: autoridade nacional
+    texto: entidade da administração pública responsável por zelar, implementar e fiscalizar o cumprimento desta Lei em todo o território nacional.
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XIX
+    url: /notas/lgpd#art-5-xix
+- id: ue-autoridade-nacional-competente
+  titulo: Autoridade nacional competente
+  termos:
+  - Autoridade nacional competente
+  busca:
+  - Autoridade nacional competente
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade nacional competente
+    texto: uma autoridade notificadora ou uma autoridade de fiscalização do mercado; no que diz respeito aos sistemas de IA colocados em serviço ou utilizados pelas instituições, agências, serviços e organismos da União, quaisquer referências às autoridades nacionais competentes ou às autoridades de fiscalização do mercado no presente regulamento devem ser entendidas como referências à Autoridade Europeia para a Proteção de Dados;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 48
+    url: /notas/ai-act#art-3
+- id: ue-autoridade-notificadora
+  titulo: Autoridade notificadora
+  termos:
+  - Autoridade notificadora
+  busca:
+  - Autoridade notificadora
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade notificadora
+    texto: a autoridade nacional responsável por estabelecer e executar os procedimentos necessários para a avaliação, designação e notificação de organismos de avaliação da conformidade e pela fiscalização destes;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 19
+    url: /notas/ai-act#art-3
+- id: ue-autoridade-responsavel-pela-aplicacao-da-lei
+  titulo: Autoridade responsável pela aplicação da lei
+  termos:
+  - Autoridade responsável pela aplicação da lei
+  busca:
+  - Autoridade responsável pela aplicação da lei
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Autoridade responsável pela aplicação da lei
+    texto: ':
+
+
+      - a) Uma autoridade pública competente para efeitos de prevenção, investigação, deteção ou repressão de infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas, ou
+
+
+      - b) Qualquer outro organismo ou entidade designado pelo direito de um Estado-Membro para exercer autoridade pública e poderes públicos para efeitos de prevenção, investigação, deteção ou pelo exercício da ação penal relativo a infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas;'
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 45
+    url: /notas/ai-act#art-3
+- id: br-autuado
+  titulo: autuado
+  termos:
+  - autuado
+  busca:
+  - autuado
+  letra: A
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: autuado
+    texto: agente regulado que, uma vez identificados indícios suficientes de conduta infrativa, tem instaurado processo administrativo sancionador contra si, por meio de auto de infração;
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, II
+    url: /notas/regimento-interno-anpd#res1-art-4-ii
+- id: ue-avaliacao-da-conformidade
+  titulo: Avaliação da conformidade
+  termos:
+  - Avaliação da conformidade
+  busca:
+  - Avaliação da conformidade
+  letra: A
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Avaliação da conformidade
+    texto: o processo de demonstrar se estão preenchidos os requisitos relacionados com um sistema de IA de risco elevado estabelecidos no capítulo III, secção 2;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 20
+    url: /notas/ai-act#art-3
+- id: br-banco-de-dados
+  titulo: banco de dados
+  termos:
+  - banco de dados
+  busca:
+  - banco de dados
+  letra: B
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: banco de dados
+    texto: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, IV
+    url: /notas/lgpd#art-5-iv
+- id: br-bloqueio
+  titulo: bloqueio
+  termos:
+  - bloqueio
+  busca:
+  - bloqueio
+  letra: B
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: bloqueio
+    texto: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XIII
+    url: /notas/lgpd#art-5-xiii
+- id: br-caixa-de-recompensa
+  titulo: caixa de recompensa
+  termos:
+  - caixa de recompensa
+  busca:
+  - caixa de recompensa
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: caixa de recompensa
+    texto: funcionalidade disponível em certos jogos eletrônicos que permite a aquisição, mediante pagamento, pelo jogador, de itens virtuais consumíveis ou de vantagens aleatórias, resgatáveis pelo jogador ou usuário, sem conhecimento prévio de seu conteúdo ou garantia de sua efetiva utilidade;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, IV
+    url: /notas/eca-digital#art-2-iv
+- id: ue-capacidades-de-elevado-impacto
+  titulo: Capacidades de elevado impacto
+  termos:
+  - Capacidades de elevado impacto
+  busca:
+  - Capacidades de elevado impacto
+  letra: C
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Capacidades de elevado impacto
+    texto: capacidades que correspondem ou excedem as capacidades registadas nos modelos de IA de finalidade geral mais avançados;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 64
+    url: /notas/ai-act#art-3
+- id: br-categoria-de-dados-pessoais
+  titulo: categoria de dados pessoais
+  termos:
+  - categoria de dados pessoais
+  busca:
+  - categoria de dados pessoais
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: categoria de dados pessoais
+    texto: classificação dos dados pessoais de acordo com o contexto de sua utilização, tais como dados de identificação pessoal, dados de autenticação em sistemas, dados financeiros;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, III
+    url: /notas/regimento-interno-anpd#res15-art-3-iii
+- id: ue-categorias-especiais-de-dados-pessoais
+  titulo: Categorias especiais de dados pessoais
+  termos:
+  - Categorias especiais de dados pessoais
+  busca:
+  - Categorias especiais de dados pessoais
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Categorias especiais de dados pessoais
+    texto: as categorias de dados pessoais a que se referem o artigo 9.º, n.º 1, do Regulamento (UE) 2016/679, o artigo 10.º da Diretiva (UE) 2016/680 e o artigo 10.º, n.º 1, do Regulamento (UE) 2018/1725;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 37
+    url: /notas/ai-act#art-3
+- id: br-coleta-internacional-de-dados
+  titulo: coleta internacional de dados
+  termos:
+  - coleta internacional de dados
+  busca:
+  - coleta internacional de dados
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: coleta internacional de dados
+    texto: coleta de dados pessoais do titular efetuada diretamente pelo agente de tratamento localizado no exterior;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, V
+    url: /notas/regimento-interno-anpd#res19-art-3-v
+- id: ue-colocacao-em-servico
+  titulo: Colocação em serviço
+  termos:
+  - Colocação em serviço
+  busca:
+  - Colocação em serviço
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Colocação em serviço
+    texto: o fornecimento, diretamente ao responsável pela implantação ou para utilização própria, de um sistema de IA para a primeira utilização na União com a finalidade prevista;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 11
+    url: /notas/ai-act#art-3
+- id: ue-colocacao-no-mercado
+  titulo: Colocação no mercado
+  termos:
+  - Colocação no mercado
+  busca:
+  - Colocação no mercado
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Colocação no mercado
+    texto: a primeira disponibilização de um sistema de IA ou de um modelo de IA de finalidade geral no mercado da União;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 9
+    url: /notas/ai-act#art-3
+- id: ue-componente-de-seguranca
+  titulo: Componente de segurança
+  termos:
+  - Componente de segurança
+  busca:
+  - Componente de segurança
+  letra: C
+  tema: Segurança, incidentes e violência
+  jurisdicao: UE
+  definicoes:
+  - termo: Componente de segurança
+    texto: um componente de um produto ou sistema de IA que cumpre uma função de segurança nesse produto ou sistema de IA, ou cuja falha ou anomalia põe em risco a saúde e a segurança de pessoas ou bens; para efeitos da presente definição, um componente cumpre uma função de segurança quando o seu objetivo é prevenir ou atenuar riscos para a saúde e a segurança de pessoas ou bens;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 14
+    url: /notas/ai-act#art-3
+- id: br-comunicacao-de-incidente-de-seguranca
+  titulo: comunicação de incidente de segurança
+  termos:
+  - comunicação de incidente de segurança
+  busca:
+  - comunicação de incidente de segurança
+  letra: C
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: comunicação de incidente de segurança
+    texto: ato do controlador que comunica à ANPD e ao titular de dados a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, IV
+    url: /notas/regimento-interno-anpd#res15-art-3-iv
+- id: br-conexao-a-internet
+  titulo: conexão à internet
+  termos:
+  - conexão à internet
+  busca:
+  - conexão à internet
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: conexão à internet
+    texto: a habilitação de um terminal para envio e recebimento de pacotes de dados pela internet, mediante a atribuição ou autenticação de um endereço IP;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, V
+    url: /notas/mci#art-5-v
+- id: br-confidencialidade
+  titulo: confidencialidade
+  termos:
+  - confidencialidade
+  busca:
+  - confidencialidade
+  letra: C
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: confidencialidade
+    texto: propriedade pela qual se assegura que o dado pessoal não esteja disponível ou não seja revelado a pessoas, empresas, sistemas, órgãos ou entidades não autorizados;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, V
+    url: /notas/regimento-interno-anpd#res15-art-3-v
+- id: br-conflito-de-interesse
+  titulo: conflito de interesse
+  termos:
+  - conflito de interesse
+  busca:
+  - conflito de interesse
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: conflito de interesse
+    texto: a situação que possa comprometer, influenciar ou afetar, de maneira imprópria, a objetividade e o julgamento técnico no desempenho das atribuições do encarregado;
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, II
+    url: /notas/regimento-interno-anpd#res18-art-2-ii
+- id: ue-conjunto-de-dados-de-validacao
+  titulo: Conjunto de dados de validação
+  termos:
+  - Conjunto de dados de validação
+  busca:
+  - Conjunto de dados de validação
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Conjunto de dados de validação
+    texto: um conjunto de dados separado ou parte de um conjunto de dados de treino, sob forma de uma divisão fixa ou variável;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 31
+    url: /notas/ai-act#art-3
+- id: br-consentimento
+  titulo: consentimento
+  termos:
+  - consentimento
+  busca:
+  - consentimento
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: consentimento
+    texto: manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento de seus dados pessoais para uma finalidade determinada;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XII
+    url: /notas/lgpd#art-5-xii
+- id: ue-consentimento
+  titulo: Consentimento
+  termos:
+  - Consentimento
+  busca:
+  - Consentimento
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Consentimento
+    texto: do titular dos dados, uma manifestação de vontade, livre, específica, informada e inequívoca, pela qual o titular dos dados aceita, mediante declaração ou ato positivo inequívoco, que os dados pessoais que lhe dizem respeito sejam objeto de tratamento;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 11
+    url: /notas/gdpr#art-4
+- id: ue-consentimento-informado
+  titulo: Consentimento informado
+  termos:
+  - Consentimento informado
+  busca:
+  - Consentimento informado
+  letra: C
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Consentimento informado
+    texto: a expressão livre, específica, inequívoca e voluntária, por parte do participante, da sua vontade de participar numa dada testagem em condições reais, depois de ter sido informado de todos os aspetos da testagem que sejam relevantes para a sua decisão de participar;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 59
+    url: /notas/ai-act#art-3
+- id: br-conteudo-intimo
+  titulo: conteúdo íntimo
+  termos:
+  - conteúdo íntimo
+  busca:
+  - conteúdo íntimo
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: conteúdo íntimo
+    texto: imagem, vídeo, áudio, mensagem de texto ou qualquer conteúdo por escrito, ou combinação destes, que exponha nudez, seminudez, ato sexual ou contexto sexualizante, ainda que produzido e manipulado, no todo ou em parte, por sistema de inteligência artificial ou recurso tecnológico equivalente; e
+    jurisdicao: BR
+    norma: decreto-12976
+    norma_apelido: Dec. nº 12.976/2026 — Proteção de Mulheres na Internet
+    norma_titulo: Decreto nº 12.976, de 20 de maio de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12976.htm
+    dispositivo: art. 3º, I
+    url: /notas/mci#dec12976-art-3-i
+- id: br-conteudo-pornografico
+  titulo: conteúdo pornográfico
+  termos:
+  - conteúdo pornográfico
+  busca:
+  - conteúdo pornográfico
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: conteúdo pornográfico
+    texto: aquele cuja finalidade predominante seja a representação de atos sexualmente explícitos ou a exibição de nudez com conotação ou finalidade sexual, observadas as especificações e as exceções previstas no art. 16;
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, III
+    url: /notas/eca-digital#dec12880-art-2-iii
+- id: br-conteudo-produto-ou-servico-improprio-ou-inadequado
+  titulo: conteúdo, produto ou serviço impróprio ou inadequado
+  termos:
+  - conteúdo, produto ou serviço impróprio ou inadequado
+  busca:
+  - conteúdo, produto ou serviço impróprio ou inadequado
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: conteúdo, produto ou serviço impróprio ou inadequado
+    texto: aquele que possa apresentar risco à privacidade, à segurança, ao desenvolvimento psicossocial, à saúde mental e física e ao bem-estar da criança e do adolescente, nos termos estabelecidos na classificação indicativa, quando aplicável;
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, I
+    url: /notas/eca-digital#dec12880-art-2-i
+- id: br-conteudo-produto-ou-servico-proibido-para-criancas-e-adolescentes
+  titulo: conteúdo, produto ou serviço proibido para crianças e adolescentes
+  termos:
+  - conteúdo, produto ou serviço proibido para crianças e adolescentes
+  busca:
+  - conteúdo, produto ou serviço proibido para crianças e adolescentes
+  letra: C
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: conteúdo, produto ou serviço proibido para crianças e adolescentes
+    texto: aquele cujo acesso, cuja disponibilização, cuja aquisição ou cujo consumo seja expressamente vedado para crianças e adolescentes por determinação legal específica;
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, II
+    url: /notas/eca-digital#dec12880-art-2-ii
+- id: br-conteudos-produtos-e-servicos-proibidos-para-criancas-e-adolescentes
+  titulo: conteúdos, produtos e serviços proibidos para crianças e adolescentes
+  termos:
+  - conteúdos, produtos e serviços proibidos para crianças e adolescentes
+  busca:
+  - conteúdos, produtos e serviços proibidos para crianças e adolescentes
+  letra: C
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: conteúdos, produtos e serviços proibidos para crianças e adolescentes
+    texto: 'I - armas, munições e explosivos, nos termos do disposto no art. 81, *caput*, inciso I, da Lei nº 8.069, de 13 de julho de 1990, e no art. 16, § 1º, inciso V, da Lei nº 10.826, de 22 de dezembro de 2003;
+
+
+      II - bebidas alcoólicas, nos termos do disposto nos art. 81, *caput*, inciso II, e art. 243 da Lei nº 8.069, de 13 de julho de 1990, e no art. 6º, *caput*, inciso IV, da Lei nº 15.211, de 17 de setembro de 2025;
+
+
+      III - produto fumígeno, derivado ou não do tabaco, incluídos dispositivos eletrônicos para fumar (DEF), nos termos do disposto no art. 81, *caput*, inciso III, da Lei nº 8.069, de 13 de julho de 1990, e no art. 3º-A da Lei nº 9.294, de 15 de julho de 1996;
+
+
+      IV - produtos cujos componentes possam causar dependência física ou psíquica, ainda que por utilização indevida, nos termos do disposto no art. 81, *caput*, inciso III, da Lei nº 8.069, de 13 de julho de 1990;
+
+
+      V - fogos de estampido e de artifício, exceto aqueles que, pelo seu reduzido potencial, sejam incapazes de provocar qualquer dano físico em caso de utilização indevida, nos termos do disposto nos art. 81, *caput*, inciso IV, e art. 244 da Lei nº 8.069, de 13 de julho de 1990;
+
+
+      VI - jogos de azar, apostas, loterias e equivalentes, nos termos do disposto nos art. 80 e art. 81, *caput*, inciso VI, da Lei nº 8.069, de 13 de julho 1990, e no art. 26, *caput*, inciso I, da Lei nº 14.790, de 29 de dezembro de 2023;
+
+
+      VII - caixas de recompensa (*loot boxes*)*,* nos termos do disposto no art. 20 da Lei nº 15.211, de 17 de setembro de 2025;
+
+
+      VIII - conteúdo pornográfico, nos termos do disposto nos art. 78, art. 81, *caput*, inciso V, e art. 241-E da Lei nº 8.069, de 13 de julho de 1990, e nos art. 6º, *caput*, inciso VI, e art. 9º, § 2º, da Lei nº 15.211, de 17 de setembro de 2025;
+
+
+      IX - serviços de acompanhantes, nos termos do disposto nos art. 218-B, *caput*, e art. 228 do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, e nos art. 78, art. 81, *capu*t, inciso V, e art. 244-A da Lei nº 8.069, de 13 de julho de 1990;
+
+
+      X - serviços ou aplicações com finalidade precípua de marcar encontros ou iniciar relacionamentos de cunho sexual, nos termos do disposto no art. 218-B, § 2º, inciso I, do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, e no art. 4º, *caput*, inciso III, da Lei nº 13.431, de 4 de abril de 2017; e
+
+
+      XI - quaisquer outros produtos ou serviços que tenham vedação legal ou que venham a ser considerados por lei como vedados ou proibidos para crianças e adolescentes.'
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 15, § 1º
+    url: /notas/eca-digital#dec12880-art-15-p1
+- id: br-controlador
+  titulo: controlador
+  termos:
+  - controlador
+  busca:
+  - controlador
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: controlador
+    texto: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, VI
+    url: /notas/lgpd#art-5-vi
+  - termo: controlador
+    texto: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais;
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, III
+    url: /notas/regimento-interno-anpd#res18-art-2-iii
+- id: br-dado-anonimizado
+  titulo: dado anonimizado
+  termos:
+  - dado anonimizado
+  busca:
+  - dado anonimizado
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado anonimizado
+    texto: dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, III
+    url: /notas/lgpd#art-5-iii
+- id: br-dado-de-autenticacao-em-sistemas
+  titulo: dado de autenticação em sistemas
+  termos:
+  - dado de autenticação em sistemas
+  busca:
+  - dado de autenticação em sistemas
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado de autenticação em sistemas
+    texto: qualquer dado pessoal utilizado como credencial para determinar o acesso a um sistema ou para confirmar a identificação de um usuário, como contas de login, tokens e senhas;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, VI
+    url: /notas/regimento-interno-anpd#res15-art-3-vi
+- id: br-dado-financeiro
+  titulo: dado financeiro
+  termos:
+  - dado financeiro
+  busca:
+  - dado financeiro
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado financeiro
+    texto: dado pessoal relacionado às transações financeiras do titular, inclusive para contratação de serviços e aquisição de produtos;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, VII
+    url: /notas/regimento-interno-anpd#res15-art-3-vii
+- id: br-dado-pessoal
+  titulo: dado pessoal
+  termos:
+  - dado pessoal
+  busca:
+  - dado pessoal
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado pessoal
+    texto: dado relacionado à pessoa natural identificada ou identificável, inclusive números identificativos, dados locacionais ou identificadores eletrônicos, quando estes estiverem relacionados a uma pessoa; e
+    jurisdicao: BR
+    norma: decreto-8771
+    norma_apelido: Dec. nº 8.771/2016 — Regulamento do Marco Civil
+    norma_titulo: Decreto nº 8.771, de 11 de maio de 2016
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8771.htm
+    dispositivo: art. 14º, I
+    url: /notas/mci#dec8771-art-14-i
+  - termo: dado pessoal
+    texto: informação relacionada a pessoa natural identificada ou identificável;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, I
+    url: /notas/lgpd#art-5-i
+  - termo: dado pessoal
+    texto: informação relacionada a pessoa natural identificada ou identificável;
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, IV
+    url: /notas/regimento-interno-anpd#res18-art-2-iv
+- id: br-dado-pessoal-afetado
+  titulo: dado pessoal afetado
+  termos:
+  - dado pessoal afetado
+  busca:
+  - dado pessoal afetado
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado pessoal afetado
+    texto: dado pessoal cuja confidencialidade, integridade, disponibilidade ou autenticidade tenha sido comprometida em um incidente de segurança;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, VIII
+    url: /notas/regimento-interno-anpd#res15-art-3-viii
+- id: br-dado-pessoal-sensivel
+  titulo: dado pessoal sensível
+  termos:
+  - dado pessoal sensível
+  busca:
+  - dado pessoal sensível
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: dado pessoal sensível
+    texto: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, II
+    url: /notas/lgpd#art-5-ii
+- id: br-dado-protegido-por-sigilo-legal-ou-judicial
+  titulo: dado protegido por sigilo legal ou judicial
+  termos:
+  - dado protegido por sigilo legal ou judicial
+  busca:
+  - dado protegido por sigilo legal ou judicial
+  letra: D
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: dado protegido por sigilo legal ou judicial
+    texto: dado pessoal cujo sigilo decorra de norma jurídica ou decisão judicial;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, IX
+    url: /notas/regimento-interno-anpd#res15-art-3-ix
+- id: br-dado-protegido-por-sigilo-profissional
+  titulo: dado protegido por sigilo profissional
+  termos:
+  - dado protegido por sigilo profissional
+  busca:
+  - dado protegido por sigilo profissional
+  letra: D
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: dado protegido por sigilo profissional
+    texto: dado pessoal cujo sigilo decorra do exercício de função, ministério, ofício ou profissão, e cuja revelação possa produzir dano a outrem;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, X
+    url: /notas/regimento-interno-anpd#res15-art-3-x
+- id: ue-dados-biometricos
+  titulo: Dados biométricos
+  termos:
+  - Dados biométricos
+  busca:
+  - Dados biométricos
+  letra: D
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados biométricos
+    texto: dados pessoais resultantes de um tratamento técnico específico relativo às características físicas, fisiológicas ou comportamentais de uma pessoa singular, nomeadamente imagens faciais ou dados dactiloscópicos;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 34
+    url: /notas/ai-act#art-3
+  - termo: Dados biométricos
+    texto: dados pessoais resultantes de um tratamento técnico específico relativo às características físicas, fisiológicas ou comportamentais de uma pessoa singular que permitam ou confirmem a identificação única dessa pessoa singular, nomeadamente imagens faciais ou dados dactiloscópicos;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 14
+    url: /notas/gdpr#art-4
+- id: ue-dados-de-entrada
+  titulo: Dados de entrada
+  termos:
+  - Dados de entrada
+  busca:
+  - Dados de entrada
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados de entrada
+    texto: os dados disponibilizados a um sistema de IA, ou por ele obtidos diretamente, com base nos quais o sistema produz um resultado;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 33
+    url: /notas/ai-act#art-3
+- id: ue-dados-de-teste
+  titulo: Dados de teste
+  termos:
+  - Dados de teste
+  busca:
+  - Dados de teste
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados de teste
+    texto: os dados utilizados para realizar uma avaliação independente do sistema de IA, a fim de confirmar o desempenho esperado desse sistema antes da sua colocação no mercado ou colocação em serviço;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 32
+    url: /notas/ai-act#art-3
+- id: ue-dados-de-treino
+  titulo: Dados de treino
+  termos:
+  - Dados de treino
+  busca:
+  - Dados de treino
+  letra: D
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados de treino
+    texto: os dados usados para treinar um sistema de IA mediante o ajustamento dos seus parâmetros passíveis de serem aprendidos;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 29
+    url: /notas/ai-act#art-3
+- id: ue-dados-de-validacao
+  titulo: Dados de validação
+  termos:
+  - Dados de validação
+  busca:
+  - Dados de validação
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados de validação
+    texto: os dados utilizados para realizar uma avaliação do sistema de IA treinado e ajustar os seus parâmetros não passíveis de serem aprendidos e o seu processo de aprendizagem, a fim de, entre outras coisas, evitar um subajustamento ou um sobreajustamento;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 30
+    url: /notas/ai-act#art-3
+- id: ue-dados-geneticos
+  titulo: Dados genéticos
+  termos:
+  - Dados genéticos
+  busca:
+  - Dados genéticos
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados genéticos
+    texto: os dados pessoais relativos às características genéticas, hereditárias ou adquiridas, de uma pessoa singular que deem informações únicas sobre a fisiologia ou a saúde dessa pessoa singular e que resulta designadamente de uma análise de uma amostra biológica proveniente da pessoa singular em causa;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 13
+    url: /notas/gdpr#art-4
+- id: ue-dados-nao-pessoais
+  titulo: Dados não pessoais
+  termos:
+  - Dados não pessoais
+  busca:
+  - Dados não pessoais
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados não pessoais
+    texto: os dados que não sejam dados pessoais na aceção do artigo 4.º, ponto 1), do Regulamento (UE) 2016/679;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 51
+    url: /notas/ai-act#art-3
+- id: ue-dados-operacionais-sensiveis
+  titulo: Dados operacionais sensíveis
+  termos:
+  - Dados operacionais sensíveis
+  busca:
+  - Dados operacionais sensíveis
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados operacionais sensíveis
+    texto: dados operacionais relacionados com atividades de prevenção, deteção, investigação ou repressão de infrações penais, cuja divulgação possa comprometer a integridade de processos penais;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 38
+    url: /notas/ai-act#art-3
+- id: ue-dado-pessoal
+  titulo: Dados pessoais
+  termos:
+  - Dados pessoais
+  busca:
+  - Dados pessoais
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados pessoais
+    texto: os dados pessoais na aceção do artigo 4.º, ponto 1, do Regulamento (UE) 2016/679;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 50
+    url: /notas/ai-act#art-3
+  - termo: Dados pessoais
+    texto: informação relativa a uma pessoa singular identificada ou identificável («titular dos dados»); é considerada identificável uma pessoa singular que possa ser identificada, direta ou indiretamente, em especial por referência a um identificador, como por exemplo um nome, um número de identificação, dados de localização, identificadores por via eletrónica ou a um ou mais elementos específicos da identidade física, fisiológica, genética, mental, económica, cultural ou social dessa pessoa singular;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 1
+    url: /notas/gdpr#art-4
+- id: ue-dados-relativos-a-saude
+  titulo: Dados relativos à saúde
+  termos:
+  - Dados relativos à saúde
+  busca:
+  - Dados relativos à saúde
+  letra: D
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Dados relativos à saúde
+    texto: dados pessoais relacionados com a saúde física ou mental de uma pessoa singular, incluindo a prestação de serviços de saúde, que revelem informações sobre o seu estado de saúde;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 15
+    url: /notas/gdpr#art-4
+- id: ue-definicao-de-perfis
+  titulo: Definição de perfis
+  termos:
+  - Definição de perfis
+  busca:
+  - Definição de perfis
+  letra: D
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Definição de perfis
+    texto: a definição de perfis na aceção do artigo 4.º, ponto 4), do Regulamento (UE) 2016/679;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 52
+    url: /notas/ai-act#art-3
+  - termo: Definição de perfis
+    texto: qualquer forma de tratamento automatizado de dados pessoais que consista em utilizar esses dados pessoais para avaliar certos aspetos pessoais de uma pessoa singular, nomeadamente para analisar ou prever aspetos relacionados com o seu desempenho profissional, a sua situação económica, saúde, preferências pessoais, interesses, fiabilidade, comportamento, localização ou deslocações;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 4
+    url: /notas/gdpr#art-4
+- id: br-denuncia
+  titulo: denúncia
+  termos:
+  - denúncia
+  busca:
+  - denúncia
+  letra: D
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: denúncia
+    texto: comunicação feita à ANPD por qualquer pessoa, natural ou jurídica, de suposta infração cometida contra a legislação de proteção de dados pessoais do País, que não seja uma petição de titular;
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, III
+    url: /notas/regimento-interno-anpd#res1-art-4-iii
+- id: ue-desempenho-de-um-sistema-de-ia
+  titulo: Desempenho de um sistema de IA
+  termos:
+  - Desempenho de um sistema de IA
+  busca:
+  - Desempenho de um sistema de IA
+  letra: D
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Desempenho de um sistema de IA
+    texto: a capacidade de um sistema de IA para alcançar a sua finalidade prevista;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 18
+    url: /notas/ai-act#art-3
+- id: ue-destinatario
+  titulo: Destinatário
+  termos:
+  - Destinatário
+  busca:
+  - Destinatário
+  letra: D
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Destinatário
+    texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que recebem comunicações de dados pessoais, independentemente de se tratar ou não de um terceiro. Contudo, as autoridades públicas que possam receber dados pessoais no âmbito de inquéritos específicos nos termos do direito da União ou dos Estados-Membros não são consideradas destinatários; o tratamento desses dados por essas autoridades públicas deve cumprir as regras de proteção de dados aplicáveis em função das finalidades do tratamento;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 9
+    url: /notas/gdpr#art-4
+- id: br-disponibilidade
+  titulo: disponibilidade
+  termos:
+  - disponibilidade
+  busca:
+  - disponibilidade
+  letra: D
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: disponibilidade
+    texto: propriedade pela qual se assegura que o dado pessoal esteja acessível e utilizável, sob demanda, por uma pessoa natural ou determinado sistema, órgão ou entidade devidamente autorizados;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XI
+    url: /notas/regimento-interno-anpd#res15-art-3-xi
+- id: ue-disponibilizacao-no-mercado
+  titulo: Disponibilização no mercado
+  termos:
+  - Disponibilização no mercado
+  busca:
+  - Disponibilização no mercado
+  letra: D
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Disponibilização no mercado
+    texto: o fornecimento de um sistema de IA ou de um modelo de IA de finalidade geral para distribuição ou utilização no mercado da União no âmbito de uma atividade comercial, a título oneroso ou gratuito;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 10
+    url: /notas/ai-act#art-3
+- id: ue-distribuidor
+  titulo: Distribuidor
+  termos:
+  - Distribuidor
+  busca:
+  - Distribuidor
+  letra: D
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Distribuidor
+    texto: uma pessoa singular ou coletiva inserida na cadeia de distribuição, distinta do prestador e do importador, que disponibiliza um sistema de IA no mercado da União;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 7
+    url: /notas/ai-act#art-3
+- id: br-eliminacao
+  titulo: eliminação
+  termos:
+  - eliminação
+  busca:
+  - eliminação
+  letra: E
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: eliminação
+    texto: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XIV
+    url: /notas/lgpd#art-5-xiv
+- id: ue-empresa
+  titulo: Empresa
+  termos:
+  - Empresa
+  busca:
+  - Empresa
+  letra: E
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Empresa
+    texto: uma pessoa singular ou coletiva que, independentemente da sua forma jurídica, exerce uma atividade económica, incluindo as sociedades ou associações que exercem regularmente uma atividade económica;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 18
+    url: /notas/gdpr#art-4
+- id: br-encarregado
+  titulo: encarregado
+  termos:
+  - encarregado
+  busca:
+  - encarregado
+  letra: E
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: encarregado
+    texto: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Agência Nacional de Proteção de Dados (ANPD);
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, VIII
+    url: /notas/lgpd#art-5-viii
+  - termo: encarregado
+    texto: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD);
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, V
+    url: /notas/regimento-interno-anpd#res18-art-2-v
+- id: br-endereco-de-protocolo-de-internet-endereco-ip
+  titulo: endereço de protocolo de internet (endereço IP)
+  termos:
+  - endereço de protocolo de internet (endereço IP)
+  busca:
+  - endereço de protocolo de internet (endereço IP)
+  letra: E
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: endereço de protocolo de internet (endereço IP)
+    texto: o código atribuído a um terminal de uma rede para permitir sua identificação, definido segundo parâmetros internacionais;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, III
+    url: /notas/mci#art-5-iii
+- id: br-entidade-responsavel
+  titulo: entidade responsável
+  termos:
+  - entidade responsável
+  busca:
+  - entidade responsável
+  letra: E
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: entidade responsável
+    texto: sociedade empresária, com sede no Brasil, que responde por qualquer violação de norma corporativa global, ainda que decorrente de ato praticado por um membro do grupo ou conglomerado de empresas com sede em outro país;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, VII
+    url: /notas/regimento-interno-anpd#res19-art-3-vii
+- id: ue-espaco-acessivel-ao-publico
+  titulo: Espaço acessível ao público
+  termos:
+  - Espaço acessível ao público
+  busca:
+  - Espaço acessível ao público
+  letra: E
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Espaço acessível ao público
+    texto: qualquer espaço físico, público ou privado, acessível a um número indeterminado de pessoas singulares, independentemente da eventual aplicação de condições de acesso específicas e independentemente das eventuais restrições de capacidade;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 44
+    url: /notas/ai-act#art-3
+- id: ue-especificacao-comum
+  titulo: Especificação comum
+  termos:
+  - Especificação comum
+  busca:
+  - Especificação comum
+  letra: E
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Especificação comum
+    texto: um conjunto de especificações técnicas, definidas no artigo 2.º, ponto 4, do Regulamento (UE) n.º 1025/2012, que proporcionam os meios para cumprir certos requisitos estabelecidos no presente regulamento;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 28
+    url: /notas/ai-act#art-3
+- id: ue-estabelecimento-principal
+  titulo: Estabelecimento principal
+  termos:
+  - Estabelecimento principal
+  busca:
+  - Estabelecimento principal
+  letra: E
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Estabelecimento principal
+    texto: ':
+
+
+      - a) No que se refere a um responsável pelo tratamento com estabelecimentos em vários Estados-Membros, o local onde se encontra a sua administração central na União, a menos que as decisões sobre as finalidades e os meios de tratamento dos dados pessoais sejam tomadas noutro estabelecimento do responsável pelo tratamento na União e este último estabelecimento tenha competência para mandar executar tais decisões, sendo neste caso o estabelecimento que tiver tomado as referidas decisões considerado estabelecimento principal;
+
+
+      - b) No que se refere a um subcontratante com estabelecimentos em vários Estados-Membros, o local onde se encontra a sua administração central na União ou, caso o subcontratante não tenha administração central na União, o estabelecimento do subcontratante na União onde são exercidas as principais atividades de tratamento no contexto das atividades de um estabelecimento do subcontratante, na medida em que se encontre sujeito a obrigações específicas nos termos do presente regulamento;'
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 16
+    url: /notas/gdpr#art-4
+- id: br-exportador
+  titulo: exportador
+  termos:
+  - exportador
+  busca:
+  - exportador
+  letra: E
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: exportador
+    texto: agente de tratamento, localizado no território nacional ou em país estrangeiro, que transfere dados pessoais para importador;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, I
+    url: /notas/regimento-interno-anpd#res19-art-3-i
+- id: ue-falsificacoes-profundas
+  titulo: Falsificações profundas
+  termos:
+  - Falsificações profundas
+  busca:
+  - Falsificações profundas
+  letra: F
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Falsificações profundas
+    texto: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA, que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos ou verdadeiros;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 60
+    url: /notas/ai-act#art-3
+- id: br-faturamento
+  titulo: faturamento
+  termos:
+  - faturamento
+  busca:
+  - faturamento
+  letra: F
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: faturamento
+    texto: 'I - a receita bruta de que trata o art. 12 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, excluídas as devoluções e vendas canceladas, bem como os descontos concedidos incondicionalmente;
+
+
+      II - a receita bruta de que trata o § 1º do art. 3º da Lei Complementar nº 123, de 14 de dezembro de 2006, excluídas as devoluções e vendas canceladas, bem como os descontos concedidos incondicionalmente, para pessoas jurídicas de direito privado optantes pelo Simples Nacional;
+
+
+      III - o montante total de recursos auferidos, excluídos os tributos sobre vendas, para pessoas jurídicas de direito privado sem fins lucrativos, nos termos da legislação vigente; ou
+
+
+      IV - o valor definido pela ANPD, nos termos deste Regulamento, que poderá considerar:
+
+
+      a) o limite de faturamento previsto nos incisos I e II do art. 3º ou no § 1º do art. 18-A, conforme o caso, da Lei Complementar nº 123, de 14 de dezembro de 2006, no caso dos optantes pelo Simples Nacional;
+
+
+      b) o limite de faturamento previsto no inciso I, § 1º, do art. 4º, da Lei Complementar nº 182, de 1º de junho de 2021, no caso de startups;
+
+
+      c) o faturamento total da empresa, do grupo ou conglomerado de empresas no Brasil, caso não disponível a informação referente ao ramo de atividade empresarial em que ocorreu a infração;
+
+
+      d) o somatório dos rendimentos recebidos por pessoas naturais referentes a atividades de tratamento de dados pessoais, direta ou indiretamente; ou
+
+
+      e) nos demais casos, o limite de faturamento correspondente ao valor máximo de multa de R$ 50.000.000,00 (cinquenta milhões de reais).'
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 12, § 1º
+    url: /notas/regimento-interno-anpd#res4-art-12-p1
+- id: ue-ficheiro
+  titulo: Ficheiro
+  termos:
+  - Ficheiro
+  busca:
+  - Ficheiro
+  letra: F
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Ficheiro
+    texto: qualquer conjunto estruturado de dados pessoais, acessível segundo critérios específicos, quer seja centralizado, descentralizado ou repartido de modo funcional ou geográfico;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 6
+    url: /notas/gdpr#art-4
+- id: ue-finalidade-prevista
+  titulo: Finalidade prevista
+  termos:
+  - Finalidade prevista
+  busca:
+  - Finalidade prevista
+  letra: F
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Finalidade prevista
+    texto: a utilização a que o prestador destina o sistema de IA, incluindo o contexto específico e as condições de utilização, conforme especificado nas informações facultadas pelo prestador nas instruções de utilização, nos materiais e declarações promocionais ou de venda, bem como na documentação técnica;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 12
+    url: /notas/ai-act#art-3
+- id: ue-grupo-empresarial
+  titulo: Grupo empresarial
+  termos:
+  - Grupo empresarial
+  busca:
+  - Grupo empresarial
+  letra: G
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Grupo empresarial
+    texto: um grupo composto pela empresa que exerce o controlo e pelas empresas controladas;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 19
+    url: /notas/gdpr#art-4
+- id: br-grupo-ou-conglomerado-empresarial
+  titulo: grupo ou conglomerado de empresas
+  termos:
+  - grupo ou conglomerado de empresas
+  busca:
+  - grupo ou conglomerado de empresas
+  letra: G
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: grupo ou conglomerado de empresas
+    texto: conjunto de empresas de fato ou de direito com personalidades jurídicas próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica ou ainda grupo de pessoas que detém, isolada ou conjuntamente, poder de controle sobre as demais, desde que demonstrado interesse integrado, efetiva comunhão de interesses e atuação conjunta das empresas dele integrantes;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, VI
+    url: /notas/regimento-interno-anpd#res19-art-3-vi
+  - termo: grupo ou conglomerado de empresas
+    texto: conjunto de empresas de fato ou de direito com personalidades jurídicas próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica ou ainda grupo de pessoas que detêm, isolada ou conjuntamente, poder de controle sobre as demais, desde que demonstrado interesse integrado, efetiva comunhão de interesses e atuação conjunta das empresas dele integrantes;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, I
+    url: /notas/regimento-interno-anpd#res4-art-2-i
+- id: ue-identificacao-biometrica
+  titulo: Identificação biométrica
+  termos:
+  - Identificação biométrica
+  busca:
+  - Identificação biométrica
+  letra: I
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Identificação biométrica
+    texto: o reconhecimento automatizado de características humanas físicas, fisiológicas, comportamentais ou psicológicas para efeitos de determinação da identidade de uma pessoa singular, comparando os dados biométricos dessa pessoa com os dados biométricos de pessoas armazenados numa base de dados;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 35
+    url: /notas/ai-act#art-3
+- id: br-importador
+  titulo: importador
+  termos:
+  - importador
+  busca:
+  - importador
+  letra: I
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: importador
+    texto: agente de tratamento, localizado em país estrangeiro ou que seja organismo internacional, que recebe dados pessoais transferidos por exportador;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, II
+    url: /notas/regimento-interno-anpd#res19-art-3-ii
+- id: ue-importador
+  titulo: Importador
+  termos:
+  - Importador
+  busca:
+  - Importador
+  letra: I
+  tema: Transferências internacionais
+  jurisdicao: UE
+  definicoes:
+  - termo: Importador
+    texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que coloca no mercado um sistema de IA que ostenta o nome ou a marca de uma pessoa singular ou coletiva estabelecida num país terceiro;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 6
+    url: /notas/ai-act#art-3
+- id: br-impulsionamento
+  titulo: impulsionamento
+  termos:
+  - impulsionamento
+  busca:
+  - impulsionamento
+  letra: I
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: impulsionamento
+    texto: 'ampliação artificial do alcance, da visibilidade ou da priorização de conteúdo mediante pagamento pecuniário ou valor estimável em dinheiro.
+
+
+      § 1º Aplicam-se a esta Lei os conceitos de criança e de adolescente constantes do art. 2º da Lei nº 8.069, de 13 de julho de 1990 (Estatuto da Criança e do Adolescente), e os de internet, de aplicações de internet e de terminal constantes do art. 5º da Lei nº 12.965, de 23 de abril de 2014 (Marco Civil da Internet).
+
+
+      § 2º Para os fins desta Lei, não são consideradas produtos ou serviços de tecnologia da informação as funcionalidades essenciais para o funcionamento da internet, como os protocolos e os padrões técnicos abertos e comuns que permitem a interconexão entre as redes de computadores que compõem a internet.'
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, XII
+    url: /notas/eca-digital#art-2-xii
+- id: br-incidente-de-seguranca
+  titulo: incidente de segurança
+  termos:
+  - incidente de segurança
+  busca:
+  - incidente de segurança
+  letra: I
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: incidente de segurança
+    texto: qualquer evento adverso confirmado, relacionado à violação das propriedades de confidencialidade, integridade, disponibilidade e autenticidade da segurança de dados pessoais;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XII
+    url: /notas/regimento-interno-anpd#res15-art-3-xii
+- id: ue-incidente-grave
+  titulo: Incidente grave
+  termos:
+  - Incidente grave
+  busca:
+  - Incidente grave
+  letra: I
+  tema: Segurança, incidentes e violência
+  jurisdicao: UE
+  definicoes:
+  - termo: Incidente grave
+    texto: 'qualquer incidente ou anomalia num sistema de IA que, direta ou indiretamente, tenha alguma das seguintes consequências:
+
+
+      - a) A morte de uma pessoa ou danos graves para a saúde de uma pessoa,
+
+
+      - b) Uma perturbação grave e irreversível da gestão ou do funcionamento de uma infraestrutura crítica,
+
+
+      - c) A infração das obrigações decorrentes do direito da União destinadas a proteger os direitos fundamentais,
+
+
+      - d) Danos graves a bens ou ao ambiente;'
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 49
+    url: /notas/ai-act#art-3
+- id: br-infracao
+  titulo: infração
+  termos:
+  - infração
+  busca:
+  - infração
+  letra: I
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: infração
+    texto: descumprimento de obrigação estabelecida na Lei nº 13.709, de 14 de agosto de 2018 (LGPD), e nos regulamentos expedidos pela ANPD;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, II
+    url: /notas/regimento-interno-anpd#res4-art-2-ii
+- id: ue-infracao-generalizada
+  titulo: Infração generalizada
+  termos:
+  - Infração generalizada
+  busca:
+  - Infração generalizada
+  letra: I
+  tema: Fiscalização e sanções
+  jurisdicao: UE
+  definicoes:
+  - termo: Infração generalizada
+    texto: 'uma ação ou omissão contrária à legislação da União que protege os interesses das pessoas, e que:
+
+
+      - a) Tenha prejudicado, ou seja suscetível de prejudicar, os interesses coletivos de pessoas que residam em, pelo menos, dois Estados-Membros que não o Estado-Membro no qual:
+
+
+      - i) o ato ou omissão tenha tido origem ou sido cometido,
+
+
+      - ii) o prestador em causa ou, se aplicável, o seu mandatário esteja estabelecido, ou
+
+
+      - iii) o responsável pela implantação esteja estabelecido, caso a violação seja cometida por este;
+
+
+      - b) Tenha prejudicado, ou seja suscetível de prejudicar, os interesses coletivos das pessoas e tenha características comuns, inclusive a mesma prática ilegal ou a violação de um mesmo interesse, e que seja cometida pelo mesmo operador em, pelo menos, três Estados-Membros em simultâneo;'
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 61
+    url: /notas/ai-act#art-3
+- id: br-infracao-permanente
+  titulo: infração permanente
+  termos:
+  - infração permanente
+  busca:
+  - infração permanente
+  letra: I
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: infração permanente
+    texto: conduta infrativa que se prolonga no tempo, mediante ação ou omissão do infrator referente ao mesmo dispositivo normativo;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, III
+    url: /notas/regimento-interno-anpd#res4-art-2-iii
+- id: ue-infraestrutura-critica
+  titulo: Infraestrutura crítica
+  termos:
+  - Infraestrutura crítica
+  busca:
+  - Infraestrutura crítica
+  letra: I
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Infraestrutura crítica
+    texto: uma infraestrutura crítica na aceção do artigo 2.º, ponto 4), da Diretiva (UE) 2022/2557;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 62
+    url: /notas/ai-act#art-3
+- id: br-infrator
+  titulo: infrator
+  termos:
+  - infrator
+  busca:
+  - infrator
+  letra: I
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: infrator
+    texto: agente de tratamento que comete infração;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, IV
+    url: /notas/regimento-interno-anpd#res4-art-2-iv
+- id: ue-instrucoes-de-utilizacao
+  titulo: Instruções de utilização
+  termos:
+  - Instruções de utilização
+  busca:
+  - Instruções de utilização
+  letra: I
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Instruções de utilização
+    texto: as informações facultadas pelo prestador para esclarecer responsável pela implantação, em especial, sobre a finalidade prevista e a utilização correta de um sistema de IA;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 15
+    url: /notas/ai-act#art-3
+- id: br-integridade
+  titulo: integridade
+  termos:
+  - integridade
+  busca:
+  - integridade
+  letra: I
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: integridade
+    texto: propriedade pela qual se assegura que o dado pessoal não foi modificado ou destruído de maneira não autorizada ou acidental;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XIII
+    url: /notas/regimento-interno-anpd#res15-art-3-xiii
+- id: br-internet
+  titulo: internet
+  termos:
+  - internet
+  busca:
+  - internet
+  letra: I
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: internet
+    texto: o sistema constituído do conjunto de protocolos lógicos, estruturado em escala mundial para uso público e irrestrito, com a finalidade de possibilitar a comunicação de dados entre terminais por meio de diferentes redes;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, I
+    url: /notas/mci#art-5-i
+- id: ue-limitacao-do-tratamento
+  titulo: Limitação do tratamento
+  termos:
+  - Limitação do tratamento
+  busca:
+  - Limitação do tratamento
+  letra: L
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Limitação do tratamento
+    texto: a inserção de uma marca nos dados pessoais conservados com o objetivo de limitar o seu tratamento no futuro;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 3
+    url: /notas/gdpr#art-4
+- id: ue-literacia-no-dominio-da-ia
+  titulo: Literacia no domínio da IA
+  termos:
+  - Literacia no domínio da IA
+  busca:
+  - Literacia no domínio da IA
+  letra: L
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Literacia no domínio da IA
+    texto: as competências, os conhecimentos e a compreensão que permitem que os prestadores, os responsáveis pela implantação e as pessoas afetadas, tendo em conta os respetivos direitos e obrigações no contexto do presente regulamento, procedam à implantação dos sistemas de IA com conhecimento de causa e tomem consciência das oportunidades e dos riscos inerentes à IA, bem como dos eventuais danos que a IA pode causar;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 56
+    url: /notas/ai-act#art-3
+- id: br-loja-de-aplicacoes-de-internet
+  titulo: loja de aplicações de internet
+  termos:
+  - loja de aplicações de internet
+  busca:
+  - loja de aplicações de internet
+  letra: L
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: loja de aplicações de internet
+    texto: aplicação de internet que distribui e facilita o *download*, para usuários de terminais, de aplicações de internet disponibilizadas ou tornadas acessíveis por meio de sua plataforma;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, VI
+    url: /notas/eca-digital#art-2-vi
+- id: ue-mandatario
+  titulo: Mandatário
+  termos:
+  - Mandatário
+  busca:
+  - Mandatário
+  letra: M
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Mandatário
+    texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que tenha recebido e aceitado um mandato escrito de um prestador de um sistema de IA ou de um modelo de IA de finalidade geral para cumprir e executar em seu nome, respetivamente, as obrigações e os procedimentos previstos no presente regulamento;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 5
+    url: /notas/ai-act#art-3
+- id: ue-marcacao-ce
+  titulo: Marcação CE
+  termos:
+  - Marcação CE
+  busca:
+  - Marcação CE
+  letra: M
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Marcação CE
+    texto: a marcação pela qual um prestador atesta que um sistema de IA está em conformidade com os requisitos estabelecidos no capítulo III, secção 2, e noutros atos aplicáveis enumerados na lista da legislação de harmonização da União que prevejam a aposição dessa marcação;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 24
+    url: /notas/ai-act#art-3
+- id: br-mecanismo-de-supervisao-parental
+  titulo: mecanismo de supervisão parental
+  termos:
+  - mecanismo de supervisão parental
+  busca:
+  - mecanismo de supervisão parental
+  letra: M
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: mecanismo de supervisão parental
+    texto: conjunto de configurações, de ferramentas e de salvaguardas tecnológicas integradas a produtos ou serviços de tecnologia da informação direcionados a crianças e a adolescentes ou de acesso provável por eles que possibilitem aos pais ou responsáveis legais supervisionar, limitar e gerenciar o uso do serviço, o conteúdo acessado e o tratamento de dados pessoais realizado;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, VIII
+    url: /notas/eca-digital#art-2-viii
+- id: br-mecanismos-de-incentivo-ao-uso-excessivo-problematico-ou-compulsivo
+  titulo: mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
+  termos:
+  - mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
+  busca:
+  - mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
+  letra: M
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
+    texto: 'I - a ocultação de pontos naturais de parada;
+
+
+      II - o acionamento de novos conteúdos sem solicitação;
+
+
+      III - a oferta de recompensas pelo tempo de uso; e
+
+
+      IV - o aparecimento de notificações excessivas.'
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 9º, parágrafo único
+    url: /notas/eca-digital#dec12880-art-9-pu
+- id: br-mecanismos-de-transferencia-internacional-de-dados
+  titulo: mecanismos de transferência internacional de dados
+  termos:
+  - mecanismos de transferência internacional de dados
+  busca:
+  - mecanismos de transferência internacional de dados
+  letra: M
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: mecanismos de transferência internacional de dados
+    texto: hipóteses previstas nos incisos I a IX do art. 33 da Lei nº 13.709, de 14 de agosto de 2018, que autorizam uma transferência internacional de dados;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, VIII
+    url: /notas/regimento-interno-anpd#res19-art-3-viii
+- id: br-medidas-corretivas
+  titulo: medidas corretivas
+  termos:
+  - medidas corretivas
+  busca:
+  - medidas corretivas
+  letra: M
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: medidas corretivas
+    texto: medidas determinadas pela ANPD com a finalidade de corrigir a infração e reconduzir o infrator à plena conformidade à LGPD e aos regulamentos expedidos pela ANPD, devendo ser aplicadas conjuntamente com a sanção de advertência, nos termos deste Regulamento;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, V
+    url: /notas/regimento-interno-anpd#res4-art-2-v
+- id: br-medidas-de-seguranca
+  titulo: medidas de segurança
+  termos:
+  - medidas de segurança
+  busca:
+  - medidas de segurança
+  letra: M
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: medidas de segurança
+    texto: medidas técnicas e/ou administrativas adotadas para proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XIV
+    url: /notas/regimento-interno-anpd#res15-art-3
+  - termo: medidas de segurança
+    texto: 'medidas técnicas e administrativas adotadas para proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão.
+
+
+      ### CAPÍTULO III — TRANSFERÊNCIA INTERNACIONAL DE DADOS
+
+
+      #### Seção I — Requisitos Gerais'
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, X
+    url: /notas/regimento-interno-anpd#res19-art-3-x
+- id: ue-micro-pequena-ou-media-empresa
+  titulo: Micro, pequena ou média empresa
+  termos:
+  - Micro, pequena ou média empresa
+  busca:
+  - Micro, pequena ou média empresa
+  letra: M
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Micro, pequena ou média empresa
+    texto: ou “PME”, uma micro, pequena ou média empresa na aceção do artigo 2.º do anexo da Recomendação 2003/361/CE;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 14-A
+    url: /notas/ai-act#art-3
+- id: br-microempresa-e-empresa-de-pequeno-porte
+  titulo: microempresas e empresas de pequeno porte
+  termos:
+  - microempresas e empresas de pequeno porte
+  busca:
+  - microempresas e empresas de pequeno porte
+  letra: M
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: microempresas e empresas de pequeno porte
+    texto: sociedade empresária, sociedade simples, sociedade limitada unipessoal, nos termos do art. 41 da Lei nº 14.195, de 26 de agosto de 2021, e o empresário a que se refere o art. 966 da Lei nº 10.406, de 10 de janeiro de 2002 (Código Civil), incluído o microempreendedor individual, devidamente registrados no Registro de Empresas Mercantis ou no Registro Civil de Pessoas Jurídicas, que se enquadre nos termos do art. 3º e 18-A, § 1º da Lei Complementar nº 123, de 14 de dezembro de 2006;
+    jurisdicao: BR
+    norma: resolucao-anpd-2
+    norma_apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
+    norma_titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
+    dispositivo: art. 2º, II
+    url: /notas/regimento-interno-anpd#res2-art-2-ii
+- id: ue-modelo-de-ia-de-finalidade-geral
+  titulo: Modelo de IA de finalidade geral
+  termos:
+  - Modelo de IA de finalidade geral
+  busca:
+  - Modelo de IA de finalidade geral
+  letra: M
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Modelo de IA de finalidade geral
+    texto: um modelo de IA, inclusive se for treinado com uma grande quantidade de dados utilizando a autossupervisão em escala, que apresenta uma generalidade significativa e é capaz de executar de forma competente uma vasta gama de tarefas distintas, independentemente da forma como o modelo é colocado no mercado, e que pode ser integrado numa variedade de sistemas ou aplicações a jusante, exceto os modelos de IA que são utilizados para atividades de investigação, desenvolvimento ou criação de protótipos antes de serem colocados no mercado;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 63
+    url: /notas/ai-act#art-3
+- id: ue-modificacao-substancial
+  titulo: Modificação substancial
+  termos:
+  - Modificação substancial
+  busca:
+  - Modificação substancial
+  letra: M
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Modificação substancial
+    texto: uma alteração do sistema de IA após a sua colocação no mercado ou colocação em serviço, que não tenha sido prevista ou planeada pelo prestador na avaliação da conformidade inicial e que, consequentemente, afete a conformidade do sistema de IA com os requisitos estabelecidos no capítulo III, secção 2, do presente regulamento, ou modifique a finalidade prevista relativamente à qual o sistema de IA foi avaliado;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 23
+    url: /notas/ai-act#art-3
+- id: br-monetizacao
+  titulo: monetização
+  termos:
+  - monetização
+  busca:
+  - monetização
+  letra: M
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: monetização
+    texto: remuneração direta ou indireta de usuário de aplicação de internet pela publicação, pela postagem, pela exibição, pela disponibilização, pela transmissão, pela divulgação ou pela distribuição de conteúdo, incluída receita por visualizações, assinaturas, doações, patrocínios, publicidade ou venda de produtos e serviços vinculados; e
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, XI
+    url: /notas/eca-digital#art-2-xi
+- id: br-natureza-dos-dados-pessoais
+  titulo: natureza dos dados pessoais
+  termos:
+  - natureza dos dados pessoais
+  busca:
+  - natureza dos dados pessoais
+  letra: N
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: natureza dos dados pessoais
+    texto: classificação de dados pessoais em gerais ou sensíveis;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XV
+    url: /notas/regimento-interno-anpd#res15-art-3-xv
+- id: ue-norma-harmonizada
+  titulo: Norma harmonizada
+  termos:
+  - Norma harmonizada
+  busca:
+  - Norma harmonizada
+  letra: N
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Norma harmonizada
+    texto: uma norma europeia na aceção do artigo 2.º, n.º 1, alínea c), do Regulamento (UE) n.º 1025/2012;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 27
+    url: /notas/ai-act#art-3
+- id: ue-objecao-pertinente-e-fundamentada
+  titulo: Objeção pertinente e fundamentada
+  termos:
+  - Objeção pertinente e fundamentada
+  busca:
+  - Objeção pertinente e fundamentada
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Objeção pertinente e fundamentada
+    texto: uma objeção a um projeto de decisão que visa determinar se há violação do presente regulamento ou se a ação prevista relativamente ao responsável pelo tratamento ou ao subcontratante está em conformidade com o presente regulamento, demonstrando claramente a gravidade dos riscos que advêm do projeto de decisão para os direitos e liberdades fundamentais dos titulares dos dados e, eventualmente, para a livre circulação de dados pessoais no território da União;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 24
+    url: /notas/gdpr#art-4
+- id: br-obstrucao-a-atividade-de-fiscalizacao
+  titulo: obstrução à atividade de fiscalização
+  termos:
+  - obstrução à atividade de fiscalização
+  busca:
+  - obstrução à atividade de fiscalização
+  letra: O
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: obstrução à atividade de fiscalização
+    texto: ato, comissivo ou omissivo, direto ou indireto, da fiscalização ou de seus pressupostos, que impeça, dificulte ou embarace a atividade de fiscalização exercida pela ANPD, mediante o oferecimento de entrave à situação dos agentes, a recusa no atendimento, e o não envio ou envio intempestivo de quaisquer dados e informações pertinentes à obrigação do agente regulado;
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, IV
+    url: /notas/regimento-interno-anpd#res1-art-4-iv
+- id: ue-operacao-de-virgula-flutuante
+  titulo: Operação de vírgula flutuante
+  termos:
+  - Operação de vírgula flutuante
+  busca:
+  - Operação de vírgula flutuante
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Operação de vírgula flutuante
+    texto: qualquer operação matemática ou atribuição que envolva números em vírgula flutuante, que são um subconjunto dos números reais normalmente representados em computadores por um número inteiro de precisão fixa escalado por um expoente inteiro de uma base fixa;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 67
+    url: /notas/ai-act#art-3
+- id: br-operador
+  titulo: operador
+  termos:
+  - operador
+  busca:
+  - operador
+  letra: O
+  tema: Agentes e governança
+  jurisdicao: BR
+  definicoes:
+  - termo: operador
+    texto: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, VII
+    url: /notas/lgpd#art-5-vii
+  - termo: operador
+    texto: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador;
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, VI
+    url: /notas/regimento-interno-anpd#res18-art-2-vi
+- id: ue-operador
+  titulo: Operador
+  termos:
+  - Operador
+  busca:
+  - Operador
+  letra: O
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Operador
+    texto: um prestador, fabricante de produtos, responsável pela implantação, mandatário, importador ou distribuidor;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 8
+    url: /notas/ai-act#art-3
+- id: ue-organismo-de-avaliacao-da-conformidade
+  titulo: Organismo de avaliação da conformidade
+  termos:
+  - Organismo de avaliação da conformidade
+  busca:
+  - Organismo de avaliação da conformidade
+  letra: O
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Organismo de avaliação da conformidade
+    texto: um organismo que realiza atividades de avaliação da conformidade por terceiros, nomeadamente testagem, certificação e inspeção;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 21
+    url: /notas/ai-act#art-3
+- id: br-organismo-internacional
+  titulo: organismo internacional
+  termos:
+  - organismo internacional
+  busca:
+  - organismo internacional
+  letra: O
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: organismo internacional
+    texto: organização regida pelo direito internacional público, incluindo seus órgãos subordinados ou qualquer outro órgão criado mediante acordo firmado entre dois ou mais países; e
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, IX
+    url: /notas/regimento-interno-anpd#res19-art-3-ix
+- id: ue-organismo-notificado
+  titulo: Organismo notificado
+  termos:
+  - Organismo notificado
+  busca:
+  - Organismo notificado
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Organismo notificado
+    texto: um organismo de avaliação da conformidade notificado nos termos do presente regulamento ou de outra legislação de harmonização da União pertinente;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 22
+    url: /notas/ai-act#art-3
+- id: ue-organizacao-internacional
+  titulo: Organização internacional
+  termos:
+  - Organização internacional
+  busca:
+  - Organização internacional
+  letra: O
+  tema: Transferências internacionais
+  jurisdicao: UE
+  definicoes:
+  - termo: Organização internacional
+    texto: 'uma organização e os organismos de direito internacional público por ela tutelados, ou outro organismo criado por um acordo celebrado entre dois ou mais países ou com base num acordo dessa natureza.
+
+
+      ## CAPÍTULO II — Princípios'
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 26
+    url: /notas/gdpr#art-4
+- id: br-orgao-de-pesquisa
+  titulo: órgão de pesquisa
+  termos:
+  - órgão de pesquisa
+  busca:
+  - órgão de pesquisa
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: órgão de pesquisa
+    texto: órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter histórico, científico, tecnológico ou estatístico; e
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XVIII
+    url: /notas/lgpd#art-5-xviii
+- id: ue-parte-objeto-de-investigacao
+  titulo: Parte objeto de investigação
+  termos:
+  - Parte objeto de investigação
+  busca:
+  - Parte objeto de investigação
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Parte objeto de investigação
+    texto: o responsável pelo tratamento ou subcontratante investigado por alegada violação do Regulamento (UE) 2016/679 relacionada com o tratamento transfronteiriço.
+    jurisdicao: UE
+    norma: regulamento-2025-2518
+    norma_apelido: Normas processuais do RGPD
+    norma_titulo: Regulamento (UE) 2025/2518, de 26 de novembro de 2025
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32025R2518
+    dispositivo: art. 2.º
+    url: /notas/gdpr#reg2518-art-2
+- id: ue-participante
+  titulo: Participante
+  termos:
+  - Participante
+  busca:
+  - Participante
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Participante
+    texto: para efeitos de testagem em condições reais, uma pessoa singular que participa na testagem em condições reais;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 58
+    url: /notas/ai-act#art-3
+- id: ue-pequena-empresa-de-media-capitalizacao
+  titulo: Pequena empresa de média capitalização
+  termos:
+  - Pequena empresa de média capitalização
+  busca:
+  - Pequena empresa de média capitalização
+  letra: P
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Pequena empresa de média capitalização
+    texto: uma pequena empresa de média capitalização na aceção do ponto 2 do anexo da Recomendação (UE) 2025/1099;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 14-B
+    url: /notas/ai-act#art-3
+- id: br-perfilamento
+  titulo: perfilamento
+  termos:
+  - perfilamento
+  busca:
+  - perfilamento
+  letra: P
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: perfilamento
+    texto: qualquer forma de tratamento de dados pessoais, automatizada ou não, para avaliar certos aspectos de uma pessoa natural, com o objetivo de classificá-la em grupo ou perfil de modo a fazer inferências sobre seu comportamento, situação econômica, saúde, preferências pessoais, interesses, desejos de consumo, localização geográfica, deslocamentos, posições políticas ou outras características assemelhadas;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, V
+    url: /notas/eca-digital#art-2-v
+- id: br-peticao-de-titular
+  titulo: petição de titular
+  termos:
+  - petição de titular
+  busca:
+  - petição de titular
+  letra: P
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: petição de titular
+    texto: comunicação feita à ANPD pelo titular de dados pessoais de uma solicitação apresentada ao controlador e não solucionada no prazo estabelecido em regulamentação, nos termos do inciso V do art. 55-J da LGPD; e
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, V
+    url: /notas/regimento-interno-anpd#res1-art-4-v
+- id: ue-plano-de-testagem-em-condicoes-reais
+  titulo: Plano de testagem em condições reais
+  termos:
+  - Plano de testagem em condições reais
+  busca:
+  - Plano de testagem em condições reais
+  letra: P
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Plano de testagem em condições reais
+    texto: um documento que descreve os objetivos, a metodologia, o âmbito geográfico, populacional e temporal, o acompanhamento, a organização e a realização dos testes em condições reais;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 53
+    url: /notas/ai-act#art-3
+- id: ue-plano-do-ambiente-de-testagem
+  titulo: Plano do ambiente de testagem
+  termos:
+  - Plano do ambiente de testagem
+  busca:
+  - Plano do ambiente de testagem
+  letra: P
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Plano do ambiente de testagem
+    texto: um documento acordado entre o prestador participante e a autoridade competente, que descreve os objetivos, as condições, o calendário, a metodologia e os requisitos aplicáveis às atividades realizadas no ambiente de testagem;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 54
+    url: /notas/ai-act#art-3
+- id: br-politica-de-boas-praticas-e-de-governanca
+  titulo: política de boas práticas e de governança
+  termos:
+  - política de boas práticas e de governança
+  busca:
+  - política de boas práticas e de governança
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: política de boas práticas e de governança
+    texto: 'normas e processos internos que assegurem o cumprimento abrangente da legislação de proteção de dados pessoais, estabelecidos e implementados pelo agente de tratamento mediante a adoção de:
+
+
+      a) regras de boas práticas e de governança, nos termos do art. 50, caput e § 1º, da LGPD; ou
+
+
+      b) programa de governança em privacidade, nos termos do § 2º do art. 50 da LGPD;'
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, VI
+    url: /notas/regimento-interno-anpd#res4-art-2-vi
+- id: br-praticas-manipulativas-enganosas-ou-coercitivas
+  titulo: práticas manipulativas, enganosas ou coercitivas
+  termos:
+  - práticas manipulativas, enganosas ou coercitivas
+  busca:
+  - práticas manipulativas, enganosas ou coercitivas
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: práticas manipulativas, enganosas ou coercitivas
+    texto: 'quaisquer arquiteturas de escolha, fluxos de interação ou funcionalidades que tenham por objetivo ou efeito empregar táticas que interfiram na autonomia decisória do usuário ou que explorem as suas vulnerabilidades, em particular as cognitivas e etárias, incluídas, entre outras, as práticas de:
+
+
+      I - obstrução, ao dificultar ou impedir o fluxo de tarefas do usuário, de modo a dissuadi-lo de realizar determinada ação, inclusive a interrupção do uso, o cancelamento de serviços ou a modificação de preferências, por meio de caminhos excessivamente complexos, confusos ou desproporcionais;
+
+
+      II - exploração de vulnerabilidades cognitivas, ao utilizar pressões emocionais, urgências fabricadas, escolhas enviesadas, inferências emocionais ou estímulos inadequados à idade para induzir decisões contrárias ao melhor interesse da criança ou do adolescente; ou
+
+
+      III - prejuízo ao exercício de direitos, ao ocultar, fragmentar ou dificultar o acesso a controles de privacidade, supervisão parental, consentimento ou revogação de permissões.'
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 10, parágrafo único
+    url: /notas/eca-digital#dec12880-art-10-pu
+- id: ue-prestador
+  titulo: Prestador
+  termos:
+  - Prestador
+  busca:
+  - Prestador
+  letra: P
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Prestador
+    texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que desenvolva, ou mande desenvolver, um sistema de IA ou um modelo de IA de finalidade geral e o coloque no mercado, ou coloque o sistema de IA em serviço sob o seu próprio nome ou a sua própria marca, a título oneroso ou gratuito;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 3
+    url: /notas/ai-act#art-3
+- id: ue-prestador-a-jusante
+  titulo: Prestador a jusante
+  termos:
+  - Prestador a jusante
+  busca:
+  - Prestador a jusante
+  letra: P
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Prestador a jusante
+    texto: um prestador de um sistema de IA, incluindo um sistema de IA de finalidade geral, que integra um modelo de IA, independentemente de o modelo de IA ser disponibilizado por si próprio e verticalmente integrado ou ser disponibilizado por outra entidade com base em relações contratuais.
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 68
+    url: /notas/ai-act#art-3
+- id: br-procedimento-de-apuracao-de-incidente-de-seguranca
+  titulo: procedimento de apuração de incidente de segurança
+  termos:
+  - procedimento de apuração de incidente de segurança
+  busca:
+  - procedimento de apuração de incidente de segurança
+  letra: P
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: procedimento de apuração de incidente de segurança
+    texto: procedimento instaurado pela ANPD para apurar a ocorrência de incidente de segurança que não tenha sido comunicado pelo controlador;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XVI
+    url: /notas/regimento-interno-anpd#res15-art-3
+- id: br-procedimento-de-comunicacao-de-incidente-de-seguranca
+  titulo: procedimento de comunicação de incidente de segurança
+  termos:
+  - procedimento de comunicação de incidente de segurança
+  busca:
+  - procedimento de comunicação de incidente de segurança
+  letra: P
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: procedimento de comunicação de incidente de segurança
+    texto: procedimento instaurado no âmbito da ANPD após o recebimento de comunicação de incidente de segurança;
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XVII
+    url: /notas/regimento-interno-anpd#res15-art-3-xvii
+- id: br-processo-de-comunicacao-de-incidente-de-seguranca
+  titulo: processo de comunicação de incidente de segurança
+  termos:
+  - processo de comunicação de incidente de segurança
+  busca:
+  - processo de comunicação de incidente de segurança
+  letra: P
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: processo de comunicação de incidente de segurança
+    texto: processo administrativo instaurado no âmbito da ANPD que abrange o procedimento de apuração incidente de segurança e o procedimento de comunicação de incidente de segurança; e
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XVIII
+    url: /notas/regimento-interno-anpd#res15-art-3-xviii
+- id: br-produto-ou-servico-de-monitoramento-infantil
+  titulo: produto ou serviço de monitoramento infantil
+  termos:
+  - produto ou serviço de monitoramento infantil
+  busca:
+  - produto ou serviço de monitoramento infantil
+  letra: P
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: produto ou serviço de monitoramento infantil
+    texto: produto ou serviço de tecnologia da informação destinado ao acompanhamento, por pais ou responsáveis legais, das ações executadas por crianças e adolescentes em ambientes digitais, a partir do registro ou da transmissão de imagens, de sons, de informações de localização, de atividade ou de outros dados;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, II
+    url: /notas/eca-digital#art-2-ii
+- id: br-produto-ou-servico-de-tecnologia-da-informacao
+  titulo: produto ou serviço de tecnologia da informação
+  termos:
+  - produto ou serviço de tecnologia da informação
+  busca:
+  - produto ou serviço de tecnologia da informação
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: produto ou serviço de tecnologia da informação
+    texto: produto ou serviço fornecido a distância, por meio eletrônico e provido em virtude de requisição individual, tais como aplicações de internet, programas de computador, *software*s, sistemas operacionais de terminais, lojas de aplicações de internet e jogos eletrônicos ou similares conectados à internet ou a outra rede de comunicações;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, I
+    url: /notas/eca-digital#art-2-i
+- id: ue-pseudonimizacao
+  titulo: Pseudonimização
+  termos:
+  - Pseudonimização
+  busca:
+  - Pseudonimização
+  letra: P
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Pseudonimização
+    texto: o tratamento de dados pessoais de forma que deixem de poder ser atribuídos a um titular de dados específico sem recorrer a informações suplementares, desde que essas informações suplementares sejam mantidas separadamente e sujeitas a medidas técnicas e organizativas para assegurar que os dados pessoais não possam ser atribuídos a uma pessoa singular identificada ou identificável;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 5
+    url: /notas/gdpr#art-4
+- id: br-ramo-de-atividade-empresarial
+  titulo: ramo de atividade empresarial
+  termos:
+  - ramo de atividade empresarial
+  busca:
+  - ramo de atividade empresarial
+  letra: R
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: ramo de atividade empresarial
+    texto: área de atuação de empresa, grupo ou conglomerado de empresas, conforme definido pela ANPD e verificado no caso concreto, podendo ser comprovada mediante objeto social, código de Classificação Nacional de Atividades Econômicas (CNAE), código de serviço diretamente relacionado, ou instrumentos congêneres;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, VII
+    url: /notas/regimento-interno-anpd#res4-art-2-vii
+- id: ue-recolha-de-um-sistema-de-ia
+  titulo: Recolha de um sistema de IA
+  termos:
+  - Recolha de um sistema de IA
+  busca:
+  - Recolha de um sistema de IA
+  letra: R
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Recolha de um sistema de IA
+    texto: qualquer medida destinada a obter a devolução ao prestador de um sistema de IA disponibilizado aos responsáveis pela implantação ou a colocar esse sistema fora de serviço ou a desativá-lo;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 16
+    url: /notas/ai-act#art-3
+- id: br-rede-social
+  titulo: rede social
+  termos:
+  - rede social
+  busca:
+  - rede social
+  - redes sociais
+  letra: R
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: rede social
+    texto: aplicação de internet que tem como principal finalidade o compartilhamento e a disseminação, pelos usuários, de opiniões e informações veiculadas por textos ou arquivos de imagens, sonoros ou audiovisuais, em uma única plataforma, por meio de contas conectadas ou acessíveis de forma articulada, permitida a conexão entre usuários;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, III
+    url: /notas/eca-digital#art-2-iii
+- id: br-registro-de-conexao
+  titulo: registro de conexão
+  termos:
+  - registro de conexão
+  busca:
+  - registro de conexão
+  letra: R
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: registro de conexão
+    texto: o conjunto de informações referentes à data e hora de início e término de uma conexão à internet, sua duração e o endereço IP utilizado pelo terminal para o envio e recebimento de pacotes de dados;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, VI
+    url: /notas/mci#art-5-vi
+- id: br-registros-de-acesso-a-aplicacoes-de-internet
+  titulo: registros de acesso a aplicações de internet
+  termos:
+  - registros de acesso a aplicações de internet
+  busca:
+  - registros de acesso a aplicações de internet
+  letra: R
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: registros de acesso a aplicações de internet
+    texto: 'o conjunto de informações referentes à data e hora de uso de uma determinada aplicação de internet a partir de um determinado endereço IP.
+
+
+      ~~IX - rede social: aplicação de internet cuja principal finalidade seja o compartilhamento e a disseminação, pelos usuários, de opiniões e informações, veiculados por textos ou arquivos de imagens, sonoros ou audiovisuais, em uma única plataforma, por meio de contas conectadas ou acessíveis de forma articulada, permitida a conexão entre usuários, e que seja provida por pessoa jurídica que exerça atividade com fins econômicos e de forma organizada, mediante a oferta de serviços ao público brasileiro com, no mínimo, dez milhões de usuários registrados no País; e~~ *(Incluído pela Medida Provisória nº 1.068, de 2021 — Rejeitada)*
+
+
+      ~~X - moderação em redes sociais: ações dos provedores de redes sociais de exclusão, suspensão ou bloqueio da divulgação de conteúdo gerado por usuário e ações de cancelamento ou suspensão, total ou parcial, dos serviços e das funcionalidades de conta ou perfil de usuário de redes sociais.~~ *(Incluído pela Medida Provisória nº 1.068, de 2021 — Rejeitada)*
+
+
+      ~~Parágrafo único. Não se incluem na definição de que trata o inciso IX do *caput* as aplicações de internet que se destinam à troca de mensagens instantâneas e às chamadas de voz, assim como aquelas que tenham como principal finalidade a viabilização do comércio de bens ou serviços.~~ *(Incluído pela Medida Provisória nº 1.068, de 2021 — Rejeitada)*'
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, VIII
+    url: /notas/mci#art-5-viii
+- id: ue-regras-vinculativas-aplicaveis-as-empresas
+  titulo: Regras vinculativas aplicáveis às empresas
+  termos:
+  - Regras vinculativas aplicáveis às empresas
+  busca:
+  - Regras vinculativas aplicáveis às empresas
+  letra: R
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Regras vinculativas aplicáveis às empresas
+    texto: as regras internas de proteção de dados pessoais aplicadas por um responsável pelo tratamento ou um subcontratante estabelecido no território de um Estado-Membro para as transferências ou conjuntos de transferências de dados pessoais para um responsável ou subcontratante num ou mais países terceiros, dentro de um grupo empresarial ou de um grupo de empresas envolvidas numa atividade económica conjunta;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 20
+    url: /notas/gdpr#art-4
+- id: br-reincidencia-especifica
+  titulo: reincidência específica
+  termos:
+  - reincidência específica
+  busca:
+  - reincidência específica
+  letra: R
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: reincidência específica
+    texto: repetição de infração pelo mesmo infrator ao mesmo dispositivo legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado do processo administrativo sancionador, até a data do cometimento da nova infração;
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, VIII
+    url: /notas/regimento-interno-anpd#res4-art-2-viii
+- id: br-reincidencia-generica
+  titulo: reincidência genérica
+  termos:
+  - reincidência genérica
+  busca:
+  - reincidência genérica
+  letra: R
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: reincidência genérica
+    texto: cometimento de infração pelo mesmo infrator, independentemente do dispositivo legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado do processo administrativo sancionador até a data do cometimento da nova infração, excluído o disposto no inciso VIII do caput; e
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, IX
+    url: /notas/regimento-interno-anpd#res4-art-2-ix
+- id: br-relatorio-de-impacto-a-protecao-de-dados-pessoais
+  titulo: relatório de impacto à proteção de dados pessoais
+  termos:
+  - relatório de impacto à proteção de dados pessoais
+  busca:
+  - relatório de impacto à proteção de dados pessoais
+  letra: R
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: relatório de impacto à proteção de dados pessoais
+    texto: documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação de risco;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XVII
+    url: /notas/lgpd#art-5-xvii
+- id: br-relatorio-de-tratamento-de-incidente
+  titulo: relatório de tratamento de incidente
+  termos:
+  - relatório de tratamento de incidente
+  busca:
+  - relatório de tratamento de incidente
+  letra: R
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: relatório de tratamento de incidente
+    texto: 'documento fornecido pelo controlador que contém cópias, em meio físico ou digital, de dados e informações relevantes para descrever o incidente e as providências adotadas para reverter ou mitigar os seus efeitos.
+
+
+      ### CAPÍTULO III — DA COMUNICAÇÃO DE INCIDENTE DE SEGURANÇA
+
+
+      #### Seção I — Dos Critérios para Comunicação de Incidente de Segurança'
+    jurisdicao: BR
+    norma: resolucao-anpd-15
+    norma_apelido: Res. CD/ANPD nº 15/2024 — Incidente de Segurança
+    norma_titulo: Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-15-de-24-de-abril-de-2024-556243024
+    dispositivo: art. 3º, XIX
+    url: /notas/regimento-interno-anpd#res15-art-3-xix
+- id: ue-representante
+  titulo: Representante
+  termos:
+  - Representante
+  busca:
+  - Representante
+  letra: R
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Representante
+    texto: uma pessoa singular ou coletiva estabelecida na União que, designada por escrito pelo responsável pelo tratamento ou subcontratante, nos termos do artigo 27.º, representa o responsável pelo tratamento ou o subcontratante no que se refere às suas obrigações respetivas nos termos do presente regulamento;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 17
+    url: /notas/gdpr#art-4
+- id: br-requerimento
+  titulo: requerimento
+  termos:
+  - requerimento
+  busca:
+  - requerimento
+  letra: R
+  tema: Fiscalização e sanções
+  jurisdicao: BR
+  definicoes:
+  - termo: requerimento
+    texto: 'conjunto de tipos de comunicação, compreendendo a petição de titular e a denúncia.
+
+
+      ### CAPÍTULO III — DOS DEVERES DOS AGENTES REGULADOS'
+    jurisdicao: BR
+    norma: resolucao-anpd-1
+    norma_apelido: Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções
+    norma_titulo: Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no1-2021
+    dispositivo: art. 4º, VI
+    url: /notas/regimento-interno-anpd#res1-art-4-vi
+- id: ue-responsavel-pela-implantacao
+  titulo: Responsável pela implantação
+  termos:
+  - Responsável pela implantação
+  busca:
+  - Responsável pela implantação
+  letra: R
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Responsável pela implantação
+    texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que utilize um sistema de IA sob a sua própria autoridade, salvo se o sistema de IA for utilizado no âmbito de uma atividade pessoal de caráter não profissional;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 4
+    url: /notas/ai-act#art-3
+- id: ue-responsavel-pelo-tratamento
+  titulo: Responsável pelo tratamento
+  termos:
+  - Responsável pelo tratamento
+  busca:
+  - Responsável pelo tratamento
+  letra: R
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Responsável pelo tratamento
+    texto: a pessoa singular ou coletiva, a autoridade pública, a agência ou outro organismo que, individualmente ou em conjunto com outras, determina as finalidades e os meios de tratamento de dados pessoais; sempre que as finalidades e os meios desse tratamento sejam determinados pelo direito da União ou de um Estado-Membro, o responsável pelo tratamento ou os critérios específicos aplicáveis à sua nomeação podem ser previstos pelo direito da União ou de um Estado-Membro;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 7
+    url: /notas/gdpr#art-4
+- id: ue-retirada-de-um-sistema-de-ia
+  titulo: Retirada de um sistema de IA
+  termos:
+  - Retirada de um sistema de IA
+  busca:
+  - Retirada de um sistema de IA
+  letra: R
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Retirada de um sistema de IA
+    texto: qualquer medida destinada a impedir a disponibilização no mercado de um sistema de IA presente na cadeia de distribuição;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 17
+    url: /notas/ai-act#art-3
+- id: ue-risco
+  titulo: Risco
+  termos:
+  - Risco
+  busca:
+  - Risco
+  letra: R
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Risco
+    texto: a combinação da probabilidade de ocorrência de danos com a gravidade desses danos;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 2
+    url: /notas/ai-act#art-3
+- id: ue-risco-sistemico
+  titulo: Risco sistémico
+  termos:
+  - Risco sistémico
+  busca:
+  - Risco sistémico
+  letra: R
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Risco sistémico
+    texto: um risco específico das capacidades de elevado impacto dos modelos de IA de finalidade geral que têm um impacto significativo no mercado da União devido ao seu alcance ou devido a efeitos negativos reais ou razoavelmente previsíveis na saúde pública, na segurança, na segurança pública, nos direitos fundamentais ou na sociedade no seu conjunto, que se pode propagar em escala ao longo da cadeia de valor;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 65
+    url: /notas/ai-act#art-3
+- id: br-servico-com-controle-editorial
+  titulo: serviço com controle editorial
+  termos:
+  - serviço com controle editorial
+  busca:
+  - serviço com controle editorial
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: serviço com controle editorial
+    texto: aplicação de internet que tem como finalidade principal a disponibilização de conteúdos previamente selecionados, sem o uso de meios automatizados de seleção, por agente econômico responsável;
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, IX
+    url: /notas/eca-digital#art-2-ix
+- id: ue-servico-para-a-ia
+  titulo: Serviço para a IA
+  termos:
+  - Serviço para a IA
+  busca:
+  - Serviço para a IA
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Serviço para a IA
+    texto: a atribuição da Comissão de contribuir para a aplicação, o acompanhamento e a supervisão dos sistemas de IA, dos modelos de IA de finalidade geral, e da governação da IA prevista na Decisão da Comissão de 24 de janeiro de 2024; as referências ao Serviço para a IA no presente regulamento devem ser entendidas como referências à Comissão;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 47
+    url: /notas/ai-act#art-3
+- id: ue-servicos-da-sociedade-da-informacao
+  titulo: Serviços da sociedade da informação
+  termos:
+  - Serviços da sociedade da informação
+  busca:
+  - Serviços da sociedade da informação
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Serviços da sociedade da informação
+    texto: um serviço definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535 do Parlamento Europeu e do Conselho;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 25
+    url: /notas/gdpr#art-4
+- id: br-sinal-de-idade
+  titulo: sinal de idade
+  termos:
+  - sinal de idade
+  busca:
+  - sinal de idade
+  letra: S
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: sinal de idade
+    texto: informação ou credencial indicativa que atesta a idade ou a faixa etária de um usuário aos fornecedores de produtos ou serviços de tecnologia da informação direcionados a crianças e adolescentes ou de acesso provável por eles, sem revelar dados pessoais adicionais; e
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, VI
+    url: /notas/eca-digital#dec12880-art-2-vi
+- id: ue-sistema-de-acompanhamento-pos-comercializacao
+  titulo: Sistema de acompanhamento pós-comercialização
+  termos:
+  - Sistema de acompanhamento pós-comercialização
+  busca:
+  - Sistema de acompanhamento pós-comercialização
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de acompanhamento pós-comercialização
+    texto: todas as atividades empreendidas pelos prestadores de sistemas de IA para recolher e analisar dados sobre a experiência adquirida com a utilização de sistemas de IA por eles colocados no mercado ou colocados em serviço, com vista a identificar a eventual necessidade de aplicar imediatamente as eventuais medidas corretivas ou preventivas necessárias;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 25
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-categorizacao-biometrica
+  titulo: Sistema de categorização biométrica
+  termos:
+  - Sistema de categorização biométrica
+  busca:
+  - Sistema de categorização biométrica
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de categorização biométrica
+    texto: um sistema de IA destinado a afetar pessoas singulares a categorias específicas com base nos seus dados biométricos, a menos que seja acessório a outro serviço comercial e estritamente necessário por razões técnicas objetivas;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 40
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-ia
+  titulo: Sistema de IA
+  termos:
+  - Sistema de IA
+  busca:
+  - Sistema de IA
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de IA
+    texto: um sistema baseado em máquinas concebido para funcionar com níveis de autonomia variáveis, e que pode apresentar capacidade de adaptação após a implantação e que, para objetivos explícitos ou implícitos, e com base nos dados de entrada que recebe, infere a forma de gerar resultados, tais como previsões, conteúdos, recomendações ou decisões que podem influenciar ambientes físicos ou virtuais;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 1
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-ia-de-finalidade-geral
+  titulo: Sistema de IA de finalidade geral
+  termos:
+  - Sistema de IA de finalidade geral
+  busca:
+  - Sistema de IA de finalidade geral
+  letra: S
+  tema: Crianças, adolescentes e idade
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de IA de finalidade geral
+    texto: um sistema de IA baseado num modelo de IA de finalidade geral, e com a capacidade de servir para diversas finalidades, tanto para utilização direta como para integração noutros sistemas de IA;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 66
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-identificacao-biometrica-a-distancia
+  titulo: Sistema de identificação biométrica à distância
+  termos:
+  - Sistema de identificação biométrica à distância
+  busca:
+  - Sistema de identificação biométrica à distância
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de identificação biométrica à distância
+    texto: um sistema de IA concebido para identificar pessoas singulares, sem a sua participação ativa, normalmente à distância, por meio da comparação dos dados biométricos de uma pessoa com os dados biométricos contidos numa base de dados de referência;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 41
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-identificacao-biometrica-a-distancia-em-diferido
+  titulo: Sistema de identificação biométrica à distância em diferido
+  termos:
+  - Sistema de identificação biométrica à distância em diferido
+  busca:
+  - Sistema de identificação biométrica à distância em diferido
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de identificação biométrica à distância em diferido
+    texto: um sistema de identificação biométrica à distância que não seja um sistema de identificação biométrica à distância em tempo real;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 43
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-identificacao-biometrica-a-distancia-em-tempo-real
+  titulo: Sistema de identificação biométrica à distância em tempo real
+  termos:
+  - Sistema de identificação biométrica à distância em tempo real
+  busca:
+  - Sistema de identificação biométrica à distância em tempo real
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de identificação biométrica à distância em tempo real
+    texto: um sistema de identificação biométrica à distância em que a recolha de dados biométricos, a comparação e a identificação ocorrem sem atraso significativo, que engloba não apenas a identificação instantânea, mas também a identificação com ligeiro atraso, a fim de evitar que as regras sejam contornadas;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 42
+    url: /notas/ai-act#art-3
+- id: ue-sistema-de-reconhecimento-de-emocoes
+  titulo: Sistema de reconhecimento de emoções
+  termos:
+  - Sistema de reconhecimento de emoções
+  busca:
+  - Sistema de reconhecimento de emoções
+  letra: S
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Sistema de reconhecimento de emoções
+    texto: um sistema de IA concebido para identificar ou inferir emoções ou intenções de pessoas singulares com base nos seus dados biométricos;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 39
+    url: /notas/ai-act#art-3
+- id: br-sistema-operacional
+  titulo: sistema operacional
+  termos:
+  - sistema operacional
+  busca:
+  - sistema operacional
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: sistema operacional
+    texto: '*software* de sistema que controla as funções básicas de um *hardware* ou *software* e permite que aplicações de internet, programas de computador, aplicativos ou outros *software*s sejam executados por meio dele;'
+    jurisdicao: BR
+    norma: eca-digital
+    norma_apelido: ECA Digital
+    norma_titulo: Lei nº 15.211, de 17 de setembro de 2025
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm
+    dispositivo: art. 2º, VII
+    url: /notas/eca-digital#art-2-vii
+- id: br-startups
+  titulo: startups
+  termos:
+  - startups
+  busca:
+  - startups
+  letra: S
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: startups
+    texto: organizações empresariais ou societárias, nascentes ou em operação recente, cuja atuação caracteriza-se pela inovação aplicada a modelo de negócios ou a produtos ou serviços ofertados, que atendam aos critérios previstos no Capítulo II da Lei Complementar nº 182, de 1º de junho de 2021; e
+    jurisdicao: BR
+    norma: resolucao-anpd-2
+    norma_apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
+    norma_titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
+    dispositivo: art. 2º, III
+    url: /notas/regimento-interno-anpd#res2-art-2-iii
+- id: ue-subcontratante
+  titulo: Subcontratante
+  termos:
+  - Subcontratante
+  busca:
+  - Subcontratante
+  letra: S
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - termo: Subcontratante
+    texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que trate os dados pessoais por conta do responsável pelo tratamento destes;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 8
+    url: /notas/gdpr#art-4
+- id: ue-terceiro
+  titulo: Terceiro
+  termos:
+  - Terceiro
+  busca:
+  - Terceiro
+  letra: T
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Terceiro
+    texto: a pessoa singular ou coletiva, a autoridade pública, o serviço ou organismo que não seja o titular dos dados, o responsável pelo tratamento, o subcontratante e as pessoas que, sob a autoridade direta do responsável pelo tratamento ou do subcontratante, estão autorizadas a tratar os dados pessoais;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 10
+    url: /notas/gdpr#art-4
+- id: br-terminal
+  titulo: terminal
+  termos:
+  - terminal
+  busca:
+  - terminal
+  letra: T
+  tema: Internet e plataformas
+  jurisdicao: BR
+  definicoes:
+  - termo: terminal
+    texto: o computador ou qualquer dispositivo que se conecte à internet;
+    jurisdicao: BR
+    norma: mci
+    norma_apelido: Marco Civil da Internet
+    norma_titulo: Lei nº 12.965, de 23 de abril de 2014
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm
+    dispositivo: art. 5º, II
+    url: /notas/mci#art-5-ii
+- id: ue-testagem-em-condicoes-reais
+  titulo: Testagem em condições reais
+  termos:
+  - Testagem em condições reais
+  busca:
+  - Testagem em condições reais
+  letra: T
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Testagem em condições reais
+    texto: a testagem temporária de um sistema de IA para a sua finalidade prevista em condições reais, fora de um laboratório ou de outro ambiente simulado, com vista a recolher dados fiáveis e sólidos e a avaliar e verificar a conformidade do sistema de IA com os requisitos do presente regulamento e não se considera como colocação do sistema de IA no mercado nem colocação do sistema de IA em serviço na aceção do presente regulamento, desde que estejam preenchidas todas as condições estabelecidas no artigo 57.º ou no artigo 60.º;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 57
+    url: /notas/ai-act#art-3
+- id: br-titular
+  titulo: titular
+  termos:
+  - titular
+  busca:
+  - titular
+  letra: T
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: titular
+    texto: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, V
+    url: /notas/lgpd#art-5-v
+  - termo: titular
+    texto: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento; e
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, VII
+    url: /notas/regimento-interno-anpd#res18-art-2-vii
+- id: br-transferencia
+  titulo: transferência
+  termos:
+  - transferência
+  busca:
+  - transferência
+  letra: T
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: transferência
+    texto: operação de tratamento por meio da qual um agente de tratamento transmite, compartilha ou disponibiliza acesso a dados pessoais a outro agente de tratamento;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, III
+    url: /notas/regimento-interno-anpd#res19-art-3-iii
+- id: br-transferencia-internacional-de-dados
+  titulo: transferência internacional de dados
+  termos:
+  - transferência internacional de dados
+  busca:
+  - transferência internacional de dados
+  letra: T
+  tema: Transferências internacionais
+  jurisdicao: BR
+  definicoes:
+  - termo: transferência internacional de dados
+    texto: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XV
+    url: /notas/lgpd#art-5-xv
+  - termo: transferência internacional de dados
+    texto: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro;
+    jurisdicao: BR
+    norma: resolucao-anpd-19
+    norma_apelido: Res. CD/ANPD nº 19/2024 — Transferência Internacional
+    norma_titulo: Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-19-de-23-de-agosto-de-2024
+    dispositivo: art. 3º, IV
+    url: /notas/regimento-interno-anpd#res19-art-3-iv
+- id: br-transito-em-julgado
+  titulo: trânsito em julgado
+  termos:
+  - trânsito em julgado
+  busca:
+  - trânsito em julgado
+  letra: T
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: trânsito em julgado
+    texto: 'atributo de decisão definitiva proferida em processo administrativo sancionador, no âmbito da ANPD, tornando-a imutável e indiscutível dentro do processo em que foi proferida.
+
+
+      ### CAPÍTULO II — DA APLICAÇÃO DAS SANÇÕES
+
+
+      #### Seção I — Das Sanções Administrativas'
+    jurisdicao: BR
+    norma: resolucao-anpd-4
+    norma_apelido: Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções
+    norma_titulo: Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-4-de-24-de-fevereiro-de-2023-466146077
+    dispositivo: art. 2º, X
+    url: /notas/regimento-interno-anpd#res4-art-2-x
+- id: ue-tratamento
+  titulo: Tratamento
+  termos:
+  - Tratamento
+  busca:
+  - Tratamento
+  letra: T
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Tratamento
+    texto: uma operação ou um conjunto de operações efetuadas sobre dados pessoais ou sobre conjuntos de dados pessoais, por meios automatizados ou não automatizados, tais como a recolha, o registo, a organização, a estruturação, a conservação, a adaptação ou alteração, a recuperação, a consulta, a utilização, a divulgação por transmissão, difusão ou qualquer outra forma de disponibilização, a comparação ou interconexão, a limitação, o apagamento ou a destruição;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 2
+    url: /notas/gdpr#art-4
+- id: br-tratamento-de-alto-risco
+  titulo: tratamento de alto risco
+  termos:
+  - tratamento de alto risco
+  busca:
+  - tratamento de alto risco
+  letra: T
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: tratamento de alto risco
+    texto: 'tratamento de dados pessoais que atender cumulativamente a pelo menos um critério geral e um critério específico, dentre os a seguir indicados:
+
+
+      I - critérios gerais: a) tratamento de dados pessoais em larga escala; ou b) tratamento de dados pessoais que possa afetar significativamente interesses e direitos fundamentais dos titulares;
+
+
+      II - critérios específicos:
+
+
+      a) uso de tecnologias emergentes ou inovadoras;
+
+
+      b) vigilância ou controle de zonas acessíveis ao público;
+
+
+      c) decisões tomadas unicamente com base em tratamento automatizado de dados pessoais, inclusive aquelas destinadas a definir o perfil pessoal, profissional, de saúde, de consumo e de crédito ou os aspectos da personalidade do titular; ou
+
+
+      d) utilização de dados pessoais sensíveis ou de dados pessoais de crianças, de adolescentes e de idosos.'
+    jurisdicao: BR
+    norma: resolucao-anpd-2
+    norma_apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
+    norma_titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
+    dispositivo: art. 4º
+    url: /notas/regimento-interno-anpd#res2-art-4
+- id: br-tratamento
+  titulo: tratamento de dados pessoais · tratamento
+  termos:
+  - tratamento de dados pessoais
+  - tratamento
+  busca:
+  - tratamento de dados pessoais
+  - tratamento
+  letra: T
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: tratamento de dados pessoais
+    texto: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração.
+    jurisdicao: BR
+    norma: decreto-8771
+    norma_apelido: Dec. nº 8.771/2016 — Regulamento do Marco Civil
+    norma_titulo: Decreto nº 8.771, de 11 de maio de 2016
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8771.htm
+    dispositivo: art. 14º, II
+    url: /notas/mci#dec8771-art-14-ii
+  - termo: tratamento
+    texto: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, X
+    url: /notas/lgpd#art-5-x
+  - termo: tratamento
+    texto: 'toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração.
+
+
+      ### CAPÍTULO II — DOS AGENTES DE TRATAMENTO
+
+
+      #### Seção I — Da Indicação do Encarregado'
+    jurisdicao: BR
+    norma: resolucao-anpd-18
+    norma_apelido: Res. CD/ANPD nº 18/2024 — Encarregado de Dados
+    norma_titulo: Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
+    fonte: https://www.in.gov.br/en/web/dou/-/resolucao-cd/anpd-n-18-de-16-de-julho-de-2024-572632074
+    dispositivo: art. 2º, VIII
+    url: /notas/regimento-interno-anpd#res18-art-2-viii
+- id: ue-tratamento-transfronteirico
+  titulo: Tratamento transfronteiriço
+  termos:
+  - Tratamento transfronteiriço
+  busca:
+  - Tratamento transfronteiriço
+  letra: T
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Tratamento transfronteiriço
+    texto: ':
+
+
+      - a) O tratamento de dados pessoais que ocorre no contexto das atividades de estabelecimentos em mais do que um Estado-Membro de um responsável pelo tratamento ou um subcontratante na União, caso o responsável pelo tratamento ou o subcontratante esteja estabelecido em mais do que um Estado-Membro; ou
+
+
+      - b) O tratamento de dados pessoais que ocorre no contexto das atividades de um único estabelecimento de um responsável pelo tratamento ou de um subcontratante, mas que afeta substancialmente, ou é suscetível de afetar substancialmente, titulares de dados em mais do que um Estados-Membro;'
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 23
+    url: /notas/gdpr#art-4
+- id: br-uso-compartilhado-de-dados
+  titulo: uso compartilhado de dados
+  termos:
+  - uso compartilhado de dados
+  busca:
+  - uso compartilhado de dados
+  letra: U
+  tema: Dados pessoais e tratamento
+  jurisdicao: BR
+  definicoes:
+  - termo: uso compartilhado de dados
+    texto: comunicação, difusão, transferência internacional, interconexão de dados pessoais ou tratamento compartilhado de bancos de dados pessoais por órgãos e entidades públicos no cumprimento de suas competências legais, ou entre esses e entes privados, reciprocamente, com autorização específica, para uma ou mais modalidades de tratamento permitidas por esses entes públicos, ou entre entes privados;
+    jurisdicao: BR
+    norma: lgpd
+    norma_apelido: LGPD
+    norma_titulo: Lei nº 13.709, de 14 de agosto de 2018
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm
+    dispositivo: art. 5º, XVI
+    url: /notas/lgpd#art-5-xvi
+- id: ue-utilizacao-indevida-razoavelmente-previsivel
+  titulo: Utilização indevida razoavelmente previsível
+  termos:
+  - Utilização indevida razoavelmente previsível
+  busca:
+  - Utilização indevida razoavelmente previsível
+  letra: U
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - termo: Utilização indevida razoavelmente previsível
+    texto: a utilização de um sistema de IA de uma forma não conforme com a sua finalidade prevista, mas que pode resultar de um comportamento humano razoavelmente previsível ou de uma interação razoavelmente previsível com outros sistemas, incluindo outros sistemas de IA;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 13
+    url: /notas/ai-act#art-3
+- id: ue-verificacao-biometrica
+  titulo: Verificação biométrica
+  termos:
+  - Verificação biométrica
+  busca:
+  - Verificação biométrica
+  letra: V
+  tema: Inteligência artificial
+  jurisdicao: UE
+  definicoes:
+  - termo: Verificação biométrica
+    texto: a verificação automatizada, «um para um», incluindo a autenticação, da identidade de pessoas singulares por meio da comparação dos seus dados biométricos com dados biométricos previamente facultados;
+    jurisdicao: UE
+    norma: ai-act-consolidado
+    norma_apelido: AI Act consolidado (não oficial)
+    norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+    dispositivo: art. 3.º, ponto 36
+    url: /notas/ai-act#art-3
+- id: br-verificacao-de-idade
+  titulo: verificação de idade
+  termos:
+  - verificação de idade
+  busca:
+  - verificação de idade
+  letra: V
+  tema: Crianças, adolescentes e idade
+  jurisdicao: BR
+  definicoes:
+  - termo: verificação de idade
+    texto: procedimento específico de aferição de idade de alto grau de confiabilidade, nos termos estabelecidos pela ANPD, baseado na conferência da veracidade do atributo etário, com a finalidade de comprovar a exatidão da idade declarada ou a faixa etária, mediante o emprego de mecanismos técnicos ou documentais;
+    jurisdicao: BR
+    norma: decreto-12880
+    norma_apelido: Dec. nº 12.880/2026 — Regulamento do ECA Digital
+    norma_titulo: Decreto nº 12.880, de 18 de março de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/D12880.htm
+    dispositivo: art. 2º, V
+    url: /notas/eca-digital#dec12880-art-2-v
+- id: ue-violacao-de-dados-pessoais
+  titulo: Violação de dados pessoais
+  termos:
+  - Violação de dados pessoais
+  busca:
+  - Violação de dados pessoais
+  letra: V
+  tema: Dados pessoais e tratamento
+  jurisdicao: UE
+  definicoes:
+  - termo: Violação de dados pessoais
+    texto: uma violação da segurança que provoque, de modo acidental ou ilícito, a destruição, a perda, a alteração, a divulgação ou o acesso, não autorizados, a dados pessoais transmitidos, conservados ou sujeitos a qualquer outro tipo de tratamento;
+    jurisdicao: UE
+    norma: gdpr
+    norma_apelido: General Data Protection Regulation (GDPR) da UE
+    norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
+    fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
+    dispositivo: art. 4.º, ponto 12
+    url: /notas/gdpr#art-4
+- id: br-violencia-contra-mulheres-em-ambiente-digital
+  titulo: violência contra mulheres em ambiente digital
+  termos:
+  - violência contra mulheres em ambiente digital
+  busca:
+  - violência contra mulheres em ambiente digital
+  letra: V
+  tema: Segurança, incidentes e violência
+  jurisdicao: BR
+  definicoes:
+  - termo: violência contra mulheres em ambiente digital
+    texto: 'crimes ou atos ilícitos contra mulheres, em razão da condição do sexo feminino, consistente em ato, conduta ou omissão que cause morte, dano ou sofrimento físico, sexual, psicológico, político ou econômico, inclusive dano patrimonial, em qualquer esfera de suas vidas, cometido, instigado, facilitado ou agravado, total ou parcialmente, pelo uso de tecnologias digitais, tais como:
+
+
+      a) violência doméstica e familiar contra a mulher, inclusive violência psicológica, nos termos do disposto no art. 7º, *caput*, inciso II, da Lei nº 11.340, de 7 de agosto de 2006, praticada por meio de mensagem, publicação, perseguição digital, vigilância *on-line*, isolamento ou qualquer outra forma de controle tecnológico;
+
+
+      b) violência política contra a mulher praticada em ambiente digital, nos termos do disposto no art. 326-B da Lei nº 4.737, de 15 de julho de 1965 – Código Eleitoral, que inclua assédio, constrangimento, humilhação, perseguição ou ameaça a candidatas ou titulares de mandato eletivo;
+
+
+      c) ameaça qualificada contra a mulher em razão da condição do sexo feminino, nos termos do disposto no art. 147, § 1º, do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal;
+
+
+      d) perseguição da mulher realizada por meios digitais, nos termos do disposto no art. 147-A do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, inclusive por monitoramento de redes sociais, envio reiterado de mensagens e uso de tecnologias de rastreamento;
+
+
+      e) violência psicológica contra a mulher, nos termos do disposto no art. 147-B do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, inclusive quando praticada mediante uso de inteligência artificial ou recurso tecnológico que altere imagem ou som da vítima;
+
+
+      f) divulgação de cena de sexo, nudez ou ato libidinoso, sem consentimento, por meio da *internet*, nos termos do disposto no art. 218-C do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal;
+
+
+      g) registro não autorizado de cena de nudez ou ato sexual ou libidinoso de caráter íntimo e privado, nos termos do disposto no art. 216-B do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal, inclusive mediante montagem ou uso de inteligência artificial;
+
+
+      h) importunação sexual por meio digital, nos termos do disposto no art. 215-A do Decreto-Lei nº 2.848, de 7 de dezembro de 1940 – Código Penal; e
+
+
+      i) crimes praticados por meio da *internet* que difundam conteúdo que propague ódio ou aversão às mulheres, nos termos do disposto no art. 1º, caput, inciso VII, da Lei nº 10.446, de 8 de maio de 2002.
+
+
+      ## CAPÍTULO II — DA PROTEÇÃO DE MULHERES NA PROVISÃO DE APLICAÇÕES DE INTERNET
+
+
+      ### Seção I — Do dever de cuidado nos casos de crime contra a mulher ou grupo de mulheres'
+    jurisdicao: BR
+    norma: decreto-12976
+    norma_apelido: Dec. nº 12.976/2026 — Proteção de Mulheres na Internet
+    norma_titulo: Decreto nº 12.976, de 20 de maio de 2026
+    fonte: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12976.htm
+    dispositivo: art. 3º, II
+    url: /notas/mci#dec12976-art-3-ii
+- id: br-zonas-acessiveis-ao-publico
+  titulo: zonas acessíveis ao público
+  termos:
+  - zonas acessíveis ao público
+  busca:
+  - zonas acessíveis ao público
+  letra: Z
+  tema: Outros conceitos normativos
+  jurisdicao: BR
+  definicoes:
+  - termo: zonas acessíveis ao público
+    texto: espaços abertos ao público, como praças, centros comerciais, vias públicas, estações de ônibus, de metrô e de trem, aeroportos, portos, bibliotecas públicas, dentre outros.
+    jurisdicao: BR
+    norma: resolucao-anpd-2
+    norma_apelido: Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte
+    norma_titulo: Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
+    fonte: https://www.gov.br/anpd/pt-br/acesso-a-informacao/institucional/atos-normativos/regulamentacoes_anpd/resolucao-cd-anpd-no-2-de-27-de-janeiro-de-2022
+    dispositivo: art. 2º, IV
+    url: /notas/regimento-interno-anpd#res2-art-2-iv
