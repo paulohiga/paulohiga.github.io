@@ -1,0 +1,138 @@
+# Definições do ECA Digital (Lei nº 15.211/2025), reunidas em
+# /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
+# (docs/notas.md). Confira com
+# `python3 scripts/conferir_definicoes.py eca-digital`.
+
+- termo: Produto ou serviço de tecnologia da informação
+  slug: produto-ou-servico-de-ti
+  tema: rede
+  bases: [{ texto: "art. 2º, I", ancora: art-2-i }]
+  aliases: [produtos e serviços de tecnologia da informação]
+  definicao: >-
+    o fornecido a distância, por meio eletrônico, mediante requisição individual
+    — aplicações de internet, _softwares_, sistemas operacionais de terminais,
+    lojas de aplicações e jogos eletrônicos conectados à internet ou a outra
+    rede.
+
+- termo: Produto ou serviço de monitoramento infantil
+  slug: produto-ou-servico-de-monitoramento-infantil
+  tema: infancia
+  bases: [{ texto: "art. 2º, II", ancora: art-2-ii }]
+  aliases: [produtos de monitoramento infantil, monitoramento infantil]
+  definicao: >-
+    o destinado ao acompanhamento, por pais ou responsáveis legais, das ações de
+    crianças e adolescentes em ambientes digitais, via registro ou transmissão
+    de imagens, sons, localização, atividade ou outros dados.
+
+- termo: Rede social
+  slug: rede-social
+  tema: rede
+  bases: [{ texto: "art. 2º, III", ancora: art-2-iii }]
+  aliases: [redes sociais]
+  definicao: >-
+    aplicação de internet cuja finalidade principal é o compartilhamento e a
+    disseminação, pelos usuários, de opiniões e informações (texto, imagem, som
+    ou audiovisual) em uma única plataforma, por meio de contas conectadas ou
+    acessíveis de forma articulada, com conexão permitida entre usuários.
+  nota: >-
+    É a única definição legal de rede social no direito brasileiro de internet:
+    o Marco Civil não a tem — as que seriam os incisos IX e X do art. 5º dele só
+    existiram na redação da MPV nº 1.068/2021, rejeitada.
+
+- termo: Loja de aplicações de internet
+  slug: loja-de-aplicacoes
+  tema: rede
+  bases: [{ texto: "art. 2º, VI", ancora: art-2-vi }]
+  aliases: [lojas de aplicações, loja de aplicações]
+  definicao: >-
+    aplicação que distribui e facilita o _download_, para usuários de terminais,
+    de outras aplicações disponibilizadas por meio de sua plataforma.
+
+- termo: Sistema operacional
+  slug: sistema-operacional
+  tema: rede
+  bases: [{ texto: "art. 2º, VII", ancora: art-2-vii }]
+  aliases: [sistemas operacionais]
+  definicao: >-
+    _software_ de sistema que controla as funções básicas de um _hardware_ ou
+    _software_ e permite a execução de outras aplicações, programas ou
+    _softwares_.
+
+- termo: Serviço com controle editorial
+  slug: servico-com-controle-editorial
+  tema: rede
+  bases: [{ texto: "art. 2º, IX", ancora: art-2-ix }]
+  aliases: [serviços com controle editorial]
+  definicao: >-
+    aplicação cuja finalidade principal é disponibilizar conteúdos previamente
+    selecionados por agente econômico responsável, sem meios automatizados de
+    seleção.
+
+- termo: Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+  slug: autoridade-administrativa-autonoma
+  tema: sujeitos
+  bases: [{ texto: "art. 2º, X", ancora: art-2-x }]
+  aliases: [autoridade administrativa autônoma]
+  definicao: >-
+    entidade pública criada por lei, responsável por aplicar e fiscalizar a Lei
+    e por editar regulamentos, observado o Capítulo I da Lei nº 13.848/2019 no
+    processo decisório.
+  nota: "Papel atribuído à **ANPD** pelo Decreto nº 12.622/2025."
+
+- termo: Criança e adolescente
+  slug: crianca-e-adolescente
+  tema: infancia
+  bases: [{ texto: "art. 2º, § 1º", ancora: art-2-p1 }]
+  aliases: [crianças e adolescentes]
+  definicao: >-
+    a lei não os redefine: manda aplicar os conceitos do art. 2º do ECA (Lei nº
+    8.069/1990) — criança até 12 anos incompletos, adolescente dos 12 aos 18 —,
+    e junto com eles os de **internet**, **aplicações de internet** e
+    **terminal** do [art. 5º do Marco Civil da Internet](/notas/mci#art-5).
+
+- termo: Caixa de recompensa
+  slug: caixa-de-recompensa
+  tema: infancia
+  bases: [{ texto: "art. 2º, IV", ancora: art-2-iv }]
+  aliases: [caixas de recompensa]
+  definicao: >-
+    funcionalidade de jogos eletrônicos que permite adquirir, mediante
+    pagamento, itens virtuais ou vantagens aleatórias, sem conhecimento prévio
+    do conteúdo ou garantia de utilidade.
+
+- termo: Perfilamento
+  slug: perfilamento
+  tema: operacoes
+  bases: [{ texto: "art. 2º, V", ancora: art-2-v }]
+  definicao: >-
+    tratamento de dados pessoais, automatizado ou não, para classificar uma
+    pessoa em grupo ou perfil e inferir comportamento, situação econômica,
+    saúde, preferências, interesses, localização, deslocamentos, posições
+    políticas ou características assemelhadas.
+
+- termo: Mecanismo de supervisão parental
+  slug: mecanismo-de-supervisao-parental
+  tema: infancia
+  bases: [{ texto: "art. 2º, VIII", ancora: art-2-viii }]
+  aliases: [mecanismos de supervisão parental, supervisão parental]
+  definicao: >-
+    configurações, ferramentas e salvaguardas que permitem a pais ou
+    responsáveis supervisionar, limitar e gerenciar o uso do serviço, o conteúdo
+    acessado e o tratamento de dados pessoais.
+
+- termo: Monetização
+  slug: monetizacao
+  tema: rede
+  bases: [{ texto: "art. 2º, XI", ancora: art-2-xi }]
+  definicao: >-
+    remuneração, direta ou indireta, de usuário pela publicação ou distribuição
+    de conteúdo, incluída receita por visualizações, assinaturas, doações,
+    patrocínios, publicidade ou venda de produtos e serviços vinculados.
+
+- termo: Impulsionamento
+  slug: impulsionamento
+  tema: rede
+  bases: [{ texto: "art. 2º, XII", ancora: art-2-xii }]
+  definicao: >-
+    ampliação artificial do alcance, da visibilidade ou da priorização de
+    conteúdo mediante pagamento pecuniário ou valor estimável em dinheiro.

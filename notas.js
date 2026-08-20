@@ -36,6 +36,119 @@
     }
     marcarLinksExternos();
 
+    /* --- Comparação sem acento e sem caixa. Quem filtra por "definicoes"
+       espera achar "Definições", e o teclado do celular não põe acento
+       sozinho. Fica aqui em cima porque serve às três listas filtráveis da
+       seção: os dois sumários das notas e a página de definições. --- */
+    function normalizar(texto) {
+        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    /* --- Página /notas/definicoes ---
+       A lista nasce em ordem alfabética (é a ordem do DOM, e a que sobra sem
+       JavaScript). Aqui ela ganha as duas coisas que dependem de script: a
+       troca para a organização por tema e o filtro.
+
+       "Por tema" **move** os verbetes para as seções vazias que o layout já
+       deixou prontas, em vez de reordená-los com `order` no CSS: quem usa
+       leitor de tela lê o DOM, e uma lista reordenada só visualmente seria
+       lida em ordem alfabética com títulos de tema espalhados no meio. Voltar
+       para A–Z devolve cada verbete à seção da letra dele — e como os verbetes
+       são percorridos sempre na ordem original, a alfabética se reconstrói
+       sozinha, dentro do tema e fora dele. --- */
+    var listaDefinicoes = document.getElementById('lista-definicoes');
+    if (listaDefinicoes) {
+        var barraDefinicoes = document.querySelector('.definicoes__barra');
+        var letrasDefinicoes = document.querySelector('.definicoes__letras');
+        var vazioDefinicoes = listaDefinicoes.querySelector('.definicoes__vazio');
+        var campoDefinicoes = document.getElementById('definicoes-filtro');
+        var botoesOrganizar = Array.prototype.slice.call(
+            document.querySelectorAll('.definicoes__organizar button'));
+        // Ordem original = ordem alfabética. É a referência das duas
+        // montagens, e por isso é lida uma vez só, antes de qualquer mexida.
+        var verbetes = Array.prototype.slice.call(listaDefinicoes.querySelectorAll('.verbete'));
+        var gruposPorLetra = Array.prototype.slice.call(
+            listaDefinicoes.querySelectorAll('.definicoes__grupo:not(.definicoes__grupo--tema)'));
+        var gruposPorTema = Array.prototype.slice.call(
+            listaDefinicoes.querySelectorAll('.definicoes__grupo--tema'));
+        var organizacao = 'alfabetica';
+
+        /* A barra fica presa no topo, e é ela que o salto por âncora precisa
+           descontar. A altura muda com a largura da janela (a linha de letras
+           quebra) e com a chegada da fonte, então é medida, não escrita no
+           CSS. */
+        function medirBarra() {
+            if (!barraDefinicoes) return;
+            document.documentElement.style.setProperty(
+                '--definicoes-barra', barraDefinicoes.offsetHeight + 'px');
+        }
+        medirBarra();
+        window.addEventListener('resize', medirBarra);
+
+        function grupoDe(verbete) {
+            var chave = organizacao === 'tema' ? 'tema' : 'inicial';
+            var grupos = organizacao === 'tema' ? gruposPorTema : gruposPorLetra;
+            for (var i = 0; i < grupos.length; i++) {
+                if (grupos[i].dataset[chave] === verbete.dataset[chave]) return grupos[i];
+            }
+            return null;
+        }
+
+        function organizar(modo) {
+            organizacao = modo === 'tema' ? 'tema' : 'alfabetica';
+            verbetes.forEach(function (verbete) {
+                var grupo = grupoDe(verbete);
+                if (grupo) grupo.querySelector('.definicoes__itens').appendChild(verbete);
+            });
+            gruposPorLetra.forEach(function (grupo) { grupo.hidden = organizacao === 'tema'; });
+            gruposPorTema.forEach(function (grupo) { grupo.hidden = organizacao !== 'tema'; });
+            // A barra de letras é âncora para as seções por letra: sem elas na
+            // tela, ela apontaria para o nada.
+            if (letrasDefinicoes) letrasDefinicoes.hidden = organizacao === 'tema';
+            botoesOrganizar.forEach(function (botao) {
+                botao.setAttribute('aria-pressed', String(botao.dataset.organizacao === organizacao));
+            });
+            filtrar(campoDefinicoes ? campoDefinicoes.value : '');
+            medirBarra();
+        }
+
+        function filtrar(termo) {
+            var busca = normalizar(termo).trim();
+            var achou = 0;
+            verbetes.forEach(function (verbete) {
+                var cabe = !busca || verbete.dataset.busca.indexOf(busca) !== -1;
+                verbete.hidden = !cabe;
+                if (cabe) achou++;
+            });
+            // Título de grupo sem nada embaixo é ruído: some junto.
+            var grupos = organizacao === 'tema' ? gruposPorTema : gruposPorLetra;
+            grupos.forEach(function (grupo) {
+                grupo.hidden = !grupo.querySelector('.verbete:not([hidden])');
+            });
+            if (vazioDefinicoes) vazioDefinicoes.hidden = achou > 0;
+        }
+
+        botoesOrganizar.forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                organizar(botao.dataset.organizacao);
+            });
+        });
+
+        if (campoDefinicoes) {
+            campoDefinicoes.addEventListener('input', function () {
+                filtrar(campoDefinicoes.value);
+            });
+            campoDefinicoes.addEventListener('keydown', function (evento) {
+                if (evento.key !== 'Escape' || !campoDefinicoes.value) return;
+                // Esc com texto escrito limpa o filtro e para por aí — não é
+                // gesto de sair do campo (ver o Esc global das notas).
+                evento.preventDefault();
+                campoDefinicoes.value = '';
+                filtrar('');
+            });
+        }
+    }
+
     /* --- Menu do título: alternar para outra nota sem passar pela página
        principal. A lista de links já vem pronta (e visível) no HTML — funciona
        como navegação normal sem JavaScript. Com JavaScript, vira um menu
@@ -548,12 +661,6 @@
        reconstruído sempre que a norma exibida muda (troca no seletor, ou
        chegada de uma norma extra buscada por fetch). Cada um tem um campo de
        filtro e marca a seção em que o leitor está. */
-
-    // Comparação sem acento e sem caixa: quem filtra por "principios" espera
-    // achar "Princípios", e o teclado do celular não põe acento sozinho.
-    function normalizar(texto) {
-        return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
 
     /* Rótulo de um artigo no sumário: o marcador ("Art. 6º", "Artigo 6.º") e uma
        frase que diz do que ele trata.
@@ -1241,6 +1348,326 @@
     if (duasColunas.addEventListener) duasColunas.addEventListener('change', atualizarProgressos);
     atualizarProgressos();
 
+    /* --- Termos definidos: marcação no comentário e balão com a definição ---
+       As definições saíram do começo das notas e passaram a viver num lugar só
+       (`_data/definicoes/verbetes/`, publicado em /notas/definicoes). Para que
+       sair dali não signifique ficar longe, o termo continua a um clique de
+       onde ele é usado: o comentário marca o **primeiro uso de cada termo em
+       cada seção** e abre um balão com a definição, a base legal e o link para
+       a página.
+
+       Três decisões que a marcação carrega:
+
+       - **Só o primeiro uso por seção.** "Tratamento" aparece duzentas vezes
+         na nota da LGPD; marcar todas transformaria o texto em confete. Uma
+         marca por seção mantém o termo à mão em qualquer ponto da leitura sem
+         competir com os links azuis para os dispositivos.
+       - **A marca é um link de verdade** (`/notas/definicoes#v-...`), e não um
+         botão: Ctrl+clique abre a página numa aba, e o clique do meio também.
+         Sem JavaScript não há marca nenhuma — a página de definições continua
+         linkada no rodapé de cada nota e no índice de /notas.
+       - **A definição é buscada, não embutida.** Um fetch na primeira abertura,
+         cacheado na aba e reaproveitado de nota para nota, em vez de 97
+         verbetes no HTML de toda nota. Mesma escolha do painel "Lei seca" para
+         as normas que não são a principal. --- */
+    // Letras (com os acentos do latim estendido) e algarismos: é o que não
+    // pode encostar num termo para ele contar como palavra inteira. O `\b`
+    // do JavaScript é ASCII e cortaria "aferição" no meio.
+    var LETRA_DE_PALAVRA = 'A-Za-z\u00C0-\u024F0-9';
+    var URL_DEFINICOES = '/notas/definicoes';
+    var indiceVerbetes = document.getElementById('nota-verbetes');
+    var balaoAberto = null;
+    var marcaDoBalao = null;
+    var definicoesBuscadas = null;
+
+    function caminhoDaUrl(url) {
+        return url.replace(/\.html$/, '').replace(/\/+$/, '');
+    }
+
+    function pedirDefinicoes() {
+        if (!definicoesBuscadas) {
+            definicoesBuscadas = fetch('/notas/fragmentos/definicoes.html').then(function (resposta) {
+                if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+                return resposta.text();
+            }).then(function (html) {
+                var caixa = document.createElement('div');
+                caixa.innerHTML = html;
+                return caixa;
+            });
+        }
+        return definicoesBuscadas;
+    }
+
+    function fecharBalao(devolverFoco) {
+        if (!balaoAberto) return false;
+        var voltarPara = marcaDoBalao;
+        var dentro = balaoAberto.contains(document.activeElement);
+        balaoAberto.remove();
+        balaoAberto = null;
+        marcaDoBalao = null;
+        if (voltarPara) voltarPara.setAttribute('aria-expanded', 'false');
+        // Só devolve o foco se ele estava no balão: fechado por um clique lá
+        // fora, o leitor já escolheu onde quer estar.
+        if (voltarPara && (devolverFoco || dentro)) voltarPara.focus();
+        return true;
+    }
+
+    /* O balão é `position: fixed` porque o comentário é um container de
+       rolagem próprio na tela dividida — preso ao fluxo, sairia cortado na
+       borda do painel. Abre embaixo do termo; se não couber, em cima; se não
+       couber em lugar nenhum, encostado na borda de baixo. */
+    function posicionarBalao(balao, marca) {
+        var caixa = marca.getBoundingClientRect();
+        var janelaW = document.documentElement.clientWidth;
+        var janelaH = document.documentElement.clientHeight;
+        var largura = balao.offsetWidth;
+        var altura = balao.offsetHeight;
+        var esquerda = Math.min(Math.max(8, caixa.left), Math.max(8, janelaW - largura - 8));
+        var topo = caixa.bottom + 8;
+        if (topo + altura > janelaH - 8) {
+            var acima = caixa.top - 8 - altura;
+            topo = acima >= 8 ? acima : Math.max(8, janelaH - altura - 8);
+        }
+        balao.style.left = Math.round(esquerda) + 'px';
+        balao.style.top = Math.round(topo) + 'px';
+    }
+
+    function montarBalao(marca, conteudo, termo) {
+        fecharBalao(false);
+        var balao = document.createElement('div');
+        balao.className = 'verbete-balao';
+        balao.setAttribute('role', 'dialog');
+        balao.setAttribute('aria-label', 'Definição de ' + termo);
+        balao.tabIndex = -1;
+
+        var fechar = document.createElement('button');
+        fechar.type = 'button';
+        fechar.className = 'verbete-balao__fechar';
+        fechar.setAttribute('aria-label', 'Fechar definição');
+        fechar.innerHTML = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+            'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M18 6 6 18M6 6l12 12"/></svg>';
+        fechar.addEventListener('click', function () { fecharBalao(true); });
+        balao.appendChild(fechar);
+        balao.appendChild(conteudo);
+
+        var todas = document.createElement('a');
+        todas.className = 'verbete-balao__todas';
+        todas.href = marca.getAttribute('href');
+        todas.textContent = 'Ver em Definições legais';
+        balao.appendChild(todas);
+
+        document.body.appendChild(balao);
+        marcarLinksExternos(balao);
+        posicionarBalao(balao, marca);
+        balaoAberto = balao;
+        marcaDoBalao = marca;
+        marca.setAttribute('aria-expanded', 'true');
+        balao.focus({ preventScroll: true });
+    }
+
+    function corpoDoVerbete(verbete) {
+        var copia = verbete.cloneNode(true);
+        // O id sai: ele já existe na página de definições, e duplicá-lo aqui
+        // faria `#v-...` resolver para o balão em vez de para a lista.
+        copia.removeAttribute('id');
+        /* A etiqueta da norma vira texto: no balão ela sempre apontaria para a
+           própria nota em que o leitor está — um link que recarrega a página
+           para chegar onde ele já estava. */
+        var etiqueta = copia.querySelector('.verbete__norma');
+        if (etiqueta) {
+            var nome = document.createElement('span');
+            nome.className = etiqueta.className;
+            nome.textContent = etiqueta.textContent;
+            etiqueta.parentNode.replaceChild(nome, etiqueta);
+        }
+        return copia;
+    }
+
+    function abrirBalao(marca) {
+        var id = marca.dataset.verbete;
+        var termo = marca.textContent;
+        pedirDefinicoes().then(function (caixa) {
+            var verbete = caixa.querySelector('[id="' + id + '"]');
+            if (!verbete) {
+                // Verbete que saiu do dado: o link para a página continua
+                // valendo, e é para lá que o leitor vai.
+                location.href = marca.getAttribute('href');
+                return;
+            }
+            montarBalao(marca, corpoDoVerbete(verbete), termo);
+        }).catch(function () {
+            definicoesBuscadas = null;
+            var aviso = document.createElement('p');
+            aviso.className = 'verbete__definicao';
+            aviso.textContent = 'Não foi possível carregar a definição agora.';
+            montarBalao(marca, aviso, termo);
+        });
+    }
+
+    var verbetesDaNota = [];
+    if (indiceVerbetes) {
+        try {
+            verbetesDaNota = JSON.parse(indiceVerbetes.textContent) || [];
+        } catch (erro) {
+            verbetesDaNota = [];
+        }
+    }
+
+    if (verbetesDaNota.length) {
+        /* Uma expressão regular só, com todas as formas de todos os termos,
+           da mais longa para a mais curta — assim "dado pessoal sensível" ganha
+           de "dado pessoal" no mesmo ponto do texto. As bordas são explícitas
+           (e não `\b`, que é ASCII e não conhece "ção"), e a da esquerda é
+           capturada em vez de olhada para trás: `lookbehind` ainda não é
+           universal. */
+        var formaParaId = {};
+        var formas = [];
+        verbetesDaNota.forEach(function (verbete) {
+            for (var i = 1; i < verbete.length; i++) {
+                var forma = verbete[i];
+                var chave = forma.toLowerCase();
+                if (formaParaId[chave]) continue;
+                formaParaId[chave] = verbete[0];
+                formas.push(forma);
+            }
+        });
+        formas.sort(function (a, b) { return b.length - a.length; });
+        var escapadas = formas.map(function (forma) {
+            return forma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        });
+        var regexTermos = new RegExp(
+            '(^|[^' + LETRA_DE_PALAVRA + '_-])(' + escapadas.join('|') + ')(?![' + LETRA_DE_PALAVRA + '_-])',
+            'gi');
+
+        // Onde marcar seria enganoso: dentro de outro link (o destino do
+        // clique seria outro), no código, no aviso de IA e nos títulos, que são
+        // navegação — o sumário lê o texto deles.
+        var FORA_DA_MARCACAO = 'a, code, pre, abbr, h1, h2, h3, h4, h5, h6, .nota-aviso';
+
+        function marcarNoTexto(no, jaMarcados) {
+            var texto = no.nodeValue;
+            var pedacos = null;
+            var ultimo = 0;
+            var achado;
+            regexTermos.lastIndex = 0;
+            while ((achado = regexTermos.exec(texto))) {
+                var forma = achado[2];
+                var id = formaParaId[forma.toLowerCase()];
+                if (!id || jaMarcados[id]) continue;
+                jaMarcados[id] = true;
+                if (!pedacos) pedacos = document.createDocumentFragment();
+                var inicio = achado.index + achado[1].length;
+                pedacos.appendChild(document.createTextNode(texto.slice(ultimo, inicio)));
+                var marca = document.createElement('a');
+                marca.className = 'verbete-marca';
+                marca.href = URL_DEFINICOES + '#' + id;
+                marca.dataset.verbete = id;
+                marca.setAttribute('aria-expanded', 'false');
+                marca.textContent = forma;
+                pedacos.appendChild(marca);
+                ultimo = inicio + forma.length;
+            }
+            if (!pedacos) return;
+            pedacos.appendChild(document.createTextNode(texto.slice(ultimo)));
+            no.parentNode.replaceChild(pedacos, no);
+        }
+
+        function marcarBloco(bloco, jaMarcados) {
+            var caminhante = document.createTreeWalker(bloco, NodeFilter.SHOW_TEXT, {
+                acceptNode: function (no) {
+                    if (!no.nodeValue || !no.parentElement) return NodeFilter.FILTER_REJECT;
+                    return no.parentElement.closest(FORA_DA_MARCACAO)
+                        ? NodeFilter.FILTER_REJECT
+                        : NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            // Coletados antes de mexer: trocar um nó de texto durante a
+            // caminhada invalidaria a posição do caminhante.
+            var nos = [];
+            var no;
+            while ((no = caminhante.nextNode())) nos.push(no);
+            nos.forEach(function (encontrado) { marcarNoTexto(encontrado, jaMarcados); });
+        }
+
+        function marcarTermos() {
+            var jaMarcados = {};
+            Array.prototype.forEach.call(corpoDosComentarios.children, function (bloco) {
+                // Cada `##` recomeça a conta: o leitor que entra por uma seção
+                // do meio encontra os termos dela marcados.
+                if (bloco.tagName === 'H2') { jaMarcados = {}; return; }
+                marcarBloco(bloco, jaMarcados);
+            });
+        }
+
+        if ('requestIdleCallback' in window) requestIdleCallback(marcarTermos, { timeout: 2000 });
+        else setTimeout(marcarTermos, 200);
+
+        // O primeiro balão fica instantâneo se o texto já chegou: quem passa o
+        // ponteiro por um termo marcado quase sempre vai clicar nele.
+        comentarios.addEventListener('pointerover', function (evento) {
+            if (evento.target.closest && evento.target.closest('.verbete-marca')) pedirDefinicoes();
+        });
+
+        comentarios.addEventListener('click', function (evento) {
+            var marca = evento.target.closest('.verbete-marca');
+            if (!marca) return;
+            // Ctrl/Cmd/Shift e clique do meio continuam do navegador: abrir a
+            // página de definições em outra aba é um gesto legítimo.
+            if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.button !== 0) return;
+            evento.preventDefault();
+            if (marcaDoBalao === marca) { fecharBalao(true); return; }
+            abrirBalao(marca);
+        });
+
+        /* Remissão escrita dentro do verbete (`art. 5º, V`, `art. 12`) chega
+           aqui como link absoluto para a nota da norma — é o que faz ela
+           funcionar também na página de definições, onde não há painel nenhum.
+           Quando esse destino é *esta* nota, o balão devolve o salto ao painel
+           da lei em vez de recarregar a página. */
+        document.addEventListener('click', function (evento) {
+            if (!balaoAberto) return;
+            var alvo = evento.target;
+            if (!balaoAberto.contains(alvo)) {
+                if (!alvo.closest || !alvo.closest('.verbete-marca')) fecharBalao(false);
+                return;
+            }
+            var link = alvo.closest && alvo.closest('a[href]');
+            if (!link || evento.metaKey || evento.ctrlKey || evento.shiftKey) return;
+            var destino;
+            try { destino = new URL(link.href); } catch (erro) { return; }
+            if (destino.origin !== location.origin) return;
+            if (caminhoDaUrl(destino.pathname) !== caminhoDaUrl(location.pathname)) return;
+            if (!destino.hash) return;
+            evento.preventDefault();
+            var id = decodeURIComponent(destino.hash.slice(1));
+            fecharBalao(false);
+            var normaAlvo = normaDoId(id);
+            if (normaAlvo) {
+                ativarNorma(normaAlvo);
+                carregarNorma(normaAlvo, function () {
+                    if (irPara(id)) history.replaceState(null, '', '#' + id);
+                });
+                return;
+            }
+            if (irPara(id)) history.replaceState(null, '', '#' + id);
+        });
+
+        /* Tabular para fora fecha. O balão não é modal — prendê-lo com um
+           laço de foco seria mentir sobre o que ele é —, mas ele vive no fim do
+           <body>: sem esta regra, o Tab a partir do último link dele sairia da
+           página, e o leitor de teclado perderia o lugar onde estava lendo. */
+        document.addEventListener('focusin', function (evento) {
+            if (!balaoAberto) return;
+            if (balaoAberto.contains(evento.target) || evento.target === marcaDoBalao) return;
+            fecharBalao(false);
+        });
+
+        // Preso ao termo, o balão precisa sair quando o termo sai do lugar.
+        window.addEventListener('resize', function () { fecharBalao(false); });
+        window.addEventListener('scroll', function () { fecharBalao(false); }, true);
+    }
+
     /* --- Atalhos de teclado ---
        Uma tecla para cada controle que hoje só existe no ponteiro: os dois
        sumários, o modo leitura de cada painel, o menu de notas, o seletor de
@@ -1435,6 +1862,9 @@
        leitura fica de fora de propósito — ela não é sobreposição, e quem a
        fecha é o X (ou o próprio Esc, uma camada depois, junto com o modo). */
     function fecharOQueEstiverAberto() {
+        // O balão da definição é a camada mais volátil de todas: nasceu do
+        // último clique e cobre o texto que o leitor estava lendo.
+        if (fecharBalao(true)) return true;
         // `aVista`, e não só `presos`: revelada pelo ponteiro, a dica também
         // precisa sair pelo Esc, sem o leitor ter de mexer o ponteiro.
         if (atalhosAVista()) {

@@ -1,0 +1,224 @@
+# Definições do AI Act (Regulamento (UE) 2024/1689), reunidas em
+# /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
+# (docs/notas.md). Confira com
+# `python3 scripts/conferir_definicoes.py ai-act-consolidado`.
+#
+# O art. 3.º tem 68 definições numeradas, e os itens numerados de um artigo
+# europeu abertos por "1)" não recebem âncora própria (ver "Normas estrangeiras"
+# em docs/notas.md): a base traz o número do item, e a âncora leva ao artigo.
+#
+# O texto é PT-PT, do EUR-Lex. Onde a terminologia oficial diverge da
+# brasileira, o verbete usa a forma da nota e registra a oficial nos `aliases`
+# ou na observação — ver "Terminologia: PT-PT × pt-BR", na nota do AI Act.
+
+- termo: Prestador
+  slug: prestador
+  tema: sujeitos
+  bases: [{ texto: "art. 3.º, 3)", ancora: art-3 }]
+  aliases: [prestadores]
+  definicao: >-
+    quem desenvolve — ou manda desenvolver — um sistema de IA ou um modelo de
+    finalidade geral e o coloca no mercado ou em serviço **sob nome ou marca
+    próprios**, a título oneroso ou gratuito.
+
+- termo: Responsável pela implantação
+  slug: responsavel-pela-implantacao
+  tema: sujeitos
+  bases: [{ texto: "art. 3.º, 4)", ancora: art-3 }]
+  aliases: [responsáveis pela implantação]
+  definicao: >-
+    quem utiliza um sistema de IA sob a sua autoridade, no exercício de
+    atividade profissional.
+
+- termo: Mandatário
+  slug: mandatario
+  tema: sujeitos
+  bases:
+    - { texto: "art. 3.º, 5)", ancora: art-3 }
+    - { texto: "art. 22.º", ancora: art-22 }
+  definicao: >-
+    pessoa estabelecida na União que recebe mandato escrito de prestador de país
+    terceiro.
+
+- termo: Importador
+  slug: importador
+  tema: sujeitos
+  bases: [{ texto: "art. 3.º, 6)", ancora: art-3 }]
+  definicao: >-
+    quem, localizado ou estabelecido na União, coloca no mercado um sistema de
+    IA que ostenta o nome ou a marca de pessoa estabelecida em país terceiro.
+
+- termo: Distribuidor
+  slug: distribuidor
+  tema: sujeitos
+  bases: [{ texto: "art. 3.º, 7)", ancora: art-3 }]
+  definicao: >-
+    quem, na cadeia de distribuição e sem ser o prestador nem o importador,
+    disponibiliza um sistema de IA no mercado da União.
+
+- termo: Operador
+  slug: operador
+  tema: sujeitos
+  bases: [{ texto: "art. 3.º, 8)", ancora: art-3 }]
+  aliases: [operadores]
+  definicao: >-
+    o gênero que reúne prestador, fabricante de produtos, responsável pela
+    implantação, mandatário, importador e distribuidor.
+
+- termo: Pessoa afetada
+  slug: pessoa-afetada
+  tema: sujeitos
+  bases:
+    - { texto: "art. 85.º", ancora: art-85 }
+    - { texto: "art. 86.º", ancora: art-86 }
+  aliases: [pessoas afetadas]
+  definicao: >-
+    quem sofre os efeitos do sistema, sem necessariamente operá-lo — categoria a
+    que se ligam os direitos de apresentar queixa e de obter explicação sobre a
+    decisão tomada.
+
+- termo: Sistema de IA
+  slug: sistema-de-ia
+  tema: ia
+  bases: [{ texto: "art. 3.º, 1)", ancora: art-3 }]
+  aliases: [sistemas de IA]
+  definicao: >-
+    sistema baseado em máquinas concebido para funcionar com **níveis de
+    autonomia variáveis**, que pode revelar **capacidade de adaptação** após a
+    implantação e que, com base nos dados de entrada que recebe, **infere** como
+    gerar resultados — previsões, conteúdos, recomendações ou decisões — capazes
+    de influenciar ambientes físicos ou virtuais.
+  nota: >-
+    A palavra decisiva é **inferir**: é ela que separa um sistema de IA de um
+    software determinístico de regras, e a Comissão dedicou
+    [orientações próprias](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application)
+    ao ponto.
+
+- termo: Modelo de IA de finalidade geral
+  slug: modelo-de-ia-de-finalidade-geral
+  tema: ia
+  bases: [{ texto: "art. 3.º, 63)", ancora: art-3 }]
+  aliases: [modelos de IA de finalidade geral, modelo de finalidade geral, modelos de finalidade geral]
+  definicao: >-
+    modelo treinado com grande volume de dados em autossupervisão e em larga
+    escala, que revela **generalidade significativa** e é capaz de executar
+    competentemente uma vasta gama de tarefas distintas, podendo ser integrado a
+    diversos sistemas ou aplicações a jusante.
+
+- termo: Sistema de IA de finalidade geral
+  slug: sistema-de-ia-de-finalidade-geral
+  tema: ia
+  bases: [{ texto: "art. 3.º, 66)", ancora: art-3 }]
+  aliases: [sistemas de IA de finalidade geral]
+  definicao: >-
+    sistema baseado num modelo de IA de finalidade geral, com capacidade de
+    servir a diversas finalidades.
+
+- termo: Risco sistêmico
+  slug: risco-sistemico
+  tema: ia
+  bases:
+    - { texto: "art. 3.º, 65)", ancora: art-3 }
+    - { texto: "art. 51.º", ancora: art-51 }
+  aliases: [risco sistémico]
+  definicao: >-
+    risco específico das capacidades de maior impacto dos modelos de finalidade
+    geral, com efeitos negativos significativos e razoavelmente previsíveis
+    sobre saúde pública, segurança, direitos fundamentais ou a sociedade em
+    geral, propagáveis em escala.
+
+- termo: Ultrafalsificação
+  slug: ultrafalsificacao
+  tema: ia
+  bases: [{ texto: "art. 3.º, 60)", ancora: art-3 }]
+  aliases: [ultrafalsificações, falsificação profunda, falsificações profundas]
+  definicao: >-
+    conteúdo de imagem, áudio ou vídeo gerado ou manipulado por IA que se
+    assemelha a pessoas, objetos, locais ou acontecimentos reais e que
+    **pareceria autêntico** a uma pessoa — o _deep fake_.
+  nota: >-
+    O texto do EUR-Lex traz a definição sob o rótulo «falsificações profundas».
+
+- termo: Literacia em IA
+  slug: literacia-em-ia
+  tema: ia
+  bases:
+    - { texto: "art. 3.º, 56)", ancora: art-3 }
+    - { texto: "art. 4.º", ancora: art-4 }
+  aliases: [literacia no domínio da IA]
+  definicao: >-
+    competências e conhecimentos que permitem implantar sistemas de IA com
+    conhecimento de causa e tomar consciência de suas oportunidades, riscos e
+    possíveis danos.
+
+- termo: Colocação no mercado
+  slug: colocacao-no-mercado
+  tema: governanca
+  bases: [{ texto: "art. 3.º, 9)", ancora: art-3 }]
+  definicao: >-
+    a primeira disponibilização de um sistema de IA ou de um modelo de finalidade
+    geral no mercado da União.
+
+- termo: Disponibilização no mercado
+  slug: disponibilizacao-no-mercado
+  tema: governanca
+  bases: [{ texto: "art. 3.º, 10)", ancora: art-3 }]
+  definicao: >-
+    o fornecimento de um sistema de IA ou de um modelo de finalidade geral para
+    distribuição ou utilização no mercado da União, no âmbito de atividade
+    comercial, a título oneroso ou gratuito.
+
+- termo: Colocação em serviço
+  slug: colocacao-em-servico
+  tema: governanca
+  bases: [{ texto: "art. 3.º, 11)", ancora: art-3 }]
+  definicao: >-
+    o fornecimento de um sistema de IA diretamente ao responsável pela
+    implantação, ou para utilização própria, para a primeira utilização na União
+    com a finalidade prevista.
+
+- termo: Finalidade prevista
+  slug: finalidade-prevista
+  tema: governanca
+  bases: [{ texto: "art. 3.º, 12)", ancora: art-3 }]
+  definicao: >-
+    a utilização a que o prestador destina o sistema, incluindo contexto e
+    condições de uso, conforme as instruções, os materiais promocionais e a
+    documentação técnica.
+  nota: >-
+    Com a **utilização indevida razoavelmente previsível**, é o par que delimita
+    até onde vai o dever de antecipação do prestador.
+
+- termo: Utilização indevida razoavelmente previsível
+  slug: utilizacao-indevida-razoavelmente-previsivel
+  tema: governanca
+  bases: [{ texto: "art. 3.º, 13)", ancora: art-3 }]
+  definicao: >-
+    uso do sistema fora da finalidade prevista que ainda assim decorre de
+    comportamento humano razoavelmente previsível, ou de interação
+    razoavelmente previsível com outros sistemas.
+
+- termo: Modificação substancial
+  slug: modificacao-substancial
+  tema: governanca
+  bases:
+    - { texto: "art. 3.º, 23)", ancora: art-3 }
+    - { texto: "art. 25.º", ancora: art-25 }
+  definicao: >-
+    alteração posterior à colocação no mercado, não prevista na avaliação de
+    conformidade inicial, que afete a conformidade ou modifique a finalidade
+    prevista.
+  nota: "É o gatilho que **transforma quem modifica em prestador** ([art. 25.º](#art-25))."
+
+- termo: Incidente grave
+  slug: incidente-grave
+  tema: governanca
+  aliases: [incidentes graves]
+  bases:
+    - { texto: "art. 3.º, 49)", ancora: art-3 }
+    - { texto: "art. 73.º", ancora: art-73 }
+  definicao: >-
+    incidente ou mau funcionamento que direta ou indiretamente cause morte ou
+    danos graves à saúde, perturbação grave e irreversível de infraestrutura
+    crítica, violação de obrigações do direito da União destinadas a proteger
+    direitos fundamentais, ou danos graves a bens ou ao ambiente.

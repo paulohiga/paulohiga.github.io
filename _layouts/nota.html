@@ -103,7 +103,12 @@
 {% for outra in outras_notas %}
                 <li><a href="{{ outra.url }}">{{ outra.title }}</a></li>
 {% endfor %}
+                <!-- Depois do traço, os dois destinos da seção que não são
+                     nota: o índice e a página de definições. É por aqui que se
+                     chega às definições sem JavaScript — a marcação dos termos
+                     no corpo do comentário depende dele. -->
                 <li class="nota-titulo-menu__separador"><a href="/notas">Ver todas as notas</a></li>
+                <li><a href="/notas/definicoes">Definições legais</a></li>
             </ul>
         </div>
         <!-- Os dois botões do canto direito num grupo só: o de atalhos vem
@@ -362,6 +367,32 @@
             if (botao) botao.setAttribute('aria-expanded', 'true');
         }());
     </script>
+
+    <!-- Índice dos termos que as normas desta nota definem: o que o
+         `notas.js` usa para marcar, no corpo do comentário, o primeiro uso de
+         cada um em cada seção. Só os identificadores e as formas escritas vêm
+         aqui — a definição em si é buscada via fetch() na primeira vez em que
+         o leitor abre um balão (ver `_fragmentos/definicoes.html`), para uma
+         nota não carregar 97 verbetes por causa de um balão que talvez ninguém
+         abra.
+
+         São só as normas *desta* nota (a principal e as de `normas_extra`), e
+         não todas as de `_leis`: na nota da LGPD, "tratamento" é o do art. 5º,
+         X, e não o do art. 4.º, 2), do RGPD. As demais normas continuam
+         acessíveis pelo seletor do painel, com a definição delas a um clique
+         em /notas/definicoes. -->
+    <script type="application/json" id="nota-verbetes">[
+{%- assign primeiro_verbete = true -%}
+{%- assign normas_da_nota = "" | split: "," -%}
+{%- assign normas_da_nota = normas_da_nota | push: lei -%}
+{%- for norma in normas_extra %}{% assign normas_da_nota = normas_da_nota | push: norma %}{% endfor -%}
+{%- for norma in normas_da_nota -%}
+{%- for verbete in site.data.definicoes.verbetes[norma.slug] -%}
+{%- unless primeiro_verbete %},{% endunless %}{% assign primeiro_verbete = false -%}
+["v-{{ norma.prefixo }}-{{ verbete.slug }}",{{ verbete.termo | jsonify }}{% for apelido in verbete.aliases %},{{ apelido | jsonify }}{% endfor %}]
+{%- endfor -%}
+{%- endfor -%}
+]</script>
 
     <script src="/notas.js" defer></script>
 </body>

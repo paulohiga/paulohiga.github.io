@@ -19,6 +19,7 @@ fazer nada disso à mão.
 - [Modo leitura](#modo-leitura)
 - [Atalhos de teclado](#atalhos-de-teclado)
 - [Ementas dos artigos](#ementas-dos-artigos)
+- [Definições legais](#definições-legais)
 - [Referências clicáveis](#referências-clicáveis)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
@@ -54,7 +55,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/notas-index-head.html` | `<head>` do índice |
 | `_notas/<slug>.md` | Os comentários — é o que vira página, em `/notas/<slug>` |
 | `_leis/<slug>.md` | O texto legal em Markdown puro. `output: false`: nunca vira página |
-| `_fragmentos/<slug>.html` | Fragmento da norma, buscado via `fetch()`. Um por norma de `_leis` |
+| `_fragmentos/<slug>.html` | HTML buscado via `fetch()`: um por norma de `_leis`, mais o `definicoes.html` que alimenta o balão dos termos |
 | `_layouts/nota.html` | Monta os dois painéis |
 | `_includes/lei-anotada.html` | Renderiza o texto legal dando um id a cada dispositivo |
 | `_includes/nota-head.html` | `<head>` das notas (canonical, OG, JSON-LD `Article`) |
@@ -65,6 +66,11 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
 | `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
+| `definicoes.md` + `_layouts/definicoes.html` | A página [`/notas/definicoes`](#definições-legais), com os termos que as normas definem |
+| `_includes/definicoes-lista.html` | Monta a lista de verbetes; serve a página **e** o fragmento |
+| `_includes/definicoes-head.html` | `<head>` da página de definições (JSON-LD `DefinedTermSet`) |
+| `_data/definicoes/temas.yml` | Os temas, a segunda forma de organizar a página |
+| `_data/definicoes/verbetes/<slug>.yml` | Os [verbetes](#definições-legais) de cada norma |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -93,6 +99,9 @@ publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
 5. **`_data/ementas/<slug>.yml`** — uma [ementa](#ementas-dos-artigos) por
    artigo, também uma entrada por norma. Confira com
    `python3 scripts/conferir_ementas.py <slug>`.
+6. **`_data/definicoes/verbetes/<slug>.yml`** — os termos que a norma define,
+   se ela tiver artigo de definições (ver [Definições legais](#definições-legais)).
+   Confira com `python3 scripts/conferir_definicoes.py <slug>`.
 
 O índice `/notas`, os links entre notas e o `sitemap.xml` se ajustam sozinhos
 no build. Excluir uma nota é apagar os arquivos correspondentes.
@@ -447,6 +456,117 @@ lado, e ele é o do Jornal Oficial.
 saem de sincronia — artigo novo sem ementa, ementa órfã de artigo que saiu da
 norma, frase longa demais. Rode-o ao mexer em `_leis/` ou em `_data/ementas/`.
 
+## Definições legais
+
+As normas comentadas definem os próprios termos, e essas definições ficavam
+repetidas no começo de cada nota. Duas coisas davam errado nisso: o mesmo termo
+escrito duas vezes quando duas normas o definem (o "tratamento" do art. 5º, X,
+da LGPD e o do art. 4.º, 2), do RGPD), e uma parede de verbetes entre o resumo
+da nota e o comentário que o leitor foi ler.
+
+Hoje elas vivem num lugar só, `_data/definicoes/verbetes/<norma>.yml`, e chegam
+ao leitor por dois caminhos: a página **[`/notas/definicoes`](https://higa.me/notas/definicoes)**
+e o **balão** que abre ao clicar num termo marcado no corpo do comentário.
+
+### O verbete
+
+Um arquivo por norma, com o slug da norma no nome — é dele que a montagem
+descobre o `apelido` (front matter de `_leis/`) e a nota em que o dispositivo
+tem âncora (`_data/normas.yml`).
+
+| Campo | Obrigatório | Descrição |
+| --- | --- | --- |
+| `termo` | sim | O termo como a norma o escreve. É o título do verbete e a primeira forma que a marcação procura no comentário |
+| `slug` | sim | Minúsculas, sem acento. Único **dentro da norma**; o id publicado é `v-<prefixo da norma>-<slug>` |
+| `tema` | sim | Um dos `id` de `_data/definicoes/temas.yml` |
+| `bases` | sim | Lista de `{ texto, ancora }`. `texto` é a citação como se escreve ("art. 5º, V"); `ancora` é o id do dispositivo, **sem o prefixo da norma**. Base sem `ancora` (um considerando, p. ex.) vira texto sem link |
+| `definicao` | sim | A definição, em Markdown. Começa em minúscula: ela continua a frase que o termo abre |
+| `nota` | não | Comentário **sobre** a definição, em Markdown. Aparece atrás de uma barra, num corpo menor |
+| `aliases` | não | Outras formas escritas do termo (plural, sigla, sinônimo usado na nota). Servem à marcação e ao filtro |
+
+Três regras de escrita:
+
+- **A base legal não é opcional.** É ela que separa um verbete de uma
+  paráfrase, e é o que o leitor precisa para conferir. Norma que não tem artigo
+  de definições — o Regimento Interno é o caso — aponta para o dispositivo que
+  cria e disciplina o termo.
+- **A âncora vai crua**, sem prefixo: quem acrescenta `dec12880-` é a montagem,
+  a partir de `_data/normas.yml`. Escrever o prefixo aqui quebraria o verbete
+  no dia em que a norma mudasse de nota.
+- **Remissão dentro do verbete usa `#`, e vale para a própria norma.** Um
+  `[art. 12](#art-12)` escrito num verbete da LGPD vira
+  `/notas/lgpd#art-12` na montagem — assim ele funciona na página, onde não há
+  painel de lei nenhum, e o `notas.js` o devolve ao painel quando o balão abre
+  dentro da nota daquela norma. Para apontar para **outra** norma, escreva o
+  caminho inteiro (`/notas/eca-digital#art-9-p2`).
+
+`scripts/conferir_definicoes.py` é quem confere tudo isso: campos obrigatórios,
+formato e unicidade do slug, tema existente, **âncora que existe de fato no
+texto da norma** e termos que colidiriam dentro de uma mesma nota.
+
+```bash
+python3 scripts/conferir_definicoes.py            # todas as normas
+python3 scripts/conferir_definicoes.py lgpd mci   # só estas
+```
+
+### A página
+
+A lista nasce em **ordem alfabética**, que é a ordem do DOM: é a que serve a
+quem chega com um termo na cabeça, a que sobra inteira sem JavaScript e a que a
+barra de letras (âncoras puras) percorre. A organização **por tema** é montada
+pelo `notas.js`, que **move** os verbetes para as seções vazias que o layout
+deixa prontas — e não os reordena por `order` no CSS, porque quem usa leitor de
+tela lê o DOM, e uma lista reordenada só visualmente seria lida em ordem
+alfabética com títulos de tema espalhados no meio. Voltar para A–Z devolve cada
+verbete à seção da letra dele.
+
+O filtro e a troca de organização dependem de JavaScript e ficam ocultos sem
+ele, como o seletor de normas das notas. O que sobra é a lista inteira, em
+ordem alfabética, com a barra de letras funcionando.
+
+O `<head>` publica um **`DefinedTermSet`** em JSON-LD, com um `DefinedTerm` por
+verbete: é o tipo que o schema.org tem para exatamente isto, e é o que permite
+a um buscador ou a um agente responder "o que a LGPD chama de operador?"
+citando a página em vez da nota inteira.
+
+### O termo marcado no comentário
+
+O `notas.js` marca, no painel de comentários, o **primeiro uso de cada termo em
+cada seção `##`**, e o clique abre um balão com a definição, a base legal e o
+link para a página.
+
+- **Só o primeiro uso por seção.** "Tratamento" aparece duzentas vezes na nota
+  da LGPD; marcar todas transformaria o texto em confete. Uma marca por seção
+  mantém o termo à mão em qualquer ponto da leitura — a densidade medida hoje
+  fica entre 1,6 e 6,6 marcas por seção.
+- **A marca é um link de verdade** (`/notas/definicoes#v-...`), e não um botão:
+  Ctrl+clique e clique do meio abrem a página numa aba. O traço é pontilhado, e
+  não azul, para não competir com os links de dispositivo do comentário.
+- **Não se marca dentro de link, código, título nem no aviso de IA.** Título é
+  navegação — o sumário lê o texto dele.
+- **A definição é buscada, não embutida.** A nota carrega só o índice dos
+  termos das **suas** normas (a principal e as de `normas_extra`), em
+  `<script type="application/json" id="nota-verbetes">`, com uma ou duas
+  centenas de bytes por verbete. O texto vem de
+  `_fragmentos/definicoes.html` num `fetch()` na primeira abertura, cacheado na
+  aba e reaproveitado de nota para nota — mesma escolha do painel "Lei seca"
+  para as normas que não são a principal.
+- **A base legal no balão volta para o painel.** Ela é um link absoluto para a
+  nota da norma; quando esse destino é a nota aberta, o `notas.js` intercepta e
+  faz o salto pelo painel da lei, carregando a norma certa se preciso. Clicar
+  em "art. 2º, IV" no balão do decreto, dentro da nota do ECA Digital, troca a
+  norma exibida e para no dispositivo.
+- **Sem JavaScript não há marca nenhuma.** O caminho para as definições fica no
+  menu do título da nota ("Definições legais", ao lado de "Ver todas as
+  notas") e no índice `/notas`.
+
+**Termo que não aparece no corpo da nota não ganha marca**, e isso é esperado:
+o verbete continua na página. Também não se marca um termo partido por
+negrito no meio ("maioria **absoluta**"), porque a marcação trabalha em nó de
+texto. Quando o termo aparece na nota numa forma diferente da cadastrada
+(plural, sigla), a correção é um `alias` no verbete — não uma exceção no
+código.
+
 ## Referências clicáveis
 
 Os comentários apontam para o texto legal com links Markdown comuns, cujo
@@ -639,7 +759,7 @@ dispositivo errado.
 
 ## Scripts de autoria
 
-Os cinco scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
+Os seis scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
 máquina, não entram no site e não fazem parte do build. As dependências estão
 em [`scripts/requirements.txt`](../scripts/requirements.txt); para instalá-las,
 veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
@@ -651,3 +771,4 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `consolidar_ai_act.py` | Gera a consolidação não oficial do AI Act aplicando as alterações do Digital Omnibus |
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
+| `conferir_definicoes.py` | Confere os [verbetes](#definições-legais) de `_data/definicoes/verbetes/` contra o texto das normas |

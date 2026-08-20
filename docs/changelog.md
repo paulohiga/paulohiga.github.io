@@ -17,6 +17,60 @@ no site, não o caminho até lá.
 
 ---
 
+## 2026-08-20
+
+### Notas de legislação
+
+As **definições legais** das normas comentadas passaram a viver numa página
+própria, **[`/notas/definicoes`](https://higa.me/notas/definicoes)**, e saíram
+do começo das notas. São 97 termos, cada um com o dispositivo em que a norma o
+define: 20 da LGPD, 8 do Marco Civil da Internet, 13 do ECA Digital e 9 do
+Decreto nº 12.880/2026, 11 do RGPD, 20 do AI Act e os 16 termos do rito do
+Conselho Diretor da ANPD, definidos pelo Regimento Interno.
+
+A página organiza a lista de duas maneiras — **em ordem alfabética** e **por
+tema** (sujeitos e papéis, dados e informação, operações e técnicas, rede e
+plataformas, inteligência artificial, infância e adolescência, governança e
+conformidade, rito e deliberação) — e traz um filtro por termo, norma ou tema.
+
+**Nos comentários, os mesmos termos ficam marcados no corpo do texto** — o
+primeiro uso de cada um em cada seção — e o clique abre a definição ali mesmo,
+com a base legal. Clicar na base leva ao dispositivo no painel da lei,
+trocando a norma exibida quando for o caso.
+
+O que saiu das notas foi a **lista de definições**, que agora estaria repetida
+em dois lugares — o "tratamento" da LGPD e o do RGPD eram o mesmo verbete
+escrito duas vezes. O comentário *sobre* as definições ficou, e em dois casos
+mudou de lugar:
+
+- **[LGPD](../_notas/lgpd.md)** (`/notas/lgpd`) — a análise dos três estudos
+  técnicos da ANPD sobre anonimização, antes uma subseção dentro de
+  "Definições", virou seção própria: **"Anonimização: um processo baseado em
+  risco"**, logo depois de "Quando a LGPD não se aplica", que é onde ela pesa —
+  dado anonimizado está fora do alcance da lei enquanto a anonimização
+  resistir.
+- **[Marco Civil da Internet](../_notas/mci.md)** (`/notas/mci`) — a subseção
+  **"O que o Marco Civil não define"** registra que rede social e moderação em
+  redes sociais não têm definição legal na lei: os incisos IX e X do art. 5º só
+  existiram na redação da MPV nº 1.068/2021, rejeitada. A nota passou a apontar
+  que quem define rede social é o [ECA Digital](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/L15211.htm),
+  e só para os fins daquela lei.
+
+A observação de que o texto do EUR-Lex traz a "ultrafalsificação" do AI Act sob
+o rótulo **«falsificações profundas»** passou a constar do verbete
+correspondente.
+
+### Documentação
+
+- [`docs/notas.md`](./notas.md) ganhou a seção **Definições legais**: o formato
+  do verbete, as regras de escrita da base legal, como a página monta as duas
+  organizações e como o termo marcado no comentário funciona.
+- [`AGENTS.md`](../AGENTS.md) passou a trazer a regra de que **definição de
+  termo não se escreve na nota**, e o `conferir_definicoes.py` entrou na lista
+  de conferências antes de fechar uma alteração.
+
+---
+
 ## 2026-08-19
 
 ### Notas de legislação

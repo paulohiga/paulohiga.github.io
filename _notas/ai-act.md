@@ -7,7 +7,7 @@ lei: ai-act-consolidado
 normas_extra: [ai-act, regulamento-2026-1744]
 ordem: 6
 jurisdicao: União Europeia
-atualizado_em: 2026-08-19
+atualizado_em: 2026-08-20
 ---
 
 ## Resumo geral
@@ -180,34 +180,6 @@ O regulamento **não se aplica**:
 Há ainda uma **dispensa parcial para software livre**, e convém não a esticar: ela alcança **sistemas** de IA disponibilizados sob licença **livre e de código aberto**, que ficam fora do regulamento salvo quando forem colocados no mercado como sistemas de alto risco, incorrerem numa prática proibida do [art. 5.º](#art-5) ou estiverem sujeitos à transparência do [art. 50.º](#art-50). **Modelos** de finalidade geral abertos não entram nessa dispensa: têm regime próprio e mais estreito no [art. 53.º, n.º 2](#art-53-p2) (ver "Inovação", abaixo).
 
 O regulamento também **não prejudica o RGPD** nem o regime de responsabilidade dos prestadores intermediários do DSA, e não impede os Estados-Membros de manterem ou adotarem normas **mais favoráveis aos trabalhadores** quanto ao uso de IA pelos empregadores.
-
-## Definições ([art. 3.º](#art-3))
-
-São 68 definições. As que estruturam o resto do texto:
-
-### Sujeitos
-
-- **Prestador**: quem desenvolve — ou manda desenvolver — um sistema de IA ou um modelo de finalidade geral e o coloca no mercado ou em serviço **sob nome ou marca próprios**, a título oneroso ou gratuito.
-- **Responsável pela implantação**: quem utiliza um sistema de IA sob a sua autoridade, no exercício de atividade profissional.
-- **Mandatário**: pessoa estabelecida na União que recebe mandato escrito de prestador de país terceiro ([art. 22.º](#art-22)).
-- **Importador**, **distribuidor** e, como gênero de todos, **operador**.
-- **Pessoa afetada**: quem sofre os efeitos do sistema, sem necessariamente operá-lo — categoria a que se ligam os direitos dos arts. [85.º](#art-85) e [86.º](#art-86).
-
-### Sistemas e modelos
-
-- **Sistema de IA**: sistema baseado em máquinas concebido para funcionar com **níveis de autonomia variáveis**, que pode revelar **capacidade de adaptação** após a implantação e que, com base nos dados de entrada que recebe, **infere** como gerar resultados — previsões, conteúdos, recomendações ou decisões — capazes de influenciar ambientes físicos ou virtuais. A palavra decisiva é **inferir**: é ela que separa um sistema de IA de um software determinístico de regras, e a Comissão dedicou [orientações próprias](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-ai-system-definition-facilitate-first-ai-acts-rules-application) ao ponto.
-- **Modelo de IA de finalidade geral**: modelo treinado com grande volume de dados em autossupervisão e em larga escala, que revela **generalidade significativa** e é capaz de executar competentemente uma vasta gama de tarefas distintas, podendo ser integrado a diversos sistemas ou aplicações a jusante.
-- **Sistema de IA de finalidade geral**: sistema baseado num modelo dessa natureza, com capacidade de servir a diversas finalidades.
-- **Risco sistêmico**: risco específico das capacidades de maior impacto dos modelos de finalidade geral, com efeitos negativos significativos e razoavelmente previsíveis sobre saúde pública, segurança, direitos fundamentais ou a sociedade em geral, propagáveis em escala ([art. 51.º](#art-51)).
-
-### Conceitos operacionais
-
-- **Colocação no mercado** (primeira disponibilização na União), **disponibilização no mercado** e **colocação em serviço** (primeiro fornecimento ao responsável pela implantação ou uso próprio, conforme a finalidade prevista).
-- **Finalidade prevista** e **utilização indevida razoavelmente previsível** — o par que delimita até onde vai o dever de antecipação do prestador.
-- **Modificação substancial**: alteração posterior à colocação no mercado, não prevista na avaliação de conformidade inicial, que afete a conformidade ou modifique a finalidade prevista. É o gatilho que **transforma quem modifica em prestador** ([art. 25.º](#art-25)).
-- **Ultrafalsificação** (_deep fake_): conteúdo de imagem, áudio ou vídeo gerado ou manipulado por IA que se assemelha a pessoas, objetos, locais ou acontecimentos reais e que **pareceria autêntico** a uma pessoa.
-- **Incidente grave** ([art. 73.º](#art-73)): incidente ou mau funcionamento que direta ou indiretamente cause morte ou danos graves à saúde, perturbação grave e irreversível de infraestrutura crítica, violação de obrigações do direito da União destinadas a proteger direitos fundamentais, ou danos graves a bens ou ao ambiente.
-- **Literacia em IA**: competências e conhecimentos que permitem implantar sistemas de IA com conhecimento de causa e tomar consciência de suas oportunidades, riscos e possíveis danos.
 
 ## A pirâmide de risco
 

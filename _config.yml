@@ -8,9 +8,10 @@ permalink: pretty
 # Notas de estudo sobre legislação (seção /notas, isolada do restante do site).
 # `notas` são as páginas publicadas; `leis` guarda o texto legal em Markdown
 # puro, renderizado dentro da nota que o cita — nunca como página própria;
-# `fragmentos` são os HTML soltos (sem link algum) buscados via fetch() pelo
-# seletor de normas de uma nota, para as normas que não vêm pré-carregadas no
-# HTML (ver `_fragmentos/` e "Múltiplas normas por nota" em `docs/notas.md`).
+# `fragmentos` são os HTML soltos (sem link algum) buscados via fetch(): as
+# normas que não vêm pré-carregadas no HTML da nota (ver "Múltiplas normas por
+# nota" em `docs/notas.md`) e a lista de verbetes que alimenta o balão dos
+# termos definidos (ver "Definições legais", no mesmo documento).
 #
 # Ordem importa: Jekyll renderiza as coleções na ordem declarada aqui, e
 # renderizar uma coleção reescreve o `.content` de cada documento dela para o

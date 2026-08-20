@@ -1,0 +1,109 @@
+<!-- Página /notas/definicoes: as definições das normas comentadas em /notas,
+     reunidas num lugar só. Antes elas viviam repetidas no começo de cada nota,
+     o que dava dois problemas: o mesmo termo escrito duas vezes quando duas
+     normas o definem, e uma parede de definições entre o resumo da nota e o
+     comentário que o leitor foi ler.
+
+     O conteúdo vem de `_data/definicoes/verbetes/<norma>.yml` e é montado por
+     `_includes/definicoes-lista.html`, o mesmo include que serve o fragmento
+     buscado pelo balão das notas — a definição vive num lugar só.
+
+     Duas organizações, e a razão de a alfabética ser a do DOM: ela é a que
+     serve a quem chega com um termo na cabeça (o caso comum, e o de quem chega
+     por link de fora), e é a que sobra inteira sem JavaScript. A organização
+     por tema é o `notas.js` que monta, movendo os `<article>` para as seções
+     vazias no fim deste arquivo; por isso os controles ficam ocultos sem JS,
+     como o seletor de normas das notas (ver docs/notas.md). A barra de letras
+     fica fora dos controles justamente por não depender de JS: são âncoras. -->
+{%- capture lista %}{% include definicoes-lista.html %}{% endcapture -%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+{% include definicoes-head.html %}
+</head>
+
+<body class="light-theme">
+
+    <!-- Tema antes do primeiro paint, para não haver flash do tema errado —
+         mesmo script usado no índice e nas notas. -->
+    <script data-cfasync="false">
+        (function () {
+            var t = localStorage.getItem('theme');
+            var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('dark-theme', dark);
+            document.body.classList.toggle('light-theme', !dark);
+            document.body.classList.add('js');
+        }());
+    </script>
+
+    <a href="#lista-definicoes" class="skip-link">Pular para a lista de definições</a>
+
+    <header class="nota-topo">
+        <div class="nota-topo__texto">
+            <nav class="nota-trilha" aria-label="Você está em">
+                <a href="/">higa.me</a> <span aria-hidden="true">/</span>
+                <a href="/notas">notas</a> <span aria-hidden="true">/</span>
+                <span aria-current="page">definições</span>
+            </nav>
+            <h1>{{ page.title }}</h1>
+        </div>
+        <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
+            <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+    </header>
+
+    <main class="definicoes">
+        <p class="definicoes__intro">
+            Os {{ definicoes_total }} termos que as normas comentadas em <a href="/notas">/notas</a>
+            definem elas próprias, cada um com o dispositivo em que está escrito. O link da base
+            legal abre a nota da norma já posicionada no texto. Nos comentários, os mesmos termos
+            ficam marcados no corpo do texto: um clique abre a definição sem sair da leitura.
+        </p>
+
+        <!-- Presa no topo enquanto a lista rola: com 97 verbetes, ter de
+             voltar ao começo da página para trocar de letra ou apagar o filtro
+             seria o oposto de organizar. A barra de letras fica fora do bloco
+             de controles porque não depende de JavaScript — são âncoras. -->
+        <div class="definicoes__barra">
+            <div class="definicoes__controles">
+                <div class="definicoes__organizar" role="group" aria-label="Organizar a lista">
+                    <button type="button" data-organizacao="alfabetica" aria-pressed="true">A–Z</button>
+                    <button type="button" data-organizacao="tema" aria-pressed="false">Por tema</button>
+                </div>
+                <form class="definicoes__filtro" role="search" onsubmit="return false">
+                    <label for="definicoes-filtro" class="visualmente-oculto">Filtrar por termo, norma ou tema</label>
+                    <input id="definicoes-filtro" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou tema">
+                </form>
+            </div>
+            <nav class="definicoes__letras" aria-label="Ir para a letra">
+{%- for inicial in definicoes_iniciais %}
+                <a href="#letra-{{ inicial | downcase }}">{{ inicial }}</a>
+{%- endfor %}
+            </nav>
+        </div>
+
+        <div id="lista-definicoes" class="definicoes__lista" tabindex="-1">
+{{ lista }}
+            <!-- Seções vazias, uma por tema, na ordem de
+                 `_data/definicoes/temas.yml`. O `notas.js` move os verbetes
+                 para cá quando o leitor escolhe "Por tema" — e os devolve às
+                 seções por letra ao voltar. Ficam vazias no HTML para não
+                 duplicar nenhum verbete: dois `id` iguais quebrariam os links
+                 diretos, que são o motivo de a página existir. -->
+{%- for tema in site.data.definicoes.temas %}
+            <section class="definicoes__grupo definicoes__grupo--tema" data-tema="{{ tema.id }}" hidden>
+                <h2 class="definicoes__tema">{{ tema.nome }}</h2>
+                <p class="definicoes__tema-descricao">{{ tema.descricao }}</p>
+                <div class="definicoes__itens"></div>
+            </section>
+{%- endfor %}
+            <p class="definicoes__vazio" role="status" hidden>Nenhum termo com esse filtro.</p>
+        </div>
+    </main>
+
+    <script src="/notas.js" defer></script>
+</body>
+
+</html>

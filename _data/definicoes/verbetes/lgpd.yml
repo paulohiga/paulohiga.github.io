@@ -1,0 +1,238 @@
+# Definições da LGPD (Lei nº 13.709/2018), reunidas em /notas/definicoes.
+#
+# Um arquivo por norma; a norma é o nome do arquivo, e é por ela que a página
+# descobre o apelido (front matter de `_leis/`) e a nota em que o dispositivo
+# tem âncora (`_data/normas.yml`). Campos e regras de escrita estão em
+# "Definições legais" (docs/notas.md). Confira com
+# `python3 scripts/conferir_definicoes.py lgpd`.
+
+- termo: Titular
+  slug: titular
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, V", ancora: art-5-v }]
+  aliases: [titulares]
+  definicao: >-
+    pessoa natural a quem se referem os dados pessoais objeto de tratamento.
+
+- termo: Controlador
+  slug: controlador
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, VI", ancora: art-5-vi }]
+  aliases: [controladores]
+  definicao: >-
+    pessoa natural ou jurídica, pública ou privada, a quem competem as
+    **decisões** referentes ao tratamento.
+  nota: >-
+    A distinção **controlador × operador** é a que mais decide caso concreto, e
+    o rótulo escrito no contrato não resolve: quem decide *por que* e *como* os
+    dados são tratados é controlador, ainda que terceirize a execução inteira.
+    A empresa que contrata um serviço de folha de pagamento é controladora; a
+    empresa de folha é operadora — até o dia em que resolver usar aqueles dados
+    para uma finalidade própria, quando vira controladora daquele tratamento e
+    responde como tal ([art. 42, § 1º, I](#art-42-p1-i)).
+
+- termo: Operador
+  slug: operador
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, VII", ancora: art-5-vii }]
+  aliases: [operadores]
+  definicao: >-
+    pessoa natural ou jurídica, pública ou privada, que **realiza o tratamento**
+    em nome do controlador.
+
+- termo: Encarregado
+  slug: encarregado
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, VIII", ancora: art-5-viii }]
+  definicao: >-
+    pessoa indicada pelo controlador e operador para atuar como **canal de
+    comunicação** entre o controlador, os titulares e a ANPD.
+
+- termo: Agentes de tratamento
+  slug: agentes-de-tratamento
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, IX", ancora: art-5-ix }]
+  aliases: [agente de tratamento]
+  definicao: o controlador e o operador.
+
+- termo: Órgão de pesquisa
+  slug: orgao-de-pesquisa
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, XVIII", ancora: art-5-xviii }]
+  aliases: [órgãos de pesquisa]
+  definicao: >-
+    órgão ou entidade da administração pública direta ou indireta, ou pessoa
+    jurídica de direito privado sem fins lucrativos legalmente constituída sob
+    as leis brasileiras, com sede e foro no País, que inclua em sua missão
+    institucional ou em seu objetivo social ou estatutário a pesquisa básica ou
+    aplicada, de caráter histórico, científico, tecnológico ou estatístico.
+
+- termo: Autoridade nacional
+  slug: autoridade-nacional
+  tema: sujeitos
+  bases: [{ texto: "art. 5º, XIX", ancora: art-5-xix }]
+  definicao: >-
+    entidade da administração pública responsável por zelar, implementar e
+    fiscalizar o cumprimento da LGPD em todo o território nacional — hoje, a
+    Agência Nacional de Proteção de Dados.
+
+- termo: Tratamento
+  slug: tratamento
+  tema: operacoes
+  bases: [{ texto: "art. 5º, X", ancora: art-5-x }]
+  definicao: >-
+    toda operação realizada com dados pessoais, como as que se referem a
+    coleta, produção, recepção, classificação, utilização, acesso, reprodução,
+    transmissão, distribuição, processamento, arquivamento, armazenamento,
+    eliminação, avaliação ou controle da informação, modificação, comunicação,
+    transferência, difusão ou extração.
+  nota: >-
+    O conceito é propositalmente amplo: a lista do inciso X é exemplificativa
+    ("como as que se referem a"), e simplesmente *guardar* um dado, sem nunca
+    abrir o arquivo, já é tratamento — armazenamento está lá. Não existe base
+    de dados "parada" fora do alcance da lei.
+
+- termo: Anonimização
+  slug: anonimizacao
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XI", ancora: art-5-xi }]
+  aliases: [anonimizar]
+  definicao: >-
+    uso de meios técnicos razoáveis e disponíveis pelos quais um dado perde a
+    possibilidade de associação, direta ou indireta, a um indivíduo.
+
+- termo: Pseudonimização
+  slug: pseudonimizacao
+  tema: operacoes
+  bases: [{ texto: "art. 13, § 4º", ancora: art-13-p4 }]
+  aliases: [pseudonimizar, pseudonimizado, dado pseudonimizado]
+  definicao: >-
+    tratamento por meio do qual um dado perde a possibilidade de associação,
+    direta ou indireta, a um indivíduo, senão pelo uso de informação adicional
+    mantida separadamente pelo controlador em ambiente controlado e seguro.
+  nota: >-
+    **Pseudonimizar não é anonimizar.** Trocar o nome por um código mantém o
+    dado como dado pessoal — a chave existe em algum lugar, e é por isso que a
+    técnica opera como medida de segurança, e não como saída da lei. A LGPD a
+    define no contexto dos estudos em saúde pública do
+    [art. 13](#art-13). Só o dado verdadeiramente anonimizado sai do alcance da
+    lei, e sai **enquanto** a anonimização resistir.
+
+- termo: Consentimento
+  slug: consentimento
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XII", ancora: art-5-xii }]
+  definicao: >-
+    manifestação livre, informada e inequívoca pela qual o titular concorda com
+    o tratamento para finalidade determinada.
+
+- termo: Bloqueio
+  slug: bloqueio
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XIII", ancora: art-5-xiii }]
+  definicao: >-
+    suspensão temporária de qualquer operação de tratamento, mediante guarda do
+    dado pessoal ou do banco de dados.
+
+- termo: Eliminação
+  slug: eliminacao
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XIV", ancora: art-5-xiv }]
+  definicao: >-
+    exclusão de dado ou de conjunto de dados armazenados em banco de dados,
+    independentemente do procedimento empregado.
+
+- termo: Transferência internacional de dados
+  slug: transferencia-internacional
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XV", ancora: art-5-xv }]
+  definicao: >-
+    transferência de dados pessoais para país estrangeiro ou organismo
+    internacional do qual o Brasil seja membro.
+
+- termo: Uso compartilhado de dados
+  slug: uso-compartilhado
+  tema: operacoes
+  bases: [{ texto: "art. 5º, XVI", ancora: art-5-xvi }]
+  aliases: [uso compartilhado]
+  definicao: >-
+    comunicação, difusão, transferência internacional, interconexão ou
+    tratamento compartilhado de bancos de dados por órgãos e entidades públicos
+    no cumprimento de suas competências legais; entre esses e entes privados,
+    reciprocamente, com autorização específica, para uma ou mais modalidades de
+    tratamento permitidas; ou entre entes privados.
+
+- termo: Dado pessoal
+  slug: dado-pessoal
+  tema: dados
+  bases: [{ texto: "art. 5º, I", ancora: art-5-i }]
+  aliases: [dados pessoais]
+  definicao: informação relacionada a pessoa natural identificada ou identificável.
+  nota: |
+    **"Identificável" puxa muita coisa para dentro da lei.** Não é preciso ter o
+    nome: basta que a informação, sozinha ou combinada com outras, permita
+    chegar a uma pessoa.
+
+    **Perfil comportamental pode ser dado pessoal.** Dados usados para formar o
+    perfil de comportamento de uma pessoa determinada, se ela estiver
+    identificada, contam como dados pessoais ([art. 12, § 2º](#art-12-p2)).
+
+- termo: Dado pessoal sensível
+  slug: dado-pessoal-sensivel
+  tema: dados
+  bases: [{ texto: "art. 5º, II", ancora: art-5-ii }]
+  aliases: [dados pessoais sensíveis, dados sensíveis, dado sensível]
+  definicao: |
+    dado sobre
+
+    - origem racial ou étnica
+    - convicção religiosa
+    - opinião política
+    - filiação a sindicato ou a organização de caráter religioso, filosófico ou político
+    - saúde ou vida sexual
+    - genético ou biométrico
+
+    **quando vinculado** a pessoa natural.
+  nota: >-
+    A etiqueta segue o que o dado **revela**. A regra alcança qualquer
+    tratamento que revele dado sensível e possa causar dano ao titular
+    ([art. 11, § 1º](#art-11-p1)) — a foto do rosto usada para reconhecimento
+    facial é dado biométrico; a lista de presença de um culto revela convicção
+    religiosa.
+
+- termo: Dado anonimizado
+  slug: dado-anonimizado
+  tema: dados
+  bases: [{ texto: "art. 5º, III", ancora: art-5-iii }]
+  aliases: [dados anonimizados, anonimizados, anonimizado]
+  definicao: >-
+    dado relativo a titular que não possa ser identificado, considerando meios
+    técnicos razoáveis e disponíveis na ocasião de seu tratamento.
+  nota: >-
+    **Dado anonimizado não é considerado dado pessoal**, salvo quando o
+    processo de anonimização for revertido utilizando exclusivamente meios
+    próprios, ou quando, com esforços razoáveis, puder ser revertido
+    ([art. 12](#art-12)). O que é "razoável" leva em conta custo e tempo da
+    reversão, diante das tecnologias disponíveis
+    ([art. 12, § 1º](#art-12-p1)). A ANPD pode, ouvido o CNPD, dispor sobre
+    padrões e técnicas de anonimização e verificar sua segurança
+    ([art. 12, § 3º](#art-12-p3)).
+
+- termo: Banco de dados
+  slug: banco-de-dados
+  tema: dados
+  bases: [{ texto: "art. 5º, IV", ancora: art-5-iv }]
+  aliases: [bancos de dados]
+  definicao: >-
+    conjunto estruturado de dados pessoais, estabelecido em um ou em vários
+    locais, em suporte eletrônico ou físico.
+
+- termo: Relatório de impacto à proteção de dados pessoais
+  slug: ripd
+  tema: governanca
+  bases: [{ texto: "art. 5º, XVII", ancora: art-5-xvii }]
+  aliases: [RIPD, relatório de impacto]
+  definicao: >-
+    documentação do controlador que contém descrição dos processos de
+    tratamento capazes de gerar risco às liberdades civis e aos direitos
+    fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação.

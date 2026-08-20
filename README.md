@@ -68,22 +68,24 @@ Os detalhes de cada decisão estão em
 │
 │   ## Notas de legislação — ver docs/notas.md
 ├── notas.md                     # Página índice                 → /notas
+├── definicoes.md                # Definições legais             → /notas/definicoes
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 13 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
-├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca e atalhos
+├── _fragmentos/                 # 14 fragmentos (fetch sob demanda, sem link): as normas e os verbetes
+├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca, atalhos e verbetes
 │
 │   ## Código compartilhado
-├── _layouts/                    # default.html · nota.html · notas-index.html
+├── _layouts/                    # default.html · nota.html · notas-index.html · definicoes.html
 ├── _includes/                   # Partials + style.css e nota-style.css (inline no <head>)
 ├── _data/
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
 │   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
-│   └── ementas/                 # 13 arquivos: a ementa de cada artigo, rótulo do sumário
+│   ├── ementas/                 # 13 arquivos: a ementa de cada artigo, rótulo do sumário
+│   └── definicoes/              # temas.yml + verbetes/: os termos que as normas definem
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # 5 scripts Python de autoria
+├── scripts/                     # 6 scripts Python de autoria
 ├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -192,7 +194,7 @@ Netlify — este comando o pega antes.
 
 ### Scripts de autoria
 
-Os cinco scripts de `scripts/` são ferramentas de autoria das notas de
+Os seis scripts de `scripts/` são ferramentas de autoria das notas de
 legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
 build. O que cada um faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
@@ -202,6 +204,7 @@ python3 -m venv .venv
 .venv/bin/pip install -r scripts/requirements.txt
 .venv/bin/python scripts/ancorar_referencias.py --check lgpd
 .venv/bin/python scripts/conferir_ementas.py
+.venv/bin/python scripts/conferir_definicoes.py
 ```
 
 ## Publicação

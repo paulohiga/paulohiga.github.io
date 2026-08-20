@@ -1,0 +1,105 @@
+{%- comment -%}
+    A lista de verbetes de /notas/definicoes, em ordem alfabética e agrupada por
+    letra inicial. Usada em dois lugares:
+
+      - `_layouts/definicoes.html`, que é a página;
+      - `_fragmentos/definicoes.html`, buscado via fetch() pelo `notas.js` para
+        montar o balão que abre ao clicar num termo marcado no comentário.
+
+    São os mesmos verbetes nos dois — a definição vive num lugar só,
+    `_data/definicoes/verbetes/<norma>.yml`. A ordem alfabética é a do DOM
+    porque é o padrão da página e o que sobra sem JavaScript; a organização por
+    tema é o `notas.js` que monta, movendo os `<article>` para as seções vazias
+    que o layout já deixa prontas (ver "Definições legais" em docs/notas.md).
+
+    Duas coisas que a montagem resolve e que o dado não carrega:
+
+      - **o link da base legal.** O verbete guarda a âncora crua (`art-5-v`);
+        quem sabe em que nota aquele dispositivo tem âncora, e com que prefixo,
+        é `_data/normas.yml`. Daí sai `/notas/lgpd#art-5-v` e
+        `/notas/eca-digital#dec12880-art-2-i`.
+      - **as remissões escritas no verbete.** Um `#art-12` dentro da definição
+        ou da observação é sempre dispositivo da norma **daquele** verbete, e
+        vira o mesmo link absoluto. Assim a remissão funciona na página, onde
+        não há painel de lei nenhum, e o `notas.js` a devolve para o painel
+        quando o balão abre dentro da nota daquela norma.
+{%- endcomment -%}
+{%- assign chaves = "" | split: "," -%}
+{%- for arquivo in site.data.definicoes.verbetes -%}
+    {%- assign norma_slug = arquivo[0] -%}
+    {%- for verbete in arquivo[1] -%}
+        {%- capture chave %}{% include definicoes-chave.html texto=verbete.termo %}{% endcapture -%}
+        {%- assign chave = chave | append: '|' | append: norma_slug | append: '|' | append: forloop.index0 -%}
+        {%- assign chaves = chaves | push: chave -%}
+    {%- endfor -%}
+{%- endfor -%}
+{%- assign chaves = chaves | sort -%}
+{%- comment -%}
+    Duas variáveis ficam para quem incluir este arquivo (o `assign` de dentro de
+    um include vale no template que o chama): `definicoes_iniciais`, com as
+    letras que têm verbete, e `definicoes_total`, com quantos são. É assim que a
+    página monta a barra de letras sem repetir a montagem da lista — daí ela
+    capturar a lista antes de imprimi-la.
+{%- endcomment -%}
+{%- assign definicoes_total = chaves | size -%}
+{%- assign definicoes_iniciais = "" | split: "," -%}
+{%- assign inicial_aberta = '' -%}
+{%- for chave in chaves -%}
+    {%- assign partes = chave | split: '|' -%}
+    {%- assign norma_slug = partes[1] -%}
+    {%- assign posicao = partes[2] | plus: 0 -%}
+    {%- assign verbete = site.data.definicoes.verbetes[norma_slug][posicao] -%}
+    {%- assign norma = site.leis | where: 'slug', norma_slug | first -%}
+    {%- assign registro = site.data.normas[norma_slug] -%}
+    {%- assign base_url = '/notas/' | append: registro.nota | append: '#' -%}
+    {%- if registro.prefixo and registro.prefixo != '' -%}
+        {%- assign base_url = base_url | append: registro.prefixo | append: '-' -%}
+    {%- endif -%}
+    {%- assign para_ancora = 'href="' | append: base_url -%}
+    {%- assign inicial = partes[0] | slice: 0, 1 | upcase -%}
+    {%- capture busca %}{% include definicoes-chave.html texto=verbete.termo %}{% endcapture -%}
+    {%- for apelido in verbete.aliases -%}
+        {%- capture apelido_chave %}{% include definicoes-chave.html texto=apelido %}{% endcapture -%}
+        {%- assign busca = busca | append: ' ' | append: apelido_chave -%}
+    {%- endfor -%}
+    {%- capture norma_chave %}{% include definicoes-chave.html texto=norma.apelido %}{% endcapture -%}
+    {%- assign busca = busca | append: ' ' | append: norma_chave -%}
+    {%- for tema in site.data.definicoes.temas -%}
+        {%- if tema.id == verbete.tema -%}
+            {%- capture tema_chave %}{% include definicoes-chave.html texto=tema.nome %}{% endcapture -%}
+            {%- assign busca = busca | append: ' ' | append: tema_chave -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- if inicial != inicial_aberta %}
+{%- if inicial_aberta != '' %}
+            </div>
+        </section>
+{%- endif %}
+        <section class="definicoes__grupo" data-inicial="{{ inicial }}">
+            <h2 class="definicoes__inicial" id="letra-{{ inicial | downcase }}">{{ inicial }}</h2>
+            <div class="definicoes__itens">
+{%- assign inicial_aberta = inicial -%}
+{%- assign definicoes_iniciais = definicoes_iniciais | push: inicial %}
+{%- endif %}
+                <article class="verbete" id="v-{{ norma.prefixo }}-{{ verbete.slug }}" data-tema="{{ verbete.tema }}" data-inicial="{{ inicial }}" data-busca="{{ busca | strip }}">
+                    <h3 class="verbete__termo">{{ verbete.termo }}</h3>
+                    <p class="verbete__origem">
+                        <a class="verbete__norma" href="/notas/{{ registro.nota }}">{{ norma.apelido | split: ' — ' | first }}</a>
+{%- for base in verbete.bases %}
+{%- if base.ancora %}
+                        <a class="verbete__base" href="{{ base_url }}{{ base.ancora }}">{{ base.texto }}</a>
+{%- else %}
+                        <span class="verbete__base verbete__base--sem-link">{{ base.texto }}</span>
+{%- endif %}
+{%- endfor %}
+                    </p>
+                    <div class="verbete__definicao">{{ verbete.definicao | markdownify | replace: 'href="#', para_ancora }}</div>
+{%- if verbete.nota %}
+                    <div class="verbete__observacao">{{ verbete.nota | markdownify | replace: 'href="#', para_ancora }}</div>
+{%- endif %}
+                </article>
+{%- endfor %}
+{%- if inicial_aberta != '' %}
+            </div>
+        </section>
+{%- endif %}

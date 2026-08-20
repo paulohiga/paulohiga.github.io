@@ -32,6 +32,7 @@ Referências de linha apontam para o estado do código em 7/8/2026 (commit
 | C14 | **feito** (7/8/2026) |
 | C15, C16 | pendente |
 | B17 | **feito** (10/8/2026) |
+| C18 | **feito** (20/8/2026) |
 
 Os itens feitos ficam registrados abaixo com o que foi entregue, para que o
 histórico do diagnóstico não se perca e para que quem retomar a lista saiba o
@@ -308,8 +309,8 @@ plana rolável, sem seção ativa destacada e sem campo de filtro.
   títulos já listados. Compara sem acento e sem caixa (`normalize('NFD')`),
   porque o teclado do celular não põe acento sozinho: "principios" acha
   "Princípios". Um item que casa arrasta os ancestrais (o capítulo situa a
-  seção encontrada) e os descendentes ("Definições" traz Sujeitos, Ações,
-  Técnicas e Documentação). Sem resultado, aparece "Nenhuma seção com esse
+  seção encontrada) e os descendentes ("Fiscalização e sanções" traz Como a
+  ANPD fiscaliza, O rito do processo sancionador e O catálogo de sanções). Sem resultado, aparece "Nenhuma seção com esse
   termo." num `role="status"`.
 - **Seção atual.** O último título que já passou pela linha de leitura ganha
   barra de destaque, negrito e `aria-current="true"`. Calculado no mesmo
@@ -524,6 +525,43 @@ bordas opostas não comunicam "sumário dos comentários" e "sumário da lei".
 **Proposta.** Mover para o `.painel__topo` de cada painel, onde já há o rótulo
 do painel, como botão rotulado — resolve descoberta, sobreposição e tamanho de
 alvo de uma vez.
+
+### C18. As definições estavam presas ao começo de cada nota — FEITO
+
+**Como era.** Cada nota abria com uma seção "Definições" (ou "Conceitos", ou
+"Glossário do rito") de 20 a 40 verbetes. Três problemas de navegação, um deles
+invisível no diagnóstico original:
+
+- **Quem chega com um termo na cabeça, e não com uma norma, não tinha porta.**
+  "O que é sinal de idade?" exigia adivinhar em que das seis notas o termo
+  estava e rolar até a seção certa.
+- **Quem estava lendo o comentário tinha de sair dele.** O termo definido
+  aparece no meio da análise, e a definição ficava vinte telas acima.
+- **O mesmo termo existia duas vezes.** O "tratamento" da LGPD e o do RGPD são
+  verbetes diferentes com o mesmo nome, escritos em notas diferentes — e
+  envelheciam separados.
+
+**O que foi feito.**
+
+- **Página `/notas/definicoes`**, montada de dados
+  (`_data/definicoes/verbetes/<norma>.yml`), com os 97 termos das seis notas.
+  Ordem alfabética no DOM, organização por tema montada pelo `notas.js`
+  movendo os verbetes (e não reordenando por CSS, que mentiria para o leitor
+  de tela), filtro por termo, norma ou tema, e barra de letras que funciona
+  sem JavaScript por ser âncora pura.
+- **Termo marcado no comentário**, no primeiro uso de cada um em cada seção
+  `##`, abrindo um balão com a definição e a base legal. A base volta para o
+  painel da lei: clicar em "art. 2º, IV" no balão de um verbete do decreto,
+  dentro da nota do ECA Digital, troca a norma exibida e para no dispositivo.
+  Densidade medida: de 1,6 a 6,6 marcas por seção.
+- **As seções de definições saíram das notas.** O comentário *sobre* a
+  definição ficou — na nota, quando é análise (a anonimização na LGPD), ou no
+  campo `nota` do verbete.
+
+**O que não resolve.** Continua sem busca no corpo das notas (C15): o filtro da
+página de definições procura termo, norma e tema, não texto de comentário.
+
+**Detalhes de implementação** em [`notas.md`](./notas.md#definições-legais).
 
 ---
 

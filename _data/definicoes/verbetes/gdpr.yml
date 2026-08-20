@@ -1,0 +1,147 @@
+# Definições do RGPD (Regulamento (UE) 2016/679), reunidas em
+# /notas/definicoes. Campos e regras de escrita estão em "Definições legais"
+# (docs/notas.md). Confira com `python3 scripts/conferir_definicoes.py gdpr`.
+#
+# O art. 4.º tem 26 definições numeradas, e os itens numerados de um artigo
+# europeu abertos por "1)" não recebem âncora própria (ver "Normas estrangeiras"
+# em docs/notas.md): a base traz o número do item, e a âncora leva ao artigo.
+#
+# O texto é PT-PT, do EUR-Lex — "subcontratante" é o operador, "responsável
+# pelo tratamento" é o controlador. A correspondência com a terminologia
+# brasileira está em "Terminologia: PT-PT × pt-BR", na nota do RGPD.
+
+- termo: Dados pessoais
+  slug: dados-pessoais
+  tema: dados
+  bases: [{ texto: "art. 4.º, 1)", ancora: art-4 }]
+  aliases: [dado pessoal]
+  definicao: >-
+    informação relativa a uma pessoa singular **identificada ou identificável**,
+    direta ou indiretamente, em especial por referência a um identificador.
+  nota: >-
+    A definição é deliberadamente ampla, e o considerando 26 fixa o teste: para
+    saber se alguém é identificável, consideram-se "todos os meios suscetíveis
+    de ser **razoavelmente** utilizados" — pelo responsável **ou por outra
+    pessoa** —, à luz do custo, do tempo e da tecnologia disponível.
+
+- termo: Pseudonimização
+  slug: pseudonimizacao
+  tema: operacoes
+  bases: [{ texto: "art. 4.º, 5)", ancora: art-4 }]
+  aliases: [pseudonimizado, dado pseudonimizado, dados pseudonimizados]
+  definicao: >-
+    tratamento que impede atribuir os dados a um titular sem recorrer a
+    informação suplementar guardada separadamente.
+  nota: >-
+    Dado pseudonimizado **continua sendo dado pessoal** para quem tem a chave; a
+    discussão sobre o que ele é para quem **não** tem a chave é hoje o ponto
+    mais quente do direito europeu de dados (ver "Jurisprudências históricas",
+    na nota do RGPD).
+
+- termo: Dados anonimizados
+  slug: dados-anonimizados
+  tema: dados
+  bases: [{ texto: "considerando 26" }]
+  aliases: [dado anonimizado]
+  definicao: >-
+    dados que não digam respeito a pessoa identificada ou identificável. Dado
+    anônimo está **fora** do regulamento — o conceito aparece no considerando
+    26, fora do articulado.
+  nota: >-
+    É a mesma arquitetura do [art. 12 da LGPD](/notas/lgpd#art-12), inclusive na
+    ressalva de que a anonimização reversível por esforços razoáveis não é
+    anonimização.
+
+- termo: Categorias especiais de dados pessoais
+  slug: categorias-especiais
+  tema: dados
+  bases: [{ texto: "art. 9.º", ancora: art-9 }]
+  aliases: [categorias especiais, dados sensíveis, dado sensível]
+  definicao: >-
+    origem racial ou étnica, opiniões políticas, convicções religiosas ou
+    filosóficas, filiação sindical, dados genéticos, dados biométricos usados
+    para identificar univocamente uma pessoa, dados relativos à saúde, à vida
+    sexual ou à orientação sexual.
+  nota: >-
+    São os "dados sensíveis" do [art. 5º, II, da LGPD](/notas/lgpd#art-5-ii). As
+    duas listas quase coincidem, mas não são idênticas: onde o RGPD fala apenas
+    em **filiação sindical**, a lei brasileira alcança também a filiação a
+    **organização de caráter religioso, filosófico ou político**.
+
+- termo: Tratamento
+  slug: tratamento
+  tema: operacoes
+  bases: [{ texto: "art. 4.º, 2)", ancora: art-4 }]
+  definicao: >-
+    qualquer operação sobre dados pessoais — recolha, registro, organização,
+    conservação, consulta, divulgação, apagamento.
+  nota: "Coincide com o [art. 5º, X, da LGPD](/notas/lgpd#art-5-x)."
+
+- termo: Responsável pelo tratamento
+  slug: responsavel-pelo-tratamento
+  tema: sujeitos
+  bases: [{ texto: "art. 4.º, 7)", ancora: art-4 }]
+  aliases: [responsáveis pelo tratamento]
+  definicao: >-
+    quem determina as **finalidades e os meios** do tratamento. É a decisão, não
+    a posse dos dados, que define o papel.
+  nota: "Corresponde ao **controlador** da LGPD."
+
+- termo: Subcontratante
+  slug: subcontratante
+  tema: sujeitos
+  bases: [{ texto: "art. 4.º, 8)", ancora: art-4 }]
+  aliases: [subcontratantes]
+  definicao: quem trata dados **por conta** do responsável pelo tratamento.
+  nota: "Corresponde ao **operador** da LGPD."
+
+- termo: Responsáveis conjuntos pelo tratamento
+  slug: responsaveis-conjuntos
+  tema: sujeitos
+  bases: [{ texto: "art. 26.º", ancora: art-26 }]
+  aliases: [responsáveis conjuntos]
+  definicao: >-
+    dois ou mais responsáveis que determinam conjuntamente finalidades e meios,
+    e devem repartir responsabilidades por acordo transparente.
+  nota: >-
+    A figura não tem equivalente expresso na LGPD, e o Tribunal de Justiça a
+    interpretou de forma ampla — quem se beneficia e influencia a definição de
+    finalidades pode ser corresponsável mesmo sem jamais tocar nos dados.
+
+- termo: Consentimento
+  slug: consentimento
+  tema: operacoes
+  bases: [{ texto: "art. 4.º, 11)", ancora: art-4 }]
+  definicao: >-
+    manifestação de vontade **livre, específica, informada e inequívoca**, por
+    declaração ou ato positivo inequívoco.
+  nota: >-
+    Silêncio, opções pré-marcadas e inércia não servem (considerando 32).
+
+- termo: Violação de dados pessoais
+  slug: violacao-de-dados-pessoais
+  tema: governanca
+  bases: [{ texto: "art. 4.º, 12)", ancora: art-4 }]
+  aliases: [violação de dados]
+  definicao: >-
+    violação da segurança que provoque, de modo acidental ou ilícito,
+    destruição, perda, alteração, divulgação ou acesso não autorizado a dados
+    pessoais.
+  nota: >-
+    **Não é sinônimo de vazamento**: perder um _notebook_ criptografado, apagar
+    um banco sem cópia ou sofrer um _ransomware_ são violações, ainda que
+    ninguém veja o dado.
+
+- termo: Definição de perfis
+  slug: definicao-de-perfis
+  tema: operacoes
+  bases: [{ texto: "art. 4.º, 4)", ancora: art-4 }]
+  definicao: >-
+    tratamento automatizado que usa dados pessoais para **avaliar** aspectos
+    pessoais — desempenho profissional, situação econômica, saúde, preferências,
+    fiabilidade, comportamento, localização.
+  nota: >-
+    Perfilar é avaliar; agrupar sem avaliar não é. O [art. 22.º](#art-22) não
+    proíbe perfilar: proíbe que a pessoa fique **sujeita a decisão exclusivamente
+    automatizada** que produza efeitos jurídicos ou a afete significativamente
+    de modo similar.

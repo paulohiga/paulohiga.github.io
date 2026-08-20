@@ -90,6 +90,15 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   doutrina e material de terceiros, não. Resuma com palavras próprias e cite.
 - **Sem dados pessoais** de partes ao comentar jurisprudência: refira o caso por
   número, órgão e tema.
+- **Definição de termo não se escreve na nota.** As normas definem os próprios
+  termos, e esses verbetes vivem num lugar só —
+  `_data/definicoes/verbetes/<norma>.yml`, publicado em `/notas/definicoes` e
+  aberto no balão que o comentário mostra ao clique. Não recrie uma seção
+  "Definições" numa nota: o mesmo termo escrito em dois lugares envelhece em
+  um deles. **Todo verbete precisa da base legal**, e ela se confere com
+  `scripts/conferir_definicoes.py` (ver
+  [`docs/notas.md`](./docs/notas.md#definições-legais)). Comentário *sobre* a
+  definição é outra coisa e continua na nota, ou no campo `nota` do verbete.
 - **Confira toda remissão nova contra o texto legal antes de publicar.** Link
   errado numa página pública de legislação é um defeito, não um detalhe. Use
   `scripts/ancorar_referencias.py --check` e revise o diff.
@@ -226,6 +235,11 @@ preview do Netlify, depois do push.
   `python3 scripts/conferir_ementas.py` se mexeu em `_leis/` ou em
   `_data/ementas/`, e abra o sumário da lei seca no navegador para ver se a
   frase de cada artigo aparece inteira.
+- **Definições:** rode `python3 scripts/conferir_definicoes.py` se mexeu em
+  `_data/definicoes/`. Abra `/notas/definicoes` e confira as duas organizações
+  (A–Z e por tema), o filtro e um link de base legal; depois abra uma nota e
+  confira que o termo marcado abre o balão e que a base dele leva ao
+  dispositivo no painel da lei.
 - **Modo leitura das notas:** em tela larga, expanda cada painel pelo botão da
   barra de título e confira que o outro sai e que o sumário vira coluna aberta
   ao lado do texto. A coluna de texto tem teto, e ele é medido em **caracteres
@@ -310,6 +324,8 @@ renomear estão no [`README.md`](./README.md#nome-da-branch-limite-de-63-caracte
       rodado e o diff revisado, remissões conferidas contra o texto legal e
       regras editoriais observadas.
 - [ ] `conferir_ementas.py` sem erro, se `_leis/` ou `_data/ementas/` mudaram.
+- [ ] `conferir_definicoes.py` sem erro, se `_data/definicoes/` mudou — e toda
+      definição nova com base legal, fora do corpo da nota.
 - [ ] `atualizado_em` da nota alterado se o conteúdo dos comentários mudou.
 - [ ] [`docs/changelog.md`](./docs/changelog.md) atualizado, no mesmo commit, se o
       conteúdo do site mudou — e escrito como texto público.

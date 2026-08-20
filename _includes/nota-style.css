@@ -1615,6 +1615,23 @@ body:not(.js) .nota-progresso {
 
 /* Agrupamento por jurisdição (o valor de `jurisdicao` no front matter da
    nota). O rótulo do grupo não é um cartão: é um título de seção da lista. */
+/* Destino da seção que não é nota: a página de definições, transversal a todas
+   elas. Fica entre a intro e a lista, com peso menor que o dos cartões. */
+.notas-index__transversal {
+    margin: 0 0 2rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+}
+
+.notas-index__transversal a {
+    font-weight: 600;
+}
+
 .notas-index__grupo {
     margin: 2rem 0 0.85rem;
     font-family: var(--font-serif);
@@ -1707,6 +1724,345 @@ body:not(.js) .nota-progresso {
     color: var(--ink-soft);
 }
 
+/* --- Página de definições legais (/notas/definicoes) e a marcação dos termos
+   no comentário. ---
+
+   As definições ficavam repetidas no começo de cada nota: o mesmo termo escrito
+   duas vezes quando duas normas o definem, e uma parede de verbetes entre o
+   resumo e o comentário que o leitor foi ler. Agora vivem num lugar só
+   (`_data/definicoes/verbetes/`), e chegam ao leitor por dois caminhos: esta
+   página e o balão que abre ao clicar num termo marcado no comentário. */
+.definicoes {
+    flex: 1;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 1.5rem clamp(1rem, 3vw, 1.75rem) 4rem;
+}
+
+.definicoes__intro {
+    margin: 0 0 1.25rem;
+    color: var(--ink-soft);
+}
+
+/* A barra sangra para dentro do respiro lateral da coluna, senão o texto que
+   passa por baixo dela apareceria pelas beiradas. --definicoes-barra é a altura
+   medida pelo notas.js (a barra muda de altura conforme os controles existem ou
+   não, e conforme a linha de letras quebra); o valor de reserva vale enquanto a
+   medição não chega, e sem JavaScript. */
+.definicoes__barra {
+    position: sticky;
+    top: var(--nota-topo-altura, 0rem);
+    z-index: 3;
+    margin: 0 calc(-1 * clamp(1rem, 3vw, 1.75rem)) 1.5rem;
+    padding: 0.75rem clamp(1rem, 3vw, 1.75rem);
+    background: var(--page-bg);
+    border-bottom: 1px solid var(--hairline);
+}
+
+/* Trocar a organização e filtrar dependem de JavaScript, como o seletor de
+   normas das notas: sem ele os controles não têm efeito nenhum e ficam de fora.
+   O que sobra é a lista inteira em ordem alfabética, com a barra de letras
+   funcionando — ela é só âncora. */
+.definicoes__controles {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+body.js .definicoes__controles {
+    display: flex;
+}
+
+.definicoes__organizar {
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.definicoes__organizar button {
+    padding: 0.4rem 0.85rem;
+    border: 0;
+    background: none;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.definicoes__organizar button + button {
+    border-left: 1px solid var(--hairline);
+}
+
+.definicoes__organizar button[aria-pressed="true"] {
+    background: var(--surface-tint);
+    color: var(--ink);
+}
+
+.definicoes__filtro {
+    flex: 1 1 12rem;
+    display: flex;
+    min-width: 0;
+}
+
+.definicoes__filtro input {
+    width: 100%;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.85rem;
+}
+
+.definicoes__letras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+/* O `display: flex` acima é mais específico que o `[hidden]` do navegador, e
+   sem esta regra a barra continuaria na tela na organização por tema — onde as
+   seções por letra que ela aponta não existem. */
+.definicoes__letras[hidden] {
+    display: none;
+}
+
+.definicoes__letras a {
+    display: grid;
+    place-items: center;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    padding: 0 0.3rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.4rem;
+    background: var(--surface);
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.definicoes__letras a:hover,
+.definicoes__letras a:focus-visible {
+    border-color: var(--accent);
+    color: var(--link);
+}
+
+/* O que a barra presa no topo cobriria num salto por âncora. */
+.definicoes__inicial,
+.definicoes__tema,
+.verbete {
+    scroll-margin-top: calc(var(--nota-topo-altura, 0rem) + var(--definicoes-barra, 6rem) + 0.75rem);
+}
+
+.definicoes__inicial,
+.definicoes__tema {
+    margin: 2rem 0 0.85rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+}
+
+.definicoes__grupo:first-child .definicoes__inicial,
+.definicoes__grupo:first-child .definicoes__tema {
+    margin-top: 0;
+}
+
+.definicoes__inicial {
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--hairline);
+    letter-spacing: 0.04em;
+}
+
+.definicoes__tema-descricao {
+    margin: -0.55rem 0 0.85rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+}
+
+.definicoes__itens {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.verbete {
+    padding: 0.95rem 1.15rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+}
+
+/* Chegar por link direto — de uma nota, do balão ou de fora do site — precisa
+   dizer qual dos 97 verbetes é o da vez. */
+.verbete:target {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--realce);
+}
+
+.verbete__termo {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+/* A norma e a base legal em etiquetas, e não em texto corrido: são o que
+   distingue dois verbetes de mesmo nome (o "tratamento" da LGPD e o do RGPD) e
+   precisam ser lidos antes da definição, não depois. */
+.verbete__origem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0.4rem 0 0.65rem;
+}
+
+.verbete__norma,
+.verbete__base {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.4rem;
+    font-size: 0.78rem;
+    text-decoration: none;
+}
+
+.verbete__norma {
+    background: var(--surface-tint);
+    color: var(--ink-soft);
+}
+
+.verbete__base {
+    color: var(--link);
+}
+
+.verbete__norma:hover,
+.verbete__base:hover,
+.verbete__norma:focus-visible,
+.verbete__base:focus-visible {
+    border-color: var(--accent);
+    color: var(--link-hover);
+}
+
+.verbete__base--sem-link {
+    color: var(--ink-soft);
+}
+
+.verbete__definicao > :first-child,
+.verbete__observacao > :first-child {
+    margin-top: 0;
+}
+
+.verbete__definicao > :last-child,
+.verbete__observacao > :last-child {
+    margin-bottom: 0;
+}
+
+.verbete__definicao ul {
+    margin: 0.4rem 0;
+    padding-left: 1.2rem;
+}
+
+/* A observação é comentário sobre a definição, não a definição: fica atrás de
+   uma barra, num corpo menor, para não se confundir com o texto da norma. */
+.verbete__observacao {
+    margin-top: 0.7rem;
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--hairline);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+}
+
+.definicoes__vazio {
+    margin: 1.5rem 0 0;
+    color: var(--ink-soft);
+}
+
+/* --- Termo marcado no comentário ---
+   Discreto de propósito: o comentário já tem links azuis para os dispositivos
+   da norma, e um segundo tipo de link colorido no meio da frase transformaria
+   o texto em confete. O tracejado é a convenção de "isto tem uma definição", e
+   o `cursor: help` a confirma antes do clique. Só o primeiro uso de cada termo
+   em cada seção é marcado (ver notas.js). */
+.verbete-marca {
+    color: inherit;
+    text-decoration: underline dotted;
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    cursor: help;
+}
+
+.verbete-marca:hover,
+.verbete-marca:focus-visible,
+.verbete-marca[aria-expanded="true"] {
+    color: var(--link);
+    text-decoration-color: currentColor;
+}
+
+/* --- Balão da definição ---
+   `position: fixed` porque o comentário é um container de rolagem próprio na
+   tela dividida: preso ao fluxo, o balão sairia cortado na borda do painel. O
+   notas.js calcula a posição a partir do retângulo do termo. */
+.verbete-balao {
+    position: fixed;
+    z-index: 9;
+    width: min(26rem, calc(100vw - 1.5rem));
+    max-height: min(24rem, 55vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.9rem 1.05rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.22);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.verbete-balao .verbete {
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
+
+.verbete-balao .verbete__termo {
+    padding-right: 1.75rem;
+}
+
+.verbete-balao__fechar {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.verbete-balao__fechar:hover {
+    background: var(--surface-tint);
+    color: var(--ink);
+}
+
+.verbete-balao__todas {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
     * {
         transition-duration: 0.01ms !important;
@@ -1726,7 +2082,9 @@ body:not(.js) .nota-progresso {
     .nota-toc,
     .nota-progresso,
     .nota-titulo-seta,
-    .nota-titulo-menu {
+    .nota-titulo-menu,
+    .verbete-balao,
+    .definicoes__barra {
         display: none;
     }
 

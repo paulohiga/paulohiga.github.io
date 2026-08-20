@@ -1,0 +1,47 @@
+# Temas da página /notas/definicoes — a segunda forma de organizar os verbetes,
+# ao lado da ordem alfabética. A ordem desta lista é a ordem em que os grupos
+# aparecem na página; dentro de cada grupo os verbetes seguem em ordem
+# alfabética.
+#
+# O tema é transversal às normas de propósito: "sujeitos" reúne o controlador
+# da LGPD, o responsável pelo tratamento do RGPD e o prestador do AI Act, que
+# são a mesma pergunta feita em três textos. Cada verbete de
+# `_data/definicoes/verbetes/<norma>.yml` declara um `tema`, e ele precisa ser
+# um dos `id` abaixo — `scripts/conferir_definicoes.py` recusa tema que não
+# esteja aqui.
+#
+# Tema novo é uma entrada nova nesta lista: a página não precisa saber dele.
+# Mas pense duas vezes antes de criar um — tema que fica com dois verbetes não
+# organiza nada.
+
+- id: sujeitos
+  nome: Sujeitos e papéis
+  descricao: Quem trata, quem decide, quem responde e quem fiscaliza.
+
+- id: dados
+  nome: Dados e informação
+  descricao: O que a norma considera dado, e de que espécie.
+
+- id: operacoes
+  nome: Operações e técnicas
+  descricao: O que se faz com o dado, e com que método.
+
+- id: rede
+  nome: Rede, serviços e plataformas
+  descricao: A infraestrutura da internet e os serviços que rodam sobre ela.
+
+- id: ia
+  nome: Inteligência artificial
+  descricao: Sistemas, modelos e os riscos próprios deles.
+
+- id: infancia
+  nome: Infância e adolescência
+  descricao: Idade, adequação de conteúdo e supervisão.
+
+- id: governanca
+  nome: Governança e conformidade
+  descricao: Documentos, incidentes e o que se deve ao mercado e ao regulador.
+
+- id: rito
+  nome: Rito e deliberação
+  descricao: Como um colegiado de agência decide.

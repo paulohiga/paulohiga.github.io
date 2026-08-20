@@ -1,0 +1,21 @@
+---
+permalink: /notas/fragmentos/definicoes.html
+layout: null
+sitemap: false
+excerpt_separator: ""
+---
+{%- comment -%}
+    Fragmento HTML puro (sem <html>/<head>/<body>) com todos os verbetes de
+    /notas/definicoes — a mesma lista da página, montada pelo mesmo include.
+    Só existe para ser buscado via fetch() pelo `notas.js` na primeira vez em
+    que o leitor clica num termo marcado no comentário: é dele que sai o
+    conteúdo do balão. Depois fica em cache na aba, e o próprio navegador o
+    reaproveita ao passar de uma nota para outra.
+
+    Buscado, e não embutido no HTML de cada nota, para a nota não engordar por
+    causa de um balão que talvez ninguém abra — é a mesma escolha do painel
+    "Lei seca" para as normas que não são a principal. Não é página para
+    navegação humana: fora do sitemap (`sitemap: false`) e bloqueado em
+    robots.txt, como os demais fragmentos.
+{%- endcomment -%}
+{%- include definicoes-lista.html -%}

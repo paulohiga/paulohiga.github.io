@@ -1,0 +1,11 @@
+{%- comment -%}
+    Chave de ordenação e de busca de um verbete: o texto em minúsculas e sem
+    acento. Existe porque o `sort` do Liquid compara ponto de código, e nele
+    "Órgão de pesquisa" cai depois de "Uso compartilhado" — a lista alfabética
+    de uma página em português precisa dobrar o acento antes de ordenar. A mesma
+    chave alimenta o `data-busca` do filtro, para "afericao" achar "aferição".
+
+    Uso: {% capture chave %}{% include definicoes-chave.html texto=v.termo %}{% endcapture %}
+    O `notas.js` normaliza do mesmo jeito, do lado do navegador.
+{%- endcomment -%}
+{{- include.texto | downcase | replace: 'á', 'a' | replace: 'à', 'a' | replace: 'â', 'a' | replace: 'ã', 'a' | replace: 'ä', 'a' | replace: 'é', 'e' | replace: 'è', 'e' | replace: 'ê', 'e' | replace: 'ë', 'e' | replace: 'í', 'i' | replace: 'ì', 'i' | replace: 'î', 'i' | replace: 'ï', 'i' | replace: 'ó', 'o' | replace: 'ò', 'o' | replace: 'ô', 'o' | replace: 'õ', 'o' | replace: 'ö', 'o' | replace: 'ú', 'u' | replace: 'ù', 'u' | replace: 'û', 'u' | replace: 'ü', 'u' | replace: 'ç', 'c' | replace: 'ñ', 'n' -}}

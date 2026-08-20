@@ -62,6 +62,20 @@
             e, quando ajuda a entender a brasileira, estrangeira —, com o texto da lei ao lado dos
             comentários.
         </p>
+        <!-- A página de definições não é uma nota, e por isso não sai de
+             `site.notas` nem entra na lista abaixo: é um índice transversal a
+             todas elas. Fica logo depois da intro porque é a porta de entrada
+             de quem chega com um termo na cabeça, e não com uma norma. O total
+             vem do próprio dado, para não envelhecer aqui. -->
+{%- assign total_verbetes = 0 -%}
+{%- for arquivo in site.data.definicoes.verbetes -%}
+{%- assign total_verbetes = total_verbetes | plus: arquivo[1].size -%}
+{%- endfor %}
+        <p class="notas-index__transversal">
+            <a href="/notas/definicoes">Definições legais</a> — os {{ total_verbetes }} termos que
+            essas normas definem elas próprias, em ordem alfabética ou por tema, cada um com a base
+            legal e o link para o dispositivo.
+        </p>
         <!-- Só o título é link, e não o cartão inteiro: assim o nome acessível
              do link é o título da nota, e não o bloco de texto todo (título +
              resumo + normas + data), que um leitor de tela leria por inteiro a

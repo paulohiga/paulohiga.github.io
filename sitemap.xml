@@ -57,6 +57,21 @@ sitemap: false
     {%- endif %}
   </url>
 {%- endif %}
+{%- comment -%}
+  A página de definições legais (/notas/definicoes) também é da seção e também
+  é só em pt-br. Não sai de `site.notas` — não é uma nota, e sim um índice
+  transversal a todas elas —, por isso entra aqui em separado.
+{%- endcomment -%}
+{%- assign pagina_definicoes = site.pages | where: "permalink", "/notas/definicoes" | first %}
+{%- if pagina_definicoes %}
+  <url>
+    <loc>{{ site.url }}{{ pagina_definicoes.url }}</loc>
+    {%- assign definicoes_lastmod = pagina_definicoes.last_modified_at %}
+    {%- if definicoes_lastmod %}
+    <lastmod>{{ definicoes_lastmod | date: "%Y-%m-%d" }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endif %}
 {%- for nota in site.notas %}
   <url>
     <loc>{{ site.url }}{{ nota.url }}</loc>
