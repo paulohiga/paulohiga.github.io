@@ -71,8 +71,8 @@ Os detalhes de cada decisão estão em
 ├── definicoes.md                # Definições normativas         → /notas/definicoes
 ├── definicoes.json              # Banco para abertura contextual nas notas
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
-├── _leis/                       # 13 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 # 13 fragmentos das normas (fetch sob demanda, sem link)
+├── _leis/                       # 18 textos legais em Markdown puro (output: false)
+├── _fragmentos/                 # 18 fragmentos das normas (fetch sob demanda, sem link)
 ├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca e atalhos
 │
 │   ## Código compartilhado
@@ -82,7 +82,7 @@ Os detalhes de cada decisão estão em
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
 │   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
 │   ├── definicoes.yml           # Banco gerado de definições normativas
-│   └── ementas/                 # 13 arquivos: a ementa de cada artigo, rótulo do sumário
+│   └── ementas/                 # 18 arquivos: a ementa de cada artigo, rótulo do sumário
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado

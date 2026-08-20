@@ -149,7 +149,7 @@
   - Ambiente de testagem da regulamentação da IA
   busca:
   - Ambiente de testagem da regulamentação da IA
-  busca_texto: Ambiente de testagem da regulamentação da IA Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Ambiente de testagem da regulamentação da IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Inteligência artificial
   jurisdicao: UE
@@ -157,12 +157,12 @@
   - texto: um modelo controlado, criado por uma autoridade competente, que oferece aos prestadores ou potenciais prestadores de sistemas de IA a possibilidade de desenvolver, treinar, validar e testar, se for caso disso em condições reais, um sistema de IA inovador, de acordo com um plano do ambiente de testagem, durante um período limitado sob supervisão regulamentar
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 55
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p55
       nota_url: /notas/ai-act
 - id: br-ampla-divulgacao-do-incidente-em-meios-de-comunicacao
   titulo: Ampla divulgação do incidente em meios de comunicação
@@ -212,7 +212,7 @@
   - Aplicação da lei
   busca:
   - Aplicação da lei
-  busca_texto: Aplicação da lei Internet e plataformas AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Internet e plataformas
   jurisdicao: UE
@@ -220,12 +220,12 @@
   - texto: as atividades realizadas por autoridades responsáveis pela aplicação da lei ou em nome destas para efeitos de prevenção, investigação, deteção ou repressão de infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 46
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p46
       nota_url: /notas/ai-act
 - id: br-aplicacoes-de-internet
   titulo: Aplicações de internet
@@ -330,7 +330,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 21
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p21
       nota_url: /notas/gdpr
 - id: ue-autoridade-de-controlo-interessada
   titulo: Autoridade de controlo interessada
@@ -360,7 +360,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 22
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p22
       nota_url: /notas/gdpr
 - id: ue-autoridade-de-fiscalizacao-do-mercado
   titulo: Autoridade de fiscalização do mercado
@@ -368,7 +368,7 @@
   - Autoridade de fiscalização do mercado
   busca:
   - Autoridade de fiscalização do mercado
-  busca_texto: Autoridade de fiscalização do mercado Fiscalização e sanções AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Autoridade de fiscalização do mercado Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Fiscalização e sanções
   jurisdicao: UE
@@ -376,12 +376,12 @@
   - texto: a autoridade nacional que realiza as atividades e toma as medidas previstas no Regulamento (UE) 2019/1020
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 26
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p26
       nota_url: /notas/ai-act
 - id: br-autoridade-nacional
   titulo: Autoridade nacional
@@ -410,7 +410,7 @@
   - Autoridade nacional competente
   busca:
   - Autoridade nacional competente
-  busca_texto: Autoridade nacional competente Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Autoridade nacional competente Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Agentes e governança
   jurisdicao: UE
@@ -418,12 +418,12 @@
   - texto: uma autoridade notificadora ou uma autoridade de fiscalização do mercado; no que diz respeito aos sistemas de IA colocados em serviço ou utilizados pelas instituições, agências, serviços e organismos da União, quaisquer referências às autoridades nacionais competentes ou às autoridades de fiscalização do mercado no presente regulamento devem ser entendidas como referências à Autoridade Europeia para a Proteção de Dados
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 48
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p48
       nota_url: /notas/ai-act
 - id: ue-autoridade-notificadora
   titulo: Autoridade notificadora
@@ -431,7 +431,7 @@
   - Autoridade notificadora
   busca:
   - Autoridade notificadora
-  busca_texto: Autoridade notificadora Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Autoridade notificadora Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Agentes e governança
   jurisdicao: UE
@@ -439,12 +439,12 @@
   - texto: a autoridade nacional responsável por estabelecer e executar os procedimentos necessários para a avaliação, designação e notificação de organismos de avaliação da conformidade e pela fiscalização destes
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 19
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p19
       nota_url: /notas/ai-act
 - id: ue-autoridade-responsavel-pela-aplicacao-da-lei
   titulo: Autoridade responsável pela aplicação da lei
@@ -452,7 +452,7 @@
   - Autoridade responsável pela aplicação da lei
   busca:
   - Autoridade responsável pela aplicação da lei
-  busca_texto: Autoridade responsável pela aplicação da lei Internet e plataformas AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Autoridade responsável pela aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Internet e plataformas
   jurisdicao: UE
@@ -463,12 +463,12 @@
       - b) Qualquer outro organismo ou entidade designado pelo direito de um Estado-Membro para exercer autoridade pública e poderes públicos para efeitos de prevenção, investigação, deteção ou pelo exercício da ação penal relativo a infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas'
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 45
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p45
       nota_url: /notas/ai-act
 - id: br-autuado
   titulo: Autuado
@@ -497,7 +497,7 @@
   - Avaliação da conformidade
   busca:
   - Avaliação da conformidade
-  busca_texto: Avaliação da conformidade Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Avaliação da conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -505,12 +505,12 @@
   - texto: o processo de demonstrar se estão preenchidos os requisitos relacionados com um sistema de IA de risco elevado estabelecidos no capítulo III, secção 2
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 20
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p20
       nota_url: /notas/ai-act
 - id: br-banco-de-dados
   titulo: Banco de dados
@@ -581,7 +581,7 @@
   - Capacidades de elevado impacto
   busca:
   - Capacidades de elevado impacto
-  busca_texto: Capacidades de elevado impacto Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Capacidades de elevado impacto Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -589,12 +589,12 @@
   - texto: capacidades que correspondem ou excedem as capacidades registadas nos modelos de IA de finalidade geral mais avançados
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 64
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p64
       nota_url: /notas/ai-act
 - id: br-categoria-de-dados-pessoais
   titulo: Categoria de dados pessoais
@@ -623,7 +623,7 @@
   - Categorias especiais de dados pessoais
   busca:
   - Categorias especiais de dados pessoais
-  busca_texto: Categorias especiais de dados pessoais Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Categorias especiais de dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -631,12 +631,12 @@
   - texto: as categorias de dados pessoais a que se referem o artigo 9.º, n.º 1, do Regulamento (UE) 2016/679, o artigo 10.º da Diretiva (UE) 2016/680 e o artigo 10.º, n.º 1, do Regulamento (UE) 2018/1725
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 37
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p37
       nota_url: /notas/ai-act
 - id: br-coleta-internacional-de-dados
   titulo: Coleta internacional de dados
@@ -665,7 +665,7 @@
   - Colocação em serviço
   busca:
   - Colocação em serviço
-  busca_texto: Colocação em serviço Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Colocação em serviço Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -673,12 +673,12 @@
   - texto: o fornecimento, diretamente ao responsável pela implantação ou para utilização própria, de um sistema de IA para a primeira utilização na União com a finalidade prevista
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 11
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p11
       nota_url: /notas/ai-act
 - id: ue-colocacao-no-mercado
   titulo: Colocação no mercado
@@ -686,7 +686,7 @@
   - Colocação no mercado
   busca:
   - Colocação no mercado
-  busca_texto: Colocação no mercado Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Colocação no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -694,12 +694,12 @@
   - texto: a primeira disponibilização de um sistema de IA ou de um modelo de IA de finalidade geral no mercado da União
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 9
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p9
       nota_url: /notas/ai-act
 - id: ue-componente-de-seguranca
   titulo: Componente de segurança
@@ -707,7 +707,7 @@
   - Componente de segurança
   busca:
   - Componente de segurança
-  busca_texto: Componente de segurança Segurança, incidentes e violência AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Componente de segurança Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Segurança, incidentes e violência
   jurisdicao: UE
@@ -715,12 +715,12 @@
   - texto: um componente de um produto ou sistema de IA que cumpre uma função de segurança nesse produto ou sistema de IA, ou cuja falha ou anomalia põe em risco a saúde e a segurança de pessoas ou bens; para efeitos da presente definição, um componente cumpre uma função de segurança quando o seu objetivo é prevenir ou atenuar riscos para a saúde e a segurança de pessoas ou bens
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 14
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p14
       nota_url: /notas/ai-act
 - id: br-comunicacao-de-incidente-de-seguranca
   titulo: Comunicação de incidente de segurança
@@ -812,7 +812,7 @@
   - Conjunto de dados de validação
   busca:
   - Conjunto de dados de validação
-  busca_texto: Conjunto de dados de validação Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Conjunto de dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -820,12 +820,12 @@
   - texto: um conjunto de dados separado ou parte de um conjunto de dados de treino, sob forma de uma divisão fixa ou variável
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 31
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p31
       nota_url: /notas/ai-act
 - id: br-consentimento
   titulo: Consentimento
@@ -867,7 +867,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 11
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p11
       nota_url: /notas/gdpr
 - id: ue-consentimento-informado
   titulo: Consentimento informado
@@ -875,7 +875,7 @@
   - Consentimento informado
   busca:
   - Consentimento informado
-  busca_texto: Consentimento informado Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Consentimento informado Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -883,12 +883,12 @@
   - texto: a expressão livre, específica, inequívoca e voluntária, por parte do participante, da sua vontade de participar numa dada testagem em condições reais, depois de ter sido informado de todos os aspetos da testagem que sejam relevantes para a sua decisão de participar
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 59
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p59
       nota_url: /notas/ai-act
 - id: br-conteudo-intimo
   titulo: Conteúdo íntimo
@@ -1246,7 +1246,7 @@
   - Dados biométricos
   busca:
   - Dados biométricos
-  busca_texto: Dados biométricos Inteligência artificial AI Act consolidado (não oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744 Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Dados biométricos Inteligência artificial AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1254,12 +1254,12 @@
   - texto: dados pessoais resultantes de um tratamento técnico específico relativo às características físicas, fisiológicas ou comportamentais de uma pessoa singular, nomeadamente imagens faciais ou dados dactiloscópicos
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 34
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p34
       nota_url: /notas/ai-act
   - texto: dados pessoais resultantes de um tratamento técnico específico relativo às características físicas, fisiológicas ou comportamentais de uma pessoa singular que permitam ou confirmem a identificação única dessa pessoa singular, nomeadamente imagens faciais ou dados dactiloscópicos
     referencias:
@@ -1269,7 +1269,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 14
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p14
       nota_url: /notas/gdpr
 - id: ue-dados-de-entrada
   titulo: Dados de entrada
@@ -1277,7 +1277,7 @@
   - Dados de entrada
   busca:
   - Dados de entrada
-  busca_texto: Dados de entrada Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados de entrada Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1285,12 +1285,12 @@
   - texto: os dados disponibilizados a um sistema de IA, ou por ele obtidos diretamente, com base nos quais o sistema produz um resultado
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 33
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p33
       nota_url: /notas/ai-act
 - id: ue-dados-de-teste
   titulo: Dados de teste
@@ -1298,7 +1298,7 @@
   - Dados de teste
   busca:
   - Dados de teste
-  busca_texto: Dados de teste Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados de teste Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1306,12 +1306,12 @@
   - texto: os dados utilizados para realizar uma avaliação independente do sistema de IA, a fim de confirmar o desempenho esperado desse sistema antes da sua colocação no mercado ou colocação em serviço
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 32
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p32
       nota_url: /notas/ai-act
 - id: ue-dados-de-treino
   titulo: Dados de treino
@@ -1319,7 +1319,7 @@
   - Dados de treino
   busca:
   - Dados de treino
-  busca_texto: Dados de treino Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados de treino Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1327,12 +1327,12 @@
   - texto: os dados usados para treinar um sistema de IA mediante o ajustamento dos seus parâmetros passíveis de serem aprendidos
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 29
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p29
       nota_url: /notas/ai-act
 - id: ue-dados-de-validacao
   titulo: Dados de validação
@@ -1340,7 +1340,7 @@
   - Dados de validação
   busca:
   - Dados de validação
-  busca_texto: Dados de validação Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1348,12 +1348,12 @@
   - texto: os dados utilizados para realizar uma avaliação do sistema de IA treinado e ajustar os seus parâmetros não passíveis de serem aprendidos e o seu processo de aprendizagem, a fim de, entre outras coisas, evitar um subajustamento ou um sobreajustamento
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 30
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p30
       nota_url: /notas/ai-act
 - id: ue-dados-geneticos
   titulo: Dados genéticos
@@ -1374,7 +1374,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 13
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p13
       nota_url: /notas/gdpr
 - id: ue-dados-nao-pessoais
   titulo: Dados não pessoais
@@ -1382,7 +1382,7 @@
   - Dados não pessoais
   busca:
   - Dados não pessoais
-  busca_texto: Dados não pessoais Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados não pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1390,12 +1390,12 @@
   - texto: os dados que não sejam dados pessoais na aceção do artigo 4.º, ponto 1), do Regulamento (UE) 2016/679
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 51
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p51
       nota_url: /notas/ai-act
 - id: ue-dados-operacionais-sensiveis
   titulo: Dados operacionais sensíveis
@@ -1403,7 +1403,7 @@
   - Dados operacionais sensíveis
   busca:
   - Dados operacionais sensíveis
-  busca_texto: Dados operacionais sensíveis Dados pessoais e tratamento AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Dados operacionais sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1411,12 +1411,12 @@
   - texto: dados operacionais relacionados com atividades de prevenção, deteção, investigação ou repressão de infrações penais, cuja divulgação possa comprometer a integridade de processos penais
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 38
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p38
       nota_url: /notas/ai-act
 - id: ue-dado-pessoal
   titulo: Dados pessoais
@@ -1424,7 +1424,7 @@
   - Dados pessoais
   busca:
   - Dados pessoais
-  busca_texto: Dados pessoais Dados pessoais e tratamento AI Act consolidado (não oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744 Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -1432,12 +1432,12 @@
   - texto: os dados pessoais na aceção do artigo 4.º, ponto 1, do Regulamento (UE) 2016/679
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 50
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p50
       nota_url: /notas/ai-act
   - texto: informação relativa a uma pessoa singular identificada ou identificável («titular dos dados»); é considerada identificável uma pessoa singular que possa ser identificada, direta ou indiretamente, em especial por referência a um identificador, como por exemplo um nome, um número de identificação, dados de localização, identificadores por via eletrónica ou a um ou mais elementos específicos da identidade física, fisiológica, genética, mental, económica, cultural ou social dessa pessoa singular
     referencias:
@@ -1447,7 +1447,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 1
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p1
       nota_url: /notas/gdpr
 - id: ue-dados-relativos-a-saude
   titulo: Dados relativos à saúde
@@ -1468,7 +1468,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 15
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p15
       nota_url: /notas/gdpr
 - id: ue-definicao-de-perfis
   titulo: Definição de perfis
@@ -1476,7 +1476,7 @@
   - Definição de perfis
   busca:
   - Definição de perfis
-  busca_texto: Definição de perfis Outros conceitos normativos AI Act consolidado (não oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744 Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Definição de perfis Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1484,12 +1484,12 @@
   - texto: a definição de perfis na aceção do artigo 4.º, ponto 4), do Regulamento (UE) 2016/679
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 52
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p52
       nota_url: /notas/ai-act
   - texto: qualquer forma de tratamento automatizado de dados pessoais que consista em utilizar esses dados pessoais para avaliar certos aspetos pessoais de uma pessoa singular, nomeadamente para analisar ou prever aspetos relacionados com o seu desempenho profissional, a sua situação económica, saúde, preferências pessoais, interesses, fiabilidade, comportamento, localização ou deslocações
     referencias:
@@ -1499,7 +1499,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 4
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p4
       nota_url: /notas/gdpr
 - id: br-denuncia
   titulo: Denúncia
@@ -1528,7 +1528,7 @@
   - Desempenho de um sistema de IA
   busca:
   - Desempenho de um sistema de IA
-  busca_texto: Desempenho de um sistema de IA Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Desempenho de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1536,12 +1536,12 @@
   - texto: a capacidade de um sistema de IA para alcançar a sua finalidade prevista
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 18
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p18
       nota_url: /notas/ai-act
 - id: ue-destinatario
   titulo: Destinatário
@@ -1562,7 +1562,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 9
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p9
       nota_url: /notas/gdpr
 - id: br-disponibilidade
   titulo: Disponibilidade
@@ -1591,7 +1591,7 @@
   - Disponibilização no mercado
   busca:
   - Disponibilização no mercado
-  busca_texto: Disponibilização no mercado Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Disponibilização no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1599,12 +1599,12 @@
   - texto: o fornecimento de um sistema de IA ou de um modelo de IA de finalidade geral para distribuição ou utilização no mercado da União no âmbito de uma atividade comercial, a título oneroso ou gratuito
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 10
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p10
       nota_url: /notas/ai-act
 - id: ue-distribuidor
   titulo: Distribuidor
@@ -1612,7 +1612,7 @@
   - Distribuidor
   busca:
   - Distribuidor
-  busca_texto: Distribuidor Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Distribuidor Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Agentes e governança
   jurisdicao: UE
@@ -1620,12 +1620,12 @@
   - texto: uma pessoa singular ou coletiva inserida na cadeia de distribuição, distinta do prestador e do importador, que disponibiliza um sistema de IA no mercado da União
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 7
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p7
       nota_url: /notas/ai-act
 - id: br-eliminacao
   titulo: Eliminação
@@ -1667,7 +1667,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 18
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p18
       nota_url: /notas/gdpr
 - id: br-encarregado
   titulo: Encarregado
@@ -1748,7 +1748,7 @@
   - Espaço acessível ao público
   busca:
   - Espaço acessível ao público
-  busca_texto: Espaço acessível ao público Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Espaço acessível ao público Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: E
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1756,12 +1756,12 @@
   - texto: qualquer espaço físico, público ou privado, acessível a um número indeterminado de pessoas singulares, independentemente da eventual aplicação de condições de acesso específicas e independentemente das eventuais restrições de capacidade
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 44
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p44
       nota_url: /notas/ai-act
 - id: ue-especificacao-comum
   titulo: Especificação comum
@@ -1769,7 +1769,7 @@
   - Especificação comum
   busca:
   - Especificação comum
-  busca_texto: Especificação comum Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Especificação comum Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: E
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1777,12 +1777,12 @@
   - texto: um conjunto de especificações técnicas, definidas no artigo 2.º, ponto 4, do Regulamento (UE) n.º 1025/2012, que proporcionam os meios para cumprir certos requisitos estabelecidos no presente regulamento
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 28
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p28
       nota_url: /notas/ai-act
 - id: ue-estabelecimento-principal
   titulo: Estabelecimento principal
@@ -1806,7 +1806,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 16
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p16
       nota_url: /notas/gdpr
 - id: br-exportador
   titulo: Exportador
@@ -1835,7 +1835,7 @@
   - Falsificações profundas
   busca:
   - Falsificações profundas
-  busca_texto: Falsificações profundas Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Falsificações profundas Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: F
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1843,12 +1843,12 @@
   - texto: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA, que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos ou verdadeiros
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 60
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p60
       nota_url: /notas/ai-act
 - id: br-faturamento
   titulo: Faturamento
@@ -1914,7 +1914,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 6
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p6
       nota_url: /notas/gdpr
 - id: ue-finalidade-prevista
   titulo: Finalidade prevista
@@ -1922,7 +1922,7 @@
   - Finalidade prevista
   busca:
   - Finalidade prevista
-  busca_texto: Finalidade prevista Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Finalidade prevista Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: F
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1930,12 +1930,12 @@
   - texto: a utilização a que o prestador destina o sistema de IA, incluindo o contexto específico e as condições de utilização, conforme especificado nas informações facultadas pelo prestador nas instruções de utilização, nos materiais e declarações promocionais ou de venda, bem como na documentação técnica
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 12
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p12
       nota_url: /notas/ai-act
 - id: ue-grupo-empresarial
   titulo: Grupo empresarial
@@ -1956,7 +1956,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 19
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p19
       nota_url: /notas/gdpr
 - id: br-grupo-ou-conglomerado-empresarial
   titulo: Grupo ou conglomerado de empresas
@@ -1993,7 +1993,7 @@
   - Identificação biométrica
   busca:
   - Identificação biométrica
-  busca_texto: Identificação biométrica Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Identificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Inteligência artificial
   jurisdicao: UE
@@ -2001,12 +2001,12 @@
   - texto: o reconhecimento automatizado de características humanas físicas, fisiológicas, comportamentais ou psicológicas para efeitos de determinação da identidade de uma pessoa singular, comparando os dados biométricos dessa pessoa com os dados biométricos de pessoas armazenados numa base de dados
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 35
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p35
       nota_url: /notas/ai-act
 - id: br-importador
   titulo: Importador
@@ -2035,7 +2035,7 @@
   - Importador
   busca:
   - Importador
-  busca_texto: Importador Transferências internacionais AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Importador Transferências internacionais AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Transferências internacionais
   jurisdicao: UE
@@ -2043,12 +2043,12 @@
   - texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que coloca no mercado um sistema de IA que ostenta o nome ou a marca de uma pessoa singular ou coletiva estabelecida num país terceiro
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 6
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p6
       nota_url: /notas/ai-act
 - id: br-impulsionamento
   titulo: Impulsionamento
@@ -2098,7 +2098,7 @@
   - Incidente grave
   busca:
   - Incidente grave
-  busca_texto: Incidente grave Segurança, incidentes e violência AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Incidente grave Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Segurança, incidentes e violência
   jurisdicao: UE
@@ -2118,12 +2118,12 @@
       - d) Danos graves a bens ou ao ambiente'
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 49
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p49
       nota_url: /notas/ai-act
 - id: br-infracao
   titulo: Infração
@@ -2152,7 +2152,7 @@
   - Infração generalizada
   busca:
   - Infração generalizada
-  busca_texto: Infração generalizada Fiscalização e sanções AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Infração generalizada Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Fiscalização e sanções
   jurisdicao: UE
@@ -2175,12 +2175,12 @@
       - b) Tenha prejudicado, ou seja suscetível de prejudicar, os interesses coletivos das pessoas e tenha características comuns, inclusive a mesma prática ilegal ou a violação de um mesmo interesse, e que seja cometida pelo mesmo operador em, pelo menos, três Estados-Membros em simultâneo'
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 61
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p61
       nota_url: /notas/ai-act
 - id: br-infracao-permanente
   titulo: Infração permanente
@@ -2209,7 +2209,7 @@
   - Infraestrutura crítica
   busca:
   - Infraestrutura crítica
-  busca_texto: Infraestrutura crítica Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Infraestrutura crítica Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2217,12 +2217,12 @@
   - texto: uma infraestrutura crítica na aceção do artigo 2.º, ponto 4), da Diretiva (UE) 2022/2557
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 62
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p62
       nota_url: /notas/ai-act
 - id: br-infrator
   titulo: Infrator
@@ -2251,7 +2251,7 @@
   - Instruções de utilização
   busca:
   - Instruções de utilização
-  busca_texto: Instruções de utilização Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Instruções de utilização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2259,12 +2259,12 @@
   - texto: as informações facultadas pelo prestador para esclarecer responsável pela implantação, em especial, sobre a finalidade prevista e a utilização correta de um sistema de IA
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 15
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p15
       nota_url: /notas/ai-act
 - id: br-integridade
   titulo: Integridade
@@ -2327,7 +2327,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 3
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p3
       nota_url: /notas/gdpr
 - id: ue-literacia-no-dominio-da-ia
   titulo: Literacia no domínio da IA
@@ -2335,7 +2335,7 @@
   - Literacia no domínio da IA
   busca:
   - Literacia no domínio da IA
-  busca_texto: Literacia no domínio da IA Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Literacia no domínio da IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: L
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2343,12 +2343,12 @@
   - texto: as competências, os conhecimentos e a compreensão que permitem que os prestadores, os responsáveis pela implantação e as pessoas afetadas, tendo em conta os respetivos direitos e obrigações no contexto do presente regulamento, procedam à implantação dos sistemas de IA com conhecimento de causa e tomem consciência das oportunidades e dos riscos inerentes à IA, bem como dos eventuais danos que a IA pode causar
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 56
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p56
       nota_url: /notas/ai-act
 - id: br-loja-de-aplicacoes-de-internet
   titulo: Loja de aplicações de internet
@@ -2377,7 +2377,7 @@
   - Mandatário
   busca:
   - Mandatário
-  busca_texto: Mandatário Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Mandatário Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Agentes e governança
   jurisdicao: UE
@@ -2385,12 +2385,12 @@
   - texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que tenha recebido e aceitado um mandato escrito de um prestador de um sistema de IA ou de um modelo de IA de finalidade geral para cumprir e executar em seu nome, respetivamente, as obrigações e os procedimentos previstos no presente regulamento
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 5
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p5
       nota_url: /notas/ai-act
 - id: ue-marcacao-ce
   titulo: Marcação CE
@@ -2398,7 +2398,7 @@
   - Marcação CE
   busca:
   - Marcação CE
-  busca_texto: Marcação CE Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Marcação CE Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2406,12 +2406,12 @@
   - texto: a marcação pela qual um prestador atesta que um sistema de IA está em conformidade com os requisitos estabelecidos no capítulo III, secção 2, e noutros atos aplicáveis enumerados na lista da legislação de harmonização da União que prevejam a aposição dessa marcação
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 24
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p24
       nota_url: /notas/ai-act
 - id: br-mecanismo-de-supervisao-parental
   titulo: Mecanismo de supervisão parental
@@ -2543,20 +2543,20 @@
   - Micro, pequena ou média empresa
   busca:
   - Micro, pequena ou média empresa
-  busca_texto: Micro, pequena ou média empresa Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Micro, pequena ou média empresa Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Agentes e governança
   jurisdicao: UE
   definicoes:
-  - texto: ou “PME”, uma micro, pequena ou média empresa na aceção do artigo 2.º do anexo da Recomendação 2003/361/CE
+  - texto: ou «PME», uma micro, pequena ou média empresa na aceção do artigo 2.º do anexo da Recomendação 2003/361/CE
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 14-A
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p14a
       nota_url: /notas/ai-act
 - id: br-microempresa-e-empresa-de-pequeno-porte
   titulo: Microempresas e empresas de pequeno porte
@@ -2585,7 +2585,7 @@
   - Modelo de IA de finalidade geral
   busca:
   - Modelo de IA de finalidade geral
-  busca_texto: Modelo de IA de finalidade geral Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Modelo de IA de finalidade geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Inteligência artificial
   jurisdicao: UE
@@ -2593,12 +2593,12 @@
   - texto: um modelo de IA, inclusive se for treinado com uma grande quantidade de dados utilizando a autossupervisão em escala, que apresenta uma generalidade significativa e é capaz de executar de forma competente uma vasta gama de tarefas distintas, independentemente da forma como o modelo é colocado no mercado, e que pode ser integrado numa variedade de sistemas ou aplicações a jusante, exceto os modelos de IA que são utilizados para atividades de investigação, desenvolvimento ou criação de protótipos antes de serem colocados no mercado
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 63
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p63
       nota_url: /notas/ai-act
 - id: ue-modificacao-substancial
   titulo: Modificação substancial
@@ -2606,7 +2606,7 @@
   - Modificação substancial
   busca:
   - Modificação substancial
-  busca_texto: Modificação substancial Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Modificação substancial Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2614,12 +2614,12 @@
   - texto: uma alteração do sistema de IA após a sua colocação no mercado ou colocação em serviço, que não tenha sido prevista ou planeada pelo prestador na avaliação da conformidade inicial e que, consequentemente, afete a conformidade do sistema de IA com os requisitos estabelecidos no capítulo III, secção 2, do presente regulamento, ou modifique a finalidade prevista relativamente à qual o sistema de IA foi avaliado
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 23
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p23
       nota_url: /notas/ai-act
 - id: br-monetizacao
   titulo: Monetização
@@ -2669,7 +2669,7 @@
   - Norma harmonizada
   busca:
   - Norma harmonizada
-  busca_texto: Norma harmonizada Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Norma harmonizada Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: N
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2677,12 +2677,12 @@
   - texto: uma norma europeia na aceção do artigo 2.º, n.º 1, alínea c), do Regulamento (UE) n.º 1025/2012
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 27
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p27
       nota_url: /notas/ai-act
 - id: ue-objecao-pertinente-e-fundamentada
   titulo: Objeção pertinente e fundamentada
@@ -2703,7 +2703,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 24
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p24
       nota_url: /notas/gdpr
 - id: br-obstrucao-a-atividade-de-fiscalizacao
   titulo: Obstrução à atividade de fiscalização
@@ -2732,7 +2732,7 @@
   - Operação de vírgula flutuante
   busca:
   - Operação de vírgula flutuante
-  busca_texto: Operação de vírgula flutuante Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Operação de vírgula flutuante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2740,12 +2740,12 @@
   - texto: qualquer operação matemática ou atribuição que envolva números em vírgula flutuante, que são um subconjunto dos números reais normalmente representados em computadores por um número inteiro de precisão fixa escalado por um expoente inteiro de uma base fixa
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 67
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p67
       nota_url: /notas/ai-act
 - id: br-operador
   titulo: Operador
@@ -2782,7 +2782,7 @@
   - Operador
   busca:
   - Operador
-  busca_texto: Operador Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Operador Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Agentes e governança
   jurisdicao: UE
@@ -2790,12 +2790,12 @@
   - texto: um prestador, fabricante de produtos, responsável pela implantação, mandatário, importador ou distribuidor
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 8
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p8
       nota_url: /notas/ai-act
 - id: ue-organismo-de-avaliacao-da-conformidade
   titulo: Organismo de avaliação da conformidade
@@ -2803,7 +2803,7 @@
   - Organismo de avaliação da conformidade
   busca:
   - Organismo de avaliação da conformidade
-  busca_texto: Organismo de avaliação da conformidade Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Organismo de avaliação da conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2811,12 +2811,12 @@
   - texto: um organismo que realiza atividades de avaliação da conformidade por terceiros, nomeadamente testagem, certificação e inspeção
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 21
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p21
       nota_url: /notas/ai-act
 - id: br-organismo-internacional
   titulo: Organismo internacional
@@ -2845,7 +2845,7 @@
   - Organismo notificado
   busca:
   - Organismo notificado
-  busca_texto: Organismo notificado Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Organismo notificado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2853,12 +2853,12 @@
   - texto: um organismo de avaliação da conformidade notificado nos termos do presente regulamento ou de outra legislação de harmonização da União pertinente
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 22
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p22
       nota_url: /notas/ai-act
 - id: ue-organizacao-internacional
   titulo: Organização internacional
@@ -2879,7 +2879,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 26
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p26
       nota_url: /notas/gdpr
 - id: br-orgao-de-pesquisa
   titulo: Órgão de pesquisa
@@ -2929,7 +2929,7 @@
   - Participante
   busca:
   - Participante
-  busca_texto: Participante Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Participante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2937,12 +2937,12 @@
   - texto: para efeitos de testagem em condições reais, uma pessoa singular que participa na testagem em condições reais
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 58
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p58
       nota_url: /notas/ai-act
 - id: ue-pequena-empresa-de-media-capitalizacao
   titulo: Pequena empresa de média capitalização
@@ -2950,7 +2950,7 @@
   - Pequena empresa de média capitalização
   busca:
   - Pequena empresa de média capitalização
-  busca_texto: Pequena empresa de média capitalização Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Pequena empresa de média capitalização Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
   jurisdicao: UE
@@ -2958,12 +2958,12 @@
   - texto: uma pequena empresa de média capitalização na aceção do ponto 2 do anexo da Recomendação (UE) 2025/1099
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 14-B
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p14b
       nota_url: /notas/ai-act
 - id: br-perfilamento
   titulo: Perfilamento
@@ -3013,7 +3013,7 @@
   - Plano de testagem em condições reais
   busca:
   - Plano de testagem em condições reais
-  busca_texto: Plano de testagem em condições reais Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Plano de testagem em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3021,12 +3021,12 @@
   - texto: um documento que descreve os objetivos, a metodologia, o âmbito geográfico, populacional e temporal, o acompanhamento, a organização e a realização dos testes em condições reais
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 53
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p53
       nota_url: /notas/ai-act
 - id: ue-plano-do-ambiente-de-testagem
   titulo: Plano do ambiente de testagem
@@ -3034,7 +3034,7 @@
   - Plano do ambiente de testagem
   busca:
   - Plano do ambiente de testagem
-  busca_texto: Plano do ambiente de testagem Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Plano do ambiente de testagem Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3042,12 +3042,12 @@
   - texto: um documento acordado entre o prestador participante e a autoridade competente, que descreve os objetivos, as condições, o calendário, a metodologia e os requisitos aplicáveis às atividades realizadas no ambiente de testagem
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 54
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p54
       nota_url: /notas/ai-act
 - id: br-politica-de-boas-praticas-e-de-governanca
   titulo: Política de boas práticas e de governança
@@ -3112,7 +3112,7 @@
   - Prestador
   busca:
   - Prestador
-  busca_texto: Prestador Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Prestador Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
   jurisdicao: UE
@@ -3120,12 +3120,12 @@
   - texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que desenvolva, ou mande desenvolver, um sistema de IA ou um modelo de IA de finalidade geral e o coloque no mercado, ou coloque o sistema de IA em serviço sob o seu próprio nome ou a sua própria marca, a título oneroso ou gratuito
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 3
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p3
       nota_url: /notas/ai-act
 - id: ue-prestador-a-jusante
   titulo: Prestador a jusante
@@ -3133,7 +3133,7 @@
   - Prestador a jusante
   busca:
   - Prestador a jusante
-  busca_texto: Prestador a jusante Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Prestador a jusante Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
   jurisdicao: UE
@@ -3141,12 +3141,12 @@
   - texto: um prestador de um sistema de IA, incluindo um sistema de IA de finalidade geral, que integra um modelo de IA, independentemente de o modelo de IA ser disponibilizado por si próprio e verticalmente integrado ou ser disponibilizado por outra entidade com base em relações contratuais
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 68
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p68
       nota_url: /notas/ai-act
 - id: br-procedimento-de-apuracao-de-incidente-de-seguranca
   titulo: Procedimento de apuração de incidente de segurança
@@ -3272,7 +3272,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 5
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p5
       nota_url: /notas/gdpr
 - id: br-ramo-de-atividade-empresarial
   titulo: Ramo de atividade empresarial
@@ -3301,7 +3301,7 @@
   - Recolha de um sistema de IA
   busca:
   - Recolha de um sistema de IA
-  busca_texto: Recolha de um sistema de IA Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Recolha de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3309,12 +3309,12 @@
   - texto: qualquer medida destinada a obter a devolução ao prestador de um sistema de IA disponibilizado aos responsáveis pela implantação ou a colocar esse sistema fora de serviço ou a desativá-lo
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 16
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p16
       nota_url: /notas/ai-act
 - id: br-rede-social
   titulo: Rede social
@@ -3399,7 +3399,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 20
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p20
       nota_url: /notas/gdpr
 - id: br-reincidencia-especifica
   titulo: Reincidência específica
@@ -3504,7 +3504,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 17
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p17
       nota_url: /notas/gdpr
 - id: br-requerimento
   titulo: Requerimento
@@ -3533,7 +3533,7 @@
   - Responsável pela implantação
   busca:
   - Responsável pela implantação
-  busca_texto: Responsável pela implantação Agentes e governança AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Responsável pela implantação Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Agentes e governança
   jurisdicao: UE
@@ -3541,12 +3541,12 @@
   - texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que utilize um sistema de IA sob a sua própria autoridade, salvo se o sistema de IA for utilizado no âmbito de uma atividade pessoal de caráter não profissional
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 4
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p4
       nota_url: /notas/ai-act
 - id: ue-responsavel-pelo-tratamento
   titulo: Responsável pelo tratamento
@@ -3567,7 +3567,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 7
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p7
       nota_url: /notas/gdpr
 - id: ue-retirada-de-um-sistema-de-ia
   titulo: Retirada de um sistema de IA
@@ -3575,7 +3575,7 @@
   - Retirada de um sistema de IA
   busca:
   - Retirada de um sistema de IA
-  busca_texto: Retirada de um sistema de IA Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Retirada de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3583,12 +3583,12 @@
   - texto: qualquer medida destinada a impedir a disponibilização no mercado de um sistema de IA presente na cadeia de distribuição
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 17
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p17
       nota_url: /notas/ai-act
 - id: ue-risco
   titulo: Risco
@@ -3596,7 +3596,7 @@
   - Risco
   busca:
   - Risco
-  busca_texto: Risco Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Risco Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3604,12 +3604,12 @@
   - texto: a combinação da probabilidade de ocorrência de danos com a gravidade desses danos
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 2
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p2
       nota_url: /notas/ai-act
 - id: ue-risco-sistemico
   titulo: Risco sistémico
@@ -3617,7 +3617,7 @@
   - Risco sistémico
   busca:
   - Risco sistémico
-  busca_texto: Risco sistémico Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Risco sistémico Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3625,12 +3625,12 @@
   - texto: um risco específico das capacidades de elevado impacto dos modelos de IA de finalidade geral que têm um impacto significativo no mercado da União devido ao seu alcance ou devido a efeitos negativos reais ou razoavelmente previsíveis na saúde pública, na segurança, na segurança pública, nos direitos fundamentais ou na sociedade no seu conjunto, que se pode propagar em escala ao longo da cadeia de valor
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 65
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p65
       nota_url: /notas/ai-act
 - id: br-servico-com-controle-editorial
   titulo: Serviço com controle editorial
@@ -3659,7 +3659,7 @@
   - Serviço para a IA
   busca:
   - Serviço para a IA
-  busca_texto: Serviço para a IA Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Serviço para a IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3667,12 +3667,12 @@
   - texto: a atribuição da Comissão de contribuir para a aplicação, o acompanhamento e a supervisão dos sistemas de IA, dos modelos de IA de finalidade geral, e da governação da IA prevista na Decisão da Comissão de 24 de janeiro de 2024; as referências ao Serviço para a IA no presente regulamento devem ser entendidas como referências à Comissão
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 47
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p47
       nota_url: /notas/ai-act
 - id: ue-servicos-da-sociedade-da-informacao
   titulo: Serviços da sociedade da informação
@@ -3693,7 +3693,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 25
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p25
       nota_url: /notas/gdpr
 - id: br-sinal-de-idade
   titulo: Sinal de idade
@@ -3722,7 +3722,7 @@
   - Sistema de acompanhamento pós-comercialização
   busca:
   - Sistema de acompanhamento pós-comercialização
-  busca_texto: Sistema de acompanhamento pós-comercialização Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de acompanhamento pós-comercialização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3730,12 +3730,12 @@
   - texto: todas as atividades empreendidas pelos prestadores de sistemas de IA para recolher e analisar dados sobre a experiência adquirida com a utilização de sistemas de IA por eles colocados no mercado ou colocados em serviço, com vista a identificar a eventual necessidade de aplicar imediatamente as eventuais medidas corretivas ou preventivas necessárias
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 25
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p25
       nota_url: /notas/ai-act
 - id: ue-sistema-de-categorizacao-biometrica
   titulo: Sistema de categorização biométrica
@@ -3743,7 +3743,7 @@
   - Sistema de categorização biométrica
   busca:
   - Sistema de categorização biométrica
-  busca_texto: Sistema de categorização biométrica Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de categorização biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3751,12 +3751,12 @@
   - texto: um sistema de IA destinado a afetar pessoas singulares a categorias específicas com base nos seus dados biométricos, a menos que seja acessório a outro serviço comercial e estritamente necessário por razões técnicas objetivas
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 40
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p40
       nota_url: /notas/ai-act
 - id: ue-sistema-de-ia
   titulo: Sistema de IA
@@ -3764,7 +3764,7 @@
   - Sistema de IA
   busca:
   - Sistema de IA
-  busca_texto: Sistema de IA Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3772,12 +3772,12 @@
   - texto: um sistema baseado em máquinas concebido para funcionar com níveis de autonomia variáveis, e que pode apresentar capacidade de adaptação após a implantação e que, para objetivos explícitos ou implícitos, e com base nos dados de entrada que recebe, infere a forma de gerar resultados, tais como previsões, conteúdos, recomendações ou decisões que podem influenciar ambientes físicos ou virtuais
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 1
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p1
       nota_url: /notas/ai-act
 - id: ue-sistema-de-ia-de-finalidade-geral
   titulo: Sistema de IA de finalidade geral
@@ -3785,7 +3785,7 @@
   - Sistema de IA de finalidade geral
   busca:
   - Sistema de IA de finalidade geral
-  busca_texto: Sistema de IA de finalidade geral Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de IA de finalidade geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3793,12 +3793,12 @@
   - texto: um sistema de IA baseado num modelo de IA de finalidade geral, e com a capacidade de servir para diversas finalidades, tanto para utilização direta como para integração noutros sistemas de IA
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 66
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p66
       nota_url: /notas/ai-act
 - id: ue-sistema-de-identificacao-biometrica-a-distancia
   titulo: Sistema de identificação biométrica à distância
@@ -3806,7 +3806,7 @@
   - Sistema de identificação biométrica à distância
   busca:
   - Sistema de identificação biométrica à distância
-  busca_texto: Sistema de identificação biométrica à distância Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de identificação biométrica à distância Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3814,12 +3814,12 @@
   - texto: um sistema de IA concebido para identificar pessoas singulares, sem a sua participação ativa, normalmente à distância, por meio da comparação dos dados biométricos de uma pessoa com os dados biométricos contidos numa base de dados de referência
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 41
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p41
       nota_url: /notas/ai-act
 - id: ue-sistema-de-identificacao-biometrica-a-distancia-em-diferido
   titulo: Sistema de identificação biométrica à distância em diferido
@@ -3827,7 +3827,7 @@
   - Sistema de identificação biométrica à distância em diferido
   busca:
   - Sistema de identificação biométrica à distância em diferido
-  busca_texto: Sistema de identificação biométrica à distância em diferido Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de identificação biométrica à distância em diferido Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3835,12 +3835,12 @@
   - texto: um sistema de identificação biométrica à distância que não seja um sistema de identificação biométrica à distância em tempo real
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 43
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p43
       nota_url: /notas/ai-act
 - id: ue-sistema-de-identificacao-biometrica-a-distancia-em-tempo-real
   titulo: Sistema de identificação biométrica à distância em tempo real
@@ -3848,7 +3848,7 @@
   - Sistema de identificação biométrica à distância em tempo real
   busca:
   - Sistema de identificação biométrica à distância em tempo real
-  busca_texto: Sistema de identificação biométrica à distância em tempo real Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de identificação biométrica à distância em tempo real Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3856,12 +3856,12 @@
   - texto: um sistema de identificação biométrica à distância em que a recolha de dados biométricos, a comparação e a identificação ocorrem sem atraso significativo, que engloba não apenas a identificação instantânea, mas também a identificação com ligeiro atraso, a fim de evitar que as regras sejam contornadas
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 42
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p42
       nota_url: /notas/ai-act
 - id: ue-sistema-de-reconhecimento-de-emocoes
   titulo: Sistema de reconhecimento de emoções
@@ -3869,7 +3869,7 @@
   - Sistema de reconhecimento de emoções
   busca:
   - Sistema de reconhecimento de emoções
-  busca_texto: Sistema de reconhecimento de emoções Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Sistema de reconhecimento de emoções Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3877,12 +3877,12 @@
   - texto: um sistema de IA concebido para identificar ou inferir emoções ou intenções de pessoas singulares com base nos seus dados biométricos
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 39
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p39
       nota_url: /notas/ai-act
 - id: br-sistema-operacional
   titulo: Sistema operacional
@@ -3945,7 +3945,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 8
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p8
       nota_url: /notas/gdpr
 - id: ue-terceiro
   titulo: Terceiro
@@ -3966,7 +3966,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 10
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p10
       nota_url: /notas/gdpr
 - id: br-terminal
   titulo: Terminal
@@ -3995,7 +3995,7 @@
   - Testagem em condições reais
   busca:
   - Testagem em condições reais
-  busca_texto: Testagem em condições reais Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Testagem em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: T
   tema: Inteligência artificial
   jurisdicao: UE
@@ -4003,12 +4003,12 @@
   - texto: a testagem temporária de um sistema de IA para a sua finalidade prevista em condições reais, fora de um laboratório ou de outro ambiente simulado, com vista a recolher dados fiáveis e sólidos e a avaliar e verificar a conformidade do sistema de IA com os requisitos do presente regulamento e não se considera como colocação do sistema de IA no mercado nem colocação do sistema de IA em serviço na aceção do presente regulamento, desde que estejam preenchidas todas as condições estabelecidas no artigo 57.º ou no artigo 60.º
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 57
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p57
       nota_url: /notas/ai-act
 - id: br-titular
   titulo: Titular
@@ -4129,7 +4129,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 2
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p2
       nota_url: /notas/gdpr
 - id: br-tratamento-de-alto-risco
   titulo: Tratamento de alto risco
@@ -4231,7 +4231,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 23
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p23
       nota_url: /notas/gdpr
 - id: br-uso-compartilhado-de-dados
   titulo: Uso compartilhado de dados
@@ -4260,7 +4260,7 @@
   - Utilização indevida razoavelmente previsível
   busca:
   - Utilização indevida razoavelmente previsível
-  busca_texto: Utilização indevida razoavelmente previsível Outros conceitos normativos AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Utilização indevida razoavelmente previsível Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: U
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -4268,12 +4268,12 @@
   - texto: a utilização de um sistema de IA de uma forma não conforme com a sua finalidade prevista, mas que pode resultar de um comportamento humano razoavelmente previsível ou de uma interação razoavelmente previsível com outros sistemas, incluindo outros sistemas de IA
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 13
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p13
       nota_url: /notas/ai-act
 - id: ue-verificacao-biometrica
   titulo: Verificação biométrica
@@ -4281,7 +4281,7 @@
   - Verificação biométrica
   busca:
   - Verificação biométrica
-  busca_texto: Verificação biométrica Inteligência artificial AI Act consolidado (não oficial) Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
+  busca_texto: Verificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: V
   tema: Inteligência artificial
   jurisdicao: UE
@@ -4289,12 +4289,12 @@
   - texto: a verificação automatizada, «um para um», incluindo a autenticação, da identidade de pessoas singulares por meio da comparação dos seus dados biométricos com dados biométricos previamente facultados
     referencias:
     - jurisdicao: UE
-      norma: ai-act-consolidado
-      norma_apelido: AI Act consolidado (não oficial)
-      norma_titulo: Regulamento (UE) 2024/1689, consolidado com o Regulamento (UE) 2026/1744
-      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32024R1689
+      norma: ai-act
+      norma_apelido: AI Act (texto consolidado oficial)
+      norma_titulo: Regulamento (UE) 2024/1689, de 13 de junho de 2024
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727
       dispositivo: art. 3.º, ponto 36
-      url: /notas/ai-act#art-3
+      url: /notas/ai-act#art-3-p36
       nota_url: /notas/ai-act
 - id: br-verificacao-de-idade
   titulo: Verificação de idade
@@ -4336,7 +4336,7 @@
       norma_titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
       fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
       dispositivo: art. 4.º, ponto 12
-      url: /notas/gdpr#art-4
+      url: /notas/gdpr#art-4-p12
       nota_url: /notas/gdpr
 - id: br-violencia-contra-mulheres-em-ambiente-digital
   titulo: Violência contra mulheres em ambiente digital

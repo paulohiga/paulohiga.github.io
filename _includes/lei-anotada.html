@@ -15,6 +15,7 @@
         inciso V do art. 5º          → art-5-v
         inciso I do § 1º do art. 52  → art-52-p1-i   (o inciso herda a subdivisão)
         alínea "b" do inciso II      → art-4-ii-b    (a alínea herda o inciso)
+        ponto 10 do artigo 3.º       → art-3-p10      (norma europeia, item "10)")
 
     Os títulos são rebaixados em um nível, porque a página já tem o seu <h1>, e
     recebem o prefixo `lei-` no id, para nunca colidirem com os títulos do
@@ -40,17 +41,20 @@
         Artigo 6.º-A                 → art-6-a
         n.º 1 do artigo 5.º          → art-5-p1   (parágrafo numerado "1.",
                                                    no lugar do "§ 1º")
+        ponto 10 do artigo 3.º       → art-3-p10  (item numerado "10)")
         alínea a) do n.º 1 do art. 5.º → art-5-p1-a
 
     Assim os links dos comentários (`#art-5-p1-a`) e o campo "Ir para" do painel
     da lei seca ("5, p1, a") valem para os dois formatos, sem exceção a decorar.
     Um regulamento europeu não tem inciso romano entre o parágrafo e a alínea:
     a alínea se pendura direto no parágrafo corrente ou, quando o artigo não é
-    dividido em números, no próprio artigo (`art-1-a`). Subalíneas ficam de
-    fora: "ii)", "iii)" e seguintes não recebem âncora, e "i)" é indistinguível
-    da alínea "i)" de uma lista que passa de h) — por isso toda remissão a
-    subalínea deve ser conferida no texto antes de virar link, ou escrita sem
-    link, como já vale para as citações compostas incomuns.
+    dividido em números, no próprio artigo (`art-1-a`). Os pontos numerados com
+    fechamento (`10)`) também recebem âncora, usando `p` como os números
+    pontuados (`art-3-p10`). Subalíneas ficam de fora: "ii)", "iii)" e
+    seguintes não recebem âncora, e "i)" é indistinguível da alínea "i)" de uma
+    lista que passa de h) — por isso toda remissão a subalínea deve ser
+    conferida no texto antes de virar link, ou escrita sem link, como já vale
+    para as citações compostas incomuns.
 
     Parâmetro: `lei` — o documento da coleção `_leis` a renderizar.
 
@@ -216,7 +220,26 @@
                 {%- endif -%}
                 {%- capture reconstruido -%}{{ valor }}{% if sufixo != '' %}-{{ sufixo }}{% endif %}.{%- endcapture -%}
 
-                {%- if reconstruido == numero -%}
+                {%- assign fechamento_ponto = marcador | slice: -1 -%}
+                {%- assign ponto = marcador | remove: ')' -%}
+                {%- assign ponto_pedacos = ponto | split: '-' -%}
+                {%- assign ponto_valor = ponto_pedacos[0] | plus: 0 -%}
+                {%- assign ponto_sufixo = '' -%}
+                {%- if ponto_pedacos.size == 2 and ponto_pedacos[1].size == 1 -%}
+                    {%- assign ponto_sufixo = ponto_pedacos[1] -%}
+                {%- endif -%}
+                {%- capture ponto_reconstruido -%}{{ ponto_valor }}{% if ponto_sufixo != '' %}-{{ ponto_sufixo }}{% endif %}){%- endcapture -%}
+
+                {%- if formato == 'ue' and fechamento_ponto == ')' and ponto_reconstruido == marcador -%}
+                    {%- assign subdivisao = ponto_valor | prepend: 'p' -%}
+                    {%- if ponto_sufixo != '' -%}
+                        {%- assign subdivisao = subdivisao | append: ponto_sufixo | downcase -%}
+                    {%- endif -%}
+                    {%- assign inciso = '' -%}
+                    {%- assign id = artigo | append: '-' | append: subdivisao -%}
+                    {%- assign tipo = 'ponto' -%}
+
+                {%- elsif reconstruido == numero -%}
                     {%- assign subdivisao = valor | prepend: 'p' -%}
                     {%- if sufixo != '' -%}
                         {%- assign subdivisao = subdivisao | append: sufixo | downcase -%}

@@ -21,6 +21,14 @@ no site, não o caminho até lá.
 
 ### Notas de legislação
 
+- O painel da nota do **AI Act** passou a exibir uma única norma: o [Regulamento
+  (UE) 2024/1689 na versão consolidada oficial de 27 de julho de 2026](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727),
+  que incorpora o [Regulamento (UE) 2026/1744 — Digital Omnibus sobre a IA](https://eur-lex.europa.eu/eli/reg/2026/1744/oj).
+  Foram retirados do painel o texto original, a consolidação não oficial e o ato
+  alterador em separado; os links dos comentários passaram a apontar para a
+  redação consolidada ou para a fonte externa do texto histórico.
+- O glossário de definições normativas passou a usar a redação e os metadados do
+  texto consolidado oficial do AI Act.
 - Publicada a página de **Definições normativas**, que reúne a literalidade das
   definições das leis, decretos, resoluções e regulamentos disponíveis em
   `/notas`. Termos iguais ou próximos da mesma jurisdição aparecem no mesmo
@@ -36,8 +44,9 @@ no site, não o caminho até lá.
 
 ### Documentação
 
-- Documentados o banco gerado a partir de `_leis/`, a página consolidada e o
-  acesso contextual nas notas.
+- Documentados o banco gerado a partir de `_leis/`, a página consolidada, o
+  acesso contextual nas notas e a conversão direta de textos consolidados do
+  EUR-Lex.
 
 ## 2026-08-19
 

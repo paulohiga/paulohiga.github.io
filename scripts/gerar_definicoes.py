@@ -22,10 +22,6 @@ LEIS = RAIZ / "_leis"
 EMENTAS = RAIZ / "_data" / "ementas"
 SAIDA = RAIZ / "_data" / "definicoes.yml"
 
-# O texto original do AI Act permanece no painel para consulta histórica. As
-# definições vigentes vêm da consolidação, que incorpora o Digital Omnibus.
-IGNORAR = {"ai-act", "regulamento-2026-1744"}
-
 # Definições materiais que aparecem fora de artigos/capítulos intitulados
 # "Definições". Os limites são dispositivos, não números de linha, para
 # sobreviverem a atualizações do texto ao redor.
@@ -252,12 +248,20 @@ def url_nota(norma: dict) -> str:
     return f"/notas/{normas[norma['slug']]['nota']}"
 
 
+def sufixo_ponto(marcador: str) -> str:
+    """Converte o marcador europeu `10`/`14-A` no sufixo do id."""
+    casamento = re.fullmatch(r"(\d+)(?:-([A-Z]))?", marcador)
+    if not casamento:
+        return marcador.lower()
+    return f"p{casamento.group(1)}{(casamento.group(2) or '').lower()}"
+
+
 def referencia(norma: dict, artigo: str, marcador: str, ue: bool) -> tuple[str, str]:
-    # Nos artigos europeus de definições, os pontos usam "1)" em vez do
-    # formato numerado "1." que lei-anotada.html ancora. O link vai ao artigo
-    # e a referência visível especifica o ponto.
     sem_ancora_propria = norma["slug"] == "resolucao-anpd-15" and marcador in {"XIV", "XVI"}
-    sufixo = "" if ue or sem_ancora_propria else marcador
+    if ue:
+        sufixo = sufixo_ponto(marcador) if marcador else ""
+    else:
+        sufixo = "" if sem_ancora_propria else marcador
     url = url_dispositivo(norma, artigo, sufixo)
     dispositivo = f"art. {artigo}.º" if ue else f"art. {artigo}º"
     if marcador:
@@ -284,8 +288,6 @@ def main() -> None:
     definicoes: list[dict] = []
     for caminho in sorted(LEIS.glob("*.md")):
         slug = caminho.stem
-        if slug in IGNORAR:
-            continue
         ementa_path = EMENTAS / f"{slug}.yml"
         if not ementa_path.exists():
             continue

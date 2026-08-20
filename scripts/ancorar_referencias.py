@@ -141,9 +141,9 @@ def ids_da_lei(slug: str, prefixo: str) -> set[str]:
 def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
     """Mesma coisa para as normas com `formato: ue` no front matter (os
     regulamentos da União Europeia). Muda só o reconhecimento do dispositivo —
-    "Artigo 5.º" no lugar de "Art. 5º", número "1." no lugar de "§ 1º" e
-    alínea "a)" pendurada direto no número, sem inciso romano no meio. Os ids
-    continuam os mesmos: art-5, art-5-p1, art-5-p1-a.
+    "Artigo 5.º" no lugar de "Art. 5º", número "1." no lugar de "§ 1º", ponto
+    "10)" e alínea "a)" pendurada direto no número, sem inciso romano no meio.
+    Os ids continuam os mesmos: art-5, art-5-p1, art-3-p10, art-5-p1-a.
 
     Continua valendo o que o resto do script já faz: um id que não estiver
     aqui nunca vira link. Como o reconhecimento de *citações* (`_extrai_sufixos`)
@@ -177,6 +177,11 @@ def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
         elif (m := re.fullmatch(r"([1-9]\d*)(?:-([A-Z]))?\\?\.", marcador)):
             # O ponto vem escapado no texto-fonte (`1\.`) — ver lei-anotada.html.
             # O sufixo de dispositivo acrescentado entra colado: 1-A → p1a.
+            subdivisao = "p" + m.group(1) + (m.group(2) or "").lower()
+            id_ = f"{artigo}-{subdivisao}"
+        elif (m := re.fullmatch(r"([1-9]\d*)(?:-([A-Z]))?\)", marcador)):
+            # As definições do AI Act e do RGPD usam pontos fechados (`10)`),
+            # que são dispositivos próprios, distintos do caput do artigo.
             subdivisao = "p" + m.group(1) + (m.group(2) or "").lower()
             id_ = f"{artigo}-{subdivisao}"
         else:
