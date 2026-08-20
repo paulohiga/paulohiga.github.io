@@ -36,6 +36,282 @@
     }
     marcarLinksExternos();
 
+    /* --- Página de definições normativas: a mesma lista se reorganiza sem
+       duplicar cartões no HTML. Sem JS permanece a ordem alfabética. --- */
+    var listaDefinicoes = document.getElementById('lista-definicoes');
+    if (listaDefinicoes) {
+        var cardsDefinicoes = Array.prototype.slice.call(listaDefinicoes.querySelectorAll('.definicao-card'));
+        var indiceDefinicoes = document.getElementById('definicoes-indice-lista');
+        var itensIndice = Object.create(null);
+        Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
+            itensIndice[item.dataset.alvo] = item;
+        });
+        var ordemDefinicoes = 'alfabetica';
+        var soBrasil = document.getElementById('definicoes-so-brasil');
+        var buscaDefinicoes = document.getElementById('definicoes-busca');
+        var cardsVisiveis = cardsDefinicoes;
+        var quadroPendente = false;
+        var indiceTravado = '';
+        var destravarIndice = 0;
+        var preservarIndicePorFoco = false;
+
+        function textoComparavel(texto) {
+            return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        function redesenharDefinicoes() {
+            Array.prototype.forEach.call(listaDefinicoes.querySelectorAll('.definicoes-grupo'), function (titulo) {
+                titulo.remove();
+            });
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__grupo'), function (titulo) {
+                titulo.remove();
+            });
+            var busca = textoComparavel(buscaDefinicoes.value.trim());
+            var visiveis = cardsDefinicoes.filter(function (card) {
+                var aparece = (!soBrasil.checked || card.dataset.jurisdicao === 'BR') &&
+                    (!busca || textoComparavel(card.dataset.busca).indexOf(busca) !== -1);
+                card.hidden = !aparece;
+                itensIndice[card.id].hidden = !aparece;
+                return aparece;
+            });
+            visiveis.sort(function (a, b) {
+                var grupoA = ordemDefinicoes === 'tema' ? a.dataset.tema : a.dataset.letra;
+                var grupoB = ordemDefinicoes === 'tema' ? b.dataset.tema : b.dataset.letra;
+                return grupoA.localeCompare(grupoB, 'pt-BR') ||
+                    a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
+            });
+            var grupoAnterior = '';
+            visiveis.forEach(function (card) {
+                var grupo = ordemDefinicoes === 'tema' ? card.dataset.tema : card.dataset.letra;
+                if (grupo !== grupoAnterior) {
+                    var titulo = document.createElement('h2');
+                    titulo.className = 'definicoes-grupo';
+                    titulo.dataset.grupo = grupo;
+                    titulo.textContent = grupo;
+                    listaDefinicoes.appendChild(titulo);
+                    var tituloIndice = document.createElement('h3');
+                    tituloIndice.className = 'definicoes-nav__grupo';
+                    tituloIndice.dataset.grupo = grupo;
+                    tituloIndice.textContent = grupo;
+                    indiceDefinicoes.appendChild(tituloIndice);
+                    grupoAnterior = grupo;
+                }
+                listaDefinicoes.appendChild(card);
+                indiceDefinicoes.appendChild(itensIndice[card.id]);
+            });
+            cardsVisiveis = visiveis;
+            document.getElementById('definicoes-vazio').hidden = visiveis.length !== 0;
+            marcarIndiceAtual();
+        }
+
+        function marcarIndiceAtual(idPreferido) {
+            if (!cardsVisiveis.length) return;
+            var atual = idPreferido && itensIndice[idPreferido] ? document.getElementById(idPreferido) : null;
+            if (!atual || atual.hidden) {
+                atual = cardsVisiveis[0];
+                var pontoLeitura = Math.min(96, Math.max(32, innerHeight * 0.08));
+                var menorDistancia = Infinity;
+                for (var i = 0; i < cardsVisiveis.length; i += 1) {
+                    var card = cardsVisiveis[i];
+                    var quadroCard = card.getBoundingClientRect();
+                    if (quadroCard.top <= pontoLeitura && quadroCard.bottom > pontoLeitura) {
+                        atual = card;
+                        break;
+                    }
+                    var distancia = quadroCard.top > pontoLeitura
+                        ? quadroCard.top - pontoLeitura
+                        : pontoLeitura - quadroCard.bottom;
+                    if (distancia < menorDistancia) {
+                        menorDistancia = distancia;
+                        atual = card;
+                    }
+                }
+            }
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item[aria-current]'), function (item) {
+                item.removeAttribute('aria-current');
+            });
+            var itemAtual = itensIndice[atual.id];
+            itemAtual.setAttribute('aria-current', 'location');
+            if (!(preservarIndicePorFoco && indiceDefinicoes.contains(document.activeElement))) {
+                var quadroLista = indiceDefinicoes.getBoundingClientRect();
+                var quadroItem = itemAtual.getBoundingClientRect();
+                if (quadroItem.top < quadroLista.top || quadroItem.bottom > quadroLista.bottom) {
+                    indiceDefinicoes.scrollTop += quadroItem.top - quadroLista.top - indiceDefinicoes.clientHeight / 3;
+                }
+            }
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('input[name="ordem-definicoes"]'), function (radio) {
+            radio.addEventListener('change', function () {
+                ordemDefinicoes = radio.value;
+                redesenharDefinicoes();
+            });
+        });
+        soBrasil.addEventListener('change', redesenharDefinicoes);
+        buscaDefinicoes.addEventListener('input', redesenharDefinicoes);
+        indiceDefinicoes.addEventListener('keydown', function () {
+            preservarIndicePorFoco = true;
+        });
+        indiceDefinicoes.addEventListener('pointerdown', function () {
+            preservarIndicePorFoco = false;
+        });
+        indiceDefinicoes.addEventListener('focusout', function (evento) {
+            if (!indiceDefinicoes.contains(evento.relatedTarget)) preservarIndicePorFoco = false;
+        });
+        Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
+            item.addEventListener('click', function () {
+                indiceTravado = item.dataset.alvo;
+                clearTimeout(destravarIndice);
+                marcarIndiceAtual(item.dataset.alvo);
+                destravarIndice = setTimeout(function () {
+                    indiceTravado = '';
+                    marcarIndiceAtual();
+                }, 700);
+            });
+        });
+        addEventListener('scroll', function () {
+            if (quadroPendente) return;
+            quadroPendente = true;
+            requestAnimationFrame(function () {
+                marcarIndiceAtual(indiceTravado || undefined);
+                quadroPendente = false;
+            });
+        }, { passive: true });
+    }
+
+    /* --- Definições dentro dos comentários. Cada termo aparece no máximo
+       uma vez por seção e quatro vezes por nota; o texto continua leve, mas
+       termos recorrentes como "rede social" voltam a ficar alcançáveis. --- */
+    var indiceDefinicoesEl = document.getElementById('definicoes-indice');
+    var dialogDefinicao = document.getElementById('definicao-dialog');
+    if (indiceDefinicoesEl && dialogDefinicao) {
+        var indiceDefinicoes = JSON.parse(indiceDefinicoesEl.textContent);
+        var porTermo = Object.create(null);
+        var contagemDefinicoes = Object.create(null);
+        var termosDefinicoes = [];
+        indiceDefinicoes.forEach(function (verbete) {
+            verbete.termos.forEach(function (termo) {
+                if (termo.length < 8) return;
+                porTermo[termo.toLocaleLowerCase('pt-BR')] = verbete;
+                termosDefinicoes.push(termo);
+            });
+        });
+        termosDefinicoes.sort(function (a, b) { return b.length - a.length; });
+        var escaparRegex = function (texto) { return texto.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); };
+        var regexDefinicoes = termosDefinicoes.length
+            ? new RegExp('(^|[^\\p{L}\\p{N}])(' + termosDefinicoes.map(escaparRegex).join('|') + ')(?=$|[^\\p{L}\\p{N}])', 'giu')
+            : null;
+        var ignorarDefinicaoEm = 'A, BUTTON, CODE, PRE, SCRIPT, STYLE, TEXTAREA, INPUT, SELECT, H1, H2, H3, H4, H5, H6, .nota-aviso, .footnotes';
+
+        function marcarTextoDefinido(no, vistosNaSecao) {
+            if (!regexDefinicoes || !no.nodeValue.trim() || no.parentElement.closest(ignorarDefinicaoEm)) return;
+            regexDefinicoes.lastIndex = 0;
+            var texto = no.nodeValue;
+            var fragmento = document.createDocumentFragment();
+            var ultimo = 0;
+            var alterou = false;
+            var casamento;
+            while ((casamento = regexDefinicoes.exec(texto))) {
+                var prefixo = casamento[1];
+                var palavra = casamento[2];
+                var verbete = porTermo[palavra.toLocaleLowerCase('pt-BR')];
+                var inicioPalavra = casamento.index + prefixo.length;
+                if (!verbete || vistosNaSecao[verbete.id] || (contagemDefinicoes[verbete.id] || 0) >= 4) continue;
+                fragmento.appendChild(document.createTextNode(texto.slice(ultimo, inicioPalavra)));
+                var botao = document.createElement('a');
+                botao.href = '/notas/definicoes#' + verbete.id;
+                botao.className = 'definicao-termo' + (verbete.jurisdicao === 'UE' ? ' definicao-termo--ue' : '');
+                botao.dataset.definicao = verbete.id;
+                botao.setAttribute('aria-label', 'Abrir definição normativa de ' + palavra);
+                botao.setAttribute('aria-haspopup', 'dialog');
+                botao.setAttribute('aria-controls', 'definicao-dialog');
+                botao.textContent = palavra;
+                fragmento.appendChild(botao);
+                ultimo = inicioPalavra + palavra.length;
+                vistosNaSecao[verbete.id] = true;
+                contagemDefinicoes[verbete.id] = (contagemDefinicoes[verbete.id] || 0) + 1;
+                alterou = true;
+            }
+            if (!alterou) return;
+            fragmento.appendChild(document.createTextNode(texto.slice(ultimo)));
+            no.replaceWith(fragmento);
+        }
+
+        var vistosNaSecao = Object.create(null);
+        var corpoComentariosDefinicoes = document.querySelector('.painel--comentarios .painel__corpo');
+        Array.prototype.forEach.call(corpoComentariosDefinicoes.querySelectorAll('*'), function (elemento) {
+            if (elemento.tagName === 'H2') vistosNaSecao = Object.create(null);
+            Array.prototype.slice.call(elemento.childNodes).forEach(function (no) {
+                if (no.nodeType === Node.TEXT_NODE) marcarTextoDefinido(no, vistosNaSecao);
+            });
+        });
+
+        var bancoDefinicoes = null;
+        var focoAntesDaDefinicao = null;
+        function criarReferenciaDefinicao(referencia) {
+            var linha = document.createElement('p');
+            linha.className = 'definicao-referencia' + (referencia.jurisdicao === 'UE' ? ' definicao-referencia--ue' : '');
+            var juris = document.createElement('span');
+            juris.textContent = referencia.jurisdicao === 'BR' ? 'Brasil' : 'União Europeia';
+            var nota = document.createElement('a');
+            nota.className = 'definicao-referencia__nota';
+            nota.href = referencia.nota_url;
+            nota.textContent = referencia.norma_apelido;
+            var dispositivo = document.createElement('a');
+            dispositivo.className = 'definicao-referencia__dispositivo';
+            dispositivo.href = referencia.url;
+            dispositivo.textContent = referencia.dispositivo;
+            linha.append(juris, nota, dispositivo);
+            return linha;
+        }
+
+        function preencherDialog(verbete) {
+            dialogDefinicao.querySelector('h2').textContent = verbete.titulo;
+            var corpo = dialogDefinicao.querySelector('.definicao-dialog__corpo');
+            corpo.replaceChildren();
+            verbete.definicoes.forEach(function (definicao) {
+                var bloco = document.createElement('section');
+                bloco.className = 'definicao-dialog__fonte';
+                var texto = document.createElement('p');
+                texto.className = 'definicao-dialog__texto';
+                texto.textContent = definicao.texto;
+                bloco.appendChild(texto);
+                definicao.referencias.forEach(function (referencia) {
+                    bloco.appendChild(criarReferenciaDefinicao(referencia));
+                });
+                corpo.appendChild(bloco);
+            });
+            marcarLinksExternos(corpo);
+        }
+
+        document.addEventListener('click', function (evento) {
+            var botao = evento.target.closest('.definicao-termo');
+            if (!botao) return;
+            evento.preventDefault();
+            focoAntesDaDefinicao = botao;
+            var abrir = function () {
+                var verbete = bancoDefinicoes.filter(function (item) { return item.id === botao.dataset.definicao; })[0];
+                if (!verbete) return;
+                preencherDialog(verbete);
+                dialogDefinicao.showModal();
+            };
+            if (bancoDefinicoes) abrir();
+            else fetch('/notas/definicoes.json').then(function (resposta) {
+                if (!resposta.ok) throw new Error('Falha ao carregar definições');
+                return resposta.json();
+            }).then(function (dados) { bancoDefinicoes = dados; abrir(); });
+        });
+        dialogDefinicao.querySelector('.definicao-dialog__fechar').addEventListener('click', function () {
+            dialogDefinicao.close();
+        });
+        dialogDefinicao.addEventListener('click', function (evento) {
+            if (evento.target === dialogDefinicao) dialogDefinicao.close();
+        });
+        dialogDefinicao.addEventListener('close', function () {
+            if (focoAntesDaDefinicao) focoAntesDaDefinicao.focus();
+        });
+    }
+
     /* --- Menu do título: alternar para outra nota sem passar pela página
        principal. A lista de links já vem pronta (e visível) no HTML — funciona
        como navegação normal sem JavaScript. Com JavaScript, vira um menu

@@ -20,6 +20,7 @@ fazer nada disso à mão.
 - [Atalhos de teclado](#atalhos-de-teclado)
 - [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
+- [Definições normativas](#definições-normativas)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
@@ -65,6 +66,9 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
 | `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
+| `_data/definicoes.yml` | Banco gerado com a literalidade das definições normativas, agrupadas por termo e jurisdição |
+| `definicoes.md` e `_layouts/definicoes.html` | Página consolidada em `/notas/definicoes`, com ordem alfabética ou temática |
+| `definicoes.json` | Mesmos verbetes em JSON, carregados sob demanda pelos comentários |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -503,6 +507,42 @@ recebem id:
 - **Entre notas, use o caminho da página**:
   `[art. 6º da LGPD](/notas/lgpd#art-6)` abre a outra nota já posicionada no
   dispositivo.
+
+## Definições normativas
+
+`/notas/definicoes` reúne as definições literais das normas disponíveis na
+seção. A página se chama **Definições normativas** porque o conteúdo é a redação
+da própria norma, com links separados para a nota e para o dispositivo — não um
+glossário de paráfrases. O leitor pode ordenar os verbetes de A a Z ou por tema,
+usar o índice lateral de altura total no desktop, buscar por termo, norma ou
+tema e ocultar as definições da União Europeia.
+
+O banco fica em `_data/definicoes.yml` e é gerado por
+`scripts/gerar_definicoes.py`. O script lê os artigos identificados como
+“Definições” em `_data/ementas/` e uma lista explícita de conceitos definidos
+fora desses artigos, como “acesso provável”, “tratamento de alto risco” e
+“mecanismos de incentivo ao uso excessivo”. A literalidade vem sempre de
+`_leis/`; o script mantém apenas metadados editoriais de equivalência e tema.
+Rode-o depois de criar ou atualizar uma norma:
+
+```bash
+.venv/bin/python scripts/gerar_definicoes.py
+```
+
+Termos iguais ou muito próximos são agrupados num único verbete **dentro da
+mesma jurisdição**. O título lista todas as formas agrupadas e cada definição
+mantém sua referência própria. Redações materialmente iguais aparecem uma vez,
+seguidas por todas as referências que as adotam; redações diferentes permanecem
+separadas. A chave do agrupamento inclui `BR` ou `UE`, de modo que uma redação
+europeia nunca seja apresentada como definição brasileira.
+
+Nas notas de comentário, `_layouts/nota.html` embute somente um índice compacto
+de termos da jurisdição da página. O `notas.js` marca no máximo a primeira
+ocorrência por seção e quatro ocorrências por verbete na nota; isso conserva o
+acesso a termos recorrentes sem transformar todo o texto em links. Ao clicar, o
+JSON completo de `/notas/definicoes.json` é carregado sob demanda e exibido num
+diálogo rolável. Sem JavaScript, o comentário e as remissões legais continuam
+funcionando, e a página consolidada permanece acessível pela navegação.
 
 ## Normas estrangeiras (`formato: ue`)
 

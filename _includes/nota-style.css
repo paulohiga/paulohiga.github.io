@@ -1613,6 +1613,451 @@ body:not(.js) .nota-progresso {
     color: var(--ink-soft);
 }
 
+.notas-index__definicoes {
+    margin: -1rem 0 2rem;
+    padding: 0.8rem 1rem;
+    border-left: 3px solid var(--accent);
+    background: var(--surface-tint);
+    font-size: 0.9rem;
+}
+
+/* --- Definições contextuais nos comentários --- */
+.definicao-termo {
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    margin: 0;
+    padding: 0.04em 0.16em;
+    border: 0;
+    border-bottom: 1px dotted var(--accent);
+    border-radius: 0.2em;
+    background: var(--surface-tint);
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    text-decoration: none;
+    cursor: help;
+}
+
+.definicao-termo:hover {
+    color: var(--link);
+    border-bottom-style: solid;
+}
+
+/* Nas notas europeias o acesso existe com a mesma facilidade, mas sem o
+   fundo azul reservado às definições aplicáveis no Brasil. */
+.definicao-termo--ue {
+    padding-inline: 0;
+    background: transparent;
+}
+
+.definicao-dialog {
+    width: min(44rem, calc(100vw - 2rem));
+    max-height: min(82dvh, 48rem);
+    padding: 0;
+    overflow: hidden;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.8rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+.definicao-dialog[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+.definicao-dialog::backdrop {
+    background: rgba(2, 6, 23, 0.58);
+}
+
+.definicao-dialog__topo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.1rem 0.8rem;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.definicao-dialog__topo h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.definicao-dialog__fechar {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.definicao-dialog__fechar:hover {
+    background: var(--surface-tint);
+    color: var(--ink);
+}
+
+.definicao-dialog__corpo {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.2rem 1.1rem;
+    scrollbar-gutter: stable;
+}
+
+.definicao-dialog__fonte {
+    padding: 0.85rem 0;
+}
+
+.definicao-dialog__fonte + .definicao-dialog__fonte {
+    border-top: 1px solid var(--hairline);
+}
+
+.definicao-dialog__texto {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.definicao-dialog__rodape {
+    margin: 0;
+    padding: 0.75rem 1.1rem;
+    border-top: 1px solid var(--hairline);
+    background: var(--page-bg);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.definicao-referencia {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    margin: 0.65rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.definicao-referencia a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+}
+
+.definicao-referencia > span {
+    font-weight: 700;
+}
+
+.definicao-referencia__nota {
+    padding: 0.05rem 0.35rem;
+    border-radius: 0.3rem;
+    background: var(--surface-tint);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.definicao-referencia--ue .definicao-referencia__nota {
+    padding-inline: 0;
+    background: transparent;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.definicao-referencia__dispositivo {
+    font-weight: 600;
+    text-underline-offset: 0.15em;
+}
+
+.definicao-referencia + .definicao-referencia {
+    margin-top: 0.25rem;
+}
+
+/* --- Página /notas/definicoes --- */
+.definicoes {
+    width: min(100%, 90rem);
+    margin: 0 auto;
+    padding: 1.5rem clamp(1rem, 3vw, 2rem) 5rem;
+}
+
+.definicoes__cabecalho {
+    max-width: 68rem;
+    margin: 0 auto 1.5rem;
+}
+
+.definicoes__cabecalho > p {
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+}
+
+.definicoes-controles {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.definicoes-controles fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    border-radius: 0.55rem;
+}
+
+.definicoes-controles fieldset label + label {
+    border-left: 1px solid var(--hairline);
+}
+
+.definicoes-controles fieldset input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.definicoes-controles fieldset span {
+    display: block;
+    padding: 0.6rem 0.7rem;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.definicoes-controles fieldset input:checked + span {
+    background: var(--surface-tint);
+    color: var(--ink);
+}
+
+.definicoes-controles fieldset input:focus-visible + span {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
+}
+
+.definicoes-busca input {
+    width: 100%;
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.55rem;
+    background: var(--page-bg);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.86rem;
+}
+
+.definicoes-controles__br {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+}
+
+body:not(.js) .definicoes-controles {
+    display: none;
+}
+
+.definicoes__grade {
+    display: grid;
+    grid-template-columns: minmax(17rem, 21rem) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.definicoes-nav {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 2rem);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.7rem;
+}
+
+.definicoes-nav__topo {
+    flex: none;
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.definicoes-nav__topo h2 {
+    margin: 0 0 0.8rem;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+}
+
+.definicoes-nav__lista {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.4rem 0.55rem 0.8rem;
+    scrollbar-gutter: stable;
+}
+
+.definicoes-nav__grupo {
+    margin: 0.65rem 0 0.25rem;
+    padding: 0 0.5rem;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+}
+
+.definicoes-nav__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.32rem 0.5rem;
+    border-radius: 0.35rem;
+    color: var(--ink);
+    font-size: 0.81rem;
+    line-height: 1.25;
+    text-decoration: none;
+}
+
+.definicoes-nav__item span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.definicoes-nav__item small {
+    flex: none;
+    color: var(--ink-soft);
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.definicoes-nav__item:hover,
+.definicoes-nav__item:focus-visible,
+.definicoes-nav__item[aria-current] {
+    background: var(--surface-tint);
+}
+
+.definicoes-nav__item[aria-current] {
+    box-shadow: inset 3px 0 var(--accent);
+    color: var(--link);
+    font-weight: 700;
+}
+
+.definicoes-lista {
+    min-width: 0;
+}
+
+.definicoes-grupo {
+    margin: 1.8rem 0 0.65rem;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--ink-soft);
+}
+
+.definicoes-grupo:first-child {
+    margin-top: 0;
+}
+
+.definicao-card {
+    scroll-margin-top: 1rem;
+    margin: 0 0 0.8rem;
+    padding: 1rem 1.1rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--accent);
+    border-radius: 0.65rem;
+}
+
+.definicao-card--ue {
+    border-left-color: var(--hairline);
+}
+
+.definicao-card:target {
+    outline: 3px solid var(--realce);
+    outline-offset: 2px;
+}
+
+.definicao-card__topo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.55rem;
+}
+
+.definicao-card__topo h3 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.definicao-card__ancora {
+    margin-left: auto;
+    color: var(--ink-soft);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.definicao-card__ancora:hover {
+    color: var(--link);
+}
+
+.definicao-card__fonte + .definicao-card__fonte {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--hairline);
+}
+
+.definicao-card__texto > :first-child {
+    margin-top: 0;
+}
+
+.definicao-card__texto > :last-child {
+    margin-bottom: 0;
+}
+
+.definicao-card__texto p {
+    margin: 0;
+}
+
+.definicao-card__texto ul {
+    margin-block: 0.5rem 0;
+}
+
+.definicoes-vazio {
+    padding: 2rem;
+    text-align: center;
+    color: var(--ink-soft);
+}
+
+@media (max-width: 899px) {
+    .definicoes__grade {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.9rem;
+    }
+
+    .definicoes-nav {
+        position: static;
+        height: auto;
+    }
+
+    .definicoes-nav__lista {
+        max-height: 18rem;
+    }
+}
+
 /* Agrupamento por jurisdição (o valor de `jurisdicao` no front matter da
    nota). O rótulo do grupo não é um cartão: é um título de seção da lista. */
 .notas-index__grupo {

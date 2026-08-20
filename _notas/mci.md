@@ -10,7 +10,7 @@ normas_extra:
   - decreto-12976
 ordem: 2
 jurisdicao: Brasil
-atualizado_em: 2026-08-19
+atualizado_em: 2026-08-20
 ---
 
 ## Resumo geral
@@ -58,19 +58,6 @@ Promoção do direito de acesso à internet a todos ([I](#art-4-i)); do acesso �
 ### Interpretação ([art. 6º](#art-6))
 
 Além dos fundamentos, princípios e objetivos, a interpretação da Lei deve considerar a natureza da internet, seus usos e costumes particulares e sua importância para a promoção do desenvolvimento humano, econômico, social e cultural.
-
-## Conceitos ([art. 5º](#art-5))
-
-- **internet**: sistema constituído do conjunto de protocolos lógicos, estruturado em escala mundial para uso público e irrestrito, com a finalidade de possibilitar a comunicação de dados entre terminais por meio de diferentes redes ([I](#art-5-i));
-- **terminal**: o computador ou qualquer dispositivo que se conecte à internet ([II](#art-5-ii));
-- **endereço de protocolo de internet (endereço IP)**: código atribuído a um terminal de uma rede para permitir sua identificação, definido segundo parâmetros internacionais ([III](#art-5-iii));
-- **administrador de sistema autônomo**: pessoa física ou jurídica que administra blocos de endereço IP específicos e o respectivo sistema autônomo de roteamento, cadastrada no ente nacional responsável pelo registro e distribuição de endereços IP ([IV](#art-5-iv));
-- **conexão à internet**: habilitação de um terminal para envio e recebimento de pacotes de dados pela internet, mediante atribuição ou autenticação de um endereço IP ([V](#art-5-v));
-- **registro de conexão**: conjunto de informações referentes à data e hora de início e término de uma conexão, sua duração e o endereço IP utilizado ([VI](#art-5-vi));
-- **aplicações de internet**: conjunto de funcionalidades que podem ser acessadas por meio de um terminal conectado à internet ([VII](#art-5-vii));
-- **registros de acesso a aplicações de internet**: conjunto de informações referentes à data e hora de uso de uma aplicação a partir de um determinado endereço IP ([VIII](#art-5-viii)).
-
-As definições de **rede social** e **moderação em redes sociais** (que seriam os incisos IX e X) e o conceito legal de rede social ligado a um piso de dez milhões de usuários registrados no País só existiram na redação da MPV nº 1.068/2021, rejeitada — não há, hoje, definição legal desses termos no Marco Civil.
 
 ## Direitos e garantias dos usuários (Capítulo II)
 

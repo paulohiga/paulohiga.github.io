@@ -103,6 +103,7 @@
 {% for outra in outras_notas %}
                 <li><a href="{{ outra.url }}">{{ outra.title }}</a></li>
 {% endfor %}
+                <li class="nota-titulo-menu__separador"><a href="/notas/definicoes">Definições normativas</a></li>
                 <li class="nota-titulo-menu__separador"><a href="/notas">Ver todas as notas</a></li>
             </ul>
         </div>
@@ -341,6 +342,30 @@
             </nav>
         </div>
     </main>
+
+    <!-- Índice compacto: só termos e ids entram em cada nota. A literalidade
+         completa é buscada no primeiro clique, evitando inflar todas as seis
+         páginas com o banco inteiro. -->
+    <script id="definicoes-indice" type="application/json">
+    [
+{% assign jurisdicao_definicoes = "BR" %}
+{% if page.jurisdicao != "Brasil" %}{% assign jurisdicao_definicoes = "UE" %}{% endif %}
+{% assign primeira_definicao = true %}
+{% for verbete in site.data.definicoes %}{% if verbete.jurisdicao == jurisdicao_definicoes %}
+{% unless primeira_definicao %},{% endunless %}{"id":{{ verbete.id | jsonify }},"termos":{{ verbete.busca | jsonify }},"jurisdicao":{{ verbete.jurisdicao | jsonify }}}{% assign primeira_definicao = false %}
+{% endif %}{% endfor %}
+    ]
+    </script>
+    <dialog id="definicao-dialog" class="definicao-dialog" aria-labelledby="definicao-dialog-titulo">
+        <div class="definicao-dialog__topo">
+            <h2 id="definicao-dialog-titulo"></h2>
+            <button type="button" class="definicao-dialog__fechar" aria-label="Fechar definição">
+                <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="definicao-dialog__corpo"></div>
+        <p class="definicao-dialog__rodape"><a href="/notas/definicoes">Ver todas as definições normativas</a></p>
+    </dialog>
 
     <!-- Restaura o modo leitura antes do primeiro paint, junto com o sumário
          que ele mantém aberto. Fica aqui, e não no notas.js (que é `defer`),

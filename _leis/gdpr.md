@@ -1,6 +1,6 @@
 ---
 titulo: Regulamento (UE) 2016/679, de 27 de abril de 2016
-apelido: RGPD (GDPR)
+apelido: General Data Protection Regulation (GDPR) da UE
 prefixo: rgpd
 fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:02016R0679-20160504
 formato: ue

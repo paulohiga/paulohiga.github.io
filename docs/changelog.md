@@ -17,6 +17,28 @@ no site, não o caminho até lá.
 
 ---
 
+## 2026-08-20
+
+### Notas de legislação
+
+- Publicada a página de **Definições normativas**, que reúne a literalidade das
+  definições das leis, decretos, resoluções e regulamentos disponíveis em
+  `/notas`. Termos iguais ou próximos da mesma jurisdição aparecem no mesmo
+  verbete, com links separados para a nota e para o dispositivo; o índice
+  lateral permite percorrer todos os verbetes em ordem alfabética ou temática,
+  buscar também por norma e tema e ocultar as normas da União Europeia.
+  Redações materialmente iguais aparecem uma vez, com todas as suas referências
+  normativas, enquanto redações diferentes permanecem separadas.
+- As notas passaram a dar acesso contextual aos verbetes ao longo dos
+  comentários, limitado à própria jurisdição. Os blocos que repetiam as
+  definições da LGPD, do Marco Civil, do ECA Digital, do GDPR e do AI Act foram
+  retirados; a análise técnica sobre anonimização permanece na nota da LGPD.
+
+### Documentação
+
+- Documentados o banco gerado a partir de `_leis/`, a página consolidada e o
+  acesso contextual nas notas.
+
 ## 2026-08-19
 
 ### Notas de legislação
