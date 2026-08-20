@@ -62,13 +62,7 @@ O Comitê o trata como **conceito dinâmico e flexível**, de avaliação casuí
 
 ## Aplicação ([art. 1º](#art-1))
 
-A Lei aplica-se a **todo produto ou serviço de tecnologia da informação** direcionado a crianças e adolescentes no País **ou de acesso provável por eles**, independentemente de localização, desenvolvimento, fabricação, oferta, comercialização e operação.
-
-Considera-se **acesso provável** ([art. 1º, parágrafo único](#art-1-pu)):
-
-- [I](#art-1-pu-i) — suficiente **probabilidade de uso e atratividade** do produto ou serviço de tecnologia da informação por crianças e adolescentes;
-- [II](#art-1-pu-ii) — considerável **facilidade ao acesso e utilização** do produto ou serviço de tecnologia da informação por crianças e adolescentes; e
-- [III](#art-1-pu-iii) — significativo **grau de risco** à privacidade, à segurança ou ao desenvolvimento biopsicossocial de crianças e de adolescentes, especialmente no caso de produtos ou serviços que tenham por finalidade permitir a interação social e o compartilhamento de informações em larga escala entre usuários em ambiente digital.
+A Lei aplica-se a **todo produto ou serviço de tecnologia da informação** direcionado a crianças e adolescentes no País **ou de acesso provável por eles**, independentemente de localização, desenvolvimento, fabricação, oferta, comercialização e operação. O [art. 1º, parágrafo único](#art-1-pu) define **acesso provável** pela combinação de três fatores: probabilidade de uso e atratividade, facilidade de acesso e grau de risco à privacidade, à segurança ou ao desenvolvimento biopsicossocial — com destaque para produtos que permitam interação social e compartilhamento de informações em larga escala.
 
 Pelo caput do [art. 1º](#art-1), a Lei alcança tanto o produto ou serviço direcionado a crianças e adolescentes quanto o de acesso provável por eles. O alcance concreto desse conceito é o objeto do guia orientativo sobre escopo e obrigações gerais, submetido pela ANPD a tomada de subsídios em 2026: na prática, é ele que dirá se um serviço corporativo, uma ferramenta educacional ou uma aplicação de nicho entram ou não no regime.
 
@@ -177,7 +171,7 @@ Três episódios do histórico da lei mostram essas fronteiras funcionando na pr
 
 ### A autoridade que a lei não nomeou
 
-O [art. 2º, X](#art-2-x), define a "autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital" como **entidade da administração pública criada por lei**, responsável por zelar pela aplicação da Lei, fiscalizá-la e editar regulamentos e procedimentos para sua execução, observado, no processo decisório, o Capítulo I da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm) (regime geral das agências reguladoras).
+O [art. 2º, X](#art-2-x), define a "autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital" como **entidade da administração pública criada por lei**, com poder de fiscalização e de regulamentação, observado no processo decisório o Capítulo I da [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm) (regime geral das agências reguladoras).
 
 Repare no desenho: a lei descreveu o cargo, mas não disse quem o ocuparia. Coube ao [Decreto nº 12.622/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12622.htm) **designar a ANPD**. E o decreto só podia designar — jamais criar —, porque autarquia depende de lei específica (CF, art. 37, XIX) e a própria lei exigia entidade "criada por lei". A escolha recaiu sobre uma autoridade que já existia.
 

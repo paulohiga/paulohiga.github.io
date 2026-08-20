@@ -196,7 +196,6 @@ Segundo o [FAQ da ANPD sobre o tema](https://www.gov.br/anpd/pt-br/assuntos/marc
 
 Editado na mesma data do Decreto nº 12.975/2026 e com a mesma _vacatio legis_ de 60 dias (em vigor desde 20/7/2026), estabelece diretrizes para a proteção de mulheres na internet e o enfrentamento da violência contra mulheres em ambiente digital, com fundamento no art. 84, _caput_, incisos IV e VI, "a", da Constituição, e na Lei nº 12.965/2014.
 
-- Define **violência contra mulheres em ambiente digital** como crimes ou atos ilícitos praticados em razão da condição do sexo feminino — causando dano ou sofrimento físico, sexual, psicológico, político ou econômico —, cometidos, instigados, facilitados ou agravados pelo uso de tecnologias digitais: violência doméstica e familiar (inclusive psicológica), perseguição digital, violência política de gênero, divulgação não consentida de conteúdo íntimo, ameaças e conteúdos que propagam ódio ou aversão às mulheres, entre outros.
 - Princípios que regem a atuação normativa, fiscalizatória e sancionatória, e as políticas públicas de enfrentamento ([art. 2º](#dec12976-art-2)):
     - **não discriminação** em razão da condição do sexo feminino, vedadas quaisquer formas de violência, intimidação ou exposição degradante praticadas em ambiente digital ([inciso I](#dec12976-art-2-i));
     - **centralidade da vítima**: acolhimento adequado, preservação de provas, disponibilidade de canais acessíveis de denúncia e adoção de medidas para cessação ou mitigação do dano ([inciso II](#dec12976-art-2-ii));
