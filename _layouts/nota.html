@@ -61,7 +61,10 @@
 {% include nota-head.html %}
 </head>
 
-<body class="light-theme">
+<!-- A jurisdição da nota vai no <body>: é ela que decide quais definições
+     o balão pode mostrar (ver `notas.js`). -->
+{%- capture jurisdicao_id %}{% include definicoes-chave.html texto=page.jurisdicao %}{% endcapture -%}
+<body class="light-theme" data-jurisdicao="{{ jurisdicao_id | strip | replace: ' ', '-' }}">
 
     <!-- Tema e divisão dos painéis antes do primeiro paint: evita o flash do
          tema errado, o pulo das abas ao aparecerem e o salto visual da divisão
@@ -368,37 +371,58 @@
         }());
     </script>
 
-    <!-- Índice dos termos que as normas desta nota definem: o que o
-         `notas.js` usa para marcar, no corpo do comentário, o primeiro uso de
-         cada um em cada seção. Só os identificadores e as formas escritas vêm
-         aqui — a definição em si é buscada via fetch() na primeira vez em que
-         o leitor abre um balão (ver `_fragmentos/definicoes.html`), para uma
-         nota não carregar 97 verbetes por causa de um balão que talvez ninguém
+    <!-- Índice dos termos definidos que valem nesta nota: o que o `notas.js`
+         usa para marcar, no corpo do comentário, o primeiro uso de cada um em
+         cada seção. Só os identificadores e as formas escritas vêm aqui — a
+         definição em si é buscada via fetch() na primeira vez em que o leitor
+         abre um balão (ver `_fragmentos/definicoes.html`), para uma nota não
+         carregar duzentos verbetes por causa de um balão que talvez ninguém
          abra.
 
-         São só as normas *desta* nota (a principal e as de `normas_extra`); as
-         demais continuam acessíveis pelo seletor do painel, com a definição
-         delas a um clique em /notas/definicoes. O id é o do **verbete**, e não
-         o da definição: quando duas normas definem o mesmo termo, elas moram
-         no mesmo verbete, e o balão abre com as duas acepções e as duas bases
-         — que é o que o leitor precisa ver ao encontrar "dado pessoal" numa
-         nota que compara a LGPD e o RGPD. -->
-    <script type="application/json" id="nota-verbetes">[
-{%- assign primeiro_verbete = true -%}
+         Duas listas, e a diferença entre elas é prioridade. **`nota`** são as
+         normas desta nota (a principal e as de `normas_extra`); **`outras`**
+         são as demais normas **da mesma jurisdição**. "Rede social" é definido
+         pelo ECA Digital e citado no Marco Civil, na LGPD e no Regimento — sem
+         a segunda lista, a marca só apareceria na nota do ECA. Quando o mesmo
+         termo é definido nas duas listas, vence a norma desta nota; quando
+         duas normas da mesma lista o definem em verbetes diferentes, ele fica
+         sem marca (ver `notas.js`).
+
+         **Jurisdição não se mistura**: uma nota brasileira só marca definição
+         de norma brasileira, e uma nota europeia só marca definição europeia.
+         Ler o comentário da LGPD e receber a definição do RGPD seria trocar o
+         direito aplicável por um parecido. O verbete inteiro, com as duas, está
+         a um clique em /notas/definicoes. -->
+{%- assign jurisdicao_da_nota = page.jurisdicao | default: 'Brasil' -%}
 {%- assign normas_da_nota = "" | split: "," -%}
 {%- assign normas_da_nota = normas_da_nota | push: lei -%}
 {%- for norma in normas_extra %}{% assign normas_da_nota = normas_da_nota | push: norma %}{% endfor -%}
-{%- for norma in normas_da_nota -%}
-{%- for verbete in site.data.definicoes.verbetes[norma.slug] -%}
-{%- unless verbete.descartado -%}
-{%- assign grupo_verbete = verbete.grupo | default: nil -%}
-{%- unless grupo_verbete -%}{%- assign grupo_verbete = norma.prefixo | append: '-' | append: verbete.slug -%}{%- endunless -%}
-{%- unless primeiro_verbete %},{% endunless %}{% assign primeiro_verbete = false -%}
-["v-{{ grupo_verbete }}",{{ verbete.termo | jsonify }}{% for apelido in verbete.aliases %},{{ apelido | jsonify }}{% endfor %}]
-{%- endunless -%}
+{%- assign normas_da_jurisdicao = "" | split: "," -%}
+{%- for arquivo in site.data.definicoes.verbetes -%}
+    {%- assign slug_outra = arquivo[0] -%}
+    {%- assign registro_outra = site.data.normas[slug_outra] -%}
+    {%- assign nota_outra = site.notas | where: 'slug', registro_outra.nota | first -%}
+    {%- assign jurisdicao_outra = nota_outra.jurisdicao | default: 'Brasil' -%}
+    {%- if jurisdicao_outra != jurisdicao_da_nota -%}{%- continue -%}{%- endif -%}
+    {%- assign e_desta_nota = false -%}
+    {%- for norma in normas_da_nota -%}
+        {%- if norma.slug == slug_outra -%}{%- assign e_desta_nota = true -%}{%- endif -%}
+    {%- endfor -%}
+    {%- unless e_desta_nota -%}
+        {%- assign outra = site.leis | where: 'slug', slug_outra | first -%}
+        {%- assign normas_da_jurisdicao = normas_da_jurisdicao | push: outra -%}
+    {%- endunless -%}
 {%- endfor -%}
-{%- endfor -%}
-]</script>
+
+    <script type="application/json" id="nota-verbetes">{
+"nota": [
+{%- assign primeiro_verbete = true -%}
+{%- for norma in normas_da_nota -%}{% include nota-verbetes.html norma=norma %}{%- endfor -%}
+],
+"outras": [
+{%- assign primeiro_verbete = true -%}
+{%- for norma in normas_da_jurisdicao -%}{% include nota-verbetes.html norma=norma %}{%- endfor -%}
+]}</script>
 
     <script src="/notas.js" defer></script>
 </body>

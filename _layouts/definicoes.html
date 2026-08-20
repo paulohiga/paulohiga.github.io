@@ -37,6 +37,19 @@
         }());
     </script>
 
+    <!-- A coluna do sumário é decidida antes do primeiro paint, como o tema e o
+         modo leitura das notas: montada depois, a lista inteira saltaria de
+         largura quando o notas.js chegasse. A marca só diz que há espaço para
+         ela; quem a preenche é o notas.js, e sem ele a barra de cima continua
+         valendo. -->
+    <script data-cfasync="false">
+        (function () {
+            if (matchMedia('(min-width: 1100px)').matches) {
+                document.body.setAttribute('data-definicoes-sumario', '');
+            }
+        }());
+    </script>
+
     <a href="#lista-definicoes" class="skip-link">Pular para a lista de definições</a>
 
     <header class="nota-topo">
@@ -55,6 +68,24 @@
     </header>
 
     <main class="definicoes">
+        <!-- Sumário lateral do desktop. Reaproveita as classes dos sumários das
+             notas (`.nota-toc__*`): mesmo filtro, mesma marca de "você está
+             aqui", mesmo comportamento de acompanhar a leitura — o que muda é
+             que aqui ele é coluna da grade, e não gaveta sobreposta. A lista e
+             os controles são montados pelo `notas.js`; sem ele, o sumário fica
+             oculto e a barra de cima assume. -->
+        <aside id="toc-definicoes" class="nota-toc definicoes__sumario" hidden>
+            <div class="nota-toc__topo">
+                <h2>Verbetes</h2>
+            </div>
+            <div class="nota-toc__filtro definicoes__sumario-controles"></div>
+            <nav class="nota-toc__corpo" aria-label="Sumário das definições">
+                <ul></ul>
+                <p class="nota-toc__vazio" role="status" hidden>Nenhum verbete com esse filtro.</p>
+            </nav>
+        </aside>
+
+        <div class="definicoes__coluna">
         <p class="definicoes__intro">
             As {{ definicoes_total }} definições que as normas comentadas em <a href="/notas">/notas</a>
             dão aos próprios termos — leis, decretos, resoluções da ANPD e os regulamentos europeus
@@ -82,6 +113,14 @@
                     <label for="definicoes-filtro" class="visualmente-oculto">Filtrar por termo, norma ou tema</label>
                     <input id="definicoes-filtro" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou tema">
                 </form>
+                <!-- Metade dos verbetes tem acepção de norma europeia, e quem
+                     está atrás do que obriga no Brasil não quer percorrê-las.
+                     Ocultar a acepção, e não o verbete: o que sobra do verbete
+                     continua valendo. -->
+                <label class="definicoes__so-brasil">
+                    <input type="checkbox" id="definicoes-so-brasil">
+                    Só normas brasileiras
+                </label>
             </div>
             <nav class="definicoes__letras" aria-label="Ir para a letra">
 {%- for inicial in definicoes_iniciais %}
@@ -115,6 +154,7 @@
             </section>
 {%- endfor %}
             <p class="definicoes__vazio" role="status" hidden>Nenhum termo com esse filtro.</p>
+        </div>
         </div>
     </main>
 

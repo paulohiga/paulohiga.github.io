@@ -550,14 +550,21 @@ invisível no diagnóstico original:
   termo, elas ficam no mesmo verbete, uma acepção abaixo da outra.
   Ordem alfabética no DOM, organização por tema montada pelo `notas.js`
   movendo os verbetes (e não reordenando por CSS, que mentiria para o leitor
-  de tela), filtro por termo, norma, tema ou jurisdição, e um índice no topo
-  para cada organização — a barra de letras funciona sem JavaScript, por ser
-  âncora pura.
+  de tela), filtro por termo, norma, tema ou jurisdição, alternador de "só
+  normas brasileiras" e um índice para cada organização — a barra de letras
+  funciona sem JavaScript, por ser âncora pura. A partir de 1100px a barra de
+  cima dá lugar a um **sumário lateral** de altura inteira, que reaproveita as
+  peças dos sumários das notas (as classes `.nota-toc__*`, o filtro, a marca de
+  item corrente e o acompanhamento da leitura, agora compartilhados no
+  `notas.js`).
 - **Termo marcado no comentário**, no primeiro uso de cada um em cada seção
-  `##`, abrindo um balão com a definição e a base legal. A base volta para o
+  `##`, abrindo um balão com a definição e a base legal. O termo pode ser
+  definido por qualquer norma da **mesma jurisdição** da nota, e não só pelas
+  que o painel exibe — "rede social" é do ECA Digital e aparece marcado no
+  Marco Civil e na LGPD. A base volta para o
   painel da lei: clicar em "art. 2º, IV" no balão de um verbete do decreto,
   dentro da nota do ECA Digital, troca a norma exibida e para no dispositivo.
-  Densidade medida: de 1,8 a 7,3 marcas por seção.
+  Densidade medida: de 2,6 a 9,1 marcas por seção.
 - **As seções de definições saíram das notas.** O comentário *sobre* a
   definição ficou — na nota, quando é análise (a anonimização na LGPD), ou no
   campo `nota` do verbete.

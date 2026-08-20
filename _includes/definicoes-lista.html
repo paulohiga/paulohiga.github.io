@@ -195,8 +195,15 @@
     {%- endif -%}
 {%- endfor -%}
 {%- comment -%} A acepção. {%- endcomment -%}
+{%- comment -%}
+    Cada acepção tem id próprio (`d-<prefixo da norma>-<slug>`), e não só o
+    verbete: o que se compartilha é "a definição de dado pessoal do RGPD", e não
+    "as quatro definições de dado pessoal". O `#` no fim da linha de origem é o
+    link para ela — discreto, e ao alcance do teclado.
+{%- endcomment -%}
+{%- assign id_acepcao = 'd-' | append: norma.prefixo | append: '-' | append: verbete.slug -%}
 {%- capture acepcao -%}
-                    <div class="verbete__acepcao" data-jurisdicao="{{ jurisdicao_id }}" data-norma="{{ norma_slug }}">
+                    <div class="verbete__acepcao" id="{{ id_acepcao }}" data-jurisdicao="{{ jurisdicao_id }}" data-norma="{{ norma_slug }}">
                         <p class="verbete__origem">
                             <span class="verbete__jurisdicao">{{ jurisdicao }}</span>
                             <a class="verbete__norma" href="/notas/{{ registro.nota }}">{{ norma.apelido | split: ' — ' | first }}</a>
@@ -207,6 +214,7 @@
                             <span class="verbete__base verbete__base--sem-link">{{ base.texto }}</span>
 {%- endif %}
 {%- endfor %}
+                            <a class="verbete__permalink" href="#{{ id_acepcao }}" aria-label="Link para esta definição: {{ verbete.termo }}, {{ norma.apelido | split: ' — ' | first }}">#</a>
                         </p>
 {%- assign termo_desta = partes[3] -%}
 {%- if termo_desta != lider %}

@@ -45,7 +45,9 @@ tema** (sujeitos e papéis, dados e informação, operações e técnicas, rede 
 plataformas, conteúdo e moderação, inteligência artificial, infância e
 adolescência, segurança e incidentes, transferência internacional, governança e
 conformidade, fiscalização e sanções, rito e deliberação) —, cada uma com o seu
-índice no topo, e traz um filtro por termo, norma, tema ou jurisdição.
+índice, e traz um filtro por termo, norma, tema ou jurisdição, mais um
+alternador para ver **só as normas brasileiras**. Em tela larga, um **sumário
+lateral** de altura inteira lista os verbetes e acompanha a leitura.
 
 **Cada acepção diz de qual ordenamento fala.** Uma etiqueta marca o que é
 direito brasileiro; sem ela, a acepção é de direito estrangeiro, que não obriga
@@ -57,7 +59,15 @@ lista sem essa distinção seria confundi-las.
 **Nos comentários, os mesmos termos ficam marcados no corpo do texto** — o
 primeiro uso de cada um em cada seção — e o clique abre a definição ali mesmo,
 com a base legal. Clicar na base leva ao dispositivo no painel da lei,
-trocando a norma exibida quando for o caso.
+trocando a norma exibida quando for o caso. O termo não precisa ser das normas
+daquela nota: "rede social" é definido pelo ECA Digital e passou a ficar
+marcado também no Marco Civil e na LGPD, que o citam sem defini-lo. **A
+jurisdição não se mistura**: uma nota brasileira só abre definição de norma
+brasileira, e uma nota europeia só abre definição europeia.
+
+**Cada definição tem link próprio**, num "#" discreto ao lado da base legal: o
+que se compartilha é "a definição de dado pessoal do RGPD", e não as quatro
+definições de dado pessoal.
 
 O que saiu das notas foi a **lista de definições**, que agora estaria repetida
 em dois lugares — o "tratamento" da LGPD e o do RGPD eram o mesmo verbete

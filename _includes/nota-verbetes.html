@@ -1,0 +1,18 @@
+{%- comment -%}
+    Uma linha do índice de termos da nota, por verbete de `include.norma`:
+    ["v-<verbete>", "Termo", "apelido", …]. Chamado duas vezes por
+    `_layouts/nota.html` (as normas desta nota e as demais da jurisdição dela),
+    e por isso mora fora do layout.
+
+    O id é o do **verbete**, e não o da definição: quando duas normas definem o
+    mesmo termo, elas moram no mesmo verbete, e é ele que o balão abre.
+    Definição descartada (a que só recopia uma norma superior) não entra.
+{%- endcomment -%}
+{%- for verbete in site.data.definicoes.verbetes[include.norma.slug] -%}
+{%- unless verbete.descartado -%}
+{%- assign grupo_verbete = verbete.grupo | default: nil -%}
+{%- unless grupo_verbete -%}{%- assign grupo_verbete = include.norma.prefixo | append: '-' | append: verbete.slug -%}{%- endunless -%}
+{%- unless primeiro_verbete %},{% endunless %}{% assign primeiro_verbete = false -%}
+["v-{{ grupo_verbete }}",{{ verbete.termo | jsonify }}{% for apelido in verbete.aliases %},{{ apelido | jsonify }}{% endfor %}]
+{%- endunless -%}
+{%- endfor -%}

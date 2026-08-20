@@ -72,6 +72,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_data/definicoes/temas.yml` | Os temas, a segunda forma de organizar a página |
 | `_data/definicoes/verbetes/<slug>.yml` | Os [verbetes](#definições-legais) de cada norma |
 | `_includes/definicoes-jsonld.html` | O `DefinedTermSet` da página, no fim do `<body>` |
+| `_includes/nota-verbetes.html` | Uma linha do índice de termos de uma nota, por verbete de uma norma |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -630,6 +631,39 @@ funciona sem JavaScript (são âncoras para seções que já estão no HTML); a 
 temas nasce oculta, porque as seções que ela aponta só são montadas pelo
 `notas.js`.
 
+**A partir de 1100px a barra de cima dá lugar a um sumário lateral.** Com
+duzentos verbetes, a barra de letras responde "para onde posso ir" uma letra por
+vez; a coluna responde a mesma pergunta com quinze títulos à vista e ainda diz
+onde o leitor está. Ela **reaproveita as peças dos sumários das notas** — as
+classes `.nota-toc__*`, o filtro, a marca de item corrente, o acompanhamento da
+leitura — e as funções que os três sumários da seção usam ficam, no `notas.js`,
+num bloco à parte, acima do trecho que só vale nas notas. O que muda entre eles
+é quem rola e onde cai a linha de leitura, e é só isso que quem chama informa:
+
+```js
+marcarSumarioAtivo(sumario, linhaDeLeituraDoPainel(painelEl, corpoEl));  // notas
+marcarSumarioAtivo(sumario, linhaDaColuna());                            // definições
+```
+
+Com o sumário na tela, **quem rola é a coluna de leitura**, e não a página — é o
+que mantém a lista inteira à vista o tempo todo, e é a mesma escolha dos dois
+painéis de uma nota. A coluna é decidida antes do primeiro paint por um script
+inline no layout (como o tema e o modo leitura), senão a lista saltaria de
+largura quando o `notas.js` chegasse. Os controles são **um conjunto só**, movido
+entre a barra e o sumário conforme a largura: duplicá-los no HTML significaria
+dois campos de filtro com o mesmo id e dois estados para manter em sincronia.
+
+O alternador **"só normas brasileiras"** oculta as acepções estrangeiras — e os
+verbetes que ficarem sem nenhuma, porque o título sozinho não define nada.
+Metade dos verbetes tem acepção europeia, e quem está atrás do que obriga no
+Brasil não quer percorrê-las.
+
+**Cada acepção tem link próprio** (`#d-<prefixo da norma>-<slug>`), num "#"
+discreto no fim da linha de origem: o que se compartilha é "a definição de dado
+pessoal do RGPD", e não "as quatro definições de dado pessoal". O verbete
+continua tendo o seu (`#v-<grupo>`), que é para onde a marcação das notas
+aponta.
+
 O **filtro** casa por começo de palavra, e não por trecho solto: "idade" acha
 "aferição de idade" sem arrastar "disponibilidade" e "confidencialidade" junto.
 Ele compara termo, apelidos, tema, jurisdição e os **apelidos da norma em
@@ -662,16 +696,26 @@ link para a página.
 - **Só o primeiro uso por seção.** "Tratamento" aparece duzentas vezes na nota
   da LGPD; marcar todas transformaria o texto em confete. Uma marca por seção
   mantém o termo à mão em qualquer ponto da leitura — a densidade medida hoje
-  fica entre 1,6 e 6,6 marcas por seção.
+  fica entre 2,6 e 9,1 marcas por seção.
 - **A marca é um link de verdade** (`/notas/definicoes#v-...`), e não um botão:
   Ctrl+clique e clique do meio abrem a página numa aba. O traço é pontilhado, e
   não azul, para não competir com os links de dispositivo do comentário.
 - **Não se marca dentro de link, código, título nem no aviso de IA.** Título é
   navegação — o sumário lê o texto dele.
+- **O termo não precisa ser das normas da nota.** "Rede social" é definido pelo
+  ECA Digital e citado no Marco Civil, na LGPD e no Regimento Interno; marcar só
+  onde a norma que o define está no painel deixaria a maior parte dos usos sem
+  link. O índice da nota tem duas listas — as normas dela e as **demais normas
+  da mesma jurisdição** —, e a segunda só entra onde a primeira não respondeu.
+- **Jurisdição não se mistura.** Uma nota brasileira só marca definição de norma
+  brasileira, e o balão dela só mostra acepções brasileiras; numa nota europeia,
+  o contrário. Ler o comentário da LGPD e receber a definição do RGPD seria
+  trocar o direito aplicável por um parecido. Quem decide é o `jurisdicao` do
+  front matter da nota, publicado no `data-jurisdicao` do `<body>`. O verbete
+  inteiro, com todas as acepções, está a um clique no rodapé do balão.
 - **A definição é buscada, não embutida.** A nota carrega só o índice dos
-  termos das **suas** normas (a principal e as de `normas_extra`), em
-  `<script type="application/json" id="nota-verbetes">`, com uma ou duas
-  centenas de bytes por verbete. O texto vem de
+  termos, em `<script type="application/json" id="nota-verbetes">`, com uma ou
+  duas centenas de bytes por verbete. O texto vem de
   `_fragmentos/definicoes.html` num `fetch()` na primeira abertura, cacheado na
   aba e reaproveitado de nota para nota — mesma escolha do painel "Lei seca"
   para as normas que não são a principal.

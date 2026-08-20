@@ -44,6 +44,196 @@
         return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
+    /* --- Peças de sumário, compartilhadas ---
+       As notas têm dois sumários (comentários e lei seca) e a página de
+       definições tem um; os três filtram uma lista, marcam onde o leitor está e
+       trazem a marca para a parte visível da lista. O que muda entre eles é o
+       que rola e onde cai a linha de leitura, e é só isso que quem chama
+       informa. Ficam aqui em cima, antes do trecho que só vale nas notas, para
+       serem os mesmos nos dois lugares. --- */
+    var semMovimento = matchMedia('(prefers-reduced-motion: reduce)');
+    /* Preenchido pelas notas com a atualização das barras de progresso; na
+       página de definições não há barra nenhuma, e o salto termina sem mais
+       nada a fazer. */
+    var aoFimDoSalto = null;
+
+    var saltoEmCurso = false;
+    var fimDoSalto = null;
+
+    function rolarAte(caixa, destino) {
+        saltoEmCurso = true;
+        clearTimeout(fimDoSalto);
+        fimDoSalto = setTimeout(function () {
+            saltoEmCurso = false;
+            if (aoFimDoSalto) aoFimDoSalto();
+        }, 900);
+        caixa.scrollTo({
+            top: destino,
+            // O navegador honra `prefers-reduced-motion` na rolagem suave
+            // declarada em CSS, mas não neste `behavior`: quem pediu menos
+            // movimento continua tendo de ser atendido à mão.
+            behavior: semMovimento.matches ? 'auto' : 'smooth'
+        });
+    }
+
+    var PARADA_DA_ANCORA = 12;
+    var LINHA_DE_LEITURA = PARADA_DA_ANCORA + 8;
+
+    function filtrarSumario(lista, vazio, termo) {
+        var alvo = normalizar(termo).trim();
+        var itens = Array.prototype.slice.call(lista.querySelectorAll('li'));
+
+        if (!alvo) {
+            itens.forEach(function (item) { item.hidden = false; });
+            vazio.hidden = true;
+            return;
+        }
+
+        itens.forEach(function (item) { item.hidden = true; });
+        var encontrou = false;
+        itens.forEach(function (item) {
+            if (item.dataset.busca.indexOf(alvo) === -1) return;
+            encontrou = true;
+            item.hidden = false;
+            Array.prototype.forEach.call(item.querySelectorAll('li'), function (filho) {
+                filho.hidden = false;
+            });
+            for (var pai = item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
+                pai.hidden = false;
+            }
+        });
+        vazio.hidden = encontrou;
+
+        /* Artigo que casa não adianta nada dentro de um grupo recolhido — e
+           capítulo que casa traz os artigos dele junto, pela mesma regra que
+           já traz as seções. Limpar o filtro não recolhe de volta: o que foi
+           aberto (pelo leitor ou pela busca) continua aberto. */
+        Array.prototype.forEach.call(lista.querySelectorAll('details'), function (grupo) {
+            if (grupo.querySelector('li:not([hidden])')) grupo.open = true;
+        });
+    }
+
+    /* Rola a lista do sumário até um item, e só quando ele não está à vista —
+       mexer numa lista que já mostra o que precisa mostrar é movimento gratuito.
+       Fora de vista, o item vai para o meio da lista, e não para a borda de onde
+       entrou: no meio ele leva junto o que vem antes e o que vem depois, que é o
+       que situa a leitura, e demora mais para sair de novo.
+
+       A rolagem é feita na lista, e não com `scrollIntoView`, que sobe pelos
+       contêineres roláveis acima dela — no mobile o sumário é sobreposição de
+       tela cheia, e ali quem está acima é a página. */
+    function trazerParaAVista(sumario, alvo) {
+        var corpo = sumario.painel.querySelector('.nota-toc__corpo');
+        if (!corpo || !alvo) return;
+        var area = corpo.getBoundingClientRect();
+        var item = alvo.getBoundingClientRect();
+        if (item.top >= area.top && item.bottom <= area.bottom) return;
+        corpo.scrollTop = Math.max(0, corpo.scrollTop + (item.top - area.top) -
+            (area.height - item.height) / 2);
+    }
+
+    /* Um item do sumário sai da tela por dois caminhos: o grupo de artigos que
+       o guarda está recolhido, ou o filtro o escondeu. Os dois são lidos do
+       DOM, e não da geometria: dentro de um `<details>` fechado o navegador
+       ainda devolve um retângulo (o conteúdo é pulado por
+       `content-visibility`, não removido do layout), e o `checkVisibility`,
+       que acertaria, é recente demais para ser a única defesa. */
+    function foraDaTela(link) {
+        var grupo = link.closest('details');
+        return (grupo && !grupo.open) || !!link.closest('li[hidden]');
+    }
+
+    /* O link que representa uma posição na lista: o do próprio item, quando ele
+       está à mostra, ou o do título que o contém, quando não. Marcar o que não
+       aparece apagaria o "você está aqui" do sumário e mandaria a lista rolar
+       até um retângulo vazio — é assim que o capítulo continua sendo o item
+       marcado enquanto os artigos estão recolhidos, como era antes de eles
+       existirem no sumário. */
+    function linkAVista(link) {
+        if (!link) return null;
+        if (!foraDaTela(link)) return link;
+        var grupo = link.closest('details');
+        var dono = grupo && grupo.closest('li');
+        var acima = dono && dono.querySelector(':scope > a');
+        return acima && !foraDaTela(acima) ? acima : null;
+    }
+
+    /* Marca o item corrente e o caminho até ele. Só o item mais fundo que está
+       à vista leva `nota-toc__atual` e `aria-current`; o capítulo (e a seção,
+       quando há) ficam com a marca discreta de ramo, que é o que responde "em
+       que parte da norma estou?" quando o destaque está num artigo. Dois
+       `aria-current` no mesmo caminho seriam anunciados como duas posições, e
+       por isso o ramo não leva nenhum.
+
+       As escritas no DOM acontecem só quando o item corrente muda: com os
+       artigos na conta são até 162 links por norma, e repintar todos a cada
+       quadro de rolagem é trabalho jogado fora. */
+    function aplicarMarcas(sumario, atual) {
+        (sumario.marcados || []).forEach(function (link) {
+            link.classList.remove('nota-toc__atual', 'nota-toc__ramo');
+            link.removeAttribute('aria-current');
+        });
+        var marcados = [];
+        var link = linkAVista(sumario.links[atual.id]);
+        if (link) {
+            link.classList.add('nota-toc__atual');
+            link.setAttribute('aria-current', 'true');
+            marcados.push(link);
+            var item = link.closest('li');
+            for (var pai = item && item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
+                var acima = pai.querySelector(':scope > a');
+                if (!acima) continue;
+                acima.classList.add('nota-toc__ramo');
+                marcados.push(acima);
+            }
+        }
+        sumario.marcados = marcados;
+        sumario.aVista = link;
+    }
+
+    /* Onde o leitor está: o último alvo — título, artigo ou verbete — que já
+       passou pela linha de leitura. Quem sabe onde ela cai é quem chama: nos
+       painéis das notas é o topo útil do painel, abaixo do que estiver fixo
+       ali; na página de definições, o topo da coluna que rola. */
+    function alvoNaLinhaDeLeitura(sumario, linha) {
+        var atual = sumario.alvos[0];
+        sumario.alvos.forEach(function (alvo) {
+            if (alvo.getBoundingClientRect().top <= linha) atual = alvo;
+        });
+        return atual;
+    }
+
+    /* Sem isso, abrir um sumário de 50 entradas não diz onde o leitor está — só
+       para onde ele pode ir. Só é recalculado com o sumário aberto: fechado, o
+       resultado não apareceria em lugar nenhum.
+
+       Depois de um salto, quem manda é o alvo fixado, e não a geometria: o
+       destino foi decidido pelo clique, e uma âncora perto do fim da norma para
+       onde a rolagem alcança, não onde a linha de leitura a encontraria.
+
+       Marcar não basta: numa norma de 119 artigos a marca sai da parte visível
+       da lista nas primeiras rolagens, e um sumário parado no topo não responde
+       "em que capítulo está este artigo?". Por isso a lista **acompanha** a
+       leitura — mas só quando o item corrente muda, e nunca com o foco dentro
+       do sumário, que é quando o leitor está percorrendo a lista por conta
+       própria e puxá-la sob os dedos dele seria hostil. */
+    function marcarSumarioAtivo(sumario, linha) {
+        if (!sumario || sumario.painel.hidden || !sumario.alvos.length) return;
+        var atual = sumario.fixado || alvoNaLinhaDeLeitura(sumario, linha);
+        if (atual !== sumario.marcado) {
+            sumario.marcado = atual;
+            aplicarMarcas(sumario, atual);
+        }
+
+        /* `saltoEmCurso` sai antes de `ultimoAtivo` ser atualizado, de
+           propósito: o item continua "não tratado", e a passada final que o
+           fim do salto dispara é que leva a lista até ele. */
+        if (!sumario.aVista || saltoEmCurso || sumario.aVista === sumario.ultimoAtivo) return;
+        sumario.ultimoAtivo = sumario.aVista;
+        if (sumario.painel.contains(document.activeElement)) return;
+        trazerParaAVista(sumario, sumario.aVista);
+    }
+
     /* --- Página /notas/definicoes ---
        A lista nasce em ordem alfabética (é a ordem do DOM, e a que sobra sem
        JavaScript). Aqui ela ganha as duas coisas que dependem de script: a
@@ -56,13 +246,30 @@
        para A–Z devolve cada verbete à seção da letra dele — e como os verbetes
        são percorridos sempre na ordem original, a alfabética se reconstrói
        sozinha, dentro do tema e fora dele. --- */
+    /* --- Página /notas/definicoes ---
+       A lista nasce em ordem alfabética (é a ordem do DOM, e a que sobra sem
+       JavaScript). Aqui ela ganha o que depende de script: a troca para a
+       organização por tema, o filtro, o recorte por jurisdição e — no desktop —
+       o sumário lateral.
+
+       "Por tema" **move** os verbetes para as seções vazias que o layout já
+       deixou prontas, em vez de reordená-los com `order` no CSS: quem usa
+       leitor de tela lê o DOM, e uma lista reordenada só visualmente seria
+       lida em ordem alfabética com títulos de tema espalhados no meio. Voltar
+       para A–Z devolve cada verbete à seção da letra dele — e como os verbetes
+       são percorridos sempre na ordem original, a alfabética se reconstrói
+       sozinha, dentro do tema e fora dele. --- */
     var listaDefinicoes = document.getElementById('lista-definicoes');
     if (listaDefinicoes) {
         var barraDefinicoes = document.querySelector('.definicoes__barra');
+        var colunaDefinicoes = document.querySelector('.definicoes__coluna');
+        var sumarioDefinicoes = document.getElementById('toc-definicoes');
         var letrasDefinicoes = document.querySelector('.definicoes__letras');
         var temasDefinicoes = document.querySelector('.definicoes__temas');
         var vazioDefinicoes = listaDefinicoes.querySelector('.definicoes__vazio');
+        var controlesDefinicoes = document.querySelector('.definicoes__controles');
         var campoDefinicoes = document.getElementById('definicoes-filtro');
+        var soBrasil = document.getElementById('definicoes-so-brasil');
         var botoesOrganizar = Array.prototype.slice.call(
             document.querySelectorAll('.definicoes__organizar button'));
         // Ordem original = ordem alfabética. É a referência das duas
@@ -73,6 +280,7 @@
         var gruposPorTema = Array.prototype.slice.call(
             listaDefinicoes.querySelectorAll('.definicoes__grupo--tema'));
         var organizacao = 'alfabetica';
+        var colunaLateral = matchMedia('(min-width: 1100px)');
 
         /* A barra fica presa no topo, e é ela que o salto por âncora precisa
            descontar. A altura muda com a largura da janela (a linha de letras
@@ -95,6 +303,97 @@
             return null;
         }
 
+        /* --- O sumário lateral ---
+           Mesmas peças dos sumários das notas: a lista é de `.nota-toc__corpo`,
+           a marca de "você está aqui" é a `aplicarMarcas`/`marcarSumarioAtivo`
+           compartilhada, e o que muda é só quem rola (aqui, a coluna de
+           leitura) e onde cai a linha de leitura. */
+        var sumario = null;
+
+        function montarSumario() {
+            if (!sumarioDefinicoes) return;
+            var lista = sumarioDefinicoes.querySelector('.nota-toc__corpo ul');
+            lista.textContent = '';
+            var links = {};
+            var grupoAberto = '';
+            /* Na ordem do DOM, e não na do array original: na organização por
+               tema os verbetes já foram movidos, e é essa ordem que o sumário
+               precisa espelhar — tanto para agrupar sob o título certo quanto
+               para `alvoNaLinhaDeLeitura` saber quem vem antes de quem. */
+            var naTela = Array.prototype.slice.call(listaDefinicoes.querySelectorAll('.verbete'));
+            naTela.forEach(function (verbete) {
+                var grupo = grupoDe(verbete);
+                var rotulo = organizacao === 'tema'
+                    ? (grupo ? grupo.querySelector('.definicoes__tema').textContent : '')
+                    : verbete.dataset.inicial;
+                if (rotulo !== grupoAberto) {
+                    grupoAberto = rotulo;
+                    var titulo = document.createElement('li');
+                    titulo.className = 'definicoes__sumario-grupo';
+                    titulo.textContent = rotulo;
+                    titulo.dataset.busca = '';
+                    lista.appendChild(titulo);
+                }
+                var item = document.createElement('li');
+                item.dataset.busca = verbete.dataset.busca;
+                item.dataset.verbete = verbete.id;
+                var link = document.createElement('a');
+                link.href = '#' + verbete.id;
+                var termo = document.createElement('span');
+                termo.className = 'definicoes__sumario-termo';
+                termo.textContent = verbete.querySelector('.verbete__termo').textContent;
+                link.appendChild(termo);
+                var normas = Array.prototype.map.call(
+                    verbete.querySelectorAll('.verbete__norma'),
+                    function (etiqueta) { return etiqueta.textContent; });
+                var abaixo = document.createElement('span');
+                abaixo.className = 'definicoes__sumario-normas';
+                abaixo.textContent = normas.join(' · ');
+                link.appendChild(abaixo);
+                item.appendChild(link);
+                lista.appendChild(item);
+                links[verbete.id] = link;
+            });
+            sumario = {
+                painel: sumarioDefinicoes,
+                links: links,
+                alvos: naTela,
+                marcados: [],
+                fixado: null,
+                marcado: null,
+                aVista: null,
+                ultimoAtivo: null
+            };
+        }
+
+        function linhaDaColuna() {
+            if (!colunaDefinicoes) return LINHA_DE_LEITURA;
+            return colunaDefinicoes.getBoundingClientRect().top + LINHA_DE_LEITURA;
+        }
+
+        function acompanharLeitura() {
+            if (!sumario || sumarioDefinicoes.hidden) return;
+            marcarSumarioAtivo(sumario, linhaDaColuna());
+        }
+
+        /* Os controles são um conjunto só, e mudam de casa conforme a coluna
+           lateral existe ou não — duplicá-los no HTML significaria dois campos
+           de filtro com o mesmo id e dois estados para manter em sincronia. */
+        function acomodarControles() {
+            if (!sumarioDefinicoes || !controlesDefinicoes) return;
+            var lateral = colunaLateral.matches;
+            document.body.toggleAttribute('data-definicoes-sumario', lateral);
+            sumarioDefinicoes.hidden = !lateral;
+            var casa = lateral
+                ? sumarioDefinicoes.querySelector('.definicoes__sumario-controles')
+                : barraDefinicoes;
+            if (casa && controlesDefinicoes.parentElement !== casa) {
+                casa.insertBefore(controlesDefinicoes, casa.firstChild);
+            }
+            medirBarra();
+            acompanharLeitura();
+        }
+
         function organizar(modo) {
             organizacao = modo === 'tema' ? 'tema' : 'alfabetica';
             verbetes.forEach(function (verbete) {
@@ -110,7 +409,8 @@
             botoesOrganizar.forEach(function (botao) {
                 botao.setAttribute('aria-pressed', String(botao.dataset.organizacao === organizacao));
             });
-            filtrar(campoDefinicoes ? campoDefinicoes.value : '');
+            montarSumario();
+            filtrar();
             medirBarra();
         }
 
@@ -127,12 +427,24 @@
             return true;
         }
 
-        function filtrar(termo) {
+        function filtrar() {
+            var termo = campoDefinicoes ? campoDefinicoes.value : '';
             var palavras = normalizar(termo).trim().split(/\s+/).filter(Boolean);
+            var apenasBrasil = !!(soBrasil && soBrasil.checked);
+            listaDefinicoes.classList.toggle('definicoes__lista--so-brasil', apenasBrasil);
             var achou = 0;
             verbetes.forEach(function (verbete) {
                 var cabe = !palavras.length || cabeNoFiltro(verbete, palavras);
+                // Verbete que só tem acepção estrangeira some inteiro quando o
+                // leitor pede só as brasileiras — o título sozinho não define
+                // nada.
+                if (cabe && apenasBrasil) {
+                    cabe = !!verbete.querySelector('.verbete__acepcao[data-jurisdicao="brasil"]');
+                }
                 verbete.hidden = !cabe;
+                if (sumario && sumario.links[verbete.id]) {
+                    sumario.links[verbete.id].closest('li').hidden = !cabe;
+                }
                 if (cabe) achou++;
             });
             // Título de grupo sem nada embaixo é ruído: some junto.
@@ -140,7 +452,22 @@
             grupos.forEach(function (grupo) {
                 grupo.hidden = !grupo.querySelector('.verbete:not([hidden])');
             });
+            if (sumario) {
+                var titulos = sumarioDefinicoes.querySelectorAll('.definicoes__sumario-grupo');
+                Array.prototype.forEach.call(titulos, function (titulo) {
+                    var proximo = titulo.nextElementSibling;
+                    var tem = false;
+                    while (proximo && !proximo.classList.contains('definicoes__sumario-grupo')) {
+                        if (!proximo.hidden) { tem = true; break; }
+                        proximo = proximo.nextElementSibling;
+                    }
+                    titulo.hidden = !tem;
+                });
+                var vazioSumario = sumarioDefinicoes.querySelector('.nota-toc__vazio');
+                if (vazioSumario) vazioSumario.hidden = achou > 0;
+            }
             if (vazioDefinicoes) vazioDefinicoes.hidden = achou > 0;
+            acompanharLeitura();
         }
 
         botoesOrganizar.forEach(function (botao) {
@@ -150,18 +477,74 @@
         });
 
         if (campoDefinicoes) {
-            campoDefinicoes.addEventListener('input', function () {
-                filtrar(campoDefinicoes.value);
-            });
+            campoDefinicoes.addEventListener('input', filtrar);
             campoDefinicoes.addEventListener('keydown', function (evento) {
                 if (evento.key !== 'Escape' || !campoDefinicoes.value) return;
                 // Esc com texto escrito limpa o filtro e para por aí — não é
                 // gesto de sair do campo (ver o Esc global das notas).
                 evento.preventDefault();
                 campoDefinicoes.value = '';
-                filtrar('');
+                filtrar();
             });
         }
+
+        if (soBrasil) soBrasil.addEventListener('change', filtrar);
+
+        /* O clique no sumário rola a coluna e fixa o destino, como nas notas: o
+           destaque aparece no clique, e não quando a rolagem chega lá. */
+        if (sumarioDefinicoes) {
+            sumarioDefinicoes.addEventListener('click', function (evento) {
+                var link = evento.target.closest('a[href^="#"]');
+                if (!link || !colunaDefinicoes) return;
+                var alvo = document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));
+                if (!alvo) return;
+                evento.preventDefault();
+                sumario.fixado = alvo;
+                marcarSumarioAtivo(sumario, linhaDaColuna());
+                rolarAte(colunaDefinicoes, alvo.getBoundingClientRect().top -
+                    colunaDefinicoes.getBoundingClientRect().top + colunaDefinicoes.scrollTop -
+                    PARADA_DA_ANCORA);
+                history.replaceState(null, '', link.getAttribute('href'));
+            });
+        }
+
+        if (colunaDefinicoes) {
+            var pedidoDeQuadro = null;
+            colunaDefinicoes.addEventListener('scroll', function () {
+                // O alvo fixado vale até o leitor rolar por conta própria.
+                if (!saltoEmCurso && sumario) sumario.fixado = null;
+                if (pedidoDeQuadro) return;
+                pedidoDeQuadro = requestAnimationFrame(function () {
+                    pedidoDeQuadro = null;
+                    acompanharLeitura();
+                });
+            });
+        }
+
+        /* Chegada por link direto (`#v-dado-pessoal`, `#d-rgpd-dados-pessoais`).
+           No desktop quem rola é a coluna, e não a página: o salto nativo do
+           navegador acontece antes de ela virar container de rolagem, e o alvo
+           fica fora da tela. Refeito aqui, com a mesma parada de âncora dos
+           painéis das notas. */
+        function irAoAlvoDaUrl() {
+            if (!location.hash || !colunaDefinicoes || !colunaLateral.matches) return;
+            var alvo = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (!alvo || !colunaDefinicoes.contains(alvo)) return;
+            colunaDefinicoes.scrollTop += alvo.getBoundingClientRect().top -
+                colunaDefinicoes.getBoundingClientRect().top - PARADA_DA_ANCORA;
+            var verbete = alvo.closest('.verbete');
+            if (verbete && sumario) {
+                sumario.fixado = verbete;
+                marcarSumarioAtivo(sumario, linhaDaColuna());
+            }
+        }
+
+        colunaLateral.addEventListener('change', acomodarControles);
+        montarSumario();
+        acomodarControles();
+        filtrar();
+        irAoAlvoDaUrl();
+        window.addEventListener('hashchange', irAoAlvoDaUrl);
     }
 
     /* --- Menu do título: alternar para outra nota sem passar pela página
@@ -254,7 +637,6 @@
     var corpoDosComentarios = comentarios.querySelector('.painel__corpo');
     var corpoDaLei = lei.querySelector('.painel__corpo');
     var duasColunas = matchMedia('(min-width: 900px)');
-    var semMovimento = matchMedia('(prefers-reduced-motion: reduce)');
     var destacado = null;
 
     /* Com os painéis lado a lado, quem rola é cada painel (.painel__corpo),
@@ -272,44 +654,6 @@
     }
     travarRolagemDaPagina();
     window.addEventListener('scroll', travarRolagemDaPagina, { passive: true });
-
-    /* --- Rolagem até um ponto: a do navegador ---
-       Serve tanto os links âncora quanto a busca "ir para o dispositivo", e vale
-       para os dois contêineres que rolam nesta página: o corpo de um painel (em
-       duas colunas) e a janela (em uma).
-
-       Aqui houve uma animação própria, em `requestAnimationFrame`, escrita só
-       para durar 300ms em vez dos ~500 do navegador — o `behavior: 'smooth'`
-       não deixa escolher a duração. Não pagou o que custou: eram trinta linhas
-       de animação para ganhar dois décimos de segundo, e uma segunda
-       implementação de rolagem para manter em pé ao lado da nativa.
-
-       Enquanto o salto corre, o sumário para de acompanhar a leitura (ver
-       `marcarSumarioAtivo`): o destino já está decidido pelo clique, e seguir as
-       seções do caminho até ele eram onze paradas da lista num salto só,
-       piscando capítulos que o leitor não pediu. Calado, o sumário se posiciona
-       uma vez, no fim. O fim é medido por um prazo, e não pelo evento
-       `scrollend`, que ainda não está em todo navegador: 900ms cobre com folga a
-       rolagem suave nativa mais longa, e a lista assentar um instante depois não
-       custa nada — o texto já chegou. */
-    var saltoEmCurso = false;
-    var fimDoSalto = null;
-
-    function rolarAte(caixa, destino) {
-        saltoEmCurso = true;
-        clearTimeout(fimDoSalto);
-        fimDoSalto = setTimeout(function () {
-            saltoEmCurso = false;
-            atualizarProgressos();
-        }, 900);
-        caixa.scrollTo({
-            top: destino,
-            // O navegador honra `prefers-reduced-motion` na rolagem suave
-            // declarada em CSS, mas não neste `behavior`: quem pediu menos
-            // movimento continua tendo de ser atendido à mão.
-            behavior: semMovimento.matches ? 'auto' : 'smooth'
-        });
-    }
 
     /* --- Painel redimensionável ---
        A divisão entre comentários e lei seca é ajustável (só faz sentido lado
@@ -366,6 +710,25 @@
         });
     }
 
+    /* --- Rolagem até um ponto: a do navegador ---
+       Serve tanto os links âncora quanto a busca "ir para o dispositivo", e vale
+       para os dois contêineres que rolam nesta página: o corpo de um painel (em
+       duas colunas) e a janela (em uma).
+
+       Aqui houve uma animação própria, em `requestAnimationFrame`, escrita só
+       para durar 300ms em vez dos ~500 do navegador — o `behavior: 'smooth'`
+       não deixa escolher a duração. Não pagou o que custou: eram trinta linhas
+       de animação para ganhar dois décimos de segundo, e uma segunda
+       implementação de rolagem para manter em pé ao lado da nativa.
+
+       Enquanto o salto corre, o sumário para de acompanhar a leitura (ver
+       `marcarSumarioAtivo`): o destino já está decidido pelo clique, e seguir as
+       seções do caminho até ele eram onze paradas da lista num salto só,
+       piscando capítulos que o leitor não pediu. Calado, o sumário se posiciona
+       uma vez, no fim. O fim é medido por um prazo, e não pelo evento
+       `scrollend`, que ainda não está em todo navegador: 900ms cobre com folga a
+       rolagem suave nativa mais longa, e a lista assentar um instante depois não
+       custa nada — o texto já chegou. */
     /* --- Abas, quando os painéis não cabem lado a lado --- */
     var abas = Array.prototype.slice.call(document.querySelectorAll('[data-painel]'));
     var scrollPositions = {};
@@ -540,8 +903,14 @@
        nascia abaixo dela e o sumário continuava marcando o trecho anterior até
        o leitor rolar mais um pouco — o destaque só chegava depois. A folga
        absorve o arredondamento de subpixel com que a rolagem suave termina. */
-    var PARADA_DA_ANCORA = 12;
-    var LINHA_DE_LEITURA = PARADA_DA_ANCORA + 8;
+    /* Onde cai a linha de leitura de um painel: no topo do próprio painel
+       quando ele é o container de rolagem (tela dividida), e abaixo do que
+       estiver preso no topo da página quando quem rola é a página. */
+    function linhaDeLeituraDoPainel(painelEl, corpoEl) {
+        return (duasColunas.matches
+            ? corpoEl.getBoundingClientRect().top
+            : alturaDosElementosFixos(painelEl)) + LINHA_DE_LEITURA;
+    }
 
     function alturaDosElementosFixos(painelEl) {
         var altura = 0;
@@ -854,163 +1223,6 @@
        ancestrais (sem o título do capítulo, a seção encontrada aparece sem o
        contexto que a situa) e os descendentes (quem procura o capítulo quer as
        seções dele). */
-    function filtrarSumario(lista, vazio, termo) {
-        var alvo = normalizar(termo).trim();
-        var itens = Array.prototype.slice.call(lista.querySelectorAll('li'));
-
-        if (!alvo) {
-            itens.forEach(function (item) { item.hidden = false; });
-            vazio.hidden = true;
-            return;
-        }
-
-        itens.forEach(function (item) { item.hidden = true; });
-        var encontrou = false;
-        itens.forEach(function (item) {
-            if (item.dataset.busca.indexOf(alvo) === -1) return;
-            encontrou = true;
-            item.hidden = false;
-            Array.prototype.forEach.call(item.querySelectorAll('li'), function (filho) {
-                filho.hidden = false;
-            });
-            for (var pai = item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
-                pai.hidden = false;
-            }
-        });
-        vazio.hidden = encontrou;
-
-        /* Artigo que casa não adianta nada dentro de um grupo recolhido — e
-           capítulo que casa traz os artigos dele junto, pela mesma regra que
-           já traz as seções. Limpar o filtro não recolhe de volta: o que foi
-           aberto (pelo leitor ou pela busca) continua aberto. */
-        Array.prototype.forEach.call(lista.querySelectorAll('details'), function (grupo) {
-            if (grupo.querySelector('li:not([hidden])')) grupo.open = true;
-        });
-    }
-
-    /* Rola a lista do sumário até um item, e só quando ele não está à vista —
-       mexer numa lista que já mostra o que precisa mostrar é movimento gratuito.
-       Fora de vista, o item vai para o meio da lista, e não para a borda de onde
-       entrou: no meio ele leva junto o que vem antes e o que vem depois, que é o
-       que situa a leitura, e demora mais para sair de novo.
-
-       A rolagem é feita na lista, e não com `scrollIntoView`, que sobe pelos
-       contêineres roláveis acima dela — no mobile o sumário é sobreposição de
-       tela cheia, e ali quem está acima é a página. */
-    function trazerParaAVista(sumario, alvo) {
-        var corpo = sumario.painel.querySelector('.nota-toc__corpo');
-        if (!corpo || !alvo) return;
-        var area = corpo.getBoundingClientRect();
-        var item = alvo.getBoundingClientRect();
-        if (item.top >= area.top && item.bottom <= area.bottom) return;
-        corpo.scrollTop = Math.max(0, corpo.scrollTop + (item.top - area.top) -
-            (area.height - item.height) / 2);
-    }
-
-    /* Um item do sumário sai da tela por dois caminhos: o grupo de artigos que
-       o guarda está recolhido, ou o filtro o escondeu. Os dois são lidos do
-       DOM, e não da geometria: dentro de um `<details>` fechado o navegador
-       ainda devolve um retângulo (o conteúdo é pulado por
-       `content-visibility`, não removido do layout), e o `checkVisibility`,
-       que acertaria, é recente demais para ser a única defesa. */
-    function foraDaTela(link) {
-        var grupo = link.closest('details');
-        return (grupo && !grupo.open) || !!link.closest('li[hidden]');
-    }
-
-    /* O link que representa uma posição na lista: o do próprio item, quando ele
-       está à mostra, ou o do título que o contém, quando não. Marcar o que não
-       aparece apagaria o "você está aqui" do sumário e mandaria a lista rolar
-       até um retângulo vazio — é assim que o capítulo continua sendo o item
-       marcado enquanto os artigos estão recolhidos, como era antes de eles
-       existirem no sumário. */
-    function linkAVista(link) {
-        if (!link) return null;
-        if (!foraDaTela(link)) return link;
-        var grupo = link.closest('details');
-        var dono = grupo && grupo.closest('li');
-        var acima = dono && dono.querySelector(':scope > a');
-        return acima && !foraDaTela(acima) ? acima : null;
-    }
-
-    /* Marca o item corrente e o caminho até ele. Só o item mais fundo que está
-       à vista leva `nota-toc__atual` e `aria-current`; o capítulo (e a seção,
-       quando há) ficam com a marca discreta de ramo, que é o que responde "em
-       que parte da norma estou?" quando o destaque está num artigo. Dois
-       `aria-current` no mesmo caminho seriam anunciados como duas posições, e
-       por isso o ramo não leva nenhum.
-
-       As escritas no DOM acontecem só quando o item corrente muda: com os
-       artigos na conta são até 162 links por norma, e repintar todos a cada
-       quadro de rolagem é trabalho jogado fora. */
-    function aplicarMarcas(sumario, atual) {
-        (sumario.marcados || []).forEach(function (link) {
-            link.classList.remove('nota-toc__atual', 'nota-toc__ramo');
-            link.removeAttribute('aria-current');
-        });
-        var marcados = [];
-        var link = linkAVista(sumario.links[atual.id]);
-        if (link) {
-            link.classList.add('nota-toc__atual');
-            link.setAttribute('aria-current', 'true');
-            marcados.push(link);
-            var item = link.closest('li');
-            for (var pai = item && item.parentElement.closest('li'); pai; pai = pai.parentElement.closest('li')) {
-                var acima = pai.querySelector(':scope > a');
-                if (!acima) continue;
-                acima.classList.add('nota-toc__ramo');
-                marcados.push(acima);
-            }
-        }
-        sumario.marcados = marcados;
-        sumario.aVista = link;
-    }
-
-    /* Onde o leitor está: o último alvo — título ou artigo — que já passou pela
-       linha de leitura (o topo útil do painel, abaixo do que estiver fixo
-       ali). */
-    function alvoNaLinhaDeLeitura(sumario, painelEl, corpoEl) {
-        var linha = (duasColunas.matches
-            ? corpoEl.getBoundingClientRect().top
-            : alturaDosElementosFixos(painelEl)) + LINHA_DE_LEITURA;
-        var atual = sumario.alvos[0];
-        sumario.alvos.forEach(function (alvo) {
-            if (alvo.getBoundingClientRect().top <= linha) atual = alvo;
-        });
-        return atual;
-    }
-
-    /* Sem isso, abrir um sumário de 50 entradas não diz onde o leitor está — só
-       para onde ele pode ir. Só é recalculado com o sumário aberto: fechado, o
-       resultado não apareceria em lugar nenhum.
-
-       Depois de um salto, quem manda é o alvo fixado, e não a geometria: o
-       destino foi decidido pelo clique, e uma âncora perto do fim da norma para
-       onde a rolagem alcança, não onde a linha de leitura a encontraria.
-
-       Marcar não basta: numa norma de 119 artigos a marca sai da parte visível
-       da lista nas primeiras rolagens, e um sumário parado no topo não responde
-       "em que capítulo está este artigo?". Por isso a lista **acompanha** a
-       leitura — mas só quando o item corrente muda, e nunca com o foco dentro
-       do sumário, que é quando o leitor está percorrendo a lista por conta
-       própria e puxá-la sob os dedos dele seria hostil. */
-    function marcarSumarioAtivo(sumario, painelEl, corpoEl) {
-        if (!sumario || sumario.painel.hidden || !sumario.alvos.length) return;
-        var atual = sumario.fixado || alvoNaLinhaDeLeitura(sumario, painelEl, corpoEl);
-        if (atual !== sumario.marcado) {
-            sumario.marcado = atual;
-            aplicarMarcas(sumario, atual);
-        }
-
-        /* `saltoEmCurso` sai antes de `ultimoAtivo` ser atualizado, de
-           propósito: o item continua "não tratado", e a passada final que o
-           fim do salto dispara é que leva a lista até ele. */
-        if (!sumario.aVista || saltoEmCurso || sumario.aVista === sumario.ultimoAtivo) return;
-        sumario.ultimoAtivo = sumario.aVista;
-        if (sumario.painel.contains(document.activeElement)) return;
-        trazerParaAVista(sumario, sumario.aVista);
-    }
-
     /* O salto fixa o seu destino no sumário do painel de destino, para o
        destaque aparecer no clique e não mudar enquanto a rolagem corre. Alvo
        que não está no sumário (um inciso, um parágrafo) fixa o artigo a que
@@ -1059,7 +1271,7 @@
         function abrir(comFoco) {
             painelSumario.hidden = false;
             botao.setAttribute('aria-expanded', 'true');
-            marcarSumarioAtivo(sumario, painelEl, corpoEl);
+            marcarSumarioAtivo(sumario, linhaDeLeituraDoPainel(painelEl, corpoEl));
             /* No desktop o foco vai para o filtro: com o sumário aberto para
                procurar uma seção, poder digitar direto poupa o percurso pela
                lista. No mobile isso abriria o teclado por cima da própria
@@ -1168,7 +1380,7 @@
         // vista na lista (um grupo que abriu, o filtro que escondeu itens).
         sumario.remarcar = function () {
             sumario.marcado = null;
-            marcarSumarioAtivo(sumario, painelEl, corpoEl);
+            marcarSumarioAtivo(sumario, linhaDeLeituraDoPainel(painelEl, corpoEl));
         };
         sumario.abrir = abrir;
         sumario.fechar = fecharSumario;
@@ -1337,6 +1549,8 @@
         lei, corpoDaLei, document.querySelector('#progresso-lei .nota-progresso__barra'));
 
     var progressoPendente = false;
+    aoFimDoSalto = atualizarProgressos;
+
     function atualizarProgressos() {
         if (progressoPendente) return;
         progressoPendente = true;
@@ -1346,8 +1560,8 @@
             atualizarProgressoLei();
             // Mesmo quadro da barra de progresso: as duas leem a rolagem, e o
             // sumário fechado sai na primeira linha de marcarSumarioAtivo.
-            marcarSumarioAtivo(sumarioComentarios, comentarios, corpoDosComentarios);
-            marcarSumarioAtivo(sumarioLei, lei, corpoDaLei);
+            marcarSumarioAtivo(sumarioComentarios, linhaDeLeituraDoPainel(comentarios, corpoDosComentarios));
+            marcarSumarioAtivo(sumarioLei, linhaDeLeituraDoPainel(lei, corpoDaLei));
         });
     }
 
@@ -1500,6 +1714,40 @@
         // faria `#v-...` resolver para o balão em vez de para a lista.
         copia.removeAttribute('id');
 
+        /* Jurisdição não se mistura: numa nota brasileira o balão mostra as
+           acepções brasileiras do verbete, e só elas. Ler o comentário da LGPD
+           e receber a definição do RGPD seria trocar o direito aplicável por um
+           parecido — o verbete inteiro, com as duas, está a um clique no link
+           do rodapé do balão. */
+        var jurisdicaoDaNota = document.body.dataset.jurisdicao;
+        if (jurisdicaoDaNota) {
+            Array.prototype.forEach.call(copia.querySelectorAll('.verbete__acepcao'), function (acepcao) {
+                if (acepcao.dataset.jurisdicao !== jurisdicaoDaNota) acepcao.remove();
+            });
+        }
+
+        /* Com acepções a menos, o título tem de encolher junto: "Dado pessoal ·
+           Dados pessoais" numa nota brasileira anunciaria um termo (o do RGPD)
+           que não está mais na caixa. O título passa a listar só os termos das
+           acepções que sobraram — e, se sobrou um só, ele não precisa ser
+           repetido dentro de cada acepção. */
+        var titulo = copia.querySelector('.verbete__termo');
+        if (titulo) {
+            var lider = titulo.textContent.split(' · ')[0];
+            var termos = [];
+            Array.prototype.forEach.call(copia.querySelectorAll('.verbete__acepcao'), function (acepcao) {
+                var proprio = acepcao.querySelector('.verbete__acepcao-termo');
+                var nome = proprio ? proprio.textContent : lider;
+                if (termos.indexOf(nome) === -1) termos.push(nome);
+            });
+            if (termos.length) titulo.textContent = termos.join(' · ');
+            if (termos.length < 2) {
+                Array.prototype.forEach.call(copia.querySelectorAll('.verbete__acepcao-termo'), function (el) {
+                    el.remove();
+                });
+            }
+        }
+
         /* Na página, as acepções vêm com o Brasil à frente. No balão, quem vem
            à frente é a norma que o leitor está lendo: abrir "dado pessoal" na
            nota do RGPD e receber a LGPD primeiro é responder outra pergunta. A
@@ -1548,16 +1796,17 @@
         });
     }
 
-    var verbetesDaNota = [];
+    var verbetesDaNota = { nota: [], outras: [] };
     if (indiceVerbetes) {
         try {
-            verbetesDaNota = JSON.parse(indiceVerbetes.textContent) || [];
+            var lido = JSON.parse(indiceVerbetes.textContent) || {};
+            verbetesDaNota = { nota: lido.nota || [], outras: lido.outras || [] };
         } catch (erro) {
-            verbetesDaNota = [];
+            verbetesDaNota = { nota: [], outras: [] };
         }
     }
 
-    if (verbetesDaNota.length) {
+    if (verbetesDaNota.nota.length || verbetesDaNota.outras.length) {
         /* Uma expressão regular só, com todas as formas de todos os termos,
            da mais longa para a mais curta — assim "dado pessoal sensível" ganha
            de "dado pessoal" no mesmo ponto do texto. As bordas são explícitas
@@ -1565,28 +1814,38 @@
            capturada em vez de olhada para trás: `lookbehind` ainda não é
            universal. */
         var formaParaId = {};
-        var ambiguas = {};
         var formas = [];
-        verbetesDaNota.forEach(function (verbete) {
-            for (var i = 1; i < verbete.length; i++) {
-                var forma = verbete[i];
-                var chave = forma.toLowerCase();
-                if (formaParaId[chave]) {
-                    /* Duas normas desta nota definem o mesmo termo (acontece
-                       entre resoluções da ANPD). Marcar abriria uma delas por
-                       sorteio, o que numa página de legislação é pior do que
-                       não marcar: o termo fica sem marca, e a página de
-                       definições mostra os dois verbetes, um por norma. O
-                       `conferir_definicoes.py` avisa quais são. */
-                    if (formaParaId[chave] !== verbete[0]) ambiguas[chave] = true;
-                    continue;
+
+        /* As duas listas entram em ordem de prioridade, e cada uma decide as
+           suas ambiguidades. Termo já resolvido pela lista de cima não é
+           reaberto pela de baixo: "tratamento" na nota da LGPD é o do art. 5º,
+           X, mesmo que outra norma brasileira também o defina. Dentro da mesma
+           lista, termo que duas normas definem em verbetes diferentes fica sem
+           marca — marcar seria abrir um dos dois por sorteio, o que numa página
+           de legislação é pior do que não marcar. O `conferir_definicoes.py`
+           avisa quais são. */
+        function juntarFormas(lista) {
+            var vistas = {};
+            var ambiguas = {};
+            lista.forEach(function (verbete) {
+                for (var i = 1; i < verbete.length; i++) {
+                    var chave = verbete[i].toLowerCase();
+                    if (formaParaId[chave]) continue;
+                    if (vistas[chave]) {
+                        if (vistas[chave][0] !== verbete[0]) ambiguas[chave] = true;
+                        continue;
+                    }
+                    vistas[chave] = [verbete[0], verbete[i]];
                 }
-                formaParaId[chave] = verbete[0];
-                formas.push(forma);
-            }
-        });
-        Object.keys(ambiguas).forEach(function (chave) { delete formaParaId[chave]; });
-        formas = formas.filter(function (forma) { return !ambiguas[forma.toLowerCase()]; });
+            });
+            Object.keys(vistas).forEach(function (chave) {
+                if (ambiguas[chave]) return;
+                formaParaId[chave] = vistas[chave][0];
+                formas.push(vistas[chave][1]);
+            });
+        }
+        juntarFormas(verbetesDaNota.nota);
+        juntarFormas(verbetesDaNota.outras);
         formas.sort(function (a, b) { return b.length - a.length; });
         var escapadas = formas.map(function (forma) {
             return forma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -1718,9 +1977,16 @@
             fecharBalao(false);
         });
 
-        // Preso ao termo, o balão precisa sair quando o termo sai do lugar.
+        /* Preso ao termo, o balão precisa sair quando o termo sai do lugar. A
+           captura é o que alcança a rolagem dos painéis, que não borbulha até a
+           janela — mas ela alcança também a rolagem *de dentro* do balão, e era
+           por isso que uma definição longa não podia ser lida até o fim: a
+           primeira tentativa de rolar o texto fechava a caixa. */
         window.addEventListener('resize', function () { fecharBalao(false); });
-        window.addEventListener('scroll', function () { fecharBalao(false); }, true);
+        window.addEventListener('scroll', function (evento) {
+            if (balaoAberto && evento.target !== document && balaoAberto.contains(evento.target)) return;
+            fecharBalao(false);
+        }, true);
     }
 
     /* --- Atalhos de teclado ---

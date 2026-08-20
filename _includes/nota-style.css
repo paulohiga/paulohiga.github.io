@@ -1742,6 +1742,153 @@ body:not(.js) .nota-progresso {
     padding: 1.5rem clamp(1rem, 3vw, 1.75rem) 4rem;
 }
 
+/* --- Sumário lateral (desktop) ---
+   Com duzentos verbetes, a barra de letras presa no topo responde "para onde
+   posso ir" uma letra por vez; a coluna responde a mesma pergunta com trinta
+   títulos à vista, e ainda diz onde o leitor está. Ela substitui a barra de
+   cima: os controles (A–Z, por tema, filtro, jurisdição) são movidos para
+   dentro dela pelo notas.js.
+
+   Vale a partir de 1100px, onde 20rem de coluna ainda deixam a leitura com
+   largura decente. Abaixo disso, e sem JavaScript, nada muda: a barra de cima
+   continua sendo a navegação. */
+@media (min-width: 1100px) {
+    body[data-definicoes-sumario] {
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    body[data-definicoes-sumario] .definicoes {
+        display: grid;
+        grid-template-columns: 20rem minmax(0, 1fr);
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Coluna da grade, e não gaveta sobreposta: sai o `position: fixed` e a
+       sombra que a `.nota-toc` das notas usa para flutuar sobre o texto. */
+    body[data-definicoes-sumario] .definicoes__sumario {
+        position: static;
+        width: auto;
+        border-right: 1px solid var(--hairline);
+        box-shadow: none;
+    }
+
+    /* Quem rola é a coluna de leitura, não a página: é o que mantém o sumário
+       inteiro à vista o tempo todo. */
+    body[data-definicoes-sumario] .definicoes__coluna {
+        overflow-y: auto;
+        padding: 1.5rem clamp(1rem, 3vw, 1.75rem) 4rem;
+    }
+
+    body[data-definicoes-sumario] .definicoes__coluna > * {
+        max-width: 52rem;
+        margin-inline: auto;
+    }
+
+    /* A barra de cima some: a coluna faz o trabalho dela. */
+    body[data-definicoes-sumario] .definicoes__barra {
+        display: none;
+    }
+}
+
+/* O sumário é montado pelo notas.js; sem ele, some e a barra de cima assume. */
+.definicoes__sumario[hidden] {
+    display: none;
+}
+
+/* Os controles entram no lugar do campo de filtro do sumário das notas, e
+   empilham: o par A–Z / Por tema, o campo, o alternador de jurisdição. */
+.definicoes__sumario-controles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.definicoes__sumario-controles .definicoes__controles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    margin-bottom: 0;
+}
+
+.definicoes__sumario-controles .definicoes__filtro {
+    flex: none;
+}
+
+.definicoes__sumario-controles .definicoes__letras,
+.definicoes__sumario-controles .definicoes__temas {
+    display: none;
+}
+
+/* O item do sumário traz o termo e, abaixo, as normas que o definem — é o que
+   distingue "Operador · LGPD · AI Act" de "Operador" e poupa uma ida à lista.
+   O corte de linhas vale para o termo, e não para o item inteiro: aplicado ao
+   `<a>`, ele comia justamente a linha das normas. */
+.definicoes__sumario .nota-toc__corpo a {
+    display: block;
+    overflow: visible;
+    line-height: 1.35;
+}
+
+.definicoes__sumario-termo {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.definicoes__sumario-normas {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+/* Título de letra ou de tema dentro do sumário: separa sem virar link. */
+.definicoes__sumario-grupo {
+    margin: 0.9rem 0 0.2rem;
+    padding: 0 0.45rem;
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.definicoes__sumario-grupo:first-child {
+    margin-top: 0;
+}
+
+li[hidden] + .definicoes__sumario-grupo,
+.definicoes__sumario-grupo[hidden] {
+    display: none;
+}
+
+.definicoes__so-brasil {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.definicoes__so-brasil input {
+    accent-color: var(--accent);
+}
+
+/* Filtro de jurisdição ligado: as acepções estrangeiras saem, e com elas os
+   verbetes que não tiverem mais nenhuma (quem apaga esses é o notas.js). */
+.definicoes__lista--so-brasil .verbete__acepcao:not([data-jurisdicao="brasil"]) {
+    display: none;
+}
+
 .definicoes__intro {
     margin: 0 0 1.25rem;
     color: var(--ink-soft);
@@ -1890,8 +2037,21 @@ body.js .definicoes__controles {
 .definicoes__inicial,
 .definicoes__grupo--tema,
 .definicoes__tema,
-.verbete {
+.verbete,
+.verbete__acepcao {
     scroll-margin-top: calc(var(--nota-topo-altura, 0rem) + var(--definicoes-barra, 6rem) + 0.75rem);
+}
+
+/* Com o sumário lateral quem rola é a coluna, e nada fica preso no topo dela:
+   a folga volta a ser a da parada de âncora. */
+@media (min-width: 1100px) {
+    body[data-definicoes-sumario] .definicoes__inicial,
+    body[data-definicoes-sumario] .definicoes__grupo--tema,
+    body[data-definicoes-sumario] .definicoes__tema,
+    body[data-definicoes-sumario] .verbete,
+    body[data-definicoes-sumario] .verbete__acepcao {
+        scroll-margin-top: 0.75rem;
+    }
 }
 
 .definicoes__inicial,
@@ -1932,10 +2092,50 @@ body.js .definicoes__controles {
 }
 
 /* Chegar por link direto — de uma nota, do balão ou de fora do site — precisa
-   dizer qual dos 97 verbetes é o da vez. */
+   dizer qual dos duzentos verbetes é o da vez. E, quando o link é de uma
+   definição (`#d-…`), qual das acepções dele. */
 .verbete:target {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--realce);
+}
+
+.verbete__acepcao:target {
+    margin-inline: -0.5rem;
+    padding-inline: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--realce);
+}
+
+/* O "#" que copia o link daquela definição. Some no texto até que o ponteiro
+   ou o teclado chegue à acepção — está ali para quem procura, não para ser
+   lido. */
+.verbete__permalink {
+    margin-left: auto;
+    padding: 0 0.25rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.verbete__acepcao:hover .verbete__permalink,
+.verbete__permalink:focus-visible,
+.verbete__acepcao:target .verbete__permalink {
+    opacity: 1;
+}
+
+.verbete__permalink:hover,
+.verbete__permalink:focus-visible {
+    color: var(--link);
+}
+
+/* Sem ponteiro (o toque não tem hover) o link nunca apareceria: fica sempre
+   visível, apagado. */
+@media (hover: none) {
+    .verbete__permalink {
+        opacity: 0.5;
+    }
 }
 
 .verbete__termo {
@@ -2002,6 +2202,14 @@ body.js .definicoes__controles {
     font-size: 0.72rem;
     opacity: 0.7;
     white-space: nowrap;
+}
+
+/* A acepção estrangeira também perde o fundo do link da norma: com ele, a
+   linha de origem de uma acepção europeia pesava tanto quanto a de uma
+   brasileira, e o leitor precisa distinguir as duas de relance. Fica a borda,
+   que mantém a etiqueta legível como etiqueta. */
+.verbete__acepcao:not([data-jurisdicao="brasil"]) .verbete__norma {
+    background: none;
 }
 
 .verbete__acepcao[data-jurisdicao="brasil"] .verbete__jurisdicao,
@@ -2096,8 +2304,11 @@ body.js .definicoes__controles {
     position: fixed;
     z-index: 9;
     width: min(26rem, calc(100vw - 1.5rem));
-    max-height: min(24rem, 55vh);
+    max-height: min(28rem, 70vh);
     overflow-y: auto;
+    /* `contain` impede que a rolagem do balão continue na página quando ele
+       chega ao fim; o balão em si rola, e o notas.js deixa de fechá-lo por
+       causa disso (ver o listener de scroll lá). */
     overscroll-behavior: contain;
     padding: 0.9rem 1.05rem;
     background: var(--surface);

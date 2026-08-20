@@ -106,6 +106,11 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   `scripts/conferir_definicoes.py` para conferir — ele recusa âncora inexistente
   e definição que não apareça, tal e qual, no texto de `_leis/` (ver
   [`docs/notas.md`](./docs/notas.md#definições-legais)).
+- **Jurisdição não se mistura na nota.** O termo marcado no comentário abre
+  definição de norma da **mesma jurisdição** da nota — uma nota brasileira nunca
+  aponta para o RGPD ou o AI Act, e vice-versa. Trocar o direito aplicável por
+  um parecido é erro de conteúdo, não de interface. A comparação entre os dois
+  continua disponível no verbete inteiro, em `/notas/definicoes`.
 - **Termo que mais de uma norma define é um verbete só.** As definições entram
   como acepções do mesmo verbete, cada uma com a sua norma e a sua base — é o
   campo `grupo` que as junta. Vale para termos iguais ou muito próximos,
