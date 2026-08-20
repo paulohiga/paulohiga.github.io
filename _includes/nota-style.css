@@ -1777,9 +1777,14 @@ body:not(.js) .nota-progresso {
     white-space: nowrap;
 }
 
+.definicao-referencia__dispositivo {
+    font-weight: 600;
+    text-underline-offset: 0.15em;
+}
+
 /* --- Página /notas/definicoes --- */
 .definicoes {
-    width: min(100%, 82rem);
+    width: min(100%, 90rem);
     margin: 0 auto;
     padding: 1.5rem clamp(1rem, 3vw, 2rem) 5rem;
 }
@@ -1795,50 +1800,67 @@ body:not(.js) .nota-progresso {
 }
 
 .definicoes-controles {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 0.8rem 1.25rem;
-    padding: 0.9rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    border-radius: 0.7rem;
+    display: grid;
+    gap: 0.75rem;
 }
 
 .definicoes-controles fieldset {
-    display: flex;
-    gap: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
-    border: 0;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    border-radius: 0.55rem;
 }
 
-.definicoes-controles legend,
-.definicoes-busca {
-    font-size: 0.78rem;
-    font-weight: 700;
+.definicoes-controles fieldset label + label {
+    border-left: 1px solid var(--hairline);
+}
+
+.definicoes-controles fieldset input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.definicoes-controles fieldset span {
+    display: block;
+    padding: 0.6rem 0.7rem;
     color: var(--ink-soft);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
 }
 
-.definicoes-controles label {
-    white-space: nowrap;
+.definicoes-controles fieldset input:checked + span {
+    background: var(--surface-tint);
+    color: var(--ink);
 }
 
-.definicoes-busca {
-    display: grid;
-    gap: 0.2rem;
-    margin-left: auto;
+.definicoes-controles fieldset input:focus-visible + span {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
 }
 
 .definicoes-busca input {
-    width: min(18rem, 70vw);
-    padding: 0.45rem 0.65rem;
+    width: 100%;
+    padding: 0.65rem 0.7rem;
     border: 1px solid var(--hairline);
-    border-radius: 0.4rem;
+    border-radius: 0.55rem;
     background: var(--page-bg);
     color: var(--ink);
     font: inherit;
-    font-size: 0.9rem;
+    font-size: 0.86rem;
+}
+
+.definicoes-controles__br {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
 }
 
 body:not(.js) .definicoes-controles {
@@ -1847,56 +1869,88 @@ body:not(.js) .definicoes-controles {
 
 .definicoes__grade {
     display: grid;
-    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-columns: minmax(17rem, 21rem) minmax(0, 1fr);
     align-items: start;
-    gap: 1.5rem;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .definicoes-nav {
     position: sticky;
     top: 1rem;
-    max-height: calc(100dvh - 2rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 2rem);
+    overflow: hidden;
     background: var(--surface);
     border: 1px solid var(--hairline);
     border-radius: 0.7rem;
+}
+
+.definicoes-nav__topo {
+    flex: none;
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.definicoes-nav__topo h2 {
+    margin: 0 0 0.8rem;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+}
+
+.definicoes-nav__lista {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.4rem 0.55rem 0.8rem;
     scrollbar-gutter: stable;
 }
 
 .definicoes-nav__grupo {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.3rem;
+    margin: 0.65rem 0 0.25rem;
+    padding: 0 0.5rem;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
 }
 
-.definicoes-nav__grupo[hidden] {
-    display: none;
-}
-
-.definicoes-nav__grupo[data-indice="tema"] {
-    grid-template-columns: 1fr;
-}
-
-.definicoes-nav button {
-    min-height: 2rem;
-    padding: 0.28rem 0.4rem;
-    border: 1px solid transparent;
+.definicoes-nav__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.32rem 0.5rem;
     border-radius: 0.35rem;
-    background: transparent;
-    color: var(--link);
-    font: inherit;
-    font-size: 0.78rem;
+    color: var(--ink);
+    font-size: 0.81rem;
     line-height: 1.25;
-    text-align: left;
-    cursor: pointer;
+    text-decoration: none;
 }
 
-.definicoes-nav button:hover,
-.definicoes-nav button:focus-visible {
-    border-color: var(--hairline);
+.definicoes-nav__item span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.definicoes-nav__item small {
+    flex: none;
+    color: var(--ink-soft);
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.definicoes-nav__item:hover,
+.definicoes-nav__item:focus-visible,
+.definicoes-nav__item[aria-current] {
     background: var(--surface-tint);
+}
+
+.definicoes-nav__item[aria-current] {
+    box-shadow: inset 3px 0 var(--accent);
+    color: var(--link);
+    font-weight: 700;
 }
 
 .definicoes-lista {
@@ -1993,39 +2047,12 @@ body:not(.js) .definicoes-controles {
     }
 
     .definicoes-nav {
-        position: sticky;
-        top: 0;
-        z-index: 3;
-        max-height: 9rem;
-        padding: 0.55rem;
-        border-radius: 0;
+        position: static;
+        height: auto;
     }
 
-    .definicoes-nav__grupo {
-        display: flex;
-        overflow-x: auto;
-    }
-
-    .definicoes-nav__grupo[data-indice="tema"] {
-        display: flex;
-    }
-
-    .definicoes-nav__grupo[hidden] {
-        display: none;
-    }
-
-    .definicoes-nav button {
-        flex: none;
-        white-space: nowrap;
-    }
-
-    .definicoes-busca {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .definicoes-busca input {
-        width: 100%;
+    .definicoes-nav__lista {
+        max-height: 18rem;
     }
 }
 

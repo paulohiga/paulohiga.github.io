@@ -41,9 +41,16 @@
     var listaDefinicoes = document.getElementById('lista-definicoes');
     if (listaDefinicoes) {
         var cardsDefinicoes = Array.prototype.slice.call(listaDefinicoes.querySelectorAll('.definicao-card'));
+        var indiceDefinicoes = document.getElementById('definicoes-indice-lista');
+        var itensIndice = Object.create(null);
+        Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
+            itensIndice[item.dataset.alvo] = item;
+        });
         var ordemDefinicoes = 'alfabetica';
-        var incluirUE = document.getElementById('definicoes-incluir-ue');
+        var soBrasil = document.getElementById('definicoes-so-brasil');
         var buscaDefinicoes = document.getElementById('definicoes-busca');
+        var cardsVisiveis = cardsDefinicoes;
+        var quadroPendente = false;
 
         function textoComparavel(texto) {
             return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -53,18 +60,22 @@
             Array.prototype.forEach.call(listaDefinicoes.querySelectorAll('.definicoes-grupo'), function (titulo) {
                 titulo.remove();
             });
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__grupo'), function (titulo) {
+                titulo.remove();
+            });
             var busca = textoComparavel(buscaDefinicoes.value.trim());
             var visiveis = cardsDefinicoes.filter(function (card) {
-                var aparece = (incluirUE.checked || card.dataset.jurisdicao === 'BR') &&
+                var aparece = (!soBrasil.checked || card.dataset.jurisdicao === 'BR') &&
                     (!busca || textoComparavel(card.dataset.busca).indexOf(busca) !== -1);
                 card.hidden = !aparece;
+                itensIndice[card.id].hidden = !aparece;
                 return aparece;
             });
             visiveis.sort(function (a, b) {
                 var grupoA = ordemDefinicoes === 'tema' ? a.dataset.tema : a.dataset.letra;
                 var grupoB = ordemDefinicoes === 'tema' ? b.dataset.tema : b.dataset.letra;
                 return grupoA.localeCompare(grupoB, 'pt-BR') ||
-                    a.dataset.busca.localeCompare(b.dataset.busca, 'pt-BR');
+                    a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
             });
             var grupoAnterior = '';
             visiveis.forEach(function (card) {
@@ -75,35 +86,65 @@
                     titulo.dataset.grupo = grupo;
                     titulo.textContent = grupo;
                     listaDefinicoes.appendChild(titulo);
+                    var tituloIndice = document.createElement('h3');
+                    tituloIndice.className = 'definicoes-nav__grupo';
+                    tituloIndice.dataset.grupo = grupo;
+                    tituloIndice.textContent = grupo;
+                    indiceDefinicoes.appendChild(tituloIndice);
                     grupoAnterior = grupo;
                 }
                 listaDefinicoes.appendChild(card);
+                indiceDefinicoes.appendChild(itensIndice[card.id]);
             });
+            cardsVisiveis = visiveis;
             document.getElementById('definicoes-vazio').hidden = visiveis.length !== 0;
+            marcarIndiceAtual();
+        }
+
+        function marcarIndiceAtual(idPreferido) {
+            if (!cardsVisiveis.length) return;
+            var atual = idPreferido && itensIndice[idPreferido] ? document.getElementById(idPreferido) : null;
+            if (!atual || atual.hidden) {
+                atual = cardsVisiveis[0];
+                cardsVisiveis.forEach(function (card) {
+                    if (card.getBoundingClientRect().top <= Math.max(150, innerHeight * 0.25)) atual = card;
+                });
+            }
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item[aria-current]'), function (item) {
+                item.removeAttribute('aria-current');
+            });
+            var itemAtual = itensIndice[atual.id];
+            itemAtual.setAttribute('aria-current', 'location');
+            if (!indiceDefinicoes.contains(document.activeElement)) {
+                var topo = itemAtual.offsetTop;
+                var base = indiceDefinicoes.scrollTop;
+                if (topo < base || topo + itemAtual.offsetHeight > base + indiceDefinicoes.clientHeight) {
+                    indiceDefinicoes.scrollTop = Math.max(0, topo - indiceDefinicoes.clientHeight / 3);
+                }
+            }
         }
 
         Array.prototype.forEach.call(document.querySelectorAll('input[name="ordem-definicoes"]'), function (radio) {
             radio.addEventListener('change', function () {
                 ordemDefinicoes = radio.value;
-                document.querySelector('[data-indice="alfabetica"]').hidden = ordemDefinicoes !== 'alfabetica';
-                document.querySelector('[data-indice="tema"]').hidden = ordemDefinicoes !== 'tema';
                 redesenharDefinicoes();
             });
         });
-        incluirUE.addEventListener('change', redesenharDefinicoes);
+        soBrasil.addEventListener('change', redesenharDefinicoes);
         buscaDefinicoes.addEventListener('input', redesenharDefinicoes);
-        Array.prototype.forEach.call(document.querySelectorAll('.definicoes-nav button'), function (botao) {
-            botao.addEventListener('click', function () {
-                var atributo = botao.dataset.letra ? 'letra' : 'tema';
-                var valor = botao.dataset[atributo];
-                var alvo = cardsDefinicoes.filter(function (card) {
-                    return !card.hidden && card.dataset[atributo] === valor;
-                })[0];
-                if (!alvo) return;
-                alvo.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-                history.replaceState(null, '', '#' + alvo.id);
+        Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
+            item.addEventListener('click', function () {
+                marcarIndiceAtual(item.dataset.alvo);
             });
         });
+        addEventListener('scroll', function () {
+            if (quadroPendente) return;
+            quadroPendente = true;
+            requestAnimationFrame(function () {
+                marcarIndiceAtual();
+                quadroPendente = false;
+            });
+        }, { passive: true });
     }
 
     /* --- Definições dentro dos comentários. Cada termo aparece no máximo

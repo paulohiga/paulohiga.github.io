@@ -123,6 +123,11 @@ def id_seguro(texto: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", sem_acentos(texto)).strip("-")
 
 
+def inicial_maiuscula(texto: str) -> str:
+    """Uniformiza a apresentação do verbete sem tocar na literalidade."""
+    return texto[:1].upper() + texto[1:]
+
+
 def limpar_literal(texto: str) -> str:
     texto = texto.strip()
     texto = re.sub(r"\s+_\((?:Redação|Incluído|Alterado|Revogado).*?\)_\s*$", "", texto)
@@ -132,7 +137,11 @@ def limpar_literal(texto: str) -> str:
 def tema_de(termos: list[str]) -> str:
     alvo = sem_acentos(" ".join(termos))
     for tema, palavras in TEMAS:
-        if any(sem_acentos(palavra) in alvo for palavra in palavras):
+        if any(
+            re.search(r"\bidade\b", alvo) if sem_acentos(palavra) == "idade"
+            else sem_acentos(palavra) in alvo
+            for palavra in palavras
+        ):
             return tema
     return "Outros conceitos normativos"
 
@@ -159,15 +168,21 @@ def extrair_itens(bloco: str, ue: bool) -> list[dict]:
     itens: list[dict] = []
     atual: dict | None = None
 
-    padrao_ue = re.compile(r"^(?:(\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"],?\s*(.*)$")
+    padrao_ue = re.compile(r"^(?:(\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"]\s*[,–—:-]?\s*(.*)$")
     padrao_br = re.compile(r"^([IVXLCDM]+)\s*[–-]\s*(.+?)\s*[:–-]\s+(.*)$")
 
     for linha in linhas:
         limpa = linha.strip()
-        if not limpa or limpa.startswith("~~"):
-            if atual and limpa:
-                atual["continuacao"].append(limpa)
+        if not limpa:
             continue
+        # Redações superadas e novos blocos estruturais não integram a
+        # definição imediatamente anterior. Isso evita que o último inciso
+        # absorva texto tachado, parágrafos ou o capítulo seguinte.
+        if limpa.startswith("~~") or re.match(r"^(?:#{1,6}\s|§\s|Parágrafo único\.)", limpa):
+            if atual:
+                itens.append(atual)
+                atual = None
+            break
         casamento = padrao_ue.match(limpa) if ue else padrao_br.match(limpa)
         if casamento:
             if atual:
@@ -202,6 +217,11 @@ def url_dispositivo(norma: dict, artigo: str, sufixo: str = "") -> str:
         base_id += f"-{sufixo.lower()}"
     ancora = f"{prefixo}-{base_id}" if prefixo else base_id
     return f"/notas/{registro['nota']}#{ancora}"
+
+
+def url_nota(norma: dict) -> str:
+    normas = yaml.safe_load((RAIZ / "_data" / "normas.yml").read_text())
+    return f"/notas/{normas[norma['slug']]['nota']}"
 
 
 def referencia(norma: dict, artigo: str, marcador: str, ue: bool) -> tuple[str, str]:
@@ -265,6 +285,7 @@ def main() -> None:
                     "fonte": meta["fonte"],
                     "dispositivo": dispositivo,
                     "url": url,
+                    "nota_url": url_nota(meta),
                 })
 
     for extra in EXTRAS:
@@ -281,6 +302,7 @@ def main() -> None:
             "fonte": meta["fonte"],
             "dispositivo": extra["dispositivo"],
             "url": url_dispositivo(meta, extra["artigo"], extra["sufixo"]),
+            "nota_url": url_nota(meta),
         })
 
     grupos: dict[tuple[str, str], list[dict]] = defaultdict(list)
@@ -290,7 +312,9 @@ def main() -> None:
     saida = []
     ids = set()
     for (jurisdicao, chave), itens in grupos.items():
-        termos = list(dict.fromkeys(item["termo"] for item in itens))
+        termos = list(dict.fromkeys(inicial_maiuscula(item["termo"]) for item in itens))
+        for item in itens:
+            item["termo"] = inicial_maiuscula(item["termo"])
         titulo = " · ".join(termos)
         base_id = id_seguro(f"{jurisdicao}-{chave}")
         verbete_id = base_id
@@ -299,13 +323,23 @@ def main() -> None:
             verbete_id = f"{base_id}-{contador}"
             contador += 1
         ids.add(verbete_id)
+        tema = tema_de(termos)
+        busca_extra = {"rede social": ["redes sociais"]}.get(chave, [])
+        busca_texto = " ".join(dict.fromkeys([
+            *termos,
+            *busca_extra,
+            tema,
+            *(item["norma_apelido"] for item in itens),
+            *(item["norma_titulo"] for item in itens),
+        ]))
         saida.append({
             "id": verbete_id,
             "titulo": titulo,
             "termos": termos,
-            "busca": termos + ({"rede social": ["redes sociais"]}.get(chave, [])),
+            "busca": termos + busca_extra,
+            "busca_texto": busca_texto,
             "letra": sem_acentos(termos[0])[0].upper(),
-            "tema": tema_de(termos),
+            "tema": tema,
             "jurisdicao": jurisdicao,
             "definicoes": itens,
         })

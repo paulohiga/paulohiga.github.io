@@ -1,5 +1,3 @@
-{% assign letras = site.data.definicoes | map: "letra" | uniq %}
-{% assign temas = site.data.definicoes | map: "tema" | uniq | sort %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -33,24 +31,28 @@
     <main class="definicoes">
         <div class="definicoes__cabecalho">
             <p>Literalidade das normas disponíveis em <a href="/notas">/notas</a>. Termos iguais ou próximos aparecem no mesmo verbete, com uma referência para cada definição. As normas da União Europeia têm indicação discreta e permanecem separadas das brasileiras.</p>
-            <div class="definicoes-controles" aria-label="Organizar e filtrar definições">
-                <fieldset>
-                    <legend>Organizar por</legend>
-                    <label><input type="radio" name="ordem-definicoes" value="alfabetica" checked> A–Z</label>
-                    <label><input type="radio" name="ordem-definicoes" value="tema"> tema</label>
-                </fieldset>
-                <label class="definicoes-controles__ue"><input id="definicoes-incluir-ue" type="checkbox" checked> Incluir União Europeia</label>
-                <label class="definicoes-busca">Buscar <input id="definicoes-busca" type="search" autocomplete="off" placeholder="Ex.: rede social"></label>
-            </div>
         </div>
 
         <div class="definicoes__grade">
             <aside class="definicoes-nav" aria-label="Índice de definições">
-                <nav class="definicoes-nav__grupo" data-indice="alfabetica" aria-label="Índice alfabético">
-{% for letra in letras %}<button type="button" data-letra="{{ letra }}">{{ letra }}</button>{% endfor %}
-                </nav>
-                <nav class="definicoes-nav__grupo" data-indice="tema" aria-label="Índice por tema" hidden>
-{% for tema in temas %}<button type="button" data-tema="{{ tema | escape }}">{{ tema }}</button>{% endfor %}
+                <div class="definicoes-nav__topo">
+                    <h2>Verbetes</h2>
+                    <div class="definicoes-controles" aria-label="Organizar e filtrar definições">
+                        <fieldset>
+                            <legend class="visualmente-oculto">Organizar por</legend>
+                            <label><input type="radio" name="ordem-definicoes" value="alfabetica" checked><span>A–Z</span></label>
+                            <label><input type="radio" name="ordem-definicoes" value="tema"><span>Por tema</span></label>
+                        </fieldset>
+                        <label class="definicoes-busca"><span class="visualmente-oculto">Buscar</span><input id="definicoes-busca" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou tema"></label>
+                        <label class="definicoes-controles__br"><input id="definicoes-so-brasil" type="checkbox"> Só normas brasileiras</label>
+                    </div>
+                </div>
+                <nav id="definicoes-indice-lista" class="definicoes-nav__lista" aria-label="Lista de verbetes">
+{% assign indice_letra_atual = "" %}
+{% for verbete in site.data.definicoes %}
+{% if verbete.letra != indice_letra_atual %}<h3 class="definicoes-nav__grupo" data-grupo="{{ verbete.letra }}">{{ verbete.letra }}</h3>{% assign indice_letra_atual = verbete.letra %}{% endif %}
+                    <a href="#{{ verbete.id }}" class="definicoes-nav__item" data-alvo="{{ verbete.id }}"><span>{{ verbete.titulo }}</span><small>{% if verbete.jurisdicao == 'BR' %}BR{% else %}UE{% endif %}</small></a>
+{% endfor %}
                 </nav>
             </aside>
 
@@ -61,7 +63,7 @@
                 <h2 class="definicoes-grupo" data-grupo="{{ verbete.letra }}">{{ verbete.letra }}</h2>
 {% assign letra_atual = verbete.letra %}
 {% endif %}
-                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.tema | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-busca="{{ verbete.titulo | downcase | escape }}">
+                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.tema | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-busca="{{ verbete.busca_texto | downcase | escape }}">
                     <header class="definicao-card__topo">
                         <h3>{{ verbete.titulo }}</h3>
                         <a class="definicao-card__ancora" href="#{{ verbete.id }}" aria-label="Link para {{ verbete.titulo }}">#</a>
@@ -71,8 +73,8 @@
                         <div class="definicao-card__texto">{{ definicao.texto | markdownify }}</div>
                         <p class="definicao-referencia{% if verbete.jurisdicao == 'UE' %} definicao-referencia--ue{% endif %}">
                             <span>{% if verbete.jurisdicao == 'BR' %}Brasil{% else %}União Europeia{% endif %}</span>
-                            <a class="definicao-referencia__nota" href="{{ definicao.url }}">{{ definicao.norma_apelido }}</a>, {{ definicao.dispositivo }}
-                            <a class="definicao-referencia__oficial" href="{{ definicao.fonte }}" target="_blank" rel="noopener">texto oficial</a>
+                            <a class="definicao-referencia__nota" href="{{ definicao.nota_url }}">{{ definicao.norma_apelido }}</a>,
+                            <a class="definicao-referencia__dispositivo" href="{{ definicao.url }}">{{ definicao.dispositivo }}</a>
                         </p>
                     </div>
 {% endfor %}
