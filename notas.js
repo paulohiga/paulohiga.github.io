@@ -66,6 +66,12 @@
             Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__grupo'), function (titulo) {
                 titulo.remove();
             });
+            /* Os itens do índice também são remontados. Se os antigos ficam
+               no DOM, os que o filtro escondeu permanecem antes dos visíveis
+               (e o display do link pode prevalecer sobre o atributo hidden). */
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
+                item.remove();
+            });
             var busca = textoComparavel(buscaDefinicoes.value.trim());
             var visiveis = cardsDefinicoes.filter(function (card) {
                 var aparece = (!soBrasil.checked || card.dataset.jurisdicao === 'BR') &&
@@ -306,6 +312,8 @@
         });
         dialogDefinicao.addEventListener('click', function (evento) {
             if (evento.target === dialogDefinicao) dialogDefinicao.close();
+            var dispositivo = evento.target.closest('.definicao-referencia__dispositivo');
+            if (dispositivo && navegarParaDispositivo(evento, dispositivo)) dialogDefinicao.close();
         });
         dialogDefinicao.addEventListener('close', function () {
             if (focoAntesDaDefinicao) focoAntesDaDefinicao.focus();
@@ -760,26 +768,37 @@
         return irParaElemento(comentarios, corpoDosComentarios, 'comentarios', alvo);
     }
 
-    comentarios.addEventListener('click', function (evento) {
-        var link = evento.target.closest('a[href^="#"]');
-        if (!link) return;
-        var id = decodeURIComponent(link.getAttribute('href').slice(1));
+    /* Links para dispositivos podem aparecer fora do painel de comentários —
+       por exemplo, nas referências do diálogo de definições. Resolva também
+       URLs completas da própria nota, para que esses links usem a mesma troca
+       de norma, carga sob demanda e rolagem das remissões escritas no texto. */
+    function navegarParaDispositivo(evento, link) {
+        var destino;
+        try { destino = new URL(link.href, location.href); } catch (erro) { return false; }
+        var caminhoAtual = location.pathname.replace(/\/+$/, '');
+        var caminhoDestino = destino.pathname.replace(/\/+$/, '');
+        if (destino.origin !== location.origin || caminhoDestino !== caminhoAtual || !destino.hash) return false;
+
+        var id = decodeURIComponent(destino.hash.slice(1));
         var normaAlvo = normaDoId(id);
+        /* Para a norma principal o alvo já está no HTML; preserve o
+           comportamento nativo de uma âncora desconhecida. Uma norma extra
+           pode ainda estar aguardando o fetch, então o prefixo basta para
+           deixá-la seguir pelo carregamento sob demanda. */
+        if (!normaAlvo || (!normaAlvo.prefixo && !document.getElementById(id))) return false;
 
-        if (normaAlvo) {
-            evento.preventDefault();
-            ativarNorma(normaAlvo);
-            carregarNorma(normaAlvo, function () {
-                if (irPara(id)) history.replaceState(null, '', '#' + id);
-            });
-            return;
-        }
+        evento.preventDefault();
+        ativarNorma(normaAlvo);
+        carregarNorma(normaAlvo, function () {
+            if (irPara(id)) history.replaceState(null, '', '#' + id);
+        });
+        return true;
+    }
 
-        if (id.indexOf('art-') !== 0) return;
-        if (irPara(id)) {
-            evento.preventDefault();
-            history.replaceState(null, '', '#' + id);
-        }
+    comentarios.addEventListener('click', function (evento) {
+        var link = evento.target.closest('a[href]');
+        if (!link) return;
+        navegarParaDispositivo(evento, link);
     });
 
     /* --- Busca "ir para o dispositivo" ---

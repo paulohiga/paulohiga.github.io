@@ -164,7 +164,7 @@ quando o leitor a seleciona (ou ao abrir um link com âncora prefixada, tipo
 enquanto ela estiver aberta. Isso significa que **o seletor de normas e a
 navegação para qualquer norma que não a principal exigem JavaScript** — exceção
 consciente à regra geral de "funciona sem JS" das notas, decidida para não
-pré-carregar 13 textos legais em toda página. Sem JavaScript o seletor fica
+pré-carregar 18 textos legais em toda página. Sem JavaScript o seletor fica
 oculto e o lugar dele, na barra de título do painel, é ocupado por um `<h2>` com
 o nome da norma principal, que é a única exibida.
 
@@ -468,6 +468,7 @@ comentário. Assim os arquivos `.md` continuam limpos.
 | Inciso V do art. 5º | `art-5-v` |
 | Inciso I do § 1º do art. 52 | `art-52-p1-i` |
 | Alínea "b" do inciso II do art. 4º | `art-4-ii-b` |
+| Ponto 10 do art. 3.º (norma europeia) | `art-3-p10` |
 
 Escreva `([art. 5º, inciso V](#art-5-v))` preservando o texto visível da
 citação. O clique é interceptado pelo `notas.js`, que rola o painel da lei,
@@ -501,9 +502,9 @@ recebem id:
   24" não é o art. 24 do ECA Digital, e não deve virar link para `#art-24`.
   Isso só deixa de valer para uma norma listada em `normas_extra`: ela tem
   prefixo próprio (ex. `dec12880-art-24`) e pode ser linkada com segurança.
-- **Dispositivo revogado**: a remissão a ele nos comentários aponta para o
-  texto **original** (`#original-art-10-p5`), não para a consolidação, que por
-  definição não o tem.
+- **Dispositivo revogado**: a remissão a ele nos comentários aponta para uma
+  fonte pública que contenha a redação superada, normalmente o texto original
+  do ato no EUR-Lex, não para a consolidação, que por definição não o tem.
 - **Entre notas, use o caminho da página**:
   `[art. 6º da LGPD](/notas/lgpd#art-6)` abre a outra nota já posicionada no
   dispositivo.
@@ -557,6 +558,7 @@ para" valem igual nos dois formatos:
 | Artigo 5.º | `art-5` |
 | Artigo 6.º-A | `art-6-a` |
 | n.º 1 do artigo 5.º (o "1." do texto) | `art-5-p1` |
+| ponto 10 do artigo 3.º (o "10)" do texto) | `art-3-p10` |
 | alínea "a" do n.º 1 do artigo 5.º | `art-5-p1-a` |
 | alínea "a" de artigo sem números | `art-1-a` |
 
@@ -615,31 +617,32 @@ diferença antes de escolher:
   "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter, e as duas fontes ficam
   registradas nele.
 
-O ato entra **inteiro**: preâmbulo, considerandos, articulado e anexos. Os
-considerandos não são dispositivos e não recebem âncora, mas ficam no painel —
-num regulamento europeu são eles que dizem por que cada regra existe, e a
-Comissão e o Tribunal de Justiça os usam para interpretar o articulado. Fica de
-fora só o aparato de notas de rodapé do JO, que é referência bibliográfica, e —
-num texto consolidado — as **marcas de alteração** (▼B, ▼C1, ►C1 … ◄), que são
-aparato editorial da consolidação e não texto normativo.
+Quando a fonte é o texto do Jornal Oficial, o ato entra **inteiro**: preâmbulo,
+considerandos, articulado e anexos. Os considerandos não são dispositivos e não
+recebem âncora, mas ficam no painel — num regulamento europeu são eles que dizem
+por que cada regra existe, e a Comissão e o Tribunal de Justiça os usam para
+interpretar o articulado. Quando a fonte é uma consolidação, o EUR-Lex pode
+publicar apenas o articulado e os anexos em vigor, como no AI Act; nesse caso,
+os preâmbulos e considerandos devem ser consultados no Jornal Oficial do ato
+original ou alterador. Fica de fora o aparato de notas de rodapé do JO, que é
+referência bibliográfica, e — num texto consolidado — as **marcas de alteração**
+(▼B, ▼C1, ►C1 … ◄), que são aparato editorial da consolidação e não texto
+normativo.
 
-### Quando não existe versão consolidada
+### Quando existe versão consolidada
 
-Quando a União Europeia **ainda não publicou a versão consolidada** de uma
-norma alterada — é o caso do AI Act com o Digital Omnibus —, publique **os dois
-textos oficiais** no painel, e diga isso ao leitor na própria nota. O texto de
-uma norma alteradora é quase todo citação, e citação não recebe âncora.
+Quando o EUR-Lex publica uma versão consolidada, ela pode ser convertida
+diretamente do HTML/XHTML oficial para `_leis`, mantendo no front matter a data
+da consolidação, a fonte e o aviso de que o texto é instrumento de documentação.
+É o caso atual do AI Act: a versão de 27 de julho de 2026 incorpora o Digital
+Omnibus, e `/notas/ai-act` exibe uma norma única. O painel continua apontando
+para os textos originais do Jornal Oficial quando o leitor precisa conferir uma
+redação histórica ou um preâmbulo.
 
-Uma consolidação pode ser oferecida ao lado deles, e é o que `/notas/ai-act`
-faz, sob três condições que não se negociam:
-
-- **gerada por script, nunca à mão** — `scripts/consolidar_ai_act.py` endereça
-  cada alteração e copia o texto novo do próprio arquivo do ato alterador;
-  nenhuma palavra é redigitada, e o script aborta se um dispositivo alvo sumir.
-  O arquivo gerado leva "NÃO EDITE ESTE ARQUIVO À MÃO" no front matter;
-- **rotulada como não oficial** no `apelido`, no front matter e na nota, com o
-  aviso de que prevalece o Jornal Oficial em caso de divergência;
-- **acompanhada dos textos oficiais** no mesmo painel, para conferência.
+Quando a União Europeia ainda não publicou uma consolidação, publique os textos
+oficiais separados e diga isso ao leitor na própria nota. Uma consolidação
+auxiliar só pode ser oferecida se for gerada por script, rotulada como não
+oficial e acompanhada dos textos oficiais no mesmo painel.
 
 ## Ancorando referências automaticamente
 
@@ -688,6 +691,6 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | --- | --- |
 | `converter_eurlex.py` | Converte o HTML oficial do EUR-Lex para o Markdown de `_leis`, no dialeto `formato: ue` |
 | `montar_rgpd.py` | Monta `_leis/gdpr.md` juntando os considerandos do Jornal Oficial ao articulado consolidado |
-| `consolidar_ai_act.py` | Gera a consolidação não oficial do AI Act aplicando as alterações do Digital Omnibus |
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
+| `gerar_definicoes.py` | Gera o banco de definições normativas a partir dos artigos e textos de `_leis/` |

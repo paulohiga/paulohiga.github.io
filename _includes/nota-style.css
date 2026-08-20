@@ -261,7 +261,7 @@ body.dark-theme .nota-tema .ico-moon {
 
 /* --- Seletor de normas do painel da lei seca ---
    Um <select> nativo em vez de uma aba por norma: não degrada com o número de
-   normas (são 13, em dois grupos — as desta nota e todas as outras) e não
+   normas (são 18, em dois grupos — as desta nota e todas as outras) e não
    precisa de ARIA customizado, porque o próprio elemento já é acessível por
    teclado e leitor de tela. Estilizado para ocupar o lugar do <h2> do painel.
 
@@ -274,7 +274,7 @@ body:not(.js) .lei-norma-select {
 }
 
 /* O `<select>` se dimensiona pela opção mais longa da *lista*, não pela
-   escolhida: com todas as normas nela, "AI ACT CONSOLIDADO (NÃO OFICIAL)" em
+   escolhida: com todas as normas nela, "AI ACT (TEXTO CONSOLIDADO OFICIAL)" em
    negrito e caixa alta reservava 372px em toda nota, e a barra de título
    quebrava em duas linhas num painel de 714px — o que sobra num 1440x900.
 
@@ -665,6 +665,10 @@ body:not(.js) .lei-ir {
     padding-left: 1rem;
 }
 
+.lei-ponto {
+    padding-left: 1rem;
+}
+
 .lei-inciso {
     padding-left: 2rem;
 }
@@ -675,6 +679,7 @@ body:not(.js) .lei-ir {
 
 .lei-artigo,
 .lei-paragrafo,
+.lei-ponto,
 .lei-inciso,
 .lei-alinea {
     border-radius: 0.25rem;
@@ -2127,7 +2132,7 @@ body:not(.js) .definicoes-controles {
 
 /* Normas que o painel "Lei seca" da nota traz — a principal e as extras. É o
    que responde, daqui, "o que vem junto?": a nota do Marco Civil abre com três
-   decretos, a do AI Act com o texto original e o Omnibus ao lado. */
+   decretos, e o AI Act traz uma única norma, no texto consolidado oficial. */
 .notas-index__normas {
     display: flex;
     flex-wrap: wrap;

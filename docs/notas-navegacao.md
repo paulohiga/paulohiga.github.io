@@ -485,9 +485,10 @@ tinha dados que o índice ignorava: `atualizado_em` e `normas_extra`.
   Europeia**. Grupo novo não pede edição no layout: o rótulo é o próprio valor
   de `jurisdicao`, e os grupos saem na ordem em que aparecem na lista já
   ordenada. Nota sem `ordem` vai para o fim em vez de derrubar a página.
-- **Normas no cartão.** A principal e as extras, em etiquetas — são 13 nos seis
+- **Normas no cartão.** A principal e as extras, em etiquetas — são 18 nos seis
   cartões. É o que responde, do índice, "o que vem junto?": o Marco Civil abre
-  com três decretos, o AI Act com o texto original e o Omnibus ao lado.
+  com três decretos, e o AI Act traz uma única norma, no texto consolidado
+  oficial.
 - **Data por extenso**, com `<time datetime>` legível por máquina.
 - **A `ItemList` do JSON-LD segue a mesma ordem** da página: as duas descrevem
   a mesma lista, e não faria sentido divergirem.

@@ -1,18 +1,12 @@
-# Ementas dos artigos do AI Act (Regulamento (UE) 2024/1689), texto do Jornal
-# Oficial. Rótulo de navegação do sumário da lei seca, não texto legal — a
-# regra de escrita está em "Ementas dos artigos" (docs/notas.md).
-#
-# A epígrafe oficial do artigo é mantida palavra por palavra sempre que cabe no
-# rótulo; as compridas demais entram encurtadas, na mesma terminologia oficial
-# em PT-PT do EUR-Lex ("responsável pela implantação", "coimas", "sistémico").
-#
-# A consolidação não oficial tem arquivo próprio (ai-act-consolidado.yml), com
-# os artigos que o Digital Omnibus acrescentou ou renumerou.
+# Ementas dos artigos do AI Act (Regulamento (UE) 2024/1689), texto consolidado
+# oficial de 27/7/2026. Rótulo de navegação do sumário da lei seca, não texto
+# legal — a regra de escrita está em "Ementas dos artigos" (docs/notas.md).
 
 art-1: Objeto
 art-2: Âmbito
 art-3: Definições
 art-4: Literacia no domínio da IA
+art-4-a: Dados sensíveis na correção de enviesamentos
 art-5: Práticas de IA proibidas
 art-6: Classificação dos sistemas de risco elevado
 art-7: Alterações ao anexo III
@@ -69,6 +63,7 @@ art-57: Ambientes de testagem da regulamentação da IA
 art-58: Funcionamento dos ambientes de testagem
 art-59: Dados pessoais no ambiente de testagem
 art-60: Testagem em condições reais
+art-60-a: Testagem real dos sistemas do anexo I, secção B
 art-61: Consentimento informado na testagem real
 art-62: Medidas de apoio às PME e às empresas nascentes
 art-63: Derrogações aplicáveis a operadores específicos
@@ -83,9 +78,13 @@ art-71: Base de dados da UE dos sistemas do anexo III
 art-72: Acompanhamento pós-comercialização
 art-73: Comunicação de incidentes graves
 art-74: Fiscalização do mercado dos sistemas de IA
-art-75: Assistência mútua nos modelos de finalidade geral
+art-75: Fiscalização do mercado e assistência mútua
+art-75-a: Poderes de supervisão do Serviço para a IA
+art-75-b: Compromissos
+art-75-c: Incumprimento, coimas e sanções compulsórias
+art-75-d: Garantias e especificações adicionais
 art-76: Supervisão da testagem em condições reais
-art-77: Poderes das autoridades de direitos fundamentais
+art-77: Direitos fundamentais e fiscalização do mercado
 art-78: Confidencialidade
 art-79: Procedimento nacional para sistemas com risco
 art-80: Procedimento quando o prestador não classifica
