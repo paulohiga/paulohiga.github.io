@@ -1624,6 +1624,8 @@ body:not(.js) .nota-progresso {
 /* --- Definições contextuais nos comentários --- */
 .definicao-termo {
     display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     margin: 0;
     padding: 0.04em 0.16em;
     border: 0;
@@ -1634,6 +1636,7 @@ body:not(.js) .nota-progresso {
     font: inherit;
     line-height: inherit;
     text-align: inherit;
+    text-decoration: none;
     cursor: help;
 }
 

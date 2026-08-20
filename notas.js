@@ -53,6 +53,7 @@
         var quadroPendente = false;
         var indiceTravado = '';
         var destravarIndice = 0;
+        var preservarIndicePorFoco = false;
 
         function textoComparavel(texto) {
             return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -108,20 +109,34 @@
             var atual = idPreferido && itensIndice[idPreferido] ? document.getElementById(idPreferido) : null;
             if (!atual || atual.hidden) {
                 atual = cardsVisiveis[0];
-                cardsVisiveis.forEach(function (card) {
-                    if (card.getBoundingClientRect().top <= Math.max(150, innerHeight * 0.25)) atual = card;
-                });
+                var pontoLeitura = Math.min(96, Math.max(32, innerHeight * 0.08));
+                var menorDistancia = Infinity;
+                for (var i = 0; i < cardsVisiveis.length; i += 1) {
+                    var card = cardsVisiveis[i];
+                    var quadroCard = card.getBoundingClientRect();
+                    if (quadroCard.top <= pontoLeitura && quadroCard.bottom > pontoLeitura) {
+                        atual = card;
+                        break;
+                    }
+                    var distancia = quadroCard.top > pontoLeitura
+                        ? quadroCard.top - pontoLeitura
+                        : pontoLeitura - quadroCard.bottom;
+                    if (distancia < menorDistancia) {
+                        menorDistancia = distancia;
+                        atual = card;
+                    }
+                }
             }
             Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item[aria-current]'), function (item) {
                 item.removeAttribute('aria-current');
             });
             var itemAtual = itensIndice[atual.id];
             itemAtual.setAttribute('aria-current', 'location');
-            if (!indiceDefinicoes.contains(document.activeElement)) {
-                var topo = itemAtual.offsetTop;
-                var base = indiceDefinicoes.scrollTop;
-                if (topo < base || topo + itemAtual.offsetHeight > base + indiceDefinicoes.clientHeight) {
-                    indiceDefinicoes.scrollTop = Math.max(0, topo - indiceDefinicoes.clientHeight / 3);
+            if (!(preservarIndicePorFoco && indiceDefinicoes.contains(document.activeElement))) {
+                var quadroLista = indiceDefinicoes.getBoundingClientRect();
+                var quadroItem = itemAtual.getBoundingClientRect();
+                if (quadroItem.top < quadroLista.top || quadroItem.bottom > quadroLista.bottom) {
+                    indiceDefinicoes.scrollTop += quadroItem.top - quadroLista.top - indiceDefinicoes.clientHeight / 3;
                 }
             }
         }
@@ -134,6 +149,15 @@
         });
         soBrasil.addEventListener('change', redesenharDefinicoes);
         buscaDefinicoes.addEventListener('input', redesenharDefinicoes);
+        indiceDefinicoes.addEventListener('keydown', function () {
+            preservarIndicePorFoco = true;
+        });
+        indiceDefinicoes.addEventListener('pointerdown', function () {
+            preservarIndicePorFoco = false;
+        });
+        indiceDefinicoes.addEventListener('focusout', function (evento) {
+            if (!indiceDefinicoes.contains(evento.relatedTarget)) preservarIndicePorFoco = false;
+        });
         Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
             item.addEventListener('click', function () {
                 indiceTravado = item.dataset.alvo;
@@ -194,11 +218,13 @@
                 var inicioPalavra = casamento.index + prefixo.length;
                 if (!verbete || vistosNaSecao[verbete.id] || (contagemDefinicoes[verbete.id] || 0) >= 4) continue;
                 fragmento.appendChild(document.createTextNode(texto.slice(ultimo, inicioPalavra)));
-                var botao = document.createElement('button');
-                botao.type = 'button';
+                var botao = document.createElement('a');
+                botao.href = '/notas/definicoes#' + verbete.id;
                 botao.className = 'definicao-termo' + (verbete.jurisdicao === 'UE' ? ' definicao-termo--ue' : '');
                 botao.dataset.definicao = verbete.id;
                 botao.setAttribute('aria-label', 'Abrir definição normativa de ' + palavra);
+                botao.setAttribute('aria-haspopup', 'dialog');
+                botao.setAttribute('aria-controls', 'definicao-dialog');
                 botao.textContent = palavra;
                 fragmento.appendChild(botao);
                 ultimo = inicioPalavra + palavra.length;
@@ -261,6 +287,7 @@
         document.addEventListener('click', function (evento) {
             var botao = evento.target.closest('.definicao-termo');
             if (!botao) return;
+            evento.preventDefault();
             focoAntesDaDefinicao = botao;
             var abrir = function () {
                 var verbete = bancoDefinicoes.filter(function (item) { return item.id === botao.dataset.definicao; })[0];
