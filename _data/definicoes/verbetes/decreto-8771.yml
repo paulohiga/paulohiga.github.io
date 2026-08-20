@@ -1,24 +1,26 @@
 - termo: Dado pessoal
   slug: dado-pessoal
+  grupo: dado-pessoal
   tema: dados
   bases:
   - texto: art. 14, I
     ancora: art-14-i
+  aliases:
+  - dados pessoais
   definicao: dado relacionado à pessoa natural identificada ou identificável, inclusive
     números identificativos, dados locacionais ou identificadores eletrônicos, quando
     estes estiverem relacionados a uma pessoa
-  aliases:
-  - dados pessoais
 - termo: Tratamento de dados pessoais
   slug: tratamento-de-dados-pessoais
+  grupo: tratamento
   tema: operacoes
   bases:
   - texto: art. 14, II
     ancora: art-14-ii
+  aliases:
+  - tratamento de dados
   definicao: toda operação realizada com dados pessoais, como as que se referem
     a coleta, produção, recepção, classificação, utilização, acesso, reprodução,
     transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação,
     avaliação ou controle da informação, modificação, comunicação, transferência,
     difusão ou extração
-  aliases:
-  - tratamento de dados

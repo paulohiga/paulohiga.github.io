@@ -485,8 +485,10 @@ tem âncora (`_data/normas.yml`).
 | Campo | Obrigatório | Descrição |
 | --- | --- | --- |
 | `termo` | sim | O termo como a norma o escreve. É o título do verbete e a primeira forma que a marcação procura no comentário |
-| `slug` | sim | Minúsculas, sem acento. Único **dentro da norma**; o id publicado é `v-<prefixo da norma>-<slug>` |
-| `tema` | sim | Um dos `id` de `_data/definicoes/temas.yml` |
+| `slug` | sim | Minúsculas, sem acento. Único **dentro da norma** |
+| `grupo` | não | Junta num verbete só as definições que várias normas dão ao mesmo termo (ver [Um verbete, várias acepções](#um-verbete-várias-acepções)). Sem ele, o verbete é o seu próprio grupo |
+| `tema` | sim | Um dos `id` de `_data/definicoes/temas.yml`. Verbetes do mesmo `grupo` compartilham o tema |
+| `descartado` | não | O motivo pelo qual esta definição **não** entra na página, quando a norma só recopia uma superior. Fica no arquivo, e não apagada, para que uma nova extração não a ressuscite |
 | `bases` | sim | Lista de `{ texto, ancora }`. `texto` é a citação como se escreve ("art. 5º, V"); `ancora` é o id do dispositivo, **sem o prefixo da norma**. Base sem `ancora` (um considerando, p. ex.) vira texto sem link |
 | `definicao` | sim | A definição, em Markdown. Começa em minúscula: ela continua a frase que o termo abre |
 | `nota` | não | Comentário **sobre** a definição, em Markdown. Aparece atrás de uma barra, num corpo menor |
@@ -521,6 +523,41 @@ Cinco regras de escrita:
   painel de lei nenhum, e o `notas.js` o devolve ao painel quando o balão abre
   dentro da nota daquela norma. Para apontar para **outra** norma, escreva o
   caminho inteiro (`/notas/eca-digital#art-9-p2`).
+
+### Um verbete, várias acepções
+
+"Dado pessoal" é definido na LGPD, no Decreto nº 8.771/2016, no RGPD e no AI
+Act. Quatro verbetes soltos na letra D obrigariam o leitor a juntá-los com o
+olho; um verbete só, com as quatro definições e as quatro bases, é o que
+responde à pergunta que ele fez.
+
+Quem junta é o campo `grupo`: todos os verbetes que declaram o mesmo valor
+viram um `<article>` só, com uma **acepção** por definição — cada qual com a sua
+jurisdição, a sua norma, a sua base legal e o seu comentário. O id publicado é
+`v-<grupo>`, e para um verbete sem `grupo` ele continua sendo
+`v-<prefixo da norma>-<slug>`.
+
+Três consequências:
+
+- **A ordem das acepções é a hierarquia da norma**: primeiro o Brasil, depois o
+  estrangeiro; e dentro de cada um, lei, decreto, portaria, resolução. É ela que
+  decide qual termo abre o verbete — "Dado pessoal", da LGPD, e não "Dados
+  pessoais", do RGPD. (No balão da nota a ordem muda: lá vem primeiro a norma
+  que o leitor está lendo.)
+- **O título lista os termos distintos**, na ordem das acepções: "Dado pessoal ·
+  Dados pessoais". A acepção só repete o seu termo quando ele difere do
+  primeiro.
+- **Um termo que duas normas da mesma nota definem deixa de ser ambíguo** para a
+  marcação, desde que as duas estejam no mesmo grupo: a marca aponta para o
+  verbete, e o balão mostra as duas.
+
+**Agrupe termos iguais ou muito próximos**, e não conceitos equivalentes de
+nomes diferentes: "dado pessoal sensível" (LGPD) e "categorias especiais de
+dados pessoais" (RGPD) são a mesma ideia, mas o leitor procura por dois nomes, e
+a equivalência está escrita na `nota` de cada um. Homônimo com sentidos
+diferentes **entra no mesmo verbete**: "operador" é o subcontratante na LGPD e o
+gênero de prestador/importador/distribuidor no AI Act, e ver as duas definições
+lado a lado é o que desfaz a confusão.
 
 ### Extrair e conferir
 
@@ -578,11 +615,20 @@ tela lê o DOM, e uma lista reordenada só visualmente seria lida em ordem
 alfabética com títulos de tema espalhados no meio. Voltar para A–Z devolve cada
 verbete à seção da letra dele.
 
-Cada verbete traz uma **etiqueta de jurisdição** antes da norma, e ela não é
+Cada acepção traz uma **etiqueta de jurisdição** antes da norma, e ela não é
 enfeite: "dados pessoais" tem uma definição na LGPD e outra no RGPD, e só uma
 obriga no Brasil. A jurisdição sai do `jurisdicao` da nota que hospeda a norma —
-nenhum dado novo —, e a etiqueta muda de matiz (não de intensidade) quando o
-verbete é de fora do Brasil.
+nenhum dado novo. O peso visual vai para **Brasil**, que é o caso do leitor
+desta seção; a etiqueta estrangeira recua para texto pequeno e apagado. É de
+propósito: uma etiqueta chamativa em cem acepções europeias daria a elas a
+atenção que o texto não lhes dá.
+
+Cada organização tem o seu **índice no topo**: a barra de letras para o A–Z, a
+lista de temas para a organização por tema. Trocam de lugar junto com a lista —
+cada uma aponta para seções que só existem na sua organização. A de letras
+funciona sem JavaScript (são âncoras para seções que já estão no HTML); a de
+temas nasce oculta, porque as seções que ela aponta só são montadas pelo
+`notas.js`.
 
 O **filtro** casa por começo de palavra, e não por trecho solto: "idade" acha
 "aferição de idade" sem arrastar "disponibilidade" e "confidencialidade" junto.

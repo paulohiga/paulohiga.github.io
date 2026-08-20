@@ -376,11 +376,13 @@
          nota não carregar 97 verbetes por causa de um balão que talvez ninguém
          abra.
 
-         São só as normas *desta* nota (a principal e as de `normas_extra`), e
-         não todas as de `_leis`: na nota da LGPD, "tratamento" é o do art. 5º,
-         X, e não o do art. 4.º, 2), do RGPD. As demais normas continuam
-         acessíveis pelo seletor do painel, com a definição delas a um clique
-         em /notas/definicoes. -->
+         São só as normas *desta* nota (a principal e as de `normas_extra`); as
+         demais continuam acessíveis pelo seletor do painel, com a definição
+         delas a um clique em /notas/definicoes. O id é o do **verbete**, e não
+         o da definição: quando duas normas definem o mesmo termo, elas moram
+         no mesmo verbete, e o balão abre com as duas acepções e as duas bases
+         — que é o que o leitor precisa ver ao encontrar "dado pessoal" numa
+         nota que compara a LGPD e o RGPD. -->
     <script type="application/json" id="nota-verbetes">[
 {%- assign primeiro_verbete = true -%}
 {%- assign normas_da_nota = "" | split: "," -%}
@@ -388,8 +390,12 @@
 {%- for norma in normas_extra %}{% assign normas_da_nota = normas_da_nota | push: norma %}{% endfor -%}
 {%- for norma in normas_da_nota -%}
 {%- for verbete in site.data.definicoes.verbetes[norma.slug] -%}
+{%- unless verbete.descartado -%}
+{%- assign grupo_verbete = verbete.grupo | default: nil -%}
+{%- unless grupo_verbete -%}{%- assign grupo_verbete = norma.prefixo | append: '-' | append: verbete.slug -%}{%- endunless -%}
 {%- unless primeiro_verbete %},{% endunless %}{% assign primeiro_verbete = false -%}
-["v-{{ norma.prefixo }}-{{ verbete.slug }}",{{ verbete.termo | jsonify }}{% for apelido in verbete.aliases %},{{ apelido | jsonify }}{% endfor %}]
+["v-{{ grupo_verbete }}",{{ verbete.termo | jsonify }}{% for apelido in verbete.aliases %},{{ apelido | jsonify }}{% endfor %}]
+{%- endunless -%}
 {%- endfor -%}
 {%- endfor -%}
 ]</script>

@@ -1,9 +1,67 @@
+- termo: Agentes de tratamento
+  slug: agentes-de-tratamento
+  descartado: repete o art. 5º, IX, da LGPD
+  bases:
+  - texto: art. 2º, I
+    ancora: art-2-i
+  definicao: o controlador e o operador
 - termo: Conflito de interesse
   slug: conflito-de-interesse
   tema: sujeitos
   bases:
-  - texto: art. 2, II
+  - texto: art. 2º, II
     ancora: art-2-ii
   definicao: a situação que possa comprometer, influenciar ou afetar, de maneira
     imprópria, a objetividade e o julgamento técnico no desempenho das atribuições
     do encarregado
+- termo: Controlador
+  slug: controlador
+  descartado: repete o art. 5º, VI, da LGPD
+  bases:
+  - texto: art. 2º, III
+    ancora: art-2-iii
+  definicao: pessoa natural ou jurídica, de direito público ou privado, a quem competem
+    as decisões referentes ao tratamento de dados pessoais
+- termo: Dado pessoal
+  slug: dado-pessoal
+  descartado: repete o art. 5º, I, da LGPD
+  bases:
+  - texto: art. 2º, IV
+    ancora: art-2-iv
+  definicao: informação relacionada a pessoa natural identificada ou identificável
+- termo: Encarregado
+  slug: encarregado
+  descartado: repete o art. 5º, VIII, da LGPD
+  bases:
+  - texto: art. 2º, V
+    ancora: art-2-v
+  definicao: pessoa indicada pelo controlador e operador para atuar como canal de
+    comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional
+    de Proteção de Dados (ANPD)
+- termo: Operador
+  slug: operador
+  descartado: repete o art. 5º, VII, da LGPD
+  bases:
+  - texto: art. 2º, VI
+    ancora: art-2-vi
+  definicao: pessoa natural ou jurídica, de direito público ou privado, que realiza
+    o tratamento de dados pessoais em nome do controlador
+- termo: Titular
+  slug: titular
+  descartado: repete o art. 5º, V, da LGPD
+  bases:
+  - texto: art. 2º, VII
+    ancora: art-2-vii
+  definicao: pessoa natural a quem se referem os dados pessoais que são objeto de
+    tratamento
+- termo: Tratamento
+  slug: tratamento
+  descartado: repete o art. 5º, X, da LGPD
+  bases:
+  - texto: art. 2º, VIII
+    ancora: art-2-viii
+  definicao: toda operação realizada com dados pessoais, como as que se referem
+    a coleta, produção, recepção, classificação, utilização, acesso, reprodução,
+    transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação,
+    avaliação ou controle da informação, modificação, comunicação, transferência,
+    difusão ou extração

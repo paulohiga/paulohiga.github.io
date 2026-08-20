@@ -2,7 +2,7 @@
   slug: produto-ou-servico-de-ti
   tema: rede
   bases:
-  - texto: art. 2, I
+  - texto: art. 2º, I
     ancora: art-2-i
   aliases:
   - produtos e serviços de tecnologia da informação
@@ -15,7 +15,7 @@
   slug: produto-ou-servico-de-monitoramento-infantil
   tema: infancia
   bases:
-  - texto: art. 2, II
+  - texto: art. 2º, II
     ancora: art-2-ii
   aliases:
   - produtos de monitoramento infantil
@@ -28,7 +28,7 @@
   slug: rede-social
   tema: rede
   bases:
-  - texto: art. 2, III
+  - texto: art. 2º, III
     ancora: art-2-iii
   aliases:
   - redes sociais
@@ -44,7 +44,7 @@
   slug: caixa-de-recompensa
   tema: infancia
   bases:
-  - texto: art. 2, IV
+  - texto: art. 2º, IV
     ancora: art-2-iv
   aliases:
   - caixas de recompensa
@@ -54,9 +54,10 @@
     prévio de seu conteúdo ou garantia de sua efetiva utilidade
 - termo: Perfilamento
   slug: perfilamento
+  grupo: perfilamento
   tema: operacoes
   bases:
-  - texto: art. 2, V
+  - texto: art. 2º, V
     ancora: art-2-v
   definicao: qualquer forma de tratamento de dados pessoais, automatizada ou não,
     para avaliar certos aspectos de uma pessoa natural, com o objetivo de classificá-la
@@ -67,7 +68,7 @@
   slug: loja-de-aplicacoes
   tema: rede
   bases:
-  - texto: art. 2, VI
+  - texto: art. 2º, VI
     ancora: art-2-vi
   aliases:
   - lojas de aplicações
@@ -79,7 +80,7 @@
   slug: sistema-operacional
   tema: rede
   bases:
-  - texto: art. 2, VII
+  - texto: art. 2º, VII
     ancora: art-2-vii
   aliases:
   - sistemas operacionais
@@ -90,7 +91,7 @@
   slug: mecanismo-de-supervisao-parental
   tema: infancia
   bases:
-  - texto: art. 2, VIII
+  - texto: art. 2º, VIII
     ancora: art-2-viii
   aliases:
   - mecanismos de supervisão parental
@@ -104,7 +105,7 @@
   slug: servico-com-controle-editorial
   tema: rede
   bases:
-  - texto: art. 2, IX
+  - texto: art. 2º, IX
     ancora: art-2-ix
   aliases:
   - serviços com controle editorial
@@ -116,7 +117,7 @@
   slug: autoridade-administrativa-autonoma
   tema: sujeitos
   bases:
-  - texto: art. 2, X
+  - texto: art. 2º, X
     ancora: art-2-x
   aliases:
   - autoridade administrativa autônoma
@@ -130,7 +131,7 @@
   slug: monetizacao
   tema: conteudo
   bases:
-  - texto: art. 2, XI
+  - texto: art. 2º, XI
     ancora: art-2-xi
   definicao: remuneração direta ou indireta de usuário de aplicação de internet
     pela publicação, pela postagem, pela exibição, pela disponibilização, pela transmissão,
@@ -141,7 +142,7 @@
   slug: impulsionamento
   tema: conteudo
   bases:
-  - texto: art. 2, XII
+  - texto: art. 2º, XII
     ancora: art-2-xii
   definicao: ampliação artificial do alcance, da visibilidade ou da priorização
     de conteúdo mediante pagamento pecuniário ou valor estimável em dinheiro

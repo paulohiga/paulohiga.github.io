@@ -2,7 +2,7 @@
   slug: conteudo-improprio
   tema: infancia
   bases:
-  - texto: art. 2, I
+  - texto: art. 2º, I
     ancora: art-2-i
   aliases:
   - conteúdo impróprio
@@ -17,7 +17,7 @@
   slug: conteudo-proibido
   tema: infancia
   bases:
-  - texto: art. 2, II
+  - texto: art. 2º, II
     ancora: art-2-ii
   aliases:
   - conteúdo proibido
@@ -30,7 +30,7 @@
   slug: conteudo-pornografico
   tema: infancia
   bases:
-  - texto: art. 2, III
+  - texto: art. 2º, III
     ancora: art-2-iii
   aliases:
   - material pornográfico
@@ -41,7 +41,7 @@
   slug: afericao-de-idade
   tema: infancia
   bases:
-  - texto: art. 2, IV
+  - texto: art. 2º, IV
     ancora: art-2-iv
   aliases:
   - aferir a idade
@@ -55,7 +55,7 @@
   slug: verificacao-de-idade
   tema: infancia
   bases:
-  - texto: art. 2, V
+  - texto: art. 2º, V
     ancora: art-2-v
   definicao: procedimento específico de aferição de idade de alto grau de confiabilidade,
     nos termos estabelecidos pela ANPD, baseado na conferência da veracidade do
@@ -65,7 +65,7 @@
   slug: sinal-de-idade
   tema: infancia
   bases:
-  - texto: art. 2, VI
+  - texto: art. 2º, VI
     ancora: art-2-vi
   aliases:
   - sinais de idade
@@ -79,7 +79,7 @@
   slug: autodeclaracao-de-idade
   tema: infancia
   bases:
-  - texto: art. 2, VII
+  - texto: art. 2º, VII
     ancora: art-2-vii
   aliases:
   - autodeclaração

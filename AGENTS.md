@@ -106,6 +106,12 @@ você precisa ler antes de tocar em `_notas/`, `_leis/` ou `_fragmentos/`.
   `scripts/conferir_definicoes.py` para conferir — ele recusa âncora inexistente
   e definição que não apareça, tal e qual, no texto de `_leis/` (ver
   [`docs/notas.md`](./docs/notas.md#definições-legais)).
+- **Termo que mais de uma norma define é um verbete só.** As definições entram
+  como acepções do mesmo verbete, cada uma com a sua norma e a sua base — é o
+  campo `grupo` que as junta. Vale para termos iguais ou muito próximos,
+  inclusive homônimos de sentidos diferentes; conceitos equivalentes com nomes
+  diferentes ("dado pessoal sensível" e "categorias especiais de dados
+  pessoais") continuam separados, com a equivalência escrita na `nota`.
 - **Confira toda remissão nova contra o texto legal antes de publicar.** Link
   errado numa página pública de legislação é um defeito, não um detalhe. Use
   `scripts/ancorar_referencias.py --check` e revise o diff.

@@ -2,15 +2,16 @@
   slug: exportador
   tema: transferencia
   bases:
-  - texto: art. 3, I
+  - texto: art. 3º, I
     ancora: art-3-i
   definicao: agente de tratamento, localizado no território nacional ou em país
     estrangeiro, que transfere dados pessoais para importador
 - termo: Importador
   slug: importador
-  tema: transferencia
+  grupo: importador
+  tema: sujeitos
   bases:
-  - texto: art. 3, II
+  - texto: art. 3º, II
     ancora: art-3-ii
   definicao: agente de tratamento, localizado em país estrangeiro ou que seja organismo
     internacional, que recebe dados pessoais transferidos por exportador
@@ -18,23 +19,32 @@
   slug: transferencia
   tema: transferencia
   bases:
-  - texto: art. 3, III
+  - texto: art. 3º, III
     ancora: art-3-iii
   definicao: operação de tratamento por meio da qual um agente de tratamento transmite,
     compartilha ou disponibiliza acesso a dados pessoais a outro agente de tratamento
+- termo: Transferência internacional de dados
+  slug: transferencia-internacional-de-dados
+  descartado: repete o art. 5º, XV, da LGPD
+  bases:
+  - texto: art. 3º, IV
+    ancora: art-3-iv
+  definicao: transferência de dados pessoais para país estrangeiro ou organismo
+    internacional do qual o país seja membro
 - termo: Coleta internacional de dados
   slug: coleta-internacional-de-dados
   tema: transferencia
   bases:
-  - texto: art. 3, V
+  - texto: art. 3º, V
     ancora: art-3-v
   definicao: coleta de dados pessoais do titular efetuada diretamente pelo agente
     de tratamento localizado no exterior
 - termo: Grupo ou conglomerado de empresas
   slug: grupo-ou-conglomerado-de-empresas
+  grupo: grupo-ou-conglomerado-de-empresas
   tema: sujeitos
   bases:
-  - texto: art. 3, VI
+  - texto: art. 3º, VI
     ancora: art-3-vi
   definicao: conjunto de empresas de fato ou de direito com personalidades jurídicas
     próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica
@@ -45,7 +55,7 @@
   slug: entidade-responsavel
   tema: transferencia
   bases:
-  - texto: art. 3, VII
+  - texto: art. 3º, VII
     ancora: art-3-vii
   definicao: sociedade empresária, com sede no Brasil, que responde por qualquer
     violação de norma corporativa global, ainda que decorrente de ato praticado
@@ -54,24 +64,26 @@
   slug: mecanismos-de-transferencia-internacional-de-dados
   tema: transferencia
   bases:
-  - texto: art. 3, VIII
+  - texto: art. 3º, VIII
     ancora: art-3-viii
   definicao: hipóteses previstas nos incisos I a IX do art. 33 da Lei nº 13.709,
     de 14 de agosto de 2018, que autorizam uma transferência internacional de dados
 - termo: Organismo internacional
   slug: organismo-internacional
+  grupo: organismo-internacional
   tema: sujeitos
   bases:
-  - texto: art. 3, IX
+  - texto: art. 3º, IX
     ancora: art-3-ix
   definicao: organização regida pelo direito internacional público, incluindo seus
     órgãos subordinados ou qualquer outro órgão criado mediante acordo firmado entre
     dois ou mais países
 - termo: Medidas de segurança
   slug: medidas-de-seguranca
+  grupo: medidas-de-seguranca
   tema: seguranca
   bases:
-  - texto: art. 3, X
+  - texto: art. 3º, X
     ancora: art-3-x
   definicao: medidas técnicas e administrativas adotadas para proteger os dados
     pessoais de acessos não autorizados e de situações acidentais ou ilícitas de

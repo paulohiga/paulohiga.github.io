@@ -61,6 +61,7 @@
     regulamento
 - termo: Importador
   slug: importador
+  grupo: importador
   tema: sujeitos
   bases:
   - texto: art. 3.º, 6)
@@ -79,6 +80,7 @@
     mercado da União
 - termo: Operador
   slug: operador
+  grupo: operador
   tema: sujeitos
   bases:
   - texto: art. 3.º, 8)
@@ -335,6 +337,7 @@
     com base nos quais o sistema produz um resultado
 - termo: Dados biométricos
   slug: dados-biometricos
+  grupo: dados-biometricos
   tema: dados
   bases:
   - texto: art. 3.º, 34)
@@ -363,6 +366,7 @@
     com dados biométricos previamente facultados
 - termo: Categorias especiais de dados pessoais
   slug: categorias-especiais-de-dados-pessoais
+  grupo: categorias-especiais
   tema: dados
   bases:
   - texto: art. 3.º, 37)
@@ -426,6 +430,7 @@
     sistema de identificação biométrica à distância em tempo real
 - termo: Espaço acessível ao público
   slug: espaco-acessivel-ao-publico
+  grupo: zonas-acessiveis-ao-publico
   tema: governanca
   bases:
   - texto: art. 3.º, 44)
@@ -509,6 +514,7 @@
     - d) Danos graves a bens ou ao ambiente;'
 - termo: Dados pessoais
   slug: dados-pessoais
+  grupo: dado-pessoal
   tema: dados
   bases:
   - texto: art. 3.º, 50)
@@ -525,6 +531,7 @@
     1), do Regulamento (UE) 2016/679
 - termo: Definição de perfis
   slug: definicao-de-perfis
+  grupo: perfilamento
   tema: operacoes
   bases:
   - texto: art. 3.º, 52)
@@ -566,14 +573,14 @@
   bases:
   - texto: art. 3.º, 56)
     ancora: art-3
+  aliases:
+  - literacia em IA
   definicao: as competências, os conhecimentos e a compreensão que permitem que
     os prestadores, os responsáveis pela implantação e as pessoas afetadas, tendo
     em conta os respetivos direitos e obrigações no contexto do presente regulamento,
     procedam à implantação dos sistemas de IA com conhecimento de causa e tomem
     consciência das oportunidades e dos riscos inerentes à IA, bem como dos eventuais
     danos que a IA pode causar
-  aliases:
-  - literacia em IA
   nota: O [art. 4.º](#art-4) faz dela um dever transversal, de prestadores e de
     responsáveis pela implantação.
 - termo: Testagem em condições reais
@@ -613,15 +620,15 @@
   bases:
   - texto: art. 3.º, 60)
     ancora: art-3
-  definicao: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA,
-    que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos
-    reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos
-    ou verdadeiros
   aliases:
   - ultrafalsificação
   - ultrafalsificações
   - falsificação profunda
   - deep fake
+  definicao: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA,
+    que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos
+    reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos
+    ou verdadeiros
   nota: É o _deep fake_. A nota usa **ultrafalsificação**, a forma da tradução anterior
     do regulamento; o texto do EUR-Lex hoje traz «falsificações profundas».
 - termo: Infração generalizada

@@ -544,12 +544,15 @@ invisível no diagnóstico original:
 **O que foi feito.**
 
 - **Página `/notas/definicoes`**, montada de dados
-  (`_data/definicoes/verbetes/<norma>.yml`), com os 210 termos que as normas do
-  acervo definem — as seis principais e as resoluções da ANPD.
+  (`_data/definicoes/verbetes/<norma>.yml`), com as 210 definições que as normas
+  do acervo dão aos próprios termos — as seis principais e as resoluções da
+  ANPD —, reunidas em 193 verbetes: quando mais de uma norma define o mesmo
+  termo, elas ficam no mesmo verbete, uma acepção abaixo da outra.
   Ordem alfabética no DOM, organização por tema montada pelo `notas.js`
   movendo os verbetes (e não reordenando por CSS, que mentiria para o leitor
-  de tela), filtro por termo, norma ou tema, e barra de letras que funciona
-  sem JavaScript por ser âncora pura.
+  de tela), filtro por termo, norma, tema ou jurisdição, e um índice no topo
+  para cada organização — a barra de letras funciona sem JavaScript, por ser
+  âncora pura.
 - **Termo marcado no comentário**, no primeiro uso de cada um em cada seção
   `##`, abrindo um balão com a definição e a base legal. A base volta para o
   painel da lei: clicar em "art. 2º, IV" no balão de um verbete do decreto,

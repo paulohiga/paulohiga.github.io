@@ -2,7 +2,7 @@
   slug: conteudo-intimo
   tema: conteudo
   bases:
-  - texto: art. 3, I
+  - texto: art. 3º, I
     ancora: art-3-i
   definicao: imagem, vídeo, áudio, mensagem de texto ou qualquer conteúdo por escrito,
     ou combinação destes, que exponha nudez, seminudez, ato sexual ou contexto sexualizante,
@@ -12,7 +12,7 @@
   slug: violencia-contra-mulheres-em-ambiente-digital
   tema: conteudo
   bases:
-  - texto: art. 3, II
+  - texto: art. 3º, II
     ancora: art-3-ii
   definicao: 'crimes ou atos ilícitos contra mulheres, em razão da condição do sexo
     feminino, consistente em ato, conduta ou omissão que cause morte, dano ou sofrimento

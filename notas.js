@@ -60,6 +60,7 @@
     if (listaDefinicoes) {
         var barraDefinicoes = document.querySelector('.definicoes__barra');
         var letrasDefinicoes = document.querySelector('.definicoes__letras');
+        var temasDefinicoes = document.querySelector('.definicoes__temas');
         var vazioDefinicoes = listaDefinicoes.querySelector('.definicoes__vazio');
         var campoDefinicoes = document.getElementById('definicoes-filtro');
         var botoesOrganizar = Array.prototype.slice.call(
@@ -102,9 +103,10 @@
             });
             gruposPorLetra.forEach(function (grupo) { grupo.hidden = organizacao === 'tema'; });
             gruposPorTema.forEach(function (grupo) { grupo.hidden = organizacao !== 'tema'; });
-            // A barra de letras é âncora para as seções por letra: sem elas na
-            // tela, ela apontaria para o nada.
+            // Cada índice aponta para as seções da sua organização: fora dela,
+            // apontaria para o nada. Trocam de lugar junto com a lista.
             if (letrasDefinicoes) letrasDefinicoes.hidden = organizacao === 'tema';
+            if (temasDefinicoes) temasDefinicoes.hidden = organizacao !== 'tema';
             botoesOrganizar.forEach(function (botao) {
                 botao.setAttribute('aria-pressed', String(botao.dataset.organizacao === organizacao));
             });
@@ -1479,21 +1481,49 @@
         balao.focus({ preventScroll: true });
     }
 
+    /* As normas *desta* nota (a principal e as de `normas_extra`), lidas do
+       primeiro grupo do seletor do painel. Servem ao balão: num verbete com
+       várias acepções, a da norma que o leitor está lendo vem primeiro. */
+    var normasDaNota = {};
+    if (seletorNorma) {
+        var grupoDaNota = seletorNorma.querySelector('optgroup');
+        if (grupoDaNota) {
+            Array.prototype.forEach.call(grupoDaNota.querySelectorAll('option'), function (opcao) {
+                normasDaNota[opcao.value.replace('lei-doc-', '')] = true;
+            });
+        }
+    }
+
     function corpoDoVerbete(verbete) {
         var copia = verbete.cloneNode(true);
         // O id sai: ele já existe na página de definições, e duplicá-lo aqui
         // faria `#v-...` resolver para o balão em vez de para a lista.
         copia.removeAttribute('id');
-        /* A etiqueta da norma vira texto: no balão ela sempre apontaria para a
-           própria nota em que o leitor está — um link que recarrega a página
-           para chegar onde ele já estava. */
-        var etiqueta = copia.querySelector('.verbete__norma');
-        if (etiqueta) {
+
+        /* Na página, as acepções vêm com o Brasil à frente. No balão, quem vem
+           à frente é a norma que o leitor está lendo: abrir "dado pessoal" na
+           nota do RGPD e receber a LGPD primeiro é responder outra pergunta. A
+           ordem relativa das demais não muda. */
+        var acepcoes = Array.prototype.slice.call(copia.querySelectorAll('.verbete__acepcao'));
+        if (acepcoes.length > 1) {
+            acepcoes.forEach(function (acepcao) {
+                if (normasDaNota[acepcao.dataset.norma]) copia.appendChild(acepcao);
+            });
+            acepcoes.forEach(function (acepcao) {
+                if (!normasDaNota[acepcao.dataset.norma]) copia.appendChild(acepcao);
+            });
+        }
+        /* A etiqueta da norma vira texto quando aponta para a nota em que o
+           leitor já está — seria um link que recarrega a página para chegar
+           onde ele estava. Num verbete com várias acepções, as outras apontam
+           para outras notas e continuam sendo link. */
+        Array.prototype.forEach.call(copia.querySelectorAll('.verbete__norma'), function (etiqueta) {
+            if (caminhoDaUrl(new URL(etiqueta.href).pathname) !== caminhoDaUrl(location.pathname)) return;
             var nome = document.createElement('span');
             nome.className = etiqueta.className;
             nome.textContent = etiqueta.textContent;
             etiqueta.parentNode.replaceChild(nome, etiqueta);
-        }
+        });
         return copia;
     }
 

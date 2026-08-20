@@ -18,7 +18,10 @@ O que ele confere, por norma:
   - **a definição é a letra da norma**: o começo dela tem de aparecer, tal e
     qual, no texto de `_leis/<norma>.md`. É a conferência que impede uma
     paráfrase de se passar por definição legal — interpretação e comentário vão
-    no campo `nota`.
+    no campo `nota`;
+  - verbetes que compartilham `grupo` — as várias acepções de um mesmo termo —
+    compartilham o tema, senão o verbete apareceria num tema e sumiria do
+    outro.
 
 E avisa (sem reprovar) quando um termo ou apelido colide com outro **dentro da
 mesma nota**: o índice que marca os termos no comentário é montado com as
@@ -111,7 +114,13 @@ def conferir(slug: str, temas: set[str], registro: dict) -> list[str]:
             continue
         onde = f"{slug}/{verbete.get('slug') or i}"
 
+        # Definição que a norma copia de uma superior fica no arquivo com o
+        # motivo escrito, e a página não a mostra — mas o texto continua sendo
+        # conferido contra a norma.
+        descartado = bool(str(verbete.get("descartado") or "").strip())
         for campo in OBRIGATORIOS:
+            if descartado and campo == "tema":
+                continue
             if not str(verbete.get(campo) or "").strip():
                 problemas.append(f"{onde}: sem `{campo}`")
 
@@ -123,7 +132,7 @@ def conferir(slug: str, temas: set[str], registro: dict) -> list[str]:
         vistos.add(chave)
 
         tema = verbete.get("tema")
-        if tema and tema not in temas:
+        if tema and tema not in temas and not descartado:
             problemas.append(f"{onde}: tema `{tema}` não está em _data/definicoes/temas.yml")
 
         bases = verbete.get("bases") or []
@@ -149,6 +158,31 @@ def conferir(slug: str, temas: set[str], registro: dict) -> list[str]:
     return problemas
 
 
+def conferir_grupos(por_norma: dict[str, list]) -> list[str]:
+    """Verbetes que compartilham `grupo` compartilham o tema.
+
+    O grupo vira um verbete só na página, e o tema dele é o do primeiro membro.
+    Membros com temas diferentes fariam o verbete aparecer num tema e sumir do
+    outro, sem aviso nenhum.
+    """
+    temas: dict[str, tuple[str, str]] = {}
+    problemas: list[str] = []
+    for norma, verbetes in sorted(por_norma.items()):
+        for verbete in verbetes:
+            grupo = verbete.get("grupo")
+            if not grupo or verbete.get("descartado"):
+                continue
+            dono = f"{norma}/{verbete.get('slug')}"
+            tema = verbete.get("tema")
+            if grupo in temas and temas[grupo][0] != tema:
+                problemas.append(
+                    f"grupo `{grupo}`: tema `{temas[grupo][0]}` em {temas[grupo][1]} "
+                    f"e `{tema}` em {dono}"
+                )
+            temas.setdefault(grupo, (tema, dono))
+    return problemas
+
+
 def conferir_colisoes(por_norma: dict[str, list]) -> list[str]:
     """Termos e apelidos repetidos dentro de uma mesma nota.
 
@@ -163,10 +197,12 @@ def conferir_colisoes(por_norma: dict[str, list]) -> list[str]:
         formas: dict[str, str] = {}
         for norma in normas:
             for verbete in por_norma.get(norma, []):
+                if verbete.get("descartado"):
+                    continue
                 textos = [verbete.get("termo", "")] + list(verbete.get("aliases") or [])
                 for texto in textos:
                     chave = normalizar(texto)
-                    dono = f"{norma}/{verbete.get('slug')}"
+                    dono = verbete.get("grupo") or f"{norma}/{verbete.get('slug')}"
                     if chave in formas and formas[chave] != dono:
                         problemas.append(
                             f"{nota.stem}: \"{texto}\" é definido por {formas[chave]} "
@@ -195,6 +231,7 @@ def main() -> int:
     if not sys.argv[1:]:
         for arquivo in VERBETES_DIR.glob("*.yml"):
             por_norma.setdefault(arquivo.stem, _yaml(arquivo) or [])
+        problemas.extend(conferir_grupos(por_norma))
         avisos = conferir_colisoes(por_norma)
 
     for p in problemas:

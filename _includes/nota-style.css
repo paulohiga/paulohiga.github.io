@@ -18,12 +18,6 @@
     --hairline: rgba(15, 23, 42, 0.12);
     --realce: rgba(29, 78, 216, 0.16);
 
-    /* Etiqueta da norma estrangeira, na página de definições. Outro matiz, e
-       não outro tom do mesmo azul: o que ela precisa dizer é "outro
-       ordenamento", e isso não se lê numa variação de intensidade. */
-    --estrangeira-bg: #fef3c7;
-    --estrangeira-ink: #92400e;
-    --estrangeira-linha: rgba(146, 64, 14, 0.3);
 }
 
 body.dark-theme {
@@ -38,9 +32,6 @@ body.dark-theme {
     --hairline: rgba(255, 255, 255, 0.12);
     --realce: rgba(125, 211, 252, 0.22);
 
-    --estrangeira-bg: #2a2113;
-    --estrangeira-ink: #fbbf24;
-    --estrangeira-linha: rgba(251, 191, 36, 0.35);
 }
 
 * {
@@ -1832,20 +1823,23 @@ body.js .definicoes__controles {
     font-size: 0.85rem;
 }
 
-.definicoes__letras {
+.definicoes__letras,
+.definicoes__temas {
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
 }
 
 /* O `display: flex` acima é mais específico que o `[hidden]` do navegador, e
-   sem esta regra a barra continuaria na tela na organização por tema — onde as
-   seções por letra que ela aponta não existem. */
-.definicoes__letras[hidden] {
+   sem esta regra a barra continuaria na tela na organização em que as seções
+   que ela aponta não estão montadas. */
+.definicoes__letras[hidden],
+.definicoes__temas[hidden] {
     display: none;
 }
 
-.definicoes__letras a {
+.definicoes__letras a,
+.definicoes__temas a {
     display: grid;
     place-items: center;
     min-width: 1.75rem;
@@ -1860,14 +1854,41 @@ body.js .definicoes__controles {
     text-decoration: none;
 }
 
+/* O nome do tema não cabe num quadrado de letra: o chip cresce com o texto. */
+.definicoes__temas a {
+    padding: 0 0.6rem;
+    font-weight: 500;
+}
+
+/* Em tela estreita os doze temas quebram em seis linhas, e a barra presa no
+   topo comeria metade da tela. Viram um trilho de rolagem horizontal — contida
+   na própria barra, que é o padrão para faixa de chips; a página continua sem
+   rolagem lateral. */
+@media (max-width: 699px) {
+    .definicoes__temas {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        padding-bottom: 0.25rem;
+    }
+
+    .definicoes__temas a {
+        flex: none;
+    }
+}
+
 .definicoes__letras a:hover,
-.definicoes__letras a:focus-visible {
+.definicoes__letras a:focus-visible,
+.definicoes__temas a:hover,
+.definicoes__temas a:focus-visible {
     border-color: var(--accent);
     color: var(--link);
 }
 
 /* O que a barra presa no topo cobriria num salto por âncora. */
 .definicoes__inicial,
+.definicoes__grupo--tema,
 .definicoes__tema,
 .verbete {
     scroll-margin-top: calc(var(--nota-topo-altura, 0rem) + var(--definicoes-barra, 6rem) + 0.75rem);
@@ -1918,10 +1939,30 @@ body.js .definicoes__controles {
 }
 
 .verbete__termo {
-    margin: 0;
+    margin: 0 0 0.6rem;
     font-family: var(--font-serif);
     font-size: 1.05rem;
     line-height: 1.35;
+}
+
+/* Uma acepção por norma que define o termo. A régua entre elas é o que diz
+   "outra definição, outra norma" — sem ela, quatro definições de "dado pessoal"
+   viram um bloco só. */
+.verbete__acepcao + .verbete__acepcao {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--hairline);
+}
+
+/* O termo desta acepção, quando difere do que abre o verbete ("Dados pessoais",
+   do RGPD, num verbete que abre por "Dado pessoal", da LGPD). Igual ao do
+   título, não se repete. */
+.verbete__acepcao-termo {
+    margin: 0 0 0.4rem;
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--ink-soft);
 }
 
 /* A norma e a base legal em etiquetas, e não em texto corrido: são o que
@@ -1930,8 +1971,9 @@ body.js .definicoes__controles {
 .verbete__origem {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.3rem;
-    margin: 0.4rem 0 0.65rem;
+    margin: 0 0 0.5rem;
 }
 
 .verbete__jurisdicao,
@@ -1944,21 +1986,33 @@ body.js .definicoes__controles {
     text-decoration: none;
 }
 
-/* Brasil é a etiqueta discreta; a de fora do Brasil muda de matiz. O leitor
-   precisa saber, antes da definição, se o verbete é do ordenamento dele — "dados
-   pessoais" tem uma definição na LGPD e outra no RGPD, e só uma vale aqui. */
+/* O leitor precisa saber, antes da definição, se aquela acepção é do
+   ordenamento dele: "dados pessoais" tem uma definição na LGPD e outra no
+   RGPD, e só uma obriga aqui. O peso vai para o Brasil, que é o caso do
+   leitor; a estrangeira recua para nota de rodapé — o público desta seção é
+   brasileiro, e uma etiqueta chamativa em cem verbetes europeus daria a eles a
+   atenção que o texto não lhes dá. */
 .verbete__jurisdicao {
     display: inline-block;
+    background: none;
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0.35rem;
     color: var(--ink-soft);
+    font-size: 0.72rem;
+    opacity: 0.7;
     white-space: nowrap;
 }
 
-.verbete[data-jurisdicao]:not([data-jurisdicao="brasil"]) .verbete__jurisdicao,
+.verbete__acepcao[data-jurisdicao="brasil"] .verbete__jurisdicao,
 .verbete__jurisdicao--exemplo {
-    background: var(--estrangeira-bg);
-    border-color: var(--estrangeira-linha);
-    color: var(--estrangeira-ink);
-    font-weight: 600;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background: var(--surface-tint);
+    border-color: var(--hairline);
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    opacity: 1;
 }
 
 .verbete__norma {

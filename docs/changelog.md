@@ -23,27 +23,36 @@ no site, não o caminho até lá.
 
 As **definições legais** das normas comentadas passaram a viver numa página
 própria, **[`/notas/definicoes`](https://higa.me/notas/definicoes)**, e saíram
-do começo das notas. São 210 termos, cada um com o dispositivo em que a norma o
-define — e com **o texto da norma**, transcrito, e não resumido: 20 da LGPD, 8
-do Marco Civil da Internet e 2 do Decreto nº 8.771/2016, 13 do ECA Digital e 9
+do começo das notas. São 210 definições, cada uma com o dispositivo em que a
+norma a dá — e com **o texto da norma**, transcrito, e não resumido: 20 da LGPD,
+8 do Marco Civil da Internet e 2 do Decreto nº 8.771/2016, 13 do ECA Digital e 9
 do Decreto nº 12.880/2026, 2 do Decreto nº 12.976/2026, 29 do RGPD, 70 do AI
 Act, 1 do Regulamento (UE) 2025/2518, 7 do Regimento Interno da ANPD e 49 das
 resoluções do Conselho Diretor da ANPD sobre fiscalização e sanções, dosimetria,
 agentes de pequeno porte, incidente de segurança, encarregado e transferência
 internacional.
 
+**Termo que mais de uma norma define é um verbete só.** "Dado pessoal" tem
+definição na LGPD, no Decreto nº 8.771/2016, no RGPD e no AI Act, e as quatro
+ficam no mesmo verbete, uma acepção abaixo da outra, cada qual com a sua base
+legal. São 193 verbetes para as 210 definições. Vale também para os homônimos:
+"operador" é o operador da LGPD e o gênero que reúne prestador, importador e
+distribuidor no AI Act, e ver as duas definições lado a lado é o que desfaz a
+confusão.
+
 A página organiza a lista de duas maneiras — **em ordem alfabética** e **por
 tema** (sujeitos e papéis, dados e informação, operações e técnicas, rede e
 plataformas, conteúdo e moderação, inteligência artificial, infância e
 adolescência, segurança e incidentes, transferência internacional, governança e
-conformidade, fiscalização e sanções, rito e deliberação) — e traz um filtro por
-termo, norma, tema ou jurisdição.
+conformidade, fiscalização e sanções, rito e deliberação) —, cada uma com o seu
+índice no topo, e traz um filtro por termo, norma, tema ou jurisdição.
 
-**Cada verbete diz de qual ordenamento fala.** Uma etiqueta separa o direito
-brasileiro do direito da União Europeia, que não obriga no Brasil: "dados
-pessoais" tem uma definição no [art. 5º, I, da LGPD](https://higa.me/notas/lgpd#art-5-i)
-e outra no [art. 4.º, 1), do RGPD](https://higa.me/notas/gdpr#art-4), e ler as
-duas na mesma lista sem essa distinção seria confundi-las.
+**Cada acepção diz de qual ordenamento fala.** Uma etiqueta marca o que é
+direito brasileiro; sem ela, a acepção é de direito estrangeiro, que não obriga
+no Brasil. "Dados pessoais" tem uma definição no
+[art. 5º, I, da LGPD](https://higa.me/notas/lgpd#art-5-i) e outra no
+[art. 4.º, 1), do RGPD](https://higa.me/notas/gdpr#art-4), e lê-las na mesma
+lista sem essa distinção seria confundi-las.
 
 **Nos comentários, os mesmos termos ficam marcados no corpo do texto** — o
 primeiro uso de cada um em cada seção — e o clique abre a definição ali mesmo,

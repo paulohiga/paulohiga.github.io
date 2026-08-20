@@ -2,7 +2,7 @@
   slug: internet
   tema: rede
   bases:
-  - texto: art. 5, I
+  - texto: art. 5º, I
     ancora: art-5-i
   definicao: o sistema constituído do conjunto de protocolos lógicos, estruturado
     em escala mundial para uso público e irrestrito, com a finalidade de possibilitar
@@ -11,7 +11,7 @@
   slug: terminal
   tema: rede
   bases:
-  - texto: art. 5, II
+  - texto: art. 5º, II
     ancora: art-5-ii
   aliases:
   - terminais
@@ -20,7 +20,7 @@
   slug: endereco-ip
   tema: rede
   bases:
-  - texto: art. 5, III
+  - texto: art. 5º, III
     ancora: art-5-iii
   aliases:
   - endereço IP
@@ -31,7 +31,7 @@
   slug: administrador-de-sistema-autonomo
   tema: rede
   bases:
-  - texto: art. 5, IV
+  - texto: art. 5º, IV
     ancora: art-5-iv
   definicao: a pessoa física ou jurídica que administra blocos de endereço IP específicos
     e o respectivo sistema autônomo de roteamento, devidamente cadastrada no ente
@@ -41,7 +41,7 @@
   slug: conexao-a-internet
   tema: rede
   bases:
-  - texto: art. 5, V
+  - texto: art. 5º, V
     ancora: art-5-v
   definicao: a habilitação de um terminal para envio e recebimento de pacotes de
     dados pela internet, mediante a atribuição ou autenticação de um endereço IP
@@ -49,7 +49,7 @@
   slug: registro-de-conexao
   tema: dados
   bases:
-  - texto: art. 5, VI
+  - texto: art. 5º, VI
     ancora: art-5-vi
   aliases:
   - registros de conexão
@@ -60,7 +60,7 @@
   slug: aplicacoes-de-internet
   tema: rede
   bases:
-  - texto: art. 5, VII
+  - texto: art. 5º, VII
     ancora: art-5-vii
   aliases:
   - aplicação de internet
@@ -70,7 +70,7 @@
   slug: registros-de-acesso-a-aplicacoes
   tema: dados
   bases:
-  - texto: art. 5, VIII
+  - texto: art. 5º, VIII
     ancora: art-5-viii
   aliases:
   - registros de acesso a aplicações

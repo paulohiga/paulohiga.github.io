@@ -2,7 +2,7 @@
   slug: agentes-de-tratamento-de-pequeno-porte
   tema: sujeitos
   bases:
-  - texto: art. 2, I
+  - texto: art. 2º, I
     ancora: art-2-i
   definicao: microempresas, empresas de pequeno porte, startups, pessoas jurídicas
     de direito privado, inclusive sem fins lucrativos, nos termos da legislação
@@ -13,7 +13,7 @@
   slug: microempresas-e-empresas-de-pequeno-porte
   tema: sujeitos
   bases:
-  - texto: art. 2, II
+  - texto: art. 2º, II
     ancora: art-2-ii
   definicao: sociedade empresária, sociedade simples, sociedade limitada unipessoal,
     nos termos do art. 41 da Lei nº 14.195, de 26 de agosto de 2021, e o empresário
@@ -26,7 +26,7 @@
   slug: startups
   tema: sujeitos
   bases:
-  - texto: art. 2, III
+  - texto: art. 2º, III
     ancora: art-2-iii
   definicao: organizações empresariais ou societárias, nascentes ou em operação
     recente, cuja atuação caracteriza-se pela inovação aplicada a modelo de negócios
@@ -34,9 +34,10 @@
     Capítulo II da Lei Complementar nº 182, de 1º de junho de 2021
 - termo: Zonas acessíveis ao público
   slug: zonas-acessiveis-ao-publico
+  grupo: zonas-acessiveis-ao-publico
   tema: governanca
   bases:
-  - texto: art. 2, IV
+  - texto: art. 2º, IV
     ancora: art-2-iv
   definicao: espaços abertos ao público, como praças, centros comerciais, vias públicas,
     estações de ônibus, de metrô e de trem, aeroportos, portos, bibliotecas públicas,

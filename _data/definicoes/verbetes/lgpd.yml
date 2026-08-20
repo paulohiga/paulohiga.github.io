@@ -1,8 +1,9 @@
 - termo: Dado pessoal
   slug: dado-pessoal
+  grupo: dado-pessoal
   tema: dados
   bases:
-  - texto: art. 5, I
+  - texto: art. 5º, I
     ancora: art-5-i
   aliases:
   - dados pessoais
@@ -26,7 +27,7 @@
   slug: dado-pessoal-sensivel
   tema: dados
   bases:
-  - texto: art. 5, II
+  - texto: art. 5º, II
     ancora: art-5-ii
   aliases:
   - dados pessoais sensíveis
@@ -44,7 +45,7 @@
   slug: dado-anonimizado
   tema: dados
   bases:
-  - texto: art. 5, III
+  - texto: art. 5º, III
     ancora: art-5-iii
   aliases:
   - dados anonimizados
@@ -62,7 +63,7 @@
   slug: banco-de-dados
   tema: dados
   bases:
-  - texto: art. 5, IV
+  - texto: art. 5º, IV
     ancora: art-5-iv
   aliases:
   - bancos de dados
@@ -72,7 +73,7 @@
   slug: titular
   tema: sujeitos
   bases:
-  - texto: art. 5, V
+  - texto: art. 5º, V
     ancora: art-5-v
   aliases:
   - titulares
@@ -82,7 +83,7 @@
   slug: controlador
   tema: sujeitos
   bases:
-  - texto: art. 5, VI
+  - texto: art. 5º, VI
     ancora: art-5-vi
   aliases:
   - controladores
@@ -97,9 +98,10 @@
     tal ([art. 42, § 1º, I](#art-42-p1-i)).'
 - termo: Operador
   slug: operador
+  grupo: operador
   tema: sujeitos
   bases:
-  - texto: art. 5, VII
+  - texto: art. 5º, VII
     ancora: art-5-vii
   aliases:
   - operadores
@@ -109,7 +111,7 @@
   slug: encarregado
   tema: sujeitos
   bases:
-  - texto: art. 5, VIII
+  - texto: art. 5º, VIII
     ancora: art-5-viii
   definicao: pessoa indicada pelo controlador e operador para atuar como canal de
     comunicação entre o controlador, os titulares dos dados e a Agência Nacional
@@ -118,16 +120,17 @@
   slug: agentes-de-tratamento
   tema: sujeitos
   bases:
-  - texto: art. 5, IX
+  - texto: art. 5º, IX
     ancora: art-5-ix
   aliases:
   - agente de tratamento
   definicao: o controlador e o operador
 - termo: Tratamento
   slug: tratamento
+  grupo: tratamento
   tema: operacoes
   bases:
-  - texto: art. 5, X
+  - texto: art. 5º, X
     ancora: art-5-x
   definicao: toda operação realizada com dados pessoais, como as que se referem
     a coleta, produção, recepção, classificação, utilização, acesso, reprodução,
@@ -142,7 +145,7 @@
   slug: anonimizacao
   tema: operacoes
   bases:
-  - texto: art. 5, XI
+  - texto: art. 5º, XI
     ancora: art-5-xi
   aliases:
   - anonimizar
@@ -151,9 +154,10 @@
     direta ou indireta, a um indivíduo
 - termo: Consentimento
   slug: consentimento
+  grupo: consentimento
   tema: operacoes
   bases:
-  - texto: art. 5, XII
+  - texto: art. 5º, XII
     ancora: art-5-xii
   definicao: manifestação livre, informada e inequívoca pela qual o titular concorda
     com o tratamento de seus dados pessoais para uma finalidade determinada
@@ -161,7 +165,7 @@
   slug: bloqueio
   tema: operacoes
   bases:
-  - texto: art. 5, XIII
+  - texto: art. 5º, XIII
     ancora: art-5-xiii
   definicao: suspensão temporária de qualquer operação de tratamento, mediante guarda
     do dado pessoal ou do banco de dados
@@ -169,7 +173,7 @@
   slug: eliminacao
   tema: operacoes
   bases:
-  - texto: art. 5, XIV
+  - texto: art. 5º, XIV
     ancora: art-5-xiv
   definicao: exclusão de dado ou de conjunto de dados armazenados em banco de dados,
     independentemente do procedimento empregado
@@ -177,7 +181,7 @@
   slug: transferencia-internacional
   tema: transferencia
   bases:
-  - texto: art. 5, XV
+  - texto: art. 5º, XV
     ancora: art-5-xv
   definicao: transferência de dados pessoais para país estrangeiro ou organismo
     internacional do qual o país seja membro
@@ -185,7 +189,7 @@
   slug: uso-compartilhado
   tema: operacoes
   bases:
-  - texto: art. 5, XVI
+  - texto: art. 5º, XVI
     ancora: art-5-xvi
   aliases:
   - uso compartilhado
@@ -199,7 +203,7 @@
   slug: ripd
   tema: governanca
   bases:
-  - texto: art. 5, XVII
+  - texto: art. 5º, XVII
     ancora: art-5-xvii
   aliases:
   - RIPD
@@ -212,7 +216,7 @@
   slug: orgao-de-pesquisa
   tema: sujeitos
   bases:
-  - texto: art. 5, XVIII
+  - texto: art. 5º, XVIII
     ancora: art-5-xviii
   aliases:
   - órgãos de pesquisa
@@ -226,13 +230,14 @@
   slug: autoridade-nacional
   tema: sujeitos
   bases:
-  - texto: art. 5, XIX
+  - texto: art. 5º, XIX
     ancora: art-5-xix
   definicao: entidade da administração pública responsável por zelar, implementar
     e fiscalizar o cumprimento desta Lei em todo o território nacional. _(Redação
     dada pela Lei nº 15.352, de 2026)_
 - termo: Pseudonimização
   slug: pseudonimizacao
+  grupo: pseudonimizacao
   tema: operacoes
   bases:
   - texto: art. 13, § 4º

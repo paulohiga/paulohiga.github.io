@@ -25,14 +25,18 @@
 {%- assign norma_slug = arquivo[0] -%}
 {%- assign norma = site.leis | where: 'slug', norma_slug | first -%}
 {%- for verbete in arquivo[1] %}
+{%- unless verbete.descartado -%}
+{%- assign grupo_verbete = verbete.grupo | default: nil -%}
+{%- unless grupo_verbete -%}{%- assign grupo_verbete = norma.prefixo | append: '-' | append: verbete.slug -%}{%- endunless %}
         {%- unless primeiro %},{% endunless %}{% assign primeiro = false %}
         {
           "@type": "DefinedTerm",
           "name": {{ verbete.termo | jsonify }},
           "description": {{ verbete.definicao | markdownify | strip_html | normalize_whitespace | strip | truncate: 200 | jsonify }},
           "inDefinedTermSet": "{{ url_canonica }}",
-          "url": "{{ url_canonica }}#v-{{ norma.prefixo }}-{{ verbete.slug }}"
+          "url": "{{ url_canonica }}#v-{{ grupo_verbete }}"
         }
+{%- endunless -%}
 {%- endfor -%}
 {%- endfor %}
       ],

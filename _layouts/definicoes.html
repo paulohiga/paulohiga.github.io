@@ -56,15 +56,16 @@
 
     <main class="definicoes">
         <p class="definicoes__intro">
-            Os {{ definicoes_total }} termos que as normas comentadas em <a href="/notas">/notas</a>
-            definem elas próprias — leis, decretos, resoluções da ANPD e os regulamentos europeus.
-            <strong>A definição é a letra da norma</strong>, transcrita do dispositivo indicado;
-            o que vem depois dela, em corpo menor, é comentário. A etiqueta separa o direito
-            <span class="verbete__jurisdicao">Brasil</span> do direito da
-            <span class="verbete__jurisdicao verbete__jurisdicao--exemplo">União Europeia</span>,
-            que não obriga no Brasil. O link da base legal abre a nota da norma já posicionada no
-            texto; nos comentários, os mesmos termos ficam marcados no corpo do texto, e um clique
-            abre a definição sem sair da leitura.
+            As {{ definicoes_total }} definições que as normas comentadas em <a href="/notas">/notas</a>
+            dão aos próprios termos — leis, decretos, resoluções da ANPD e os regulamentos europeus
+            —, reunidas em {{ definicoes_verbetes }} verbetes: quando mais de uma norma define o
+            mesmo termo, elas ficam no mesmo verbete, uma acepção abaixo da outra, cada qual com a
+            sua base legal. <strong>A definição é a letra da norma</strong>, transcrita do
+            dispositivo indicado; o que vem depois dela, em corpo menor, é comentário. A etiqueta
+            <span class="verbete__jurisdicao verbete__jurisdicao--exemplo">Brasil</span> marca o
+            que obriga aqui; sem ela, a acepção é de direito estrangeiro. O link da base legal abre
+            a nota da norma já posicionada no texto; nos comentários, os mesmos termos ficam
+            marcados no corpo do texto, e um clique abre a definição sem sair da leitura.
         </p>
 
         <!-- Presa no topo enquanto a lista rola: com 97 verbetes, ter de
@@ -87,6 +88,15 @@
                 <a href="#letra-{{ inicial | downcase }}">{{ inicial }}</a>
 {%- endfor %}
             </nav>
+            <!-- O índice da organização por tema, irmão da barra de letras. Nasce
+                 oculto porque as seções que ele aponta só são montadas pelo
+                 notas.js — sem JavaScript não há organização por tema, e um
+                 índice para o nada é pior do que índice nenhum. -->
+            <nav class="definicoes__temas" aria-label="Ir para o tema" hidden>
+{%- for tema in site.data.definicoes.temas %}
+                <a href="#tema-{{ tema.id }}">{{ tema.nome }}</a>
+{%- endfor %}
+            </nav>
         </div>
 
         <div id="lista-definicoes" class="definicoes__lista" tabindex="-1">
@@ -98,7 +108,7 @@
                  duplicar nenhum verbete: dois `id` iguais quebrariam os links
                  diretos, que são o motivo de a página existir. -->
 {%- for tema in site.data.definicoes.temas %}
-            <section class="definicoes__grupo definicoes__grupo--tema" data-tema="{{ tema.id }}" hidden>
+            <section class="definicoes__grupo definicoes__grupo--tema" id="tema-{{ tema.id }}" data-tema="{{ tema.id }}" hidden>
                 <h2 class="definicoes__tema">{{ tema.nome }}</h2>
                 <p class="definicoes__tema-descricao">{{ tema.descricao }}</p>
                 <div class="definicoes__itens"></div>

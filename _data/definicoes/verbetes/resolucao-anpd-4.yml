@@ -1,8 +1,9 @@
 - termo: Grupo ou conglomerado de empresas
   slug: grupo-ou-conglomerado-de-empresas
+  grupo: grupo-ou-conglomerado-de-empresas
   tema: sujeitos
   bases:
-  - texto: art. 2, I
+  - texto: art. 2º, I
     ancora: art-2-i
   definicao: conjunto de empresas de fato ou de direito com personalidades jurídicas
     próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica
@@ -13,7 +14,7 @@
   slug: infracao
   tema: fiscalizacao
   bases:
-  - texto: art. 2, II
+  - texto: art. 2º, II
     ancora: art-2-ii
   definicao: descumprimento de obrigação estabelecida na Lei nº 13.709, de 14 de
     agosto de 2018 (LGPD), e nos regulamentos expedidos pela ANPD
@@ -21,7 +22,7 @@
   slug: infracao-permanente
   tema: fiscalizacao
   bases:
-  - texto: art. 2, III
+  - texto: art. 2º, III
     ancora: art-2-iii
   definicao: conduta infrativa que se prolonga no tempo, mediante ação ou omissão
     do infrator referente ao mesmo dispositivo normativo
@@ -29,14 +30,14 @@
   slug: infrator
   tema: fiscalizacao
   bases:
-  - texto: art. 2, IV
+  - texto: art. 2º, IV
     ancora: art-2-iv
   definicao: agente de tratamento que comete infração
 - termo: Medidas corretivas
   slug: medidas-corretivas
   tema: fiscalizacao
   bases:
-  - texto: art. 2, V
+  - texto: art. 2º, V
     ancora: art-2-v
   definicao: medidas determinadas pela ANPD com a finalidade de corrigir a infração
     e reconduzir o infrator à plena conformidade à LGPD e aos regulamentos expedidos
@@ -46,7 +47,7 @@
   slug: politica-de-boas-praticas-e-de-governanca
   tema: governanca
   bases:
-  - texto: art. 2, VI
+  - texto: art. 2º, VI
     ancora: art-2-vi
   definicao: 'normas e processos internos que assegurem o cumprimento abrangente
     da legislação de proteção de dados pessoais, estabelecidos e implementados pelo
@@ -62,7 +63,7 @@
   slug: ramo-de-atividade-empresarial
   tema: fiscalizacao
   bases:
-  - texto: art. 2, VII
+  - texto: art. 2º, VII
     ancora: art-2-vii
   definicao: área de atuação de empresa, grupo ou conglomerado de empresas, conforme
     definido pela ANPD e verificado no caso concreto, podendo ser comprovada mediante
@@ -72,7 +73,7 @@
   slug: reincidencia-especifica
   tema: fiscalizacao
   bases:
-  - texto: art. 2, VIII
+  - texto: art. 2º, VIII
     ancora: art-2-viii
   definicao: repetição de infração pelo mesmo infrator ao mesmo dispositivo legal
     ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado
@@ -81,7 +82,7 @@
   slug: reincidencia-generica
   tema: fiscalizacao
   bases:
-  - texto: art. 2, IX
+  - texto: art. 2º, IX
     ancora: art-2-ix
   definicao: cometimento de infração pelo mesmo infrator, independentemente do dispositivo
     legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em
@@ -91,7 +92,7 @@
   slug: transito-em-julgado
   tema: fiscalizacao
   bases:
-  - texto: art. 2, X
+  - texto: art. 2º, X
     ancora: art-2-x
   definicao: atributo de decisão definitiva proferida em processo administrativo
     sancionador, no âmbito da ANPD, tornando-a imutável e indiscutível dentro do

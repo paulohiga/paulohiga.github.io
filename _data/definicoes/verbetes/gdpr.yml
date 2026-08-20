@@ -1,5 +1,6 @@
 - termo: Dados pessoais
   slug: dados-pessoais
+  grupo: dado-pessoal
   tema: dados
   bases:
   - texto: art. 4.º, 1)
@@ -19,6 +20,7 @@
     —, à luz do custo, do tempo e da tecnologia disponível.'
 - termo: Tratamento
   slug: tratamento
+  grupo: tratamento
   tema: operacoes
   bases:
   - texto: art. 4.º, 2)
@@ -40,6 +42,7 @@
     de limitar o seu tratamento no futuro
 - termo: Definição de perfis
   slug: definicao-de-perfis
+  grupo: perfilamento
   tema: operacoes
   bases:
   - texto: art. 4.º, 4)
@@ -55,6 +58,7 @@
     modo similar.'
 - termo: Pseudonimização
   slug: pseudonimizacao
+  grupo: pseudonimizacao
   tema: operacoes
   bases:
   - texto: art. 4.º, 5)
@@ -133,6 +137,7 @@
     do subcontratante, estão autorizadas a tratar os dados pessoais
 - termo: Consentimento
   slug: consentimento
+  grupo: consentimento
   tema: operacoes
   bases:
   - texto: art. 4.º, 11)
@@ -168,6 +173,7 @@
     de uma amostra biológica proveniente da pessoa singular em causa
 - termo: Dados biométricos
   slug: dados-biometricos
+  grupo: dados-biometricos
   tema: dados
   bases:
   - texto: art. 4.º, 14)
@@ -307,6 +313,7 @@
     2015/1535 do Parlamento Europeu e do Conselho
 - termo: Organização internacional
   slug: organizacao-internacional
+  grupo: organismo-internacional
   tema: sujeitos
   bases:
   - texto: art. 4.º, 26)
@@ -332,6 +339,7 @@
     não é anonimização.'
 - termo: Categorias especiais de dados pessoais
   slug: categorias-especiais
+  grupo: categorias-especiais
   tema: dados
   bases:
   - texto: art. 9.º, n.º 1

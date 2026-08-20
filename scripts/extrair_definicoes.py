@@ -46,6 +46,8 @@ from pathlib import Path
 
 import yaml
 
+from ancorar_referencias import ids_da_lei
+
 RAIZ = Path(__file__).resolve().parent.parent
 LEIS_DIR = RAIZ / "_leis"
 VERBETES_DIR = RAIZ / "_data" / "definicoes" / "verbetes"
@@ -92,10 +94,18 @@ def blocos(corpo: str) -> list[str]:
     return [b.strip() for b in re.split(r"\n\s*\n", corpo)]
 
 
-def numero_do_artigo(bloco: str, formato: str) -> str:
+def numero_do_artigo(bloco: str, formato: str) -> tuple[str, str]:
+    """(id, grafia) do artigo que abre o bloco.
+
+    O id é o do esquema de âncoras (`art-5`, sem ordinal); a grafia é a do
+    texto, que é o que a base legal do verbete mostra — "art. 5º, I" e não
+    "art. 5, I".
+    """
     palavras = bloco.split(" ")
     bruto = palavras[1] if len(palavras) > 1 else ""
-    return bruto.replace("º", "").replace(".", "").replace("o", "").lower()
+    grafia = bruto.rstrip(".")
+    id_ = bruto.replace("º", "").replace(".", "").replace("o", "").lower()
+    return id_, grafia
 
 
 def sluguificar(termo: str) -> str:
@@ -171,8 +181,22 @@ def extrair(slug: str) -> list[dict]:
     formato = frente.get("formato", "br")
     marcador_artigo = "Artigo" if formato == "ue" else "Art."
 
+    # Os ids que a norma de fato produz, com a mesma regra do
+    # `lei-anotada.html`. Um inciso com marcador malformado no texto publicado
+    # ("XIV- ", sem espaço, no Regulamento de Incidente de Segurança) não vira
+    # âncora, e a base cai no artigo em vez de apontar para um id que não
+    # existe. É conferido aqui, e não depois, para uma nova extração não
+    # ressuscitar o link partido.
+    validos = ids_da_lei(slug, "")
+
+    def ancora_valida(id_inciso: str, id_artigo: str) -> str:
+        if id_inciso in validos:
+            return id_inciso
+        return id_artigo if id_artigo in validos else ""
+
     verbetes: list[dict] = []
     artigo = ""
+    artigo_escrito = ""
     dentro = False
 
     def continuar(bloco: str) -> None:
@@ -194,7 +218,7 @@ def extrair(slug: str) -> list[dict]:
             continue
         palavras = bloco.split(" ")
         if palavras[0] == marcador_artigo:
-            artigo = numero_do_artigo(bloco, formato)
+            artigo, artigo_escrito = numero_do_artigo(bloco, formato)
             dentro = bool(GATILHO.search(bloco[:400]))
             continue
         if not dentro:
@@ -219,7 +243,7 @@ def extrair(slug: str) -> list[dict]:
                 verbetes.append({
                     "termo": termo, "apelidos": apelidos,
                     "definicao": _limpar(definicao),
-                    "base": f"art. {artigo}.º", "ancora": f"art-{artigo}",
+                    "base": f"art. {artigo_escrito}", "ancora": f"art-{artigo}",
                 })
                 continue
             numero = achado.group(1) + (achado.group(2) or "")
@@ -231,7 +255,7 @@ def extrair(slug: str) -> list[dict]:
             verbetes.append({
                 "termo": termo, "apelidos": apelidos,
                 "definicao": _limpar(definicao),
-                "base": f"art. {artigo}.º, {numero})", "ancora": f"art-{artigo}",
+                "base": f"art. {artigo_escrito}, {numero})", "ancora": f"art-{artigo}",
             })
             continue
 
@@ -251,8 +275,8 @@ def extrair(slug: str) -> list[dict]:
         verbetes.append({
             "termo": termo, "apelidos": [],
             "definicao": _limpar(definicao),
-            "base": f"art. {artigo}, {romano}",
-            "ancora": f"art-{artigo}-{romano.lower()}",
+            "base": f"art. {artigo_escrito}, {romano}",
+            "ancora": ancora_valida(f"art-{artigo}-{romano.lower()}", f"art-{artigo}"),
         })
 
     return verbetes
@@ -307,9 +331,21 @@ def montar(slug: str) -> str:
         verbete: dict = {
             "termo": bruto["termo"][0].upper() + bruto["termo"][1:],
             "slug": proposto,
-            "tema": anterior.get("tema", "TODO"),
-            "bases": [{"texto": bruto["base"], "ancora": bruto["ancora"]}],
         }
+        if anterior.get("descartado"):
+            # Definição que a norma copia de uma superior: fica no arquivo, com
+            # o motivo escrito, e a página não a mostra (ver "Definições legais"
+            # em docs/notas.md). Guardá-la aqui é o que impede que uma nova
+            # extração a ressuscite.
+            verbete["descartado"] = anterior["descartado"]
+        else:
+            if anterior.get("grupo"):
+                verbete["grupo"] = anterior["grupo"]
+            verbete["tema"] = anterior.get("tema", "TODO")
+        base = {"texto": bruto["base"]}
+        if bruto["ancora"]:
+            base["ancora"] = bruto["ancora"]
+        verbete["bases"] = [base]
         apelidos = list(anterior.get("aliases") or []) + [
             a for a in bruto["apelidos"] if a not in (anterior.get("aliases") or [])
         ]
