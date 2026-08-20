@@ -51,6 +51,8 @@
         var buscaDefinicoes = document.getElementById('definicoes-busca');
         var cardsVisiveis = cardsDefinicoes;
         var quadroPendente = false;
+        var indiceTravado = '';
+        var destravarIndice = 0;
 
         function textoComparavel(texto) {
             return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -134,14 +136,20 @@
         buscaDefinicoes.addEventListener('input', redesenharDefinicoes);
         Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__item'), function (item) {
             item.addEventListener('click', function () {
+                indiceTravado = item.dataset.alvo;
+                clearTimeout(destravarIndice);
                 marcarIndiceAtual(item.dataset.alvo);
+                destravarIndice = setTimeout(function () {
+                    indiceTravado = '';
+                    marcarIndiceAtual();
+                }, 700);
             });
         });
         addEventListener('scroll', function () {
             if (quadroPendente) return;
             quadroPendente = true;
             requestAnimationFrame(function () {
-                marcarIndiceAtual();
+                marcarIndiceAtual(indiceTravado || undefined);
                 quadroPendente = false;
             });
         }, { passive: true });
@@ -214,6 +222,23 @@
 
         var bancoDefinicoes = null;
         var focoAntesDaDefinicao = null;
+        function criarReferenciaDefinicao(referencia) {
+            var linha = document.createElement('p');
+            linha.className = 'definicao-referencia' + (referencia.jurisdicao === 'UE' ? ' definicao-referencia--ue' : '');
+            var juris = document.createElement('span');
+            juris.textContent = referencia.jurisdicao === 'BR' ? 'Brasil' : 'União Europeia';
+            var nota = document.createElement('a');
+            nota.className = 'definicao-referencia__nota';
+            nota.href = referencia.nota_url;
+            nota.textContent = referencia.norma_apelido;
+            var dispositivo = document.createElement('a');
+            dispositivo.className = 'definicao-referencia__dispositivo';
+            dispositivo.href = referencia.url;
+            dispositivo.textContent = referencia.dispositivo;
+            linha.append(juris, nota, dispositivo);
+            return linha;
+        }
+
         function preencherDialog(verbete) {
             dialogDefinicao.querySelector('h2').textContent = verbete.titulo;
             var corpo = dialogDefinicao.querySelector('.definicao-dialog__corpo');
@@ -224,21 +249,10 @@
                 var texto = document.createElement('p');
                 texto.className = 'definicao-dialog__texto';
                 texto.textContent = definicao.texto;
-                var referencia = document.createElement('p');
-                referencia.className = 'definicao-referencia' + (verbete.jurisdicao === 'UE' ? ' definicao-referencia--ue' : '');
-                var juris = document.createElement('span');
-                juris.textContent = verbete.jurisdicao === 'BR' ? 'Brasil' : 'União Europeia';
-                var link = document.createElement('a');
-                link.className = 'definicao-referencia__nota';
-                link.href = definicao.url;
-                link.textContent = definicao.norma_apelido;
-                referencia.append(juris, ' ', link, ', ' + definicao.dispositivo + ' ');
-                var oficial = document.createElement('a');
-                oficial.className = 'definicao-referencia__oficial';
-                oficial.href = definicao.fonte;
-                oficial.textContent = 'texto oficial';
-                referencia.appendChild(oficial);
-                bloco.append(texto, referencia);
+                bloco.appendChild(texto);
+                definicao.referencias.forEach(function (referencia) {
+                    bloco.appendChild(criarReferenciaDefinicao(referencia));
+                });
                 corpo.appendChild(bloco);
             });
             marcarLinksExternos(corpo);

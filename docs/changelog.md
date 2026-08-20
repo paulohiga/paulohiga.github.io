@@ -27,6 +27,8 @@ no site, não o caminho até lá.
   verbete, com links separados para a nota e para o dispositivo; o índice
   lateral permite percorrer todos os verbetes em ordem alfabética ou temática,
   buscar também por norma e tema e ocultar as normas da União Europeia.
+  Redações materialmente iguais aparecem uma vez, com todas as suas referências
+  normativas, enquanto redações diferentes permanecem separadas.
 - As notas passaram a dar acesso contextual aos verbetes ao longo dos
   comentários, limitado à própria jurisdição. Os blocos que repetiam as
   definições da LGPD, do Marco Civil, do ECA Digital, do GDPR e do AI Act foram

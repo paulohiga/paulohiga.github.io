@@ -512,10 +512,10 @@ recebem id:
 
 `/notas/definicoes` reúne as definições literais das normas disponíveis na
 seção. A página se chama **Definições normativas** porque o conteúdo é a redação
-da própria norma, com referência ao dispositivo e ao texto oficial — não um
+da própria norma, com links separados para a nota e para o dispositivo — não um
 glossário de paráfrases. O leitor pode ordenar os verbetes de A a Z ou por tema,
-usar o índice lateral de altura total no desktop, buscar por termo e ocultar as
-definições da União Europeia.
+usar o índice lateral de altura total no desktop, buscar por termo, norma ou
+tema e ocultar as definições da União Europeia.
 
 O banco fica em `_data/definicoes.yml` e é gerado por
 `scripts/gerar_definicoes.py`. O script lê os artigos identificados como
@@ -531,8 +531,10 @@ Rode-o depois de criar ou atualizar uma norma:
 
 Termos iguais ou muito próximos são agrupados num único verbete **dentro da
 mesma jurisdição**. O título lista todas as formas agrupadas e cada definição
-mantém sua referência própria. A chave do agrupamento inclui `BR` ou `UE`, de
-modo que uma redação europeia nunca seja apresentada como definição brasileira.
+mantém sua referência própria. Redações materialmente iguais aparecem uma vez,
+seguidas por todas as referências que as adotam; redações diferentes permanecem
+separadas. A chave do agrupamento inclui `BR` ou `UE`, de modo que uma redação
+europeia nunca seja apresentada como definição brasileira.
 
 Nas notas de comentário, `_layouts/nota.html` embute somente um índice compacto
 de termos da jurisdição da página. O `notas.js` marca no máximo a primeira

@@ -131,7 +131,35 @@ def inicial_maiuscula(texto: str) -> str:
 def limpar_literal(texto: str) -> str:
     texto = texto.strip()
     texto = re.sub(r"\s+_\((?:Redação|Incluído|Alterado|Revogado).*?\)_\s*$", "", texto)
+    texto = re.sub(r"(?:;\s*e|[.;])\s*$", "", texto, flags=re.IGNORECASE)
     return texto
+
+
+def chave_literal(texto: str) -> str:
+    """Compara redações sem diferenças meramente tipográficas."""
+    texto = re.sub(r"[*_`]", "", texto)
+    texto = re.sub(r"\s+", " ", texto).strip()
+    return sem_acentos(texto)
+
+
+def agrupar_definicoes(itens: list[dict]) -> list[dict]:
+    grupos: list[dict] = []
+    por_texto: dict[str, dict] = {}
+    for item in itens:
+        chave = chave_literal(item["texto"])
+        grupo = por_texto.get(chave)
+        if grupo is None:
+            grupo = {"texto": item["texto"], "referencias": []}
+            por_texto[chave] = grupo
+            grupos.append(grupo)
+        grupo["referencias"].append({
+            campo: item[campo]
+            for campo in (
+                "jurisdicao", "norma", "norma_apelido", "norma_titulo",
+                "fonte", "dispositivo", "url", "nota_url",
+            )
+        })
+    return grupos
 
 
 def tema_de(termos: list[str]) -> str:
@@ -341,7 +369,7 @@ def main() -> None:
             "letra": sem_acentos(termos[0])[0].upper(),
             "tema": tema,
             "jurisdicao": jurisdicao,
-            "definicoes": itens,
+            "definicoes": agrupar_definicoes(itens),
         })
 
     saida.sort(key=lambda item: (sem_acentos(item["titulo"]), item["jurisdicao"]))

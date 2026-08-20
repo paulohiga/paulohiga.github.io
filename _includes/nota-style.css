@@ -1772,14 +1772,13 @@ body:not(.js) .nota-progresso {
     text-underline-offset: 0.15em;
 }
 
-.definicao-referencia__oficial {
-    margin-left: 0.2rem;
-    white-space: nowrap;
-}
-
 .definicao-referencia__dispositivo {
     font-weight: 600;
     text-underline-offset: 0.15em;
+}
+
+.definicao-referencia + .definicao-referencia {
+    margin-top: 0.25rem;
 }
 
 /* --- Página /notas/definicoes --- */

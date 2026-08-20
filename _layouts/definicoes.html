@@ -71,11 +71,13 @@
 {% for definicao in verbete.definicoes %}
                     <div class="definicao-card__fonte">
                         <div class="definicao-card__texto">{{ definicao.texto | markdownify }}</div>
+{% for referencia in definicao.referencias %}
                         <p class="definicao-referencia{% if verbete.jurisdicao == 'UE' %} definicao-referencia--ue{% endif %}">
                             <span>{% if verbete.jurisdicao == 'BR' %}Brasil{% else %}União Europeia{% endif %}</span>
-                            <a class="definicao-referencia__nota" href="{{ definicao.nota_url }}">{{ definicao.norma_apelido }}</a>,
-                            <a class="definicao-referencia__dispositivo" href="{{ definicao.url }}">{{ definicao.dispositivo }}</a>
+                            <a class="definicao-referencia__nota" href="{{ referencia.nota_url }}">{{ referencia.norma_apelido }}</a>
+                            <a class="definicao-referencia__dispositivo" href="{{ referencia.url }}">{{ referencia.dispositivo }}</a>
                         </p>
+{% endfor %}
                     </div>
 {% endfor %}
                 </article>
