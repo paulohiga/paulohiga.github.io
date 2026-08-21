@@ -261,7 +261,7 @@ body.dark-theme .nota-tema .ico-moon {
 
 /* --- Seletor de normas do painel da lei seca ---
    Um <select> nativo em vez de uma aba por norma: não degrada com o número de
-   normas (são 18, em dois grupos — as desta nota e todas as outras) e não
+   normas (são 19, em dois grupos — as desta nota e todas as outras) e não
    precisa de ARIA customizado, porque o próprio elemento já é acessível por
    teclado e leitor de tela. Estilizado para ocupar o lugar do <h2> do painel.
 

@@ -4,7 +4,9 @@
 As fontes de verdade continuam sendo os textos normativos. Este script localiza
 os artigos cuja ementa contém "Definições", extrai cada inciso/ponto sem
 reescrever a literalidade e agrupa termos iguais ou equivalentes somente dentro
-da mesma jurisdição.
+da mesma jurisdição. O item pode vir numerado (o inciso "V –" das normas
+brasileiras, o ponto "10)" do RGPD e do AI Act) ou como alínea ("a)", que é
+como o art. 3.º do DSA lista as suas definições).
 """
 
 from __future__ import annotations
@@ -117,11 +119,20 @@ EQUIVALENTES_BR = {
     "avaliacao da conformidade": ["avaliação de conformidade"],
     "organismo de avaliacao da conformidade": ["organismo de avaliação de conformidade"],
     "autoridade de fiscalizacao do mercado": ["autoridade de fiscalização de mercado"],
-    "definicao de perfis": ["perfilamento"],
+    "definicao de perfis": ["perfilamento", "criação de perfis"],
     "capacidades de elevado impacto": ["capacidades de alto impacto"],
     "modelo de ia de finalidade geral": ["modelo de IA de propósito geral"],
     "sistema de ia de finalidade geral": ["sistema de IA de propósito geral"],
     "mandatario": ["representante autorizado"],
+    "plataforma em linha": ["plataforma online"],
+    "motor de pesquisa em linha": ["mecanismo de busca"],
+    "interface em linha": ["interface online"],
+    "destinatario do servico": ["usuário do serviço"],
+    "termos e condicoes": ["termos de uso"],
+    "volume de negocios": ["faturamento"],
+    "coordenador dos servicos digitais de estabelecimento": ["coordenador de estabelecimento"],
+    "coordenador dos servicos digitais de destino": ["coordenador de destino"],
+    "categorias especiais de dados pessoais": ["dados sensíveis"],
 }
 
 # Variações de grafia e plurais que só interessam à busca e à marcação: não são
@@ -133,16 +144,25 @@ FORMAS = {
     "falsificacoes profundas": ["deepfakes"],
     "literacia no dominio da ia": ["literacia em IA"],
     "testagem em condicoes reais": ["testes em condições reais"],
+    "plataforma em linha": ["plataformas online"],
+    "motor de pesquisa em linha": ["mecanismos de busca"],
+    "servico intermediario": ["serviços intermediários"],
+    "destinatario do servico": ["usuários do serviço"],
+    "conteudos ilegais": ["conteúdo ilegal"],
+    "moderacao de conteudos": ["moderação de conteúdo"],
+    "comerciante": ["comerciantes"],
+    "sistema de recomendacao": ["sistemas de recomendação"],
+    "contrato a distancia": ["contratar à distância"],
 }
 
 TEMAS = (
     ("Crianças, adolescentes e idade", ("criança", "adolescente", "idade", "parental", "infantil")),
     ("Inteligência artificial", ("inteligência artificial", "sistema de ia", "biométr", "algorit", "modelo", "treino", "testagem", "falsificaç", "sistema de reconhecimento")),
     ("Segurança, incidentes e violência", ("segurança", "incidente", "confidencialidade", "integridade", "disponibilidade", "autenticidade", "sigilo", "violência")),
-    ("Internet e plataformas", ("internet", "rede social", "terminal", "endereço ip", "conexão", "aplicação", "conteúdo", "impulsionamento", "monetização")),
-    ("Fiscalização e sanções", ("infração", "infrator", "fiscalização", "sanção", "autuado", "denúncia", "requerimento", "petição", "obstrução", "reincidência")),
+    ("Internet e plataformas", ("internet", "rede social", "terminal", "endereço ip", "conexão", "aplicação", "conteúdo", "impulsionamento", "monetização", "em linha", "plataforma", "motor de pesquisa", "intermediári", "recomendaç", "moderaç", "difusão ao público", "sociedade da informação", "termos e condições", "publicitário")),
+    ("Fiscalização e sanções", ("infração", "infrator", "fiscalização", "sanção", "autuado", "denúncia", "requerimento", "petição", "obstrução", "reincidência", "faturamento", "volume de negócios")),
     ("Transferências internacionais", ("transferência", "exportador", "importador", "organismo internacional", "organização internacional", "adequação")),
-    ("Agentes e governança", ("controlador", "operador", "responsável", "subcontratante", "encarregado", "agente", "empresa", "entidade", "autoridade", "prestador", "distribuidor", "mandatário")),
+    ("Agentes e governança", ("controlador", "operador", "responsável", "subcontratante", "encarregado", "agente", "empresa", "entidade", "autoridade", "prestador", "distribuidor", "mandatário", "coordenador", "destinatário", "comerciante", "consumidor")),
     ("Dados pessoais e tratamento", ("dado", "tratamento", "titular", "consentimento", "anonim", "pseudonim", "perfil", "ficheiro", "eliminação", "bloqueio")),
 )
 
@@ -279,7 +299,12 @@ def extrair_itens(bloco: str, ue: bool) -> list[dict]:
     itens: list[dict] = []
     atual: dict | None = None
 
-    padrao_ue = re.compile(r"^(?:(\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"]\s*[,–—:-]?\s*(.*)$")
+    # O marcador do item pode ser numerado ("10)", como no RGPD e no AI Act) ou
+    # uma alínea ("a)", como no art. 3.º do DSA). Subníveis chegam aqui como
+    # item de lista ("- i) …") e não casam com nenhum dos dois.
+    padrao_ue = re.compile(
+        r"^(?:([a-z](?:-[A-Za-z])?|\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"]\s*[,–—:-]?\s*(.*)$"
+    )
     padrao_br = re.compile(r"^([IVXLCDM]+)\s*[–-]\s*(.+?)\s*[:–-]\s+(.*)$")
 
     for linha in linhas:
@@ -336,10 +361,12 @@ def url_nota(norma: dict) -> str:
 
 
 def sufixo_ponto(marcador: str) -> str:
-    """Converte o marcador europeu `10`/`14-A` no sufixo do id."""
+    """Converte o marcador europeu no sufixo do id: o ponto numerado `10`/`14-A`
+    vira `p10`/`p14a`; a alínea `a`/`b-a`, o próprio `a`/`ba` — o mesmo esquema
+    de `_includes/lei-anotada.html`."""
     casamento = re.fullmatch(r"(\d+)(?:-([A-Z]))?", marcador)
     if not casamento:
-        return marcador.lower()
+        return marcador.replace("-", "").lower()
     return f"p{casamento.group(1)}{(casamento.group(2) or '').lower()}"
 
 
@@ -351,8 +378,13 @@ def referencia(norma: dict, artigo: str, marcador: str, ue: bool) -> tuple[str, 
         sufixo = "" if sem_ancora_propria else marcador
     url = url_dispositivo(norma, artigo, sufixo)
     dispositivo = f"art. {artigo}.º" if ue else f"art. {artigo}º"
-    if marcador:
-        dispositivo += f", ponto {marcador}" if ue else f", {marcador}"
+    if marcador and ue:
+        if marcador[0].isdigit():
+            dispositivo += f", ponto {marcador}"
+        else:
+            dispositivo += f", alínea {marcador})"
+    elif marcador:
+        dispositivo += f", {marcador}"
     return dispositivo, url
 
 
