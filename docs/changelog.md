@@ -52,17 +52,6 @@ no site, não o caminho até lá.
   e as divergências (auditoria independente obrigatória, acesso de
   investigadores aos dados, designação pública das maiores plataformas e teto
   sancionatório percentual).
-- As **Definições normativas** passaram a incluir os 24 verbetes do art. 3.º do
-  DSA, entre eles serviço intermediário, plataforma em linha, motor de pesquisa
-  em linha, conteúdos ilegais, moderação de conteúdos e sistema de recomendação.
-  O acervo passou de 195 para 219 verbetes.
-- O banco de definições ganhou um **dicionário de sinônimos**: cada verbete
-  passa a ser encontrado também pelas formas com que o comentário o escreve
-  ("plataforma online" para "plataforma em linha", "faturamento" para "volume de
-  negócios", "dados sensíveis" para "categorias especiais de dados pessoais",
-  entre outras). Os sinônimos valem para a busca da página consolidada e para a
-  marcação dos termos dentro das notas; o título do verbete continua sendo só a
-  redação da norma.
 - As notas do **Marco Civil**, do **ECA Digital**, do **GDPR** e do **AI Act**
   passaram a remeter à nota do DSA. A do Marco Civil registra que a norma
   europeia ocupa o espaço preenchido aqui pelos Temas 987 e 533; a do ECA
@@ -70,6 +59,67 @@ no site, não o caminho até lá.
   pede proteção de menores sem obrigar a tratar dados adicionais para
   identificá-los, com as [orientações da Comissão de 14/7/2025](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors)
   no papel que aqui cabe ao decreto e aos atos da ANPD.
+- A nota do **[AI Act](../_notas/ai-act.md)** (`/notas/ai-act`) foi reescrita do zero
+  sobre o [texto consolidado oficial de 27 de julho de 2026](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727),
+  adotando a estrutura já usada nas notas brasileiras: aplicação e não aplicação,
+  pirâmide de risco, deveres e vedações essenciais, requisitos dos sistemas de risco
+  elevado, obrigações por papel na cadeia, avaliação da conformidade, modelos de
+  finalidade geral, transparência, direitos das pessoas afetadas, inovação, divisão
+  de competências normativas, governança, sanções, cronograma de aplicação, o que
+  ainda falta regulamentar e comparação com o PL nº 2338/2023.
+- Passou a constar, entre o que a versão anterior não dizia:
+  - que a avaliação da conformidade dos sistemas de risco elevado dos pontos 2 a 8 do
+    Anexo III é feita por **controle interno, sem organismo notificado** (art. 43.º,
+    n.º 2), e que no ponto 1 o prestador escolhe entre controle interno e organismo
+    notificado quando aplicou as normas harmonizadas;
+  - que o benefício concreto do **sandbox regulatório** é a não aplicação de multas
+    a quem respeita o plano acordado e segue de boa-fé as orientações da autoridade
+    (art. 57.º, n.º 12), mantidas a supervisão das autoridades e a responsabilidade
+    por danos a terceiros;
+  - o desdobramento do art. 2.º entre alcance e dispensas, com a cláusula de piso em
+    favor dos trabalhadores (n.º 11) e a ressalva de que o direito da União sobre
+    proteção de dados continua a se aplicar (n.º 7);
+  - a repartição das autoridades de fiscalização de mercado já feita pelo próprio
+    regulamento nos domínios biométricos, policiais, financeiros e de produto
+    (art. 74.º).
+- Corrigidos dois pontos de terminologia contra o texto oficial em português: os
+  códigos do Anexo XIV são **IAP, IAB e IAH** — o residual **IAH 0401** é o que
+  menciona a IA agêntica —, e o termo do art. 3.º, ponto 60, é **"falsificação
+  profunda"**.
+- Saiu da nota o mapa dos considerandos dos dois regulamentos. Como a consolidação
+  oficial não os traz, os considerandos invocados passaram a ser citados pelo número,
+  junto da afirmação que sustentam, com o link para o texto do Jornal Oficial.
+- Os comentários da nota do AI Act passaram a ser escritos com os **termos correntes
+  no Brasil** — fornecedor, implementador, multa, alto risco, sandbox regulatório,
+  deepfake, faturamento, perfilamento —, com uma tabela de correspondência com o
+  vocabulário do texto oficial em PT-PT, que continua intacto no painel "Lei seca".
+  A tabela também registra as diferenças de grafia que atrapalham a busca no painel
+  ("secção", "registo", "controlo", "deteção", "conceção").
+- A nota do AI Act passou por uma revisão de concisão, com a mesma informação em
+  menos texto: o balanço do Digital Omnibus virou tabela e as repetições entre
+  seções foram retiradas.
+
+### Definições normativas
+
+- Os verbetes das normas da União Europeia passaram a exibir o **equivalente
+  brasileiro** do termo, sob o rótulo "No Brasil", tanto na página consolidada
+  quanto no diálogo aberto de dentro de uma nota. A redação e o título do verbete
+  continuam sendo os do texto oficial em PT-PT.
+- Trinta e quatro verbetes têm equivalente hoje: entre eles «Prestador»
+  (fornecedor), «Responsável pela implantação» (implementador), «Ambiente de
+  testagem da regulamentação da IA» (sandbox regulatório), «Falsificações
+  profundas» (deepfake), «Literacia no domínio da IA» (letramento em IA), no
+  RGPD «Responsável pelo tratamento» (controlador) e, no DSA, «Plataforma em
+  linha» (plataforma online), «Motor de pesquisa em linha» (mecanismo de
+  busca), «Volume de negócios» (faturamento) e «Termos e condições» (termos
+  de uso).
+- A busca da página consolidada e os links contextuais dentro das notas passaram a
+  reconhecer as duas formas, de modo que um comentário escrito em pt-BR continua
+  levando ao verbete da norma europeia.
+- Os 24 verbetes do art. 3.º do **DSA** entraram no acervo — entre eles
+  serviço intermediário, plataforma em linha, motor de pesquisa em linha,
+  conteúdos ilegais, moderação de conteúdos e sistema de recomendação —, que
+  passou de 195 para 219 verbetes.
 
 ### Documentação
 

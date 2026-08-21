@@ -1743,6 +1743,32 @@ body:not(.js) .nota-progresso {
     font-weight: 600;
 }
 
+/* Equivalente brasileiro do termo estrangeiro: o verbete guarda a redação
+   oficial em PT-PT, e os comentários das notas europeias são escritos em
+   pt-BR. Vale no card da página consolidada e no diálogo aberto de dentro da
+   nota — nos dois, acima da literalidade. */
+.definicao-equivalentes {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    margin: 0 0 0.55rem;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.definicao-equivalentes > span {
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.definicao-dialog__corpo > .definicao-equivalentes {
+    margin: 0.85rem 0 0;
+}
+
 .definicao-referencia {
     display: flex;
     align-items: baseline;
