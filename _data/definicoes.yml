@@ -206,6 +206,27 @@
       dispositivo: art. 5º, XI
       url: /notas/lgpd#art-5-xi
       nota_url: /notas/lgpd
+- id: ue-anuncio-publicitario
+  titulo: Anúncio publicitário
+  termos:
+  - Anúncio publicitário
+  busca:
+  - Anúncio publicitário
+  busca_texto: Anúncio publicitário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: A
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: informações concebidas para promover a mensagem de uma pessoa singular ou coletiva, independentemente de visarem objetivos comerciais ou não comerciais, e apresentadas por uma plataforma em linha na sua interface em linha mediante remuneração, especificamente paga para promover essas informações
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea r)
+      url: /notas/dsa#art-3-r
+      nota_url: /notas/dsa
 - id: ue-aplicacao-da-lei
   titulo: Aplicação da lei
   termos:
@@ -701,6 +722,27 @@
       dispositivo: art. 3.º, ponto 9
       url: /notas/ai-act#art-3-p9
       nota_url: /notas/ai-act
+- id: ue-comerciante
+  titulo: Comerciante
+  termos:
+  - Comerciante
+  busca:
+  - Comerciante
+  busca_texto: Comerciante Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa singular ou coletiva, independentemente de ser pública ou privada, que atue, incluindo através de outra pessoa que atue em seu nome ou por sua conta, para fins relacionados com a sua atividade comercial, industrial, artesanal ou profissional
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea f)
+      url: /notas/dsa#art-3-f
+      nota_url: /notas/dsa
 - id: ue-componente-de-seguranca
   titulo: Componente de segurança
   termos:
@@ -722,6 +764,27 @@
       dispositivo: art. 3.º, ponto 14
       url: /notas/ai-act#art-3-p14
       nota_url: /notas/ai-act
+- id: ue-comunicacao-comercial
+  titulo: Comunicação comercial
+  termos:
+  - Comunicação comercial
+  busca:
+  - Comunicação comercial
+  busca_texto: Comunicação comercial Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: uma «comunicação comercial» tal como definida no artigo 2.º, alínea f), da Diretiva 2000/31/CE
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea w)
+      url: /notas/dsa#art-3-w
+      nota_url: /notas/dsa
 - id: br-comunicacao-de-incidente-de-seguranca
   titulo: Comunicação de incidente de segurança
   termos:
@@ -890,6 +953,27 @@
       dispositivo: art. 3.º, ponto 59
       url: /notas/ai-act#art-3-p59
       nota_url: /notas/ai-act
+- id: ue-consumidor
+  titulo: Consumidor
+  termos:
+  - Consumidor
+  busca:
+  - Consumidor
+  busca_texto: Consumidor Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa singular que atue para fins que não se incluam na sua atividade comercial, empresarial, artesanal ou profissional
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea c)
+      url: /notas/dsa#art-3-c
+      nota_url: /notas/dsa
 - id: br-conteudo-intimo
   titulo: Conteúdo íntimo
   termos:
@@ -974,6 +1058,27 @@
       dispositivo: art. 2º, II
       url: /notas/eca-digital#dec12880-art-2-ii
       nota_url: /notas/eca-digital
+- id: ue-conteudos-ilegais
+  titulo: Conteúdos ilegais
+  termos:
+  - Conteúdos ilegais
+  busca:
+  - Conteúdos ilegais
+  busca_texto: Conteúdos ilegais Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: quaisquer informações que, por si só ou em relação a uma atividade, incluindo a venda de produtos ou a prestação de serviços, não estejam em conformidade com o direito da União ou com o direito de qualquer um dos Estados-Membros que seja conforme com o direito da União, independentemente do objeto ou da natureza precisa desse direito
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea h)
+      url: /notas/dsa#art-3-h
+      nota_url: /notas/dsa
 - id: br-conteudos-produtos-e-servicos-proibidos-para-criancas-e-adolescentes
   titulo: Conteúdos, produtos e serviços proibidos para crianças e adolescentes
   termos:
@@ -1025,6 +1130,27 @@
       dispositivo: art. 15, § 1º
       url: /notas/eca-digital#dec12880-art-15-p1
       nota_url: /notas/eca-digital
+- id: ue-contrato-a-distancia
+  titulo: Contrato à distância
+  termos:
+  - Contrato à distância
+  busca:
+  - Contrato à distância
+  busca_texto: Contrato à distância Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: um «contrato à distância» tal como definido no artigo 2.º, ponto 7, da Diretiva 2011/83/UE
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea l)
+      url: /notas/dsa#art-3-l
+      nota_url: /notas/dsa
 - id: br-controlador
   titulo: Controlador
   termos:
@@ -1054,6 +1180,48 @@
       dispositivo: art. 2º, III
       url: /notas/regimento-interno-anpd#res18-art-2-iii
       nota_url: /notas/regimento-interno-anpd
+- id: ue-coordenador-dos-servicos-digitais-de-destino
+  titulo: Coordenador dos serviços digitais de destino
+  termos:
+  - Coordenador dos serviços digitais de destino
+  busca:
+  - Coordenador dos serviços digitais de destino
+  busca_texto: Coordenador dos serviços digitais de destino Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: o coordenador dos serviços digitais de um Estado-Membro em que o serviço intermediário é prestado
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea o)
+      url: /notas/dsa#art-3-o
+      nota_url: /notas/dsa
+- id: ue-coordenador-dos-servicos-digitais-de-estabelecimento
+  titulo: Coordenador dos serviços digitais de estabelecimento
+  termos:
+  - Coordenador dos serviços digitais de estabelecimento
+  busca:
+  - Coordenador dos serviços digitais de estabelecimento
+  busca_texto: Coordenador dos serviços digitais de estabelecimento Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: o coordenador dos serviços digitais do Estado-Membro em que o estabelecimento principal de um prestador de um serviço intermediário está localizado ou em que o seu representante legal reside ou está estabelecido
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea n)
+      url: /notas/dsa#art-3-n
+      nota_url: /notas/dsa
 - id: br-dado-anonimizado
   titulo: Dado anonimizado
   termos:
@@ -1549,9 +1717,9 @@
   - Destinatário
   busca:
   - Destinatário
-  busca_texto: Destinatário Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Destinatário Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
-  tema: Outros conceitos normativos
+  tema: Agentes e governança
   jurisdicao: UE
   definicoes:
   - texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que recebem comunicações de dados pessoais, independentemente de se tratar ou não de um terceiro. Contudo, as autoridades públicas que possam receber dados pessoais no âmbito de inquéritos específicos nos termos do direito da União ou dos Estados-Membros não são consideradas destinatários; o tratamento desses dados por essas autoridades públicas deve cumprir as regras de proteção de dados aplicáveis em função das finalidades do tratamento
@@ -1564,6 +1732,90 @@
       dispositivo: art. 4.º, ponto 9
       url: /notas/gdpr#art-4-p9
       nota_url: /notas/gdpr
+- id: ue-destinatario-ativo-de-um-motor-de-pesquisa-em-linha
+  titulo: Destinatário ativo de um motor de pesquisa em linha
+  termos:
+  - Destinatário ativo de um motor de pesquisa em linha
+  busca:
+  - Destinatário ativo de um motor de pesquisa em linha
+  busca_texto: Destinatário ativo de um motor de pesquisa em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um destinatário do serviço que realizou uma pesquisa no motor de pesquisa em linha e foi exposto a informações indexadas e apresentadas na sua interface em linha
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea q)
+      url: /notas/dsa#art-3-q
+      nota_url: /notas/dsa
+- id: ue-destinatario-ativo-de-uma-plataforma-em-linha
+  titulo: Destinatário ativo de uma plataforma em linha
+  termos:
+  - Destinatário ativo de uma plataforma em linha
+  busca:
+  - Destinatário ativo de uma plataforma em linha
+  busca_texto: Destinatário ativo de uma plataforma em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um destinatário do serviço que estabeleceu uma relação com uma plataforma em linha, quer solicitando à plataforma em linha que aloje informações, quer expondo-se a informações alojadas pela plataforma em linha difundidas através da sua interface em linha
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea p)
+      url: /notas/dsa#art-3-p
+      nota_url: /notas/dsa
+- id: ue-destinatario-do-servico
+  titulo: Destinatário do serviço
+  termos:
+  - Destinatário do serviço
+  busca:
+  - Destinatário do serviço
+  busca_texto: Destinatário do serviço Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa, singular ou coletiva que utilize um serviço intermediário, em especial para procurar informação ou para torná-la acessível
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea b)
+      url: /notas/dsa#art-3-b
+      nota_url: /notas/dsa
+- id: ue-difusao-ao-publico
+  titulo: Difusão ao público
+  termos:
+  - Difusão ao público
+  busca:
+  - Difusão ao público
+  busca_texto: Difusão ao público Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: a disponibilização de informações, a pedido do destinatário do serviço que as forneceu, a um número potencialmente ilimitado de terceiros
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea k)
+      url: /notas/dsa#art-3-k
+      nota_url: /notas/dsa
 - id: br-disponibilidade
   titulo: Disponibilidade
   termos:
@@ -1856,9 +2108,9 @@
   - Faturamento
   busca:
   - Faturamento
-  busca_texto: Faturamento Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+  busca_texto: Faturamento Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: F
-  tema: Outros conceitos normativos
+  tema: Fiscalização e sanções
   jurisdicao: BR
   definicoes:
   - texto: 'I - a receita bruta de que trata o art. 12 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, excluídas as devoluções e vendas canceladas, bem como os descontos concedidos incondicionalmente;
@@ -2287,6 +2539,27 @@
       dispositivo: art. 3º, XIII
       url: /notas/regimento-interno-anpd#res15-art-3-xiii
       nota_url: /notas/regimento-interno-anpd
+- id: ue-interface-em-linha
+  titulo: Interface em linha
+  termos:
+  - Interface em linha
+  busca:
+  - Interface em linha
+  busca_texto: Interface em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: I
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: quaisquer programas informáticos, incluindo um sítio Web ou uma parte deste, e aplicações, incluindo aplicações móveis
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea m)
+      url: /notas/dsa#art-3-m
+      nota_url: /notas/dsa
 - id: br-internet
   titulo: Internet
   termos:
@@ -2308,6 +2581,33 @@
       dispositivo: art. 5º, I
       url: /notas/mci#art-5-i
       nota_url: /notas/mci
+- id: ue-ligacao-substancial-a-uniao
+  titulo: Ligação substancial à União
+  termos:
+  - Ligação substancial à União
+  busca:
+  - Ligação substancial à União
+  busca_texto: Ligação substancial à União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: L
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: 'a ligação de um prestador de serviços intermediários com a União em resultado do seu estabelecimento na União ou de critérios factuais específicos, tais como:
+
+
+      - — um número significativo de destinatários do serviço num ou mais Estados-Membros, em relação à respetiva população, ou
+
+
+      - — o direcionamento das atividades para um ou mais Estados-Membros'
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea e)
+      url: /notas/dsa#art-3-e
+      nota_url: /notas/dsa
 - id: ue-limitacao-do-tratamento
   titulo: Limitação do tratamento
   termos:
@@ -2600,6 +2900,27 @@
       dispositivo: art. 3.º, ponto 63
       url: /notas/ai-act#art-3-p63
       nota_url: /notas/ai-act
+- id: ue-moderacao-de-conteudos
+  titulo: Moderação de conteúdos
+  termos:
+  - Moderação de conteúdos
+  busca:
+  - Moderação de conteúdos
+  busca_texto: Moderação de conteúdos Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: M
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: as atividades, automatizadas ou não, empreendidas por prestadores de serviços intermediários, destinadas em especial a detetar, identificar e combater os conteúdos ilegais ou informações incompatíveis com os seus termos e condições fornecidos pelos destinatários do serviço, incluindo as medidas tomadas que afetam a disponibilidade, visibilidade e acessibilidade desses conteúdos ilegais ou dessas informações, como a despromoção, a desmonetização, a desativação do acesso ou a supressão dos mesmos, ou que afetem a capacidade de os destinatários do serviço fornecerem essas informações, como a cessação ou suspensão da conta de um destinatário
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea t)
+      url: /notas/dsa#art-3-t
+      nota_url: /notas/dsa
 - id: ue-modificacao-substancial
   titulo: Modificação substancial
   termos:
@@ -2642,6 +2963,27 @@
       dispositivo: art. 2º, XI
       url: /notas/eca-digital#art-2-xi
       nota_url: /notas/eca-digital
+- id: ue-motor-de-pesquisa-em-linha
+  titulo: Motor de pesquisa em linha
+  termos:
+  - Motor de pesquisa em linha
+  busca:
+  - Motor de pesquisa em linha
+  busca_texto: Motor de pesquisa em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: M
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um serviço intermediário que permite aos utilizadores fazer pesquisas para consultar, em princípio, todos os sítios na Internet, ou sítios Internet numa determinada língua, com base numa pesquisa sobre qualquer assunto, sob a forma de uma palavra-chave, comando de voz, frase ou outros dados, e que fornece resultados em qualquer formato nos quais pode ser encontrada informação relacionada com o tipo de conteúdo solicitado
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea j)
+      url: /notas/dsa#art-3-j
+      nota_url: /notas/dsa
 - id: br-natureza-dos-dados-pessoais
   titulo: Natureza dos dados pessoais
   termos:
@@ -2726,6 +3068,27 @@
       dispositivo: art. 4º, IV
       url: /notas/regimento-interno-anpd#res1-art-4-iv
       nota_url: /notas/regimento-interno-anpd
+- id: ue-oferecer-servicos-na-uniao
+  titulo: Oferecer serviços na União
+  termos:
+  - Oferecer serviços na União
+  busca:
+  - Oferecer serviços na União
+  busca_texto: Oferecer serviços na União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: permitir a pessoas singulares ou coletivas de um ou mais Estados-Membros a utilização dos serviços de um prestador de serviços intermediários que tenha uma ligação substancial à União
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea d)
+      url: /notas/dsa#art-3-d
+      nota_url: /notas/dsa
 - id: ue-operacao-de-virgula-flutuante
   titulo: Operação de vírgula flutuante
   termos:
@@ -2986,6 +3349,27 @@
       dispositivo: art. 2º, V
       url: /notas/eca-digital#art-2-v
       nota_url: /notas/eca-digital
+- id: ue-pessoas-com-deficiencia
+  titulo: Pessoas com deficiência
+  termos:
+  - Pessoas com deficiência
+  busca:
+  - Pessoas com deficiência
+  busca_texto: Pessoas com deficiência Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: «pessoas com deficiência» tal como referido no artigo 3.º, ponto 1, da Diretiva (UE) 2019/882 do Parlamento Europeu e do Conselho
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea v)
+      url: /notas/dsa#art-3-v
+      nota_url: /notas/dsa
 - id: br-peticao-de-titular
   titulo: Petição de titular
   termos:
@@ -3049,6 +3433,27 @@
       dispositivo: art. 3.º, ponto 54
       url: /notas/ai-act#art-3-p54
       nota_url: /notas/ai-act
+- id: ue-plataforma-em-linha
+  titulo: Plataforma em linha
+  termos:
+  - Plataforma em linha
+  busca:
+  - Plataforma em linha
+  busca_texto: Plataforma em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: P
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um serviço de alojamento virtual que, a pedido de um destinatário do serviço, armazene e difunda informações ao público, a menos que essa atividade seja um elemento menor e meramente acessório de outro serviço ou uma funcionalidade menor do serviço principal e que, por razões objetivas e técnicas, não possa ser utilizado sem esse outro serviço, e que a integração desse elemento ou dessa funcionalidade no outro serviço não constitua uma forma de contornar a aplicabilidade do presente regulamento
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea i)
+      url: /notas/dsa#art-3-i
+      nota_url: /notas/dsa
 - id: br-politica-de-boas-praticas-e-de-governanca
   titulo: Política de boas práticas e de governança
   termos:
@@ -3653,6 +4058,57 @@
       dispositivo: art. 2º, IX
       url: /notas/eca-digital#art-2-ix
       nota_url: /notas/eca-digital
+- id: ue-servico-da-sociedade-da-informacao
+  titulo: Serviço da sociedade da informação
+  termos:
+  - Serviço da sociedade da informação
+  busca:
+  - Serviço da sociedade da informação
+  busca_texto: Serviço da sociedade da informação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um «serviço» tal como definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea a)
+      url: /notas/dsa#art-3-a
+      nota_url: /notas/dsa
+- id: ue-servico-intermediario
+  titulo: Serviço intermediário
+  termos:
+  - Serviço intermediário
+  busca:
+  - Serviço intermediário
+  busca_texto: Serviço intermediário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: 'um dos seguintes serviços da sociedade da informação:
+
+
+      - i) um serviço de «simples transporte», que consiste na transmissão, através de uma rede de comunicações, de informações prestadas por um destinatário do serviço ou na concessão de acesso a uma rede de comunicações,
+
+
+      - ii) um serviço de «armazenagem temporária» que consiste na transmissão, através de uma rede de comunicações, de informações prestadas por um destinatário do serviço, que envolve a armazenagem automática, intermédia e temporária dessas informações efetuada apenas com o objetivo de tornar mais eficaz a transmissão posterior das informações a outros destinatários, a pedido destes,
+
+
+      - iii) um serviço de «alojamento virtual» que consiste na armazenagem de informações prestadas por um destinatário do serviço e a pedido do mesmo'
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea g)
+      url: /notas/dsa#art-3-g
+      nota_url: /notas/dsa
 - id: ue-servico-para-a-ia
   titulo: Serviço para a IA
   termos:
@@ -3680,9 +4136,9 @@
   - Serviços da sociedade da informação
   busca:
   - Serviços da sociedade da informação
-  busca_texto: Serviços da sociedade da informação Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Serviços da sociedade da informação Internet e plataformas General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: S
-  tema: Outros conceitos normativos
+  tema: Internet e plataformas
   jurisdicao: UE
   definicoes:
   - texto: um serviço definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535 do Parlamento Europeu e do Conselho
@@ -3863,6 +4319,27 @@
       dispositivo: art. 3.º, ponto 42
       url: /notas/ai-act#art-3-p42
       nota_url: /notas/ai-act
+- id: ue-sistema-de-recomendacao
+  titulo: Sistema de recomendação
+  termos:
+  - Sistema de recomendação
+  busca:
+  - Sistema de recomendação
+  busca_texto: Sistema de recomendação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um sistema total ou parcialmente automatizado utilizado por uma plataforma em linha para sugerir na sua interface em linha informações específicas aos destinatários do serviço ou conferir prioridade a essa informação, nomeadamente como resultado de uma pesquisa iniciada pelo destinatário do serviço, ou que determine de outra forma a ordem relativa ou a proeminência das informações apresentadas
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea s)
+      url: /notas/dsa#art-3-s
+      nota_url: /notas/dsa
 - id: ue-sistema-de-reconhecimento-de-emocoes
   titulo: Sistema de reconhecimento de emoções
   termos:
@@ -3989,6 +4466,27 @@
       dispositivo: art. 5º, II
       url: /notas/mci#art-5-ii
       nota_url: /notas/mci
+- id: ue-termos-e-condicoes
+  titulo: Termos e condições
+  termos:
+  - Termos e condições
+  busca:
+  - Termos e condições
+  busca_texto: Termos e condições Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: T
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: todas as cláusulas, independentemente da designação ou forma que assumam, que regem a relação contratual entre o prestador de serviços intermediários e os destinatários do serviço
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea u)
+      url: /notas/dsa#art-3-u
+      nota_url: /notas/dsa
 - id: ue-testagem-em-condicoes-reais
   titulo: Testagem em condições reais
   termos:
@@ -4386,6 +4884,27 @@
       dispositivo: art. 3º, II
       url: /notas/mci#dec12976-art-3-ii
       nota_url: /notas/mci
+- id: ue-volume-de-negocios
+  titulo: Volume de negócios
+  termos:
+  - Volume de negócios
+  busca:
+  - Volume de negócios
+  busca_texto: Volume de negócios Fiscalização e sanções Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: V
+  tema: Fiscalização e sanções
+  jurisdicao: UE
+  definicoes:
+  - texto: o montante realizado por uma empresa na aceção do artigo 5.º, n.º 1, do Regulamento (CE) n.º 139/2004 do Conselho
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea x)
+      url: /notas/dsa#art-3-x
+      nota_url: /notas/dsa
 - id: br-zonas-acessiveis-ao-publico
   titulo: Zonas acessíveis ao público
   termos:

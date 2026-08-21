@@ -29,10 +29,10 @@ fazer nada disso à mão.
 ## O que é a seção, e por que é isolada
 
 Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital, o Regimento
-Interno da ANPD e as normas europeias GDPR e AI Act), pública e indexável. Nem
-toda norma comentada é lei em sentido estrito — o Regimento Interno é ato do
-Conselho Diretor da ANPD, aprovado por portaria —, mas a estrutura é sempre a
-mesma: comentários de um lado, texto da norma do outro, cada painel com rolagem
+Interno da ANPD e as normas europeias GDPR, AI Act e DSA), pública e indexável.
+Nem toda norma comentada é lei em sentido estrito — o Regimento Interno é ato
+do Conselho Diretor da ANPD, aprovado por portaria —, mas a estrutura é sempre
+a mesma: comentários de um lado, texto da norma do outro, cada painel com rolagem
 independente. Em telas estreitas viram abas ("Comentários" / "Lei seca"); em
 telas largas, um deles pode ocupar a tela inteira (ver
 [Modo leitura](#modo-leitura)).
@@ -164,7 +164,7 @@ quando o leitor a seleciona (ou ao abrir um link com âncora prefixada, tipo
 enquanto ela estiver aberta. Isso significa que **o seletor de normas e a
 navegação para qualquer norma que não a principal exigem JavaScript** — exceção
 consciente à regra geral de "funciona sem JS" das notas, decidida para não
-pré-carregar 18 textos legais em toda página. Sem JavaScript o seletor fica
+pré-carregar 19 textos legais em toda página. Sem JavaScript o seletor fica
 oculto e o lugar dele, na barra de título do painel, é ocupado por um `<h2>` com
 o nome da norma principal, que é a única exibida.
 
@@ -563,7 +563,10 @@ para" valem igual nos dois formatos:
 | alínea "a" de artigo sem números | `art-1-a` |
 
 Não há inciso romano entre o número e a alínea: a alínea se pendura no número
-corrente ou, na falta dele, no próprio artigo. **Subalíneas ficam de fora** —
+corrente ou, na falta dele, no próprio artigo. **A lista de alíneas vai de a) a
+z)**: num regulamento europeu ela passa de j) com folga — as definições do art.
+3.º do DSA vão até x), e o art. 70.º, n.º 1, do RGPD, até y). **Subalíneas
+ficam de fora** —
 "ii)" e seguintes não recebem âncora, e "i)" é indistinguível da alínea "i)" de
 uma lista longa, então remissão a subalínea se confere no texto ou fica sem
 link. O mesmo vale para os considerandos, que não são dispositivos e não são

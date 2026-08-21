@@ -6,7 +6,7 @@ description: Notas de estudo sobre o Regulamento (UE) 2024/1689 — pirâmide de
 lei: ai-act
 ordem: 6
 jurisdicao: União Europeia
-atualizado_em: 2026-08-20
+atualizado_em: 2026-08-21
 ---
 
 ## Resumo geral
@@ -29,7 +29,7 @@ O mapa abaixo resume esses dois preâmbulos e indica a fonte de cada bloco.
 
 ### Por que o regulamento existe (1 a 11)
 
-O objetivo declarado é duplo — melhorar o funcionamento do mercado interno e promover uma IA centrada no ser humano e de confiança (1) —, e a aplicação deve seguir os valores da Carta (2, 6). O problema que justifica a harmonização é a fragmentação: Estados-Membros já vinham adotando regras nacionais próprias, o que reduziria a segurança jurídica e prejudicaria a livre circulação (3). Os considerandos 4 e 5 arrolam benefícios e riscos em paralelo, e os 10 e 11 fixam o que o regulamento **não** faz: não prejudica o RGPD nem o regime de responsabilidade dos prestadores intermediários do DSA.
+O objetivo declarado é duplo — melhorar o funcionamento do mercado interno e promover uma IA centrada no ser humano e de confiança (1) —, e a aplicação deve seguir os valores da Carta (2, 6). O problema que justifica a harmonização é a fragmentação: Estados-Membros já vinham adotando regras nacionais próprias, o que reduziria a segurança jurídica e prejudicaria a livre circulação (3). Os considerandos 4 e 5 arrolam benefícios e riscos em paralelo, e os 10 e 11 fixam o que o regulamento **não** faz: não prejudica o RGPD nem o regime de responsabilidade dos prestadores intermediários do [DSA](/notas/dsa).
 
 ### Como ler as definições (12 a 19)
 
@@ -177,7 +177,7 @@ O regulamento **não se aplica**:
 
 Há ainda uma **dispensa parcial para software livre**, e convém não a esticar: ela alcança **sistemas** de IA disponibilizados sob licença **livre e de código aberto**, que ficam fora do regulamento salvo quando forem colocados no mercado como sistemas de alto risco, incorrerem numa prática proibida do [art. 5.º](#art-5) ou estiverem sujeitos à transparência do [art. 50.º](#art-50). **Modelos** de finalidade geral abertos não entram nessa dispensa: têm regime próprio e mais estreito no [art. 53.º, n.º 2](#art-53-p2) (ver "Inovação", abaixo).
 
-O regulamento também **não prejudica o RGPD** nem o regime de responsabilidade dos prestadores intermediários do DSA, e não impede os Estados-Membros de manterem ou adotarem normas **mais favoráveis aos trabalhadores** quanto ao uso de IA pelos empregadores.
+O regulamento também **não prejudica o RGPD** nem o regime de responsabilidade dos prestadores intermediários do [DSA](/notas/dsa), e não impede os Estados-Membros de manterem ou adotarem normas **mais favoráveis aos trabalhadores** quanto ao uso de IA pelos empregadores.
 
 ## A pirâmide de risco
 
@@ -551,7 +551,7 @@ O adiamento por indisponibilidade dos instrumentos de conformidade não é uma s
 O AI Act não substitui nem derroga nenhum deles: **acumula**. Um mesmo sistema pode responder simultaneamente perante quatro regimes, com autoridades e lógicas diferentes.
 
 - **RGPD** — o AI Act regula o **sistema**; o RGPD regula o **tratamento de dados pessoais** que ele realiza. Um sistema pode ser plenamente conforme ao AI Act e ilícito perante o RGPD por falta de base legal, e vice-versa. Pontos de contato diretos: a governação de dados do [art. 10.º](#art-10) e o tratamento de categorias especiais para detecção de enviesamento; o [art. 22 do RGPD](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679), que continua sendo a via para contestar decisões automatizadas, ao lado do direito a explicação do [art. 86.º](#art-86); e o tratamento ulterior nos ambientes de testagem ([art. 59.º](#art-59)). Para o leitor brasileiro, é a mesma sobreposição que haverá entre o [PL nº 2338/2023](https://www25.senado.leg.br/web/atividade/materias/-/materia/157233) e a [LGPD](/notas/lgpd).
-- **DSA** — regula a **moderação e o risco sistêmico das plataformas**; o AI Act regula os sistemas de IA que elas empregam. Depois do Digital Omnibus, a repartição institucional ficou explícita: os sistemas de IA integrados em plataformas e motores de pesquisa de muito grande dimensão passam à supervisão do Serviço para a IA, na mesma lógica de centralização que o DSA já adotara. Para efeito de comparação: o regime brasileiro que ocupa o espaço do DSA nasceu da reinterpretação do [art. 19 do Marco Civil](/notas/mci#art-19) pelo STF nos Temas 987 e 533 e dos decretos que a operacionalizaram (ver [a nota do Marco Civil](/notas/mci)).
+- **[DSA](/notas/dsa)** — regula a **moderação e o risco sistêmico das plataformas**; o AI Act regula os sistemas de IA que elas empregam. Depois do Digital Omnibus, a repartição institucional ficou explícita: os sistemas de IA integrados em plataformas e motores de pesquisa de muito grande dimensão passam à supervisão do Serviço para a IA, na mesma lógica de centralização que o DSA já adotara. Para efeito de comparação: o regime brasileiro que ocupa o espaço do DSA nasceu da reinterpretação do [art. 19 do Marco Civil](/notas/mci#art-19) pelo STF nos Temas 987 e 533 e dos decretos que a operacionalizaram (ver [a nota do Marco Civil](/notas/mci)).
 - **DMA** — regula o **poder de mercado** dos controladores de acesso (_gatekeepers_); não trata de risco de IA, mas alcança serviços de IA integrados a plataformas designadas.
 - **Regulamento dos Dados** e legislação setorial do **Anexo I** — o Digital Omnibus alterou o Regulamento Máquinas e o Regulamento de Base da Aviação para evitar dupla avaliação de conformidade sobre o mesmo produto.
 
@@ -585,7 +585,7 @@ O PL nº 2338/2023 assume o AI Act como referência, e a herança é visível na
 As divergências, ponto a ponto:
 
 - **Instrumento e efeito.** O AI Act é regulamento diretamente aplicável a 27 ordens jurídicas; o PL é lei federal ordinária de um Estado unitário quanto à competência legislativa sobre a matéria. Não há, no Brasil, o problema de harmonização que justifica metade do desenho europeu — nem, portanto, a camada de normas harmonizadas e organismos notificados.
-- **Algoritmos de recomendação.** O PL classifica como de **alto risco** a curadoria, a moderação e a distribuição de conteúdo em larga escala por plataformas e motores de busca. O AI Act **não** trata recomendação de conteúdo como alto risco: o tema fica com o DSA, em regime de risco sistêmico, e não de conformidade de produto. É a divergência de maior alcance material entre os dois textos — no desenho brasileiro, as mesmas plataformas responderiam pelos requisitos de alto risco.
+- **Algoritmos de recomendação.** O PL classifica como de **alto risco** a curadoria, a moderação e a distribuição de conteúdo em larga escala por plataformas e motores de busca. O AI Act **não** trata recomendação de conteúdo como alto risco: o tema fica com o [DSA](/notas/dsa), em regime de risco sistêmico, e não de conformidade de produto. É a divergência de maior alcance material entre os dois textos — no desenho brasileiro, as mesmas plataformas responderiam pelos requisitos de alto risco.
 - **Direito de autor no treino.** O PL disciplina expressamente o uso de conteúdo protegido no treino de sistemas de IA, com direito de oposição dos titulares e previsão de **remuneração**. O AI Act limita-se a exigir do prestador uma **política** de cumprimento do direito de autor e o sumário público do conteúdo de treino ([art. 53.º](#art-53)), remetendo o mérito à diretiva de direito de autor e às exceções nacionais de prospeção de textos e dados. O ponto está disciplinado no projeto brasileiro e não no regulamento europeu.
 - **Direitos das pessoas afetadas.** O PL prevê um catálogo mais largo e o posiciona no corpo inicial do texto: informação prévia, explicação, **contestação de decisões** e **revisão humana**, além de direito à não discriminação e à correção de vieses. O AI Act traz explicação ([art. 86.º](#art-86)) e queixa ([art. 85.º](#art-85)) em capítulo final, e **não** cria direito de contestação nem de revisão humana, que continuam a depender do [art. 22 do RGPD](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679) — assim como, no Brasil, hoje dependem do [art. 20 da LGPD](/notas/lgpd#art-20).
 - **Responsabilidade civil.** O PL trata do tema, articulando-o com o Código de Defesa do Consumidor e com o regime de responsabilidade agravada para alto risco. O AI Act **não** cria regime de responsabilidade civil, e a diretiva que o faria foi retirada em 2025.
@@ -651,7 +651,7 @@ Levantamentos da autoridade brasileira, sem força de norma e sem aplicação ao
 ### Normas correlatas
 
 - [Regulamento (UE) 2016/679 — RGPD](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679), a que o AI Act expressamente não derroga ([art. 2.º](#art-2)); é a norma de referência da [LGPD](/notas/lgpd).
-- [Regulamento (UE) 2022/2065 — Regulamento dos Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Regulamento dos Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
+- [DSA](/notas/dsa) — o Regulamento (UE) 2022/2065, dos serviços digitais, cujo regime de responsabilidade dos prestadores intermediários o AI Act preserva ([art. 2.º](#art-2)) e de cujas designações de muito grande dimensão depende a competência exclusiva do [art. 75.º, n.º 1](#art-75-p1), e [Regulamento (UE) 2022/1925 — Regulamento dos Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
 - [Regulamento (UE) 2023/2854 — Regulamento dos Dados (_Data Act_)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R2854).
 - [Regulamento (UE) 2023/1230 — Regulamento Máquinas](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32023R1230) e [Regulamento (UE) 2018/1139 — Regulamento de Base da Aviação](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1139), ambos alterados pelo Digital Omnibus para alinhar prazos e avaliações de conformidade.
 - [Diretiva (UE) 2019/1937](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32019L1937) — proteção de denunciantes, aplicável às denúncias do [art. 87.º](#art-87).

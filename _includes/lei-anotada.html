@@ -85,7 +85,12 @@
 {%- assign blocos = include.lei.content | split: separador -%}
 
 {%- assign romanos = 'I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,I-A,V-A,V-B' | split: ',' -%}
-{%- assign letras = 'a,b,c,d,e,f,g,h,i,j' | split: ',' -%}
+{%- comment -%}
+    O alfabeto inteiro, porque as listas de alíneas de um regulamento europeu
+    passam de j) com folga: as definições do art. 3.º do DSA vão até x), e o
+    art. 70.º, n.º 1, do RGPD, até y).
+{%- endcomment -%}
+{%- assign letras = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z' | split: ',' -%}
 
 {%- assign formato = include.lei.formato | default: 'br' -%}
 

@@ -17,6 +17,53 @@ no site, não o caminho até lá.
 
 ---
 
+## 2026-08-21
+
+### Notas de legislação
+
+- Publicada a nota do **DSA**, o [Regulamento (UE) 2022/2065](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065),
+  relativo a um mercado único para os serviços digitais, em `/notas/dsa`. O
+  painel traz o ato como publicado no Jornal Oficial L 277, de 27 de outubro de
+  2022 — preâmbulo, 156 considerandos e 93 artigos —, que em português é
+  também o texto em vigor: o regulamento não foi alterado por ato posterior, e
+  as retificações registradas pelo EUR-Lex atingem as versões francesa, polaca
+  e alemã.
+- A nota cobre as isenções de responsabilidade dos prestadores intermediários
+  (arts. 4.º a 8.º), o regime das ordens das autoridades nacionais, a escada de
+  quatro degraus de deveres de devida diligência, o regime de risco sistêmico
+  das plataformas e motores de pesquisa de muito grande dimensão, a repartição
+  de competências entre coordenadores nacionais e a Comissão Europeia, as
+  sanções e o cronograma de aplicação.
+- A seção "A execução até agora" registra, com base na [lista oficial de
+  serviços designados](https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses)
+  e nos comunicados da Comissão Europeia, as três coimas já aplicadas: [X,
+  120 milhões de euros em 5/12/2025](https://digital-strategy.ec.europa.eu/en/news/commission-fines-x-eu120-million-under-digital-services-act),
+  [Temu, 200 milhões em 28/5/2026](https://digital-strategy.ec.europa.eu/en/news/commission-fines-temu-eu200-million-breaching-digital-services-act)
+  e [AliExpress, 550 milhões em 20/7/2026](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1654).
+- A nota compara o DSA com o regime brasileiro nascido dos Temas 987 e 533 do
+  STF e dos decretos de 2026, apontando as convergências (notificação
+  extrajudicial como gatilho, aferição sistêmica, devido processo na moderação)
+  e as divergências (auditoria independente obrigatória, acesso de
+  investigadores aos dados, designação pública das maiores plataformas e teto
+  sancionatório percentual).
+- As **Definições normativas** passaram a incluir os 24 verbetes do art. 3.º do
+  DSA, entre eles serviço intermediário, plataforma em linha, motor de pesquisa
+  em linha, conteúdos ilegais, moderação de conteúdos e sistema de recomendação.
+  O acervo passou de 195 para 219 verbetes.
+- As notas do **Marco Civil**, do **ECA Digital**, do **GDPR** e do **AI Act**
+  passaram a remeter à nota do DSA. A do Marco Civil registra que a norma
+  europeia ocupa o espaço preenchido aqui pelos Temas 987 e 533; a do ECA
+  Digital, que o [art. 28.º do DSA](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065)
+  pede proteção de menores sem obrigar a tratar dados adicionais para
+  identificá-los, com as [orientações da Comissão de 14/7/2025](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors)
+  no papel que aqui cabe ao decreto e aos atos da ANPD.
+
+### Documentação
+
+- O esquema de âncoras passou a reconhecer alíneas de a) a z). Antes parava em
+  j), o que deixava sem âncora as listas longas das normas europeias — as 24
+  definições do art. 3.º do DSA e o art. 70.º, n.º 1, do RGPD, entre outras.
+
 ## 2026-08-20
 
 ### Notas de legislação

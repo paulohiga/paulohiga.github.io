@@ -1,0 +1,15 @@
+---
+permalink: /notas/fragmentos/dsa.html
+layout: null
+sitemap: false
+---
+{%- comment -%}
+    Fragmento HTML puro (sem <html>/<head>/<body>) da norma principal desta
+    nota — só existe para ser buscado via fetch() por outras notas e injetado
+    no DOM, sem pré-carregar o documento na página principal. Não é uma página
+    para navegação humana: não aparece em `_data/pages.yml`, não entra no
+    sitemap.xml (`sitemap: false`) e é bloqueado em robots.txt. Ver
+    "Múltiplas normas por nota" em docs/notas.md.
+{%- endcomment -%}
+{%- assign norma = site.leis | where: 'slug', 'dsa' | first -%}
+{%- include lei-anotada.html lei=norma prefixo=norma.prefixo -%}
