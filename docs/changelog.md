@@ -17,6 +17,41 @@ no site, não o caminho até lá.
 
 ---
 
+## 2026-08-21
+
+### Notas de legislação
+
+- A nota do **[AI Act](../_notas/ai-act.md)** (`/notas/ai-act`) foi reescrita do zero
+  sobre o [texto consolidado oficial de 27 de julho de 2026](https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:02024R1689-20260727),
+  adotando a estrutura já usada nas notas brasileiras: aplicação e não aplicação,
+  pirâmide de risco, deveres e vedações essenciais, requisitos dos sistemas de risco
+  elevado, obrigações por papel na cadeia, avaliação da conformidade, modelos de
+  finalidade geral, transparência, direitos das pessoas afetadas, inovação, divisão
+  de competências normativas, governança, sanções, cronograma de aplicação, o que
+  ainda falta regulamentar e comparação com o PL nº 2338/2023.
+- Passou a constar, entre o que a versão anterior não dizia:
+  - que a avaliação da conformidade dos sistemas de risco elevado dos pontos 2 a 8 do
+    Anexo III é feita por **controle interno, sem organismo notificado** (art. 43.º,
+    n.º 2), e que no ponto 1 o prestador escolhe entre controle interno e organismo
+    notificado quando aplicou as normas harmonizadas;
+  - que o benefício concreto do **ambiente de testagem da regulamentação** é a não
+    aplicação de coimas a quem respeita o plano acordado e segue de boa-fé as
+    orientações da autoridade (art. 57.º, n.º 12), mantidas a supervisão das
+    autoridades e a responsabilidade por danos a terceiros;
+  - o desdobramento do art. 2.º entre alcance e dispensas, com a cláusula de piso em
+    favor dos trabalhadores (n.º 11) e a ressalva de que o direito da União sobre
+    proteção de dados continua a se aplicar (n.º 7);
+  - a repartição das autoridades de fiscalização do mercado já feita pelo próprio
+    regulamento nos domínios biométricos, policiais, financeiros e de produto
+    (art. 74.º).
+- Corrigidos dois pontos de terminologia contra o texto oficial em português: os
+  códigos do Anexo XIV são **IAP, IAB e IAH** — o residual **IAH 0401** é o que
+  menciona a IA agêntica —, e o termo do art. 3.º, ponto 60, é **"falsificação
+  profunda"**.
+- Saiu da nota o mapa dos considerandos dos dois regulamentos. Como a consolidação
+  oficial não os traz, os considerandos invocados passaram a ser citados pelo número,
+  junto da afirmação que sustentam, com o link para o texto do Jornal Oficial.
+
 ## 2026-08-20
 
 ### Notas de legislação
