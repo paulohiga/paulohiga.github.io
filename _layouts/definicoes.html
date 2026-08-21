@@ -68,6 +68,9 @@
                         <h3>{{ verbete.titulo }}</h3>
                         <a class="definicao-card__ancora" href="#{{ verbete.id }}" aria-label="Link para {{ verbete.titulo }}">#</a>
                     </header>
+{% if verbete.equivalentes.size > 0 %}
+                    <p class="definicao-equivalentes"><span>No Brasil</span>{{ verbete.equivalentes | join: " · " }}</p>
+{% endif %}
 {% for definicao in verbete.definicoes %}
                     <div class="definicao-card__fonte">
                         <div class="definicao-card__texto">{{ definicao.texto | markdownify }}</div>

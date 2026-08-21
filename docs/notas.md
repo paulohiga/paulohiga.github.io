@@ -21,6 +21,7 @@ fazer nada disso à mão.
 - [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Definições normativas](#definições-normativas)
+- [Equivalentes brasileiros dos termos europeus](#equivalentes-brasileiros-dos-termos-europeus)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
@@ -537,6 +538,33 @@ seguidas por todas as referências que as adotam; redações diferentes permanec
 separadas. A chave do agrupamento inclui `BR` ou `UE`, de modo que uma redação
 europeia nunca seja apresentada como definição brasileira.
 
+### Equivalentes brasileiros dos termos europeus
+
+A literalidade de uma norma da União Europeia é a do EUR-Lex, em PT-PT, e os
+comentários das notas europeias são escritos em pt-BR (ver
+[Normas estrangeiras](#normas-estrangeiras-formato-ue)). Sem uma ponte entre as
+duas, o comentário que diz "fornecedor" nunca alcançaria o verbete «Prestador».
+
+Essa ponte é o dicionário `EQUIVALENTES_BR` de `gerar_definicoes.py`, com uma
+entrada por termo europeu que tem forma corrente diferente no Brasil. Cada
+equivalente serve a três coisas: aparece no verbete, sob o rótulo **"No
+Brasil"**; entra na busca da página consolidada; e faz o `notas.js` marcar o
+termo brasileiro no comentário, levando ao verbete certo. Título e redação do
+verbete continuam sendo os do texto oficial. Ao lado dele, `FORMAS` guarda
+plurais e variações de grafia, que só interessam à busca e por isso não são
+exibidos.
+
+`conferir_equivalentes()` recusa dois erros e é o que mantém o dicionário
+honesto:
+
+- **equivalente ambíguo** — o que já é termo, equivalente ou forma de busca de
+  outro verbete da mesma jurisdição. Sem essa conferência, a marcação levaria ao
+  verbete errado em silêncio. Foi ela que barrou "operador" como equivalente de
+  «Subcontratante» do RGPD: no AI Act, «Operador» é o gênero que abrange
+  fornecedor, implementador, importador, distribuidor e mandatário;
+- **equivalente órfão** — chave cadastrada que nenhum verbete tem, sinal de
+  termo renomeado ou removido da norma.
+
 Nas notas de comentário, `_layouts/nota.html` embute somente um índice compacto
 de termos da jurisdição da página. O `notas.js` marca no máximo a primeira
 ocorrência por seção e quatro ocorrências por verbete na nota; isso conserva o
@@ -591,6 +619,23 @@ Três cuidados próprios desse formato:
 válidos, mas continua reconhecendo *citações* na praxe brasileira: uma citação
 europeia com sufixo ("art. 5.º, n.º 1") cai no artigo seco em vez do número —
 link menos preciso, nunca errado.
+
+### O painel em PT-PT, o comentário em pt-BR
+
+O texto legal fica como o EUR-Lex o publica, em português de Portugal, e o
+comentário é escrito em pt-BR, com os termos correntes no Brasil — é o que
+[`AGENTS.md`](../AGENTS.md#notas-de-legislação-regras-editoriais) manda ao pedir
+que a correspondência seja explicada na nota, em vez de o texto legal ser
+reescrito. Três peças sustentam isso, e as três precisam andar juntas:
+
+- uma **tabela de correspondência** na seção "Terminologia" da nota, com o termo
+  oficial à esquerda e o usado no comentário à direita, mais as diferenças de
+  grafia que atrapalham a busca no painel ("secção", "registo", "controlo");
+- os [equivalentes brasileiros](#equivalentes-brasileiros-dos-termos-europeus)
+  do banco de definições, para que o termo em pt-BR continue alcançando o
+  verbete;
+- **citação literal fica literal**: ao transcrever o dispositivo entre aspas, o
+  PT-PT é preservado, ainda que destoe do resto do parágrafo.
 
 ## Trazendo uma norma do EUR-Lex
 
