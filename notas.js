@@ -275,6 +275,17 @@
             dialogDefinicao.querySelector('h2').textContent = verbete.titulo;
             var corpo = dialogDefinicao.querySelector('.definicao-dialog__corpo');
             corpo.replaceChildren();
+            /* O comentário é escrito em pt-BR e o verbete guarda a literalidade
+               do EUR-Lex, em PT-PT: quem clica em "fornecedor" precisa ver, no
+               alto do diálogo, que o termo da norma é «Prestador». */
+            if (verbete.equivalentes && verbete.equivalentes.length) {
+                var equivalentes = document.createElement('p');
+                equivalentes.className = 'definicao-equivalentes';
+                var rotulo = document.createElement('span');
+                rotulo.textContent = 'No Brasil';
+                equivalentes.append(rotulo, verbete.equivalentes.join(' · '));
+                corpo.appendChild(equivalentes);
+            }
             verbete.definicoes.forEach(function (definicao) {
                 var bloco = document.createElement('section');
                 bloco.className = 'definicao-dialog__fonte';
