@@ -86,6 +86,45 @@ EQUIVALENTES = {
     "regras vinculativas aplicáveis às empresas": "regras vinculativas aplicáveis a empresas",
 }
 
+# Dicionário de sinônimos: como cada verbete é escrito nos comentários quando a
+# norma o grafa de outro jeito. Serve a dois usos, os dois em `busca`: a marcação
+# contextual dos termos dentro das notas (`notas.js`) e o filtro por texto da
+# página consolidada. O título do verbete continua sendo só a redação da norma —
+# o sinônimo entra no índice de busca, nunca no rótulo.
+#
+# A maior parte das entradas nasce das notas de norma europeia: o texto oficial é
+# PT-PT ("plataforma em linha", "volume de negócios") e os comentários são
+# escritos em pt-BR ("plataforma online", "faturamento"). Sem isso, o termo
+# comentado deixaria de encontrar a própria definição. O plural entra como
+# entrada própria, porque a marcação casa a forma exata.
+#
+# A chave é (jurisdição, chave do termo) — a mesma do agrupamento —, para que um
+# sinônimo brasileiro nunca alcance um verbete europeu por acidente, e
+# vice-versa.
+SINONIMOS = {
+    ("BR", "rede social"): ("redes sociais",),
+
+    ("UE", "plataforma em linha"): ("plataforma online", "plataformas online"),
+    ("UE", "motor de pesquisa em linha"): ("mecanismo de busca", "mecanismos de busca", "buscador online"),
+    ("UE", "interface em linha"): ("interface online", "interfaces online"),
+    ("UE", "servico intermediario"): ("serviços intermediários",),
+    ("UE", "destinatario do servico"): ("usuário do serviço", "usuários do serviço"),
+    ("UE", "conteudos ilegais"): ("conteúdo ilegal",),
+    ("UE", "moderacao de conteudos"): ("moderação de conteúdo",),
+    ("UE", "termos e condicoes"): ("termos de uso",),
+    ("UE", "volume de negocios"): ("faturamento",),
+    ("UE", "comerciante"): ("comerciantes",),
+    ("UE", "consumidor"): ("consumidores",),
+    ("UE", "sistema de recomendacao"): ("sistemas de recomendação",),
+    ("UE", "anuncio publicitario"): ("anúncios publicitários",),
+    ("UE", "difusao ao publico"): ("distribuição ao público",),
+    ("UE", "contrato a distancia"): ("contratar à distância",),
+    ("UE", "coordenador dos servicos digitais de estabelecimento"): ("coordenador de estabelecimento",),
+    ("UE", "coordenador dos servicos digitais de destino"): ("coordenador de destino",),
+    ("UE", "categorias especiais de dados pessoais"): ("dados sensíveis", "dados pessoais sensíveis"),
+    ("UE", "definicao de perfis"): ("criação de perfis", "perfilamento"),
+}
+
 TEMAS = (
     ("Crianças, adolescentes e idade", ("criança", "adolescente", "idade", "parental", "infantil")),
     ("Inteligência artificial", ("inteligência artificial", "sistema de ia", "biométr", "algorit", "modelo", "treino", "testagem", "falsificaç", "sistema de reconhecimento")),
@@ -368,7 +407,7 @@ def main() -> None:
             contador += 1
         ids.add(verbete_id)
         tema = tema_de(termos)
-        busca_extra = {"rede social": ["redes sociais"]}.get(chave, [])
+        busca_extra = list(SINONIMOS.get((jurisdicao, chave), ()))
         busca_texto = " ".join(dict.fromkeys([
             *termos,
             *busca_extra,

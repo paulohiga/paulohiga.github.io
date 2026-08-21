@@ -212,7 +212,8 @@
   - Anúncio publicitário
   busca:
   - Anúncio publicitário
-  busca_texto: Anúncio publicitário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - anúncios publicitários
+  busca_texto: Anúncio publicitário anúncios publicitários Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: A
   tema: Internet e plataformas
   jurisdicao: UE
@@ -644,7 +645,9 @@
   - Categorias especiais de dados pessoais
   busca:
   - Categorias especiais de dados pessoais
-  busca_texto: Categorias especiais de dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - dados sensíveis
+  - dados pessoais sensíveis
+  busca_texto: Categorias especiais de dados pessoais dados sensíveis dados pessoais sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -728,7 +731,8 @@
   - Comerciante
   busca:
   - Comerciante
-  busca_texto: Comerciante Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - comerciantes
+  busca_texto: Comerciante comerciantes Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
   jurisdicao: UE
@@ -959,7 +963,8 @@
   - Consumidor
   busca:
   - Consumidor
-  busca_texto: Consumidor Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - consumidores
+  busca_texto: Consumidor consumidores Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
   jurisdicao: UE
@@ -1064,7 +1069,8 @@
   - Conteúdos ilegais
   busca:
   - Conteúdos ilegais
-  busca_texto: Conteúdos ilegais Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - conteúdo ilegal
+  busca_texto: Conteúdos ilegais conteúdo ilegal Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Internet e plataformas
   jurisdicao: UE
@@ -1136,7 +1142,8 @@
   - Contrato à distância
   busca:
   - Contrato à distância
-  busca_texto: Contrato à distância Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - contratar à distância
+  busca_texto: Contrato à distância contratar à distância Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1186,7 +1193,8 @@
   - Coordenador dos serviços digitais de destino
   busca:
   - Coordenador dos serviços digitais de destino
-  busca_texto: Coordenador dos serviços digitais de destino Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - coordenador de destino
+  busca_texto: Coordenador dos serviços digitais de destino coordenador de destino Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
   jurisdicao: UE
@@ -1207,7 +1215,8 @@
   - Coordenador dos serviços digitais de estabelecimento
   busca:
   - Coordenador dos serviços digitais de estabelecimento
-  busca_texto: Coordenador dos serviços digitais de estabelecimento Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - coordenador de estabelecimento
+  busca_texto: Coordenador dos serviços digitais de estabelecimento coordenador de estabelecimento Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
   jurisdicao: UE
@@ -1644,7 +1653,9 @@
   - Definição de perfis
   busca:
   - Definição de perfis
-  busca_texto: Definição de perfis Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
+  - criação de perfis
+  - perfilamento
+  busca_texto: Definição de perfis criação de perfis perfilamento Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1780,7 +1791,9 @@
   - Destinatário do serviço
   busca:
   - Destinatário do serviço
-  busca_texto: Destinatário do serviço Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - usuário do serviço
+  - usuários do serviço
+  busca_texto: Destinatário do serviço usuário do serviço usuários do serviço Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Agentes e governança
   jurisdicao: UE
@@ -1801,7 +1814,8 @@
   - Difusão ao público
   busca:
   - Difusão ao público
-  busca_texto: Difusão ao público Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - distribuição ao público
+  busca_texto: Difusão ao público distribuição ao público Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Internet e plataformas
   jurisdicao: UE
@@ -2545,7 +2559,9 @@
   - Interface em linha
   busca:
   - Interface em linha
-  busca_texto: Interface em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - interface online
+  - interfaces online
+  busca_texto: Interface em linha interface online interfaces online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: I
   tema: Internet e plataformas
   jurisdicao: UE
@@ -2906,7 +2922,8 @@
   - Moderação de conteúdos
   busca:
   - Moderação de conteúdos
-  busca_texto: Moderação de conteúdos Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - moderação de conteúdo
+  busca_texto: Moderação de conteúdos moderação de conteúdo Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: M
   tema: Internet e plataformas
   jurisdicao: UE
@@ -2969,7 +2986,10 @@
   - Motor de pesquisa em linha
   busca:
   - Motor de pesquisa em linha
-  busca_texto: Motor de pesquisa em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - mecanismo de busca
+  - mecanismos de busca
+  - buscador online
+  busca_texto: Motor de pesquisa em linha mecanismo de busca mecanismos de busca buscador online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: M
   tema: Internet e plataformas
   jurisdicao: UE
@@ -3439,7 +3459,9 @@
   - Plataforma em linha
   busca:
   - Plataforma em linha
-  busca_texto: Plataforma em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - plataforma online
+  - plataformas online
+  busca_texto: Plataforma em linha plataforma online plataformas online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: P
   tema: Internet e plataformas
   jurisdicao: UE
@@ -4085,7 +4107,8 @@
   - Serviço intermediário
   busca:
   - Serviço intermediário
-  busca_texto: Serviço intermediário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - serviços intermediários
+  busca_texto: Serviço intermediário serviços intermediários Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: S
   tema: Internet e plataformas
   jurisdicao: UE
@@ -4325,7 +4348,8 @@
   - Sistema de recomendação
   busca:
   - Sistema de recomendação
-  busca_texto: Sistema de recomendação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - sistemas de recomendação
+  busca_texto: Sistema de recomendação sistemas de recomendação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: S
   tema: Internet e plataformas
   jurisdicao: UE
@@ -4472,7 +4496,8 @@
   - Termos e condições
   busca:
   - Termos e condições
-  busca_texto: Termos e condições Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - termos de uso
+  busca_texto: Termos e condições termos de uso Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: T
   tema: Internet e plataformas
   jurisdicao: UE
@@ -4890,7 +4915,8 @@
   - Volume de negócios
   busca:
   - Volume de negócios
-  busca_texto: Volume de negócios Fiscalização e sanções Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  - faturamento
+  busca_texto: Volume de negócios faturamento Fiscalização e sanções Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: V
   tema: Fiscalização e sanções
   jurisdicao: UE

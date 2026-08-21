@@ -21,6 +21,7 @@ fazer nada disso à mão.
 - [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Definições normativas](#definições-normativas)
+  - [Dicionário de sinônimos](#dicionário-de-sinônimos)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
@@ -536,6 +537,30 @@ mantém sua referência própria. Redações materialmente iguais aparecem uma v
 seguidas por todas as referências que as adotam; redações diferentes permanecem
 separadas. A chave do agrupamento inclui `BR` ou `UE`, de modo que uma redação
 europeia nunca seja apresentada como definição brasileira.
+
+### Dicionário de sinônimos
+
+O verbete é identificado pela redação da norma, e a norma nem sempre escreve o
+termo como o comentário. Numa nota europeia isso é a regra: o painel está em
+PT-PT ("plataforma em linha", "volume de negócios", "termos e condições") e os
+comentários, em pt-BR ("plataforma online", "faturamento", "termos de uso"). Sem
+ponte, o termo comentado deixaria de encontrar a própria definição.
+
+A ponte é o `SINONIMOS` de `scripts/gerar_definicoes.py`, um mapa de
+`(jurisdição, chave do termo)` para as formas alternativas. Elas entram no campo
+`busca` do verbete — o que alimenta a marcação contextual dentro das notas e o
+filtro por texto da página consolidada — e **nunca no `titulo`**, que continua
+sendo só a redação da norma. Duas regras de uso:
+
+- **o plural é entrada própria**, porque a marcação casa a forma exata
+  ("plataforma online" não alcança "plataformas online");
+- **a chave inclui a jurisdição**, de modo que um sinônimo brasileiro nunca
+  alcance um verbete europeu por acidente, e vice-versa.
+
+Sinônimo que não aparece em nota nenhuma é peso morto: acrescente ao mapa a
+forma que os comentários realmente usam, e confira o resultado abrindo a nota.
+
+### Marcação dentro das notas
 
 Nas notas de comentário, `_layouts/nota.html` embute somente um índice compacto
 de termos da jurisdição da página. O `notas.js` marca no máximo a primeira

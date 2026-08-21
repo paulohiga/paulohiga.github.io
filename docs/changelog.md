@@ -28,12 +28,18 @@ no site, não o caminho até lá.
   também o texto em vigor: o regulamento não foi alterado por ato posterior, e
   as retificações registradas pelo EUR-Lex atingem as versões francesa, polaca
   e alemã.
-- A nota cobre as isenções de responsabilidade dos prestadores intermediários
+- A nota cobre as isenções de responsabilidade dos provedores intermediários
   (arts. 4.º a 8.º), o regime das ordens das autoridades nacionais, a escada de
-  quatro degraus de deveres de devida diligência, o regime de risco sistêmico
-  das plataformas e motores de pesquisa de muito grande dimensão, a repartição
-  de competências entre coordenadores nacionais e a Comissão Europeia, as
-  sanções e o cronograma de aplicação.
+  quatro degraus de deveres de diligência, o regime de risco sistêmico das
+  plataformas e mecanismos de busca de muito grande porte, a repartição de
+  competências entre coordenadores nacionais e a Comissão Europeia, as sanções
+  e o cronograma de aplicação.
+- Os comentários da nota são escritos em **vocabulário jurídico brasileiro** —
+  provedor, usuário, plataforma online, mecanismo de busca, hospedagem, termos
+  de uso, faturamento, multa —, enquanto o painel mantém o texto oficial do
+  EUR-Lex em PT-PT. Uma tabela de correspondência no alto da nota faz a ponte
+  entre as duas grafias, inclusive para quem procura o dispositivo pelo campo
+  "Ir para".
 - A seção "A execução até agora" registra, com base na [lista oficial de
   serviços designados](https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses)
   e nos comunicados da Comissão Europeia, as três coimas já aplicadas: [X,
@@ -50,6 +56,13 @@ no site, não o caminho até lá.
   DSA, entre eles serviço intermediário, plataforma em linha, motor de pesquisa
   em linha, conteúdos ilegais, moderação de conteúdos e sistema de recomendação.
   O acervo passou de 195 para 219 verbetes.
+- O banco de definições ganhou um **dicionário de sinônimos**: cada verbete
+  passa a ser encontrado também pelas formas com que o comentário o escreve
+  ("plataforma online" para "plataforma em linha", "faturamento" para "volume de
+  negócios", "dados sensíveis" para "categorias especiais de dados pessoais",
+  entre outras). Os sinônimos valem para a busca da página consolidada e para a
+  marcação dos termos dentro das notas; o título do verbete continua sendo só a
+  redação da norma.
 - As notas do **Marco Civil**, do **ECA Digital**, do **GDPR** e do **AI Act**
   passaram a remeter à nota do DSA. A do Marco Civil registra que a norma
   europeia ocupa o espaço preenchido aqui pelos Temas 987 e 533; a do ECA
