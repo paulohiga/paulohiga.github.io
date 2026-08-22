@@ -1,7 +1,7 @@
 
 # Relatório de auditoria e oportunidades de evolução
 
-**Data:** 22 de agosto de 2026  
+**Data:** 22 de agosto de 2026
 **Escopo:** site inteiro, incluindo as quatro páginas de apresentação, a seção
 /notas, o glossário normativo, a geração das normas, o build e a publicação.
 
@@ -373,4 +373,3 @@ oficial está sendo exibida; navegar aos dois painéis só com teclado; e contin
 uma sessão de estudo no ponto em que parou. A medição deve combinar tarefas
 reais em desktop e mobile com LCP ≤ 2,5 s, INP ≤ 200 ms e CLS ≤ 0,1, além de
 verificações automatizadas de âncoras, links, ementas e acessibilidade.
-
