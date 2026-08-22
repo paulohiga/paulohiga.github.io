@@ -36,6 +36,553 @@
     }
     marcarLinksExternos();
 
+    /* --- Atalho global da busca ---
+       A busca fica acessível pelo cabeçalho de todas as páginas da seção. `s`
+       é a tecla comum; dentro de campos ela fica livre para a digitação e a
+       preferência dos atalhos das notas continua respeitada. */
+    var paginaBusca = document.getElementById('busca-pagina');
+    var linkBuscaGlobal = document.querySelector('.nota-busca');
+    if (linkBuscaGlobal && !paginaBusca) {
+        document.addEventListener('keydown', function (evento) {
+            var atalhosLigados = true;
+            try { atalhosLigados = localStorage.getItem('notas-atalhos') !== 'off'; } catch (erro) { /* modo privado */ }
+            if (!atalhosLigados || evento.ctrlKey || evento.metaKey || evento.altKey) return;
+            if (evento.key.toLowerCase() !== 's') return;
+            var alvo = evento.target;
+            var tag = alvo && alvo.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (alvo && alvo.isContentEditable)) return;
+            evento.preventDefault();
+            linkBuscaGlobal.click();
+        });
+    }
+
+    /* As páginas de índice, definições e busca compartilham o botão de
+       atalhos, mas não têm os dois painéis da nota individual. Elas saem
+       antes da lógica específica dos painéis; este bloco garante que o
+       controle comum continue abrindo a lista, posicionando-a e respeitando
+       a preferência de atalhos também nesses layouts. */
+    function inicializarAtalhosBasicos() {
+        var botao = document.getElementById('nota-atalhos-btn');
+        var painel = document.getElementById('nota-atalhos');
+        var chave = document.getElementById('nota-atalhos-ligados');
+        if (!botao || !painel) return;
+
+        var ligado = true;
+        try { ligado = localStorage.getItem('notas-atalhos') !== 'off'; } catch (erro) { /* modo privado */ }
+
+        function preso() {
+            return painel.classList.contains('nota-atalhos--preso');
+        }
+
+        function posicionar() {
+            var caixa = botao.getBoundingClientRect();
+            if (!caixa.width) return;
+            painel.style.top = caixa.bottom + 'px';
+            painel.style.right = Math.max(8, document.documentElement.clientWidth - caixa.right) + 'px';
+            painel.style.maxHeight = 'calc(100dvh - ' + (caixa.bottom + 12) + 'px)';
+        }
+
+        function mostrar(valor) {
+            if (valor) posicionar();
+            painel.classList.toggle('nota-atalhos--preso', valor);
+            botao.setAttribute('aria-expanded', String(valor));
+            document.body.classList.toggle('nota-dica-dispensada', !valor);
+            if (!valor && painel.contains(document.activeElement)) botao.focus();
+        }
+
+        botao.addEventListener('click', function () {
+            mostrar(!preso());
+        });
+        ['pointerenter', 'focus'].forEach(function (nomeEvento) {
+            botao.addEventListener(nomeEvento, function () {
+                document.body.classList.remove('nota-dica-dispensada');
+                posicionar();
+            });
+        });
+        document.addEventListener('click', function (evento) {
+            if (!preso() || painel.contains(evento.target) || botao.contains(evento.target)) return;
+            mostrar(false);
+        });
+        window.addEventListener('resize', posicionar);
+        posicionar();
+
+        if (chave) {
+            chave.checked = ligado;
+            chave.addEventListener('change', function () {
+                ligado = chave.checked;
+                try { localStorage.setItem('notas-atalhos', ligado ? 'on' : 'off'); } catch (erro) { /* modo privado */ }
+            });
+        }
+
+        document.addEventListener('keydown', function (evento) {
+            if (evento.ctrlKey || evento.metaKey || evento.altKey) return;
+            if (evento.key === 'Escape') {
+                if (preso()) {
+                    mostrar(false);
+                    evento.preventDefault();
+                }
+                return;
+            }
+            var alvo = evento.target;
+            var tag = alvo && alvo.tagName;
+            if (!ligado || evento.key !== '?' || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (alvo && alvo.isContentEditable)) return;
+            evento.preventDefault();
+            mostrar(!preso());
+        });
+    }
+
+    /* A página já traz seis links de fallback úteis sem JavaScript. Com ele,
+       troca a lista por uma amostra curta do pool gerado no build, sem buscar
+       o índice jurídico completo só para montar a inspiração. O sorteio dá
+       preferência a termos brasileiros, mas preserva algumas portas para as
+       normas europeias quando elas ajudam a comparar os sistemas. */
+    function inicializarTopicos() {
+        var lista = document.getElementById('busca-inspiracoes-lista');
+        var fonte = document.getElementById('busca-topicos-dados');
+        if (!lista || !fonte) return;
+
+        var dados;
+        try { dados = JSON.parse(fonte.textContent || '[]'); } catch (erro) { return; }
+        if (!Array.isArray(dados)) return;
+
+        function comparavelTopico(valor) {
+            return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        var descartados = {
+            resumo: true,
+            introducao: true,
+            referencias: true,
+            fontes: true,
+            conclusao: true,
+            cronologia: true,
+            bibliografia: true,
+            anexos: true
+        };
+        var vistos = Object.create(null);
+        var candidatos = dados.map(function (item) {
+            if (!item || typeof item.termo !== 'string') return null;
+            var termo = item.termo.trim().replace(/\s+/g, ' ');
+            var chave = comparavelTopico(termo);
+            if (termo.length < 4 || termo.length > 96 || descartados[chave] || vistos[chave]) return null;
+            vistos[chave] = true;
+            return { termo: termo, tipo: item.tipo, contexto: item.contexto, jurisdicao: item.jurisdicao };
+        }).filter(Boolean);
+
+        function embaralhar(itens) {
+            for (var indice = itens.length - 1; indice > 0; indice -= 1) {
+                var sorteado = Math.floor(Math.random() * (indice + 1));
+                var temporario = itens[indice];
+                itens[indice] = itens[sorteado];
+                itens[sorteado] = temporario;
+            }
+            return itens;
+        }
+
+        function eBrasil(item) {
+            var jurisdicao = comparavelTopico(item.jurisdicao);
+            return jurisdicao === 'br' || jurisdicao === 'brasil';
+        }
+
+        function ordenarPorJurisdição(itens) {
+            var brasileiros = embaralhar(itens.filter(eBrasil));
+            var outros = embaralhar(itens.filter(function (item) { return !eBrasil(item); }));
+            return brasileiros.concat(outros);
+        }
+
+        function escolherTipo(tipo, limite) {
+            return ordenarPorJurisdição(candidatos.filter(function (item) {
+                return item.tipo === tipo;
+            })).slice(0, limite);
+        }
+
+        var escolhidos = [];
+        [
+            { tipo: 'definicao', limite: 4 },
+            { tipo: 'secao', limite: 4 },
+            { tipo: 'nota', limite: 2 }
+        ].forEach(function (grupo) {
+            escolhidos = escolhidos.concat(escolherTipo(grupo.tipo, grupo.limite));
+        });
+        var chavesEscolhidas = Object.create(null);
+        escolhidos.forEach(function (item) { chavesEscolhidas[comparavelTopico(item.termo)] = true; });
+        var restantes = ordenarPorJurisdição(candidatos.filter(function (item) {
+            return !chavesEscolhidas[comparavelTopico(item.termo)];
+        }));
+        escolhidos = escolhidos.concat(restantes.slice(0, Math.max(0, 10 - escolhidos.length)));
+        var amostra = escolhidos.slice(0, 10);
+        if (!amostra.length) return;
+        lista.replaceChildren();
+        embaralhar(amostra).forEach(function (item) {
+            var li = document.createElement('li');
+            var link = document.createElement('a');
+            link.href = '/notas/busca?q=' + encodeURIComponent(item.termo);
+            link.className = 'busca-inspiracoes__item';
+            if (['nota', 'secao', 'norma', 'artigo', 'definicao'].indexOf(item.tipo) !== -1) {
+                link.classList.add('busca-inspiracoes__item--' + item.tipo);
+            }
+            var termo = document.createElement('span');
+            termo.className = 'busca-inspiracoes__termo';
+            termo.textContent = item.termo;
+            var contexto = document.createElement('span');
+            contexto.className = 'busca-inspiracoes__contexto';
+            contexto.textContent = item.contexto || 'Tópico do acervo';
+            link.appendChild(termo);
+            link.appendChild(contexto);
+            li.appendChild(link);
+            lista.appendChild(li);
+        });
+    }
+
+    /* --- Busca global do acervo (/notas/busca) ---
+       O índice é um JSON separado, gerado pelo Jekyll e carregado só quando há
+       uma consulta. Ele traz títulos, ementas, temas e trechos curtos — não
+       duplica o texto jurídico inteiro no cliente. A página usa este mesmo
+       arquivo notas.js para manter tema e links externos, mas sai antes da
+       lógica dos dois painéis. */
+    if (paginaBusca) {
+        function iniciarBuscaGlobal() {
+            var indiceUrl = paginaBusca.dataset.buscaIndice;
+            var formulario = document.getElementById('busca-form');
+            var campo = document.getElementById('busca-campo');
+            var filtrosTipo = Array.prototype.slice.call(document.querySelectorAll('.busca-filtro'));
+            var tiposValidos = filtrosTipo.map(function (botao) { return botao.dataset.tipo; }).filter(Boolean);
+            var tiposSelecionados = [];
+            var resultados = document.getElementById('busca-resultados');
+            var lista = document.getElementById('busca-lista');
+            var vazio = document.getElementById('busca-vazio');
+            var status = document.getElementById('busca-status');
+            var entradas = [];
+            var rotulos = {
+                nota: 'Nota',
+                secao: 'Seção',
+                norma: 'Norma',
+                artigo: 'Artigo',
+                definicao: 'Definição'
+            };
+            var indicePronto = false;
+            var indiceFalhou = false;
+            var indicePromessa = null;
+            var frequenciasTermos = Object.create(null);
+
+            function atualizarFiltros() {
+                filtrosTipo.forEach(function (botao) {
+                    var tipo = botao.dataset.tipo;
+                    var ativo = tipo
+                        ? tiposSelecionados.indexOf(tipo) !== -1
+                        : tiposSelecionados.length === 0;
+                    botao.setAttribute('aria-pressed', String(ativo));
+                });
+            }
+
+            function atualizarContagens(contagens, pronto) {
+                filtrosTipo.forEach(function (botao) {
+                    var tipo = botao.dataset.tipo || 'todos';
+                    var contador = botao.querySelector('[data-busca-contagem]');
+                    if (contador) contador.textContent = pronto ? String(contagens[tipo] || 0) : '—';
+                });
+            }
+
+            function comparavel(texto) {
+                return (texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            }
+
+            function textoDeBusca(valor) {
+                return Array.isArray(valor) ? valor.join(' ') : (valor || '');
+            }
+
+            function eJurisdicaoBrasileira(entrada) {
+                var jurisdicao = comparavel(entrada.jurisdicao);
+                return jurisdicao === 'brasil' || jurisdicao === 'br';
+            }
+
+            function tokenizar(texto) {
+                return comparavel(texto).match(/[a-z0-9]+/g) || [];
+            }
+
+            function ocorrencias(texto, token) {
+                var total = 0;
+                var inicio = 0;
+                var posicao;
+                while ((posicao = texto.indexOf(token, inicio)) !== -1) {
+                    total += 1;
+                    inicio = posicao + Math.max(token.length, 1);
+                }
+                return total;
+            }
+
+            function adicionar(entrada) {
+                if (!entrada || !entrada.url || !entrada.titulo) return;
+                var camposBusca = [entrada.titulo, entrada.subtitulo, entrada.texto, entrada.nota, entrada.norma, entrada.jurisdicao];
+                if (entrada.termos) camposBusca.push(entrada.termos.join(' '));
+                if (entrada.busca) camposBusca.push(textoDeBusca(entrada.busca));
+                entrada._busca = comparavel(camposBusca.filter(Boolean).join(' '));
+                entrada._titulo = comparavel(entrada.titulo);
+                entrada._jurisdicaoBrasileira = eJurisdicaoBrasileira(entrada);
+                entradas.push(entrada);
+            }
+
+            function preencherIndice(dados) {
+                var itens = dados.itens || {};
+                (itens.notas || []).forEach(adicionar);
+                (itens.secoes || []).forEach(function (grupo) {
+                    (grupo.itens || []).forEach(function (item) {
+                        item.nota = grupo.nota;
+                        item.nota_url = grupo.nota_url;
+                        adicionar(item);
+                    });
+                });
+                (itens.normas || []).forEach(function (norma) {
+                    var artigos = norma.artigos || [];
+                    var copia = Object.assign({}, norma);
+                    delete copia.artigos;
+                    adicionar(copia);
+                    artigos.forEach(function (artigo) {
+                        artigo.nota = norma.titulo;
+                        adicionar(artigo);
+                    });
+                });
+                (itens.definicoes || []).forEach(adicionar);
+
+                frequenciasTermos = Object.create(null);
+                entradas.forEach(function (entrada) {
+                    entrada._campos = [
+                        { texto: entrada._titulo, peso: 12 },
+                        { texto: comparavel(entrada.subtitulo), peso: 7 },
+                        { texto: comparavel(entrada.nota || entrada.norma || entrada.jurisdicao), peso: 4 },
+                        { texto: comparavel(entrada.texto), peso: 3 },
+                        { texto: comparavel(textoDeBusca(entrada.busca || entrada.termos)), peso: 2 }
+                    ];
+                    var termosUnicos = Object.create(null);
+                    tokenizar(entrada._busca).forEach(function (token) {
+                        if (termosUnicos[token]) return;
+                        termosUnicos[token] = true;
+                        frequenciasTermos[token] = (frequenciasTermos[token] || 0) + 1;
+                    });
+                });
+            }
+
+            function carregarIndice() {
+                if (indicePronto) return Promise.resolve();
+                if (indicePromessa) return indicePromessa;
+                indicePromessa = fetch(indiceUrl, { credentials: 'same-origin' }).then(function (resposta) {
+                    if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+                    return resposta.json();
+                }).then(function (dados) {
+                    preencherIndice(dados);
+                    indicePronto = true;
+                }).catch(function (erro) {
+                    indiceFalhou = true;
+                    throw erro;
+                });
+                return indicePromessa;
+            }
+
+            function atualizarUrl() {
+                var parametros = new URLSearchParams();
+                var termo = campo.value.trim();
+                if (termo) parametros.set('q', termo);
+                if (tiposSelecionados.length) parametros.set('tipo', tiposSelecionados.join(','));
+                var consulta = parametros.toString();
+                history.replaceState(null, '', location.pathname + (consulta ? '?' + consulta : ''));
+            }
+
+            function construirResultado(entrada) {
+                var item = document.createElement('li');
+                item.className = 'busca-resultado busca-resultado--' + entrada.tipo;
+
+                var contexto = entrada.nota || entrada.norma || entrada.jurisdicao || entrada.subtitulo;
+                var link = document.createElement('a');
+                link.className = 'busca-resultado__link';
+                link.href = entrada.url;
+                link.setAttribute('aria-label', (rotulos[entrada.tipo] || 'Resultado') + ': ' + entrada.titulo + (contexto ? ' — ' + contexto : '') + (entrada.externo ? ' (abre em nova aba)' : ''));
+                if (entrada.externo) {
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                }
+
+                var tipo = document.createElement('span');
+                tipo.className = 'busca-resultado__tipo';
+                tipo.textContent = rotulos[entrada.tipo] || 'Resultado';
+                link.appendChild(tipo);
+
+                var titulo = document.createElement('h3');
+                titulo.textContent = entrada.titulo;
+                if (entrada.externo) {
+                    var aviso = document.createElement('span');
+                    aviso.className = 'visualmente-oculto';
+                    aviso.textContent = ' (abre em nova aba)';
+                    titulo.appendChild(aviso);
+                }
+                link.appendChild(titulo);
+
+                if (contexto) {
+                    var meta = document.createElement('p');
+                    meta.className = 'busca-resultado__meta';
+                    meta.textContent = contexto;
+                    link.appendChild(meta);
+                }
+
+                if (entrada.subtitulo && entrada.subtitulo !== contexto) {
+                    var subtitulo = document.createElement('p');
+                    subtitulo.className = 'busca-resultado__subtitulo';
+                    subtitulo.textContent = entrada.subtitulo;
+                    link.appendChild(subtitulo);
+                }
+                if (entrada.texto) {
+                    var trecho = document.createElement('p');
+                    trecho.className = 'busca-resultado__trecho';
+                    trecho.textContent = entrada.texto;
+                    link.appendChild(trecho);
+                }
+                item.appendChild(link);
+                return item;
+            }
+
+            function pontuar(entrada, tokens, termo) {
+                if (tokens.some(function (token) { return entrada._busca.indexOf(token) === -1; })) return -1;
+                var pontos = 0;
+                var todosNoTitulo = true;
+
+                tokens.forEach(function (token) {
+                    var frequencia = frequenciasTermos[token] || 1;
+                    var idf = 1 + Math.log((entradas.length + 1) / (frequencia + 1));
+                    var encontrouNoTitulo = false;
+
+                    entrada._campos.forEach(function (campo) {
+                        var posicao = campo.texto.indexOf(token);
+                        if (posicao === -1) return;
+                        var quantidade = Math.min(ocorrencias(campo.texto, token), 3);
+                        var proximidade = posicao === 0
+                            ? 1.25
+                            : 1 + Math.max(0, 1 - posicao / Math.max(campo.texto.length, 1)) * 0.15;
+                        pontos += campo.peso * (1 + (quantidade - 1) * 0.12) * proximidade * idf;
+                        if (campo === entrada._campos[0]) encontrouNoTitulo = true;
+                    });
+
+                    if (!encontrouNoTitulo) todosNoTitulo = false;
+                });
+
+                if (entrada._titulo === termo) pontos += 900;
+                else if (entrada._titulo.indexOf(termo) === 0) pontos += 600;
+                else if (entrada._titulo.indexOf(termo) !== -1) pontos += 360;
+                if (todosNoTitulo) pontos += 260;
+                if (comparavel(entrada.subtitulo).indexOf(termo) !== -1) pontos += 150;
+                if (entrada.tipo === 'artigo' && /^(art|artigo)\b/.test(termo)) pontos += 90;
+                // Títulos curtos e coincidências mais cedo ficam acima de
+                // ocorrências longas no texto, sem transformar a ordem final
+                // numa simples ordenação alfabética.
+                pontos += Math.max(0, 30 - entrada._titulo.length * 0.18);
+                return pontos;
+            }
+
+            function mostrar() {
+                var termoOriginal = campo.value.trim();
+                var termo = comparavel(termoOriginal);
+                lista.replaceChildren();
+                vazio.hidden = true;
+                resultados.removeAttribute('aria-busy');
+                resultados.hidden = !termo;
+                if (!termo) {
+                    atualizarContagens({}, false);
+                    status.textContent = 'Digite um termo para buscar no acervo.';
+                    return;
+                }
+
+                if (!indicePronto) {
+                    resultados.hidden = false;
+                    resultados.setAttribute('aria-busy', 'true');
+                    status.textContent = indiceFalhou
+                        ? 'Não foi possível carregar o índice. Use a navegação por categorias.'
+                        : 'Carregando o índice de busca…';
+                    if (!indiceFalhou) carregarIndice().then(mostrar).catch(mostrar);
+                    return;
+                }
+                resultados.removeAttribute('aria-busy');
+
+                var tokens = termo.split(/\s+/).filter(Boolean);
+                var encontradosTodos = entradas.map(function (entrada, indice) {
+                    return {
+                        entrada: entrada,
+                        indice: indice,
+                        pontos: pontuar(entrada, tokens, termo)
+                    };
+                }).filter(function (item) { return item.pontos >= 0; });
+                var contagens = { todos: encontradosTodos.length };
+                tiposValidos.forEach(function (tipo) { contagens[tipo] = 0; });
+                encontradosTodos.forEach(function (item) {
+                    if (contagens[item.entrada.tipo] !== undefined) contagens[item.entrada.tipo] += 1;
+                });
+                atualizarContagens(contagens, true);
+
+                var encontrados = encontradosTodos.filter(function (item) {
+                    return !tiposSelecionados.length || tiposSelecionados.indexOf(item.entrada.tipo) !== -1;
+                });
+                encontrados.sort(function (a, b) {
+                    return Number(b.entrada._jurisdicaoBrasileira) - Number(a.entrada._jurisdicaoBrasileira) ||
+                        b.pontos - a.pontos || a.entrada.titulo.localeCompare(b.entrada.titulo, 'pt-BR') || a.indice - b.indice;
+                });
+
+                var total = encontrados.length;
+                encontrados.slice(0, 80).forEach(function (item) {
+                    lista.appendChild(construirResultado(item.entrada));
+                });
+                if (!total) vazio.hidden = false;
+                status.textContent = total === 1 ? '1 resultado encontrado.' : total + ' resultados encontrados.';
+                if (total > 80) status.textContent += ' Mostrando os 80 mais relevantes.';
+            }
+
+            function lerUrl() {
+                var parametros = new URLSearchParams(location.search);
+                campo.value = parametros.get('q') || '';
+                var tiposUrl = (parametros.get('tipo') || '').split(',').filter(function (tipo) {
+                    return tiposValidos.indexOf(tipo) !== -1;
+                });
+                tiposSelecionados = tiposUrl.filter(function (tipo, indice) {
+                    return tiposUrl.indexOf(tipo) === indice;
+                });
+                atualizarFiltros();
+                mostrar();
+                campo.focus();
+                if (campo.value) campo.select();
+            }
+
+            formulario.addEventListener('submit', function (evento) {
+                evento.preventDefault();
+                atualizarUrl();
+                mostrar();
+            });
+            campo.addEventListener('input', function () {
+                atualizarUrl();
+                mostrar();
+            });
+            filtrosTipo.forEach(function (botao) {
+                botao.addEventListener('click', function () {
+                    var tipo = botao.dataset.tipo;
+                    if (!tipo) {
+                        tiposSelecionados = [];
+                    } else if (!tiposSelecionados.length) {
+                        tiposSelecionados = [tipo];
+                    } else {
+                        var posicao = tiposSelecionados.indexOf(tipo);
+                        if (posicao === -1) tiposSelecionados.push(tipo);
+                        else tiposSelecionados.splice(posicao, 1);
+                    }
+                    atualizarFiltros();
+                    atualizarUrl();
+                    mostrar();
+                });
+            });
+            window.addEventListener('popstate', lerUrl);
+            lerUrl();
+        }
+
+        iniciarBuscaGlobal();
+        inicializarTopicos();
+        inicializarAtalhosBasicos();
+        return;
+    }
+
     /* --- Página de definições normativas: a mesma lista se reorganiza sem
        duplicar cartões no HTML. Sem JS permanece a ordem alfabética. --- */
     var listaDefinicoes = document.getElementById('lista-definicoes');
@@ -405,7 +952,10 @@
 
     var comentarios = document.getElementById('comentarios');
     var lei = document.getElementById('lei');
-    if (!comentarios || !lei) return;
+    if (!comentarios || !lei) {
+        inicializarAtalhosBasicos();
+        return;
+    }
 
     var corpoDosComentarios = comentarios.querySelector('.painel__corpo');
     var corpoDaLei = lei.querySelector('.painel__corpo');
@@ -1537,9 +2087,9 @@
     atualizarProgressos();
 
     /* --- Atalhos de teclado ---
-       Uma tecla para cada controle que hoje só existe no ponteiro: os dois
-       sumários, o modo leitura de cada painel, o menu de notas, o seletor de
-       normas e o campo "Ir para". Não é conforto: o painel de comentários tem
+       Uma tecla para cada controle que hoje só existe no ponteiro: a busca
+       global, os dois sumários, o modo leitura de cada painel, o menu de notas,
+       o seletor de normas e o campo "Ir para". Não é conforto: o painel de comentários tem
        centenas de elementos focáveis e vem antes da lei seca no DOM, de modo
        que chegar ao campo "Ir para" pelo Tab custa a nota inteira.
 

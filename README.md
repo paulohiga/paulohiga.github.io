@@ -70,6 +70,8 @@ Os detalhes de cada decisão estão em
 ├── notas.md                     # Página índice                 → /notas
 ├── definicoes.md                # Definições normativas         → /notas/definicoes
 ├── definicoes.json              # Banco para abertura contextual nas notas
+├── busca.md                     # Busca global                  → /notas/busca
+├── busca-index.html             # Índice JSON gerado             → /notas/busca.json
 ├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 18 textos legais em Markdown puro (output: false)
 ├── _fragmentos/                 # 18 fragmentos das normas (fetch sob demanda, sem link)
@@ -86,7 +88,7 @@ Os detalhes de cada decisão estão em
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # 5 scripts Python de autoria
+├── scripts/                     # Scripts Python de autoria e validação
 ├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -188,16 +190,20 @@ Antes de dar push, confirme que o site **compila**:
 
 ```bash
 bundle exec jekyll build
+python3 scripts/validar_indice_busca.py --site-dir _site
 ```
+
+O funcionamento do índice, os pesos do ranking e as regras de desempate estão
+documentados em [`docs/notas.md#busca-global`](./docs/notas.md#busca-global).
 
 Um erro de Liquid numa branch não aparece em lugar nenhum até o preview do
 Netlify — este comando o pega antes.
 
 ### Scripts de autoria
 
-Os cinco scripts de `scripts/` são ferramentas de autoria das notas de
-legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
-build. O que cada um faz está em
+Os scripts Python de `scripts/` são ferramentas de autoria e validação das
+notas de legislação: rodam na sua máquina, **não entram no site** e não fazem
+parte do conteúdo publicado. O que cada um faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
 
 ```bash
@@ -244,8 +250,8 @@ git push origin --delete claude/nome-antigo-e-comprido
 O site de produção ([higa.me](https://higa.me)) é compilado e publicado pelo
 workflow do GitHub Actions em `.github/workflows/pages.yml` a cada push na branch
 `master`. O workflow: (1) faz checkout com histórico completo (`fetch-depth: 0`),
-(2) minifica CSS/JS, (3) roda `jekyll build` com `JEKYLL_ENV=production` e
-(4) publica no GitHub Pages.
+(2) minifica CSS/JS, (3) roda `jekyll build` com `JEKYLL_ENV=production`,
+(4) valida o índice global de busca e (5) publica no GitHub Pages.
 
 Esse build próprio (em vez do build padrão do GitHub Pages) permite usar o plugin
 `jekyll-last-modified-at`, que preenche o

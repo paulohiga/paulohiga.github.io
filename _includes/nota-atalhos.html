@@ -1,6 +1,6 @@
 {%- comment -%}
-    Lista dos atalhos de teclado da nota, revelada pelo botão discreto ao lado
-    do botão de tema (hover, foco ou clique — ver nota-style.css).
+    Lista dos atalhos de teclado da seção, revelada pelo botão ao lado da busca
+    e do botão de tema (hover, foco ou clique — ver nota-style.css).
 
     **Esta lista é a documentação do que o notas.js escuta.** Mexeu numa tecla
     lá, mexa aqui: uma tecla que o leitor não descobre é uma tecla que não
@@ -13,14 +13,15 @@
     ancora no botão quando ele existe e no canto da janela quando não (a medida
     é do notas.js — o cabeçalho não tem altura fixa no desktop).
 
-    Só aparece acima de 900px: atalho de teclado pressupõe teclado, e no
-    cabeçalho preso do mobile o botão gastaria espaço para explicar o que
-    ninguém ali pode usar. Sem JavaScript não aparece em lugar nenhum, porque
-    é o notas.js que escuta as teclas.
+    O botão aparece em todos os tamanhos para manter o cabeçalho consistente.
+    Em telas estreitas o painel continua rolável e pode ser aberto pelo toque;
+    sem JavaScript não aparece em lugar nenhum, porque é o notas.js que escuta
+    as teclas.
 {%- endcomment -%}
     <section id="nota-atalhos" class="nota-atalhos" aria-labelledby="nota-atalhos-titulo">
         <h2 class="nota-atalhos__titulo" id="nota-atalhos-titulo">Atalhos de teclado</h2>
         <dl class="nota-atalhos__lista">
+{% if page.layout == 'nota' %}
             <dt><kbd>c</kbd></dt>
             <dd>Sumário dos comentários</dd>
 
@@ -41,6 +42,10 @@
 
             <dt><kbd>/</kbd> <span class="nota-atalhos__ou">ou</span> <kbd>i</kbd></dt>
             <dd>Campo “Ir para” da lei seca</dd>
+{% endif %}
+
+            <dt><kbd>s</kbd></dt>
+            <dd>Busca global do acervo</dd>
 
             <dt><kbd>?</kbd></dt>
             <dd>Esta lista</dd>

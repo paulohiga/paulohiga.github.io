@@ -21,6 +21,7 @@ fazer nada disso à mão.
 - [Ementas dos artigos](#ementas-dos-artigos)
 - [Referências clicáveis](#referências-clicáveis)
 - [Definições normativas](#definições-normativas)
+- [Busca global](#busca-global)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
@@ -60,8 +61,9 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_includes/lei-anotada.html` | Renderiza o texto legal dando um id a cada dispositivo |
 | `_includes/nota-head.html` | `<head>` das notas (canonical, OG, JSON-LD `Article`) |
 | `_includes/nota-aviso.html` | Aviso de IA + isenção institucional, em toda nota |
+| `_includes/nota-topo-acoes.html` | Grupo comum de busca, atalhos e tema no cabeçalho de toda a seção |
 | `_includes/painel-leitura.html` | Botão de [modo leitura](#modo-leitura) da barra de título de cada painel |
-| `_includes/nota-atalhos.html` | A lista de [atalhos de teclado](#atalhos-de-teclado) que o botão do cabeçalho revela |
+| `_includes/nota-atalhos.html` | A lista contextual de [atalhos de teclado](#atalhos-de-teclado) que o botão comum do cabeçalho revela |
 | `_includes/nota-style.css` | CSS da seção — inline, isolado do `style.css` |
 | `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
@@ -69,6 +71,10 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `_data/definicoes.yml` | Banco gerado com a literalidade das definições normativas, agrupadas por termo e jurisdição |
 | `definicoes.md` e `_layouts/definicoes.html` | Página consolidada em `/notas/definicoes`, com ordem alfabética ou temática |
 | `definicoes.json` | Mesmos verbetes em JSON, carregados sob demanda pelos comentários |
+| `busca.md` e `_layouts/busca.html` | Busca global em `/notas/busca`, com diretório de fallback sem JavaScript |
+| `busca-index.html` e `_includes/busca-indice.html` | Índice JSON determinístico de notas, seções, normas, artigos e definições |
+| `_includes/busca-topicos.html` | Pool compacto de termos para a seção aleatória de inspiração da busca |
+| `_includes/busca-head.html` | `<head>` da busca, com canonical, OG e JSON-LD `SearchResultsPage` |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então
 publicar ou remover uma nota não pede edição nenhuma em `notas.md` nem em
@@ -241,7 +247,8 @@ Quatro coisas mudam ao entrar:
   não fecha ao clicar fora nem com `Esc`, que são gestos de dispensar
   sobreposição; fecha pelo X, e o botão da borda volta para reabri-la.
 - **Na lei seca, o cabeçalho da nota sai junto** — trilha para `/notas`, título,
-  menu das outras notas, botão de tema e a faixa de volta para a nota de origem.
+  menu das outras notas, ações de busca, atalhos e tema, além da faixa de volta
+  para a nota de origem.
   Ele identifica a *nota*, e o seletor do painel dá acesso a qualquer norma da
   seção: lendo o Marco Civil dentro da nota do ECA Digital, "ECA Digital — Lei
   nº 15.211/2025" no alto da tela é informação errada. Quem identifica o que
@@ -339,14 +346,15 @@ no DOM, de modo que chegar ao campo "Ir para" pelo Tab custa a nota inteira.
 | `c` · `l` | Abre/fecha o sumário dos comentários · o da lei seca |
 | `Shift+C` · `Shift+L` | Expande aquele painel para a tela inteira ([modo leitura](#modo-leitura)); de novo, devolve a tela dividida |
 | `n` | Menu de notas, com `↑` `↓`, `Home`/`End` e `Enter` percorrendo os itens |
+| `s` | Abre a busca global do acervo |
 | `e` | Abre o seletor de normas do painel da lei seca |
 | `/` ou `i` | Foca o campo "Ir para", com o termo anterior selecionado |
 | `?` | Abre/fecha a própria lista de atalhos |
 | `Esc` | Desfaz uma camada: lista, menu, gaveta do sumário e, por fim, o modo leitura |
 
 **Duas letras dizem o painel** — `c` de comentários, `l` de lei seca — e a
-maiúscula troca a gaveta pela tela inteira. É a única regra a decorar; o resto
-está na lista, a um `?` de distância.
+maiúscula troca a gaveta pela tela inteira. `s` leva à busca global do acervo.
+É a única regra a decorar; o resto está na lista, a um `?` de distância.
 
 Três regras valem para todas as teclas:
 
@@ -370,8 +378,9 @@ uma camada depois.
 
 ### O botão e a lista
 
-Um botão discreto ao lado do de tema revela a lista no ponteiro, no foco ou
-preso pelo clique (e pelo `?`). O conteúdo está em
+O botão entre a busca e o tema revela a lista no ponteiro, no foco ou preso pelo
+clique (e pelo `?`). O mesmo trio de controles aparece na home de `/notas`, na
+busca, nas definições e nas notas individuais. O conteúdo está em
 `_includes/nota-atalhos.html`, e **essa lista é a documentação das teclas que o
 `notas.js` escuta**: mexeu numa, mexa na outra. Tecla que o leitor não descobre
 é tecla que não existe; tecla listada que não funciona é pior.
@@ -391,10 +400,10 @@ Quatro decisões que a mantêm em pé:
   põe no `body` e que o ponteiro tira ao sair e voltar, e que é também o que faz
   um clique no botão aberto fechar de verdade; e durar o quanto o leitor quiser
   — quem manda é o `:hover`.
-- **Só acima de 900px.** Atalho de teclado pressupõe teclado, e no cabeçalho
-  preso do mobile o botão gastaria espaço para explicar o que ninguém ali pode
-  usar. Ele **nasce oculto** no CSS e só é ligado no bloco de duas colunas —
-  mesmo default protetor do botão de modo leitura.
+- **Em todas as larguras.** O botão permanece no cabeçalho também no mobile para
+  que a navegação seja consistente; o painel se adapta à janela e fica rolável.
+  Nas páginas que não são notas individuais, a lista mostra apenas os atalhos
+  que existem naquele contexto.
 - **As teclas podem ser desligadas**, por um interruptor no pé da lista, e a
   escolha vale para todas as notas (`localStorage`). Não é preferência de
   gosto: atalho de uma tecla só precisa poder ser desligado (WCAG 2.1.4, nível
@@ -545,6 +554,107 @@ JSON completo de `/notas/definicoes.json` é carregado sob demanda e exibido num
 diálogo rolável. Sem JavaScript, o comentário e as remissões legais continuam
 funcionando, e a página consolidada permanece acessível pela navegação.
 
+## Busca global
+
+`/notas/busca` reúne num único índice compacto os títulos das notas, suas
+seções, as normas e os artigos ancorados, além dos verbetes de
+`/notas/definicoes`. O índice é gerado no build em `/notas/busca.json`, a
+partir das coleções e dos dados do glossário, com ordenação estável; ele contém
+metadados, ementas e trechos curtos, não o texto jurídico integral.
+
+### Ciclo da consulta
+
+O build passa por `_includes/busca-indice.html` e publica o resultado como
+`/notas/busca.json`. Ele agrega:
+
+- títulos e descrições de `site.notas`;
+- títulos das seções das notas, com a âncora e um trecho curto;
+- normas de `site.leis` e artigos dos fragmentos ancorados;
+- títulos, temas, referências normativas e trechos curtos dos verbetes de
+  `site.data.definicoes`.
+
+`notas.js` só faz `fetch` desse JSON depois que há um termo para consultar. O
+índice fica em memória durante a página; não há API de busca nem dependência de
+runtime. A consulta é normalizada em minúsculas, com decomposição Unicode e
+remoção de acentos. Depois, a expressão é dividida em tokens alfanuméricos. Um
+resultado precisa conter **todos** os tokens em algum campo pesquisável; a
+busca não interpreta aspas como operador de frase.
+
+Os campos concatenados para a verificação incluem título, subtítulo, trecho,
+nota ou norma de contexto, jurisdição e os termos auxiliares do verbete. O
+cliente exibe apenas os metadados e os trechos já preparados no build; ele não
+reescreve o texto legal.
+
+### Pontuação e pesos
+
+Para cada token presente, o ranking soma a ocorrência ponderada em cada campo:
+
+| Campo | Peso base | Conteúdo |
+| --- | ---: | --- |
+| Título | 12 | nome da nota, seção, norma, artigo ou verbete |
+| Subtítulo | 7 | ementa, tema do glossário ou contexto secundário |
+| Contexto | 4 | nota de origem, norma principal ou jurisdição |
+| Trecho | 3 | descrição ou fragmento curto |
+| Busca auxiliar | 2 | termos e texto de busca do verbete |
+
+O peso de cada ocorrência é ajustado por três fatores. Repetições contam no
+máximo três vezes e cada repetição depois da primeira acrescenta 12% ao fator
+de frequência. A posição dá uma vantagem de proximidade: ocorrência no início
+do campo recebe fator `1,25`; as demais recebem até 15% conforme aparecem mais
+cedo. Termos raros recebem IDF, calculado como
+`1 + ln((N + 1) / (DF + 1))`, em que `N` é o número de entradas e `DF` é o
+número de entradas que contêm o token, contado uma vez por entrada.
+
+Depois da soma dos campos, aplicam-se bônus cumulativos:
+
+| Situação | Bônus |
+| --- | ---: |
+| Título exatamente igual à consulta | +900 |
+| Título começa com a consulta | +600 |
+| Título contém a consulta | +360 |
+| Todos os tokens aparecem no título | +260 |
+| Subtítulo contém a consulta | +150 |
+| Consulta começa por `art` ou `artigo` e o item é artigo | +90 |
+| Título curto | até +30, proporcional ao comprimento |
+
+A jurisdição brasileira é uma regra de ordenação separada, não um bônus: itens
+`Brasil`/`BR` formam sempre a primeira faixa; dentro dela, e depois na faixa de
+outras jurisdições, vale a pontuação acima. Os desempates finais são título em
+português e ordem original do índice. A interface mostra no máximo 80
+resultados, mas preserva a contagem total encontrada.
+
+### Filtros, URL e sugestões
+
+Os filtros de nota, seção, norma, artigo e definição são aplicados depois da
+pontuação. A contagem de cada botão representa todos os resultados da consulta,
+antes do filtro; `Todos` é o estado padrão e vários tipos podem ser combinados.
+O estado compartilhável usa `?q=` e `?tipo=`, com tipos separados por vírgula.
+
+A seção **Inspire-se para buscar** usa um pool separado e compacto, também
+gerado no build. O cliente sorteia dez sugestões com Fisher–Yates a cada
+carregamento, distribuídas em quatro definições, quatro seções e duas notas;
+dentro de cada grupo, o acervo brasileiro é priorizado. O contexto dos
+verbetes vem da primeira referência normativa, e o das seções vem da nota de
+origem. Sem JavaScript, dez links de fallback continuam disponíveis.
+
+O campo recebe foco ao entrar na página. O link no cabeçalho e a tecla `s`
+levam à busca a partir de todas as páginas da seção, inclusive
+`/notas/definicoes`; dentro de campos, a tecla continua disponível para
+digitação.
+
+Os resultados apontam para a nota, a âncora da seção ou do artigo, ou o verbete
+correspondente. Nas normas adicionais, a navegação usa os prefixos já
+existentes e o carregamento sob demanda dos fragmentos. Sem JavaScript, o
+diretório da página mantém links úteis por categoria para notas, normas e
+definições. O cliente só exibe o índice; não reescreve o texto legal.
+
+Depois do build, `scripts/validar_indice_busca.py` confere o JSON, a versão do
+esquema, os campos obrigatórios, URLs duplicadas, destinos publicados e
+âncoras. Também reconhece os prefixos das normas extras, cujos artigos só
+entram no DOM quando o fragmento é carregado. O workflow de Pages executa essa
+verificação antes de publicar; uma atualização que deixe o índice inconsistente
+interrompe o deploy.
+
 ## Normas estrangeiras (`formato: ue`)
 
 Uma norma da União Europeia marca o dispositivo de outro jeito, e o arquivo em
@@ -682,8 +792,9 @@ dispositivo errado.
 
 ## Scripts de autoria
 
-Os cinco scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
-máquina, não entram no site e não fazem parte do build. As dependências estão
+Os scripts de `scripts/` são **ferramentas de autoria e validação**: rodam na
+sua máquina, não entram no site e não fazem parte do conteúdo publicado. As
+dependências estão
 em [`scripts/requirements.txt`](../scripts/requirements.txt); para instalá-las,
 veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 
@@ -694,3 +805,4 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
 | `gerar_definicoes.py` | Gera o banco de definições normativas a partir dos artigos e textos de `_leis/` |
+| `validar_indice_busca.py` | Confere o JSON gerado, os campos, destinos e âncoras do índice de busca após o build |

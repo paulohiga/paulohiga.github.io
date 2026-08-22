@@ -960,6 +960,16 @@ body:not(.js) .lei-ir {
         height: 2.15rem;
     }
 
+    .nota-busca {
+        width: 2.15rem;
+        height: 2.15rem;
+    }
+
+    .nota-atalhos-btn {
+        width: 2.15rem;
+        height: 2.15rem;
+    }
+
     /* Presa junto com o cabeçalho. Em uma coluna quem rola é a página, e a
        chegada por âncora já desce o texto milhares de pixels: solta, a faixa
        nasceria fora da tela justamente na navegação que a justifica. */
@@ -1128,10 +1138,10 @@ body.js .nota-titulo-menu {
     color: var(--accent);
 }
 
-/* --- Botões do canto direito do cabeçalho (atalhos e tema) ---
-   O `margin-left: auto` que empurra o botão de tema para a direita passa a ser
-   do grupo. Ele continua no próprio botão para o índice /notas, onde o tema
-   está sozinho no cabeçalho e não há grupo nenhum. */
+/* --- Ações do cabeçalho ---
+   As quatro páginas da seção usam o mesmo grupo e a mesma ordem: busca,
+   atalhos e tema. O contorno comum deixa claro que os três são controles do
+   mesmo nível; o grupo, e não um botão isolado, ocupa o canto direito. */
 .nota-topo__acoes {
     margin-left: auto;
     flex: none;
@@ -1144,36 +1154,43 @@ body.js .nota-titulo-menu {
     margin-left: 0;
 }
 
-/* --- Lista de atalhos de teclado ---
-   O botão nasce oculto e só é ligado acima de 900px (bloco no fim desta
-   seção): atalho de teclado pressupõe teclado, e no cabeçalho preso do mobile
-   ele gastaria espaço para explicar o que ninguém ali pode usar. É o mesmo
-   default protetor do botão de modo leitura — o controle só aparece onde
-   alguém o ligou.
-
-   Sem borda nem fundo: ao lado do botão de tema, que é um círculo desenhado,
-   dois círculos iguais disputariam a mesma atenção, e este é o mais discreto
-   dos dois. O contorno só aparece no hover/foco e enquanto a lista está
-   presa. */
-.nota-atalhos-btn {
-    display: none;
-    flex: none;
+.nota-busca,
+.nota-atalhos-btn,
+.nota-topo__acoes .nota-tema {
+    display: grid;
     place-items: center;
+    flex: none;
     width: 2.5rem;
     height: 2.5rem;
-    padding: 0;
-    border: 1px solid transparent;
+    border: 1px solid var(--hairline);
     border-radius: 50%;
-    background: none;
-    color: var(--ink-soft);
-    cursor: pointer;
+    background: var(--page-bg);
+    color: var(--ink);
 }
 
+.nota-busca {
+    text-decoration: none;
+}
+
+.nota-busca:hover,
+.nota-busca:focus-visible,
 .nota-atalhos-btn:hover,
-.nota-atalhos-btn[aria-expanded="true"] {
-    border-color: var(--hairline);
-    background: var(--page-bg);
+.nota-atalhos-btn:focus-visible,
+.nota-atalhos-btn[aria-expanded="true"],
+.nota-topo__acoes .nota-tema:hover,
+.nota-topo__acoes .nota-tema:focus-visible {
+    border-color: var(--accent);
+    background: var(--surface-tint);
     color: var(--accent);
+}
+
+/* --- Lista de atalhos de teclado ---
+   O botão tem o mesmo círculo, borda e área de toque dos outros dois controles.
+   O painel continua fora do cabeçalho para sobreviver ao modo leitura da lei
+   seca, que remove o cabeçalho da tela. */
+.nota-atalhos-btn {
+    padding: 0;
+    cursor: pointer;
 }
 
 /* `position: fixed` e fora do cabeçalho: no modo leitura da lei seca o
@@ -1297,17 +1314,14 @@ body:not(.js) .nota-atalhos {
      de verdade, em vez de o hover reacender a lista no mesmo instante;
    - **persistente** — quem manda é o `:hover`, que dura o tempo que o leitor
      quiser. */
-@media (min-width: 900px) {
-    .nota-atalhos-btn {
-        display: grid;
-    }
-
-    body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:hover) .nota-atalhos,
-    body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:focus-visible) .nota-atalhos,
-    body:not(.nota-dica-dispensada) .nota-atalhos:hover,
-    .nota-atalhos--preso {
-        display: block;
-    }
+/* O botão e o painel existem em todas as larguras. Em dispositivos de toque,
+   o clique é a forma principal de abrir a lista; em ponteiro, hover e foco
+   também a revelam. */
+body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:hover) .nota-atalhos,
+body:not(.nota-dica-dispensada):has(.nota-atalhos-btn:focus-visible) .nota-atalhos,
+body:not(.nota-dica-dispensada) .nota-atalhos:hover,
+.nota-atalhos--preso {
+    display: block;
 }
 
 /* --- Painel redimensionável: divisor arrastável entre comentários e lei
@@ -1618,12 +1632,453 @@ body:not(.js) .nota-progresso {
     color: var(--ink-soft);
 }
 
-.notas-index__definicoes {
-    margin: -1rem 0 2rem;
-    padding: 0.8rem 1rem;
-    border-left: 3px solid var(--accent);
+.notas-index__recursos {
+    margin: -0.6rem 0 2.25rem;
+    padding: 1rem;
     background: var(--surface-tint);
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+}
+
+.notas-index__recursos h2 {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+}
+
+.notas-index__recursos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notas-index__recurso {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    height: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.6rem;
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.notas-index__recurso:hover,
+.notas-index__recurso:focus-visible {
+    border-color: var(--accent);
+    background: var(--page-bg);
+    color: var(--ink);
+}
+
+.notas-index__recurso > .ico {
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-top: 0.1rem;
+    color: var(--accent);
+}
+
+.notas-index__recurso > span {
+    display: grid;
+    gap: 0.15rem;
+}
+
+.notas-index__recurso strong {
+    color: var(--link);
+    font-size: 0.92rem;
+}
+
+.notas-index__recurso small {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+/* --- Busca global do acervo (/notas/busca) --- */
+.busca {
+    width: min(100%, 68rem);
+    margin: 0 auto;
+    padding: 1.5rem clamp(1rem, 3vw, 2rem) 5rem;
+}
+
+.busca__intro {
+    max-width: 58rem;
+    margin: 0 0 1.25rem;
+    color: var(--ink-soft);
+}
+
+.busca-form {
+    display: grid;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+}
+
+.busca-form > label:first-child,
+.busca-tipos legend {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.busca-form__linha {
+    display: flex;
+    min-width: 0;
+    gap: 0.5rem;
+}
+
+.busca-form input {
+    min-width: 0;
+    padding: 0.65rem 0.7rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.55rem;
+    background: var(--page-bg);
+    color: var(--ink);
+    font: inherit;
+}
+
+.busca-form__linha input {
+    width: min(100%, 42rem);
+    flex: 1;
+}
+
+.busca-form__linha button {
+    flex: none;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.55rem;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.busca-form__linha button:hover {
+    filter: brightness(0.92);
+}
+
+.busca-tipos {
+    margin: 0.25rem 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.busca-tipos legend {
+    padding: 0;
+}
+
+.busca-tipos__botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.45rem;
+}
+
+.busca-filtro {
+    --busca-tipo-cor: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--busca-tipo-cor);
+    border-radius: 999px;
+    background: var(--page-bg);
+    color: var(--busca-tipo-cor);
+    font: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.busca-filtro[data-tipo="nota"] { --busca-tipo-cor: #7c3aed; }
+.busca-filtro[data-tipo="secao"] { --busca-tipo-cor: #0f766e; }
+.busca-filtro[data-tipo="norma"] { --busca-tipo-cor: #b45309; }
+.busca-filtro[data-tipo="artigo"] { --busca-tipo-cor: #2563eb; }
+.busca-filtro[data-tipo="definicao"] { --busca-tipo-cor: #be185d; }
+
+body.dark-theme .busca-filtro[data-tipo="nota"] { --busca-tipo-cor: #c4b5fd; }
+body.dark-theme .busca-filtro[data-tipo="secao"] { --busca-tipo-cor: #5eead4; }
+body.dark-theme .busca-filtro[data-tipo="norma"] { --busca-tipo-cor: #fbbf24; }
+body.dark-theme .busca-filtro[data-tipo="artigo"] { --busca-tipo-cor: #93c5fd; }
+body.dark-theme .busca-filtro[data-tipo="definicao"] { --busca-tipo-cor: #f9a8d4; }
+
+.busca-filtro:hover,
+.busca-filtro:focus-visible {
+    border-color: var(--busca-tipo-cor);
+    color: var(--busca-tipo-cor);
+}
+
+.busca-filtro[aria-pressed="true"] {
+    border-color: var(--busca-tipo-cor);
+    background: var(--busca-tipo-cor);
+    color: var(--page-bg);
+}
+
+.busca-filtro__contagem {
+    min-width: 1.2em;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.8;
+}
+
+.busca-status {
+    min-height: 1.4em;
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+}
+
+.busca-resultados[hidden] {
+    display: none;
+}
+
+body:not(.js) .busca-resultados {
+    display: none;
+}
+
+body.js .busca-noscript {
+    display: none;
+}
+
+.busca-resultados h2,
+.busca-diretorio summary {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+}
+
+.busca-resultados h2 {
+    margin: 1.5rem 0 0.75rem;
+}
+
+.busca-resultados ol {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.busca-resultado {
+    --busca-tipo-cor: var(--accent);
+    padding: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--busca-tipo-cor);
+    border-radius: 0.65rem;
+}
+
+.busca-resultado__link {
+    display: block;
+    min-height: 100%;
+    padding: 1rem 1.1rem;
+    border-radius: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+.busca-resultado__link:hover {
+    background: var(--surface-tint);
+}
+
+.busca-resultado__link:focus-visible {
+    outline: 3px solid var(--busca-tipo-cor);
+    outline-offset: -4px;
+}
+
+.busca-resultado--nota { --busca-tipo-cor: #7c3aed; }
+.busca-resultado--secao { --busca-tipo-cor: #0f766e; }
+.busca-resultado--norma { --busca-tipo-cor: #b45309; }
+.busca-resultado--artigo { --busca-tipo-cor: #2563eb; }
+.busca-resultado--definicao { --busca-tipo-cor: #be185d; }
+
+body.dark-theme .busca-resultado--nota { --busca-tipo-cor: #c4b5fd; }
+body.dark-theme .busca-resultado--secao { --busca-tipo-cor: #5eead4; }
+body.dark-theme .busca-resultado--norma { --busca-tipo-cor: #fbbf24; }
+body.dark-theme .busca-resultado--artigo { --busca-tipo-cor: #93c5fd; }
+body.dark-theme .busca-resultado--definicao { --busca-tipo-cor: #f9a8d4; }
+
+.busca-resultado__tipo {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    color: var(--busca-tipo-cor, var(--ink-soft));
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.busca-resultado h3 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.busca-resultado__link h3 {
+    color: var(--link);
+}
+
+.busca-resultado__meta,
+.busca-resultado__subtitulo,
+.busca-resultado__trecho {
+    margin: 0.35rem 0 0;
+    font-size: 0.84rem;
+}
+
+.busca-resultado__meta {
+    color: var(--link);
+    font-weight: 600;
+}
+
+.busca-resultado__subtitulo,
+.busca-resultado__trecho {
+    color: var(--ink-soft);
+}
+
+.busca-vazio {
+    padding: 1.5rem;
+    color: var(--ink-soft);
+    text-align: center;
+}
+
+.busca-diretorio {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--surface-tint);
+    border: 1px solid var(--hairline);
+    border-radius: 0.75rem;
+}
+
+.busca-diretorio summary {
+    cursor: pointer;
+}
+
+.busca-diretorio__grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.busca-diretorio__grade h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.busca-diretorio__grade ul {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.busca-diretorio__grade p {
+    margin: 0;
     font-size: 0.9rem;
+}
+
+.busca-inspiracoes__ajuda {
+    margin: 0.75rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+}
+
+.busca-inspiracoes__lista {
+    --busca-tipo-cor: var(--accent);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.busca-inspiracoes__lista li {
+    min-width: 0;
+}
+
+.busca-inspiracoes__lista a {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.12rem;
+    width: 100%;
+    min-height: 4.25rem;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--busca-tipo-cor);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    color: var(--link);
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+.busca-inspiracoes__termo {
+    line-height: 1.25;
+}
+
+.busca-inspiracoes__contexto {
+    color: var(--busca-tipo-cor);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.busca-inspiracoes__item--nota { --busca-tipo-cor: #7c3aed; }
+.busca-inspiracoes__item--secao { --busca-tipo-cor: #0f766e; }
+.busca-inspiracoes__item--norma { --busca-tipo-cor: #b45309; }
+.busca-inspiracoes__item--artigo { --busca-tipo-cor: #2563eb; }
+.busca-inspiracoes__item--definicao { --busca-tipo-cor: #be185d; }
+
+body.dark-theme .busca-inspiracoes__item--nota { --busca-tipo-cor: #c4b5fd; }
+body.dark-theme .busca-inspiracoes__item--secao { --busca-tipo-cor: #5eead4; }
+body.dark-theme .busca-inspiracoes__item--norma { --busca-tipo-cor: #fbbf24; }
+body.dark-theme .busca-inspiracoes__item--artigo { --busca-tipo-cor: #93c5fd; }
+body.dark-theme .busca-inspiracoes__item--definicao { --busca-tipo-cor: #f9a8d4; }
+
+.busca-inspiracoes__lista a:hover,
+.busca-inspiracoes__lista a:focus-visible {
+    border-color: var(--busca-tipo-cor);
+    background: var(--page-bg);
+    color: var(--link);
+}
+
+.busca-noscript {
+    margin-top: 1rem;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+}
+
+@media (max-width: 620px) {
+    .notas-index__recursos-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .busca-diretorio__grade {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .busca-inspiracoes__lista {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 621px) and (max-width: 900px) {
+    .busca-inspiracoes__lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* --- Definições contextuais nos comentários --- */
@@ -2167,6 +2622,7 @@ body:not(.js) .definicoes-controles {
 @media print {
     .nota-abas,
     .nota-tema,
+    .nota-busca,
     .nota-atalhos-btn,
     .nota-atalhos,
     .lei-ir,
