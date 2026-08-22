@@ -85,15 +85,15 @@
                     return Number(b.dataset.mencoes) - Number(a.dataset.mencoes) ||
                         a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
                 }
-                var grupoA = ordemDefinicoes === 'tema' ? a.dataset.tema : a.dataset.letra;
-                var grupoB = ordemDefinicoes === 'tema' ? b.dataset.tema : b.dataset.letra;
+                var grupoA = ordemDefinicoes === 'tema' ? a.dataset.notas : a.dataset.letra;
+                var grupoB = ordemDefinicoes === 'tema' ? b.dataset.notas : b.dataset.letra;
                 return grupoA.localeCompare(grupoB, 'pt-BR') ||
                     a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
             });
             var grupoAnterior = '';
             visiveis.forEach(function (card) {
                 var grupo = ordemDefinicoes === 'tema'
-                    ? card.dataset.tema
+                    ? card.dataset.notas
                     : (ordemDefinicoes === 'mencoes' ? 'Mais citados' : card.dataset.letra);
                 if (grupo !== grupoAnterior) {
                     var titulo = document.createElement('h2');

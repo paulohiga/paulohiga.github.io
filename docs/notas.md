@@ -67,8 +67,8 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
 | `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
-| `_data/definicoes.yml` | Banco gerado com literalidade, agrupamentos e contagem de menções nas notas e nos textos normativos |
-| `definicoes.md` e `_layouts/definicoes.html` | Página consolidada em `/notas/definicoes`, com ordem alfabética ou temática |
+| `_data/definicoes.yml` | Banco gerado com literalidade, agrupamentos por nota e contagem de menções separada por jurisdição nas notas e nos textos normativos |
+| `definicoes.md` e `_layouts/definicoes.html` | Página consolidada em `/notas/definicoes`, com ordem alfabética, por nota ou por menções |
 | `definicoes.json` | Mesmos verbetes em JSON, carregados sob demanda pelos comentários |
 
 **A página índice se atualiza sozinha.** A lista vem de `site.notas`, então

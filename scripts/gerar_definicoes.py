@@ -158,6 +158,8 @@ FORMAS = {
     "contrato a distancia": ["contratar à distância"],
 }
 
+NOTAS_TITULOS = {"ai-act": "AI Act", "dsa": "DSA", "eca-digital": "ECA Digital", "gdpr": "GDPR", "lgpd": "LGPD", "mci": "Marco Civil da Internet", "regimento-interno-anpd": "Regimento Interno da ANPD"}
+
 TEMAS = (
     ("Crianças, adolescentes e idade", ("criança", "adolescente", "idade", "parental", "infantil")),
     ("Inteligência artificial", ("inteligência artificial", "sistema de ia", "biométr", "algorit", "modelo", "treino", "testagem", "falsificaç", "sistema de reconhecimento")),
@@ -211,11 +213,15 @@ def corpo_para_contagem(texto: str) -> str:
     return partes[2] if len(partes) == 3 else texto
 
 
-def textos_para_contagem(diretorio: Path) -> list[str]:
-    return [
-        sem_acentos(corpo_para_contagem(caminho.read_text()))
-        for caminho in sorted(diretorio.glob("*.md"))
-    ]
+def textos_para_contagem(diretorio: Path, jurisdicao: str) -> list[str]:
+    textos = []
+    for caminho in sorted(diretorio.glob("*.md")):
+        meta, _ = frente(caminho.read_text())
+        formato = meta.get("formato", "br")
+        juris = "UE" if formato == "ue" or "europa" in str(meta.get("jurisdicao", "")).lower() else "BR"
+        if juris == jurisdicao:
+            textos.append(sem_acentos(corpo_para_contagem(caminho.read_text())))
+    return textos
 
 
 def contar_mencoes(textos: list[str], formas: list[str]) -> int:
@@ -435,8 +441,8 @@ def extrair_extra(especificacao: dict, corpo: str) -> str:
 
 def main() -> None:
     definicoes: list[dict] = []
-    textos_notas = textos_para_contagem(NOTAS)
-    textos_normas = textos_para_contagem(LEIS)
+    textos_notas = {jurisdicao: textos_para_contagem(NOTAS, jurisdicao) for jurisdicao in ("BR", "UE")}
+    textos_normas = {jurisdicao: textos_para_contagem(LEIS, jurisdicao) for jurisdicao in ("BR", "UE")}
     for caminho in sorted(LEIS.glob("*.md")):
         slug = caminho.stem
         ementa_path = EMENTAS / f"{slug}.yml"
@@ -508,8 +514,8 @@ def main() -> None:
         equivalentes = EQUIVALENTES_BR.get(chave, []) if jurisdicao == "UE" else []
         formas = FORMAS.get(chave, [])
         busca = list(dict.fromkeys([*termos, *equivalentes, *formas]))
-        mencoes_notas = contar_mencoes(textos_notas, busca)
-        mencoes_normas = contar_mencoes(textos_normas, busca)
+        mencoes_notas = contar_mencoes(textos_notas[jurisdicao], busca)
+        mencoes_normas = contar_mencoes(textos_normas[jurisdicao], busca)
         busca_texto = " ".join(dict.fromkeys([
             *busca,
             tema,

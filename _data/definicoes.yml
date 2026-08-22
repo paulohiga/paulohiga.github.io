@@ -10,10 +10,13 @@
   busca_texto: Acesso provável por crianças e adolescentes Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: A
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 3
-  mencoes_notas: 2
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'as seguintes situações:
 
@@ -44,10 +47,13 @@
   busca_texto: Administrador de sistema autônomo Outros conceitos normativos Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: A
   tema: Outros conceitos normativos
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 3
-  mencoes_notas: 1
-  mencoes_normas: 2
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a pessoa física ou jurídica que administra blocos de endereço IP específicos e o respectivo sistema autônomo de roteamento, devidamente cadastrada no ente nacional responsável pelo registro e distribuição de endereços IP geograficamente referentes ao País
     referencias:
@@ -69,10 +75,13 @@
   busca_texto: Aferição de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: A
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 54
-  mencoes_notas: 36
-  mencoes_normas: 18
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: termo geral referente aos procedimentos destinados a verificar, estimar ou inferir, direta ou indiretamente, a idade ou a faixa etária de um usuário, por meio de um conjunto de métodos, tecnologias e processos, incluídos análise documental, biométrica e de padrões de uso, e outros meios tecnicamente idôneos
     referencias:
@@ -94,10 +103,14 @@
   busca_texto: Agentes de tratamento Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: A
   tema: Agentes e governança
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 81
-  mencoes_notas: 9
-  mencoes_normas: 72
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o controlador e o operador
     referencias:
@@ -127,10 +140,13 @@
   busca_texto: Agentes de tratamento de pequeno porte Agentes e governança Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
   letra: A
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 28
-  mencoes_notas: 3
-  mencoes_normas: 25
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: microempresas, empresas de pequeno porte, startups, pessoas jurídicas de direito privado, inclusive sem fins lucrativos, nos termos da legislação vigente, bem como pessoas naturais e entes privados despersonalizados que realizam tratamento de dados pessoais, assumindo obrigações típicas de controlador ou de operador
     referencias:
@@ -152,10 +168,13 @@
   busca_texto: Agentes regulados Agentes e governança Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: A
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 7
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 7
+  mencoes_normas: 0
   definicoes:
   - texto: agentes de tratamento e demais integrantes ou interessados no tratamento de dados pessoais
     referencias:
@@ -179,10 +198,13 @@
   busca_texto: Ambiente de testagem da regulamentação da IA sandbox regulatório Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 32
-  mencoes_notas: 7
-  mencoes_normas: 25
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um modelo controlado, criado por uma autoridade competente, que oferece aos prestadores ou potenciais prestadores de sistemas de IA a possibilidade de desenvolver, treinar, validar e testar, se for caso disso em condições reais, um sistema de IA inovador, de acordo com um plano do ambiente de testagem, durante um período limitado sob supervisão regulamentar
     referencias:
@@ -204,10 +226,13 @@
   busca_texto: Ampla divulgação do incidente em meios de comunicação Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: A
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: providência que pode ser determinada pela ANPD ao controlador, nos termos do art. 48, § 2º, I, da LGPD, no âmbito do processo de comunicação de incidente de segurança, como a publicação no sítio eletrônico, nas redes sociais do controlador ou em outros meios de comunicação
     referencias:
@@ -229,10 +254,13 @@
   busca_texto: Anonimização Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: A
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 37
-  mencoes_notas: 24
-  mencoes_normas: 13
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo
     referencias:
@@ -254,10 +282,13 @@
   busca_texto: Anúncio publicitário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: A
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 25
-  mencoes_notas: 1
-  mencoes_normas: 24
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: informações concebidas para promover a mensagem de uma pessoa singular ou coletiva, independentemente de visarem objetivos comerciais ou não comerciais, e apresentadas por uma plataforma em linha na sua interface em linha mediante remuneração, especificamente paga para promover essas informações
     referencias:
@@ -279,10 +310,13 @@
   busca_texto: Aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Internet e plataformas
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 82
-  mencoes_notas: 10
-  mencoes_normas: 72
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as atividades realizadas por autoridades responsáveis pela aplicação da lei ou em nome destas para efeitos de prevenção, investigação, deteção ou repressão de infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas
     referencias:
@@ -304,10 +338,13 @@
   busca_texto: Aplicações de internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: A
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 74
-  mencoes_notas: 11
-  mencoes_normas: 63
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o conjunto de funcionalidades que podem ser acessadas por meio de um terminal conectado à internet
     referencias:
@@ -329,10 +366,13 @@
   busca_texto: Autenticidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: A
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 8
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 8
+  mencoes_normas: 0
   definicoes:
   - texto: propriedade pela qual se assegura que a informação foi produzida, expedida, modificada ou destruída por uma determinada pessoa física, equipamento, sistema, órgão ou entidade
     referencias:
@@ -354,10 +394,13 @@
   busca_texto: Autodeclaração de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: A
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 2
-  mencoes_notas: 1
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: método limitado à indicação da idade, da faixa etária ou de outro dado pessoal fornecido pelo próprio usuário, sem evidências adicionais para confirmar a veracidade ou a titularidade da informação
     referencias:
@@ -379,10 +422,13 @@
   busca_texto: Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: A
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 9
-  mencoes_notas: 1
-  mencoes_normas: 8
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: entidade da administração pública criada por lei, responsável por zelar pela aplicação desta Lei e fiscalizar o seu cumprimento em todo o território nacional e por editar regulamentos e procedimentos para sua execução, a qual deve observar no processo decisório as normas previstas no Capítulo I da Lei nº 13.848, de 25 de junho de 2019
     referencias:
@@ -406,10 +452,13 @@
   busca_texto: Autoridade de controlo autoridade de controle Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: A
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 574
-  mencoes_notas: 1
-  mencoes_normas: 573
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma autoridade pública independente criada por um Estado-Membro nos termos do artigo 51.º
     referencias:
@@ -431,10 +480,13 @@
   busca_texto: Autoridade de controlo interessada Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: A
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 16
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 16
+  mencoes_normas: 0
   definicoes:
   - texto: 'uma autoridade de controlo afetada pelo tratamento de dados pessoais pelo facto de:
 
@@ -467,10 +519,13 @@
   busca_texto: Autoridade de fiscalização do mercado autoridade de fiscalização de mercado Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Fiscalização e sanções
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 83
-  mencoes_notas: 9
-  mencoes_normas: 74
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a autoridade nacional que realiza as atividades e toma as medidas previstas no Regulamento (UE) 2019/1020
     referencias:
@@ -492,10 +547,13 @@
   busca_texto: Autoridade nacional Agentes e governança LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: A
   tema: Agentes e governança
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 104
-  mencoes_notas: 15
-  mencoes_normas: 89
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: entidade da administração pública responsável por zelar, implementar e fiscalizar o cumprimento desta Lei em todo o território nacional
     referencias:
@@ -517,10 +575,13 @@
   busca_texto: Autoridade nacional competente Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 14
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 14
+  mencoes_normas: 0
   definicoes:
   - texto: uma autoridade notificadora ou uma autoridade de fiscalização do mercado; no que diz respeito aos sistemas de IA colocados em serviço ou utilizados pelas instituições, agências, serviços e organismos da União, quaisquer referências às autoridades nacionais competentes ou às autoridades de fiscalização do mercado no presente regulamento devem ser entendidas como referências à Autoridade Europeia para a Proteção de Dados
     referencias:
@@ -542,10 +603,13 @@
   busca_texto: Autoridade notificadora Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 32
-  mencoes_notas: 1
-  mencoes_normas: 31
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a autoridade nacional responsável por estabelecer e executar os procedimentos necessários para a avaliação, designação e notificação de organismos de avaliação da conformidade e pela fiscalização destes
     referencias:
@@ -567,10 +631,13 @@
   busca_texto: Autoridade responsável pela aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Internet e plataformas
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: '- a) Uma autoridade pública competente para efeitos de prevenção, investigação, deteção ou repressão de infrações penais ou execução de sanções penais, incluindo a proteção contra ameaças à segurança pública e a prevenção das mesmas, ou
 
@@ -595,10 +662,13 @@
   busca_texto: Autuado Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: A
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 14
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 14
+  mencoes_normas: 0
   definicoes:
   - texto: agente regulado que, uma vez identificados indícios suficientes de conduta infrativa, tem instaurado processo administrativo sancionador contra si, por meio de auto de infração
     referencias:
@@ -622,10 +692,13 @@
   busca_texto: Avaliação da conformidade avaliação de conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 113
-  mencoes_notas: 10
-  mencoes_normas: 103
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o processo de demonstrar se estão preenchidos os requisitos relacionados com um sistema de IA de risco elevado estabelecidos no capítulo III, secção 2
     referencias:
@@ -647,10 +720,13 @@
   busca_texto: Banco de dados Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: B
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 19
-  mencoes_notas: 6
-  mencoes_normas: 13
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico
     referencias:
@@ -672,10 +748,13 @@
   busca_texto: Bloqueio Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: B
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 44
-  mencoes_notas: 24
-  mencoes_normas: 20
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados
     referencias:
@@ -697,10 +776,13 @@
   busca_texto: Caixa de recompensa Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: funcionalidade disponível em certos jogos eletrônicos que permite a aquisição, mediante pagamento, pelo jogador, de itens virtuais consumíveis ou de vantagens aleatórias, resgatáveis pelo jogador ou usuário, sem conhecimento prévio de seu conteúdo ou garantia de sua efetiva utilidade
     referencias:
@@ -724,10 +806,13 @@
   busca_texto: Capacidades de elevado impacto capacidades de alto impacto Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 5
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 5
+  mencoes_normas: 0
   definicoes:
   - texto: capacidades que correspondem ou excedem as capacidades registadas nos modelos de IA de finalidade geral mais avançados
     referencias:
@@ -749,10 +834,13 @@
   busca_texto: Categoria de dados pessoais Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: classificação dos dados pessoais de acordo com o contexto de sua utilização, tais como dados de identificação pessoal, dados de autenticação em sistemas, dados financeiros
     referencias:
@@ -776,10 +864,13 @@
   busca_texto: Categorias especiais de dados pessoais dados sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 55
-  mencoes_notas: 24
-  mencoes_normas: 31
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as categorias de dados pessoais a que se referem o artigo 9.º, n.º 1, do Regulamento (UE) 2016/679, o artigo 10.º da Diretiva (UE) 2016/680 e o artigo 10.º, n.º 1, do Regulamento (UE) 2018/1725
     referencias:
@@ -801,10 +892,13 @@
   busca_texto: Coleta internacional de dados Dados pessoais e tratamento Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: coleta de dados pessoais do titular efetuada diretamente pelo agente de tratamento localizado no exterior
     referencias:
@@ -826,10 +920,13 @@
   busca_texto: Colocação em serviço Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 36
-  mencoes_notas: 1
-  mencoes_normas: 35
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o fornecimento, diretamente ao responsável pela implantação ou para utilização própria, de um sistema de IA para a primeira utilização na União com a finalidade prevista
     referencias:
@@ -851,10 +948,13 @@
   busca_texto: Colocação no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 43
-  mencoes_notas: 7
-  mencoes_normas: 36
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a primeira disponibilização de um sistema de IA ou de um modelo de IA de finalidade geral no mercado da União
     referencias:
@@ -877,10 +977,13 @@
   busca_texto: Comerciante comerciantes Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 98
-  mencoes_notas: 7
-  mencoes_normas: 91
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer pessoa singular ou coletiva, independentemente de ser pública ou privada, que atue, incluindo através de outra pessoa que atue em seu nome ou por sua conta, para fins relacionados com a sua atividade comercial, industrial, artesanal ou profissional
     referencias:
@@ -902,10 +1005,13 @@
   busca_texto: Componente de segurança Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Segurança, incidentes e violência
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 7
-  mencoes_notas: 3
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um componente de um produto ou sistema de IA que cumpre uma função de segurança nesse produto ou sistema de IA, ou cuja falha ou anomalia põe em risco a saúde e a segurança de pessoas ou bens; para efeitos da presente definição, um componente cumpre uma função de segurança quando o seu objetivo é prevenir ou atenuar riscos para a saúde e a segurança de pessoas ou bens
     referencias:
@@ -927,10 +1033,13 @@
   busca_texto: Comunicação comercial Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 3
-  mencoes_notas: 1
-  mencoes_normas: 2
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma «comunicação comercial» tal como definida no artigo 2.º, alínea f), da Diretiva 2000/31/CE
     referencias:
@@ -952,10 +1061,13 @@
   busca_texto: Comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: C
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 37
-  mencoes_notas: 1
-  mencoes_normas: 36
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: ato do controlador que comunica à ANPD e ao titular de dados a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares
     referencias:
@@ -977,10 +1089,13 @@
   busca_texto: Conexão à internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: C
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 10
-  mencoes_notas: 1
-  mencoes_normas: 9
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a habilitação de um terminal para envio e recebimento de pacotes de dados pela internet, mediante a atribuição ou autenticação de um endereço IP
     referencias:
@@ -1002,10 +1117,13 @@
   busca_texto: Confidencialidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: C
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 55
-  mencoes_notas: 5
-  mencoes_normas: 50
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: propriedade pela qual se assegura que o dado pessoal não esteja disponível ou não seja revelado a pessoas, empresas, sistemas, órgãos ou entidades não autorizados
     referencias:
@@ -1027,10 +1145,13 @@
   busca_texto: Conflito de interesse Outros conceitos normativos Res. CD/ANPD nº 18/2024 — Encarregado de Dados Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 10
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 10
+  mencoes_normas: 0
   definicoes:
   - texto: a situação que possa comprometer, influenciar ou afetar, de maneira imprópria, a objetividade e o julgamento técnico no desempenho das atribuições do encarregado
     referencias:
@@ -1052,10 +1173,13 @@
   busca_texto: Conjunto de dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: um conjunto de dados separado ou parte de um conjunto de dados de treino, sob forma de uma divisão fixa ou variável
     referencias:
@@ -1077,10 +1201,13 @@
   busca_texto: Consentimento Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 240
-  mencoes_notas: 111
-  mencoes_normas: 129
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento de seus dados pessoais para uma finalidade determinada
     referencias:
@@ -1102,10 +1229,13 @@
   busca_texto: Consentimento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 240
-  mencoes_notas: 111
-  mencoes_normas: 129
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: do titular dos dados, uma manifestação de vontade, livre, específica, informada e inequívoca, pela qual o titular dos dados aceita, mediante declaração ou ato positivo inequívoco, que os dados pessoais que lhe dizem respeito sejam objeto de tratamento
     referencias:
@@ -1127,10 +1257,13 @@
   busca_texto: Consentimento informado Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 9
-  mencoes_notas: 1
-  mencoes_normas: 8
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a expressão livre, específica, inequívoca e voluntária, por parte do participante, da sua vontade de participar numa dada testagem em condições reais, depois de ter sido informado de todos os aspetos da testagem que sejam relevantes para a sua decisão de participar
     referencias:
@@ -1152,10 +1285,13 @@
   busca_texto: Consumidor Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 44
-  mencoes_notas: 24
-  mencoes_normas: 20
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer pessoa singular que atue para fins que não se incluam na sua atividade comercial, empresarial, artesanal ou profissional
     referencias:
@@ -1177,10 +1313,13 @@
   busca_texto: Conteúdo íntimo Internet e plataformas Dec. nº 12.976/2026 — Proteção de Mulheres na Internet Decreto nº 12.976, de 20 de maio de 2026
   letra: C
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 15
-  mencoes_notas: 6
-  mencoes_normas: 9
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: imagem, vídeo, áudio, mensagem de texto ou qualquer conteúdo por escrito, ou combinação destes, que exponha nudez, seminudez, ato sexual ou contexto sexualizante, ainda que produzido e manipulado, no todo ou em parte, por sistema de inteligência artificial ou recurso tecnológico equivalente
     referencias:
@@ -1202,10 +1341,13 @@
   busca_texto: Conteúdo pornográfico Internet e plataformas Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: C
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 19
-  mencoes_notas: 10
-  mencoes_normas: 9
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: aquele cuja finalidade predominante seja a representação de atos sexualmente explícitos ou a exibição de nudez com conotação ou finalidade sexual, observadas as especificações e as exceções previstas no art. 16
     referencias:
@@ -1227,10 +1369,13 @@
   busca_texto: Conteúdo, produto ou serviço impróprio ou inadequado Internet e plataformas Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: C
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: aquele que possa apresentar risco à privacidade, à segurança, ao desenvolvimento psicossocial, à saúde mental e física e ao bem-estar da criança e do adolescente, nos termos estabelecidos na classificação indicativa, quando aplicável
     referencias:
@@ -1252,10 +1397,13 @@
   busca_texto: Conteúdo, produto ou serviço proibido para crianças e adolescentes Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: C
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: aquele cujo acesso, cuja disponibilização, cuja aquisição ou cujo consumo seja expressamente vedado para crianças e adolescentes por determinação legal específica
     referencias:
@@ -1278,10 +1426,13 @@
   busca_texto: Conteúdos ilegais conteúdo ilegal Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 92
-  mencoes_notas: 10
-  mencoes_normas: 82
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: quaisquer informações que, por si só ou em relação a uma atividade, incluindo a venda de produtos ou a prestação de serviços, não estejam em conformidade com o direito da União ou com o direito de qualquer um dos Estados-Membros que seja conforme com o direito da União, independentemente do objeto ou da natureza precisa desse direito
     referencias:
@@ -1303,10 +1454,13 @@
   busca_texto: Conteúdos, produtos e serviços proibidos para crianças e adolescentes Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: C
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: 'I - armas, munições e explosivos, nos termos do disposto no art. 81, *caput*, inciso I, da Lei nº 8.069, de 13 de julho de 1990, e no art. 16, § 1º, inciso V, da Lei nº 10.826, de 22 de dezembro de 2003;
 
@@ -1359,10 +1513,13 @@
   busca_texto: Contrato à distância contratar à distância Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Outros conceitos normativos
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 4
-  mencoes_notas: 2
-  mencoes_normas: 2
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um «contrato à distância» tal como definido no artigo 2.º, ponto 7, da Diretiva 2011/83/UE
     referencias:
@@ -1384,10 +1541,14 @@
   busca_texto: Controlador Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: C
   tema: Agentes e governança
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 166
-  mencoes_notas: 46
-  mencoes_normas: 120
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais
     referencias:
@@ -1419,10 +1580,13 @@
   busca_texto: Coordenador dos serviços digitais de destino coordenador de destino Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 5
-  mencoes_notas: 1
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o coordenador dos serviços digitais de um Estado-Membro em que o serviço intermediário é prestado
     referencias:
@@ -1446,10 +1610,13 @@
   busca_texto: Coordenador dos serviços digitais de estabelecimento coordenador de estabelecimento Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: C
   tema: Agentes e governança
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 60
-  mencoes_notas: 3
-  mencoes_normas: 57
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o coordenador dos serviços digitais do Estado-Membro em que o estabelecimento principal de um prestador de um serviço intermediário está localizado ou em que o seu representante legal reside ou está estabelecido
     referencias:
@@ -1471,10 +1638,13 @@
   busca_texto: Dado anonimizado Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 2
-  mencoes_notas: 1
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento
     referencias:
@@ -1496,10 +1666,13 @@
   busca_texto: Dado de autenticação em sistemas Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer dado pessoal utilizado como credencial para determinar o acesso a um sistema ou para confirmar a identificação de um usuário, como contas de login, tokens e senhas
     referencias:
@@ -1521,10 +1694,13 @@
   busca_texto: Dado financeiro Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 2
-  mencoes_notas: 1
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: dado pessoal relacionado às transações financeiras do titular, inclusive para contratação de serviços e aquisição de produtos
     referencias:
@@ -1546,10 +1722,15 @@
   busca_texto: Dado pessoal Dados pessoais e tratamento Dec. nº 8.771/2016 — Regulamento do Marco Civil LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Decreto nº 8.771, de 11 de maio de 2016 Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014 · LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 35
-  mencoes_notas: 19
-  mencoes_normas: 16
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: dado relacionado à pessoa natural identificada ou identificável, inclusive números identificativos, dados locacionais ou identificadores eletrônicos, quando estes estiverem relacionados a uma pessoa
     referencias:
@@ -1589,10 +1770,13 @@
   busca_texto: Dado pessoal afetado Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: dado pessoal cuja confidencialidade, integridade, disponibilidade ou autenticidade tenha sido comprometida em um incidente de segurança
     referencias:
@@ -1614,10 +1798,13 @@
   busca_texto: Dado pessoal sensível Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural
     referencias:
@@ -1639,10 +1826,13 @@
   busca_texto: Dado protegido por sigilo legal ou judicial Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: dado pessoal cujo sigilo decorra de norma jurídica ou decisão judicial
     referencias:
@@ -1664,10 +1854,13 @@
   busca_texto: Dado protegido por sigilo profissional Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: dado pessoal cujo sigilo decorra do exercício de função, ministério, ofício ou profissão, e cuja revelação possa produzir dano a outrem
     referencias:
@@ -1689,10 +1882,14 @@
   busca_texto: Dados biométricos Inteligência artificial AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia · GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 26
-  mencoes_notas: 2
-  mencoes_normas: 24
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: dados pessoais resultantes de um tratamento técnico específico relativo às características físicas, fisiológicas ou comportamentais de uma pessoa singular, nomeadamente imagens faciais ou dados dactiloscópicos
     referencias:
@@ -1724,10 +1921,13 @@
   busca_texto: Dados de entrada Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 15
-  mencoes_notas: 2
-  mencoes_normas: 13
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: os dados disponibilizados a um sistema de IA, ou por ele obtidos diretamente, com base nos quais o sistema produz um resultado
     referencias:
@@ -1749,10 +1949,13 @@
   busca_texto: Dados de teste Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: os dados utilizados para realizar uma avaliação independente do sistema de IA, a fim de confirmar o desempenho esperado desse sistema antes da sua colocação no mercado ou colocação em serviço
     referencias:
@@ -1776,10 +1979,13 @@
   busca_texto: Dados de treino dados de treinamento Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 11
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 11
+  mencoes_normas: 0
   definicoes:
   - texto: os dados usados para treinar um sistema de IA mediante o ajustamento dos seus parâmetros passíveis de serem aprendidos
     referencias:
@@ -1801,10 +2007,13 @@
   busca_texto: Dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: os dados utilizados para realizar uma avaliação do sistema de IA treinado e ajustar os seus parâmetros não passíveis de serem aprendidos e o seu processo de aprendizagem, a fim de, entre outras coisas, evitar um subajustamento ou um sobreajustamento
     referencias:
@@ -1826,10 +2035,13 @@
   busca_texto: Dados genéticos Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 8
-  mencoes_notas: 1
-  mencoes_normas: 7
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: os dados pessoais relativos às características genéticas, hereditárias ou adquiridas, de uma pessoa singular que deem informações únicas sobre a fisiologia ou a saúde dessa pessoa singular e que resulta designadamente de uma análise de uma amostra biológica proveniente da pessoa singular em causa
     referencias:
@@ -1851,10 +2063,13 @@
   busca_texto: Dados não pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: os dados que não sejam dados pessoais na aceção do artigo 4.º, ponto 1), do Regulamento (UE) 2016/679
     referencias:
@@ -1876,10 +2091,13 @@
   busca_texto: Dados operacionais sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 10
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 10
+  mencoes_normas: 0
   definicoes:
   - texto: dados operacionais relacionados com atividades de prevenção, deteção, investigação ou repressão de infrações penais, cuja divulgação possa comprometer a integridade de processos penais
     referencias:
@@ -1901,10 +2119,14 @@
   busca_texto: Dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia · GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 1123
-  mencoes_notas: 73
-  mencoes_normas: 1050
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: os dados pessoais na aceção do artigo 4.º, ponto 1, do Regulamento (UE) 2016/679
     referencias:
@@ -1936,10 +2158,13 @@
   busca_texto: Dados relativos à saúde Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 5
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 5
+  mencoes_normas: 0
   definicoes:
   - texto: dados pessoais relacionados com a saúde física ou mental de uma pessoa singular, incluindo a prestação de serviços de saúde, que revelem informações sobre o seu estado de saúde
     referencias:
@@ -1965,10 +2190,14 @@
   busca_texto: Definição de perfis perfilamento criação de perfis Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia · GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 72
-  mencoes_notas: 26
-  mencoes_normas: 46
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a definição de perfis na aceção do artigo 4.º, ponto 4), do Regulamento (UE) 2016/679
     referencias:
@@ -2000,10 +2229,13 @@
   busca_texto: Denúncia Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: D
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 45
-  mencoes_notas: 23
-  mencoes_normas: 22
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: comunicação feita à ANPD por qualquer pessoa, natural ou jurídica, de suposta infração cometida contra a legislação de proteção de dados pessoais do País, que não seja uma petição de titular
     referencias:
@@ -2025,10 +2257,13 @@
   busca_texto: Desempenho de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: a capacidade de um sistema de IA para alcançar a sua finalidade prevista
     referencias:
@@ -2050,10 +2285,13 @@
   busca_texto: Destinatário Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 105
-  mencoes_notas: 3
-  mencoes_normas: 102
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que recebem comunicações de dados pessoais, independentemente de se tratar ou não de um terceiro. Contudo, as autoridades públicas que possam receber dados pessoais no âmbito de inquéritos específicos nos termos do direito da União ou dos Estados-Membros não são consideradas destinatários; o tratamento desses dados por essas autoridades públicas deve cumprir as regras de proteção de dados aplicáveis em função das finalidades do tratamento
     referencias:
@@ -2075,10 +2313,13 @@
   busca_texto: Destinatário ativo de um motor de pesquisa em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: um destinatário do serviço que realizou uma pesquisa no motor de pesquisa em linha e foi exposto a informações indexadas e apresentadas na sua interface em linha
     referencias:
@@ -2100,10 +2341,13 @@
   busca_texto: Destinatário ativo de uma plataforma em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: um destinatário do serviço que estabeleceu uma relação com uma plataforma em linha, quer solicitando à plataforma em linha que aloje informações, quer expondo-se a informações alojadas pela plataforma em linha difundidas através da sua interface em linha
     referencias:
@@ -2128,10 +2372,13 @@
   busca_texto: Destinatário do serviço usuário do serviço usuários do serviço Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Agentes e governança
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 71
-  mencoes_notas: 2
-  mencoes_normas: 69
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer pessoa, singular ou coletiva que utilize um serviço intermediário, em especial para procurar informação ou para torná-la acessível
     referencias:
@@ -2153,10 +2400,13 @@
   busca_texto: Difusão ao público Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: D
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 9
-  mencoes_notas: 2
-  mencoes_normas: 7
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a disponibilização de informações, a pedido do destinatário do serviço que as forneceu, a um número potencialmente ilimitado de terceiros
     referencias:
@@ -2178,10 +2428,13 @@
   busca_texto: Disponibilidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: D
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 22
-  mencoes_notas: 3
-  mencoes_normas: 19
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: propriedade pela qual se assegura que o dado pessoal esteja acessível e utilizável, sob demanda, por uma pessoa natural ou determinado sistema, órgão ou entidade devidamente autorizados
     referencias:
@@ -2203,10 +2456,13 @@
   busca_texto: Disponibilização no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: o fornecimento de um sistema de IA ou de um modelo de IA de finalidade geral para distribuição ou utilização no mercado da União no âmbito de uma atividade comercial, a título oneroso ou gratuito
     referencias:
@@ -2228,10 +2484,13 @@
   busca_texto: Distribuidor Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 15
-  mencoes_notas: 5
-  mencoes_normas: 10
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva inserida na cadeia de distribuição, distinta do prestador e do importador, que disponibiliza um sistema de IA no mercado da União
     referencias:
@@ -2253,10 +2512,13 @@
   busca_texto: Eliminação Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: E
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 36
-  mencoes_notas: 20
-  mencoes_normas: 16
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado
     referencias:
@@ -2278,10 +2540,13 @@
   busca_texto: Empresa Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: E
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 91
-  mencoes_notas: 46
-  mencoes_normas: 45
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva que, independentemente da sua forma jurídica, exerce uma atividade económica, incluindo as sociedades ou associações que exercem regularmente uma atividade económica
     referencias:
@@ -2303,10 +2568,14 @@
   busca_texto: Encarregado Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: E
   tema: Agentes e governança
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 119
-  mencoes_notas: 27
-  mencoes_normas: 92
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Agência Nacional de Proteção de Dados (ANPD)
     referencias:
@@ -2338,10 +2607,13 @@
   busca_texto: Endereço de protocolo de internet (endereço IP) Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: E
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: o código atribuído a um terminal de uma rede para permitir sua identificação, definido segundo parâmetros internacionais
     referencias:
@@ -2363,10 +2635,13 @@
   busca_texto: Entidade responsável Agentes e governança Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: E
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 7
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 7
+  mencoes_normas: 0
   definicoes:
   - texto: sociedade empresária, com sede no Brasil, que responde por qualquer violação de norma corporativa global, ainda que decorrente de ato praticado por um membro do grupo ou conglomerado de empresas com sede em outro país
     referencias:
@@ -2388,10 +2663,13 @@
   busca_texto: Espaço acessível ao público Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: E
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer espaço físico, público ou privado, acessível a um número indeterminado de pessoas singulares, independentemente da eventual aplicação de condições de acesso específicas e independentemente das eventuais restrições de capacidade
     referencias:
@@ -2413,10 +2691,13 @@
   busca_texto: Especificação comum Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: E
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: um conjunto de especificações técnicas, definidas no artigo 2.º, ponto 4, do Regulamento (UE) n.º 1025/2012, que proporcionam os meios para cumprir certos requisitos estabelecidos no presente regulamento
     referencias:
@@ -2438,10 +2719,13 @@
   busca_texto: Estabelecimento principal Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: E
   tema: Outros conceitos normativos
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 33
-  mencoes_notas: 4
-  mencoes_normas: 29
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: '- a) No que se refere a um responsável pelo tratamento com estabelecimentos em vários Estados-Membros, o local onde se encontra a sua administração central na União, a menos que as decisões sobre as finalidades e os meios de tratamento dos dados pessoais sejam tomadas noutro estabelecimento do responsável pelo tratamento na União e este último estabelecimento tenha competência para mandar executar tais decisões, sendo neste caso o estabelecimento que tiver tomado as referidas decisões considerado estabelecimento principal;
 
@@ -2466,10 +2750,13 @@
   busca_texto: Exportador Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: E
   tema: Transferências internacionais
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 7
-  mencoes_notas: 1
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: agente de tratamento, localizado no território nacional ou em país estrangeiro, que transfere dados pessoais para importador
     referencias:
@@ -2494,10 +2781,13 @@
   busca_texto: Falsificações profundas deepfake deepfakes Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: F
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 31
-  mencoes_notas: 30
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: conteúdos de imagem, áudio ou vídeo gerados ou manipulados por IA, que sejam semelhantes a pessoas, objetos, locais, entidades ou acontecimentos reais, e que possam levar uma pessoa a crer, erroneamente, que são autênticos ou verdadeiros
     referencias:
@@ -2519,10 +2809,13 @@
   busca_texto: Faturamento Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: F
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 61
-  mencoes_notas: 42
-  mencoes_normas: 19
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'I - a receita bruta de que trata o art. 12 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, excluídas as devoluções e vendas canceladas, bem como os descontos concedidos incondicionalmente;
 
@@ -2568,10 +2861,13 @@
   busca_texto: Ficheiro Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: F
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 5
-  mencoes_notas: 3
-  mencoes_normas: 2
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer conjunto estruturado de dados pessoais, acessível segundo critérios específicos, quer seja centralizado, descentralizado ou repartido de modo funcional ou geográfico
     referencias:
@@ -2593,10 +2889,13 @@
   busca_texto: Finalidade prevista Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: F
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 41
-  mencoes_notas: 5
-  mencoes_normas: 36
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a utilização a que o prestador destina o sistema de IA, incluindo o contexto específico e as condições de utilização, conforme especificado nas informações facultadas pelo prestador nas instruções de utilização, nos materiais e declarações promocionais ou de venda, bem como na documentação técnica
     referencias:
@@ -2618,10 +2917,13 @@
   busca_texto: Grupo empresarial Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: G
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 19
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 19
+  mencoes_normas: 0
   definicoes:
   - texto: um grupo composto pela empresa que exerce o controlo e pelas empresas controladas
     referencias:
@@ -2643,10 +2945,13 @@
   busca_texto: Grupo ou conglomerado de empresas Agentes e governança Res. CD/ANPD nº 19/2024 — Transferência Internacional Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024 Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: G
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 12
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 12
+  mencoes_normas: 0
   definicoes:
   - texto: conjunto de empresas de fato ou de direito com personalidades jurídicas próprias, sob direção, controle ou administração de uma pessoa natural ou jurídica ou ainda grupo de pessoas que detém, isolada ou conjuntamente, poder de controle sobre as demais, desde que demonstrado interesse integrado, efetiva comunhão de interesses e atuação conjunta das empresas dele integrantes
     referencias:
@@ -2676,10 +2981,13 @@
   busca_texto: Identificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 30
-  mencoes_notas: 3
-  mencoes_normas: 27
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o reconhecimento automatizado de características humanas físicas, fisiológicas, comportamentais ou psicológicas para efeitos de determinação da identidade de uma pessoa singular, comparando os dados biométricos dessa pessoa com os dados biométricos de pessoas armazenados numa base de dados
     referencias:
@@ -2701,10 +3009,13 @@
   busca_texto: Importador Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: I
   tema: Transferências internacionais
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 22
-  mencoes_notas: 5
-  mencoes_normas: 17
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: agente de tratamento, localizado em país estrangeiro ou que seja organismo internacional, que recebe dados pessoais transferidos por exportador
     referencias:
@@ -2726,10 +3037,13 @@
   busca_texto: Importador Transferências internacionais AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Transferências internacionais
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 22
-  mencoes_notas: 5
-  mencoes_normas: 17
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que coloca no mercado um sistema de IA que ostenta o nome ou a marca de uma pessoa singular ou coletiva estabelecida num país terceiro
     referencias:
@@ -2751,10 +3065,13 @@
   busca_texto: Impulsionamento Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: I
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 16
-  mencoes_notas: 4
-  mencoes_normas: 12
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: ampliação artificial do alcance, da visibilidade ou da priorização de conteúdo mediante pagamento pecuniário ou valor estimável em dinheiro
     referencias:
@@ -2776,10 +3093,13 @@
   busca_texto: Incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: I
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 69
-  mencoes_notas: 5
-  mencoes_normas: 64
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer evento adverso confirmado, relacionado à violação das propriedades de confidencialidade, integridade, disponibilidade e autenticidade da segurança de dados pessoais
     referencias:
@@ -2801,10 +3121,13 @@
   busca_texto: Incidente grave Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Segurança, incidentes e violência
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 14
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 14
+  mencoes_normas: 0
   definicoes:
   - texto: 'qualquer incidente ou anomalia num sistema de IA que, direta ou indiretamente, tenha alguma das seguintes consequências:
 
@@ -2838,10 +3161,13 @@
   busca_texto: Infração Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: I
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 251
-  mencoes_notas: 50
-  mencoes_normas: 201
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: descumprimento de obrigação estabelecida na Lei nº 13.709, de 14 de agosto de 2018 (LGPD), e nos regulamentos expedidos pela ANPD
     referencias:
@@ -2863,10 +3189,13 @@
   busca_texto: Infração generalizada Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Fiscalização e sanções
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: 'uma ação ou omissão contrária à legislação da União que protege os interesses das pessoas, e que:
 
@@ -2903,10 +3232,13 @@
   busca_texto: Infração permanente Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: I
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: conduta infrativa que se prolonga no tempo, mediante ação ou omissão do infrator referente ao mesmo dispositivo normativo
     referencias:
@@ -2928,10 +3260,13 @@
   busca_texto: Infraestrutura crítica Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: uma infraestrutura crítica na aceção do artigo 2.º, ponto 4), da Diretiva (UE) 2022/2557
     referencias:
@@ -2953,10 +3288,13 @@
   busca_texto: Infrator Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: I
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 69
-  mencoes_notas: 5
-  mencoes_normas: 64
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: agente de tratamento que comete infração
     referencias:
@@ -2980,10 +3318,13 @@
   busca_texto: Instruções de utilização instruções de uso Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 19
-  mencoes_notas: 3
-  mencoes_normas: 16
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as informações facultadas pelo prestador para esclarecer responsável pela implantação, em especial, sobre a finalidade prevista e a utilização correta de um sistema de IA
     referencias:
@@ -3005,10 +3346,13 @@
   busca_texto: Integridade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: I
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 31
-  mencoes_notas: 5
-  mencoes_normas: 26
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: propriedade pela qual se assegura que o dado pessoal não foi modificado ou destruído de maneira não autorizada ou acidental
     referencias:
@@ -3032,10 +3376,13 @@
   busca_texto: Interface em linha interface online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: I
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 33
-  mencoes_notas: 2
-  mencoes_normas: 31
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: quaisquer programas informáticos, incluindo um sítio Web ou uma parte deste, e aplicações, incluindo aplicações móveis
     referencias:
@@ -3057,10 +3404,13 @@
   busca_texto: Internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: I
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 357
-  mencoes_notas: 78
-  mencoes_normas: 279
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o sistema constituído do conjunto de protocolos lógicos, estruturado em escala mundial para uso público e irrestrito, com a finalidade de possibilitar a comunicação de dados entre terminais por meio de diferentes redes
     referencias:
@@ -3082,10 +3432,13 @@
   busca_texto: Ligação substancial à União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: L
   tema: Outros conceitos normativos
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 7
-  mencoes_notas: 2
-  mencoes_normas: 5
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'a ligação de um prestador de serviços intermediários com a União em resultado do seu estabelecimento na União ou de critérios factuais específicos, tais como:
 
@@ -3113,10 +3466,13 @@
   busca_texto: Limitação do tratamento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: L
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 14
-  mencoes_notas: 3
-  mencoes_normas: 11
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a inserção de uma marca nos dados pessoais conservados com o objetivo de limitar o seu tratamento no futuro
     referencias:
@@ -3141,10 +3497,13 @@
   busca_texto: Literacia no domínio da IA letramento em IA literacia em IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: L
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 14
-  mencoes_notas: 7
-  mencoes_normas: 7
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as competências, os conhecimentos e a compreensão que permitem que os prestadores, os responsáveis pela implantação e as pessoas afetadas, tendo em conta os respetivos direitos e obrigações no contexto do presente regulamento, procedam à implantação dos sistemas de IA com conhecimento de causa e tomem consciência das oportunidades e dos riscos inerentes à IA, bem como dos eventuais danos que a IA pode causar
     referencias:
@@ -3166,10 +3525,13 @@
   busca_texto: Loja de aplicações de internet Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: L
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: aplicação de internet que distribui e facilita o *download*, para usuários de terminais, de aplicações de internet disponibilizadas ou tornadas acessíveis por meio de sua plataforma
     referencias:
@@ -3193,10 +3555,13 @@
   busca_texto: Mandatário representante autorizado Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 40
-  mencoes_notas: 6
-  mencoes_normas: 34
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva localizada ou estabelecida na União que tenha recebido e aceitado um mandato escrito de um prestador de um sistema de IA ou de um modelo de IA de finalidade geral para cumprir e executar em seu nome, respetivamente, as obrigações e os procedimentos previstos no presente regulamento
     referencias:
@@ -3218,10 +3583,13 @@
   busca_texto: Marcação CE Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 20
-  mencoes_notas: 7
-  mencoes_normas: 13
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a marcação pela qual um prestador atesta que um sistema de IA está em conformidade com os requisitos estabelecidos no capítulo III, secção 2, e noutros atos aplicáveis enumerados na lista da legislação de harmonização da União que prevejam a aposição dessa marcação
     referencias:
@@ -3243,10 +3611,13 @@
   busca_texto: Mecanismo de supervisão parental Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: M
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: conjunto de configurações, de ferramentas e de salvaguardas tecnológicas integradas a produtos ou serviços de tecnologia da informação direcionados a crianças e a adolescentes ou de acesso provável por eles que possibilitem aos pais ou responsáveis legais supervisionar, limitar e gerenciar o uso do serviço, o conteúdo acessado e o tratamento de dados pessoais realizado
     referencias:
@@ -3268,10 +3639,13 @@
   busca_texto: Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo Outros conceitos normativos Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: M
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: 'I - a ocultação de pontos naturais de parada;
 
@@ -3302,10 +3676,13 @@
   busca_texto: Mecanismos de transferência internacional de dados Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: M
   tema: Transferências internacionais
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: hipóteses previstas nos incisos I a IX do art. 33 da Lei nº 13.709, de 14 de agosto de 2018, que autorizam uma transferência internacional de dados
     referencias:
@@ -3327,10 +3704,13 @@
   busca_texto: Medidas corretivas Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: M
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 44
-  mencoes_notas: 7
-  mencoes_normas: 37
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: medidas determinadas pela ANPD com a finalidade de corrigir a infração e reconduzir o infrator à plena conformidade à LGPD e aos regulamentos expedidos pela ANPD, devendo ser aplicadas conjuntamente com a sanção de advertência, nos termos deste Regulamento
     referencias:
@@ -3352,10 +3732,13 @@
   busca_texto: Medidas de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024 Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: M
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 33
-  mencoes_notas: 11
-  mencoes_normas: 22
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: medidas técnicas e/ou administrativas adotadas para proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão
     referencias:
@@ -3387,10 +3770,13 @@
   busca_texto: Micro, pequena ou média empresa Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: ou «PME», uma micro, pequena ou média empresa na aceção do artigo 2.º do anexo da Recomendação 2003/361/CE
     referencias:
@@ -3412,10 +3798,13 @@
   busca_texto: Microempresas e empresas de pequeno porte Agentes e governança Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
   letra: M
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: sociedade empresária, sociedade simples, sociedade limitada unipessoal, nos termos do art. 41 da Lei nº 14.195, de 26 de agosto de 2021, e o empresário a que se refere o art. 966 da Lei nº 10.406, de 10 de janeiro de 2002 (Código Civil), incluído o microempreendedor individual, devidamente registrados no Registro de Empresas Mercantis ou no Registro Civil de Pessoas Jurídicas, que se enquadre nos termos do art. 3º e 18-A, § 1º da Lei Complementar nº 123, de 14 de dezembro de 2006
     referencias:
@@ -3439,10 +3828,13 @@
   busca_texto: Modelo de IA de finalidade geral modelo de IA de propósito geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 60
-  mencoes_notas: 2
-  mencoes_normas: 58
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um modelo de IA, inclusive se for treinado com uma grande quantidade de dados utilizando a autossupervisão em escala, que apresenta uma generalidade significativa e é capaz de executar de forma competente uma vasta gama de tarefas distintas, independentemente da forma como o modelo é colocado no mercado, e que pode ser integrado numa variedade de sistemas ou aplicações a jusante, exceto os modelos de IA que são utilizados para atividades de investigação, desenvolvimento ou criação de protótipos antes de serem colocados no mercado
     referencias:
@@ -3465,10 +3857,13 @@
   busca_texto: Moderação de conteúdos moderação de conteúdo Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: M
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 31
-  mencoes_notas: 2
-  mencoes_normas: 29
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as atividades, automatizadas ou não, empreendidas por prestadores de serviços intermediários, destinadas em especial a detetar, identificar e combater os conteúdos ilegais ou informações incompatíveis com os seus termos e condições fornecidos pelos destinatários do serviço, incluindo as medidas tomadas que afetam a disponibilidade, visibilidade e acessibilidade desses conteúdos ilegais ou dessas informações, como a despromoção, a desmonetização, a desativação do acesso ou a supressão dos mesmos, ou que afetem a capacidade de os destinatários do serviço fornecerem essas informações, como a cessação ou suspensão da conta de um destinatário
     referencias:
@@ -3490,10 +3885,13 @@
   busca_texto: Modificação substancial Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 7
-  mencoes_notas: 3
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma alteração do sistema de IA após a sua colocação no mercado ou colocação em serviço, que não tenha sido prevista ou planeada pelo prestador na avaliação da conformidade inicial e que, consequentemente, afete a conformidade do sistema de IA com os requisitos estabelecidos no capítulo III, secção 2, do presente regulamento, ou modifique a finalidade prevista relativamente à qual o sistema de IA foi avaliado
     referencias:
@@ -3515,10 +3913,13 @@
   busca_texto: Monetização Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: M
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 14
-  mencoes_notas: 6
-  mencoes_normas: 8
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: remuneração direta ou indireta de usuário de aplicação de internet pela publicação, pela postagem, pela exibição, pela disponibilização, pela transmissão, pela divulgação ou pela distribuição de conteúdo, incluída receita por visualizações, assinaturas, doações, patrocínios, publicidade ou venda de produtos e serviços vinculados
     referencias:
@@ -3543,10 +3944,13 @@
   busca_texto: Motor de pesquisa em linha mecanismo de busca mecanismos de busca Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: M
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 123
-  mencoes_notas: 6
-  mencoes_normas: 117
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um serviço intermediário que permite aos utilizadores fazer pesquisas para consultar, em princípio, todos os sítios na Internet, ou sítios Internet numa determinada língua, com base numa pesquisa sobre qualquer assunto, sob a forma de uma palavra-chave, comando de voz, frase ou outros dados, e que fornece resultados em qualquer formato nos quais pode ser encontrada informação relacionada com o tipo de conteúdo solicitado
     referencias:
@@ -3568,10 +3972,13 @@
   busca_texto: Natureza dos dados pessoais Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: N
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 7
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 7
+  mencoes_normas: 0
   definicoes:
   - texto: classificação de dados pessoais em gerais ou sensíveis
     referencias:
@@ -3593,10 +4000,13 @@
   busca_texto: Norma harmonizada Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: N
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 10
-  mencoes_notas: 2
-  mencoes_normas: 8
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma norma europeia na aceção do artigo 2.º, n.º 1, alínea c), do Regulamento (UE) n.º 1025/2012
     referencias:
@@ -3618,10 +4028,13 @@
   busca_texto: Objeção pertinente e fundamentada Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 10
-  mencoes_notas: 3
-  mencoes_normas: 7
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma objeção a um projeto de decisão que visa determinar se há violação do presente regulamento ou se a ação prevista relativamente ao responsável pelo tratamento ou ao subcontratante está em conformidade com o presente regulamento, demonstrando claramente a gravidade dos riscos que advêm do projeto de decisão para os direitos e liberdades fundamentais dos titulares dos dados e, eventualmente, para a livre circulação de dados pessoais no território da União
     referencias:
@@ -3643,10 +4056,13 @@
   busca_texto: Obstrução à atividade de fiscalização Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: O
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: ato, comissivo ou omissivo, direto ou indireto, da fiscalização ou de seus pressupostos, que impeça, dificulte ou embarace a atividade de fiscalização exercida pela ANPD, mediante o oferecimento de entrave à situação dos agentes, a recusa no atendimento, e o não envio ou envio intempestivo de quaisquer dados e informações pertinentes à obrigação do agente regulado
     referencias:
@@ -3668,10 +4084,13 @@
   busca_texto: Oferecer serviços na União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 2
-  mencoes_notas: 1
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: permitir a pessoas singulares ou coletivas de um ou mais Estados-Membros a utilização dos serviços de um prestador de serviços intermediários que tenha uma ligação substancial à União
     referencias:
@@ -3695,10 +4114,13 @@
   busca_texto: Operação de vírgula flutuante operação de ponto flutuante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
-  mencoes_notas: 2
-  mencoes_normas: 1
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer operação matemática ou atribuição que envolva números em vírgula flutuante, que são um subconjunto dos números reais normalmente representados em computadores por um número inteiro de precisão fixa escalado por um expoente inteiro de uma base fixa
     referencias:
@@ -3720,10 +4142,14 @@
   busca_texto: Operador Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: O
   tema: Agentes e governança
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 85
-  mencoes_notas: 22
-  mencoes_normas: 63
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador
     referencias:
@@ -3753,10 +4179,13 @@
   busca_texto: Operador Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 85
-  mencoes_notas: 22
-  mencoes_normas: 63
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um prestador, fabricante de produtos, responsável pela implantação, mandatário, importador ou distribuidor
     referencias:
@@ -3780,10 +4209,13 @@
   busca_texto: Organismo de avaliação da conformidade organismo de avaliação de conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 14
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 14
+  mencoes_normas: 0
   definicoes:
   - texto: um organismo que realiza atividades de avaliação da conformidade por terceiros, nomeadamente testagem, certificação e inspeção
     referencias:
@@ -3805,10 +4237,13 @@
   busca_texto: Organismo internacional Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: O
   tema: Transferências internacionais
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 25
-  mencoes_notas: 6
-  mencoes_normas: 19
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: organização regida pelo direito internacional público, incluindo seus órgãos subordinados ou qualquer outro órgão criado mediante acordo firmado entre dois ou mais países
     referencias:
@@ -3830,10 +4265,13 @@
   busca_texto: Organismo notificado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 82
-  mencoes_notas: 3
-  mencoes_normas: 79
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um organismo de avaliação da conformidade notificado nos termos do presente regulamento ou de outra legislação de harmonização da União pertinente
     referencias:
@@ -3855,10 +4293,13 @@
   busca_texto: Organização internacional Transferências internacionais General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: O
   tema: Transferências internacionais
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 43
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 43
+  mencoes_normas: 0
   definicoes:
   - texto: uma organização e os organismos de direito internacional público por ela tutelados, ou outro organismo criado por um acordo celebrado entre dois ou mais países ou com base num acordo dessa natureza
     referencias:
@@ -3880,10 +4321,13 @@
   busca_texto: Órgão de pesquisa Outros conceitos normativos LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: O
   tema: Outros conceitos normativos
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 15
-  mencoes_notas: 10
-  mencoes_normas: 5
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter histórico, científico, tecnológico ou estatístico
     referencias:
@@ -3905,10 +4349,13 @@
   busca_texto: Parte objeto de investigação Outros conceitos normativos Normas processuais do RGPD Regulamento (UE) 2025/2518, de 26 de novembro de 2025
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 20
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 20
+  mencoes_normas: 0
   definicoes:
   - texto: o responsável pelo tratamento ou subcontratante investigado por alegada violação do Regulamento (UE) 2016/679 relacionada com o tratamento transfronteiriço
     referencias:
@@ -3930,10 +4377,13 @@
   busca_texto: Participante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 9
-  mencoes_notas: 3
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: para efeitos de testagem em condições reais, uma pessoa singular que participa na testagem em condições reais
     referencias:
@@ -3955,10 +4405,13 @@
   busca_texto: Pequena empresa de média capitalização Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: uma pequena empresa de média capitalização na aceção do ponto 2 do anexo da Recomendação (UE) 2025/1099
     referencias:
@@ -3980,10 +4433,13 @@
   busca_texto: Perfilamento Dados pessoais e tratamento ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: P
   tema: Dados pessoais e tratamento
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 19
-  mencoes_notas: 13
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer forma de tratamento de dados pessoais, automatizada ou não, para avaliar certos aspectos de uma pessoa natural, com o objetivo de classificá-la em grupo ou perfil de modo a fazer inferências sobre seu comportamento, situação econômica, saúde, preferências pessoais, interesses, desejos de consumo, localização geográfica, deslocamentos, posições políticas ou outras características assemelhadas
     referencias:
@@ -4005,10 +4461,13 @@
   busca_texto: Pessoas com deficiência Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 11
-  mencoes_notas: 1
-  mencoes_normas: 10
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: «pessoas com deficiência» tal como referido no artigo 3.º, ponto 1, da Diretiva (UE) 2019/882 do Parlamento Europeu e do Conselho
     referencias:
@@ -4030,10 +4489,13 @@
   busca_texto: Petição de titular Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: P
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 6
-  mencoes_notas: 2
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: comunicação feita à ANPD pelo titular de dados pessoais de uma solicitação apresentada ao controlador e não solucionada no prazo estabelecido em regulamentação, nos termos do inciso V do art. 55-J da LGPD
     referencias:
@@ -4057,10 +4519,13 @@
   busca_texto: Plano de testagem em condições reais plano de teste em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 7
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 7
+  mencoes_normas: 0
   definicoes:
   - texto: um documento que descreve os objetivos, a metodologia, o âmbito geográfico, populacional e temporal, o acompanhamento, a organização e a realização dos testes em condições reais
     referencias:
@@ -4084,10 +4549,13 @@
   busca_texto: Plano do ambiente de testagem plano do sandbox regulatório Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: um documento acordado entre o prestador participante e a autoridade competente, que descreve os objetivos, as condições, o calendário, a metodologia e os requisitos aplicáveis às atividades realizadas no ambiente de testagem
     referencias:
@@ -4112,10 +4580,13 @@
   busca_texto: Plataforma em linha plataforma online plataformas online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: P
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 162
-  mencoes_notas: 5
-  mencoes_normas: 157
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um serviço de alojamento virtual que, a pedido de um destinatário do serviço, armazene e difunda informações ao público, a menos que essa atividade seja um elemento menor e meramente acessório de outro serviço ou uma funcionalidade menor do serviço principal e que, por razões objetivas e técnicas, não possa ser utilizado sem esse outro serviço, e que a integração desse elemento ou dessa funcionalidade no outro serviço não constitua uma forma de contornar a aplicabilidade do presente regulamento
     referencias:
@@ -4137,10 +4608,13 @@
   busca_texto: Política de boas práticas e de governança Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: 'normas e processos internos que assegurem o cumprimento abrangente da legislação de proteção de dados pessoais, estabelecidos e implementados pelo agente de tratamento mediante a adoção de:
 
@@ -4168,10 +4642,13 @@
   busca_texto: Práticas manipulativas, enganosas ou coercitivas Outros conceitos normativos Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: 'quaisquer arquiteturas de escolha, fluxos de interação ou funcionalidades que tenham por objetivo ou efeito empregar táticas que interfiram na autonomia decisória do usuário ou que explorem as suas vulnerabilidades, em particular as cognitivas e etárias, incluídas, entre outras, as práticas de:
 
@@ -4205,10 +4682,13 @@
   busca_texto: Prestador fornecedor fornecedores Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 912
-  mencoes_notas: 80
-  mencoes_normas: 832
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que desenvolva, ou mande desenvolver, um sistema de IA ou um modelo de IA de finalidade geral e o coloque no mercado, ou coloque o sistema de IA em serviço sob o seu próprio nome ou a sua própria marca, a título oneroso ou gratuito
     referencias:
@@ -4232,10 +4712,13 @@
   busca_texto: Prestador a jusante fornecedor a jusante Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: um prestador de um sistema de IA, incluindo um sistema de IA de finalidade geral, que integra um modelo de IA, independentemente de o modelo de IA ser disponibilizado por si próprio e verticalmente integrado ou ser disponibilizado por outra entidade com base em relações contratuais
     referencias:
@@ -4257,10 +4740,13 @@
   busca_texto: Procedimento de apuração de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: P
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 5
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 5
+  mencoes_normas: 0
   definicoes:
   - texto: procedimento instaurado pela ANPD para apurar a ocorrência de incidente de segurança que não tenha sido comunicado pelo controlador
     referencias:
@@ -4282,10 +4768,13 @@
   busca_texto: Procedimento de comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: P
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 6
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 6
+  mencoes_normas: 0
   definicoes:
   - texto: procedimento instaurado no âmbito da ANPD após o recebimento de comunicação de incidente de segurança
     referencias:
@@ -4307,10 +4796,13 @@
   busca_texto: Processo de comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: P
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 11
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 11
+  mencoes_normas: 0
   definicoes:
   - texto: processo administrativo instaurado no âmbito da ANPD que abrange o procedimento de apuração incidente de segurança e o procedimento de comunicação de incidente de segurança
     referencias:
@@ -4332,10 +4824,13 @@
   busca_texto: Produto ou serviço de monitoramento infantil Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: P
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: produto ou serviço de tecnologia da informação destinado ao acompanhamento, por pais ou responsáveis legais, das ações executadas por crianças e adolescentes em ambientes digitais, a partir do registro ou da transmissão de imagens, de sons, de informações de localização, de atividade ou de outros dados
     referencias:
@@ -4357,10 +4852,13 @@
   busca_texto: Produto ou serviço de tecnologia da informação Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: P
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 7
-  mencoes_notas: 1
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: produto ou serviço fornecido a distância, por meio eletrônico e provido em virtude de requisição individual, tais como aplicações de internet, programas de computador, *software*s, sistemas operacionais de terminais, lojas de aplicações de internet e jogos eletrônicos ou similares conectados à internet ou a outra rede de comunicações
     referencias:
@@ -4382,10 +4880,13 @@
   busca_texto: Pseudonimização Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: P
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 26
-  mencoes_notas: 9
-  mencoes_normas: 17
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o tratamento de dados pessoais de forma que deixem de poder ser atribuídos a um titular de dados específico sem recorrer a informações suplementares, desde que essas informações suplementares sejam mantidas separadamente e sujeitas a medidas técnicas e organizativas para assegurar que os dados pessoais não possam ser atribuídos a uma pessoa singular identificada ou identificável
     referencias:
@@ -4407,10 +4908,13 @@
   busca_texto: Ramo de atividade empresarial Agentes e governança Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: R
   tema: Agentes e governança
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 5
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 5
+  mencoes_normas: 0
   definicoes:
   - texto: área de atuação de empresa, grupo ou conglomerado de empresas, conforme definido pela ANPD e verificado no caso concreto, podendo ser comprovada mediante objeto social, código de Classificação Nacional de Atividades Econômicas (CNAE), código de serviço diretamente relacionado, ou instrumentos congêneres
     referencias:
@@ -4432,10 +4936,13 @@
   busca_texto: Recolha de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer medida destinada a obter a devolução ao prestador de um sistema de IA disponibilizado aos responsáveis pela implantação ou a colocar esse sistema fora de serviço ou a desativá-lo
     referencias:
@@ -4458,10 +4965,13 @@
   busca_texto: Rede social redes sociais Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: R
   tema: Internet e plataformas
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 65
-  mencoes_notas: 35
-  mencoes_normas: 30
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: aplicação de internet que tem como principal finalidade o compartilhamento e a disseminação, pelos usuários, de opiniões e informações veiculadas por textos ou arquivos de imagens, sonoros ou audiovisuais, em uma única plataforma, por meio de contas conectadas ou acessíveis de forma articulada, permitida a conexão entre usuários
     referencias:
@@ -4483,10 +4993,13 @@
   busca_texto: Registro de conexão Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: R
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: o conjunto de informações referentes à data e hora de início e término de uma conexão à internet, sua duração e o endereço IP utilizado pelo terminal para o envio e recebimento de pacotes de dados
     referencias:
@@ -4508,10 +5021,13 @@
   busca_texto: Registros de acesso a aplicações de internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: R
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 11
-  mencoes_notas: 1
-  mencoes_normas: 10
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o conjunto de informações referentes à data e hora de uso de uma determinada aplicação de internet a partir de um determinado endereço IP
     referencias:
@@ -4533,10 +5049,13 @@
   busca_texto: Regras vinculativas aplicáveis às empresas Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: R
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 27
-  mencoes_notas: 2
-  mencoes_normas: 25
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: as regras internas de proteção de dados pessoais aplicadas por um responsável pelo tratamento ou um subcontratante estabelecido no território de um Estado-Membro para as transferências ou conjuntos de transferências de dados pessoais para um responsável ou subcontratante num ou mais países terceiros, dentro de um grupo empresarial ou de um grupo de empresas envolvidas numa atividade económica conjunta
     referencias:
@@ -4558,10 +5077,13 @@
   busca_texto: Reincidência específica Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: R
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 5
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 5
+  mencoes_normas: 0
   definicoes:
   - texto: repetição de infração pelo mesmo infrator ao mesmo dispositivo legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado do processo administrativo sancionador, até a data do cometimento da nova infração
     referencias:
@@ -4583,10 +5105,13 @@
   busca_texto: Reincidência genérica Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: R
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: cometimento de infração pelo mesmo infrator, independentemente do dispositivo legal ou regulamentar, no período de 5 (cinco) anos, contado do trânsito em julgado do processo administrativo sancionador até a data do cometimento da nova infração, excluído o disposto no inciso VIII do caput
     referencias:
@@ -4608,10 +5133,13 @@
   busca_texto: Relatório de impacto à proteção de dados pessoais Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: R
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 7
-  mencoes_notas: 1
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação de risco
     referencias:
@@ -4633,10 +5161,13 @@
   busca_texto: Relatório de tratamento de incidente Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
   letra: R
   tema: Segurança, incidentes e violência
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: documento fornecido pelo controlador que contém cópias, em meio físico ou digital, de dados e informações relevantes para descrever o incidente e as providências adotadas para reverter ou mitigar os seus efeitos
     referencias:
@@ -4658,10 +5189,13 @@
   busca_texto: Representante Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: R
   tema: Outros conceitos normativos
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 95
-  mencoes_notas: 18
-  mencoes_normas: 77
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva estabelecida na União que, designada por escrito pelo responsável pelo tratamento ou subcontratante, nos termos do artigo 27.º, representa o responsável pelo tratamento ou o subcontratante no que se refere às suas obrigações respetivas nos termos do presente regulamento
     referencias:
@@ -4683,10 +5217,13 @@
   busca_texto: Requerimento Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
   letra: R
   tema: Fiscalização e sanções
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 36
-  mencoes_notas: 6
-  mencoes_normas: 30
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: conjunto de tipos de comunicação, compreendendo a petição de titular e a denúncia
     referencias:
@@ -4711,10 +5248,13 @@
   busca_texto: Responsável pela implantação implementador implementadores Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Agentes e governança
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 72
-  mencoes_notas: 24
-  mencoes_normas: 48
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva, autoridade pública, agência ou outro organismo que utilize um sistema de IA sob a sua própria autoridade, salvo se o sistema de IA for utilizado no âmbito de uma atividade pessoal de caráter não profissional
     referencias:
@@ -4738,10 +5278,13 @@
   busca_texto: Responsável pelo tratamento controlador Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: R
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 538
-  mencoes_notas: 48
-  mencoes_normas: 490
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a pessoa singular ou coletiva, a autoridade pública, a agência ou outro organismo que, individualmente ou em conjunto com outras, determina as finalidades e os meios de tratamento de dados pessoais; sempre que as finalidades e os meios desse tratamento sejam determinados pelo direito da União ou de um Estado-Membro, o responsável pelo tratamento ou os critérios específicos aplicáveis à sua nomeação podem ser previstos pelo direito da União ou de um Estado-Membro
     referencias:
@@ -4763,10 +5306,13 @@
   busca_texto: Retirada de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: qualquer medida destinada a impedir a disponibilização no mercado de um sistema de IA presente na cadeia de distribuição
     referencias:
@@ -4788,10 +5334,13 @@
   busca_texto: Risco Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 667
-  mencoes_notas: 161
-  mencoes_normas: 506
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a combinação da probabilidade de ocorrência de danos com a gravidade desses danos
     referencias:
@@ -4815,10 +5364,13 @@
   busca_texto: Risco sistémico risco sistêmico Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 51
-  mencoes_notas: 24
-  mencoes_normas: 27
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um risco específico das capacidades de elevado impacto dos modelos de IA de finalidade geral que têm um impacto significativo no mercado da União devido ao seu alcance ou devido a efeitos negativos reais ou razoavelmente previsíveis na saúde pública, na segurança, na segurança pública, nos direitos fundamentais ou na sociedade no seu conjunto, que se pode propagar em escala ao longo da cadeia de valor
     referencias:
@@ -4840,10 +5392,13 @@
   busca_texto: Serviço com controle editorial Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: S
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 1
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 1
+  mencoes_normas: 0
   definicoes:
   - texto: aplicação de internet que tem como finalidade principal a disponibilização de conteúdos previamente selecionados, sem o uso de meios automatizados de seleção, por agente econômico responsável
     referencias:
@@ -4865,10 +5420,13 @@
   busca_texto: Serviço da sociedade da informação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: S
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 6
-  mencoes_notas: 2
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um «serviço» tal como definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535
     referencias:
@@ -4891,10 +5449,13 @@
   busca_texto: Serviço intermediário serviços intermediários Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: S
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 205
-  mencoes_notas: 6
-  mencoes_normas: 199
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'um dos seguintes serviços da sociedade da informação:
 
@@ -4925,10 +5486,13 @@
   busca_texto: Serviço para a IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 157
-  mencoes_notas: 25
-  mencoes_normas: 132
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a atribuição da Comissão de contribuir para a aplicação, o acompanhamento e a supervisão dos sistemas de IA, dos modelos de IA de finalidade geral, e da governação da IA prevista na Decisão da Comissão de 24 de janeiro de 2024; as referências ao Serviço para a IA no presente regulamento devem ser entendidas como referências à Comissão
     referencias:
@@ -4950,10 +5514,13 @@
   busca_texto: Serviços da sociedade da informação Internet e plataformas General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: S
   tema: Internet e plataformas
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 15
-  mencoes_notas: 2
-  mencoes_normas: 13
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um serviço definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535 do Parlamento Europeu e do Conselho
     referencias:
@@ -4975,10 +5542,13 @@
   busca_texto: Sinal de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: S
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 7
-  mencoes_notas: 3
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: informação ou credencial indicativa que atesta a idade ou a faixa etária de um usuário aos fornecedores de produtos ou serviços de tecnologia da informação direcionados a crianças e adolescentes ou de acesso provável por eles, sem revelar dados pessoais adicionais
     referencias:
@@ -5002,10 +5572,13 @@
   busca_texto: Sistema de acompanhamento pós-comercialização monitoramento pós-comercialização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 8
-  mencoes_notas: 2
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: todas as atividades empreendidas pelos prestadores de sistemas de IA para recolher e analisar dados sobre a experiência adquirida com a utilização de sistemas de IA por eles colocados no mercado ou colocados em serviço, com vista a identificar a eventual necessidade de aplicar imediatamente as eventuais medidas corretivas ou preventivas necessárias
     referencias:
@@ -5027,10 +5600,13 @@
   busca_texto: Sistema de categorização biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de IA destinado a afetar pessoas singulares a categorias específicas com base nos seus dados biométricos, a menos que seja acessório a outro serviço comercial e estritamente necessário por razões técnicas objetivas
     referencias:
@@ -5052,10 +5628,13 @@
   busca_texto: Sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 359
-  mencoes_notas: 4
-  mencoes_normas: 355
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema baseado em máquinas concebido para funcionar com níveis de autonomia variáveis, e que pode apresentar capacidade de adaptação após a implantação e que, para objetivos explícitos ou implícitos, e com base nos dados de entrada que recebe, infere a forma de gerar resultados, tais como previsões, conteúdos, recomendações ou decisões que podem influenciar ambientes físicos ou virtuais
     referencias:
@@ -5079,10 +5658,13 @@
   busca_texto: Sistema de IA de finalidade geral sistema de IA de propósito geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 3
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 3
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de IA baseado num modelo de IA de finalidade geral, e com a capacidade de servir para diversas finalidades, tanto para utilização direta como para integração noutros sistemas de IA
     referencias:
@@ -5104,10 +5686,13 @@
   busca_texto: Sistema de identificação biométrica à distância Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 12
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 12
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de IA concebido para identificar pessoas singulares, sem a sua participação ativa, normalmente à distância, por meio da comparação dos dados biométricos de uma pessoa com os dados biométricos contidos numa base de dados de referência
     referencias:
@@ -5129,10 +5714,13 @@
   busca_texto: Sistema de identificação biométrica à distância em diferido Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de identificação biométrica à distância que não seja um sistema de identificação biométrica à distância em tempo real
     referencias:
@@ -5154,10 +5742,13 @@
   busca_texto: Sistema de identificação biométrica à distância em tempo real Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de identificação biométrica à distância em que a recolha de dados biométricos, a comparação e a identificação ocorrem sem atraso significativo, que engloba não apenas a identificação instantânea, mas também a identificação com ligeiro atraso, a fim de evitar que as regras sejam contornadas
     referencias:
@@ -5180,10 +5771,13 @@
   busca_texto: Sistema de recomendação sistemas de recomendação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: S
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 27
-  mencoes_notas: 4
-  mencoes_normas: 23
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema total ou parcialmente automatizado utilizado por uma plataforma em linha para sugerir na sua interface em linha informações específicas aos destinatários do serviço ou conferir prioridade a essa informação, nomeadamente como resultado de uma pesquisa iniciada pelo destinatário do serviço, ou que determine de outra forma a ordem relativa ou a proeminência das informações apresentadas
     referencias:
@@ -5205,10 +5799,13 @@
   busca_texto: Sistema de reconhecimento de emoções Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: um sistema de IA concebido para identificar ou inferir emoções ou intenções de pessoas singulares com base nos seus dados biométricos
     referencias:
@@ -5230,10 +5827,13 @@
   busca_texto: Sistema operacional Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
   letra: S
   tema: Outros conceitos normativos
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 7
-  mencoes_notas: 4
-  mencoes_normas: 3
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: '*software* de sistema que controla as funções básicas de um *hardware* ou *software* e permite que aplicações de internet, programas de computador, aplicativos ou outros *software*s sejam executados por meio dele'
     referencias:
@@ -5255,10 +5855,13 @@
   busca_texto: Startups Outros conceitos normativos Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
   letra: S
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 10
-  mencoes_notas: 4
-  mencoes_normas: 6
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: organizações empresariais ou societárias, nascentes ou em operação recente, cuja atuação caracteriza-se pela inovação aplicada a modelo de negócios ou a produtos ou serviços ofertados, que atendam aos critérios previstos no Capítulo II da Lei Complementar nº 182, de 1º de junho de 2021
     referencias:
@@ -5280,10 +5883,13 @@
   busca_texto: Subcontratante Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: S
   tema: Agentes e governança
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 214
-  mencoes_notas: 13
-  mencoes_normas: 201
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que trate os dados pessoais por conta do responsável pelo tratamento destes
     referencias:
@@ -5305,10 +5911,13 @@
   busca_texto: Terceiro Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: T
   tema: Outros conceitos normativos
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 140
-  mencoes_notas: 29
-  mencoes_normas: 111
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a pessoa singular ou coletiva, a autoridade pública, o serviço ou organismo que não seja o titular dos dados, o responsável pelo tratamento, o subcontratante e as pessoas que, sob a autoridade direta do responsável pelo tratamento ou do subcontratante, estão autorizadas a tratar os dados pessoais
     referencias:
@@ -5330,10 +5939,13 @@
   busca_texto: Terminal Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
   letra: T
   tema: Internet e plataformas
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 17
-  mencoes_notas: 6
-  mencoes_normas: 11
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o computador ou qualquer dispositivo que se conecte à internet
     referencias:
@@ -5357,10 +5969,13 @@
   busca_texto: Termos e condições termos de uso Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: T
   tema: Internet e plataformas
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 65
-  mencoes_notas: 9
-  mencoes_normas: 56
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: todas as cláusulas, independentemente da designação ou forma que assumam, que regem a relação contratual entre o prestador de serviços intermediários e os destinatários do serviço
     referencias:
@@ -5385,10 +6000,13 @@
   busca_texto: Testagem em condições reais teste em condições reais testes em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: T
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 73
-  mencoes_notas: 5
-  mencoes_normas: 68
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a testagem temporária de um sistema de IA para a sua finalidade prevista em condições reais, fora de um laboratório ou de outro ambiente simulado, com vista a recolher dados fiáveis e sólidos e a avaliar e verificar a conformidade do sistema de IA com os requisitos do presente regulamento e não se considera como colocação do sistema de IA no mercado nem colocação do sistema de IA em serviço na aceção do presente regulamento, desde que estejam preenchidas todas as condições estabelecidas no artigo 57.º ou no artigo 60.º
     referencias:
@@ -5410,10 +6028,14 @@
   busca_texto: Titular Dados pessoais e tratamento LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: T
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 498
-  mencoes_notas: 106
-  mencoes_normas: 392
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento
     referencias:
@@ -5443,10 +6065,13 @@
   busca_texto: Transferência Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: T
   tema: Transferências internacionais
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 140
-  mencoes_notas: 26
-  mencoes_normas: 114
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: operação de tratamento por meio da qual um agente de tratamento transmite, compartilha ou disponibiliza acesso a dados pessoais a outro agente de tratamento
     referencias:
@@ -5468,10 +6093,14 @@
   busca_texto: Transferência internacional de dados Transferências internacionais LGPD Res. CD/ANPD nº 19/2024 — Transferência Internacional Lei nº 13.709, de 14 de agosto de 2018 Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
   letra: T
   tema: Transferências internacionais
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 37
-  mencoes_notas: 4
-  mencoes_normas: 33
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro
     referencias:
@@ -5501,10 +6130,13 @@
   busca_texto: Trânsito em julgado Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: T
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 4
-  mencoes_notas: 1
-  mencoes_normas: 3
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: atributo de decisão definitiva proferida em processo administrativo sancionador, no âmbito da ANPD, tornando-a imutável e indiscutível dentro do processo em que foi proferida
     referencias:
@@ -5526,10 +6158,13 @@
   busca_texto: Tratamento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: T
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 1777
-  mencoes_notas: 198
-  mencoes_normas: 1579
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma operação ou um conjunto de operações efetuadas sobre dados pessoais ou sobre conjuntos de dados pessoais, por meios automatizados ou não automatizados, tais como a recolha, o registo, a organização, a estruturação, a conservação, a adaptação ou alteração, a recuperação, a consulta, a utilização, a divulgação por transmissão, difusão ou qualquer outra forma de disponibilização, a comparação ou interconexão, a limitação, o apagamento ou a destruição
     referencias:
@@ -5551,10 +6186,13 @@
   busca_texto: Tratamento de alto risco Dados pessoais e tratamento Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
   letra: T
   tema: Dados pessoais e tratamento
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 5
-  mencoes_notas: 1
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'tratamento de dados pessoais que atender cumulativamente a pelo menos um critério geral e um critério específico, dentre os a seguir indicados:
 
@@ -5596,10 +6234,15 @@
   busca_texto: Tratamento de dados pessoais Tratamento Dados pessoais e tratamento Dec. nº 8.771/2016 — Regulamento do Marco Civil LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Decreto nº 8.771, de 11 de maio de 2016 Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
   letra: T
   tema: Dados pessoais e tratamento
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014 · LGPD — Lei Geral de Proteção de Dados Pessoais · Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 1777
-  mencoes_notas: 198
-  mencoes_normas: 1579
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração
     referencias:
@@ -5637,10 +6280,13 @@
   busca_texto: Tratamento transfronteiriço Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: T
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 32
-  mencoes_notas: 2
-  mencoes_normas: 30
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: '- a) O tratamento de dados pessoais que ocorre no contexto das atividades de estabelecimentos em mais do que um Estado-Membro de um responsável pelo tratamento ou um subcontratante na União, caso o responsável pelo tratamento ou o subcontratante esteja estabelecido em mais do que um Estado-Membro; ou
 
@@ -5665,10 +6311,13 @@
   busca_texto: Uso compartilhado de dados Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
   letra: U
   tema: Dados pessoais e tratamento
+  notas:
+    - "LGPD — Lei Geral de Proteção de Dados Pessoais"
+  notas_texto: "LGPD — Lei Geral de Proteção de Dados Pessoais"
   jurisdicao: BR
-  mencoes: 15
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 15
+  mencoes_normas: 0
   definicoes:
   - texto: comunicação, difusão, transferência internacional, interconexão de dados pessoais ou tratamento compartilhado de bancos de dados pessoais por órgãos e entidades públicos no cumprimento de suas competências legais, ou entre esses e entes privados, reciprocamente, com autorização específica, para uma ou mais modalidades de tratamento permitidas por esses entes públicos, ou entre entes privados
     referencias:
@@ -5692,10 +6341,13 @@
   busca_texto: Utilização indevida razoavelmente previsível uso indevido razoavelmente previsível Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: U
   tema: Outros conceitos normativos
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 5
-  mencoes_notas: 1
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: a utilização de um sistema de IA de uma forma não conforme com a sua finalidade prevista, mas que pode resultar de um comportamento humano razoavelmente previsível ou de uma interação razoavelmente previsível com outros sistemas, incluindo outros sistemas de IA
     referencias:
@@ -5717,10 +6369,13 @@
   busca_texto: Verificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: V
   tema: Inteligência artificial
+  notas:
+    - "AI Act — Regulamento de Inteligência Artificial da União Europeia"
+  notas_texto: "AI Act — Regulamento de Inteligência Artificial da União Europeia"
   jurisdicao: UE
-  mencoes: 2
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 2
+  mencoes_normas: 0
   definicoes:
   - texto: a verificação automatizada, «um para um», incluindo a autenticação, da identidade de pessoas singulares por meio da comparação dos seus dados biométricos com dados biométricos previamente facultados
     referencias:
@@ -5742,10 +6397,13 @@
   busca_texto: Verificação de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
   letra: V
   tema: Crianças, adolescentes e idade
+  notas:
+    - "ECA Digital — Estatuto Digital da Criança e do Adolescente"
+  notas_texto: "ECA Digital — Estatuto Digital da Criança e do Adolescente"
   jurisdicao: BR
-  mencoes: 41
-  mencoes_notas: 24
-  mencoes_normas: 17
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: procedimento específico de aferição de idade de alto grau de confiabilidade, nos termos estabelecidos pela ANPD, baseado na conferência da veracidade do atributo etário, com a finalidade de comprovar a exatidão da idade declarada ou a faixa etária, mediante o emprego de mecanismos técnicos ou documentais
     referencias:
@@ -5767,10 +6425,13 @@
   busca_texto: Violação de dados pessoais Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: V
   tema: Dados pessoais e tratamento
+  notas:
+    - "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
+  notas_texto: "GDPR — Regulamento Geral sobre a Proteção de Dados da União Europeia"
   jurisdicao: UE
-  mencoes: 21
-  mencoes_notas: 1
-  mencoes_normas: 20
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: uma violação da segurança que provoque, de modo acidental ou ilícito, a destruição, a perda, a alteração, a divulgação ou o acesso, não autorizados, a dados pessoais transmitidos, conservados ou sujeitos a qualquer outro tipo de tratamento
     referencias:
@@ -5792,10 +6453,13 @@
   busca_texto: Violência contra mulheres em ambiente digital Segurança, incidentes e violência Dec. nº 12.976/2026 — Proteção de Mulheres na Internet Decreto nº 12.976, de 20 de maio de 2026
   letra: V
   tema: Segurança, incidentes e violência
+  notas:
+    - "Marco Civil da Internet — Lei nº 12.965/2014"
+  notas_texto: "Marco Civil da Internet — Lei nº 12.965/2014"
   jurisdicao: BR
-  mencoes: 5
-  mencoes_notas: 1
-  mencoes_normas: 4
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: 'crimes ou atos ilícitos contra mulheres, em razão da condição do sexo feminino, consistente em ato, conduta ou omissão que cause morte, dano ou sofrimento físico, sexual, psicológico, político ou econômico, inclusive dano patrimonial, em qualquer esfera de suas vidas, cometido, instigado, facilitado ou agravado, total ou parcialmente, pelo uso de tecnologias digitais, tais como:
 
@@ -5846,10 +6510,13 @@
   busca_texto: Volume de negócios faturamento Fiscalização e sanções Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
   letra: V
   tema: Fiscalização e sanções
+  notas:
+    - "DSA — Regulamento dos Serviços Digitais da União Europeia"
+  notas_texto: "DSA — Regulamento dos Serviços Digitais da União Europeia"
   jurisdicao: UE
-  mencoes: 84
-  mencoes_notas: 47
-  mencoes_normas: 37
+  mencoes: 0
+  mencoes_notas: 0
+  mencoes_normas: 0
   definicoes:
   - texto: o montante realizado por uma empresa na aceção do artigo 5.º, n.º 1, do Regulamento (CE) n.º 139/2004 do Conselho
     referencias:
@@ -5871,10 +6538,13 @@
   busca_texto: Zonas acessíveis ao público Outros conceitos normativos Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
   letra: Z
   tema: Outros conceitos normativos
+  notas:
+    - "Regimento Interno da ANPD — Portaria nº 1/2021"
+  notas_texto: "Regimento Interno da ANPD — Portaria nº 1/2021"
   jurisdicao: BR
-  mencoes: 4
+  mencoes: 0
   mencoes_notas: 0
-  mencoes_normas: 4
+  mencoes_normas: 0
   definicoes:
   - texto: espaços abertos ao público, como praças, centros comerciais, vias públicas, estações de ônibus, de metrô e de trem, aeroportos, portos, bibliotecas públicas, dentre outros
     referencias:

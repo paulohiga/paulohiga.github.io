@@ -44,7 +44,7 @@
                             <label><input type="radio" name="ordem-definicoes" value="tema"><span>Por tema</span></label>
                             <label><input type="radio" name="ordem-definicoes" value="mencoes"><span>Mais citados</span></label>
                         </fieldset>
-                        <label class="definicoes-busca"><span class="visualmente-oculto">Buscar</span><input id="definicoes-busca" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou tema"></label>
+                        <label class="definicoes-busca"><span class="visualmente-oculto">Buscar</span><input id="definicoes-busca" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou nota"></label>
                         <label class="definicoes-controles__br"><input id="definicoes-so-brasil" type="checkbox"> Só normas brasileiras</label>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                 <h2 class="definicoes-grupo" data-grupo="{{ verbete.letra }}">{{ verbete.letra }}</h2>
 {% assign letra_atual = verbete.letra %}
 {% endif %}
-                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.tema | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-mencoes="{{ verbete.mencoes }}" data-busca="{{ verbete.busca_texto | downcase | escape }}">
+                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.notas_texto | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-mencoes="{{ verbete.mencoes }}" data-notas="{{ verbete.notas_texto | escape }}" data-busca="{{ verbete.busca_texto | downcase | escape }}">
                     <header class="definicao-card__topo">
                         <h3>{{ verbete.titulo }}</h3>
                         <span class="definicao-card__mencoes">{{ verbete.mencoes }} menções</span>
