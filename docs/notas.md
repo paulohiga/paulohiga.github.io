@@ -24,7 +24,7 @@ fazer nada disso à mão.
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
-- [Scripts de autoria](#scripts-de-autoria)
+- [Scripts de autoria e verificações do CI](#scripts-de-autoria-e-verificações-do-ci)
 
 ## O que é a seção, e por que é isolada
 
@@ -680,7 +680,7 @@ uma faixa de parágrafos "§§ 2º a 4º"), ou que misturam faixa e lista de
 artigos, ficam de fora — o script prefere não linkar a linkar para o
 dispositivo errado.
 
-## Scripts de autoria
+## Scripts de autoria e verificações do CI
 
 Os cinco scripts de `scripts/` são **ferramentas de autoria**: rodam na sua
 máquina, não entram no site e não fazem parte do build. As dependências estão
@@ -694,3 +694,30 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `ancorar_referencias.py` | Transforma citações em texto puro nos links âncora corretos |
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
 | `gerar_definicoes.py` | Gera o banco de definições normativas a partir dos artigos e textos de `_leis/` |
+
+### Verificação do site gerado
+
+[`scripts/verificar_site.py`](../scripts/verificar_site.py) não é uma ferramenta
+de autoria. O workflow
+[`quality.yml`](../.github/workflows/quality.yml) o executa depois de
+`bundle exec jekyll build` para analisar o conteúdo publicado em `_site/`.
+
+Ele verifica:
+
+- links internos que apontam para arquivos inexistentes;
+- fragmentos (`#id`) que não existem no documento de destino;
+- IDs duplicados no mesmo HTML;
+- as âncoras publicadas nos fragmentos carregados sob demanda pelas notas.
+
+O script usa apenas a biblioteca padrão do Python e ignora links externos. Para
+rodá-lo localmente, o site precisa ter sido construído antes:
+
+```bash
+bundle exec jekyll build
+.venv/bin/python scripts/verificar_site.py
+```
+
+A sequência completa do quality gate, incluindo sintaxe JavaScript, compilação
+Python, ementas, âncoras e `git diff --check`, está em
+[Quality gate e build reprodutível](../README.md#quality-gate-e-build-reprodutível)
+no `README.md`.

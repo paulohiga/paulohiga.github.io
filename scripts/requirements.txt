@@ -11,9 +11,9 @@
 # Ver `docs/notas.md`, seção "Scripts de autoria".
 
 # ancorar_referencias.py — lê o registro de normas em _data/normas.yml
-PyYAML>=6.0
+PyYAML==6.0.3
 
 # converter_eurlex.py e montar_rgpd.py — leem o HTML oficial do EUR-Lex. O
 # lxml é o parser usado pelo BeautifulSoup.
-beautifulsoup4>=4.12
-lxml>=5.0
+beautifulsoup4==4.15.0
+lxml==6.1.2
