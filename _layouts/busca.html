@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+{% include busca-head.html %}
+</head>
+<body class="light-theme busca-pagina" id="busca-pagina" data-busca-indice="/notas/busca.json">
+    <script data-cfasync="false">
+        (function () {
+            var t = localStorage.getItem('theme');
+            var dark = t === 'dark' || (t === null && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.body.classList.toggle('dark-theme', dark);
+            document.body.classList.toggle('light-theme', !dark);
+            document.body.classList.add('js');
+        }());
+    </script>
+
+    <a href="#busca-form" class="skip-link">Pular para a busca</a>
+
+    <header class="nota-topo">
+        <div class="nota-topo__texto">
+            <nav class="nota-trilha" aria-label="Você está em">
+                <a href="/">higa.me</a> <span aria-hidden="true">/</span> <a href="/notas">notas</a> <span aria-hidden="true">/</span> <span aria-current="page">buscar</span>
+            </nav>
+            <h1>{{ page.title }}</h1>
+        </div>
+{% include nota-topo-acoes.html %}
+    </header>
+
+{% include nota-atalhos.html %}
+
+    <main class="busca" id="busca-conteudo">
+        <p class="busca__intro">Procure por títulos de notas e seções, números de artigos, ementas, normas, temas e definições. O índice é compacto e não substitui o texto original.</p>
+
+        <form id="busca-form" class="busca-form" role="search" action="/notas/busca" method="get">
+            <label for="busca-campo">Buscar no acervo</label>
+            <div class="busca-form__linha">
+                <input id="busca-campo" name="q" type="search" autocomplete="off" enterkeyhint="search" spellcheck="false" placeholder="Ex.: legítimo interesse, art. 5º, consentimento" autofocus>
+                <button type="submit">Buscar</button>
+            </div>
+            <fieldset class="busca-tipos" aria-describedby="busca-tipos-ajuda">
+                <legend>Filtrar por tipo</legend>
+                <span id="busca-tipos-ajuda" class="visualmente-oculto">Todos os tipos ficam ativos por padrão. Clique em um ou mais tipos para filtrar.</span>
+                <div class="busca-tipos__botoes">
+                    <button type="button" class="busca-filtro" data-tipo="" aria-pressed="true">Todos <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                    <button type="button" class="busca-filtro" data-tipo="nota" aria-pressed="false">Notas <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                    <button type="button" class="busca-filtro" data-tipo="secao" aria-pressed="false">Seções <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                    <button type="button" class="busca-filtro" data-tipo="norma" aria-pressed="false">Normas <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                    <button type="button" class="busca-filtro" data-tipo="artigo" aria-pressed="false">Artigos <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                    <button type="button" class="busca-filtro" data-tipo="definicao" aria-pressed="false">Definições <span class="busca-filtro__contagem" data-busca-contagem>—</span></button>
+                </div>
+            </fieldset>
+        </form>
+
+        <p id="busca-status" class="busca-status" role="status" aria-live="polite"></p>
+
+        <section id="busca-resultados" class="busca-resultados" aria-labelledby="busca-resultados-titulo" hidden>
+            <h2 id="busca-resultados-titulo">Resultados</h2>
+            <ol id="busca-lista"></ol>
+            <p id="busca-vazio" class="busca-vazio" role="status" hidden>Nenhum resultado encontrado.</p>
+        </section>
+
+        <details class="busca-diretorio busca-inspiracoes" open>
+            <summary>Inspire-se para buscar</summary>
+            <p class="busca-inspiracoes__ajuda">Alguns tópicos do acervo para abrir um caminho de pesquisa. A seleção muda a cada carregamento.</p>
+            <ul id="busca-inspiracoes-lista" class="busca-inspiracoes__lista" aria-label="Tópicos sugeridos para busca">
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--secao" href="/notas/busca?q=prote%C3%A7%C3%A3o+de+dados"><span class="busca-inspiracoes__termo">proteção de dados</span><span class="busca-inspiracoes__contexto">Tema geral · LGPD</span></a></li>
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--secao" href="/notas/busca?q=dados+de+crian%C3%A7as"><span class="busca-inspiracoes__termo">dados de crianças</span><span class="busca-inspiracoes__contexto">Tema · ECA Digital</span></a></li>
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--secao" href="/notas/busca?q=responsabiliza%C3%A7%C3%A3o+de+plataformas"><span class="busca-inspiracoes__termo">responsabilização de plataformas</span><span class="busca-inspiracoes__contexto">Tema · DSA</span></a></li>
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--secao" href="/notas/busca?q=transfer%C3%AAncia+internacional"><span class="busca-inspiracoes__termo">transferência internacional</span><span class="busca-inspiracoes__contexto">Tema · LGPD</span></a></li>
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--definicao" href="/notas/busca?q=leg%C3%ADtimo+interesse"><span class="busca-inspiracoes__termo">legítimo interesse</span><span class="busca-inspiracoes__contexto">Tema · LGPD</span></a></li>
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--nota" href="/notas/busca?q=intelig%C3%AAncia+artificial"><span class="busca-inspiracoes__termo">inteligência artificial</span><span class="busca-inspiracoes__contexto">Tema · AI Act</span></a></li>
+{% assign definicoes_inspiracao = site.data.definicoes | sort: 'titulo' %}
+{% for verbete in definicoes_inspiracao limit: 4 %}
+{% assign definicao_principal = verbete.definicoes | first %}
+{% assign referencia_principal = definicao_principal.referencias | first %}
+                <li><a class="busca-inspiracoes__item busca-inspiracoes__item--definicao" href="/notas/busca?q={{ verbete.titulo | uri_escape }}"><span class="busca-inspiracoes__termo">{{ verbete.titulo }}</span><span class="busca-inspiracoes__contexto">Glossário · {{ referencia_principal.norma_apelido | default: verbete.jurisdicao }}</span></a></li>
+{% endfor %}
+            </ul>
+            <script type="application/json" id="busca-topicos-dados">{% include busca-topicos.html %}</script>
+        </details>
+
+        <details class="busca-diretorio" open>
+            <summary>Navegar por categorias</summary>
+            <div class="busca-diretorio__grade">
+                <section aria-labelledby="busca-diretorio-notas">
+                    <h2 id="busca-diretorio-notas">Notas</h2>
+                    <ul>
+{% assign notas_busca = site.notas | sort: 'title' %}
+{% for nota in notas_busca %}
+                        <li><a href="{{ nota.url }}">{{ nota.title }}</a></li>
+{% endfor %}
+                    </ul>
+                </section>
+                <section aria-labelledby="busca-diretorio-normas">
+                    <h2 id="busca-diretorio-normas">Normas</h2>
+                    <ul>
+{% assign normas_busca = site.leis | sort: 'apelido' %}
+{% for norma in normas_busca %}
+                        <li><a href="{{ norma.fonte }}" target="_blank" rel="noopener">{{ norma.apelido }}</a></li>
+{% endfor %}
+                    </ul>
+                </section>
+                <section aria-labelledby="busca-diretorio-definicoes">
+                    <h2 id="busca-diretorio-definicoes">Definições</h2>
+                    <p><a href="/notas/definicoes">Abrir todos os verbetes do glossário</a></p>
+                </section>
+            </div>
+        </details>
+
+        <noscript>
+            <p class="busca-noscript">A busca interativa precisa de JavaScript. As categorias acima continuam disponíveis para navegação.</p>
+        </noscript>
+    </main>
+
+    <script src="/notas.js" defer></script>
+</body>
+</html>

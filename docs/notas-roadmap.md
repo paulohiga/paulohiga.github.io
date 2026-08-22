@@ -23,7 +23,7 @@ dentro de `/notas`, sem acoplar `default.html`, `script.js` ou
 | Navegação básica entre painéis, normas e sumários | **concluída**, com pontos residuais |
 | `/notas/definicoes` | **em integração**: implementada na linha de desenvolvimento, ausente de `master` |
 | Redução de repetição e densidade das notas | **próxima frente editorial** |
-| Histórico, backlinks e busca ampla | **pendente**, depois das duas prioridades |
+| Histórico, backlinks e rede de relações | **pendente**, depois das duas prioridades |
 
 ### Itens do levantamento anterior
 
@@ -43,7 +43,7 @@ dentro de `/notas`, sem acoplar `default.html`, `script.js` ou
 | B13 — permalink visível de artigos e seções | **pendente** |
 | B17 — destaque imediato do item clicado e dos artigos | **feito** |
 | C14 — índice ordenado, datado e com normas | **feito** |
-| C15 — busca entre notas | **pendente, baixa prioridade** |
+| C15 — busca global do acervo | **concluída** |
 | C16 — botões de sumário descobríveis e sem sobreposição | **pendente** |
 
 Os itens concluídos permanecem aqui como histórico. O que ainda precisa de
@@ -269,12 +269,15 @@ Trocar `replaceState` por entradas de histórico nos cliques e tratar
 `popstate` com posição dos dois painéis, norma e modo mobile. Só implementar
 depois de A1/A6, para que todas as formas de salto compartilhem o mesmo estado.
 
-### C15. Busca entre notas — ADIADO
+### C15. Busca global do acervo — CONCLUÍDA
 
-Com seis notas, a página de definições já resolve a busca de termos, normas e
-temas. Uma busca de comentários entra quando o acervo justificar um índice
-gerado; até lá, busca por títulos e primeiras linhas é mais custo de manutenção
-que benefício.
+`/notas/busca` oferece busca estática por notas, seções, normas, artigos e
+definições. O build gera um índice JSON determinístico e compacto; o cliente o
+carrega sob demanda, normaliza acentos e preserva os links profundos das
+âncoras existentes. A URL guarda `q` e `tipo` (com seleção múltipla separada
+por vírgulas), e a página mantém diretório por categorias para uso sem
+JavaScript. O cabeçalho e a tecla `s` tornam a busca acessível em toda a seção.
+O tamanho do índice é conferido junto da validação de links do build.
 
 ## 4. Correções rápidas já identificadas
 
@@ -297,4 +300,4 @@ que benefício.
 | 5 | A5 + D4 — rede de relações | Integra notas, artigos e definições com o mesmo dado |
 | 6 | B12 + B13 | Melhora consulta e compartilhamento |
 | 7 | A4 | Fecha a semântica do histórico depois que os saltos estiverem unificados |
-| 8 | C15 + D5 | Só quando o volume e as métricas justificarem |
+| 8 | D5 — descoberta do glossário | Depois da correção funcional da página de definições |

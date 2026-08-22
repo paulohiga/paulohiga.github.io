@@ -1,0 +1,69 @@
+{%- comment -%}
+    Pool compacto de termos de inspiração. Sai de títulos de notas, títulos de
+    seções e verbetes do glossário; não leva trechos nem texto jurídico para a
+    primeira tela. A ordem é estável no build, e notas.js sorteia uma amostra
+    diferente quando a página é carregada.
+{%- endcomment -%}
+{%- capture quebra %}
+{% endcapture -%}
+{%- assign separador = quebra | append: quebra -%}
+{%- assign notas_ordenadas = site.notas | sort: 'title' -%}
+{%- assign termos_vistos = '|' -%}
+[
+{%- assign primeiro = true -%}
+{%- for nota in notas_ordenadas -%}
+{%- assign termo = nota.title | strip_html | strip -%}
+{%- assign nome_curto = nota.title | split: ' — ' | first | strip_html | strip -%}
+{%- capture contexto -%}Nota · {{ nome_curto }}{%- endcapture -%}
+{%- if termo != '' -%}
+{%- assign chave_termo = '|' | append: termo | append: '|' -%}
+{%- unless termos_vistos contains chave_termo -%}
+{%- unless primeiro %},{% endunless -%}
+  {"termo": {{ termo | jsonify }}, "tipo": "nota", "contexto": {{ contexto | jsonify }}, "jurisdicao": {{ nota.jurisdicao | jsonify }}}
+{%- assign primeiro = false -%}
+{%- assign termos_vistos = termos_vistos | append: termo | append: '|' -%}
+{%- endunless -%}
+{%- endif -%}
+{%- assign blocos_nota = nota.content | split: separador -%}
+{%- for bloco in blocos_nota -%}
+{%- assign texto = bloco | strip -%}
+{%- assign tag = '' -%}
+{%- if texto contains '<h2' %}{% assign tag = 'h2' %}{% elsif texto contains '<h3' %}{% assign tag = 'h3' %}{% elsif texto contains '<h4' %}{% assign tag = 'h4' %}{% endif -%}
+{%- if tag != '' -%}
+{%- assign titulo_secao = texto | strip_html | strip -%}
+{%- if titulo_secao != '' and titulo_secao.size > 3 -%}
+{%- assign chave_termo = '|' | append: titulo_secao | append: '|' -%}
+{%- unless termos_vistos contains chave_termo -%}
+{%- unless primeiro %},{% endunless -%}
+  {%- capture contexto_secao -%}Seção · {{ nome_curto }}{%- endcapture -%}
+  {"termo": {{ titulo_secao | jsonify }}, "tipo": "secao", "contexto": {{ contexto_secao | jsonify }}, "jurisdicao": {{ nota.jurisdicao | jsonify }}}
+{%- assign primeiro = false -%}
+{%- assign termos_vistos = termos_vistos | append: titulo_secao | append: '|' -%}
+{%- endunless -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+{%- for verbete in site.data.definicoes -%}
+{%- assign termo = verbete.titulo | strip -%}
+{%- assign definicao_principal = verbete.definicoes | first -%}
+{%- assign referencia_principal = definicao_principal.referencias | first -%}
+{%- assign norma_principal = referencia_principal.norma_apelido | default: '' | strip -%}
+{%- if norma_principal != '' -%}
+{%- capture contexto_definicao -%}Glossário · {{ norma_principal }}{%- endcapture -%}
+{%- elsif verbete.jurisdicao != '' -%}
+{%- capture contexto_definicao -%}Glossário · {{ verbete.jurisdicao }}{%- endcapture -%}
+{%- else -%}
+{%- assign contexto_definicao = 'Glossário' -%}
+{%- endif -%}
+{%- if termo != '' and termo.size > 3 -%}
+{%- assign chave_termo = '|' | append: termo | append: '|' -%}
+{%- unless termos_vistos contains chave_termo -%}
+{%- unless primeiro %},{% endunless -%}
+  {"termo": {{ termo | jsonify }}, "tipo": "definicao", "contexto": {{ contexto_definicao | jsonify }}, "jurisdicao": {{ verbete.jurisdicao | jsonify }}}
+{%- assign primeiro = false -%}
+{%- assign termos_vistos = termos_vistos | append: termo | append: '|' -%}
+{%- endunless -%}
+{%- endif -%}
+{%- endfor -%}
+]

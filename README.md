@@ -77,6 +77,8 @@ Os detalhes de cada decisão estão em
 ├── notas.md                     # Página índice                 → /notas
 ├── definicoes.md                # Definições normativas         → /notas/definicoes
 ├── definicoes.json              # Banco para abertura contextual nas notas
+├── busca.md                     # Busca global                  → /notas/busca
+├── busca-index.html             # Índice JSON gerado             → /notas/busca.json
 ├── _notas/                      #  7 comentários publicados     → /notas/<assunto>
 ├── _leis/                       # 19 textos legais em Markdown puro (output: false)
 ├── _fragmentos/                 # 19 fragmentos das normas (fetch sob demanda, sem link)
@@ -89,11 +91,11 @@ Os detalhes de cada decisão estão em
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
 │   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
 │   ├── definicoes.yml           # Banco gerado de definições normativas
-│   └── ementas/                 # 18 arquivos: a ementa de cada artigo, rótulo do sumário
+│   └── ementas/                 # 19 arquivos: a ementa de cada artigo, rótulo do sumário
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # Scripts de autoria e verificações do CI
+├── scripts/                     # Scripts de autoria, validação e verificações do CI
 ├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -199,7 +201,11 @@ Antes de dar push, confirme que o site **compila**:
 
 ```bash
 bundle exec jekyll build
+python3 scripts/validar_indice_busca.py --site-dir _site
 ```
+
+O funcionamento do índice, os pesos do ranking e as regras de desempate estão
+documentados em [`docs/notas.md#busca-global`](./docs/notas.md#busca-global).
 
 Um erro de Liquid numa branch não aparece em lugar nenhum até o preview do
 Netlify — este comando o pega antes.
@@ -245,11 +251,11 @@ portanto não baixa outra versão durante o deploy.
 
 ### Scripts de autoria
 
-Os cinco scripts de autoria de `scripts/` são ferramentas das notas de
-legislação: rodam na sua máquina, **não entram no site** e não fazem parte do
-build. O verificador `verificar_site.py` é mantido no mesmo diretório, mas tem
-função distinta: roda depois do build para conferir a integridade do `_site`.
-O que cada script de autoria faz está em
+Os scripts Python de `scripts/` são ferramentas de autoria e validação das
+notas de legislação: rodam na sua máquina, **não entram no site** e não fazem
+parte do conteúdo publicado. O verificador `verificar_site.py` é mantido no
+mesmo diretório, mas tem função distinta: roda depois do build para conferir a
+integridade do `_site`. O que cada script faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
 
 ```bash
@@ -297,7 +303,8 @@ O site de produção ([higa.me](https://higa.me)) é compilado e publicado pelo
 workflow do GitHub Actions em `.github/workflows/pages.yml` a cada push na branch
 `master`. O workflow: (1) faz checkout com histórico completo (`fetch-depth: 0`),
 (2) instala as ferramentas travadas por `package-lock.json`, (3) minifica CSS/JS,
-(4) roda `jekyll build` com `JEKYLL_ENV=production` e (5) publica no GitHub Pages.
+(4) roda `jekyll build` com `JEKYLL_ENV=production`, (5) valida o índice global
+de busca e o site gerado e (6) publica no GitHub Pages.
 
 O workflow `.github/workflows/quality.yml` roda em pull requests, em pushes na
 branch `master` e manualmente. Ele executa o build, as verificações de sintaxe,

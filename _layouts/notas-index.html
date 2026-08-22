@@ -27,7 +27,7 @@
 {% include notas-index-head.html %}
 </head>
 
-<body class="light-theme">
+<body class="light-theme notas-index-pagina" id="notas-index-pagina">
 
     <!-- Tema antes do primeiro paint, para não haver flash do tema errado —
          mesmo script usado nas notas individuais. -->
@@ -50,11 +50,10 @@
             </nav>
             <h1>Notas de legislação</h1>
         </div>
-        <button id="theme-toggle" type="button" class="nota-tema" aria-label="Alternar tema claro/escuro">
-            <svg class="ico ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            <svg class="ico ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
+{% include nota-topo-acoes.html %}
     </header>
+
+{% include nota-atalhos.html %}
 
     <main class="notas-index">
         <p class="notas-index__intro">
@@ -62,7 +61,25 @@
             e, quando ajuda a entender a brasileira, estrangeira —, com o texto da lei ao lado dos
             comentários.
         </p>
-        <p class="notas-index__definicoes"><a href="/notas/definicoes">Consultar definições normativas</a> — termos das leis, decretos e regulamentos, por ordem alfabética ou tema.</p>
+        <section class="notas-index__recursos" aria-labelledby="notas-recursos-titulo">
+            <h2 id="notas-recursos-titulo">Explorar o acervo</h2>
+            <nav aria-label="Recursos do acervo">
+                <ul class="notas-index__recursos-lista">
+                    <li>
+                        <a class="notas-index__recurso" href="/notas/busca">
+                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                            <span><strong>Buscar no acervo</strong><small>Notas, seções, normas, artigos e definições.</small></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="notas-index__recurso" href="/notas/definicoes">
+                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16"/><path d="M8 7h8M8 11h8"/></svg>
+                            <span><strong>Definições normativas</strong><small>Termos das leis, decretos e regulamentos, por ordem alfabética ou tema.</small></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
         <!-- Só o título é link, e não o cartão inteiro: assim o nome acessível
              do link é o título da nota, e não o bloco de texto todo (título +
              resumo + normas + data), que um leitor de tela leria por inteiro a

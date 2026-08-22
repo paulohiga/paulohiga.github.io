@@ -17,6 +17,41 @@ no site, não o caminho até lá.
 
 ---
 
+## 2026-08-22
+
+### Notas de legislação
+
+- A seção passou a oferecer a [busca global do acervo](/notas/busca), com
+  resultados para notas, seções, normas, artigos e definições. A consulta
+  preserva links profundos para as âncoras existentes e pode ser compartilhada
+  pelos parâmetros da URL.
+- A home de `/notas` passou a reunir busca e definições em uma seção de recursos
+  do acervo, e o cabeçalho ganhou um acesso direto à busca com a tecla `s`.
+- A busca passou a focar o campo ao abrir, exibir contagens por categoria e
+  aceitar a combinação de vários tipos. O acesso por cabeçalho e pela tecla `s`
+  também está disponível na página de definições; os resultados usam cores
+  distintas por tipo para facilitar a leitura do conjunto.
+- A ordenação dos resultados passou a ponderar o campo em que o termo aparece,
+  a raridade do termo, coincidências de frase e a posição no título; a
+  ordenação alfabética ficou restrita aos desempates.
+- A busca passou a colocar resultados de jurisdição brasileira antes dos de
+  outras jurisdições, mantendo a relevância para ordenar cada grupo.
+- A página de busca ganhou uma seção de inspiração com dez sugestões sorteadas a
+  cada carregamento: quatro verbetes, quatro seções e duas notas, com o contexto
+  da norma principal quando o item é um verbete.
+- Os resultados da busca e as sugestões de inspiração passaram a usar cards
+  inteiramente clicáveis, com contexto e cores por tipo preservados.
+- O cabeçalho de todas as páginas de `/notas` passou a compartilhar os mesmos
+  controles de busca, atalhos e tema, com a mesma borda, área de toque e estados
+  de foco. A lista de atalhos se adapta ao contexto da página e à largura da
+  tela.
+
+### Documentação
+
+- Documentados o índice de busca gerado no build, o carregamento sob demanda e
+  o diretório de categorias disponível sem JavaScript.
+- O build passou a validar o índice gerado antes da publicação, incluindo
+  esquema, duplicidades, destinos e âncoras de notas e normas extras.
 ## 2026-08-21
 
 ### Notas de legislação

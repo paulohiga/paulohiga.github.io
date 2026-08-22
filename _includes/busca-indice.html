@@ -1,0 +1,159 @@
+{%- capture quebra %}
+{% endcapture -%}
+{%- assign separador = quebra | append: quebra -%}
+{%- assign notas_ordenadas = site.notas | sort: 'title' -%}
+{%- assign normas_ordenadas = site.leis | sort: 'apelido' -%}
+{%- assign definicoes_ordenadas = site.data.definicoes | sort: 'titulo' -%}
+{
+  "versao": 1,
+  "itens": {
+    "notas": [
+{%- for nota in notas_ordenadas %}
+      {
+        "tipo": "nota",
+        "titulo": {{ nota.title | jsonify }},
+        "subtitulo": "Nota de estudo",
+        "texto": {{ nota.description | jsonify }},
+        "jurisdicao": {{ nota.jurisdicao | jsonify }},
+        "url": {{ nota.url | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+    ],
+    "secoes": [
+{%- for nota in notas_ordenadas %}
+      {
+        "nota": {{ nota.title | jsonify }},
+        "nota_url": {{ nota.url | jsonify }},
+        "jurisdicao": {{ nota.jurisdicao | jsonify }},
+        "itens": [
+{%- assign blocos_nota = nota.content | split: separador -%}
+{%- assign primeira_secao = true -%}
+{%- for bloco in blocos_nota %}
+{%- assign texto = bloco | strip -%}
+{%- if texto != '' -%}
+{%- if texto contains '<h2' or texto contains '<h3' or texto contains '<h4' -%}
+{%- assign id_partes = texto | split: 'id="' -%}
+{%- assign id = id_partes[1] | split: '"' | first | default: '' -%}
+{%- assign titulo = texto | strip_html | strip -%}
+{%- assign proximo_indice = forloop.index0 | plus: 1 -%}
+{%- assign proximo_bloco = blocos_nota[proximo_indice] | default: '' | strip -%}
+{%- capture trecho %}{% unless proximo_bloco contains '<h2' or proximo_bloco contains '<h3' or proximo_bloco contains '<h4' %}{{ proximo_bloco | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 240 }}{% endunless %}{% endcapture -%}
+{%- assign trecho = trecho | strip -%}
+{%- unless primeira_secao %},{% endunless -%}
+          {
+            "tipo": "secao",
+            "titulo": {{ titulo | jsonify }},
+            "subtitulo": {{ nota.title | jsonify }},
+            "texto": {{ trecho | jsonify }},
+            "jurisdicao": {{ nota.jurisdicao | jsonify }},
+            "url": {{ nota.url | append: '#' | append: id | jsonify }}
+          }
+{%- assign primeira_secao = false -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+    ],
+    "normas": [
+{%- for norma in normas_ordenadas %}
+{%- assign nota_destino = '' -%}
+{%- assign artigo_prefixo = '' -%}
+{%- for nota in notas_ordenadas -%}
+{%- if nota.lei == norma.slug -%}
+{%- assign nota_destino = nota.url -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if nota_destino == '' -%}
+{%- for nota in notas_ordenadas -%}
+{%- if nota.normas_extra contains norma.slug -%}
+{%- assign nota_destino = nota.url -%}
+{%- assign artigo_prefixo = norma.prefixo -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- assign jurisdicao = 'Brasil' -%}
+{%- if norma.formato == 'ue' %}{% assign jurisdicao = 'União Europeia' %}{% endif -%}
+{%- capture url_norma -%}
+{%- if nota_destino != '' -%}{{ nota_destino }}{% if artigo_prefixo != '' %}#{{ artigo_prefixo }}{% endif %}{%- else -%}{{ norma.fonte }}{%- endif -%}
+{%- endcapture -%}
+      {
+        "tipo": "norma",
+        "titulo": {{ norma.apelido | jsonify }},
+        "subtitulo": {{ norma.titulo | jsonify }},
+        "texto": {{ norma.compilado_ate | default: '' | jsonify }},
+        "jurisdicao": {{ jurisdicao | jsonify }},
+        "url": {{ url_norma | strip | jsonify }},
+        "externo": {% if nota_destino == '' %}true{% else %}false{% endif %},
+        "artigos": [
+{%- assign fragmento = site.fragmentos | where: 'slug', norma.slug | first -%}
+{%- assign conteudo_lei = fragmento.content | default: norma.content -%}
+{%- assign blocos_lei = conteudo_lei | split: '<p' -%}
+{%- assign primeiro_artigo = true -%}
+{%- for bloco in blocos_lei %}
+{%- capture texto %}<p{{ bloco }}{% endcapture -%}
+{%- assign texto = texto | strip -%}
+{%- if texto != '' -%}
+{%- if texto contains 'class="lei-artigo"' and nota_destino != '' -%}
+{%- assign antes_da_classe = texto | split: 'class="lei-artigo"' | first -%}
+{%- assign abertura_artigo = antes_da_classe | split: '<p' | last -%}
+{%- assign id_partes = abertura_artigo | split: 'id="' -%}
+{%- assign id = id_partes[1] | split: '"' | first | default: '' -%}
+{%- assign prefixo_norma = norma.prefixo | append: '-' -%}
+{%- assign id_base = id | remove_first: prefixo_norma -%}
+{%- assign ementa_partes = texto | split: 'data-ementa="' -%}
+{%- assign ementa = ementa_partes[1] | split: '"' | first | default: '' -%}
+{%- assign texto_visivel = texto | strip_html | strip_newlines | replace: '  ', ' ' | strip -%}
+{%- assign palavras = texto_visivel | split: ' ' -%}
+{%- capture marcador_visivel %}{{ palavras[0] }} {{ palavras[1] }}{% endcapture -%}
+{%- capture trecho %}{{ texto_visivel | truncate: 260 }}{% endcapture -%}
+{%- assign trecho = trecho | strip -%}
+{%- capture artigo_id %}{{ artigo_prefixo }}{% if artigo_prefixo != '' %}-{% endif %}{{ id_base }}{% endcapture -%}
+{%- capture artigo_url %}{{ nota_destino }}#{{ artigo_id }}{% endcapture -%}
+{%- unless primeiro_artigo %},{% endunless -%}
+          {
+            "tipo": "artigo",
+            "titulo": {{ marcador_visivel | strip | jsonify }},
+            "subtitulo": {{ ementa | jsonify }},
+            "texto": {{ trecho | jsonify }},
+            "jurisdicao": {{ jurisdicao | jsonify }},
+            "norma": {{ norma.apelido | jsonify }},
+            "url": {{ artigo_url | strip | jsonify }}
+          }
+{%- assign primeiro_artigo = false -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor %}
+        ]
+      }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+    ],
+    "definicoes": [
+{%- for verbete in definicoes_ordenadas %}
+{%- assign definicao_principal = verbete.definicoes | first -%}
+{%- assign referencia_principal = definicao_principal.referencias | first -%}
+{%- capture definicoes_texto -%}
+{%- for definicao in verbete.definicoes -%}
+{{ definicao.texto | markdownify | strip_html | strip_newlines | replace: '  ', ' ' | strip }}{% unless forloop.last %} {% endunless %}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign definicoes_texto = definicoes_texto | strip | replace: '  ', ' ' -%}
+{%- capture trecho %}{{ definicoes_texto | truncate: 240 }}{% endcapture -%}
+{%- assign trecho = trecho | strip -%}
+      {
+        "tipo": "definicao",
+        "titulo": {{ verbete.titulo | jsonify }},
+        "subtitulo": {{ verbete.tema | jsonify }},
+        "texto": {{ trecho | jsonify }},
+        "busca": {{ verbete.busca_texto | append: ' ' | append: definicoes_texto | jsonify }},
+        "norma": {{ referencia_principal.norma_apelido | default: '' | jsonify }},
+        "jurisdicao": {{ verbete.jurisdicao | jsonify }},
+        "url": {{ '/notas/definicoes#' | append: verbete.id | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+    ]
+  }
+}
