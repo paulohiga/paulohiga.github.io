@@ -60,11 +60,11 @@
         }
 
         function redesenharDefinicoes() {
-            Array.prototype.forEach.call(listaDefinicoes.querySelectorAll('.definicoes-grupo'), function (titulo) {
-                titulo.remove();
+            Array.prototype.forEach.call(listaDefinicoes.querySelectorAll('.definicoes-grupo, .definicao-card--clone'), function (elemento) {
+                elemento.remove();
             });
-            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__grupo'), function (titulo) {
-                titulo.remove();
+            Array.prototype.forEach.call(indiceDefinicoes.querySelectorAll('.definicoes-nav__grupo, .definicoes-nav__item--clone'), function (elemento) {
+                elemento.remove();
             });
             /* Os itens do índice também são remontados. Se os antigos ficam
                no DOM, os que o filtro escondeu permanecem antes dos visíveis
@@ -80,21 +80,30 @@
                 itensIndice[card.id].hidden = !aparece;
                 return aparece;
             });
-            visiveis.sort(function (a, b) {
-                if (ordemDefinicoes === 'mencoes') {
-                    return Number(b.dataset.mencoes) - Number(a.dataset.mencoes) ||
-                        a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
-                }
-                var grupoA = ordemDefinicoes === 'tema' ? a.dataset.notas : a.dataset.letra;
-                var grupoB = ordemDefinicoes === 'tema' ? b.dataset.notas : b.dataset.letra;
-                return grupoA.localeCompare(grupoB, 'pt-BR') ||
-                    a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
+            var entradas = [];
+            visiveis.forEach(function (card) {
+                var grupos = ordemDefinicoes === 'tema'
+                    ? card.dataset.notas.split(' · ')
+                    : [ordemDefinicoes === 'mencoes' ? 'Mais citados' : card.dataset.letra];
+                grupos.forEach(function (grupo, indice) {
+                    entradas.push({ card: card, grupo: grupo, indice: indice });
+                });
+            });
+            entradas.sort(function (a, b) {
+                return a.grupo.localeCompare(b.grupo, 'pt-BR') ||
+                    (ordemDefinicoes === 'mencoes'
+                        ? Number(b.card.dataset.mencoes) - Number(a.card.dataset.mencoes)
+                        : a.card.querySelector('h3').textContent.localeCompare(b.card.querySelector('h3').textContent, 'pt-BR'));
             });
             var grupoAnterior = '';
-            visiveis.forEach(function (card) {
-                var grupo = ordemDefinicoes === 'tema'
-                    ? card.dataset.notas
-                    : (ordemDefinicoes === 'mencoes' ? 'Mais citados' : card.dataset.letra);
+            entradas.forEach(function (entrada) {
+                var card = entrada.indice === 0 ? entrada.card : entrada.card.cloneNode(true);
+                if (entrada.indice > 0) {
+                    card.removeAttribute('id');
+                    card.classList.add('definicao-card--clone');
+                    card.setAttribute('aria-hidden', 'true');
+                }
+                var grupo = entrada.grupo;
                 if (grupo !== grupoAnterior) {
                     var titulo = document.createElement('h2');
                     titulo.className = 'definicoes-grupo';
@@ -109,7 +118,9 @@
                     grupoAnterior = grupo;
                 }
                 listaDefinicoes.appendChild(card);
-                indiceDefinicoes.appendChild(itensIndice[card.id]);
+                var itemIndice = entrada.indice === 0 ? itensIndice[entrada.card.id] : itensIndice[entrada.card.id].cloneNode(true);
+                if (entrada.indice > 0) itemIndice.classList.add('definicoes-nav__item--clone');
+                indiceDefinicoes.appendChild(itemIndice);
             });
             cardsVisiveis = visiveis;
             document.getElementById('definicoes-vazio').hidden = visiveis.length !== 0;
