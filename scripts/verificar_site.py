@@ -29,6 +29,7 @@ class DocumentoHTML(HTMLParser):
         self.ids: dict[str, int] = {}
         self.duplicados: list[tuple[str, int]] = []
         self.hrefs: list[tuple[str, int]] = []
+        self.prefixos_normas: set[str] = set()
 
     def _atributos(self, attrs: list[tuple[str, str | None]]) -> dict[str, str]:
         return {nome: valor or "" for nome, valor in attrs}
@@ -44,6 +45,9 @@ class DocumentoHTML(HTMLParser):
                 self.ids[id_] = linha
         if "href" in atributos:
             self.hrefs.append((atributos["href"], linha))
+        prefixo = atributos.get("data-norma-prefixo")
+        if prefixo:
+            self.prefixos_normas.add(prefixo)
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.handle_starttag(tag, attrs)
@@ -132,11 +136,14 @@ def main() -> int:
             if alvo is None:
                 problemas.append(f"{relativo}:{linha}: {href} — {fragmento}")
                 continue
-            ids_alvo = documentos.get(alvo, DocumentoHTML()).ids
+            parser_alvo = documentos.get(alvo)
+            ids_alvo = parser_alvo.ids if parser_alvo else set()
+            prefixos_alvo = parser_alvo.prefixos_normas if parser_alvo else set()
             if (
                 fragmento
                 and fragmento not in ids_alvo
                 and fragmento not in ids_fragmentos
+                and fragmento not in prefixos_alvo
             ):
                 problemas.append(
                     f"{relativo}:{linha}: fragmento inexistente em {href}: #{fragmento}"

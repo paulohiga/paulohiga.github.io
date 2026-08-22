@@ -180,9 +180,12 @@ O quality gate executa, nesta ordem lógica:
 
 `verificar_site.py` também considera os HTML de
 `_site/notas/fragmentos/`, pois a seção `/notas` carrega parte das âncoras sob
-demanda. Links externos, `mailto:`, `tel:` e URLs JavaScript ficam fora do
-escopo: o teste garante a integridade do site publicado, sem depender da
-disponibilidade de serviços externos.
+demanda. Para links no formato `/notas/<slug>#<prefixo>`, ele também valida o
+`data-norma-prefixo` registrado no documento: esse é o contrato de uma âncora
+que abre uma norma inteira, sem dispositivo, e não um `id` HTML literal. Links
+externos, `mailto:`, `tel:` e URLs JavaScript ficam fora do escopo: o teste
+garante a integridade do site publicado, sem depender da disponibilidade de
+serviços externos.
 
 O quality gate não altera conteúdo editorial nem grava arquivos no repositório.
 A minificação do workflow de publicação ocorre no checkout efêmero do runner;

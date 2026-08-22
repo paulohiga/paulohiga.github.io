@@ -755,6 +755,8 @@ Ele verifica:
 - links internos que apontam para arquivos inexistentes;
 - fragmentos (`#id`) que não existem no documento de destino;
 - IDs duplicados no mesmo HTML;
+- prefixos de norma (`#dec12975`, por exemplo) registrados no destino para
+  abrir uma norma inteira sem dispositivo;
 - as âncoras publicadas nos fragmentos carregados sob demanda pelas notas.
 
 O script usa apenas a biblioteca padrão do Python e ignora links externos. Para

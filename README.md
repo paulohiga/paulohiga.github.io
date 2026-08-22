@@ -228,7 +228,7 @@ node --check notas.js
 .venv/bin/python -m compileall -q scripts
 .venv/bin/python scripts/conferir_ementas.py
 .venv/bin/python scripts/ancorar_referencias.py --check \
-  ai-act eca-digital gdpr lgpd mci regimento-interno-anpd
+  ai-act dsa eca-digital gdpr lgpd mci regimento-interno-anpd
 .venv/bin/python scripts/verificar_site.py
 git diff --check
 ```
