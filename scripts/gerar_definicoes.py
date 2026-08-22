@@ -522,6 +522,12 @@ def main() -> None:
             *(item["norma_apelido"] for item in itens),
             *(item["norma_titulo"] for item in itens),
         ]))
+        notas = sorted({
+            referencia["nota_url"].removeprefix("/notas/")
+            for definicao in agrupar_definicoes(itens)
+            for referencia in definicao["referencias"]
+        })
+        notas_texto = " · ".join(NOTAS_TITULOS.get(nota, nota) for nota in notas)
         saida.append({
             "id": verbete_id,
             "titulo": titulo,
@@ -535,6 +541,8 @@ def main() -> None:
             "mencoes": mencoes_notas + mencoes_normas,
             "mencoes_notas": mencoes_notas,
             "mencoes_normas": mencoes_normas,
+            "notas": [NOTAS_TITULOS.get(nota, nota) for nota in notas],
+            "notas_texto": notas_texto,
             "definicoes": agrupar_definicoes(itens),
         })
 
