@@ -7,7 +7,7 @@ lei: gdpr
 normas_extra: [regulamento-2025-2518]
 ordem: 5
 jurisdicao: União Europeia
-atualizado_em: 2026-08-20
+atualizado_em: 2026-08-21
 ---
 
 ## Resumo geral
@@ -558,7 +558,7 @@ Três episódios mostram como o repertório europeu chega à prática brasileira
 
 - **A adequação de 2026** ([Decisão de Execução (UE) 2026/179](https://eur-lex.europa.eu/eli/dec_impl/2026/179/oj) e [Resolução CD/ANPD nº 32/2026](https://www.in.gov.br/web/dou/-/resolucao-n-32-de-26-de-janeiro-de-2026-683334547)) dispensou, na generalidade dos casos, cláusulas-padrão e garantias adicionais nos fluxos Brasil–União Europeia. Para uma empresa brasileira, isso significa que o vetor de risco deixou de ser o **instrumento** de transferência e passou a ser a **manutenção** da adequação — que a Comissão monitora continuamente e pode suspender.
 - **O caso do escaneamento de íris** mostra os dois repertórios operando sobre o mesmo fato com fundamentos distintos: as autoridades europeias trataram de transparência, menores e retirada do consentimento; a ANPD foi ao ponto da **contrapartida financeira**, que nenhuma delas havia enfrentado de frente. O raciocínio vale nos dois sistemas, porque a exigência de consentimento livre é comum aos dois.
-- **A responsabilidade das plataformas**, no Brasil, não passou pela lei de dados: veio do STF, nos [Temas 987 e 533](/notas/mci#o-novo-regime-de-responsabilização-das-plataformas-stf-temas-987-e-533), e dos decretos de 2026 que regulamentaram o [Marco Civil](/notas/mci). Na Europa, esse debate está no DSA, não no RGPD. São matérias alojadas em normas distintas nos dois sistemas, e vale não misturá-las ao comparar.
+- **A responsabilidade das plataformas**, no Brasil, não passou pela lei de dados: veio do STF, nos [Temas 987 e 533](/notas/mci#o-novo-regime-de-responsabilização-das-plataformas-stf-temas-987-e-533), e dos decretos de 2026 que regulamentaram o [Marco Civil](/notas/mci). Na Europa, esse debate está no [DSA](/notas/dsa), não no RGPD. São matérias alojadas em normas distintas nos dois sistemas, e vale não misturá-las ao comparar.
 
 ## Comparação com a LGPD
 
@@ -676,7 +676,7 @@ Levantamentos da autoridade brasileira, publicados na [central de documentos té
 - [Diretiva (UE) 2016/680](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016L0680) — a "diretiva policial", gêmea do RGPD para o tratamento por autoridades penais. Cobre o campo que o RGPD exclui no [art. 2.º, n.º 2, alínea d)](#art-2-p2-d) e que a [LGPD](/notas/lgpd) também exclui, no [art. 4º, III](/notas/lgpd#art-4-iii). A diferença está no instrumento e no calendário: a União tratou o tema numa diretiva editada no mesmo dia do RGPD; no Brasil, a legislação específica que o [art. 4º, § 1º](/notas/lgpd#art-4-p1) prevê ainda não foi editada.
 - [Regulamento (UE) 2018/1725](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32018R1725) — o RGPD das próprias instituições da União, fiscalizado pela Autoridade Europeia para a Proteção de Dados (AEPD).
 - [Diretiva 2002/58/CE (ePrivacy)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32002L0058) — é ela, e não o RGPD, que exige consentimento para _cookies_ e para o acesso ao equipamento terminal do usuário. O [art. 95.º](#art-95) do RGPD preserva essa divisão, que o Digital Omnibus propõe desfazer.
-- [Regulamento (UE) 2022/2065 — Serviços Digitais (DSA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065) e [Regulamento (UE) 2022/1925 — Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
+- [DSA](/notas/dsa) — o Regulamento (UE) 2022/2065, dos serviços digitais, que preserva expressamente o RGPD e dele toma emprestadas a definição de perfis e as categorias especiais de dados ([DSA, art. 2.º, n.º 4, alínea g)](/notas/dsa#art-2-p4-g)), e [Regulamento (UE) 2022/1925 — Mercados Digitais (DMA)](https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R1925).
 - [AI Act](/notas/ai-act) — o Regulamento (UE) 2024/1689, que expressamente **não derroga** o RGPD ([art. 2.º do AI Act](/notas/ai-act#art-2)).
 - [Convenção 108 do Conselho da Europa](https://www.coe.int/en/web/data-protection/convention108-and-protocol), de 1981, e seu protocolo de modernização (Convenção 108+, de 2018) — o tratado internacional que antecede tudo isso, aberto também a Estados de fora da Europa. O Brasil **não é parte**; participa do Comité da Convenção 108 como **observador** desde 2018.
 - No Brasil: a [LGPD](/notas/lgpd), o [Marco Civil da Internet](/notas/mci), o [ECA Digital](/notas/eca-digital) e o [Regimento Interno da ANPD](/notas/regimento-interno-anpd).

@@ -7,7 +7,7 @@ lei: eca-digital
 normas_extra: [decreto-12880]
 ordem: 3
 jurisdicao: Brasil
-atualizado_em: 2026-08-20
+atualizado_em: 2026-08-21
 ---
 
 ## Resumo geral
@@ -478,7 +478,7 @@ O ECA Digital não proíbe o acesso de adolescentes a redes sociais — exige **
 | **Austrália** | Proibição de contas para **menores de 16**, com dever de _reasonable steps_ da plataforma | Em vigor desde 10/12/2025 ([Social Media Minimum Age](https://www.legislation.gov.au/C2024A00127/asmade), Parte 4A do Online Safety Act 2021). Primeiro país do mundo a adotá-la |
 | **França** | Proibição de contas para **menores de 15** | [Aprovada em 21/7/2026](https://www.biometricupdate.com/202607/france-sets-15-as-minimum-age-for-social-media-nationwide); contas novas a partir de setembro de 2026 e contas existentes a partir de janeiro de 2027. Primeiro país da UE a legislar sobre o tema |
 | **Dinamarca** | Proibição para **menores de 15**, com dispensa parental a partir dos 13 | [Acordo político de novembro de 2025](https://www.pbs.org/newshour/world/denmarks-government-aims-to-ban-access-to-social-media-for-children-aged-under-15), com apoio majoritário declarado; sem aprovação formal no parlamento até agora |
-| **União Europeia** | Sem idade mínima uniforme de acesso | A idade de consentimento digital para tratamento de dados ([art. 8.º do RGPD](/notas/gdpr#art-8)) varia de 13 a 16 anos por Estado-membro; o Parlamento Europeu aprovou, em novembro de 2025, resolução **não vinculante** recomendando piso de 16 |
+| **União Europeia** | Sem idade mínima uniforme de acesso | A idade de consentimento digital para tratamento de dados ([art. 8.º do RGPD](/notas/gdpr#art-8)) varia de 13 a 16 anos por Estado-membro; o Parlamento Europeu aprovou, em novembro de 2025, resolução **não vinculante** recomendando piso de 16. O dever de proteção está no [art. 28.º do DSA](/notas/dsa#art-28), que pede medidas adequadas **sem** obrigar a tratar dados adicionais para descobrir quem é menor ([n.º 3](/notas/dsa#art-28-p3)) |
 | **Reino Unido** | Sem proibição etária de acesso; dever de _highly effective age assurance_ | [Online Safety Act 2023](https://www.legislation.gov.uk/ukpga/2023/50/contents), restrito a serviços com conteúdo pornográfico ou de alto risco |
 | **Estados Unidos** | Sem lei federal de idade mínima | O piso de 13 anos do [COPPA](https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa) regula só a coleta de dados; a regulação é estadual, como a [Flórida (HB 3)](https://www.flsenate.gov/Session/Bill/2024/3), que proíbe contas para menores de 14 e exige consentimento parental dos 14 aos 15 |
 
@@ -683,4 +683,5 @@ Estudos publicados na [central de documentos técnicos e orientativos](https://w
 - [Lei nº 13.431/2017](https://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2017/lei/l13431.htm) — sistema de garantia de direitos da criança e do adolescente vítima ou testemunha de violência.
 - [Lei nº 14.811/2024](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14811.htm) — Política Nacional de Prevenção e Combate ao Abuso e Exploração Sexual da Criança e do Adolescente.
 - [Lei nº 13.848/2019](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm) — Capítulo I aplicável ao processo decisório da autoridade ([art. 2º, X](#art-2-x)); desde a Lei nº 15.352/2026, a ANPD integra o rol de agências reguladoras do seu art. 2º.
+- [Regulamento (UE) 2022/2065 — o DSA](/notas/dsa) — impõe a toda plataforma acessível a menores um dever de privacidade, proteção e segurança ([art. 28.º](/notas/dsa#art-28)) e veda a publicidade por definição de perfis a quem se saiba menor ([n.º 2](/notas/dsa#art-28-p2)); as [orientações da Comissão de 14/7/2025](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors) fazem o papel que aqui cabe ao decreto e aos atos da ANPD.
 - Também referidas: Lei nº 13.146/2015 (Estatuto da Pessoa com Deficiência), Lei nº 14.533/2023 (Política Nacional de Educação Digital), Lei nº 14.790/2023 (apostas de quota fixa), Lei nº 8.242/1991 (Conanda e FNCA) e Decreto nº 12.002/2024 (classificação indicativa).

@@ -52,6 +52,15 @@ regulamento-2025-2518:
   aliases:
     - "Regulamento (UE) 2025/2518"
 
+dsa:
+  nota: dsa
+  prefixo: ""
+  aliases:
+    - "DSA"
+    - "Digital Services Act"
+    - "Regulamento (UE) 2022/2065"
+    - "Regulamento dos Serviços Digitais"
+
 eca-digital:
   nota: eca-digital
   prefixo: ""

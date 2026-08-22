@@ -77,9 +77,9 @@ Os detalhes de cada decisão estão em
 ├── notas.md                     # Página índice                 → /notas
 ├── definicoes.md                # Definições normativas         → /notas/definicoes
 ├── definicoes.json              # Banco para abertura contextual nas notas
-├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
-├── _leis/                       # 18 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 # 18 fragmentos das normas (fetch sob demanda, sem link)
+├── _notas/                      #  7 comentários publicados     → /notas/<assunto>
+├── _leis/                       # 19 textos legais em Markdown puro (output: false)
+├── _fragmentos/                 # 19 fragmentos das normas (fetch sob demanda, sem link)
 ├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca e atalhos
 │
 │   ## Código compartilhado

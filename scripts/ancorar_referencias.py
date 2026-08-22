@@ -50,6 +50,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import string
 import sys
 from pathlib import Path
 
@@ -67,7 +68,7 @@ ROMANOS = [
 ]
 # Ordenados do mais longo para o mais curto, para casar "V-A" antes de "V" etc.
 ROMANO_RE = "|".join(re.escape(r) for r in ROMANOS)
-LETRAS = set("abcdefghij")
+LETRAS = set(string.ascii_lowercase)
 
 
 # --------------------------------------------------------------------------
@@ -187,7 +188,7 @@ def _ids_da_lei_ue(corpo: str, prefixo: str) -> set[str]:
         else:
             letra = marcador.rstrip(")")
             base = letra.split("-")[0]
-            if marcador.endswith(")") and base in LETRAS and re.fullmatch(r"[a-j](?:-[A-Z])?", letra):
+            if marcador.endswith(")") and base in LETRAS and re.fullmatch(r"[a-z](?:-[A-Z])?", letra):
                 sufixado = letra.replace("-", "").lower()
                 id_ = f"{artigo}-{subdivisao}-{sufixado}" if subdivisao else f"{artigo}-{sufixado}"
 
