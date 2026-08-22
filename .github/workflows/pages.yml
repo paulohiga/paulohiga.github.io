@@ -11,6 +11,10 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  RUBY_VERSION: "3.3.12"
+  BUNDLER_VERSION: "4.0.16"
+
 # Garante um único deploy concorrente, sem cancelar um em andamento.
 concurrency:
   group: pages
@@ -29,8 +33,16 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler: ${{ env.BUNDLER_VERSION }}
           bundler-cache: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Install build tools
+        run: npm ci
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -40,13 +52,13 @@ jobs:
       # Roda só na produção; os previews do Netlify usam os fontes legíveis.
       - name: Minify CSS and JS
         run: |
-          npx -y lightningcss-cli --minify _includes/style.css -o /tmp/style.min.css
+          npx --no-install lightningcss --minify _includes/style.css -o /tmp/style.min.css
           mv /tmp/style.min.css _includes/style.css
-          npx -y lightningcss-cli --minify _includes/nota-style.css -o /tmp/nota-style.min.css
+          npx --no-install lightningcss --minify _includes/nota-style.css -o /tmp/nota-style.min.css
           mv /tmp/nota-style.min.css _includes/nota-style.css
-          npx -y terser script.js --compress --mangle -o /tmp/script.min.js
+          npx --no-install terser script.js --compress --mangle -o /tmp/script.min.js
           mv /tmp/script.min.js script.js
-          npx -y terser notas.js --compress --mangle -o /tmp/notas.min.js
+          npx --no-install terser notas.js --compress --mangle -o /tmp/notas.min.js
           mv /tmp/notas.min.js notas.js
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

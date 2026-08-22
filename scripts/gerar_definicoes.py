@@ -4,7 +4,9 @@
 As fontes de verdade continuam sendo os textos normativos. Este script localiza
 os artigos cuja ementa contém "Definições", extrai cada inciso/ponto sem
 reescrever a literalidade e agrupa termos iguais ou equivalentes somente dentro
-da mesma jurisdição.
+da mesma jurisdição. O item pode vir numerado (o inciso "V –" das normas
+brasileiras, o ponto "10)" do RGPD e do AI Act) ou como alínea ("a)", que é
+como o art. 3.º do DSA lista as suas definições).
 """
 
 from __future__ import annotations
@@ -84,16 +86,121 @@ EQUIVALENTES = {
     "regras vinculativas aplicáveis às empresas": "regras vinculativas aplicáveis a empresas",
 }
 
+# Equivalentes brasileiros dos termos das normas europeias, cuja literalidade é
+# a do EUR-Lex, em PT-PT. Servem a três coisas ao mesmo tempo: aparecem no
+# verbete como "no Brasil", entram na busca da página consolidada e permitem
+# que o comentário de uma nota europeia, escrito em pt-BR, continue marcando o
+# termo e levando ao verbete certo. O título do verbete e a redação da norma
+# não mudam.
+#
+# A chave é a de `chave_termo` (minúscula e sem acento). Um equivalente que
+# colida com o termo de outro verbete da mesma jurisdição é recusado por
+# `conferir_equivalentes()` — foi o que barrou "operador" como equivalente de
+# «Subcontratante» do RGPD: no AI Act, «Operador» é o gênero que abrange
+# fornecedor, implementador, importador, distribuidor e mandatário.
+EQUIVALENTES_BR = {
+    "prestador": ["fornecedor"],
+    "prestador a jusante": ["fornecedor a jusante"],
+    "responsavel pela implantacao": ["implementador"],
+    "responsavel pelo tratamento": ["controlador"],
+    "autoridade de controlo": ["autoridade de controle"],
+    "ambiente de testagem da regulamentacao da ia": ["sandbox regulatório"],
+    "plano do ambiente de testagem": ["plano do sandbox regulatório"],
+    "testagem em condicoes reais": ["teste em condições reais"],
+    "plano de testagem em condicoes reais": ["plano de teste em condições reais"],
+    "falsificacoes profundas": ["deepfake"],
+    "risco sistemico": ["risco sistêmico"],
+    "literacia no dominio da ia": ["letramento em IA"],
+    "dados de treino": ["dados de treinamento"],
+    "operacao de virgula flutuante": ["operação de ponto flutuante"],
+    "instrucoes de utilizacao": ["instruções de uso"],
+    "utilizacao indevida razoavelmente previsivel": ["uso indevido razoavelmente previsível"],
+    "sistema de acompanhamento pos comercializacao": ["monitoramento pós-comercialização"],
+    "avaliacao da conformidade": ["avaliação de conformidade"],
+    "organismo de avaliacao da conformidade": ["organismo de avaliação de conformidade"],
+    "autoridade de fiscalizacao do mercado": ["autoridade de fiscalização de mercado"],
+    "definicao de perfis": ["perfilamento", "criação de perfis"],
+    "capacidades de elevado impacto": ["capacidades de alto impacto"],
+    "modelo de ia de finalidade geral": ["modelo de IA de propósito geral"],
+    "sistema de ia de finalidade geral": ["sistema de IA de propósito geral"],
+    "mandatario": ["representante autorizado"],
+    "plataforma em linha": ["plataforma online"],
+    "motor de pesquisa em linha": ["mecanismo de busca"],
+    "interface em linha": ["interface online"],
+    "destinatario do servico": ["usuário do serviço"],
+    "termos e condicoes": ["termos de uso"],
+    "volume de negocios": ["faturamento"],
+    "coordenador dos servicos digitais de estabelecimento": ["coordenador de estabelecimento"],
+    "coordenador dos servicos digitais de destino": ["coordenador de destino"],
+    "categorias especiais de dados pessoais": ["dados sensíveis"],
+}
+
+# Variações de grafia e plurais que só interessam à busca e à marcação: não são
+# termos equivalentes e por isso não aparecem no verbete.
+FORMAS = {
+    "rede social": ["redes sociais"],
+    "prestador": ["fornecedores"],
+    "responsavel pela implantacao": ["implementadores"],
+    "falsificacoes profundas": ["deepfakes"],
+    "literacia no dominio da ia": ["literacia em IA"],
+    "testagem em condicoes reais": ["testes em condições reais"],
+    "plataforma em linha": ["plataformas online"],
+    "motor de pesquisa em linha": ["mecanismos de busca"],
+    "servico intermediario": ["serviços intermediários"],
+    "destinatario do servico": ["usuários do serviço"],
+    "conteudos ilegais": ["conteúdo ilegal"],
+    "moderacao de conteudos": ["moderação de conteúdo"],
+    "comerciante": ["comerciantes"],
+    "sistema de recomendacao": ["sistemas de recomendação"],
+    "contrato a distancia": ["contratar à distância"],
+}
+
 TEMAS = (
     ("Crianças, adolescentes e idade", ("criança", "adolescente", "idade", "parental", "infantil")),
     ("Inteligência artificial", ("inteligência artificial", "sistema de ia", "biométr", "algorit", "modelo", "treino", "testagem", "falsificaç", "sistema de reconhecimento")),
     ("Segurança, incidentes e violência", ("segurança", "incidente", "confidencialidade", "integridade", "disponibilidade", "autenticidade", "sigilo", "violência")),
-    ("Internet e plataformas", ("internet", "rede social", "terminal", "endereço ip", "conexão", "aplicação", "conteúdo", "impulsionamento", "monetização")),
-    ("Fiscalização e sanções", ("infração", "infrator", "fiscalização", "sanção", "autuado", "denúncia", "requerimento", "petição", "obstrução", "reincidência")),
+    ("Internet e plataformas", ("internet", "rede social", "terminal", "endereço ip", "conexão", "aplicação", "conteúdo", "impulsionamento", "monetização", "em linha", "plataforma", "motor de pesquisa", "intermediári", "recomendaç", "moderaç", "difusão ao público", "sociedade da informação", "termos e condições", "publicitário")),
+    ("Fiscalização e sanções", ("infração", "infrator", "fiscalização", "sanção", "autuado", "denúncia", "requerimento", "petição", "obstrução", "reincidência", "faturamento", "volume de negócios")),
     ("Transferências internacionais", ("transferência", "exportador", "importador", "organismo internacional", "organização internacional", "adequação")),
-    ("Agentes e governança", ("controlador", "operador", "responsável", "subcontratante", "encarregado", "agente", "empresa", "entidade", "autoridade", "prestador", "distribuidor", "mandatário")),
+    ("Agentes e governança", ("controlador", "operador", "responsável", "subcontratante", "encarregado", "agente", "empresa", "entidade", "autoridade", "prestador", "distribuidor", "mandatário", "coordenador", "destinatário", "comerciante", "consumidor")),
     ("Dados pessoais e tratamento", ("dado", "tratamento", "titular", "consentimento", "anonim", "pseudonim", "perfil", "ficheiro", "eliminação", "bloqueio")),
 )
+
+
+def conferir_equivalentes(verbetes: list[dict]) -> None:
+    """Recusa equivalente órfão ou ambíguo.
+
+    Ambíguo é o equivalente que já é termo, equivalente ou forma de busca de
+    outro verbete da mesma jurisdição: ali a marcação nos comentários levaria
+    ao verbete errado, em silêncio. Órfão é a chave cadastrada que nenhum
+    verbete tem — sinal de termo renomeado ou removido da norma.
+    """
+    dono: dict[tuple[str, str], str] = {}
+    for verbete in verbetes:
+        for forma in verbete["busca"]:
+            dono.setdefault((verbete["jurisdicao"], chave_termo(forma)), verbete["id"])
+
+    erros = []
+    chaves_vistas = {(v["jurisdicao"], chave_termo(t)) for v in verbetes for t in v["termos"]}
+    for chave in EQUIVALENTES_BR:
+        if ("UE", chave) not in chaves_vistas:
+            erros.append(f"equivalente órfão: nenhum verbete UE para '{chave}'")
+    for chave in FORMAS:
+        if not any((j, chave) in chaves_vistas for j in ("BR", "UE")):
+            erros.append(f"forma órfã: nenhum verbete para '{chave}'")
+
+    for verbete in verbetes:
+        proprias = {chave_termo(t) for t in verbete["termos"]}
+        for extra in verbete["equivalentes"] + FORMAS.get(chave_termo(verbete["termos"][0]), []):
+            chave = chave_termo(extra)
+            alvo = dono.get((verbete["jurisdicao"], chave))
+            if chave not in proprias and alvo not in (None, verbete["id"]):
+                erros.append(
+                    f"'{extra}' é de {verbete['id']} e de {alvo} na mesma jurisdição"
+                )
+
+    if erros:
+        raise SystemExit("EQUIVALENTES_BR/FORMAS:\n  " + "\n  ".join(sorted(set(erros))))
 
 
 def frente(texto: str) -> tuple[dict, str]:
@@ -192,7 +299,12 @@ def extrair_itens(bloco: str, ue: bool) -> list[dict]:
     itens: list[dict] = []
     atual: dict | None = None
 
-    padrao_ue = re.compile(r"^(?:(\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"]\s*[,–—:-]?\s*(.*)$")
+    # O marcador do item pode ser numerado ("10)", como no RGPD e no AI Act) ou
+    # uma alínea ("a)", como no art. 3.º do DSA). Subníveis chegam aqui como
+    # item de lista ("- i) …") e não casam com nenhum dos dois.
+    padrao_ue = re.compile(
+        r"^(?:([a-z](?:-[A-Za-z])?|\d+(?:-[A-Z])?)\)\s+)?[«“\"]([^»”\"]+)[»”\"]\s*[,–—:-]?\s*(.*)$"
+    )
     padrao_br = re.compile(r"^([IVXLCDM]+)\s*[–-]\s*(.+?)\s*[:–-]\s+(.*)$")
 
     for linha in linhas:
@@ -249,10 +361,12 @@ def url_nota(norma: dict) -> str:
 
 
 def sufixo_ponto(marcador: str) -> str:
-    """Converte o marcador europeu `10`/`14-A` no sufixo do id."""
+    """Converte o marcador europeu no sufixo do id: o ponto numerado `10`/`14-A`
+    vira `p10`/`p14a`; a alínea `a`/`b-a`, o próprio `a`/`ba` — o mesmo esquema
+    de `_includes/lei-anotada.html`."""
     casamento = re.fullmatch(r"(\d+)(?:-([A-Z]))?", marcador)
     if not casamento:
-        return marcador.lower()
+        return marcador.replace("-", "").lower()
     return f"p{casamento.group(1)}{(casamento.group(2) or '').lower()}"
 
 
@@ -264,8 +378,13 @@ def referencia(norma: dict, artigo: str, marcador: str, ue: bool) -> tuple[str, 
         sufixo = "" if sem_ancora_propria else marcador
     url = url_dispositivo(norma, artigo, sufixo)
     dispositivo = f"art. {artigo}.º" if ue else f"art. {artigo}º"
-    if marcador:
-        dispositivo += f", ponto {marcador}" if ue else f", {marcador}"
+    if marcador and ue:
+        if marcador[0].isdigit():
+            dispositivo += f", ponto {marcador}"
+        else:
+            dispositivo += f", alínea {marcador})"
+    elif marcador:
+        dispositivo += f", {marcador}"
     return dispositivo, url
 
 
@@ -354,10 +473,12 @@ def main() -> None:
             contador += 1
         ids.add(verbete_id)
         tema = tema_de(termos)
-        busca_extra = {"rede social": ["redes sociais"]}.get(chave, [])
+        equivalentes = EQUIVALENTES_BR.get(chave, []) if jurisdicao == "UE" else []
+        formas = FORMAS.get(chave, [])
         busca_texto = " ".join(dict.fromkeys([
             *termos,
-            *busca_extra,
+            *equivalentes,
+            *formas,
             tema,
             *(item["norma_apelido"] for item in itens),
             *(item["norma_titulo"] for item in itens),
@@ -366,7 +487,8 @@ def main() -> None:
             "id": verbete_id,
             "titulo": titulo,
             "termos": termos,
-            "busca": termos + busca_extra,
+            "equivalentes": equivalentes,
+            "busca": termos + equivalentes + formas,
             "busca_texto": busca_texto,
             "letra": sem_acentos(termos[0])[0].upper(),
             "tema": tema,
@@ -375,6 +497,7 @@ def main() -> None:
         })
 
     saida.sort(key=lambda item: (sem_acentos(item["titulo"]), item["jurisdicao"]))
+    conferir_equivalentes(saida)
     cabecalho = (
         "# GERADO POR scripts/gerar_definicoes.py. NÃO EDITE À MÃO.\n"
         "# A literalidade vem de _leis/; equivalências e temas ficam no script.\n"

@@ -4,6 +4,7 @@
   titulo: Acesso provável por crianças e adolescentes
   termos:
   - Acesso provável por crianças e adolescentes
+  equivalentes: []
   busca:
   - Acesso provável por crianças e adolescentes
   busca_texto: Acesso provável por crianças e adolescentes Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -34,6 +35,7 @@
   titulo: Administrador de sistema autônomo
   termos:
   - Administrador de sistema autônomo
+  equivalentes: []
   busca:
   - Administrador de sistema autônomo
   busca_texto: Administrador de sistema autônomo Outros conceitos normativos Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -55,6 +57,7 @@
   titulo: Aferição de idade
   termos:
   - Aferição de idade
+  equivalentes: []
   busca:
   - Aferição de idade
   busca_texto: Aferição de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -76,6 +79,7 @@
   titulo: Agentes de tratamento
   termos:
   - Agentes de tratamento
+  equivalentes: []
   busca:
   - Agentes de tratamento
   busca_texto: Agentes de tratamento Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -105,6 +109,7 @@
   titulo: Agentes de tratamento de pequeno porte
   termos:
   - Agentes de tratamento de pequeno porte
+  equivalentes: []
   busca:
   - Agentes de tratamento de pequeno porte
   busca_texto: Agentes de tratamento de pequeno porte Agentes e governança Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
@@ -126,6 +131,7 @@
   titulo: Agentes regulados
   termos:
   - Agentes regulados
+  equivalentes: []
   busca:
   - Agentes regulados
   busca_texto: Agentes regulados Agentes e governança Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -147,9 +153,12 @@
   titulo: Ambiente de testagem da regulamentação da IA
   termos:
   - Ambiente de testagem da regulamentação da IA
+  equivalentes:
+  - sandbox regulatório
   busca:
   - Ambiente de testagem da regulamentação da IA
-  busca_texto: Ambiente de testagem da regulamentação da IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - sandbox regulatório
+  busca_texto: Ambiente de testagem da regulamentação da IA sandbox regulatório Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Inteligência artificial
   jurisdicao: UE
@@ -168,6 +177,7 @@
   titulo: Ampla divulgação do incidente em meios de comunicação
   termos:
   - Ampla divulgação do incidente em meios de comunicação
+  equivalentes: []
   busca:
   - Ampla divulgação do incidente em meios de comunicação
   busca_texto: Ampla divulgação do incidente em meios de comunicação Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -189,6 +199,7 @@
   titulo: Anonimização
   termos:
   - Anonimização
+  equivalentes: []
   busca:
   - Anonimização
   busca_texto: Anonimização Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -206,10 +217,33 @@
       dispositivo: art. 5º, XI
       url: /notas/lgpd#art-5-xi
       nota_url: /notas/lgpd
+- id: ue-anuncio-publicitario
+  titulo: Anúncio publicitário
+  termos:
+  - Anúncio publicitário
+  equivalentes: []
+  busca:
+  - Anúncio publicitário
+  busca_texto: Anúncio publicitário Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: A
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: informações concebidas para promover a mensagem de uma pessoa singular ou coletiva, independentemente de visarem objetivos comerciais ou não comerciais, e apresentadas por uma plataforma em linha na sua interface em linha mediante remuneração, especificamente paga para promover essas informações
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea r)
+      url: /notas/dsa#art-3-r
+      nota_url: /notas/dsa
 - id: ue-aplicacao-da-lei
   titulo: Aplicação da lei
   termos:
   - Aplicação da lei
+  equivalentes: []
   busca:
   - Aplicação da lei
   busca_texto: Aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -231,6 +265,7 @@
   titulo: Aplicações de internet
   termos:
   - Aplicações de internet
+  equivalentes: []
   busca:
   - Aplicações de internet
   busca_texto: Aplicações de internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -252,6 +287,7 @@
   titulo: Autenticidade
   termos:
   - Autenticidade
+  equivalentes: []
   busca:
   - Autenticidade
   busca_texto: Autenticidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -273,6 +309,7 @@
   titulo: Autodeclaração de idade
   termos:
   - Autodeclaração de idade
+  equivalentes: []
   busca:
   - Autodeclaração de idade
   busca_texto: Autodeclaração de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -294,6 +331,7 @@
   titulo: Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
   termos:
   - Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
+  equivalentes: []
   busca:
   - Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital
   busca_texto: Autoridade administrativa autônoma de proteção dos direitos de crianças e de adolescentes no ambiente digital Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -315,9 +353,12 @@
   titulo: Autoridade de controlo
   termos:
   - Autoridade de controlo
+  equivalentes:
+  - autoridade de controle
   busca:
   - Autoridade de controlo
-  busca_texto: Autoridade de controlo Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  - autoridade de controle
+  busca_texto: Autoridade de controlo autoridade de controle Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: A
   tema: Agentes e governança
   jurisdicao: UE
@@ -336,6 +377,7 @@
   titulo: Autoridade de controlo interessada
   termos:
   - Autoridade de controlo interessada
+  equivalentes: []
   busca:
   - Autoridade de controlo interessada
   busca_texto: Autoridade de controlo interessada Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -366,9 +408,12 @@
   titulo: Autoridade de fiscalização do mercado
   termos:
   - Autoridade de fiscalização do mercado
+  equivalentes:
+  - autoridade de fiscalização de mercado
   busca:
   - Autoridade de fiscalização do mercado
-  busca_texto: Autoridade de fiscalização do mercado Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - autoridade de fiscalização de mercado
+  busca_texto: Autoridade de fiscalização do mercado autoridade de fiscalização de mercado Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Fiscalização e sanções
   jurisdicao: UE
@@ -387,6 +432,7 @@
   titulo: Autoridade nacional
   termos:
   - Autoridade nacional
+  equivalentes: []
   busca:
   - Autoridade nacional
   busca_texto: Autoridade nacional Agentes e governança LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -408,6 +454,7 @@
   titulo: Autoridade nacional competente
   termos:
   - Autoridade nacional competente
+  equivalentes: []
   busca:
   - Autoridade nacional competente
   busca_texto: Autoridade nacional competente Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -429,6 +476,7 @@
   titulo: Autoridade notificadora
   termos:
   - Autoridade notificadora
+  equivalentes: []
   busca:
   - Autoridade notificadora
   busca_texto: Autoridade notificadora Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -450,6 +498,7 @@
   titulo: Autoridade responsável pela aplicação da lei
   termos:
   - Autoridade responsável pela aplicação da lei
+  equivalentes: []
   busca:
   - Autoridade responsável pela aplicação da lei
   busca_texto: Autoridade responsável pela aplicação da lei Internet e plataformas AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -474,6 +523,7 @@
   titulo: Autuado
   termos:
   - Autuado
+  equivalentes: []
   busca:
   - Autuado
   busca_texto: Autuado Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -495,9 +545,12 @@
   titulo: Avaliação da conformidade
   termos:
   - Avaliação da conformidade
+  equivalentes:
+  - avaliação de conformidade
   busca:
   - Avaliação da conformidade
-  busca_texto: Avaliação da conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - avaliação de conformidade
+  busca_texto: Avaliação da conformidade avaliação de conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: A
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -516,6 +569,7 @@
   titulo: Banco de dados
   termos:
   - Banco de dados
+  equivalentes: []
   busca:
   - Banco de dados
   busca_texto: Banco de dados Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -537,6 +591,7 @@
   titulo: Bloqueio
   termos:
   - Bloqueio
+  equivalentes: []
   busca:
   - Bloqueio
   busca_texto: Bloqueio Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -558,6 +613,7 @@
   titulo: Caixa de recompensa
   termos:
   - Caixa de recompensa
+  equivalentes: []
   busca:
   - Caixa de recompensa
   busca_texto: Caixa de recompensa Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -579,9 +635,12 @@
   titulo: Capacidades de elevado impacto
   termos:
   - Capacidades de elevado impacto
+  equivalentes:
+  - capacidades de alto impacto
   busca:
   - Capacidades de elevado impacto
-  busca_texto: Capacidades de elevado impacto Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - capacidades de alto impacto
+  busca_texto: Capacidades de elevado impacto capacidades de alto impacto Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -600,6 +659,7 @@
   titulo: Categoria de dados pessoais
   termos:
   - Categoria de dados pessoais
+  equivalentes: []
   busca:
   - Categoria de dados pessoais
   busca_texto: Categoria de dados pessoais Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -621,9 +681,12 @@
   titulo: Categorias especiais de dados pessoais
   termos:
   - Categorias especiais de dados pessoais
+  equivalentes:
+  - dados sensíveis
   busca:
   - Categorias especiais de dados pessoais
-  busca_texto: Categorias especiais de dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - dados sensíveis
+  busca_texto: Categorias especiais de dados pessoais dados sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: C
   tema: Dados pessoais e tratamento
   jurisdicao: UE
@@ -642,6 +705,7 @@
   titulo: Coleta internacional de dados
   termos:
   - Coleta internacional de dados
+  equivalentes: []
   busca:
   - Coleta internacional de dados
   busca_texto: Coleta internacional de dados Dados pessoais e tratamento Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -663,6 +727,7 @@
   titulo: Colocação em serviço
   termos:
   - Colocação em serviço
+  equivalentes: []
   busca:
   - Colocação em serviço
   busca_texto: Colocação em serviço Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -684,6 +749,7 @@
   titulo: Colocação no mercado
   termos:
   - Colocação no mercado
+  equivalentes: []
   busca:
   - Colocação no mercado
   busca_texto: Colocação no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -701,10 +767,34 @@
       dispositivo: art. 3.º, ponto 9
       url: /notas/ai-act#art-3-p9
       nota_url: /notas/ai-act
+- id: ue-comerciante
+  titulo: Comerciante
+  termos:
+  - Comerciante
+  equivalentes: []
+  busca:
+  - Comerciante
+  - comerciantes
+  busca_texto: Comerciante comerciantes Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa singular ou coletiva, independentemente de ser pública ou privada, que atue, incluindo através de outra pessoa que atue em seu nome ou por sua conta, para fins relacionados com a sua atividade comercial, industrial, artesanal ou profissional
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea f)
+      url: /notas/dsa#art-3-f
+      nota_url: /notas/dsa
 - id: ue-componente-de-seguranca
   titulo: Componente de segurança
   termos:
   - Componente de segurança
+  equivalentes: []
   busca:
   - Componente de segurança
   busca_texto: Componente de segurança Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -722,10 +812,33 @@
       dispositivo: art. 3.º, ponto 14
       url: /notas/ai-act#art-3-p14
       nota_url: /notas/ai-act
+- id: ue-comunicacao-comercial
+  titulo: Comunicação comercial
+  termos:
+  - Comunicação comercial
+  equivalentes: []
+  busca:
+  - Comunicação comercial
+  busca_texto: Comunicação comercial Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: uma «comunicação comercial» tal como definida no artigo 2.º, alínea f), da Diretiva 2000/31/CE
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea w)
+      url: /notas/dsa#art-3-w
+      nota_url: /notas/dsa
 - id: br-comunicacao-de-incidente-de-seguranca
   titulo: Comunicação de incidente de segurança
   termos:
   - Comunicação de incidente de segurança
+  equivalentes: []
   busca:
   - Comunicação de incidente de segurança
   busca_texto: Comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -747,6 +860,7 @@
   titulo: Conexão à internet
   termos:
   - Conexão à internet
+  equivalentes: []
   busca:
   - Conexão à internet
   busca_texto: Conexão à internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -768,6 +882,7 @@
   titulo: Confidencialidade
   termos:
   - Confidencialidade
+  equivalentes: []
   busca:
   - Confidencialidade
   busca_texto: Confidencialidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -789,6 +904,7 @@
   titulo: Conflito de interesse
   termos:
   - Conflito de interesse
+  equivalentes: []
   busca:
   - Conflito de interesse
   busca_texto: Conflito de interesse Outros conceitos normativos Res. CD/ANPD nº 18/2024 — Encarregado de Dados Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -810,6 +926,7 @@
   titulo: Conjunto de dados de validação
   termos:
   - Conjunto de dados de validação
+  equivalentes: []
   busca:
   - Conjunto de dados de validação
   busca_texto: Conjunto de dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -831,6 +948,7 @@
   titulo: Consentimento
   termos:
   - Consentimento
+  equivalentes: []
   busca:
   - Consentimento
   busca_texto: Consentimento Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -852,6 +970,7 @@
   titulo: Consentimento
   termos:
   - Consentimento
+  equivalentes: []
   busca:
   - Consentimento
   busca_texto: Consentimento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -873,6 +992,7 @@
   titulo: Consentimento informado
   termos:
   - Consentimento informado
+  equivalentes: []
   busca:
   - Consentimento informado
   busca_texto: Consentimento informado Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -890,10 +1010,33 @@
       dispositivo: art. 3.º, ponto 59
       url: /notas/ai-act#art-3-p59
       nota_url: /notas/ai-act
+- id: ue-consumidor
+  titulo: Consumidor
+  termos:
+  - Consumidor
+  equivalentes: []
+  busca:
+  - Consumidor
+  busca_texto: Consumidor Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa singular que atue para fins que não se incluam na sua atividade comercial, empresarial, artesanal ou profissional
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea c)
+      url: /notas/dsa#art-3-c
+      nota_url: /notas/dsa
 - id: br-conteudo-intimo
   titulo: Conteúdo íntimo
   termos:
   - Conteúdo íntimo
+  equivalentes: []
   busca:
   - Conteúdo íntimo
   busca_texto: Conteúdo íntimo Internet e plataformas Dec. nº 12.976/2026 — Proteção de Mulheres na Internet Decreto nº 12.976, de 20 de maio de 2026
@@ -915,6 +1058,7 @@
   titulo: Conteúdo pornográfico
   termos:
   - Conteúdo pornográfico
+  equivalentes: []
   busca:
   - Conteúdo pornográfico
   busca_texto: Conteúdo pornográfico Internet e plataformas Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -936,6 +1080,7 @@
   titulo: Conteúdo, produto ou serviço impróprio ou inadequado
   termos:
   - Conteúdo, produto ou serviço impróprio ou inadequado
+  equivalentes: []
   busca:
   - Conteúdo, produto ou serviço impróprio ou inadequado
   busca_texto: Conteúdo, produto ou serviço impróprio ou inadequado Internet e plataformas Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -957,6 +1102,7 @@
   titulo: Conteúdo, produto ou serviço proibido para crianças e adolescentes
   termos:
   - Conteúdo, produto ou serviço proibido para crianças e adolescentes
+  equivalentes: []
   busca:
   - Conteúdo, produto ou serviço proibido para crianças e adolescentes
   busca_texto: Conteúdo, produto ou serviço proibido para crianças e adolescentes Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -974,10 +1120,34 @@
       dispositivo: art. 2º, II
       url: /notas/eca-digital#dec12880-art-2-ii
       nota_url: /notas/eca-digital
+- id: ue-conteudos-ilegais
+  titulo: Conteúdos ilegais
+  termos:
+  - Conteúdos ilegais
+  equivalentes: []
+  busca:
+  - Conteúdos ilegais
+  - conteúdo ilegal
+  busca_texto: Conteúdos ilegais conteúdo ilegal Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: quaisquer informações que, por si só ou em relação a uma atividade, incluindo a venda de produtos ou a prestação de serviços, não estejam em conformidade com o direito da União ou com o direito de qualquer um dos Estados-Membros que seja conforme com o direito da União, independentemente do objeto ou da natureza precisa desse direito
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea h)
+      url: /notas/dsa#art-3-h
+      nota_url: /notas/dsa
 - id: br-conteudos-produtos-e-servicos-proibidos-para-criancas-e-adolescentes
   titulo: Conteúdos, produtos e serviços proibidos para crianças e adolescentes
   termos:
   - Conteúdos, produtos e serviços proibidos para crianças e adolescentes
+  equivalentes: []
   busca:
   - Conteúdos, produtos e serviços proibidos para crianças e adolescentes
   busca_texto: Conteúdos, produtos e serviços proibidos para crianças e adolescentes Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -1025,10 +1195,34 @@
       dispositivo: art. 15, § 1º
       url: /notas/eca-digital#dec12880-art-15-p1
       nota_url: /notas/eca-digital
+- id: ue-contrato-a-distancia
+  titulo: Contrato à distância
+  termos:
+  - Contrato à distância
+  equivalentes: []
+  busca:
+  - Contrato à distância
+  - contratar à distância
+  busca_texto: Contrato à distância contratar à distância Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: um «contrato à distância» tal como definido no artigo 2.º, ponto 7, da Diretiva 2011/83/UE
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea l)
+      url: /notas/dsa#art-3-l
+      nota_url: /notas/dsa
 - id: br-controlador
   titulo: Controlador
   termos:
   - Controlador
+  equivalentes: []
   busca:
   - Controlador
   busca_texto: Controlador Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -1054,10 +1248,59 @@
       dispositivo: art. 2º, III
       url: /notas/regimento-interno-anpd#res18-art-2-iii
       nota_url: /notas/regimento-interno-anpd
+- id: ue-coordenador-dos-servicos-digitais-de-destino
+  titulo: Coordenador dos serviços digitais de destino
+  termos:
+  - Coordenador dos serviços digitais de destino
+  equivalentes:
+  - coordenador de destino
+  busca:
+  - Coordenador dos serviços digitais de destino
+  - coordenador de destino
+  busca_texto: Coordenador dos serviços digitais de destino coordenador de destino Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: o coordenador dos serviços digitais de um Estado-Membro em que o serviço intermediário é prestado
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea o)
+      url: /notas/dsa#art-3-o
+      nota_url: /notas/dsa
+- id: ue-coordenador-dos-servicos-digitais-de-estabelecimento
+  titulo: Coordenador dos serviços digitais de estabelecimento
+  termos:
+  - Coordenador dos serviços digitais de estabelecimento
+  equivalentes:
+  - coordenador de estabelecimento
+  busca:
+  - Coordenador dos serviços digitais de estabelecimento
+  - coordenador de estabelecimento
+  busca_texto: Coordenador dos serviços digitais de estabelecimento coordenador de estabelecimento Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: C
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: o coordenador dos serviços digitais do Estado-Membro em que o estabelecimento principal de um prestador de um serviço intermediário está localizado ou em que o seu representante legal reside ou está estabelecido
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea n)
+      url: /notas/dsa#art-3-n
+      nota_url: /notas/dsa
 - id: br-dado-anonimizado
   titulo: Dado anonimizado
   termos:
   - Dado anonimizado
+  equivalentes: []
   busca:
   - Dado anonimizado
   busca_texto: Dado anonimizado Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -1079,6 +1322,7 @@
   titulo: Dado de autenticação em sistemas
   termos:
   - Dado de autenticação em sistemas
+  equivalentes: []
   busca:
   - Dado de autenticação em sistemas
   busca_texto: Dado de autenticação em sistemas Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1100,6 +1344,7 @@
   titulo: Dado financeiro
   termos:
   - Dado financeiro
+  equivalentes: []
   busca:
   - Dado financeiro
   busca_texto: Dado financeiro Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1121,6 +1366,7 @@
   titulo: Dado pessoal
   termos:
   - Dado pessoal
+  equivalentes: []
   busca:
   - Dado pessoal
   busca_texto: Dado pessoal Dados pessoais e tratamento Dec. nº 8.771/2016 — Regulamento do Marco Civil LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Decreto nº 8.771, de 11 de maio de 2016 Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -1160,6 +1406,7 @@
   titulo: Dado pessoal afetado
   termos:
   - Dado pessoal afetado
+  equivalentes: []
   busca:
   - Dado pessoal afetado
   busca_texto: Dado pessoal afetado Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1181,6 +1428,7 @@
   titulo: Dado pessoal sensível
   termos:
   - Dado pessoal sensível
+  equivalentes: []
   busca:
   - Dado pessoal sensível
   busca_texto: Dado pessoal sensível Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -1202,6 +1450,7 @@
   titulo: Dado protegido por sigilo legal ou judicial
   termos:
   - Dado protegido por sigilo legal ou judicial
+  equivalentes: []
   busca:
   - Dado protegido por sigilo legal ou judicial
   busca_texto: Dado protegido por sigilo legal ou judicial Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1223,6 +1472,7 @@
   titulo: Dado protegido por sigilo profissional
   termos:
   - Dado protegido por sigilo profissional
+  equivalentes: []
   busca:
   - Dado protegido por sigilo profissional
   busca_texto: Dado protegido por sigilo profissional Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1244,6 +1494,7 @@
   titulo: Dados biométricos
   termos:
   - Dados biométricos
+  equivalentes: []
   busca:
   - Dados biométricos
   busca_texto: Dados biométricos Inteligência artificial AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1275,6 +1526,7 @@
   titulo: Dados de entrada
   termos:
   - Dados de entrada
+  equivalentes: []
   busca:
   - Dados de entrada
   busca_texto: Dados de entrada Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1296,6 +1548,7 @@
   titulo: Dados de teste
   termos:
   - Dados de teste
+  equivalentes: []
   busca:
   - Dados de teste
   busca_texto: Dados de teste Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1317,9 +1570,12 @@
   titulo: Dados de treino
   termos:
   - Dados de treino
+  equivalentes:
+  - dados de treinamento
   busca:
   - Dados de treino
-  busca_texto: Dados de treino Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - dados de treinamento
+  busca_texto: Dados de treino dados de treinamento Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: D
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1338,6 +1594,7 @@
   titulo: Dados de validação
   termos:
   - Dados de validação
+  equivalentes: []
   busca:
   - Dados de validação
   busca_texto: Dados de validação Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1359,6 +1616,7 @@
   titulo: Dados genéticos
   termos:
   - Dados genéticos
+  equivalentes: []
   busca:
   - Dados genéticos
   busca_texto: Dados genéticos Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1380,6 +1638,7 @@
   titulo: Dados não pessoais
   termos:
   - Dados não pessoais
+  equivalentes: []
   busca:
   - Dados não pessoais
   busca_texto: Dados não pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1401,6 +1660,7 @@
   titulo: Dados operacionais sensíveis
   termos:
   - Dados operacionais sensíveis
+  equivalentes: []
   busca:
   - Dados operacionais sensíveis
   busca_texto: Dados operacionais sensíveis Dados pessoais e tratamento AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1422,6 +1682,7 @@
   titulo: Dados pessoais
   termos:
   - Dados pessoais
+  equivalentes: []
   busca:
   - Dados pessoais
   busca_texto: Dados pessoais Dados pessoais e tratamento AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1453,6 +1714,7 @@
   titulo: Dados relativos à saúde
   termos:
   - Dados relativos à saúde
+  equivalentes: []
   busca:
   - Dados relativos à saúde
   busca_texto: Dados relativos à saúde Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1474,9 +1736,14 @@
   titulo: Definição de perfis
   termos:
   - Definição de perfis
+  equivalentes:
+  - perfilamento
+  - criação de perfis
   busca:
   - Definição de perfis
-  busca_texto: Definição de perfis Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
+  - perfilamento
+  - criação de perfis
+  busca_texto: Definição de perfis perfilamento criação de perfis Outros conceitos normativos AI Act (texto consolidado oficial) General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2024/1689, de 13 de junho de 2024 Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -1505,6 +1772,7 @@
   titulo: Denúncia
   termos:
   - Denúncia
+  equivalentes: []
   busca:
   - Denúncia
   busca_texto: Denúncia Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -1526,6 +1794,7 @@
   titulo: Desempenho de um sistema de IA
   termos:
   - Desempenho de um sistema de IA
+  equivalentes: []
   busca:
   - Desempenho de um sistema de IA
   busca_texto: Desempenho de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1547,11 +1816,12 @@
   titulo: Destinatário
   termos:
   - Destinatário
+  equivalentes: []
   busca:
   - Destinatário
-  busca_texto: Destinatário Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Destinatário Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: D
-  tema: Outros conceitos normativos
+  tema: Agentes e governança
   jurisdicao: UE
   definicoes:
   - texto: uma pessoa singular ou coletiva, a autoridade pública, agência ou outro organismo que recebem comunicações de dados pessoais, independentemente de se tratar ou não de um terceiro. Contudo, as autoridades públicas que possam receber dados pessoais no âmbito de inquéritos específicos nos termos do direito da União ou dos Estados-Membros não são consideradas destinatários; o tratamento desses dados por essas autoridades públicas deve cumprir as regras de proteção de dados aplicáveis em função das finalidades do tratamento
@@ -1564,10 +1834,102 @@
       dispositivo: art. 4.º, ponto 9
       url: /notas/gdpr#art-4-p9
       nota_url: /notas/gdpr
+- id: ue-destinatario-ativo-de-um-motor-de-pesquisa-em-linha
+  titulo: Destinatário ativo de um motor de pesquisa em linha
+  termos:
+  - Destinatário ativo de um motor de pesquisa em linha
+  equivalentes: []
+  busca:
+  - Destinatário ativo de um motor de pesquisa em linha
+  busca_texto: Destinatário ativo de um motor de pesquisa em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um destinatário do serviço que realizou uma pesquisa no motor de pesquisa em linha e foi exposto a informações indexadas e apresentadas na sua interface em linha
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea q)
+      url: /notas/dsa#art-3-q
+      nota_url: /notas/dsa
+- id: ue-destinatario-ativo-de-uma-plataforma-em-linha
+  titulo: Destinatário ativo de uma plataforma em linha
+  termos:
+  - Destinatário ativo de uma plataforma em linha
+  equivalentes: []
+  busca:
+  - Destinatário ativo de uma plataforma em linha
+  busca_texto: Destinatário ativo de uma plataforma em linha Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um destinatário do serviço que estabeleceu uma relação com uma plataforma em linha, quer solicitando à plataforma em linha que aloje informações, quer expondo-se a informações alojadas pela plataforma em linha difundidas através da sua interface em linha
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea p)
+      url: /notas/dsa#art-3-p
+      nota_url: /notas/dsa
+- id: ue-destinatario-do-servico
+  titulo: Destinatário do serviço
+  termos:
+  - Destinatário do serviço
+  equivalentes:
+  - usuário do serviço
+  busca:
+  - Destinatário do serviço
+  - usuário do serviço
+  - usuários do serviço
+  busca_texto: Destinatário do serviço usuário do serviço usuários do serviço Agentes e governança Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Agentes e governança
+  jurisdicao: UE
+  definicoes:
+  - texto: qualquer pessoa, singular ou coletiva que utilize um serviço intermediário, em especial para procurar informação ou para torná-la acessível
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea b)
+      url: /notas/dsa#art-3-b
+      nota_url: /notas/dsa
+- id: ue-difusao-ao-publico
+  titulo: Difusão ao público
+  termos:
+  - Difusão ao público
+  equivalentes: []
+  busca:
+  - Difusão ao público
+  busca_texto: Difusão ao público Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: D
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: a disponibilização de informações, a pedido do destinatário do serviço que as forneceu, a um número potencialmente ilimitado de terceiros
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea k)
+      url: /notas/dsa#art-3-k
+      nota_url: /notas/dsa
 - id: br-disponibilidade
   titulo: Disponibilidade
   termos:
   - Disponibilidade
+  equivalentes: []
   busca:
   - Disponibilidade
   busca_texto: Disponibilidade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -1589,6 +1951,7 @@
   titulo: Disponibilização no mercado
   termos:
   - Disponibilização no mercado
+  equivalentes: []
   busca:
   - Disponibilização no mercado
   busca_texto: Disponibilização no mercado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1610,6 +1973,7 @@
   titulo: Distribuidor
   termos:
   - Distribuidor
+  equivalentes: []
   busca:
   - Distribuidor
   busca_texto: Distribuidor Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1631,6 +1995,7 @@
   titulo: Eliminação
   termos:
   - Eliminação
+  equivalentes: []
   busca:
   - Eliminação
   busca_texto: Eliminação Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -1652,6 +2017,7 @@
   titulo: Empresa
   termos:
   - Empresa
+  equivalentes: []
   busca:
   - Empresa
   busca_texto: Empresa Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1673,6 +2039,7 @@
   titulo: Encarregado
   termos:
   - Encarregado
+  equivalentes: []
   busca:
   - Encarregado
   busca_texto: Encarregado Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -1704,6 +2071,7 @@
   titulo: Endereço de protocolo de internet (endereço IP)
   termos:
   - Endereço de protocolo de internet (endereço IP)
+  equivalentes: []
   busca:
   - Endereço de protocolo de internet (endereço IP)
   busca_texto: Endereço de protocolo de internet (endereço IP) Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -1725,6 +2093,7 @@
   titulo: Entidade responsável
   termos:
   - Entidade responsável
+  equivalentes: []
   busca:
   - Entidade responsável
   busca_texto: Entidade responsável Agentes e governança Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -1746,6 +2115,7 @@
   titulo: Espaço acessível ao público
   termos:
   - Espaço acessível ao público
+  equivalentes: []
   busca:
   - Espaço acessível ao público
   busca_texto: Espaço acessível ao público Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1767,6 +2137,7 @@
   titulo: Especificação comum
   termos:
   - Especificação comum
+  equivalentes: []
   busca:
   - Especificação comum
   busca_texto: Especificação comum Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1788,6 +2159,7 @@
   titulo: Estabelecimento principal
   termos:
   - Estabelecimento principal
+  equivalentes: []
   busca:
   - Estabelecimento principal
   busca_texto: Estabelecimento principal Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1812,6 +2184,7 @@
   titulo: Exportador
   termos:
   - Exportador
+  equivalentes: []
   busca:
   - Exportador
   busca_texto: Exportador Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -1833,9 +2206,13 @@
   titulo: Falsificações profundas
   termos:
   - Falsificações profundas
+  equivalentes:
+  - deepfake
   busca:
   - Falsificações profundas
-  busca_texto: Falsificações profundas Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - deepfake
+  - deepfakes
+  busca_texto: Falsificações profundas deepfake deepfakes Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: F
   tema: Inteligência artificial
   jurisdicao: UE
@@ -1854,11 +2231,12 @@
   titulo: Faturamento
   termos:
   - Faturamento
+  equivalentes: []
   busca:
   - Faturamento
-  busca_texto: Faturamento Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
+  busca_texto: Faturamento Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
   letra: F
-  tema: Outros conceitos normativos
+  tema: Fiscalização e sanções
   jurisdicao: BR
   definicoes:
   - texto: 'I - a receita bruta de que trata o art. 12 do Decreto-Lei nº 1.598, de 26 de dezembro de 1977, excluídas as devoluções e vendas canceladas, bem como os descontos concedidos incondicionalmente;
@@ -1899,6 +2277,7 @@
   titulo: Ficheiro
   termos:
   - Ficheiro
+  equivalentes: []
   busca:
   - Ficheiro
   busca_texto: Ficheiro Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1920,6 +2299,7 @@
   titulo: Finalidade prevista
   termos:
   - Finalidade prevista
+  equivalentes: []
   busca:
   - Finalidade prevista
   busca_texto: Finalidade prevista Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -1941,6 +2321,7 @@
   titulo: Grupo empresarial
   termos:
   - Grupo empresarial
+  equivalentes: []
   busca:
   - Grupo empresarial
   busca_texto: Grupo empresarial Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -1962,6 +2343,7 @@
   titulo: Grupo ou conglomerado de empresas
   termos:
   - Grupo ou conglomerado de empresas
+  equivalentes: []
   busca:
   - Grupo ou conglomerado de empresas
   busca_texto: Grupo ou conglomerado de empresas Agentes e governança Res. CD/ANPD nº 19/2024 — Transferência Internacional Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024 Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -1991,6 +2373,7 @@
   titulo: Identificação biométrica
   termos:
   - Identificação biométrica
+  equivalentes: []
   busca:
   - Identificação biométrica
   busca_texto: Identificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2012,6 +2395,7 @@
   titulo: Importador
   termos:
   - Importador
+  equivalentes: []
   busca:
   - Importador
   busca_texto: Importador Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -2033,6 +2417,7 @@
   titulo: Importador
   termos:
   - Importador
+  equivalentes: []
   busca:
   - Importador
   busca_texto: Importador Transferências internacionais AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2054,6 +2439,7 @@
   titulo: Impulsionamento
   termos:
   - Impulsionamento
+  equivalentes: []
   busca:
   - Impulsionamento
   busca_texto: Impulsionamento Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -2075,6 +2461,7 @@
   titulo: Incidente de segurança
   termos:
   - Incidente de segurança
+  equivalentes: []
   busca:
   - Incidente de segurança
   busca_texto: Incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -2096,6 +2483,7 @@
   titulo: Incidente grave
   termos:
   - Incidente grave
+  equivalentes: []
   busca:
   - Incidente grave
   busca_texto: Incidente grave Segurança, incidentes e violência AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2129,6 +2517,7 @@
   titulo: Infração
   termos:
   - Infração
+  equivalentes: []
   busca:
   - Infração
   busca_texto: Infração Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -2150,6 +2539,7 @@
   titulo: Infração generalizada
   termos:
   - Infração generalizada
+  equivalentes: []
   busca:
   - Infração generalizada
   busca_texto: Infração generalizada Fiscalização e sanções AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2186,6 +2576,7 @@
   titulo: Infração permanente
   termos:
   - Infração permanente
+  equivalentes: []
   busca:
   - Infração permanente
   busca_texto: Infração permanente Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -2207,6 +2598,7 @@
   titulo: Infraestrutura crítica
   termos:
   - Infraestrutura crítica
+  equivalentes: []
   busca:
   - Infraestrutura crítica
   busca_texto: Infraestrutura crítica Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2228,6 +2620,7 @@
   titulo: Infrator
   termos:
   - Infrator
+  equivalentes: []
   busca:
   - Infrator
   busca_texto: Infrator Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -2249,9 +2642,12 @@
   titulo: Instruções de utilização
   termos:
   - Instruções de utilização
+  equivalentes:
+  - instruções de uso
   busca:
   - Instruções de utilização
-  busca_texto: Instruções de utilização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - instruções de uso
+  busca_texto: Instruções de utilização instruções de uso Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: I
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2270,6 +2666,7 @@
   titulo: Integridade
   termos:
   - Integridade
+  equivalentes: []
   busca:
   - Integridade
   busca_texto: Integridade Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -2287,10 +2684,35 @@
       dispositivo: art. 3º, XIII
       url: /notas/regimento-interno-anpd#res15-art-3-xiii
       nota_url: /notas/regimento-interno-anpd
+- id: ue-interface-em-linha
+  titulo: Interface em linha
+  termos:
+  - Interface em linha
+  equivalentes:
+  - interface online
+  busca:
+  - Interface em linha
+  - interface online
+  busca_texto: Interface em linha interface online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: I
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: quaisquer programas informáticos, incluindo um sítio Web ou uma parte deste, e aplicações, incluindo aplicações móveis
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea m)
+      url: /notas/dsa#art-3-m
+      nota_url: /notas/dsa
 - id: br-internet
   titulo: Internet
   termos:
   - Internet
+  equivalentes: []
   busca:
   - Internet
   busca_texto: Internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -2308,10 +2730,39 @@
       dispositivo: art. 5º, I
       url: /notas/mci#art-5-i
       nota_url: /notas/mci
+- id: ue-ligacao-substancial-a-uniao
+  titulo: Ligação substancial à União
+  termos:
+  - Ligação substancial à União
+  equivalentes: []
+  busca:
+  - Ligação substancial à União
+  busca_texto: Ligação substancial à União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: L
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: 'a ligação de um prestador de serviços intermediários com a União em resultado do seu estabelecimento na União ou de critérios factuais específicos, tais como:
+
+
+      - — um número significativo de destinatários do serviço num ou mais Estados-Membros, em relação à respetiva população, ou
+
+
+      - — o direcionamento das atividades para um ou mais Estados-Membros'
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea e)
+      url: /notas/dsa#art-3-e
+      nota_url: /notas/dsa
 - id: ue-limitacao-do-tratamento
   titulo: Limitação do tratamento
   termos:
   - Limitação do tratamento
+  equivalentes: []
   busca:
   - Limitação do tratamento
   busca_texto: Limitação do tratamento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -2333,9 +2784,13 @@
   titulo: Literacia no domínio da IA
   termos:
   - Literacia no domínio da IA
+  equivalentes:
+  - letramento em IA
   busca:
   - Literacia no domínio da IA
-  busca_texto: Literacia no domínio da IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - letramento em IA
+  - literacia em IA
+  busca_texto: Literacia no domínio da IA letramento em IA literacia em IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: L
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2354,6 +2809,7 @@
   titulo: Loja de aplicações de internet
   termos:
   - Loja de aplicações de internet
+  equivalentes: []
   busca:
   - Loja de aplicações de internet
   busca_texto: Loja de aplicações de internet Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -2375,9 +2831,12 @@
   titulo: Mandatário
   termos:
   - Mandatário
+  equivalentes:
+  - representante autorizado
   busca:
   - Mandatário
-  busca_texto: Mandatário Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - representante autorizado
+  busca_texto: Mandatário representante autorizado Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Agentes e governança
   jurisdicao: UE
@@ -2396,6 +2855,7 @@
   titulo: Marcação CE
   termos:
   - Marcação CE
+  equivalentes: []
   busca:
   - Marcação CE
   busca_texto: Marcação CE Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2417,6 +2877,7 @@
   titulo: Mecanismo de supervisão parental
   termos:
   - Mecanismo de supervisão parental
+  equivalentes: []
   busca:
   - Mecanismo de supervisão parental
   busca_texto: Mecanismo de supervisão parental Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -2438,6 +2899,7 @@
   titulo: Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
   termos:
   - Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
+  equivalentes: []
   busca:
   - Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo
   busca_texto: Mecanismos de incentivo ao uso excessivo, problemático ou compulsivo Outros conceitos normativos Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -2468,6 +2930,7 @@
   titulo: Mecanismos de transferência internacional de dados
   termos:
   - Mecanismos de transferência internacional de dados
+  equivalentes: []
   busca:
   - Mecanismos de transferência internacional de dados
   busca_texto: Mecanismos de transferência internacional de dados Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -2489,6 +2952,7 @@
   titulo: Medidas corretivas
   termos:
   - Medidas corretivas
+  equivalentes: []
   busca:
   - Medidas corretivas
   busca_texto: Medidas corretivas Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -2510,6 +2974,7 @@
   titulo: Medidas de segurança
   termos:
   - Medidas de segurança
+  equivalentes: []
   busca:
   - Medidas de segurança
   busca_texto: Medidas de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024 Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -2541,6 +3006,7 @@
   titulo: Micro, pequena ou média empresa
   termos:
   - Micro, pequena ou média empresa
+  equivalentes: []
   busca:
   - Micro, pequena ou média empresa
   busca_texto: Micro, pequena ou média empresa Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2562,6 +3028,7 @@
   titulo: Microempresas e empresas de pequeno porte
   termos:
   - Microempresas e empresas de pequeno porte
+  equivalentes: []
   busca:
   - Microempresas e empresas de pequeno porte
   busca_texto: Microempresas e empresas de pequeno porte Agentes e governança Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
@@ -2583,9 +3050,12 @@
   titulo: Modelo de IA de finalidade geral
   termos:
   - Modelo de IA de finalidade geral
+  equivalentes:
+  - modelo de IA de propósito geral
   busca:
   - Modelo de IA de finalidade geral
-  busca_texto: Modelo de IA de finalidade geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - modelo de IA de propósito geral
+  busca_texto: Modelo de IA de finalidade geral modelo de IA de propósito geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: M
   tema: Inteligência artificial
   jurisdicao: UE
@@ -2600,10 +3070,34 @@
       dispositivo: art. 3.º, ponto 63
       url: /notas/ai-act#art-3-p63
       nota_url: /notas/ai-act
+- id: ue-moderacao-de-conteudos
+  titulo: Moderação de conteúdos
+  termos:
+  - Moderação de conteúdos
+  equivalentes: []
+  busca:
+  - Moderação de conteúdos
+  - moderação de conteúdo
+  busca_texto: Moderação de conteúdos moderação de conteúdo Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: M
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: as atividades, automatizadas ou não, empreendidas por prestadores de serviços intermediários, destinadas em especial a detetar, identificar e combater os conteúdos ilegais ou informações incompatíveis com os seus termos e condições fornecidos pelos destinatários do serviço, incluindo as medidas tomadas que afetam a disponibilidade, visibilidade e acessibilidade desses conteúdos ilegais ou dessas informações, como a despromoção, a desmonetização, a desativação do acesso ou a supressão dos mesmos, ou que afetem a capacidade de os destinatários do serviço fornecerem essas informações, como a cessação ou suspensão da conta de um destinatário
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea t)
+      url: /notas/dsa#art-3-t
+      nota_url: /notas/dsa
 - id: ue-modificacao-substancial
   titulo: Modificação substancial
   termos:
   - Modificação substancial
+  equivalentes: []
   busca:
   - Modificação substancial
   busca_texto: Modificação substancial Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2625,6 +3119,7 @@
   titulo: Monetização
   termos:
   - Monetização
+  equivalentes: []
   busca:
   - Monetização
   busca_texto: Monetização Internet e plataformas ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -2642,10 +3137,36 @@
       dispositivo: art. 2º, XI
       url: /notas/eca-digital#art-2-xi
       nota_url: /notas/eca-digital
+- id: ue-motor-de-pesquisa-em-linha
+  titulo: Motor de pesquisa em linha
+  termos:
+  - Motor de pesquisa em linha
+  equivalentes:
+  - mecanismo de busca
+  busca:
+  - Motor de pesquisa em linha
+  - mecanismo de busca
+  - mecanismos de busca
+  busca_texto: Motor de pesquisa em linha mecanismo de busca mecanismos de busca Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: M
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um serviço intermediário que permite aos utilizadores fazer pesquisas para consultar, em princípio, todos os sítios na Internet, ou sítios Internet numa determinada língua, com base numa pesquisa sobre qualquer assunto, sob a forma de uma palavra-chave, comando de voz, frase ou outros dados, e que fornece resultados em qualquer formato nos quais pode ser encontrada informação relacionada com o tipo de conteúdo solicitado
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea j)
+      url: /notas/dsa#art-3-j
+      nota_url: /notas/dsa
 - id: br-natureza-dos-dados-pessoais
   titulo: Natureza dos dados pessoais
   termos:
   - Natureza dos dados pessoais
+  equivalentes: []
   busca:
   - Natureza dos dados pessoais
   busca_texto: Natureza dos dados pessoais Dados pessoais e tratamento Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -2667,6 +3188,7 @@
   titulo: Norma harmonizada
   termos:
   - Norma harmonizada
+  equivalentes: []
   busca:
   - Norma harmonizada
   busca_texto: Norma harmonizada Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2688,6 +3210,7 @@
   titulo: Objeção pertinente e fundamentada
   termos:
   - Objeção pertinente e fundamentada
+  equivalentes: []
   busca:
   - Objeção pertinente e fundamentada
   busca_texto: Objeção pertinente e fundamentada Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -2709,6 +3232,7 @@
   titulo: Obstrução à atividade de fiscalização
   termos:
   - Obstrução à atividade de fiscalização
+  equivalentes: []
   busca:
   - Obstrução à atividade de fiscalização
   busca_texto: Obstrução à atividade de fiscalização Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -2726,13 +3250,38 @@
       dispositivo: art. 4º, IV
       url: /notas/regimento-interno-anpd#res1-art-4-iv
       nota_url: /notas/regimento-interno-anpd
+- id: ue-oferecer-servicos-na-uniao
+  titulo: Oferecer serviços na União
+  termos:
+  - Oferecer serviços na União
+  equivalentes: []
+  busca:
+  - Oferecer serviços na União
+  busca_texto: Oferecer serviços na União Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: O
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: permitir a pessoas singulares ou coletivas de um ou mais Estados-Membros a utilização dos serviços de um prestador de serviços intermediários que tenha uma ligação substancial à União
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea d)
+      url: /notas/dsa#art-3-d
+      nota_url: /notas/dsa
 - id: ue-operacao-de-virgula-flutuante
   titulo: Operação de vírgula flutuante
   termos:
   - Operação de vírgula flutuante
+  equivalentes:
+  - operação de ponto flutuante
   busca:
   - Operação de vírgula flutuante
-  busca_texto: Operação de vírgula flutuante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - operação de ponto flutuante
+  busca_texto: Operação de vírgula flutuante operação de ponto flutuante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2751,6 +3300,7 @@
   titulo: Operador
   termos:
   - Operador
+  equivalentes: []
   busca:
   - Operador
   busca_texto: Operador Agentes e governança LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -2780,6 +3330,7 @@
   titulo: Operador
   termos:
   - Operador
+  equivalentes: []
   busca:
   - Operador
   busca_texto: Operador Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2801,9 +3352,12 @@
   titulo: Organismo de avaliação da conformidade
   termos:
   - Organismo de avaliação da conformidade
+  equivalentes:
+  - organismo de avaliação de conformidade
   busca:
   - Organismo de avaliação da conformidade
-  busca_texto: Organismo de avaliação da conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - organismo de avaliação de conformidade
+  busca_texto: Organismo de avaliação da conformidade organismo de avaliação de conformidade Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: O
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -2822,6 +3376,7 @@
   titulo: Organismo internacional
   termos:
   - Organismo internacional
+  equivalentes: []
   busca:
   - Organismo internacional
   busca_texto: Organismo internacional Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -2843,6 +3398,7 @@
   titulo: Organismo notificado
   termos:
   - Organismo notificado
+  equivalentes: []
   busca:
   - Organismo notificado
   busca_texto: Organismo notificado Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2864,6 +3420,7 @@
   titulo: Organização internacional
   termos:
   - Organização internacional
+  equivalentes: []
   busca:
   - Organização internacional
   busca_texto: Organização internacional Transferências internacionais General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -2885,6 +3442,7 @@
   titulo: Órgão de pesquisa
   termos:
   - Órgão de pesquisa
+  equivalentes: []
   busca:
   - Órgão de pesquisa
   busca_texto: Órgão de pesquisa Outros conceitos normativos LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -2906,6 +3464,7 @@
   titulo: Parte objeto de investigação
   termos:
   - Parte objeto de investigação
+  equivalentes: []
   busca:
   - Parte objeto de investigação
   busca_texto: Parte objeto de investigação Outros conceitos normativos Normas processuais do RGPD Regulamento (UE) 2025/2518, de 26 de novembro de 2025
@@ -2927,6 +3486,7 @@
   titulo: Participante
   termos:
   - Participante
+  equivalentes: []
   busca:
   - Participante
   busca_texto: Participante Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2948,6 +3508,7 @@
   titulo: Pequena empresa de média capitalização
   termos:
   - Pequena empresa de média capitalização
+  equivalentes: []
   busca:
   - Pequena empresa de média capitalização
   busca_texto: Pequena empresa de média capitalização Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -2969,6 +3530,7 @@
   titulo: Perfilamento
   termos:
   - Perfilamento
+  equivalentes: []
   busca:
   - Perfilamento
   busca_texto: Perfilamento Dados pessoais e tratamento ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -2986,10 +3548,33 @@
       dispositivo: art. 2º, V
       url: /notas/eca-digital#art-2-v
       nota_url: /notas/eca-digital
+- id: ue-pessoas-com-deficiencia
+  titulo: Pessoas com deficiência
+  termos:
+  - Pessoas com deficiência
+  equivalentes: []
+  busca:
+  - Pessoas com deficiência
+  busca_texto: Pessoas com deficiência Outros conceitos normativos Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: P
+  tema: Outros conceitos normativos
+  jurisdicao: UE
+  definicoes:
+  - texto: «pessoas com deficiência» tal como referido no artigo 3.º, ponto 1, da Diretiva (UE) 2019/882 do Parlamento Europeu e do Conselho
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea v)
+      url: /notas/dsa#art-3-v
+      nota_url: /notas/dsa
 - id: br-peticao-de-titular
   titulo: Petição de titular
   termos:
   - Petição de titular
+  equivalentes: []
   busca:
   - Petição de titular
   busca_texto: Petição de titular Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -3011,9 +3596,12 @@
   titulo: Plano de testagem em condições reais
   termos:
   - Plano de testagem em condições reais
+  equivalentes:
+  - plano de teste em condições reais
   busca:
   - Plano de testagem em condições reais
-  busca_texto: Plano de testagem em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - plano de teste em condições reais
+  busca_texto: Plano de testagem em condições reais plano de teste em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3032,9 +3620,12 @@
   titulo: Plano do ambiente de testagem
   termos:
   - Plano do ambiente de testagem
+  equivalentes:
+  - plano do sandbox regulatório
   busca:
   - Plano do ambiente de testagem
-  busca_texto: Plano do ambiente de testagem Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - plano do sandbox regulatório
+  busca_texto: Plano do ambiente de testagem plano do sandbox regulatório Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3049,10 +3640,36 @@
       dispositivo: art. 3.º, ponto 54
       url: /notas/ai-act#art-3-p54
       nota_url: /notas/ai-act
+- id: ue-plataforma-em-linha
+  titulo: Plataforma em linha
+  termos:
+  - Plataforma em linha
+  equivalentes:
+  - plataforma online
+  busca:
+  - Plataforma em linha
+  - plataforma online
+  - plataformas online
+  busca_texto: Plataforma em linha plataforma online plataformas online Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: P
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um serviço de alojamento virtual que, a pedido de um destinatário do serviço, armazene e difunda informações ao público, a menos que essa atividade seja um elemento menor e meramente acessório de outro serviço ou uma funcionalidade menor do serviço principal e que, por razões objetivas e técnicas, não possa ser utilizado sem esse outro serviço, e que a integração desse elemento ou dessa funcionalidade no outro serviço não constitua uma forma de contornar a aplicabilidade do presente regulamento
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea i)
+      url: /notas/dsa#art-3-i
+      nota_url: /notas/dsa
 - id: br-politica-de-boas-praticas-e-de-governanca
   titulo: Política de boas práticas e de governança
   termos:
   - Política de boas práticas e de governança
+  equivalentes: []
   busca:
   - Política de boas práticas e de governança
   busca_texto: Política de boas práticas e de governança Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -3080,6 +3697,7 @@
   titulo: Práticas manipulativas, enganosas ou coercitivas
   termos:
   - Práticas manipulativas, enganosas ou coercitivas
+  equivalentes: []
   busca:
   - Práticas manipulativas, enganosas ou coercitivas
   busca_texto: Práticas manipulativas, enganosas ou coercitivas Outros conceitos normativos Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -3110,9 +3728,13 @@
   titulo: Prestador
   termos:
   - Prestador
+  equivalentes:
+  - fornecedor
   busca:
   - Prestador
-  busca_texto: Prestador Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - fornecedor
+  - fornecedores
+  busca_texto: Prestador fornecedor fornecedores Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
   jurisdicao: UE
@@ -3131,9 +3753,12 @@
   titulo: Prestador a jusante
   termos:
   - Prestador a jusante
+  equivalentes:
+  - fornecedor a jusante
   busca:
   - Prestador a jusante
-  busca_texto: Prestador a jusante Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - fornecedor a jusante
+  busca_texto: Prestador a jusante fornecedor a jusante Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: P
   tema: Agentes e governança
   jurisdicao: UE
@@ -3152,6 +3777,7 @@
   titulo: Procedimento de apuração de incidente de segurança
   termos:
   - Procedimento de apuração de incidente de segurança
+  equivalentes: []
   busca:
   - Procedimento de apuração de incidente de segurança
   busca_texto: Procedimento de apuração de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -3173,6 +3799,7 @@
   titulo: Procedimento de comunicação de incidente de segurança
   termos:
   - Procedimento de comunicação de incidente de segurança
+  equivalentes: []
   busca:
   - Procedimento de comunicação de incidente de segurança
   busca_texto: Procedimento de comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -3194,6 +3821,7 @@
   titulo: Processo de comunicação de incidente de segurança
   termos:
   - Processo de comunicação de incidente de segurança
+  equivalentes: []
   busca:
   - Processo de comunicação de incidente de segurança
   busca_texto: Processo de comunicação de incidente de segurança Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -3215,6 +3843,7 @@
   titulo: Produto ou serviço de monitoramento infantil
   termos:
   - Produto ou serviço de monitoramento infantil
+  equivalentes: []
   busca:
   - Produto ou serviço de monitoramento infantil
   busca_texto: Produto ou serviço de monitoramento infantil Crianças, adolescentes e idade ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -3236,6 +3865,7 @@
   titulo: Produto ou serviço de tecnologia da informação
   termos:
   - Produto ou serviço de tecnologia da informação
+  equivalentes: []
   busca:
   - Produto ou serviço de tecnologia da informação
   busca_texto: Produto ou serviço de tecnologia da informação Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -3257,6 +3887,7 @@
   titulo: Pseudonimização
   termos:
   - Pseudonimização
+  equivalentes: []
   busca:
   - Pseudonimização
   busca_texto: Pseudonimização Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -3278,6 +3909,7 @@
   titulo: Ramo de atividade empresarial
   termos:
   - Ramo de atividade empresarial
+  equivalentes: []
   busca:
   - Ramo de atividade empresarial
   busca_texto: Ramo de atividade empresarial Agentes e governança Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -3299,6 +3931,7 @@
   titulo: Recolha de um sistema de IA
   termos:
   - Recolha de um sistema de IA
+  equivalentes: []
   busca:
   - Recolha de um sistema de IA
   busca_texto: Recolha de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3320,6 +3953,7 @@
   titulo: Rede social
   termos:
   - Rede social
+  equivalentes: []
   busca:
   - Rede social
   - redes sociais
@@ -3342,6 +3976,7 @@
   titulo: Registro de conexão
   termos:
   - Registro de conexão
+  equivalentes: []
   busca:
   - Registro de conexão
   busca_texto: Registro de conexão Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -3363,6 +3998,7 @@
   titulo: Registros de acesso a aplicações de internet
   termos:
   - Registros de acesso a aplicações de internet
+  equivalentes: []
   busca:
   - Registros de acesso a aplicações de internet
   busca_texto: Registros de acesso a aplicações de internet Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -3384,6 +4020,7 @@
   titulo: Regras vinculativas aplicáveis às empresas
   termos:
   - Regras vinculativas aplicáveis às empresas
+  equivalentes: []
   busca:
   - Regras vinculativas aplicáveis às empresas
   busca_texto: Regras vinculativas aplicáveis às empresas Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -3405,6 +4042,7 @@
   titulo: Reincidência específica
   termos:
   - Reincidência específica
+  equivalentes: []
   busca:
   - Reincidência específica
   busca_texto: Reincidência específica Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -3426,6 +4064,7 @@
   titulo: Reincidência genérica
   termos:
   - Reincidência genérica
+  equivalentes: []
   busca:
   - Reincidência genérica
   busca_texto: Reincidência genérica Fiscalização e sanções Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -3447,6 +4086,7 @@
   titulo: Relatório de impacto à proteção de dados pessoais
   termos:
   - Relatório de impacto à proteção de dados pessoais
+  equivalentes: []
   busca:
   - Relatório de impacto à proteção de dados pessoais
   busca_texto: Relatório de impacto à proteção de dados pessoais Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -3468,6 +4108,7 @@
   titulo: Relatório de tratamento de incidente
   termos:
   - Relatório de tratamento de incidente
+  equivalentes: []
   busca:
   - Relatório de tratamento de incidente
   busca_texto: Relatório de tratamento de incidente Segurança, incidentes e violência Res. CD/ANPD nº 15/2024 — Incidente de Segurança Regulamento de Comunicação de Incidente de Segurança — Anexo da Resolução CD/ANPD nº 15, de 24 de abril de 2024
@@ -3489,6 +4130,7 @@
   titulo: Representante
   termos:
   - Representante
+  equivalentes: []
   busca:
   - Representante
   busca_texto: Representante Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -3510,6 +4152,7 @@
   titulo: Requerimento
   termos:
   - Requerimento
+  equivalentes: []
   busca:
   - Requerimento
   busca_texto: Requerimento Fiscalização e sanções Res. CD/ANPD nº 1/2021 — Fiscalização e Sanções Regulamento do Processo de Fiscalização e do Processo Administrativo Sancionador — Anexo da Resolução CD/ANPD nº 1, de 28 de outubro de 2021
@@ -3531,9 +4174,13 @@
   titulo: Responsável pela implantação
   termos:
   - Responsável pela implantação
+  equivalentes:
+  - implementador
   busca:
   - Responsável pela implantação
-  busca_texto: Responsável pela implantação Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - implementador
+  - implementadores
+  busca_texto: Responsável pela implantação implementador implementadores Agentes e governança AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Agentes e governança
   jurisdicao: UE
@@ -3552,9 +4199,12 @@
   titulo: Responsável pelo tratamento
   termos:
   - Responsável pelo tratamento
+  equivalentes:
+  - controlador
   busca:
   - Responsável pelo tratamento
-  busca_texto: Responsável pelo tratamento Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  - controlador
+  busca_texto: Responsável pelo tratamento controlador Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: R
   tema: Agentes e governança
   jurisdicao: UE
@@ -3573,6 +4223,7 @@
   titulo: Retirada de um sistema de IA
   termos:
   - Retirada de um sistema de IA
+  equivalentes: []
   busca:
   - Retirada de um sistema de IA
   busca_texto: Retirada de um sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3594,6 +4245,7 @@
   titulo: Risco
   termos:
   - Risco
+  equivalentes: []
   busca:
   - Risco
   busca_texto: Risco Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3615,9 +4267,12 @@
   titulo: Risco sistémico
   termos:
   - Risco sistémico
+  equivalentes:
+  - risco sistêmico
   busca:
   - Risco sistémico
-  busca_texto: Risco sistémico Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - risco sistêmico
+  busca_texto: Risco sistémico risco sistêmico Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: R
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3636,6 +4291,7 @@
   titulo: Serviço com controle editorial
   termos:
   - Serviço com controle editorial
+  equivalentes: []
   busca:
   - Serviço com controle editorial
   busca_texto: Serviço com controle editorial Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -3653,10 +4309,65 @@
       dispositivo: art. 2º, IX
       url: /notas/eca-digital#art-2-ix
       nota_url: /notas/eca-digital
+- id: ue-servico-da-sociedade-da-informacao
+  titulo: Serviço da sociedade da informação
+  termos:
+  - Serviço da sociedade da informação
+  equivalentes: []
+  busca:
+  - Serviço da sociedade da informação
+  busca_texto: Serviço da sociedade da informação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um «serviço» tal como definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea a)
+      url: /notas/dsa#art-3-a
+      nota_url: /notas/dsa
+- id: ue-servico-intermediario
+  titulo: Serviço intermediário
+  termos:
+  - Serviço intermediário
+  equivalentes: []
+  busca:
+  - Serviço intermediário
+  - serviços intermediários
+  busca_texto: Serviço intermediário serviços intermediários Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: 'um dos seguintes serviços da sociedade da informação:
+
+
+      - i) um serviço de «simples transporte», que consiste na transmissão, através de uma rede de comunicações, de informações prestadas por um destinatário do serviço ou na concessão de acesso a uma rede de comunicações,
+
+
+      - ii) um serviço de «armazenagem temporária» que consiste na transmissão, através de uma rede de comunicações, de informações prestadas por um destinatário do serviço, que envolve a armazenagem automática, intermédia e temporária dessas informações efetuada apenas com o objetivo de tornar mais eficaz a transmissão posterior das informações a outros destinatários, a pedido destes,
+
+
+      - iii) um serviço de «alojamento virtual» que consiste na armazenagem de informações prestadas por um destinatário do serviço e a pedido do mesmo'
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea g)
+      url: /notas/dsa#art-3-g
+      nota_url: /notas/dsa
 - id: ue-servico-para-a-ia
   titulo: Serviço para a IA
   termos:
   - Serviço para a IA
+  equivalentes: []
   busca:
   - Serviço para a IA
   busca_texto: Serviço para a IA Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3678,11 +4389,12 @@
   titulo: Serviços da sociedade da informação
   termos:
   - Serviços da sociedade da informação
+  equivalentes: []
   busca:
   - Serviços da sociedade da informação
-  busca_texto: Serviços da sociedade da informação Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
+  busca_texto: Serviços da sociedade da informação Internet e plataformas General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
   letra: S
-  tema: Outros conceitos normativos
+  tema: Internet e plataformas
   jurisdicao: UE
   definicoes:
   - texto: um serviço definido no artigo 1.º, n.º 1, alínea b), da Diretiva (UE) 2015/1535 do Parlamento Europeu e do Conselho
@@ -3699,6 +4411,7 @@
   titulo: Sinal de idade
   termos:
   - Sinal de idade
+  equivalentes: []
   busca:
   - Sinal de idade
   busca_texto: Sinal de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -3720,9 +4433,12 @@
   titulo: Sistema de acompanhamento pós-comercialização
   termos:
   - Sistema de acompanhamento pós-comercialização
+  equivalentes:
+  - monitoramento pós-comercialização
   busca:
   - Sistema de acompanhamento pós-comercialização
-  busca_texto: Sistema de acompanhamento pós-comercialização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - monitoramento pós-comercialização
+  busca_texto: Sistema de acompanhamento pós-comercialização monitoramento pós-comercialização Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -3741,6 +4457,7 @@
   titulo: Sistema de categorização biométrica
   termos:
   - Sistema de categorização biométrica
+  equivalentes: []
   busca:
   - Sistema de categorização biométrica
   busca_texto: Sistema de categorização biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3762,6 +4479,7 @@
   titulo: Sistema de IA
   termos:
   - Sistema de IA
+  equivalentes: []
   busca:
   - Sistema de IA
   busca_texto: Sistema de IA Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3783,9 +4501,12 @@
   titulo: Sistema de IA de finalidade geral
   termos:
   - Sistema de IA de finalidade geral
+  equivalentes:
+  - sistema de IA de propósito geral
   busca:
   - Sistema de IA de finalidade geral
-  busca_texto: Sistema de IA de finalidade geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - sistema de IA de propósito geral
+  busca_texto: Sistema de IA de finalidade geral sistema de IA de propósito geral Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: S
   tema: Inteligência artificial
   jurisdicao: UE
@@ -3804,6 +4525,7 @@
   titulo: Sistema de identificação biométrica à distância
   termos:
   - Sistema de identificação biométrica à distância
+  equivalentes: []
   busca:
   - Sistema de identificação biométrica à distância
   busca_texto: Sistema de identificação biométrica à distância Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3825,6 +4547,7 @@
   titulo: Sistema de identificação biométrica à distância em diferido
   termos:
   - Sistema de identificação biométrica à distância em diferido
+  equivalentes: []
   busca:
   - Sistema de identificação biométrica à distância em diferido
   busca_texto: Sistema de identificação biométrica à distância em diferido Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3846,6 +4569,7 @@
   titulo: Sistema de identificação biométrica à distância em tempo real
   termos:
   - Sistema de identificação biométrica à distância em tempo real
+  equivalentes: []
   busca:
   - Sistema de identificação biométrica à distância em tempo real
   busca_texto: Sistema de identificação biométrica à distância em tempo real Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3863,10 +4587,34 @@
       dispositivo: art. 3.º, ponto 42
       url: /notas/ai-act#art-3-p42
       nota_url: /notas/ai-act
+- id: ue-sistema-de-recomendacao
+  titulo: Sistema de recomendação
+  termos:
+  - Sistema de recomendação
+  equivalentes: []
+  busca:
+  - Sistema de recomendação
+  - sistemas de recomendação
+  busca_texto: Sistema de recomendação sistemas de recomendação Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: S
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: um sistema total ou parcialmente automatizado utilizado por uma plataforma em linha para sugerir na sua interface em linha informações específicas aos destinatários do serviço ou conferir prioridade a essa informação, nomeadamente como resultado de uma pesquisa iniciada pelo destinatário do serviço, ou que determine de outra forma a ordem relativa ou a proeminência das informações apresentadas
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea s)
+      url: /notas/dsa#art-3-s
+      nota_url: /notas/dsa
 - id: ue-sistema-de-reconhecimento-de-emocoes
   titulo: Sistema de reconhecimento de emoções
   termos:
   - Sistema de reconhecimento de emoções
+  equivalentes: []
   busca:
   - Sistema de reconhecimento de emoções
   busca_texto: Sistema de reconhecimento de emoções Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -3888,6 +4636,7 @@
   titulo: Sistema operacional
   termos:
   - Sistema operacional
+  equivalentes: []
   busca:
   - Sistema operacional
   busca_texto: Sistema operacional Outros conceitos normativos ECA Digital Lei nº 15.211, de 17 de setembro de 2025
@@ -3909,6 +4658,7 @@
   titulo: Startups
   termos:
   - Startups
+  equivalentes: []
   busca:
   - Startups
   busca_texto: Startups Outros conceitos normativos Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
@@ -3930,6 +4680,7 @@
   titulo: Subcontratante
   termos:
   - Subcontratante
+  equivalentes: []
   busca:
   - Subcontratante
   busca_texto: Subcontratante Agentes e governança General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -3951,6 +4702,7 @@
   titulo: Terceiro
   termos:
   - Terceiro
+  equivalentes: []
   busca:
   - Terceiro
   busca_texto: Terceiro Outros conceitos normativos General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -3972,6 +4724,7 @@
   titulo: Terminal
   termos:
   - Terminal
+  equivalentes: []
   busca:
   - Terminal
   busca_texto: Terminal Internet e plataformas Marco Civil da Internet Lei nº 12.965, de 23 de abril de 2014
@@ -3989,13 +4742,41 @@
       dispositivo: art. 5º, II
       url: /notas/mci#art-5-ii
       nota_url: /notas/mci
+- id: ue-termos-e-condicoes
+  titulo: Termos e condições
+  termos:
+  - Termos e condições
+  equivalentes:
+  - termos de uso
+  busca:
+  - Termos e condições
+  - termos de uso
+  busca_texto: Termos e condições termos de uso Internet e plataformas Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: T
+  tema: Internet e plataformas
+  jurisdicao: UE
+  definicoes:
+  - texto: todas as cláusulas, independentemente da designação ou forma que assumam, que regem a relação contratual entre o prestador de serviços intermediários e os destinatários do serviço
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea u)
+      url: /notas/dsa#art-3-u
+      nota_url: /notas/dsa
 - id: ue-testagem-em-condicoes-reais
   titulo: Testagem em condições reais
   termos:
   - Testagem em condições reais
+  equivalentes:
+  - teste em condições reais
   busca:
   - Testagem em condições reais
-  busca_texto: Testagem em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - teste em condições reais
+  - testes em condições reais
+  busca_texto: Testagem em condições reais teste em condições reais testes em condições reais Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: T
   tema: Inteligência artificial
   jurisdicao: UE
@@ -4014,6 +4795,7 @@
   titulo: Titular
   termos:
   - Titular
+  equivalentes: []
   busca:
   - Titular
   busca_texto: Titular Dados pessoais e tratamento LGPD Res. CD/ANPD nº 18/2024 — Encarregado de Dados Lei nº 13.709, de 14 de agosto de 2018 Regulamento sobre a Atuação do Encarregado pelo Tratamento de Dados Pessoais — Anexo da Resolução CD/ANPD nº 18, de 16 de julho de 2024
@@ -4043,6 +4825,7 @@
   titulo: Transferência
   termos:
   - Transferência
+  equivalentes: []
   busca:
   - Transferência
   busca_texto: Transferência Transferências internacionais Res. CD/ANPD nº 19/2024 — Transferência Internacional Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -4064,6 +4847,7 @@
   titulo: Transferência internacional de dados
   termos:
   - Transferência internacional de dados
+  equivalentes: []
   busca:
   - Transferência internacional de dados
   busca_texto: Transferência internacional de dados Transferências internacionais LGPD Res. CD/ANPD nº 19/2024 — Transferência Internacional Lei nº 13.709, de 14 de agosto de 2018 Regulamento de Transferência Internacional de Dados — Anexo I da Resolução CD/ANPD nº 19, de 23 de agosto de 2024
@@ -4093,6 +4877,7 @@
   titulo: Trânsito em julgado
   termos:
   - Trânsito em julgado
+  equivalentes: []
   busca:
   - Trânsito em julgado
   busca_texto: Trânsito em julgado Outros conceitos normativos Res. CD/ANPD nº 4/2023 — Dosimetria de Sanções Regulamento de Dosimetria e Aplicação de Sanções Administrativas — Anexo da Resolução CD/ANPD nº 4, de 24 de fevereiro de 2023
@@ -4114,6 +4899,7 @@
   titulo: Tratamento
   termos:
   - Tratamento
+  equivalentes: []
   busca:
   - Tratamento
   busca_texto: Tratamento Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -4135,6 +4921,7 @@
   titulo: Tratamento de alto risco
   termos:
   - Tratamento de alto risco
+  equivalentes: []
   busca:
   - Tratamento de alto risco
   busca_texto: Tratamento de alto risco Dados pessoais e tratamento Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022
@@ -4175,6 +4962,7 @@
   termos:
   - Tratamento de dados pessoais
   - Tratamento
+  equivalentes: []
   busca:
   - Tratamento de dados pessoais
   - Tratamento
@@ -4213,6 +5001,7 @@
   titulo: Tratamento transfronteiriço
   termos:
   - Tratamento transfronteiriço
+  equivalentes: []
   busca:
   - Tratamento transfronteiriço
   busca_texto: Tratamento transfronteiriço Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -4237,6 +5026,7 @@
   titulo: Uso compartilhado de dados
   termos:
   - Uso compartilhado de dados
+  equivalentes: []
   busca:
   - Uso compartilhado de dados
   busca_texto: Uso compartilhado de dados Dados pessoais e tratamento LGPD Lei nº 13.709, de 14 de agosto de 2018
@@ -4258,9 +5048,12 @@
   titulo: Utilização indevida razoavelmente previsível
   termos:
   - Utilização indevida razoavelmente previsível
+  equivalentes:
+  - uso indevido razoavelmente previsível
   busca:
   - Utilização indevida razoavelmente previsível
-  busca_texto: Utilização indevida razoavelmente previsível Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
+  - uso indevido razoavelmente previsível
+  busca_texto: Utilização indevida razoavelmente previsível uso indevido razoavelmente previsível Outros conceitos normativos AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
   letra: U
   tema: Outros conceitos normativos
   jurisdicao: UE
@@ -4279,6 +5072,7 @@
   titulo: Verificação biométrica
   termos:
   - Verificação biométrica
+  equivalentes: []
   busca:
   - Verificação biométrica
   busca_texto: Verificação biométrica Inteligência artificial AI Act (texto consolidado oficial) Regulamento (UE) 2024/1689, de 13 de junho de 2024
@@ -4300,6 +5094,7 @@
   titulo: Verificação de idade
   termos:
   - Verificação de idade
+  equivalentes: []
   busca:
   - Verificação de idade
   busca_texto: Verificação de idade Crianças, adolescentes e idade Dec. nº 12.880/2026 — Regulamento do ECA Digital Decreto nº 12.880, de 18 de março de 2026
@@ -4321,6 +5116,7 @@
   titulo: Violação de dados pessoais
   termos:
   - Violação de dados pessoais
+  equivalentes: []
   busca:
   - Violação de dados pessoais
   busca_texto: Violação de dados pessoais Dados pessoais e tratamento General Data Protection Regulation (GDPR) da UE Regulamento (UE) 2016/679, de 27 de abril de 2016
@@ -4342,6 +5138,7 @@
   titulo: Violência contra mulheres em ambiente digital
   termos:
   - Violência contra mulheres em ambiente digital
+  equivalentes: []
   busca:
   - Violência contra mulheres em ambiente digital
   busca_texto: Violência contra mulheres em ambiente digital Segurança, incidentes e violência Dec. nº 12.976/2026 — Proteção de Mulheres na Internet Decreto nº 12.976, de 20 de maio de 2026
@@ -4386,10 +5183,35 @@
       dispositivo: art. 3º, II
       url: /notas/mci#dec12976-art-3-ii
       nota_url: /notas/mci
+- id: ue-volume-de-negocios
+  titulo: Volume de negócios
+  termos:
+  - Volume de negócios
+  equivalentes:
+  - faturamento
+  busca:
+  - Volume de negócios
+  - faturamento
+  busca_texto: Volume de negócios faturamento Fiscalização e sanções Digital Services Act (DSA) da UE Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+  letra: V
+  tema: Fiscalização e sanções
+  jurisdicao: UE
+  definicoes:
+  - texto: o montante realizado por uma empresa na aceção do artigo 5.º, n.º 1, do Regulamento (CE) n.º 139/2004 do Conselho
+    referencias:
+    - jurisdicao: UE
+      norma: dsa
+      norma_apelido: Digital Services Act (DSA) da UE
+      norma_titulo: Regulamento (UE) 2022/2065, de 19 de outubro de 2022
+      fonte: https://eur-lex.europa.eu/legal-content/PT/TXT/HTML/?uri=CELEX:32022R2065
+      dispositivo: art. 3.º, alínea x)
+      url: /notas/dsa#art-3-x
+      nota_url: /notas/dsa
 - id: br-zonas-acessiveis-ao-publico
   titulo: Zonas acessíveis ao público
   termos:
   - Zonas acessíveis ao público
+  equivalentes: []
   busca:
   - Zonas acessíveis ao público
   busca_texto: Zonas acessíveis ao público Outros conceitos normativos Res. CD/ANPD nº 2/2022 — Agentes de Pequeno Porte Regulamento de Aplicação da LGPD para Agentes de Tratamento de Pequeno Porte — Anexo I da Resolução CD/ANPD nº 2, de 27 de janeiro de 2022

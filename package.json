@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "engines": {
+    "node": "22.22.2",
+    "npm": "10.9.7"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "1.33.0",
+    "terser": "5.50.0"
+  }
+}

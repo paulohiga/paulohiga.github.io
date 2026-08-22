@@ -261,7 +261,7 @@ body.dark-theme .nota-tema .ico-moon {
 
 /* --- Seletor de normas do painel da lei seca ---
    Um <select> nativo em vez de uma aba por norma: não degrada com o número de
-   normas (são 18, em dois grupos — as desta nota e todas as outras) e não
+   normas (são 19, em dois grupos — as desta nota e todas as outras) e não
    precisa de ARIA customizado, porque o próprio elemento já é acessível por
    teclado e leitor de tela. Estilizado para ocupar o lugar do <h2> do painel.
 
@@ -2196,6 +2196,32 @@ body.dark-theme .busca-inspiracoes__item--definicao { --busca-tipo-cor: #f9a8d4;
     background: var(--page-bg);
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+/* Equivalente brasileiro do termo estrangeiro: o verbete guarda a redação
+   oficial em PT-PT, e os comentários das notas europeias são escritos em
+   pt-BR. Vale no card da página consolidada e no diálogo aberto de dentro da
+   nota — nos dois, acima da literalidade. */
+.definicao-equivalentes {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    margin: 0 0 0.55rem;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.definicao-equivalentes > span {
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.definicao-dialog__corpo > .definicao-equivalentes {
+    margin: 0.85rem 0 0;
 }
 
 .definicao-referencia {

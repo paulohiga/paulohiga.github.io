@@ -22,18 +22,19 @@ fazer nada disso à mão.
 - [Referências clicáveis](#referências-clicáveis)
 - [Definições normativas](#definições-normativas)
 - [Busca global](#busca-global)
+- [Equivalentes brasileiros dos termos europeus](#equivalentes-brasileiros-dos-termos-europeus)
 - [Normas estrangeiras (`formato: ue`)](#normas-estrangeiras-formato-ue)
 - [Trazendo uma norma do EUR-Lex](#trazendo-uma-norma-do-eur-lex)
 - [Ancorando referências automaticamente](#ancorando-referências-automaticamente)
-- [Scripts de autoria](#scripts-de-autoria)
+- [Scripts de autoria e verificações do CI](#scripts-de-autoria-e-verificações-do-ci)
 
 ## O que é a seção, e por que é isolada
 
 Seção de estudo sobre legislação (LGPD, Marco Civil, ECA Digital, o Regimento
-Interno da ANPD e as normas europeias GDPR e AI Act), pública e indexável. Nem
-toda norma comentada é lei em sentido estrito — o Regimento Interno é ato do
-Conselho Diretor da ANPD, aprovado por portaria —, mas a estrutura é sempre a
-mesma: comentários de um lado, texto da norma do outro, cada painel com rolagem
+Interno da ANPD e as normas europeias GDPR, AI Act e DSA), pública e indexável.
+Nem toda norma comentada é lei em sentido estrito — o Regimento Interno é ato
+do Conselho Diretor da ANPD, aprovado por portaria —, mas a estrutura é sempre
+a mesma: comentários de um lado, texto da norma do outro, cada painel com rolagem
 independente. Em telas estreitas viram abas ("Comentários" / "Lei seca"); em
 telas largas, um deles pode ocupar a tela inteira (ver
 [Modo leitura](#modo-leitura)).
@@ -170,7 +171,7 @@ quando o leitor a seleciona (ou ao abrir um link com âncora prefixada, tipo
 enquanto ela estiver aberta. Isso significa que **o seletor de normas e a
 navegação para qualquer norma que não a principal exigem JavaScript** — exceção
 consciente à regra geral de "funciona sem JS" das notas, decidida para não
-pré-carregar 18 textos legais em toda página. Sem JavaScript o seletor fica
+pré-carregar 19 textos legais em toda página. Sem JavaScript o seletor fica
 oculto e o lugar dele, na barra de título do painel, é ocupado por um `<h2>` com
 o nome da norma principal, que é a única exibida.
 
@@ -546,6 +547,33 @@ seguidas por todas as referências que as adotam; redações diferentes permanec
 separadas. A chave do agrupamento inclui `BR` ou `UE`, de modo que uma redação
 europeia nunca seja apresentada como definição brasileira.
 
+### Equivalentes brasileiros dos termos europeus
+
+A literalidade de uma norma da União Europeia é a do EUR-Lex, em PT-PT, e os
+comentários das notas europeias são escritos em pt-BR (ver
+[Normas estrangeiras](#normas-estrangeiras-formato-ue)). Sem uma ponte entre as
+duas, o comentário que diz "fornecedor" nunca alcançaria o verbete «Prestador».
+
+Essa ponte é o dicionário `EQUIVALENTES_BR` de `gerar_definicoes.py`, com uma
+entrada por termo europeu que tem forma corrente diferente no Brasil. Cada
+equivalente serve a três coisas: aparece no verbete, sob o rótulo **"No
+Brasil"**; entra na busca da página consolidada; e faz o `notas.js` marcar o
+termo brasileiro no comentário, levando ao verbete certo. Título e redação do
+verbete continuam sendo os do texto oficial. Ao lado dele, `FORMAS` guarda
+plurais e variações de grafia, que só interessam à busca e por isso não são
+exibidos.
+
+`conferir_equivalentes()` recusa dois erros e é o que mantém o dicionário
+honesto:
+
+- **equivalente ambíguo** — o que já é termo, equivalente ou forma de busca de
+  outro verbete da mesma jurisdição. Sem essa conferência, a marcação levaria ao
+  verbete errado em silêncio. Foi ela que barrou "operador" como equivalente de
+  «Subcontratante» do RGPD: no AI Act, «Operador» é o gênero que abrange
+  fornecedor, implementador, importador, distribuidor e mandatário;
+- **equivalente órfão** — chave cadastrada que nenhum verbete tem, sinal de
+  termo renomeado ou removido da norma.
+
 Nas notas de comentário, `_layouts/nota.html` embute somente um índice compacto
 de termos da jurisdição da página. O `notas.js` marca no máximo a primeira
 ocorrência por seção e quatro ocorrências por verbete na nota; isso conserva o
@@ -673,7 +701,10 @@ para" valem igual nos dois formatos:
 | alínea "a" de artigo sem números | `art-1-a` |
 
 Não há inciso romano entre o número e a alínea: a alínea se pendura no número
-corrente ou, na falta dele, no próprio artigo. **Subalíneas ficam de fora** —
+corrente ou, na falta dele, no próprio artigo. **A lista de alíneas vai de a) a
+z)**: num regulamento europeu ela passa de j) com folga — as definições do art.
+3.º do DSA vão até x), e o art. 70.º, n.º 1, do RGPD, até y). **Subalíneas
+ficam de fora** —
 "ii)" e seguintes não recebem âncora, e "i)" é indistinguível da alínea "i)" de
 uma lista longa, então remissão a subalínea se confere no texto ou fica sem
 link. O mesmo vale para os considerandos, que não são dispositivos e não são
@@ -701,6 +732,23 @@ Três cuidados próprios desse formato:
 válidos, mas continua reconhecendo *citações* na praxe brasileira: uma citação
 europeia com sufixo ("art. 5.º, n.º 1") cai no artigo seco em vez do número —
 link menos preciso, nunca errado.
+
+### O painel em PT-PT, o comentário em pt-BR
+
+O texto legal fica como o EUR-Lex o publica, em português de Portugal, e o
+comentário é escrito em pt-BR, com os termos correntes no Brasil — é o que
+[`AGENTS.md`](../AGENTS.md#notas-de-legislação-regras-editoriais) manda ao pedir
+que a correspondência seja explicada na nota, em vez de o texto legal ser
+reescrito. Três peças sustentam isso, e as três precisam andar juntas:
+
+- uma **tabela de correspondência** na seção "Terminologia" da nota, com o termo
+  oficial à esquerda e o usado no comentário à direita, mais as diferenças de
+  grafia que atrapalham a busca no painel ("secção", "registo", "controlo");
+- os [equivalentes brasileiros](#equivalentes-brasileiros-dos-termos-europeus)
+  do banco de definições, para que o termo em pt-BR continue alcançando o
+  verbete;
+- **citação literal fica literal**: ao transcrever o dispositivo entre aspas, o
+  PT-PT é preservado, ainda que destoe do resto do parágrafo.
 
 ## Trazendo uma norma do EUR-Lex
 
@@ -790,7 +838,7 @@ uma faixa de parágrafos "§§ 2º a 4º"), ou que misturam faixa e lista de
 artigos, ficam de fora — o script prefere não linkar a linkar para o
 dispositivo errado.
 
-## Scripts de autoria
+## Scripts de autoria e verificações do CI
 
 Os scripts de `scripts/` são **ferramentas de autoria e validação**: rodam na
 sua máquina, não entram no site e não fazem parte do conteúdo publicado. As
@@ -806,3 +854,32 @@ veja [Rodar localmente](../README.md#scripts-de-autoria) no `README.md`.
 | `conferir_ementas.py` | Confere as [ementas](#ementas-dos-artigos) de `_data/ementas/` contra os artigos de `_leis/` |
 | `gerar_definicoes.py` | Gera o banco de definições normativas a partir dos artigos e textos de `_leis/` |
 | `validar_indice_busca.py` | Confere o JSON gerado, os campos, destinos e âncoras do índice de busca após o build |
+
+### Verificação do site gerado
+
+[`scripts/verificar_site.py`](../scripts/verificar_site.py) não é uma ferramenta
+de autoria. O workflow
+[`quality.yml`](../.github/workflows/quality.yml) o executa depois de
+`bundle exec jekyll build` para analisar o conteúdo publicado em `_site/`.
+
+Ele verifica:
+
+- links internos que apontam para arquivos inexistentes;
+- fragmentos (`#id`) que não existem no documento de destino;
+- IDs duplicados no mesmo HTML;
+- prefixos de norma (`#dec12975`, por exemplo) registrados no destino para
+  abrir uma norma inteira sem dispositivo;
+- as âncoras publicadas nos fragmentos carregados sob demanda pelas notas.
+
+O script usa apenas a biblioteca padrão do Python e ignora links externos. Para
+rodá-lo localmente, o site precisa ter sido construído antes:
+
+```bash
+bundle exec jekyll build
+.venv/bin/python scripts/verificar_site.py
+```
+
+A sequência completa do quality gate, incluindo sintaxe JavaScript, compilação
+Python, ementas, âncoras e `git diff --check`, está em
+[Quality gate e build reprodutível](../README.md#quality-gate-e-build-reprodutível)
+no `README.md`.

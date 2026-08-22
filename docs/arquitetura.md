@@ -17,6 +17,7 @@ desta, e está em [`notas.md`](./notas.md).
 - [Formulário de contato](#formulário-de-contato)
 - [Ícones e fontes](#ícones-e-fontes)
 - [Performance (Core Web Vitals)](#performance-core-web-vitals)
+- [Build reprodutível e quality gate](#build-reprodutível-e-quality-gate)
 - [SEO e dados estruturados](#seo-e-dados-estruturados)
 - [Sitemap (`<lastmod>`)](#sitemap-lastmod)
 
@@ -139,6 +140,57 @@ O site é otimizado para nota alta de PageSpeed em mobile e desktop:
 
 As metas por métrica (LCP ≤ 2,5 s · INP ≤ 200 ms · CLS ≤ 0,1) e o que testar
 antes de finalizar estão no [`AGENTS.md`](../AGENTS.md#como-testar-antes-de-finalizar).
+
+## Build reprodutível e quality gate
+
+O repositório separa o workflow que verifica o código do workflow que publica o
+site:
+
+- [`.github/workflows/quality.yml`](../.github/workflows/quality.yml) roda os
+  checks em pull requests, em pushes na `master` e por execução manual. Ele
+  constrói o site e valida o resultado antes de considerá-lo saudável.
+- [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) instala as
+  mesmas ferramentas, minifica os arquivos de produção e publica o resultado no
+  GitHub Pages.
+
+Os dois workflows fixam Ruby `3.3.12` e Bundler `4.0.16`. O Node é definido por
+`.node-version` (`22.22.2`), e as dependências Ruby e Node são resolvidas pelos
+lockfiles versionados (`Gemfile.lock` e `package-lock.json`). As dependências
+Python dos scripts estão pinadas em
+[`scripts/requirements.txt`](../scripts/requirements.txt), e o CI usa Python
+`3.11.6`.
+
+Essa separação preserva os fontes legíveis nos previews e reserva a minificação
+ao deploy de produção. Lightning CSS `1.33.0` e Terser `5.50.0` são instalados
+com `npm ci`; o deploy chama `npx --no-install`, de modo que a execução falha se
+as versões registradas não estiverem disponíveis em vez de buscar uma versão
+indefinida.
+
+O quality gate executa, nesta ordem lógica:
+
+1. instala os runtimes e dependências fixados;
+2. verifica os minificadores sem alterar os fontes versionados;
+3. roda `bundle exec jekyll build`;
+4. verifica a sintaxe de `script.js` e `notas.js`;
+5. compila todos os Python de `scripts/`;
+6. confere as ementas e as âncoras das notas;
+7. roda [`scripts/verificar_site.py`](../scripts/verificar_site.py), que lê
+   `_site/` e verifica links internos, fragmentos e IDs duplicados;
+8. executa `git diff --check` sobre a alteração relevante do evento do CI.
+
+`verificar_site.py` também considera os HTML de
+`_site/notas/fragmentos/`, pois a seção `/notas` carrega parte das âncoras sob
+demanda. Para links no formato `/notas/<slug>#<prefixo>`, ele também valida o
+`data-norma-prefixo` registrado no documento: esse é o contrato de uma âncora
+que abre uma norma inteira, sem dispositivo, e não um `id` HTML literal. Links
+externos, `mailto:`, `tel:` e URLs JavaScript ficam fora do escopo: o teste
+garante a integridade do site publicado, sem depender da disponibilidade de
+serviços externos.
+
+O quality gate não altera conteúdo editorial nem grava arquivos no repositório.
+A minificação do workflow de publicação ocorre no checkout efêmero do runner;
+os arquivos minificados são usados para gerar o deploy e não representam uma
+mudança editorial nos fontes.
 
 ## SEO e dados estruturados
 

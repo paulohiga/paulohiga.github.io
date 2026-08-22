@@ -29,6 +29,7 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
 - [Estrutura de diretórios](#estrutura-de-diretórios)
 - [Como atualizar o conteúdo](#como-atualizar-o-conteúdo)
 - [Rodar localmente](#rodar-localmente)
+- [Quality gate e build reprodutível](#quality-gate-e-build-reprodutível)
 - [Publicação](#publicação)
 - [Serviços externos](#serviços-externos)
 
@@ -44,8 +45,8 @@ referências, faixas coloridas) é montada pelo layout e pelo CSS.
   JavaScript é escrito à mão.
 - **Fontes Inter e Merriweather**, servidas pelo Cloudflare Fonts, com
   _fallbacks_ locais ajustados por métrica (Capsize) para não causar reflow.
-- **Python** só para os [scripts de autoria](#scripts-de-autoria), que não
-  entram no site.
+- **Python** só para os [scripts de autoria](#scripts-de-autoria) e as
+  verificações do CI, que não entram no site.
 - Serviços externos: **Cloudflare**, **Netlify**, **Formspree** e
   **Microsoft Clarity** (ver [Serviços externos](#serviços-externos)).
 
@@ -57,8 +58,14 @@ Os detalhes de cada decisão estão em
 ```
 .
 ├── .github/workflows/pages.yml  # Build + minificação + deploy no GitHub Pages
+├── .github/workflows/quality.yml # Quality gate do build e do _site
 ├── _config.yml                  # Jekyll: coleções, plugins, exclude
 ├── Gemfile                      # Gems (github-pages + jekyll-last-modified-at)
+├── Gemfile.lock                 # Versões exatas das gems e do Bundler
+├── .ruby-version                # Ruby usado localmente e no CI
+├── .node-version                # Node usado localmente e no CI
+├── package.json                 # Ferramentas de minificação
+├── package-lock.json            # Versões exatas das ferramentas de minificação
 │
 │   ## Conteúdo — as quatro páginas de apresentação
 ├── index.md                     # Resumo em português           → /
@@ -72,9 +79,9 @@ Os detalhes de cada decisão estão em
 ├── definicoes.json              # Banco para abertura contextual nas notas
 ├── busca.md                     # Busca global                  → /notas/busca
 ├── busca-index.html             # Índice JSON gerado             → /notas/busca.json
-├── _notas/                      #  6 comentários publicados     → /notas/<assunto>
-├── _leis/                       # 18 textos legais em Markdown puro (output: false)
-├── _fragmentos/                 # 18 fragmentos das normas (fetch sob demanda, sem link)
+├── _notas/                      #  7 comentários publicados     → /notas/<assunto>
+├── _leis/                       # 19 textos legais em Markdown puro (output: false)
+├── _fragmentos/                 # 19 fragmentos das normas (fetch sob demanda, sem link)
 ├── notas.js                     # Painéis, modo leitura, sumários, seletor de normas, busca e atalhos
 │
 │   ## Código compartilhado
@@ -84,11 +91,11 @@ Os detalhes de cada decisão estão em
 │   ├── pages.yml                # Metadados de cada estado <lang>-<view> (fonte única)
 │   ├── normas.yml               # Aliases das normas, para ancorar_referencias.py
 │   ├── definicoes.yml           # Banco gerado de definições normativas
-│   └── ementas/                 # 18 arquivos: a ementa de cada artigo, rótulo do sumário
+│   └── ementas/                 # 19 arquivos: a ementa de cada artigo, rótulo do sumário
 ├── script.js                    # Tema, navegação sem reload, banding, herói compacto
 │
 │   ## Autoria — excluídos do site publicado
-├── scripts/                     # Scripts Python de autoria e validação
+├── scripts/                     # Scripts de autoria, validação e verificações do CI
 ├── docs/                        # arquitetura.md · notas.md · changelog.md
 ├── AGENTS.md                    # Guia para agentes · CLAUDE.md e GEMINI.md apontam aqui
 │
@@ -175,7 +182,7 @@ idiomas.
 
 ## Rodar localmente
 
-Requer **Ruby 3.3** — a mesma versão que o workflow usa, para o resultado local
+Requer **Ruby 3.3.12** — a mesma versão que o workflow usa, para o resultado local
 bater com o publicado.
 
 ```bash
@@ -185,6 +192,10 @@ bundle exec jekyll serve   # http://localhost:4000
 
 Os mesmos gems do GitHub Pages são usados (ver `Gemfile`), mas o CSS/JS **não**
 é minificado localmente: a minificação roda só no deploy de produção.
+
+As versões das gems ficam travadas em `Gemfile.lock`; Node usa `.node-version` e
+Bundler usa a versão do workflow e do rodapé do lockfile. Para reproduzir também
+a minificação de produção, instale as ferramentas com `npm ci`.
 
 Antes de dar push, confirme que o site **compila**:
 
@@ -199,11 +210,52 @@ documentados em [`docs/notas.md#busca-global`](./docs/notas.md#busca-global).
 Um erro de Liquid numa branch não aparece em lugar nenhum até o preview do
 Netlify — este comando o pega antes.
 
+### Quality gate e build reprodutível
+
+O quality gate está em
+[`.github/workflows/quality.yml`](./.github/workflows/quality.yml). Ele roda em
+pull requests, em pushes na branch `master` e manualmente pelo GitHub Actions.
+O workflow usa Ruby `3.3.12`, Bundler `4.0.16`, Node `22.22.2` e Python
+`3.11.6`. O `Gemfile.lock`, o `package-lock.json` e
+[`scripts/requirements.txt`](./scripts/requirements.txt) registram as versões
+exatas das dependências.
+
+Para reproduzir localmente os checks principais, depois de instalar Ruby 3.3.12,
+Node 22.22.2 e criar o ambiente Python:
+
+```bash
+bundle check
+npm ci
+.venv/bin/pip install -r scripts/requirements.txt
+
+bundle exec jekyll build
+node --check script.js
+node --check notas.js
+.venv/bin/python -m compileall -q scripts
+.venv/bin/python scripts/conferir_ementas.py
+.venv/bin/python scripts/ancorar_referencias.py --check \
+  ai-act dsa eca-digital gdpr lgpd mci regimento-interno-anpd
+.venv/bin/python scripts/verificar_site.py
+git diff --check
+```
+
+O build precisa vir antes de `verificar_site.py`, porque esse script analisa o
+HTML gerado em `_site/`. A validação de âncoras deve terminar sem mudanças. O
+verificador do site confere links internos, fragmentos e IDs duplicados; links
+externos não fazem parte desse teste.
+
+O `npm ci` também instala localmente os minificadores usados na publicação, a
+partir do lockfile: Lightning CSS `1.33.0` e Terser `5.50.0`. O quality gate
+testa a execução deles no CI, e o workflow de produção usa `npx --no-install`,
+portanto não baixa outra versão durante o deploy.
+
 ### Scripts de autoria
 
 Os scripts Python de `scripts/` são ferramentas de autoria e validação das
 notas de legislação: rodam na sua máquina, **não entram no site** e não fazem
-parte do conteúdo publicado. O que cada um faz está em
+parte do conteúdo publicado. O verificador `verificar_site.py` é mantido no
+mesmo diretório, mas tem função distinta: roda depois do build para conferir a
+integridade do `_site`. O que cada script faz está em
 [`docs/notas.md`](./docs/notas.md#scripts-de-autoria).
 
 ```bash
@@ -250,8 +302,15 @@ git push origin --delete claude/nome-antigo-e-comprido
 O site de produção ([higa.me](https://higa.me)) é compilado e publicado pelo
 workflow do GitHub Actions em `.github/workflows/pages.yml` a cada push na branch
 `master`. O workflow: (1) faz checkout com histórico completo (`fetch-depth: 0`),
-(2) minifica CSS/JS, (3) roda `jekyll build` com `JEKYLL_ENV=production`,
-(4) valida o índice global de busca e (5) publica no GitHub Pages.
+(2) instala as ferramentas travadas por `package-lock.json`, (3) minifica CSS/JS,
+(4) roda `jekyll build` com `JEKYLL_ENV=production`, (5) valida o índice global
+de busca e o site gerado e (6) publica no GitHub Pages.
+
+O workflow `.github/workflows/quality.yml` roda em pull requests, em pushes na
+branch `master` e manualmente. Ele executa o build, as verificações de sintaxe,
+os scripts das notas e a validação de links internos, fragmentos e ids no
+`_site`. Para reproduzir a sequência local, veja
+[Quality gate e build reprodutível](#quality-gate-e-build-reprodutível).
 
 Esse build próprio (em vez do build padrão do GitHub Pages) permite usar o plugin
 `jekyll-last-modified-at`, que preenche o
