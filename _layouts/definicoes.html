@@ -30,7 +30,7 @@
 
     <main class="definicoes">
         <div class="definicoes__cabecalho">
-            <p>Literalidade das normas disponíveis em <a href="/notas">/notas</a>. Termos iguais ou próximos aparecem no mesmo verbete, com uma referência para cada definição. As normas da União Europeia têm indicação discreta e permanecem separadas das brasileiras.</p>
+            <p>Literalidade das normas disponíveis em <a href="/notas">/notas</a>. Termos iguais ou próximos aparecem no mesmo verbete, com uma referência para cada definição. A contagem soma as ocorrências das formas do verbete nos comentários e nos textos normativos; use “Mais citados” para ordenar por frequência. As normas da União Europeia têm indicação discreta e permanecem separadas das brasileiras.</p>
         </div>
 
         <div class="definicoes__grade">
@@ -42,6 +42,7 @@
                             <legend class="visualmente-oculto">Organizar por</legend>
                             <label><input type="radio" name="ordem-definicoes" value="alfabetica" checked><span>A–Z</span></label>
                             <label><input type="radio" name="ordem-definicoes" value="tema"><span>Por tema</span></label>
+                            <label><input type="radio" name="ordem-definicoes" value="mencoes"><span>Mais citados</span></label>
                         </fieldset>
                         <label class="definicoes-busca"><span class="visualmente-oculto">Buscar</span><input id="definicoes-busca" type="search" autocomplete="off" placeholder="Filtrar por termo, norma ou tema"></label>
                         <label class="definicoes-controles__br"><input id="definicoes-so-brasil" type="checkbox"> Só normas brasileiras</label>
@@ -51,7 +52,7 @@
 {% assign indice_letra_atual = "" %}
 {% for verbete in site.data.definicoes %}
 {% if verbete.letra != indice_letra_atual %}<h3 class="definicoes-nav__grupo" data-grupo="{{ verbete.letra }}">{{ verbete.letra }}</h3>{% assign indice_letra_atual = verbete.letra %}{% endif %}
-                    <a href="#{{ verbete.id }}" class="definicoes-nav__item" data-alvo="{{ verbete.id }}"><span>{{ verbete.titulo }}</span><small>{% if verbete.jurisdicao == 'BR' %}BR{% else %}UE{% endif %}</small></a>
+                    <a href="#{{ verbete.id }}" class="definicoes-nav__item" data-alvo="{{ verbete.id }}"><span>{{ verbete.titulo }}</span><small>{{ verbete.mencoes }}× · {% if verbete.jurisdicao == 'BR' %}BR{% else %}UE{% endif %}</small></a>
 {% endfor %}
                 </nav>
             </aside>
@@ -63,9 +64,10 @@
                 <h2 class="definicoes-grupo" data-grupo="{{ verbete.letra }}">{{ verbete.letra }}</h2>
 {% assign letra_atual = verbete.letra %}
 {% endif %}
-                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.tema | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-busca="{{ verbete.busca_texto | downcase | escape }}">
+                <article id="{{ verbete.id }}" class="definicao-card{% if verbete.jurisdicao == 'UE' %} definicao-card--ue{% endif %}" data-letra="{{ verbete.letra }}" data-tema="{{ verbete.tema | escape }}" data-jurisdicao="{{ verbete.jurisdicao }}" data-mencoes="{{ verbete.mencoes }}" data-busca="{{ verbete.busca_texto | downcase | escape }}">
                     <header class="definicao-card__topo">
                         <h3>{{ verbete.titulo }}</h3>
+                        <span class="definicao-card__mencoes">{{ verbete.mencoes }} menções</span>
                         <a class="definicao-card__ancora" href="#{{ verbete.id }}" aria-label="Link para {{ verbete.titulo }}">#</a>
                     </header>
 {% if verbete.equivalentes.size > 0 %}

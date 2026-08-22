@@ -101,6 +101,7 @@ no site, não o caminho até lá.
 
 ### Definições normativas
 
+- A página passou a exibir o total de menções de cada verbete, somando as formas de busca nos comentários e nos textos normativos, e ganhou a ordenação “Mais citados”.
 - Os verbetes das normas da União Europeia passaram a exibir o **equivalente
   brasileiro** do termo, sob o rótulo "No Brasil", tanto na página consolidada
   quanto no diálogo aberto de dentro de uma nota. A redação e o título do verbete

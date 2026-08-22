@@ -1839,7 +1839,7 @@ body:not(.js) .nota-progresso {
 
 .definicoes-controles fieldset {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -1972,6 +1972,7 @@ body:not(.js) .definicoes-controles {
     color: var(--ink-soft);
     font-size: 0.65rem;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .definicoes-nav__item:hover,
@@ -2032,6 +2033,17 @@ body:not(.js) .definicoes-controles {
     font-family: var(--font-serif);
     font-size: 1.05rem;
     line-height: 1.4;
+}
+
+.definicao-card__mencoes {
+    flex: none;
+    padding: 0.18rem 0.45rem;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .definicao-card__ancora {

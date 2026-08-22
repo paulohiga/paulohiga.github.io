@@ -4,9 +4,11 @@
 As fontes de verdade continuam sendo os textos normativos. Este script localiza
 os artigos cuja ementa contém "Definições", extrai cada inciso/ponto sem
 reescrever a literalidade e agrupa termos iguais ou equivalentes somente dentro
-da mesma jurisdição. O item pode vir numerado (o inciso "V –" das normas
-brasileiras, o ponto "10)" do RGPD e do AI Act) ou como alínea ("a)", que é
-como o art. 3.º do DSA lista as suas definições).
+da mesma jurisdição. O banco também registra as ocorrências das formas de busca
+de cada verbete no corpo das notas e dos textos normativos, para permitir
+ordenação por frequência na página consolidada. O item pode vir numerado (o
+inciso "V –" das normas brasileiras, o ponto "10)" do RGPD e do AI Act) ou
+como alínea ("a)", que é como o art. 3.º do DSA lista as suas definições).
 """
 
 from __future__ import annotations
@@ -21,6 +23,7 @@ import yaml
 
 RAIZ = Path(__file__).resolve().parents[1]
 LEIS = RAIZ / "_leis"
+NOTAS = RAIZ / "_notas"
 EMENTAS = RAIZ / "_data" / "ementas"
 SAIDA = RAIZ / "_data" / "definicoes.yml"
 
@@ -201,6 +204,33 @@ def conferir_equivalentes(verbetes: list[dict]) -> None:
 
     if erros:
         raise SystemExit("EQUIVALENTES_BR/FORMAS:\n  " + "\n  ".join(sorted(set(erros))))
+
+def corpo_para_contagem(texto: str) -> str:
+    """Retira o front matter; conta apenas o conteúdo da nota ou da norma."""
+    partes = texto.split("---", 2)
+    return partes[2] if len(partes) == 3 else texto
+
+
+def textos_para_contagem(diretorio: Path) -> list[str]:
+    return [
+        sem_acentos(corpo_para_contagem(caminho.read_text()))
+        for caminho in sorted(diretorio.glob("*.md"))
+    ]
+
+
+def contar_mencoes(textos: list[str], formas: list[str]) -> int:
+    """Conta formas inteiras, sem diferenciar maiúsculas nem acentos."""
+    formas = sorted(
+        {sem_acentos(forma) for forma in formas if forma},
+        key=len,
+        reverse=True,
+    )
+    if not formas:
+        return 0
+    padrao = re.compile(
+        r"(?<![a-z0-9])(?:" + "|".join(re.escape(forma) for forma in formas) + r")(?![a-z0-9])"
+    )
+    return sum(len(padrao.findall(texto)) for texto in textos)
 
 
 def frente(texto: str) -> tuple[dict, str]:
@@ -405,6 +435,8 @@ def extrair_extra(especificacao: dict, corpo: str) -> str:
 
 def main() -> None:
     definicoes: list[dict] = []
+    textos_notas = textos_para_contagem(NOTAS)
+    textos_normas = textos_para_contagem(LEIS)
     for caminho in sorted(LEIS.glob("*.md")):
         slug = caminho.stem
         ementa_path = EMENTAS / f"{slug}.yml"
@@ -475,10 +507,11 @@ def main() -> None:
         tema = tema_de(termos)
         equivalentes = EQUIVALENTES_BR.get(chave, []) if jurisdicao == "UE" else []
         formas = FORMAS.get(chave, [])
+        busca = list(dict.fromkeys([*termos, *equivalentes, *formas]))
+        mencoes_notas = contar_mencoes(textos_notas, busca)
+        mencoes_normas = contar_mencoes(textos_normas, busca)
         busca_texto = " ".join(dict.fromkeys([
-            *termos,
-            *equivalentes,
-            *formas,
+            *busca,
             tema,
             *(item["norma_apelido"] for item in itens),
             *(item["norma_titulo"] for item in itens),
@@ -493,6 +526,9 @@ def main() -> None:
             "letra": sem_acentos(termos[0])[0].upper(),
             "tema": tema,
             "jurisdicao": jurisdicao,
+            "mencoes": mencoes_notas + mencoes_normas,
+            "mencoes_notas": mencoes_notas,
+            "mencoes_normas": mencoes_normas,
             "definicoes": agrupar_definicoes(itens),
         })
 

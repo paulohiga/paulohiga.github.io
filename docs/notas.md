@@ -67,7 +67,7 @@ en-us, que continua valendo para as páginas de apresentação (ver
 | `notas.js` | Painéis, [modo leitura](#modo-leitura), seletor de normas, sumários, referências clicáveis, busca e [atalhos](#atalhos-de-teclado) |
 | `_data/normas.yml` | Registro de aliases das normas, para `ancorar_referencias.py` |
 | `_data/ementas/<slug>.yml` | A [ementa](#ementas-dos-artigos) de cada artigo, rótulo do artigo no sumário da lei seca |
-| `_data/definicoes.yml` | Banco gerado com a literalidade das definições normativas, agrupadas por termo e jurisdição |
+| `_data/definicoes.yml` | Banco gerado com literalidade, agrupamentos e contagem de menções nas notas e nos textos normativos |
 | `definicoes.md` e `_layouts/definicoes.html` | Página consolidada em `/notas/definicoes`, com ordem alfabética ou temática |
 | `definicoes.json` | Mesmos verbetes em JSON, carregados sob demanda pelos comentários |
 
@@ -515,7 +515,7 @@ recebem id:
 `/notas/definicoes` reúne as definições literais das normas disponíveis na
 seção. A página se chama **Definições normativas** porque o conteúdo é a redação
 da própria norma, com links separados para a nota e para o dispositivo — não um
-glossário de paráfrases. O leitor pode ordenar os verbetes de A a Z ou por tema,
+glossário de paráfrases. O leitor pode ordenar os verbetes de A a Z, por tema ou por número de menções,
 usar o índice lateral de altura total no desktop, buscar por termo, norma ou
 tema e ocultar as definições da União Europeia.
 
@@ -524,7 +524,11 @@ O banco fica em `_data/definicoes.yml` e é gerado por
 “Definições” em `_data/ementas/` e uma lista explícita de conceitos definidos
 fora desses artigos, como “acesso provável”, “tratamento de alto risco” e
 “mecanismos de incentivo ao uso excessivo”. A literalidade vem sempre de
-`_leis/`; o script mantém apenas metadados editoriais de equivalência e tema.
+`_leis/`; o script mantém metadados editoriais de equivalência, tema e contagem.
+A contagem ignora o front matter, não diferencia maiúsculas nem acentos e soma
+as formas de busca do verbete no corpo de todos os arquivos de `_notas/` e
+`_leis/`. Os campos `mencoes`, `mencoes_notas` e `mencoes_normas` são
+gerados junto com o banco.
 Rode-o depois de criar ou atualizar uma norma:
 
 ```bash
