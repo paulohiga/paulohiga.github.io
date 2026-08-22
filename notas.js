@@ -81,6 +81,12 @@
                 return aparece;
             });
             visiveis.sort(function (a, b) {
+                if (ordemDefinicoes === 'frequencia') {
+                    var freqA = parseInt(a.dataset.frequencia, 10) || 0;
+                    var freqB = parseInt(b.dataset.frequencia, 10) || 0;
+                    if (freqB !== freqA) return freqB - freqA;
+                    return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt-BR');
+                }
                 var grupoA = ordemDefinicoes === 'tema' ? a.dataset.tema : a.dataset.letra;
                 var grupoB = ordemDefinicoes === 'tema' ? b.dataset.tema : b.dataset.letra;
                 return grupoA.localeCompare(grupoB, 'pt-BR') ||
@@ -88,8 +94,8 @@
             });
             var grupoAnterior = '';
             visiveis.forEach(function (card) {
-                var grupo = ordemDefinicoes === 'tema' ? card.dataset.tema : card.dataset.letra;
-                if (grupo !== grupoAnterior) {
+                var grupo = ordemDefinicoes === 'frequencia' ? '' : (ordemDefinicoes === 'tema' ? card.dataset.tema : card.dataset.letra);
+                if (grupo !== grupoAnterior && grupo !== '') {
                     var titulo = document.createElement('h2');
                     titulo.className = 'definicoes-grupo';
                     titulo.dataset.grupo = grupo;

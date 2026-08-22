@@ -403,7 +403,30 @@ def extrair_extra(especificacao: dict, corpo: str) -> str:
     return limpar_literal(texto)
 
 
+def contar_frequencia_termos(termos: list[str], formas: list[str], corpus_texto: str) -> int:
+    """Conta quantas vezes um termo (e suas formas) aparecem no corpus."""
+    total = 0
+    termos_busca = [chave_termo(t) for t in termos] + [chave_termo(f) for f in formas]
+    termos_busca_set = set(termos_busca)
+
+    # Normaliza o corpus para busca case-insensitive e sem acentos
+    corpus_normalizado = chave_termo(corpus_texto)
+
+    for termo in termos_busca_set:
+        # Busca por limites de palavra para evitar matches parciais
+        pattern = r'\b' + re.escape(termo) + r'\b'
+        total += len(re.findall(pattern, corpus_normalizado))
+
+    return total
+
+
 def main() -> None:
+    # Primeiro, agrupa todo o corpus de texto para contagem de frequência
+    corpus_completo = ""
+    for caminho in sorted(LEIS.glob("*.md")):
+        _, corpo = frente(caminho.read_text())
+        corpus_completo += "\n\n" + corpo
+
     definicoes: list[dict] = []
     for caminho in sorted(LEIS.glob("*.md")):
         slug = caminho.stem
@@ -483,6 +506,7 @@ def main() -> None:
             *(item["norma_apelido"] for item in itens),
             *(item["norma_titulo"] for item in itens),
         ]))
+        frequencia = contar_frequencia_termos(termos, equivalentes + formas, corpus_completo)
         saida.append({
             "id": verbete_id,
             "titulo": titulo,
@@ -493,10 +517,11 @@ def main() -> None:
             "letra": sem_acentos(termos[0])[0].upper(),
             "tema": tema,
             "jurisdicao": jurisdicao,
+            "frequencia": frequencia,
             "definicoes": agrupar_definicoes(itens),
         })
 
-    saida.sort(key=lambda item: (sem_acentos(item["titulo"]), item["jurisdicao"]))
+    saida.sort(key=lambda item: (-item["frequencia"], sem_acentos(item["titulo"]), item["jurisdicao"]))
     conferir_equivalentes(saida)
     cabecalho = (
         "# GERADO POR scripts/gerar_definicoes.py. NÃO EDITE À MÃO.\n"
