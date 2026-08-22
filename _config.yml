@@ -52,6 +52,7 @@ exclude:
   - README.md
   - docs
   - scripts
+  - node_modules
   - vendor
 
 # Keep emitted markup intact (no HTML minification surprises).

@@ -1,0 +1,100 @@
+name: Quality gate
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  RUBY_VERSION: "3.3.12"
+  BUNDLER_VERSION: "4.0.16"
+  PYTHON_VERSION: "3.11.6"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler: ${{ env.BUNDLER_VERSION }}
+          bundler-cache: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - name: Install build and authoring tools
+        run: |
+          npm ci
+          python -m pip install --requirement scripts/requirements.txt
+      - name: Verify production minifiers
+        shell: bash
+        run: |
+          set -euo pipefail
+          output_dir="$(mktemp -d)"
+          npx --no-install lightningcss --minify _includes/style.css -o "$output_dir/style.css"
+          npx --no-install lightningcss --minify _includes/nota-style.css -o "$output_dir/nota-style.css"
+          npx --no-install terser script.js --compress --mangle -o "$output_dir/script.js"
+          npx --no-install terser notas.js --compress --mangle -o "$output_dir/notas.js"
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+      - name: Check whitespace in changed lines
+        env:
+          EVENT_BEFORE: ${{ github.event.before }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            git diff --check "$PR_BASE_SHA...$GITHUB_SHA"
+          elif [[ "$EVENT_BEFORE" =~ ^0+$ || -z "$EVENT_BEFORE" ]]; then
+            git diff --check HEAD^...HEAD
+          else
+            git diff --check "$EVENT_BEFORE...$GITHUB_SHA"
+          fi
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          node --check notas.js
+      - name: Compile Python scripts
+        run: python -m compileall -q scripts
+      - name: Validate article labels
+        run: python scripts/conferir_ementas.py
+      - name: Validate anchored references
+        shell: bash
+        run: |
+          set -euo pipefail
+          notes=()
+          for file in _notas/*.md; do
+            notes+=("${file#_notas/}")
+          done
+          notes=("${notes[@]%.md}")
+          output="$(mktemp)"
+          trap 'rm -f "$output"' EXIT
+          python scripts/ancorar_referencias.py --check "${notes[@]}" | tee "$output"
+          if grep -qE '^(---|\+\+\+|@@)' "$output"; then
+            echo "::error::ancorar_referencias.py --check encontrou alterações propostas." >&2
+            exit 1
+          fi
+      - name: Validate generated links and ids
+        run: python scripts/verificar_site.py
